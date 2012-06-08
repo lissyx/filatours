@@ -29,6 +29,13 @@ class FilBleu:
 		self.current_id = "1-2"
 	
 	def list_lines(self):
+		self.get_lines()
+		print self.lines['1']
+		print self.lines['2']
+		print self.lines['5']
+		print self.lines['33']
+
+	def get_lines(self):
 		self.page_arrets()
 		self.raz()
 		self.lines = {}
@@ -56,10 +63,6 @@ class FilBleu:
 					stop = "".join([l.strip() for l in line.text.split("\n")])
 					if len(stop) > 0:
 						self.lines[lineid]['ends'].append({'dest': stop})
-		print self.lines['1']
-		print self.lines['2']
-		print self.lines['5']
-		print self.lines['33']
 	
 	def page_itineraires(self):
 		self.current_id = "1-1"
