@@ -1,0 +1,10 @@
+  501  curl -b cookies-filbleu.jar -c cookies-filbleu.jar "http://www.filbleu.fr/page.php?id=1-1&amp;etape=1" -d "Departure=Ballan-Miré+-+La+Taillerie&Arrival=Tours+-+2+Lions&Sens=1&Date=08/06/2012&Hour=09&Minute=30&Criteria=1" -v
+  502  curl -b cookies-filbleu.jar -c cookies-filbleu.jar "http://www.filbleu.fr/page.php?id=1-1&etape=1" -d "Departure=Ballan-Miré+-+La+Taillerie&Arrival=Tours+-+2+Lions&Sens=1&Date=08/06/2012&Hour=09&Minute=30&Criteria=1" -v
+  503  curl -b cookies-filbleu.jar -c cookies-filbleu.jar "http://www.filbleu.fr/page.php?id=1-1&etape=1" -d "Departure=Ballan-Mir%E9+-+La+Taillerie&Arrival=Tours+-+2+Lions&Sens=1&Date=08%2f06%2f2012&Hour=09&Minute=30&Criteria=1" -v
+  504  curl -b cookies-filbleu.jar -c cookies-filbleu.jar "http://www.filbleu.fr/page.php?id=1-1&etape=2" -v
+  516  curl -b cookies-filbleu.jar -c cookies-filbleu.jar "http://www.filbleu.fr/page.php?id=1-1&etape=2" -v
+  517  curl -b cookies-filbleu+arrets.jar -c cookies-filbleu+arrets.jar "http://www.filbleu.fr/page.php?id=1-2&raz" -v
+  518  curl -b cookies-filbleu+arrets.jar -c cookies-filbleu+arrets.jar "http://www.filbleu.fr/page.php?id=1-2&etape=2&Line=18|30" -v
+  519  curl -b cookies-filbleu+arrets.jar -c cookies-filbleu+arrets.jar "http://www.filbleu.fr/page.php?id=1-2&etape=3" -d "Sens=1" -v
+  521  history |grep curl
+  522  history |grep curl >> filbleu.txt
