@@ -6,6 +6,34 @@ import cookielib
 import argparse
 import BeautifulSoup
 
+class BusStop:
+	def __init__(self, name):
+		self.name = name
+
+class BusLine:
+	def __init__(self, id, num):
+		self.id = id
+		self.number = num
+		self.ends = []
+		self.stops = []
+
+	def add_stop(self, stop):
+		self.stops.append(stop)
+
+	def add_end(self, end):
+		self.ends.append(end)
+		if type(end) == list:
+			for stop in end:
+				self.add_stop(stop)
+		else:
+			self.add_stop(end)
+
+	def __repr__(self):
+		repr = "{'id': " + self.id + ", 'number': " + self.number + ", "
+		repr += "'ends': " + str(self.ends) + ", "
+		repr += "'stops': " + str(self.stops)
+		return repr + "}"
+
 class FilBleu:
 	def __init__(self):
 		self.browser = mechanize.Browser()
@@ -47,7 +75,7 @@ class FilBleu:
 				linenb = search.group(2)
 				
 				if not self.lines.has_key(lineid):
-					self.lines[lineid] = {'id': lineid, 'number': linenb, 'ends': []}
+					self.lines[lineid] = BusLine(id=lineid, num=linenb)
 
 				divs = line.findAll('div')
 				if divs:
@@ -55,14 +83,14 @@ class FilBleu:
 					for div in divs:
 						stop = "".join([l.strip() for l in div.text.split("\n")])
 						if len(divs) > 1:
-							stops.append({'dest': stop})
+							stops.append(stop)
 						else:
-							stops = {'dest': stop}
-					self.lines[lineid]['ends'].append(stops)
+							stops = stop
+					self.lines[lineid].add_end(stops)
 				else:
 					stop = "".join([l.strip() for l in line.text.split("\n")])
 					if len(stop) > 0:
-						self.lines[lineid]['ends'].append({'dest': stop})
+						self.lines[lineid].add_end(stop)
 	
 	def page_itineraires(self):
 		self.current_id = "1-1"
