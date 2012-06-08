@@ -10,6 +10,9 @@ class BusStop:
 	def __init__(self, name):
 		self.name = name
 
+	def set_stopArea(self, stopArea):
+		self.stopArea = stopArea
+
 class BusLine:
 	def __init__(self, id, num):
 		self.id = id
@@ -64,7 +67,7 @@ class FilBleu:
 	def list_stops(self):
 		self.get_stops()
 		for stop in self.stops:
-			print self.stops[stop]
+			print stop
 
 	def get_stops_sens(self, sens):
 		self.page_arrets()
@@ -77,10 +80,16 @@ class FilBleu:
 	def get_stops(self):
 		self.current_id = "1-2"
 		self.raz()
-		self.stops = {}
+		self.stops = []
 		soups = [ self.get_stops_sens(1), self.get_stops_sens(-1) ]
 		for soup in soups:
-			print soup
+			sens = soup.find("form")
+			stops = sens.findAll("option")
+			for stop in stops:
+				if not stop["value"] == "":
+					s = BusStop(stop.text)
+					s.set_stopArea(stop["value"])
+					self.stops.append(s)
 
 	def list_lines(self):
 		self.get_lines()
