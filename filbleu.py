@@ -10,8 +10,16 @@ class BusStop:
 	def __init__(self, name):
 		self.name = name
 
+	def parse_stopArea(self):
+		search = re.compile(r"(.*)\|(.*)\|(.*)").search(self.stopArea)
+		if search:
+			self.id = search.group(1)
+			self.stop_name = search.group(2)
+			self.city = search.group(3)
+
 	def set_stopArea(self, stopArea):
 		self.stopArea = stopArea
+		self.parse_stopArea()
 
 class BusLine:
 	def __init__(self, id, num):
@@ -30,12 +38,6 @@ class BusLine:
 				self.add_stop(stop)
 		else:
 			self.add_stop(end)
-
-	def __repr__(self):
-		repr = "{'id': " + self.id + ", 'number': " + self.number + ", "
-		repr += "'ends': " + str(self.ends) + ", "
-		repr += "'stops': " + str(self.stops)
-		return repr + "}"
 
 class FilBleu:
 	def __init__(self):
@@ -67,7 +69,8 @@ class FilBleu:
 	def list_stops(self):
 		self.get_stops()
 		for stop in self.stops:
-			print stop
+			stop = self.stops[stop]
+			print "Stop:", stop.stop_name, "[", stop.id, "]", "(", stop.city, ")"
 
 	def get_stops_sens(self, sens):
 		self.page_arrets()
@@ -80,7 +83,7 @@ class FilBleu:
 	def get_stops(self):
 		self.current_id = "1-2"
 		self.raz()
-		self.stops = []
+		self.stops = {}
 		soups = [ self.get_stops_sens(1), self.get_stops_sens(-1) ]
 		for soup in soups:
 			sens = soup.find("form")
@@ -89,12 +92,13 @@ class FilBleu:
 				if not stop["value"] == "":
 					s = BusStop(stop.text)
 					s.set_stopArea(stop["value"])
-					self.stops.append(s)
+					self.stops[s.id] = s
 
 	def list_lines(self):
 		self.get_lines()
 		for line in self.lines:
-			print self.lines[line]
+			line = self.lines[line]
+			print "Line:", line.number, "[", line.id, "]"
 
 	def get_lines(self):
 		self.page_lignes()
