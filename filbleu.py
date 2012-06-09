@@ -156,7 +156,24 @@ class FilBleu:
 		self.browser["Minute"] = [ str(self.args.min) ]
 		self.browser["Criteria"] = [ str(self.args.criteria) ]
 		self.browser.submit()
-		print BeautifulSoup.BeautifulSoup(self.browser.response().read())
+		soup = BeautifulSoup.BeautifulSoup(self.browser.response().read())
+		navig = soup.find('div', attrs = {'class': 'navig'})
+		if navig:
+			table = soup.find('table', attrs = {'summary': 'Propositions'})
+			if table:
+				trips = table.findAll('tr')
+				if trips:
+					for trip in trips[1:]:
+						tds = trip.findAll('td')
+						dates = self.html_br_strip(tds[0].text)
+						link = tds[1].find('a')["href"]
+						duration = tds[2].text
+						connections = tds[3].text
+						print "Dates:", dates, "Duration:", duration, "Connections:", connections, "[", link, "]"
+			else:
+				print "No table"
+		else:
+			print "No journey."
 
 	def raz(self):
 		if not self.current_id == "":
