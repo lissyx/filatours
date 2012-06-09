@@ -53,27 +53,39 @@ class FilBleu:
 		self.parser.add_argument("--list-lines", action="store_true", help="List lines")
 		self.parser.add_argument("--list-stops", help="List stops of a line (format: n|M)")
 		self.parser.add_argument("--httpdebug", action="store_true", help="Show HTTP debug")
+		journey = self.parser.add_argument_group("Journey")
+		journey.add_argument("--journey", action="store_true", help="Compute journey")
+		journey.add_argument("--stop-from", help="Departure station")
+		journey.add_argument("--stop-to", help="Destination station")
+		journey.add_argument("--way", type=int, help="Forward (1) or Backward (-1)")
+		journey.add_argument("--date", help="Date")
+		journey.add_argument("--hour", help="Hour")
+		journey.add_argument("--min", help="Minute")
+		journey.add_argument("--criteria", type=int, help="Criteria: (1) Fastest; (2) Min changes; (3) Min walking; (4) Min waiting")
 		self.args = self.parser.parse_args()
 
 		self.browser.set_debug_http(self.args.httpdebug)
 
 		self.__process__()
 
-	def page_lignes(self):
+	def page_lines(self):
 		self.current_id = "1-2"
 
-	def page_arrets(self):
+	def page_stops(self):
 		self.current_id = "1-2"
 		self.etape = "2"
+
+	def page_journey(self):
+		self.current_id = "1-1"
 
 	def list_stops(self):
 		self.get_stops()
 		for stop in self.stops:
 			stop = self.stops[stop]
-			print "Stop:", stop.stop_name, "[", stop.id, "]", "(", stop.city, ")"
+			print "Stop:", stop.stop_name, "(", stop.city, ") => ", stop.stopArea
 
 	def get_stops_sens(self, sens):
-		self.page_arrets()
+		self.page_stops()
 		self.raz()
 		self.browser.select_form(name="form1")
 		self.browser["Sens"] = [ str(sens) ]
@@ -101,7 +113,7 @@ class FilBleu:
 			print "Line:", line.number, "[", line.id, "]"
 
 	def get_lines(self):
-		self.page_lignes()
+		self.page_lines()
 		self.raz()
 		self.lines = {}
 		soup = BeautifulSoup.BeautifulSoup(self.browser.response().read())
@@ -129,8 +141,19 @@ class FilBleu:
 					if len(stop) > 0:
 						self.lines[lineid].add_end(stop)
 
-	def page_itineraires(self):
-		self.current_id = "1-1"
+	def get_journey(self):
+		self.page_journey()
+		self.raz()
+		self.browser.select_form(name="formulaire")
+		self.browser["Departure"] = str(self.args.stop_from)
+		self.browser["Arrival"] = str(self.args.stop_to)
+		self.browser["Sens"] = [ str(self.args.way) ]
+		self.browser["Date"] = str(self.args.date)
+		self.browser["Hour"] = [ str(self.args.hour) ]
+		self.browser["Minute"] = [ str(self.args.min) ]
+		self.browser["Criteria"] = [ str(self.args.criteria) ]
+		self.browser.submit()
+		print BeautifulSoup.BeautifulSoup(self.browser.response().read())
 
 	def raz(self):
 		if not self.current_id == "":
@@ -148,6 +171,8 @@ class FilBleu:
 			self.list_lines()
 		if self.args.list_stops:
 			self.list_stops()
+		if self.args.journey:
+			self.get_journey()
 
 if __name__ == '__main__':
 	FilBleu()
