@@ -144,7 +144,8 @@ class FilBleu:
 					if len(stop) > 0:
 						self.lines[lineid].add_end(stop)
 
-	def get_journey(self):
+	def get_journeys(self):
+		self.journeys = []
 		self.page_journey()
 		self.raz()
 		self.browser.select_form(name="formulaire")
@@ -169,11 +170,31 @@ class FilBleu:
 						link = tds[1].find('a')["href"]
 						duration = tds[2].text
 						connections = tds[3].text
-						print "Dates:", dates, "Duration:", duration, "Connections:", connections, "[", link, "]"
+
+						departure = None
+						arrival = None
+						sDate = re.compile(r"D.part :(.*)Arriv.e :(.*)").search(dates)
+						if sDate:
+							departure = sDate.group(1)
+							arrival = sDate.group(2)
+
+						print "Departure:", departure, "Arrival:", arrival, "Duration:", duration, "Connections:", connections, "[", link, "]"
+						self.journeys.append({'departure': departure, 'arrival': arrival, 'duration': duration, 'connections': connections, 'link': link})
 			else:
 				print "No table"
 		else:
 			print "No journey."
+
+	def get_journey(self, journey):
+		if journey['link']:
+			self.browser.open(self.baseurl + journey['link'].replace('page.php', ''))
+			print self.browser.response().read()
+
+	def list_journeys(self):
+		self.get_journeys()
+		for j in self.journeys:
+			jd = self.get_journey(j)
+			print jd
 
 	def raz(self):
 		if not self.current_id == "":
@@ -192,7 +213,7 @@ class FilBleu:
 		if self.args.list_stops:
 			self.list_stops()
 		if self.args.journey:
-			self.get_journey()
+			self.list_journeys()
 
 if __name__ == '__main__':
 	FilBleu()
