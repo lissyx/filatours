@@ -68,6 +68,9 @@ class FilBleu:
 
 		self.__process__()
 
+	def html_br_strip(self, text):
+		return "".join([l.strip() for l in text.split("\n")])
+
 	def page_lines(self):
 		self.current_id = "1-2"
 
@@ -130,14 +133,14 @@ class FilBleu:
 				if divs:
 					stops = []
 					for div in divs:
-						stop = "".join([l.strip() for l in div.text.split("\n")])
+						stop = self.html_br_strip(div.text)
 						if len(divs) > 1:
 							stops.append(stop)
 						else:
 							stops = stop
 					self.lines[lineid].add_end(stops)
 				else:
-					stop = "".join([l.strip() for l in line.text.split("\n")])
+					stop = self.html_br_strip(line.text)
 					if len(stop) > 0:
 						self.lines[lineid].add_end(stop)
 
