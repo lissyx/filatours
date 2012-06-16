@@ -265,11 +265,13 @@ class FilBleu:
 		self.get_journeys()
 		for j in self.journeys:
 			jd = self.get_journey(j)
+			print "Printing journey:"
 			for journey_part in jd:
 				if journey_part.indic != None:
-					print "Type:", journey_part.type, " Mode:", journey_part.mode, " Time:", journey_part.time, " Duration:", journey_part.duration, " Action:", journey_part.indic.type, " Stop:", journey_part.indic.stop, " Direction:", journey_part.indic.direction, " Line:", journey_part.indic.line
+					print "	Type:", journey_part.type, " Mode:", journey_part.mode, " Time:", journey_part.time, " Duration:", journey_part.duration, " Action:", journey_part.indic.type, " Stop:", journey_part.indic.stop, " Direction:", journey_part.indic.direction, " Line:", journey_part.indic.line
 				else:
-					print "Type:", journey_part.type, " Mode:", journey_part.mode, " Time:", journey_part.time, " Duration:", journey_part.duration
+					print "	Type:", journey_part.type, " Mode:", journey_part.mode, " Time:", journey_part.time, " Duration:", journey_part.duration
+			print ""
 
 	def raz(self):
 		if not self.current_id == "":
