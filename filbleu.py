@@ -6,6 +6,37 @@ import cookielib
 import argparse
 import BeautifulSoup
 
+class JourneyPart:
+	def __init__(self, type, mode, indication, time, duration):
+		self.type = type
+		self.mode = mode
+		self.indic = indication
+		self.time = time
+		self.duration = duration
+
+class Indication:
+	def __init__(self, html):
+		self.type = None
+		self.line = None
+		self.direction = None
+		self.stop = None
+		self.parse(html)
+
+	def parse(self, html):
+		take = re.compile(r"^Prendre").search(html.text)
+		out = re.compile(r"^Descendre").search(html.text)
+		bs = html.findAll('b')
+
+		if take:
+			self.type = "mount"
+			self.line = bs[0].text
+			self.direction = bs[1].text
+			self.stop = bs[2].text
+
+		if out:
+			self.type = "umount"
+			self.stop = bs[0].text
+
 class BusStop:
 	def __init__(self, name):
 		self.name = name
@@ -188,13 +219,57 @@ class FilBleu:
 	def get_journey(self, journey):
 		if journey['link']:
 			self.browser.open(self.baseurl + journey['link'].replace('page.php', ''))
-			print self.browser.response().read()
+			soup = BeautifulSoup.BeautifulSoup(self.browser.response().read())
+			itin = soup.find('fieldset', attrs = {'class': 'itineraire'})
+			if itin:
+				table = itin.find('table')
+				if table:
+					lines = table.findAll('tr')
+					if lines:
+						fulljourney = []
+						for line in lines[1:]:
+							tds = line.findAll('td')
+							type = None
+							mode = None
+							indic = None
+							time = None
+							duration = None
+
+							if len(tds) == 3:
+								if tds[0]['class'] == "indication":
+									type = "indication"
+									indic = Indication(tds[0])
+									time = tds[1].text
+								if tds[0]['class'] == "correspondance":
+									type = "connection"
+									duration = tds[1].text
+
+							if len(tds) == 5:
+								mode = tds[0].img['alt']
+								if tds[1]['class'] == "indication":
+									type = "indication"
+									indic = Indication(tds[1])
+									time = tds[2].text
+									duration = tds[3].text
+
+							fulljourney.append(JourneyPart(type, mode, indic, time, duration))
+						return fulljourney
+					else:
+						print "No lines"
+				else:
+					print "No journey table"
+			else:
+				print "No journey description"
 
 	def list_journeys(self):
 		self.get_journeys()
 		for j in self.journeys:
 			jd = self.get_journey(j)
-			print jd
+			for journey_part in jd:
+				if journey_part.indic != None:
+					print "Type:", journey_part.type, " Mode:", journey_part.mode, " Time:", journey_part.time, " Duration:", journey_part.duration, " Action:", journey_part.indic.type, " Stop:", journey_part.indic.stop, " Direction:", journey_part.indic.direction, " Line:", journey_part.indic.line
+				else:
+					print "Type:", journey_part.type, " Mode:", journey_part.mode, " Time:", journey_part.time, " Duration:", journey_part.duration
 
 	def raz(self):
 		if not self.current_id == "":
