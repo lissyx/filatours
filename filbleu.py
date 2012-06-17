@@ -4,6 +4,7 @@ import re
 import mechanize
 import cookielib
 import argparse
+import datetime
 import BeautifulSoup
 
 class JourneyPart:
@@ -77,6 +78,7 @@ class FilBleu:
 		self.browser.set_cookiejar(self.cj)
 		self.baseurl = "http://www.filbleu.fr/page.php"
 		self.url_raz = "&raz"
+		self.periode = "&periode="
 		self.current_id = ""
 		self.etape = ""
 
@@ -282,6 +284,14 @@ class FilBleu:
 					url += "&Line=" + self.args.list_stops
 			else:
 				url += self.url_raz
+				today = datetime.date.today()
+				start_ete = datetime.date(today.year, 7, 2)
+				stop_ete = datetime.date(today.year, 9, 1)
+				p = "1"
+				if today >= start_ete and today <= stop_ete:
+					p = "2"
+				url += self.periode + p
+
 			self.browser.open(url)
 
 	def __process__(self):
