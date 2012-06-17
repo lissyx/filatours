@@ -87,7 +87,7 @@ public class BusToursActivity extends Activity
 
     public void bindWidgets()
     {
-		this.btnGetJourney.setOnClickListener(new View.OnClickListener() { public void onClick(View arg0) { onClick_btnGetJourney(); } });
+        this.btnGetJourney.setOnClickListener(new View.OnClickListener() { public void onClick(View arg0) { onClick_btnGetJourney(); } });
     }
 
     public int getJourneyCriteriaValue()
