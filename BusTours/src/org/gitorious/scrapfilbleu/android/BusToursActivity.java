@@ -189,10 +189,20 @@ public class BusToursActivity extends Activity
 
         protected Boolean doInBackground(BusJourney ... journey) {
             publishProgress(0, R.string.startHttpScrapping);
-            publishProgress(10, R.string.jsoupConnect);
-            journey[0].getBusJourneys();
-            publishProgress(100, R.string.jsoupDocReady);
-            return true;
+            try {
+                publishProgress(10, R.string.jsoupConnect);
+                journey[0].getBusJourneys();
+                publishProgress(100, R.string.jsoupDocReady);
+                return true;
+            } catch (SocketTimeoutException e) {
+                publishProgress(0, R.string.networkError);
+                e.printStackTrace();
+                // messageBox(getString(R.string.networkError));
+                return false;
+            } catch (IOException e) {
+                e.printStackTrace();
+                return false;
+            }
         }
 
         protected void onProgressUpdate(Integer ... progress) {
