@@ -5,6 +5,7 @@ package org.gitorious.scrapfilbleu.android;
 import java.io.IOException;
 import java.net.SocketTimeoutException;
 import java.util.Map;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 import android.util.Log;
@@ -31,10 +32,12 @@ public class BusJourney {
     private String urlraz;
 
     private Map<String, String> cookies;
+    private ArrayList<Journey> journeys;
 
     public BusJourney() {
         this.urlraz = new URLs("id=1-1").getURLraz();
         this.urlbase = new URLs("id=1-1&etape=1").getURL();
+        this.journeys = new ArrayList<Journey>();
     }
 
     public void getBusJourneys() throws java.io.IOException, java.net.SocketTimeoutException, ScrappingException {
@@ -86,22 +89,19 @@ public class BusJourney {
             throw new ScrappingException("No journey");
         }
 
-        Log.e("BusTours:BusJourney", "Trips::" + trips.html());
         Iterator<Element> it = trips.iterator();
         // bypass first element, table heading
         it.next();
         while (it.hasNext()) {
-            Element trip = it.next();
-            Elements parts = trip.getElementsByTag("td");
-            Log.e("BusTours:BusJourney", "date==" + parts.get(0).html());
-            Log.e("BusTours:BusJourney", "link==" + parts.get(1).html());
-            Log.e("BusTours:BusJourney", "duration==" + parts.get(2).html());
-            Log.e("BusTours:BusJourney", "connections==" + parts.get(3).html());
+            this.journeys.add(new Journey(it.next(), this.cookies));
         }
     }
 
-    public void getBusJourneyDetails() {
-
+    public void getBusJourneysDetails() {
+        Iterator<Journey> jit = this.journeys.iterator();
+        while (jit.hasNext()) {
+            jit.next().getDetails();
+        }
     }
 
     public String pruneAccents(String s) {
