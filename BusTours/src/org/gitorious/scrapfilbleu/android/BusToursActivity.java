@@ -213,22 +213,34 @@ public class BusToursActivity extends Activity
         }
 
         protected void onPostExecute(Boolean result) {
+            dialog.dismiss();
+
             if (!result) {
                 String excName = this.exc.getClass().getSimpleName();
-                if (excName == "SocketTimeoutException") {
-                    messageBox(getString(R.string.networkError));
+                String msg = "";
+
+                Log.e("BusTours", "Got exception: " + excName);
+
+                if (excName.equals("SocketTimeoutException")) {
+                    Log.e("BusTours", "Got SocketTimeoutException");
+                    msg = getString(R.string.networkError);
                 }
 
-                if (excName == "IOException") {
+                if (excName.equals("IOException")) {
+                    Log.e("BusTours", "Got IOException");
                 }
 
-                if (excName == "ScrappingException") {
+                if (excName.equals("ScrappingException")) {
+                    Log.e("BusTours", "Got ScrappingException");
                     ScrappingException e = (ScrappingException)(this.exc);
-                    messageBox(getString(R.string.scrappError) + ": " + e.getError());
+                    msg = getString(R.string.scrappError) + ": " + e.getError();
+                }
+
+                if (msg.length() != 0) {
+                    Log.e("BusTours", "msg=" + msg);
+                    messageBox(msg);
                 }
             }
-
-            dialog.dismiss();
         }
     }
 }
