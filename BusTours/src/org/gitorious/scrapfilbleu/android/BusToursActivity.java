@@ -96,6 +96,7 @@ public class BusToursActivity extends Activity
 
     public void bindWidgets()
     {
+        this.time.setIs24HourView(true);
         this.btnGetJourney.setOnClickListener(new View.OnClickListener() { public void onClick(View arg0) { onClick_btnGetJourney(); } });
     }
 
