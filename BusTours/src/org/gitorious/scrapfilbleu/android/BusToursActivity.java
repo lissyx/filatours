@@ -109,6 +109,10 @@ public class BusToursActivity extends Activity
 
     public void bindWidgets()
     {
+        this.txtCityDeparture.setThreshold(1);
+        this.txtCityArrival.setThreshold(1);
+        this.txtStopDeparture.setThreshold(1);
+        this.txtStopArrival.setThreshold(1);
         this.time.setIs24HourView(true);
         this.btnGetJourney.setOnClickListener(new View.OnClickListener() { public void onClick(View arg0) { onClick_btnGetJourney(); } });
     }
