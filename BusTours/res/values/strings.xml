@@ -20,4 +20,5 @@
     <string name="scrappSuccess">Successfully scrapped</string>
     <string name="scrappError">Error while scrapping</string>
     <string name="scrapping_progress_raz">Got cleanup page</string>
+    <string name="journey_list">List of journeys</string>
 </resources>

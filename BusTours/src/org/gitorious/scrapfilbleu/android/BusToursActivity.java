@@ -4,6 +4,11 @@ package org.gitorious.scrapfilbleu.android;
 
 import java.io.IOException;
 import java.net.SocketTimeoutException;
+import java.util.Map;
+import java.util.List;
+import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -30,6 +35,10 @@ import android.widget.DatePicker;
 import android.widget.TimePicker;
 import android.widget.TextView;
 import android.widget.ProgressBar;
+import android.widget.ExpandableListView;
+import android.widget.ExpandableListAdapter;
+import android.widget.SimpleExpandableListAdapter;
+import android.widget.ExpandableListView.OnChildClickListener;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -47,13 +56,12 @@ public class BusToursActivity extends Activity
     private Spinner listCriteria;
     private Button btnGetJourney;
 
-    // Showing Async progress
-	private Dialog dialog;
-	private TextView statusProgressHttp;
-	private ProgressBar progressHttp;
+    private Dialog journeyList;
 
     private String[] journeyCriteriaValues;
     private String[] sensValues;
+
+    private ArrayList<Journey> journeys;
 
     private URLs urls;
 
@@ -178,8 +186,82 @@ public class BusToursActivity extends Activity
 		d.show();
 	}
 
+    public void setJourneys(ArrayList<Journey> js) {
+        this.journeys = js;
+    }
+
+    public ArrayList<Journey> getJourneys() {
+        return this.journeys;
+    }
+
+    public void onAsyncTaskScrapJourneyListComplete() {
+        ExpandableListView list;
+        journeyList = new Dialog(this);
+        journeyList.setContentView(R.layout.journey);
+        journeyList.setTitle(getString(R.string.journey_list));
+
+        String[] fromGroup = new String[] { "head" };
+        int[] toGroup = new int[] { android.R.id.text1 };
+        String[] fromChild = new String[] { "head", "more" };
+        int[] toChild = new int[] { android.R.id.text1, android.R.id.text2 };
+
+        List<HashMap<String, String>> jList = new ArrayList<HashMap<String, String>>();
+        List<List<HashMap<String, String>>> jListChild = new ArrayList<List<HashMap<String, String>>>();
+
+        Iterator<Journey> jit = this.journeys.iterator();
+        while (jit.hasNext()) {
+            Journey j = (Journey)jit.next();
+
+            HashMap<String, String> map = new HashMap<String, String>();
+            map.put("head", j.getDepartureTime() + " - " + j.getArrivalTime() + " (" + j.getDuration() + ")");
+
+            List<HashMap<String, String>> children = new ArrayList<HashMap<String, String>>();
+
+            HashMap<String, String> curChildMap = new HashMap<String, String>();
+            curChildMap.put("head", "Duration: " + j.getDuration());
+            curChildMap.put("more", "Connections: " + j.getConnections());
+            children.add(curChildMap);
+
+            jListChild.add(children);
+
+            jList.add(map);
+        }
+
+        list = (ExpandableListView)journeyList.findViewById(R.id.listJourneys);
+        list.setOnChildClickListener(new OnChildClickListener() {
+            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+                try {
+                    Log.e("BusTours", "groupPosition:" + String.valueOf(groupPosition));
+                    Log.e("BusTours", "journey:" + getJourneys().get(groupPosition));
+                } catch(Exception e) {
+                    e.printStackTrace();
+                }
+                return false;
+            }
+        });
+
+        ExpandableListAdapter journeyAdapter = new SimpleExpandableListAdapter(
+            this,
+            jList,
+            android.R.layout.simple_expandable_list_item_2,
+            fromGroup, toGroup,
+            jListChild,
+            android.R.layout.simple_expandable_list_item_2,
+            fromChild, toChild
+        );
+
+        list.setAdapter(journeyAdapter);
+
+        journeyList.show();
+    }
+
     private class ProcessScrapping extends AsyncTask<BusJourney, Integer, Boolean> {
         private Exception exc;
+
+        // Showing Async progress
+        private Dialog dialog;
+        private TextView statusProgressHttp;
+        private ProgressBar progressHttp;
 
         protected void onPreExecute() {
             dialog = new Dialog(context);
@@ -197,7 +279,7 @@ public class BusToursActivity extends Activity
             publishProgress(0, R.string.startHttpScrapping);
             try {
                 publishProgress(10, R.string.jsoupConnect);
-                journey[0].getBusJourneys();
+                setJourneys(journey[0].getBusJourneys());
                 publishProgress(100, R.string.jsoupDocReady);
                 return true;
             } catch (Exception e) {
@@ -238,9 +320,11 @@ public class BusToursActivity extends Activity
 
                 if (msg.length() != 0) {
                     Log.e("BusTours", "msg=" + msg);
-                    messageBox(msg);
+                    alertErrorBox(excName, msg);
                 }
             }
+
+            onAsyncTaskScrapJourneyListComplete();
         }
     }
 }

@@ -40,7 +40,7 @@ public class BusJourney {
         this.journeys = new ArrayList<Journey>();
     }
 
-    public void getBusJourneys() throws java.io.IOException, java.net.SocketTimeoutException, ScrappingException {
+    public ArrayList<Journey> getBusJourneys() throws java.io.IOException, java.net.SocketTimeoutException, ScrappingException {
         String dep = this.cityDep + " - " + this.stopDep;
         String arr = this.cityArr  + " - " + this.stopArr;
 
@@ -95,6 +95,8 @@ public class BusJourney {
         while (it.hasNext()) {
             this.journeys.add(new Journey(it.next(), this.cookies));
         }
+
+        return this.journeys;
     }
 
     public void getBusJourneysDetails() {
