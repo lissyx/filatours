@@ -17,5 +17,7 @@
     <string name="jsoupConnect">Initiating connection</string>
     <string name="jsoupDocReady">Document ready</string>
     <string name="networkError">Network error!</string>
-    <string name="scrapSuccess">Successfully scrapped</string>
+    <string name="scrappSuccess">Successfully scrapped</string>
+    <string name="scrappError">Error while scrapping</string>
+    <string name="scrapping_progress_raz">Got cleanup page</string>
 </resources>

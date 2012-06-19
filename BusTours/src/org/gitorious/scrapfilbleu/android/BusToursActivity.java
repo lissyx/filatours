@@ -175,6 +175,8 @@ public class BusToursActivity extends Activity
 	}
 
     private class ProcessScrapping extends AsyncTask<BusJourney, Integer, Boolean> {
+        private Exception exc;
+
         protected void onPreExecute() {
             dialog = new Dialog(context);
             dialog.setContentView(R.layout.progress);
@@ -194,12 +196,8 @@ public class BusToursActivity extends Activity
                 journey[0].getBusJourneys();
                 publishProgress(100, R.string.jsoupDocReady);
                 return true;
-            } catch (SocketTimeoutException e) {
-                publishProgress(0, R.string.networkError);
-                e.printStackTrace();
-                // messageBox(getString(R.string.networkError));
-                return false;
-            } catch (IOException e) {
+            } catch (Exception e) {
+                this.exc = e;
                 e.printStackTrace();
                 return false;
             }
@@ -211,6 +209,21 @@ public class BusToursActivity extends Activity
         }
 
         protected void onPostExecute(Boolean result) {
+            if (!result) {
+                String excName = this.exc.getClass().getSimpleName();
+                if (excName == "SocketTimeoutException") {
+                    messageBox(getString(R.string.networkError));
+                }
+
+                if (excName == "IOException") {
+                }
+
+                if (excName == "ScrappingException") {
+                    ScrappingException e = (ScrappingException)(this.exc);
+                    messageBox(getString(R.string.scrappError) + ": " + e.getError());
+                }
+            }
+
             dialog.dismiss();
         }
     }
