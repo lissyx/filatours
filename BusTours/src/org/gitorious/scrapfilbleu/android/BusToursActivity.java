@@ -111,7 +111,23 @@ public class BusToursActivity extends Activity
 
     public void onClick_btnGetJourney()
     {
-        new ProcessScrapping().execute(this.urls.urlBase + "?id=1-1&raz");
+        BusJourney j = new BusJourney();
+        j.setCityDep(this.txtCityDeparture.getEditableText().toString());
+        j.setCityArr(this.txtCityArrival.getEditableText().toString());
+        j.setStopDep(this.txtStopDeparture.getEditableText().toString());
+        j.setStopArr(this.txtStopArrival.getEditableText().toString());
+        j.setDate(new String()
+            + String.valueOf(this.date.getDayOfMonth())
+            + "/"
+            + String.valueOf(this.date.getMonth())
+            + "/"
+            + String.valueOf(this.date.getYear())
+        );
+        j.setHour(String.valueOf(this.time.getCurrentHour()));
+        j.setMinute(String.valueOf(this.time.getCurrentMinute()));
+        j.setSens(String.valueOf(this.getSensValue()));
+        j.setCriteria(String.valueOf(this.getJourneyCriteriaValue()));
+        new ProcessScrapping().execute(j);
     }
 
     public static void messageBox(String text) {
@@ -144,9 +160,7 @@ public class BusToursActivity extends Activity
 		d.show();
 	}
 
-    private class ProcessScrapping extends AsyncTask<String, Integer, Boolean> {
-        Document doc;
-
+    private class ProcessScrapping extends AsyncTask<BusJourney, Integer, Boolean> {
         protected void onPreExecute() {
             dialog = new Dialog(context);
             dialog.setContentView(R.layout.progress);
@@ -159,22 +173,12 @@ public class BusToursActivity extends Activity
             dialog.show();
         }
 
-        protected Boolean doInBackground(String ... urls) {
+        protected Boolean doInBackground(BusJourney ... journey) {
             publishProgress(0, R.string.startHttpScrapping);
-            try {
-                publishProgress(10, R.string.jsoupConnect);
-                doc = Jsoup.connect(urls[0]).get();
-                publishProgress(100, R.string.jsoupDocReady);
-                Log.e("BusTours", doc.title());
-                return true;
-            } catch (SocketTimeoutException e) {
-                publishProgress(0, R.string.networkError);
-                messageBox(getString(R.string.networkError));
-                return false;
-            } catch (IOException e) {
-                e.printStackTrace();
-                return false;
-            }
+            publishProgress(10, R.string.jsoupConnect);
+            journey[0].getBusJourneys();
+            publishProgress(100, R.string.jsoupDocReady);
+            return true;
         }
 
         protected void onProgressUpdate(Integer ... progress) {
@@ -184,7 +188,6 @@ public class BusToursActivity extends Activity
 
         protected void onPostExecute(Boolean result) {
             dialog.dismiss();
-            messageBox(doc.title());
         }
     }
 }
