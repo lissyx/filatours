@@ -37,7 +37,7 @@ public class BusJourney {
         this.urlbase = new URLs("id=1-1&etape=1").getURL();
     }
 
-    public void getBusJourneys() throws java.io.IOException, java.net.SocketTimeoutException {
+    public void getBusJourneys() throws java.io.IOException, java.net.SocketTimeoutException, ScrappingException {
         String dep = this.cityDep + " - " + this.stopDep;
         String arr = this.cityArr  + " - " + this.stopArr;
 
@@ -66,34 +66,37 @@ public class BusJourney {
 
         Elements navig = reply.getElementsByAttributeValue("class", "navig");
         Log.e("BusTours:BusJourney", "Retrieved elements.");
-        if (!navig.isEmpty()) {
-            Elements table = reply.getElementsByAttributeValue("summary", "Propositions");
-            if (!table.isEmpty()) {
-                Elements trips = table.first().getElementsByTag("tr");
-                if (!trips.isEmpty()) {
-                    Log.e("BusTours:BusJourney", "Trips::" + trips.html());
-                    Iterator<Element> it = trips.iterator();
-                    // bypass first element, table heading
-                    it.next();
-                    while (it.hasNext()) {
-                        Element trip = it.next();
-                        Elements parts = trip.getElementsByTag("td");
-                        Log.e("BusTours:BusJourney", "date==" + parts.get(0).html());
-                        Log.e("BusTours:BusJourney", "link==" + parts.get(1).html());
-                        Log.e("BusTours:BusJourney", "duration==" + parts.get(2).html());
-                        Log.e("BusTours:BusJourney", "connections==" + parts.get(3).html());
-                    }
-                } else {
-                    Log.e("BusTours:BusJourney", "NO Trips !!!");
-                    Log.e("BusTours:BusJourney", "table::" + table.html());
-                }
-            } else {
-                Log.e("BusTours:BusJourney", "NO Table !!!");
-                Log.e("BusTours:BusJourney", "navig::" + navig.html());
-            }
-        } else {
+        if (navig.isEmpty()) {
             Log.e("BusTours:BusJourney", "NO Navig !!!");
             Log.e("BusTours:BusJourney", "BODY::" + reply.body().html());
+            throw new ScrappingException("Not a result page");
+        }
+
+        Elements table = reply.getElementsByAttributeValue("summary", "Propositions");
+        if (table.isEmpty()) {
+            Log.e("BusTours:BusJourney", "NO Table !!!");
+            Log.e("BusTours:BusJourney", "navig::" + navig.html());
+            throw new ScrappingException("Missing table");
+        }
+
+        Elements trips = table.first().getElementsByTag("tr");
+        if (trips.isEmpty()) {
+            Log.e("BusTours:BusJourney", "NO Trips !!!");
+            Log.e("BusTours:BusJourney", "table::" + table.html());
+            throw new ScrappingException("No journey");
+        }
+
+        Log.e("BusTours:BusJourney", "Trips::" + trips.html());
+        Iterator<Element> it = trips.iterator();
+        // bypass first element, table heading
+        it.next();
+        while (it.hasNext()) {
+            Element trip = it.next();
+            Elements parts = trip.getElementsByTag("td");
+            Log.e("BusTours:BusJourney", "date==" + parts.get(0).html());
+            Log.e("BusTours:BusJourney", "link==" + parts.get(1).html());
+            Log.e("BusTours:BusJourney", "duration==" + parts.get(2).html());
+            Log.e("BusTours:BusJourney", "connections==" + parts.get(3).html());
         }
     }
 
