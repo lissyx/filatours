@@ -3,6 +3,7 @@
 package org.gitorious.scrapfilbleu.android;
 
 import java.io.IOException;
+import java.net.SocketTimeoutException;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -15,6 +16,7 @@ import android.content.DialogInterface;
 import android.util.Log;
 
 import android.os.Bundle;
+import android.os.AsyncTask;
 
 import android.view.View;
 
@@ -26,6 +28,8 @@ import android.widget.ArrayAdapter;
 import android.widget.SimpleAdapter;
 import android.widget.DatePicker;
 import android.widget.TimePicker;
+import android.widget.TextView;
+import android.widget.ProgressBar;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -42,6 +46,11 @@ public class BusToursActivity extends Activity
     private AutoCompleteTextView txtStopArrival;
     private Spinner listCriteria;
     private Button btnGetJourney;
+
+    // Showing Async progress
+	private Dialog dialog;
+	private TextView statusProgressHttp;
+	private ProgressBar progressHttp;
 
     private String[] journeyCriteriaValues;
     private String[] sensValues;
@@ -102,12 +111,7 @@ public class BusToursActivity extends Activity
 
     public void onClick_btnGetJourney()
     {
-        try {
-            Document doc = Jsoup.connect(this.urls.urlBase + "?id=1-1&raz").get();
-            Log.e("BusTours", doc.title());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        new ProcessScrapping().execute(this.urls.urlBase + "?id=1-1&raz");
     }
 
     public static void messageBox(String text) {
@@ -139,4 +143,48 @@ public class BusToursActivity extends Activity
 		AlertDialog d = alertBox("[" + getString(R.string.msgErrorTitle) + "]: " + title, text);
 		d.show();
 	}
+
+    private class ProcessScrapping extends AsyncTask<String, Integer, Boolean> {
+        Document doc;
+
+        protected void onPreExecute() {
+            dialog = new Dialog(context);
+            dialog.setContentView(R.layout.progress);
+            dialog.setTitle(getString(R.string.scrapping));
+
+            statusProgressHttp = (TextView) dialog.findViewById(R.id.statusProgressHttp);
+            progressHttp = (ProgressBar) dialog.findViewById(R.id.progressHttp);
+            progressHttp.setMax(100);
+
+            dialog.show();
+        }
+
+        protected Boolean doInBackground(String ... urls) {
+            publishProgress(0, R.string.startHttpScrapping);
+            try {
+                publishProgress(10, R.string.jsoupConnect);
+                doc = Jsoup.connect(urls[0]).get();
+                publishProgress(100, R.string.jsoupDocReady);
+                Log.e("BusTours", doc.title());
+                return true;
+            } catch (SocketTimeoutException e) {
+                publishProgress(0, R.string.networkError);
+                messageBox(getString(R.string.networkError));
+                return false;
+            } catch (IOException e) {
+                e.printStackTrace();
+                return false;
+            }
+        }
+
+        protected void onProgressUpdate(Integer ... progress) {
+            progressHttp.setProgress(progress[0]);
+            statusProgressHttp.setText(getString(progress[1]));
+        }
+
+        protected void onPostExecute(Boolean result) {
+            dialog.dismiss();
+            messageBox(doc.title());
+        }
+    }
 }

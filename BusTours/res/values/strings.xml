@@ -12,4 +12,10 @@
     <string name="msgErrorTitle">Error</string>
     <string name="msgInfoTitle">Info</string>
     <string name="okay">Ok</string>
+    <string name="scrapping">Scrapping ...</string>
+    <string name="startHttpScrapping">Starting to scrap.</string>
+    <string name="jsoupConnect">Initiating connection</string>
+    <string name="jsoupDocReady">Document ready</string>
+    <string name="networkError">Network error!</string>
+    <string name="scrapSuccess">Successfully scrapped</string>
 </resources>
