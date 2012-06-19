@@ -92,6 +92,19 @@ public class BusToursActivity extends Activity
         ArrayAdapter<CharSequence> sensAdapter = ArrayAdapter.createFromResource(this, R.array.sens, android.R.layout.simple_spinner_item);
         sensAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         this.sens.setAdapter(sensAdapter);
+
+        BusCities cities = new BusCities();
+        BusStops stops = new BusStops();
+
+        // fill city autocomplete
+        ArrayAdapter<String> cityAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, cities.getCities());
+        this.txtCityDeparture.setAdapter(cityAdapter);
+        this.txtCityArrival.setAdapter(cityAdapter);
+
+        // fill stop autocomplete
+        ArrayAdapter<String> stopAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, stops.getStops());
+        this.txtStopDeparture.setAdapter(stopAdapter);
+        this.txtStopArrival.setAdapter(stopAdapter);
     }
 
     public void bindWidgets()
