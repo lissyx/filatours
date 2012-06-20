@@ -257,7 +257,13 @@ public class BusToursActivity extends Activity
                     setJourneyDetailsProcessing(groupPosition);
                     Log.e("BusTours", "groupPosition:" + String.valueOf(groupPosition));
                     Log.e("BusTours", "journey:" + journey);
-                    new ProcessScrapping().execute(journey);
+                    if (journey.getJourneyDetails() == null) {
+                        Log.e("BusTours", "No details for this journey, starting scrapping ...");
+                        new ProcessScrapping().execute(journey);
+                    } else {
+                        Log.e("BusTours", "Details already available.");
+                        onAsyncTaskScrapJourneyDetailsComplete();
+                    }
                 } catch(Exception e) {
                     e.printStackTrace();
                 }
