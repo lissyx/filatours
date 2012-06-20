@@ -221,6 +221,7 @@ class FilBleu:
 			else:
 				print "No table"
 		else:
+			print soup.html()
 			print "No journey."
 
 	def get_journey(self, journey):
