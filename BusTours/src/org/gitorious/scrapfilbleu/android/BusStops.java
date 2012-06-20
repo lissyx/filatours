@@ -14,7 +14,8 @@ public class BusStops {
 			"2 Lions",
 			"La Taillerie",
 			"Joué Centre",
-			"Jean Jaurès"
+			"Jean Jaurès",
+			"St Pierre Gare"
 		};
 	}
 }

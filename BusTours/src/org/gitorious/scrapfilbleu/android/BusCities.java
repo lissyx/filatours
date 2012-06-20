@@ -13,7 +13,8 @@ public class BusCities {
 		return new String[] {
 			"Ballan-Miré",
 			"Joué-lès-Tours",
-			"Tours"
+			"Tours",
+			"Saint-Pierre-des-Corps"
 		};
 	}
 }
