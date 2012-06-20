@@ -36,4 +36,11 @@
     <string name="jsoupGotDetailsElems">Found elements for details</string>
     <string name="jsoupGotFullDetails">Full journey details fetched</string>
     <string name="journey_details">Details of journey</string>
+    <string name="stopIndic">At stop</string>
+    <string name="detailMount">Get in</string>
+    <string name="detailLine">Line:</string>
+    <string name="detailDirection">Direction:</string>
+    <string name="detailUmount">Get off</string>
+    <string name="connectionInfo">Connection</string>
+    <string name="connectionDuration">Waiting time:</string>
 </resources>

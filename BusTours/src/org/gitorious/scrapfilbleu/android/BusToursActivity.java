@@ -228,25 +228,32 @@ public class BusToursActivity extends Activity
         while (jit.hasNext()) {
             JourneyDetails.JourneyPart jp = (JourneyDetails.JourneyPart)jit.next();
             JourneyDetails.Indication indic = jp.getIndic();
-            String ind;
-
-            if (indic != null) {
-                ind = indic.getStop();
-            } else {
-                ind = "N/A";
-            }
-
             HashMap<String, String> map = new HashMap<String, String>();
-            map.put("head", jp.getTime());
-
             List<HashMap<String, String>> children = new ArrayList<HashMap<String, String>>();
             HashMap<String, String> curChildMap = new HashMap<String, String>();
-            curChildMap.put("head", "Type: " + jp.getType());
-            curChildMap.put("more", "Stop: " + ind);
+
+            if (jp.getType().equals("indication")) {
+                map.put("head", jp.getTime() + ": " + getString(R.string.stopIndic) + " '" + indic.getStop() + "'");
+
+                if (indic.getType().equals("mount")) {
+                    curChildMap.put("head", getString(R.string.detailLine) + " " + indic.getLine());
+                    curChildMap.put("more", getString(R.string.detailDirection) + " " + indic.getDirection());
+                }
+
+                if (indic.getType().equals("umount")) {
+                    curChildMap.put("head", getString(R.string.detailUmount));
+                    curChildMap.put("more", "");
+                }
+            }
+
+            if (jp.getType().equals("connection")) {
+                map.put("head", getString(R.string.connectionInfo));
+                curChildMap.put("head", getString(R.string.connectionDuration) + " " + jp.getDuration());
+                curChildMap.put("more", "");
+            }
+
             children.add(curChildMap);
-
             jListChild.add(children);
-
             jList.add(map);
         }
 
