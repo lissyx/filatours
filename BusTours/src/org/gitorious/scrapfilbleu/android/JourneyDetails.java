@@ -32,6 +32,7 @@ public class JourneyDetails {
 
             Matcher take = Pattern.compile("^Prendre").matcher(html.text());
             Matcher out = Pattern.compile("^Descendre").matcher(html.text());
+            Matcher walk = Pattern.compile("^De l'arr.t").matcher(html.text());
             Elements bs = html.getElementsByTag("b");
 
             if (take.find()) {
@@ -44,6 +45,12 @@ public class JourneyDetails {
             if (out.find()) {
                 this.type = "umount";
                 this.stop = bs.get(0).text();
+            }
+
+            if (walk.find()) {
+                this.type = "walk";
+                this.stop = bs.get(0).text();
+                this.direction = bs.get(1).text();
             }
         }
 
@@ -148,6 +155,8 @@ public class JourneyDetails {
                     }
 
                     break;
+
+                case 4: // get by foot
                 case 5: // journey part
                     elemClass = todo.get(1).attr("class");
 
@@ -155,8 +164,13 @@ public class JourneyDetails {
                     if (elemClass.equals("indication")) {
                         type = "indication";
                         indic = new Indication(todo.get(1));
-                        time = todo.get(2).html();
-                        duration = todo.get(3).html();
+                        if (nbElems == 4) {
+                            duration = todo.get(2).html();
+                        }
+                        if (nbElems == 5) {
+                            time = todo.get(2).html();
+                            duration = todo.get(3).html();
+                        }
                     }
 
                     break;

@@ -43,4 +43,7 @@
     <string name="detailUmount">Get off</string>
     <string name="connectionInfo">Connection</string>
     <string name="connectionDuration">Waiting time:</string>
+    <string name="walkIndic">Walk from</string>
+    <string name="detailWalkFrom">From stop:</string>
+    <string name="detailWalkTo">To stop:</string>
 </resources>

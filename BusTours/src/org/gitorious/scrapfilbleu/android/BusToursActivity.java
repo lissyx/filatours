@@ -233,16 +233,22 @@ public class BusToursActivity extends Activity
             HashMap<String, String> curChildMap = new HashMap<String, String>();
 
             if (jp.getType().equals("indication")) {
-                map.put("head", jp.getTime() + ": " + getString(R.string.stopIndic) + " '" + indic.getStop() + "'");
-
                 if (indic.getType().equals("mount")) {
+                    map.put("head", jp.getTime() + ": " + getString(R.string.stopIndic) + " '" + indic.getStop() + "'");
                     curChildMap.put("head", getString(R.string.detailLine) + " " + indic.getLine());
                     curChildMap.put("more", getString(R.string.detailDirection) + " " + indic.getDirection());
                 }
 
                 if (indic.getType().equals("umount")) {
+                    map.put("head", jp.getTime() + ": " + getString(R.string.stopIndic) + " '" + indic.getStop() + "'");
                     curChildMap.put("head", getString(R.string.detailUmount));
                     curChildMap.put("more", "");
+                }
+
+                if (indic.getType().equals("walk")) {
+                    map.put("head", getString(R.string.walkIndic) + " '" + indic.getStop() + "'");
+                    curChildMap.put("head", getString(R.string.detailWalkTo) + " " + indic.getDirection());
+                    curChildMap.put("more", getString(R.string.detailWalkFrom) + " " + indic.getStop());
                 }
             }
 
