@@ -144,7 +144,7 @@ public class Journey {
         parent.progress(20, R.string.jsoupStartGetDetails);
         Log.e("BusTours:BusJourney", "Asking details at " + link);
 
-        Document reply = Jsoup.connect(link)
+        Document reply = URLs.getConnection(link)
             .cookies(this.cookies)
             .get();
 

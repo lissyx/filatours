@@ -54,14 +54,14 @@ public class BusJourney {
         Log.e("BusTours:BusJourney", "dep='" + dep + "'");
         Log.e("BusTours:BusJourney", "arr='" + arr + "'");
 
-        Response res = Jsoup.connect(this.urlraz).method(Method.GET).execute();
+        Response res = URLs.getConnection(this.urlraz).method(Method.GET).execute();
         Log.e("BusTours:BusJourney", "Got RAZ.");
 
         parent.progress(30, R.string.jsoupGotRaz);
 
         this.cookies = res.cookies();
 
-        Document reply = Jsoup.connect(this.urlbase)
+        Document reply = URLs.getConnection(this.urlbase)
             .cookies(this.cookies)
             .data("Departure", dep)
             .data("Arrival", arr)
@@ -97,7 +97,7 @@ public class BusJourney {
             Log.e("BusTours:BusJourney", "new dep='" + dep + "'");
             Log.e("BusTours:BusJourney", "new arr='" + arr + "'");
 
-            reply = Jsoup.connect(this.urlbase)
+            reply = URLs.getConnection(this.urlbase)
                 .cookies(this.cookies)
                 .data("Departure", dep)
                 .data("Arrival", arr)
