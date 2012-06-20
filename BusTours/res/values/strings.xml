@@ -35,4 +35,5 @@
     <string name="jsoupGotDetailsTable">Found table for details</string>
     <string name="jsoupGotDetailsElems">Found elements for details</string>
     <string name="jsoupGotFullDetails">Full journey details fetched</string>
+    <string name="journey_details">Details of journey</string>
 </resources>

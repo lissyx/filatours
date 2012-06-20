@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- vim: set ts=4 sw=4 et: -->
+<!--
+<TableLayout
+	android:id="@+id/detailsTable"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+</TableLayout>
+-->
+<LinearLayout
+	android:id="@+id/widget32"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+<ExpandableListView
+	android:id="@+id/listJourneyDetails"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:layout_marginBottom="5dp"
+	android:layout_marginRight="5dp"
+	android:layout_gravity="center_horizontal" />
+</LinearLayout>

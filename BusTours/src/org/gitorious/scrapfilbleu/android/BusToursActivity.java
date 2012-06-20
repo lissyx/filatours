@@ -57,6 +57,7 @@ public class BusToursActivity extends Activity
     private Button btnGetJourney;
 
     private Dialog journeyList;
+    private Dialog journeyDetails;
 
     private String[] journeyCriteriaValues;
     private String[] sensValues;
@@ -209,6 +210,60 @@ public class BusToursActivity extends Activity
             this.alertInfoBox(getString(R.string.noDetails), getString(R.string.noDetailsTxt));
             return;
         }
+
+        ExpandableListView list;
+        journeyDetails = new Dialog(this);
+        journeyDetails.setContentView(R.layout.details);
+        journeyDetails.setTitle(getString(R.string.journey_details));
+
+        String[] fromGroup = new String[] { "head" };
+        int[] toGroup = new int[] { android.R.id.text1 };
+        String[] fromChild = new String[] { "head", "more" };
+        int[] toChild = new int[] { android.R.id.text1, android.R.id.text2 };
+
+        List<HashMap<String, String>> jList = new ArrayList<HashMap<String, String>>();
+        List<List<HashMap<String, String>>> jListChild = new ArrayList<List<HashMap<String, String>>>();
+
+        Iterator<JourneyDetails.JourneyPart> jit = details.getParts().iterator();
+        while (jit.hasNext()) {
+            JourneyDetails.JourneyPart jp = (JourneyDetails.JourneyPart)jit.next();
+            JourneyDetails.Indication indic = jp.getIndic();
+            String ind;
+
+            if (indic != null) {
+                ind = indic.getStop();
+            } else {
+                ind = "N/A";
+            }
+
+            HashMap<String, String> map = new HashMap<String, String>();
+            map.put("head", jp.getTime());
+
+            List<HashMap<String, String>> children = new ArrayList<HashMap<String, String>>();
+            HashMap<String, String> curChildMap = new HashMap<String, String>();
+            curChildMap.put("head", "Type: " + jp.getType());
+            curChildMap.put("more", "Stop: " + ind);
+            children.add(curChildMap);
+
+            jListChild.add(children);
+
+            jList.add(map);
+        }
+
+        list = (ExpandableListView)journeyDetails.findViewById(R.id.listJourneyDetails);
+        ExpandableListAdapter journeyDetailsAdapter = new SimpleExpandableListAdapter(
+            this,
+            jList,
+            android.R.layout.simple_expandable_list_item_2,
+            fromGroup, toGroup,
+            jListChild,
+            android.R.layout.simple_expandable_list_item_2,
+            fromChild, toChild
+        );
+
+        list.setAdapter(journeyDetailsAdapter);
+
+        journeyDetails.show();
     }
 
     public void onAsyncTaskScrapJourneyListComplete() {

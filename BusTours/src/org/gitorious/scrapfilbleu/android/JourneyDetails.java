@@ -143,7 +143,7 @@ public class JourneyDetails {
                     }
 
                     if (elemClass.equals("correspondance")) {
-                        type = "connecion";
+                        type = "connection";
                         duration = todo.get(1).html();
                     }
 
@@ -167,6 +167,10 @@ public class JourneyDetails {
 
             this.parts.add(new JourneyPart(type, mode, indic, time, duration));
         }
+    }
+
+    public List<JourneyPart> getParts() {
+        return this.parts;
     }
 
     public String toString() {
