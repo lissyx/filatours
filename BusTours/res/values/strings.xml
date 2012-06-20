@@ -28,4 +28,8 @@
     <string name="jsoupGotPropositions">Found propositions</string>
     <string name="jsoupGotJourneys">Found journeys</string>
     <string name="jsoupGotTrip">Added a trip</string>
+    <string name="jsoupStartGetDetails">Requesting details</string>
+    <string name="jsoupGotDetails">Got details page</string>
+    <string name="noDetails">No details</string>
+    <string name="noDetailsTxt">No details for this journey</string>
 </resources>

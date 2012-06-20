@@ -62,6 +62,7 @@ public class BusToursActivity extends Activity
     private String[] sensValues;
 
     private ArrayList<Journey> journeys;
+    private int journeyDetailsProcessing;
 
     private URLs urls;
 
@@ -194,6 +195,22 @@ public class BusToursActivity extends Activity
         return this.journeys;
     }
 
+    public void setJourneyDetailsProcessing(int v) {
+        this.journeyDetailsProcessing = v;
+    }
+
+    public void onAsyncTaskScrapJourneyDetailsComplete() {
+        Log.e("BusTours", "Got details for " + this.journeyDetailsProcessing);
+        Journey targetJourney = this.journeys.get(this.journeyDetailsProcessing);
+        JourneyDetails details = targetJourney.getJourneyDetails();
+
+        if (details == null) {
+            Log.e("BusTours", "No details available for " + this.journeyDetailsProcessing);
+            this.alertInfoBox(getString(R.string.noDetails), getString(R.string.noDetailsTxt));
+            return;
+        }
+    }
+
     public void onAsyncTaskScrapJourneyListComplete() {
         if (this.journeys == null) {
             Log.e("BusTours", "No journey to display");
@@ -236,8 +253,11 @@ public class BusToursActivity extends Activity
         list.setOnChildClickListener(new OnChildClickListener() {
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
                 try {
+                    Journey journey = getJourneys().get(groupPosition);
+                    setJourneyDetailsProcessing(groupPosition);
                     Log.e("BusTours", "groupPosition:" + String.valueOf(groupPosition));
-                    Log.e("BusTours", "journey:" + getJourneys().get(groupPosition));
+                    Log.e("BusTours", "journey:" + journey);
+                    new ProcessScrapping().execute(journey);
                 } catch(Exception e) {
                     e.printStackTrace();
                 }
@@ -260,8 +280,9 @@ public class BusToursActivity extends Activity
         journeyList.show();
     }
 
-    public class ProcessScrapping extends AsyncTask<BusJourney, Integer, Boolean> {
+    public class ProcessScrapping extends AsyncTask<Object, Integer, Boolean> {
         private Exception exc;
+        private String processing;
 
         // Showing Async progress
         private Dialog dialog;
@@ -284,11 +305,23 @@ public class BusToursActivity extends Activity
             dialog.show();
         }
 
-        protected Boolean doInBackground(BusJourney ... journey) {
+        protected Boolean doInBackground(Object ... journey) {
+            String className = journey[0].getClass().getSimpleName();
             publishProgress(0, R.string.startHttpScrapping);
+
+            Log.e("BusTours", "Processing " + className);
+            this.processing = className;
+
             try {
                 publishProgress(10, R.string.jsoupConnect);
-                setJourneys(journey[0].getBusJourneys(this));
+                if (className.equals("BusJourney")) {
+                    BusJourney j = (BusJourney)journey[0];
+                    setJourneys(j.getBusJourneys(this));
+                }
+                if (className.equals("Journey")) {
+                    Journey j = (Journey)journey[0];
+                    j.getDetails(this);
+                }
                 publishProgress(100, R.string.jsoupDocReady);
                 return true;
             } catch (Exception e) {
@@ -333,7 +366,13 @@ public class BusToursActivity extends Activity
                 }
             }
 
-            onAsyncTaskScrapJourneyListComplete();
+            if (this.processing.equals("BusJourney")) {
+                onAsyncTaskScrapJourneyListComplete();
+            }
+
+            if (this.processing.equals("Journey")) {
+                onAsyncTaskScrapJourneyDetailsComplete();
+            }
         }
     }
 }

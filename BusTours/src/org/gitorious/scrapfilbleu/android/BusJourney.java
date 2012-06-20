@@ -116,12 +116,12 @@ public class BusJourney {
         return this.journeys;
     }
 
-    public void getBusJourneysDetails() {
-        Iterator<Journey> jit = this.journeys.iterator();
-        while (jit.hasNext()) {
-            jit.next().getDetails();
-        }
-    }
+//    public void getBusJourneysDetails() {
+//        Iterator<Journey> jit = this.journeys.iterator();
+//        while (jit.hasNext()) {
+//            jit.next().getDetails();
+//        }
+//    }
 
     public String pruneAccents(String s) {
         s = s.replaceAll("[èéêë]","e");

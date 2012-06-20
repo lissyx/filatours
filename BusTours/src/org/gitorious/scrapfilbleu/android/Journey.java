@@ -2,6 +2,8 @@
 
 package org.gitorious.scrapfilbleu.android;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
@@ -18,6 +20,8 @@ public class Journey {
     private String connections;
     private String url;
 
+    private JourneyDetails details;
+
     private Map<String, String> cookies;
 
     private Pattern reTimeDeparture;
@@ -26,6 +30,7 @@ public class Journey {
 
     public Journey(Element trip, Map<String, String> cookies) {
         this.cookies = cookies;
+        this.details = null;
         this.reTimeDeparture    = Pattern.compile("D&eacute;part : (\\d+)h(\\d+)<br \\/>");
         this.reTimeArrival      = Pattern.compile("<br \\/> Arriv&eacute;e : (\\d+)h(\\d+)");
         this.reDuration         = Pattern.compile("(\\d+)h|(\\d+)min");
@@ -109,16 +114,39 @@ public class Journey {
         return this.url;
     }
 
+    public JourneyDetails getJourneyDetails() {
+        return this.details;
+    }
+
     public String toString() {
-        return
+        String res =
             "{ 'departure':" + this.getDepartureTime() +
             ", 'arrival': " + this.getArrivalTime() +
             ", 'duration': " + this.getDuration() +
-            ", 'connections': " + this.getConnections() +
-            " }";
+            ", 'connections': " + this.getConnections();
+
+        if (this.details != null) {
+            res +=
+            "'details': ";
+        }
+
+        res += " }";
+
+        return res;
     }
 
-    public void getDetails() {
+    public void getDetails(BusToursActivity.ProcessScrapping parent) throws java.io.IOException, java.net.SocketTimeoutException, ScrappingException {
+        String link = new URLs("").getURL() + this.getUrl().replace("page.php?", "");
+        parent.progress(20, R.string.jsoupStartGetDetails);
 
+        Log.e("BusTours:BusJourney", "Asking details at " + link);
+
+        Document reply = Jsoup.connect(link)
+            .cookies(this.cookies)
+            .get();
+
+        parent.progress(30, R.string.jsoupGotDetails);
+
+        Log.e("BusTours:BusJourney", "Got details page.");
     }
 }
