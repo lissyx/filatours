@@ -73,6 +73,43 @@ public class BusJourney {
             .post();
         Log.e("BusTours:BusJourney", "Posted form.");
 
+        Elements optgroups = reply.getElementsByAttributeValue("label", "Arrêts");
+        if (!optgroups.isEmpty()) {
+            Log.e("BusTours:BusJourney", "Need to select first optgroup");
+
+            Iterator<Element> it = optgroups.iterator();
+            while (it.hasNext()) {
+                Element current = it.next();
+                Element parentElement = current.parent();
+                Log.e("BusTours:BusJourney", "Parent: " + parentElement.tagName() + ":" + parentElement.id());
+                Element firstChoice = current.child(0);
+                String newVal = firstChoice.attr("value");
+
+                if (parentElement.id().equals("Departure")) {
+                    dep = newVal;
+                }
+
+                if (parentElement.id().equals("Arrival")) {
+                    arr = newVal;
+                }
+            }
+
+            Log.e("BusTours:BusJourney", "new dep='" + dep + "'");
+            Log.e("BusTours:BusJourney", "new arr='" + arr + "'");
+
+            reply = Jsoup.connect(this.urlbase)
+                .cookies(this.cookies)
+                .data("Departure", dep)
+                .data("Arrival", arr)
+                .data("Sens", this.sens)
+                .data("Date", this.date)
+                .data("Hour", this.hour)
+                .data("Minute", this.minute)
+                .data("Criteria", this.criteria)
+                .post();
+            Log.e("BusTours:BusJourney", "Re-posted form.");
+        }
+
         parent.progress(40, R.string.jsoupPostedForm);
 
         Elements navig = reply.getElementsByAttributeValue("class", "navig");
