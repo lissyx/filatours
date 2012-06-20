@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import re
+import sys
 import mechanize
 import cookielib
 import argparse
@@ -118,7 +119,9 @@ class FilBleu:
 		self.get_stops()
 		for stop in self.stops:
 			stop = self.stops[stop]
-			print "Stop:", stop.stop_name, "(", stop.city, ") => ", stop.stopArea
+			line = "Stop: %(stop_name)s (%(stop_city)s) => %(stop_area)s\n" % { 'stop_name': stop.stop_name, 'stop_city': stop.city, 'stop_area': stop.stopArea }
+			line = line.encode('utf-8')
+			sys.stdout.write(line)
 
 	def get_stops_sens(self, sens):
 		self.page_stops()
@@ -146,7 +149,9 @@ class FilBleu:
 		self.get_lines()
 		for line in self.lines:
 			line = self.lines[line]
-			print "Line:", line.number, "[", line.id, "]"
+			out = "Line: %(line_number)s [%(line_id)s]\n" % { 'line_number': line.number, 'line_id': line.id }
+			out = out.encode('utf-8')
+			sys.stdout.write(out)
 
 	def get_lines(self):
 		self.page_lines()
