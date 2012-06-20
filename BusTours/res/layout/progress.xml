@@ -1,20 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- vim: set ts=4 sw=4 et: -->
 <LinearLayout
-	android:id="@+id/widget32"
-	android:layout_width="fill_parent"
-	android:layout_height="fill_parent"
-	xmlns:android="http://schemas.android.com/apk/res/android">
+    android:id="@+id/widget32"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<TableLayout
+    android:id="@+id/widget33"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal"
+    >
 <TextView
-	android:id="@+id/statusProgressHttp"
-	android:layout_width="wrap_content"
-	android:layout_height="wrap_content"
-	android:layout_marginBottom="5dp" />
+    android:id="@+id/statusProgressHttp"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+    android:text="@string/statusProgressHttp"
+    />
 <ProgressBar
-	android:id="@+id/progressHttp"
-	android:layout_width="wrap_content"
-	android:layout_height="wrap_content"
-	android:layout_marginBottom="5dp"
-	android:layout_marginRight="5dp"
-	android:layout_gravity="center_horizontal" />
+    android:id="@+id/progressHttp"
+    style="@android:style/Widget.ProgressBar.Horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_gravity="center_horizontal" />
+</TableLayout>
 </LinearLayout>
