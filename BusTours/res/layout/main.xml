@@ -11,22 +11,6 @@
 	android:layout_height="fill_parent"
 	android:orientation="vertical">
 <TableRow
-	android:id="@+id/widget64"
-	android:layout_width="fill_parent"
-	android:layout_height="wrap_content"
-	android:orientation="horizontal">
-<TextView
-	android:id="@+id/lblCityDeparture"
-	android:layout_width="wrap_content"
-	android:layout_height="wrap_content"
-	android:text="@string/lblCityDeparture" />
-<AutoCompleteTextView
-	android:id="@+id/txtCityDeparture"
-	android:layout_width="wrap_content"
-	android:layout_height="wrap_content"
-	android:text="" />
-</TableRow>
-<TableRow
 	android:id="@+id/widget67"
 	android:layout_width="fill_parent"
 	android:layout_height="wrap_content"
@@ -38,22 +22,6 @@
 	android:text="@string/lblStopDeparture" />
 <AutoCompleteTextView
 	android:id="@+id/txtStopDeparture"
-	android:layout_width="wrap_content"
-	android:layout_height="wrap_content"
-	android:text="" />
-</TableRow>
-<TableRow
-	android:id="@+id/widget73"
-	android:layout_width="fill_parent"
-	android:layout_height="wrap_content"
-	android:orientation="horizontal">
-<TextView
-	android:id="@+id/lblCityArrival"
-	android:layout_width="wrap_content"
-	android:layout_height="wrap_content"
-	android:text="@string/lblCityArrival" />
-<AutoCompleteTextView
-	android:id="@+id/txtCityArrival"
 	android:layout_width="wrap_content"
 	android:layout_height="wrap_content"
 	android:text="" />

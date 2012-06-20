@@ -2,700 +2,738 @@
 
 package org.gitorious.scrapfilbleu.android;
 
+import java.util.Iterator;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.List;
+import java.util.ArrayList;
+
 import android.util.Log;
 
 public class BusStops {
-    public BusStops() {
+    private Map<String, String> stops;
 
+    public BusStops() {
+        this.stops = new HashMap<String, String>();
+
+        this.stops.put("2 Lions", "Tours");
+        this.stops.put("Abbaye Gatines", "Tours");
+        this.stops.put("Acacias", "Ballan-Miré");
+        this.stops.put("Adapei", "Vernou-sur-Brenne");
+        this.stops.put("Aérogare", "Tours");
+        this.stops.put("Aitre des Gauthiers", "Vernou-sur-Brenne");
+        this.stops.put("Ajoncs", "Ballan-Miré");
+        this.stops.put("Aliénor d'Aquitaine", "La Ville-aux-Dames");
+        this.stops.put("Allende", "Saint-Cyr-sur-Loire");
+        this.stops.put("Alouette", "Tours");
+        this.stops.put("Alsace", "Saint-Avertin");
+        this.stops.put("Ampère", "Saint-Cyr-sur-Loire");
+        this.stops.put("Anatole France", "Tours");
+        this.stops.put("Anguille", "Saint-Pierre-des-Corps");
+        this.stops.put("Anne de Bretagne", "La Ville-aux-Dames");
+        this.stops.put("Anne de France", "La Ville-aux-Dames");
+        this.stops.put("Apollinaire", "Saint-Avertin");
+        this.stops.put("Arago", "Tours");
+        this.stops.put("Arche du Lude", "Joué-lès-Tours");
+        this.stops.put("Archives", "Chambray-lès-Tours");
+        this.stops.put("Arsonval", "Tours");
+        this.stops.put("Assas", "Tours");
+        this.stops.put("Ateliers", "Saint-Pierre-des-Corps");
+        this.stops.put("Atlantes", "Saint-Pierre-des-Corps");
+        this.stops.put("Aubepines", "Ballan-Miré");
+        this.stops.put("Audenet", "Saint-Pierre-des-Corps");
+        this.stops.put("Augereau", "Tours");
+        this.stops.put("Auvergne", "Joué-lès-Tours");
+        this.stops.put("Aviron", "Saint-Pierre-des-Corps");
+        this.stops.put("Azay Le Rideau", "Joué-lès-Tours");
+        this.stops.put("Bad Camberg", "Chambray-lès-Tours");
+        this.stops.put("Baillardière", "Berthenay");
+        this.stops.put("Ballan Gare", "Ballan-Miré");
+        this.stops.put("Barberonne", "Tours");
+        this.stops.put("Barbinière", "Luynes");
+        this.stops.put("Bas Champeigne", "Parçay-Meslay");
+        this.stops.put("Base 705", "Tours");
+        this.stops.put("Basses Rivières", "Rochecorbon");
+        this.stops.put("Baugé", "Luynes");
+        this.stops.put("Bd de Chinon", "Tours");
+        this.stops.put("Beaujardin", "Tours");
+        this.stops.put("Beaulieu", "Joué-lès-Tours");
+        this.stops.put("Beauregard", "Rochecorbon");
+        this.stops.put("Beauverger", "Tours");
+        this.stops.put("Bechellerie", "Saint-Cyr-sur-Loire");
+        this.stops.put("Bedel", "Tours");
+        this.stops.put("Beethoven", "Tours");
+        this.stops.put("Beffroi", "Tours");
+        this.stops.put("Béguine", "Joué-lès-Tours");
+        this.stops.put("Béjauderie", "Joué-lès-Tours");
+        this.stops.put("Belgique", "Tours");
+        this.stops.put("Belle Isle", "Tours");
+        this.stops.put("Béranger", "Tours");
+        this.stops.put("Berchottière", "Chambray-lès-Tours");
+        this.stops.put("Bergeonnerie", "Joué-lès-Tours");
+        this.stops.put("Bergson", "Saint-Cyr-sur-Loire");
+        this.stops.put("Berthelot", "Joué-lès-Tours");
+        this.stops.put("Bialy", "La Riche");
+        this.stops.put("Blanqui", "Tours");
+        this.stops.put("Blot", "Saint-Cyr-sur-Loire");
+        this.stops.put("Bocage", "Saint-Cyr-sur-Loire");
+        this.stops.put("Boileau", "Saint-Pierre-des-Corps");
+        this.stops.put("Bois Aubry", "Tours");
+        this.stops.put("Bois Cormier", "Chambray-lès-Tours");
+        this.stops.put("Bois de Chambray", "Chambray-lès-Tours");
+        this.stops.put("Boisdenier", "Tours");
+        this.stops.put("Bois de Plante", "La Ville-aux-Dames");
+        this.stops.put("Bois des Hâtes", "Chambray-lès-Tours");
+        this.stops.put("Bois Gibert", "Ballan-Miré");
+        this.stops.put("Bonamy", "Tours");
+        this.stops.put("Bordiers", "Saint-Cyr-sur-Loire");
+        this.stops.put("Botanique", "La Riche");
+        this.stops.put("Bouleaux", "Saint-Pierre-des-Corps");
+        this.stops.put("Boutteville", "Saint-Avertin");
+        this.stops.put("Boyer", "Tours");
+        this.stops.put("Boylesve", "Tours");
+        this.stops.put("Branchoire", "Chambray-lès-Tours");
+        this.stops.put("Brassens", "Tours");
+        this.stops.put("Bretonneau", "Tours");
+        this.stops.put("Bretonnières", "Joué-lès-Tours");
+        this.stops.put("Briand", "Vernou-sur-Brenne");
+        this.stops.put("Bruère", "Joué-lès-Tours");
+        this.stops.put("Bugeaud", "Joué-lès-Tours");
+        this.stops.put("Buisson", "La Riche");
+        this.stops.put("Cachin", "Saint-Pierre-des-Corps");
+        this.stops.put("Calder", "Chambray-lès-Tours");
+        this.stops.put("Calmette", "Saint-Cyr-sur-Loire");
+        this.stops.put("Camélias", "Joué-lès-Tours");
+        this.stops.put("Camusière", "Saint-Avertin");
+        this.stops.put("Camus", "Joué-lès-Tours");
+        this.stops.put("Canal", "Tours");
+        this.stops.put("Canauderie", "Saint-Avertin");
+        this.stops.put("Cap Soleil", "Joué-lès-Tours");
+        this.stops.put("Capucins", "Tours");
+        this.stops.put("Carlotti", "Tours");
+        this.stops.put("Carnot", "Tours");
+        this.stops.put("Casse Droit", "Saint-Cyr-sur-Loire");
+        this.stops.put("Cassin", "Ballan-Miré");
+        this.stops.put("Castellerie", "Saint-Avertin");
+        this.stops.put("Cathédrale", "Tours");
+        this.stops.put("Cathelas", "Saint-Pierre-des-Corps");
+        this.stops.put("CAT Les Vallées", "Luynes");
+        this.stops.put("Caulaincourt", "Tours");
+        this.stops.put("Cèdres", "Saint-Cyr-sur-Loire");
+        this.stops.put("CFA Aforproba", "Saint-Pierre-des-Corps");
+        this.stops.put("CFA Le Bon", "Joué-lès-Tours");
+        this.stops.put("Chabottiere", "Saint-Avertin");
+        this.stops.put("Chagall", "Saint-Avertin");
+        this.stops.put("Chambray 2", "Chambray-lès-Tours");
+        this.stops.put("Chambray Centre", "Chambray-lès-Tours");
+        this.stops.put("Champ Chardon", "Tours");
+        this.stops.put("Champ de Courses", "Chambray-lès-Tours");
+        this.stops.put("Champ Girault", "Tours");
+        this.stops.put("Champ Joli", "Tours");
+        this.stops.put("Chanceaux Centre", "Chanceaux-sur-Choisille");
+        this.stops.put("Chantelouze", "Fondettes");
+        this.stops.put("Chantemerle", "Fondettes");
+        this.stops.put("Chantepie", "Joué-lès-Tours");
+        this.stops.put("Chappe", "Chambray-lès-Tours");
+        this.stops.put("Charbonniere", "Berthenay");
+        this.stops.put("Charcot", "Tours");
+        this.stops.put("Charentais", "Saint-Cyr-sur-Loire");
+        this.stops.put("Charleroi", "Tours");
+        this.stops.put("Charles Peguy", "Tours");
+        this.stops.put("Château de Luynes", "Luynes");
+        this.stops.put("Château de Tours", "Tours");
+        this.stops.put("Chateau De Villandry", "Villandry");
+        this.stops.put("Château Fraisier", "Saint-Avertin");
+        this.stops.put("Château Gaillard", "Saint-Genouph");
+        this.stops.put("Châteauneuf", "Tours");
+        this.stops.put("Chatigny", "Fondettes");
+        this.stops.put("Chaudron", "Tours");
+        this.stops.put("Chaumette", "Joué-lès-Tours");
+        this.stops.put("Chemin Vert", "Joué-lès-Tours");
+        this.stops.put("Chêne Vert", "Luynes");
+        this.stops.put("Chenonceaux", "Joué-lès-Tours");
+        this.stops.put("Chevalerie", "Tours");
+        this.stops.put("Chevalette", "Fondettes");
+        this.stops.put("Chopin", "Tours");
+        this.stops.put("Christ Roi", "Tours");
+        this.stops.put("Churchill", "Tours");
+        this.stops.put("Cimetière des Ricotières", "Chambray-lès-Tours");
+        this.stops.put("Clarté", "Saint-Cyr-sur-Loire");
+        this.stops.put("Clinique Velpeau", "Tours");
+        this.stops.put("Clocheville", "Tours");
+        this.stops.put("Clos Besnard", "Saint-Cyr-sur-Loire");
+        this.stops.put("Clos de Vernou", "Vernou-sur-Brenne");
+        this.stops.put("Clos Lucé", "Joué-lès-Tours");
+        this.stops.put("Clos Mignot", "Luynes");
+        this.stops.put("Clos Neuf", "Joué-lès-Tours");
+        this.stops.put("Clos Robert", "Joué-lès-Tours");
+        this.stops.put("Clos Vaumont", "Saint-Avertin");
+        this.stops.put("Colette", "La Ville-aux-Dames");
+        this.stops.put("Collège de Vouvray", "Vouvray");
+        this.stops.put("Collège Ronsard", "Tours");
+        this.stops.put("Compagnonnage", "Tours");
+        this.stops.put("Condorcet", "Saint-Cyr-sur-Loire");
+        this.stops.put("Constantine", "Tours");
+        this.stops.put("Coppée", "Tours");
+        this.stops.put("Coquinière", "Notre-Dame-d'Oé");
+        this.stops.put("Corneille Becquerel", "Saint-Pierre-des-Corps");
+        this.stops.put("Cornouillers", "Saint-Pierre-des-Corps");
+        this.stops.put("Cosson", "Vernou-sur-Brenne");
+        this.stops.put("Cottier", "Saint-Avertin");
+        this.stops.put("Coubertin", "Joué-lès-Tours");
+        this.stops.put("Couleuvrou", "Notre-Dame-d'Oé");
+        this.stops.put("Coulomb", "Chambray-lès-Tours");
+        this.stops.put("Courbet", "Saint-Avertin");
+        this.stops.put("Cousinerie", "Tours");
+        this.stops.put("Cousseau", "Saint-Cyr-sur-Loire");
+        this.stops.put("Croix de Pierre", "Saint-Cyr-sur-Loire");
+        this.stops.put("Croix Pasquier", "Tours");
+        this.stops.put("Croix Perray", "Saint-Avertin");
+        this.stops.put("Crouzillère", "Joué-lès-Tours");
+        this.stops.put("Crucifix", "Fondettes");
+        this.stops.put("Cugnot", "Ballan-Miré");
+        this.stops.put("D'Alembert", "Tours");
+        this.stops.put("Dames Blanches", "Tours");
+        this.stops.put("Danemark", "Tours");
+        this.stops.put("Dassault", "Tours");
+        this.stops.put("Debré", "Vernou-sur-Brenne");
+        this.stops.put("De Gaulle", "Saint-Avertin");
+        this.stops.put("De La Motte", "La Ville-aux-Dames");
+        this.stops.put("De La Rochefoucauld", "Joué-lès-Tours");
+        this.stops.put("Delaroche", "Tours");
+        this.stops.put("Déportés", "Saint-Pierre-des-Corps");
+        this.stops.put("Déportés", "Tours");
+        this.stops.put("Deslandes", "Tours");
+        this.stops.put("Desmoulins", "Tours");
+        this.stops.put("Deux Croix", "Fondettes");
+        this.stops.put("Devildé", "Tours");
+        this.stops.put("Devinière", "Chambray-lès-Tours");
+        this.stops.put("Dewoitine", "Parçay-Meslay");
+        this.stops.put("D'Indy", "Tours");
+        this.stops.put("Docteur Chaumier", "Tours");
+        this.stops.put("Docteur Fournier", "Tours");
+        this.stops.put("Dorgelès", "Tours");
+        this.stops.put("Douets Lycée Choiseul", "Tours");
+        this.stops.put("Douzillère", "Joué-lès-Tours");
+        this.stops.put("Droits de l'Homme", "Saint-Avertin");
+        this.stops.put("Duclos - Atlantes", "Tours");
+        this.stops.put("Dujardin", "Chambray-lès-Tours");
+        this.stops.put("Dumont-d'Urville", "Tours");
+        this.stops.put("Duperre", "Ballan-Miré");
+        this.stops.put("Duplessis", "Tours");
+        this.stops.put("Dupuy", "Fondettes");
+        this.stops.put("Duquerie", "Chanceaux-sur-Choisille");
+        this.stops.put("Duquesne", "Tours");
+        this.stops.put("Echeneau", "Vouvray");
+        this.stops.put("Ecole de Commerce", "Tours");
+        this.stops.put("Ecole d'Infirmières", "Chambray-lès-Tours");
+        this.stops.put("Ecorcheveau", "Saint-Avertin");
+        this.stops.put("Eglise de St Avertin", "Saint-Avertin");
+        this.stops.put("Emile Zola", "Tours");
+        this.stops.put("Erables", "Tours");
+        this.stops.put("Espace Malraux", "Joué-lès-Tours");
+        this.stops.put("Estienne d'Orves", "Saint-Pierre-des-Corps");
+        this.stops.put("Eugénie Grandet", "La Ville-aux-Dames");
+        this.stops.put("Europarc", "Tours");
+        this.stops.put("Europe", "Tours");
+        this.stops.put("Eve Lavallière", "Chanceaux-sur-Choisille");
+        this.stops.put("Faculté de Grandmont", "Tours");
+        this.stops.put("Faculté des Tanneurs", "Tours");
+        this.stops.put("Faidherbe", "Tours");
+        this.stops.put("Farges", "Saint-Pierre-des-Corps");
+        this.stops.put("Fauvettes", "Joué-lès-Tours");
+        this.stops.put("Febvotte", "Tours");
+        this.stops.put("Félix", "La Riche");
+        this.stops.put("Ferme de la Milletière", "Tours");
+        this.stops.put("Ferranderie", "Chambray-lès-Tours");
+        this.stops.put("Florian", "Tours");
+        this.stops.put("Foch", "Saint-Cyr-sur-Loire");
+        this.stops.put("Fondettes Centre", "Fondettes");
+        this.stops.put("Fondettes Gare", "Fondettes");
+        this.stops.put("Fontaine Blanche", "Chambray-lès-Tours");
+        this.stops.put("Fontaines", "Tours");
+        this.stops.put("Fontenelles", "Rochecorbon");
+        this.stops.put("Forest", "Joué-lès-Tours");
+        this.stops.put("Fosse Poitevinne", "Saint-Avertin");
+        this.stops.put("Fosses Blancs", "Chambray-lès-Tours");
+        this.stops.put("Fosses Boissées", "Saint-Cyr-sur-Loire");
+        this.stops.put("Fourbisserie", "Chambray-lès-Tours");
+        this.stops.put("Fourneau", "Saint-Avertin");
+        this.stops.put("François Sicard", "Tours");
+        this.stops.put("Frasne", "Parçay-Meslay");
+        this.stops.put("Fresnel", "Chambray-lès-Tours");
+        this.stops.put("Freyssinet", "Joué-lès-Tours");
+        this.stops.put("Frumeaud", "Tours");
+        this.stops.put("Fusaparc", "Tours");
+        this.stops.put("Gabrielle d'Estrée", "La Ville-aux-Dames");
+        this.stops.put("Gagnerie", "Saint-Cyr-sur-Loire");
+        this.stops.put("Galbrunes", "Ballan-Miré");
+        this.stops.put("Gamard", "Joué-lès-Tours");
+        this.stops.put("Gambetta", "Joué-lès-Tours");
+        this.stops.put("Gannay", "Fondettes");
+        this.stops.put("Gare de Tours", "Tours");
+        this.stops.put("Gare Vinci", "Tours");
+        this.stops.put("Gauguin", "Tours");
+        this.stops.put("Général Estienne", "Tours");
+        this.stops.put("Général Mocquery", "Saint-Avertin");
+        this.stops.put("Général Renault", "Tours");
+        this.stops.put("Giraudeau", "Tours");
+        this.stops.put("Gitonnière", "Joué-lès-Tours");
+        this.stops.put("Gloriette", "Tours");
+        this.stops.put("Golf", "Tours");
+        this.stops.put("Grand Carroi", "La Riche");
+        this.stops.put("Grand Cour", "Saint-Pierre-des-Corps");
+        this.stops.put("Grand Mail", "Saint-Pierre-des-Corps");
+        this.stops.put("Grand Marché", "Tours");
+        this.stops.put("Grand Moulin", "Ballan-Miré");
+        this.stops.put("Grand Ormeau", "Fondettes");
+        this.stops.put("Grands Cèdres", "Saint-Avertin");
+        this.stops.put("Grands Champs", "Saint-Avertin");
+        this.stops.put("Grands Mortiers", "Saint-Pierre-des-Corps");
+        this.stops.put("Grand Sud", "Chambray-lès-Tours");
+        this.stops.put("Grand Théâtre", "Tours");
+        this.stops.put("Grand Village", "La Ville-aux-Dames");
+        this.stops.put("Grange de Meslay", "Parçay-Meslay");
+        this.stops.put("Granges Galand", "Saint-Avertin");
+        this.stops.put("Grenouillère", "Chambray-lès-Tours");
+        this.stops.put("Gros Chêne", "La Ville-aux-Dames");
+        this.stops.put("Guérin", "Saint-Cyr-sur-Loire");
+        this.stops.put("Guesde", "Tours");
+        this.stops.put("Guesne", "Fondettes");
+        this.stops.put("Guignardière", "Chambray-lès-Tours");
+        this.stops.put("Guignière", "Fondettes");
+        this.stops.put("Guillon", "La Riche");
+        this.stops.put("Gutemberg", "Joué-lès-Tours");
+        this.stops.put("Guynemer", "Saint-Cyr-sur-Loire");
+        this.stops.put("Halles", "Tours");
+        this.stops.put("Halte Douzillère", "Joué-lès-Tours");
+        this.stops.put("Haut-bourg", "Saint-Cyr-sur-Loire");
+        this.stops.put("Haute Limougère", "Fondettes");
+        this.stops.put("Hautes Roches", "Rochecorbon");
+        this.stops.put("Héraults", "Saint-Avertin");
+        this.stops.put("Hérissières", "Ballan-Miré");
+        this.stops.put("Heurteloup", "Tours");
+        this.stops.put("Holnon", "Vouvray");
+        this.stops.put("Homme Noir", "Saint-Cyr-sur-Loire");
+        this.stops.put("Hopital De Luynes", "Luynes");
+        this.stops.put("Hôpital Trousseau", "Chambray-lès-Tours");
+        this.stops.put("Horizon Vert", "Chambray-lès-Tours");
+        this.stops.put("Hospitalité", "Ballan-Miré");
+        this.stops.put("Huygens", "Tours");
+        this.stops.put("Ile Aucard", "Tours");
+        this.stops.put("IME", "Luynes");
+        this.stops.put("IUT", "Tours");
+        this.stops.put("Jacques Decour", "Saint-Pierre-des-Corps");
+        this.stops.put("Jacques Monod", "Tours");
+        this.stops.put("Jaunay", "Saint-Cyr-sur-Loire");
+        this.stops.put("Jean Bonnin", "Saint-Pierre-des-Corps");
+        this.stops.put("Jean de la Fontaine", "Joué-lès-Tours");
+        this.stops.put("Jean Jaurès", "Tours");
+        this.stops.put("Jean Moulin", "Saint-Pierre-des-Corps");
+        this.stops.put("Jeanne D'arc", "La Ville-aux-Dames");
+        this.stops.put("Jeanne De France", "Tours");
+        this.stops.put("Jéricho", "Saint-Pierre-des-Corps");
+        this.stops.put("Joffre", "Saint-Avertin");
+        this.stops.put("Joliot Curie", "Saint-Avertin");
+        this.stops.put("Jolivet", "Tours");
+        this.stops.put("Jonquilles", "Joué-lès-Tours");
+        this.stops.put("Joué Blotterie", "Joué-lès-Tours");
+        this.stops.put("Joué Centre", "Joué-lès-Tours");
+        this.stops.put("Joué Gare", "Joué-lès-Tours");
+        this.stops.put("Joué Lycée Jean Monnet", "Joué-lès-Tours");
+        this.stops.put("Joule", "Chambray-lès-Tours");
+        this.stops.put("J.P. Rameau", "Tours");
+        this.stops.put("Jules Romains", "Saint-Avertin");
+        this.stops.put("Jumeaux", "Joué-lès-Tours");
+        this.stops.put("Katrineholm", "Saint-Cyr-sur-Loire");
+        this.stops.put("Kleber", "Joué-lès-Tours");
+        this.stops.put("La Boire Futembre", "Berthenay");
+        this.stops.put("La Bonde", "Fondettes");
+        this.stops.put("La Bonnetiere", "Ballan-Miré");
+        this.stops.put("La Borde", "Tours");
+        this.stops.put("La Chappe", "Saint-Etienne-de-Chigny");
+        this.stops.put("Lachenal", "Tours");
+        this.stops.put("La Coudrière", "Parçay-Meslay");
+        this.stops.put("La Croix Buissée", "Vouvray");
+        this.stops.put("Lac", "Tours");
+        this.stops.put("La Cure", "Berthenay");
+        this.stops.put("La Forge", "Fondettes");
+        this.stops.put("La Fortillère", "Saint-Avertin");
+        this.stops.put("La Fuye", "Tours");
+        this.stops.put("La Grange", "Joué-lès-Tours");
+        this.stops.put("L'aireau Des Bergeons", "Berthenay");
+        this.stops.put("La Madeleine", "Saint-Pierre-des-Corps");
+        this.stops.put("Lamartine", "Tours");
+        this.stops.put("Lande", "Saint-Cyr-sur-Loire");
+        this.stops.put("Langennerie", "Chanceaux-sur-Choisille");
+        this.stops.put("Langevin", "Tours");
+        this.stops.put("La Pasqueraie", "Ballan-Miré");
+        this.stops.put("La Pécaudinière", "Notre-Dame-d'Oé");
+        this.stops.put("La Perouse", "Tours");
+        this.stops.put("La Plaine", "Fondettes");
+        this.stops.put("La Planche", "Luynes");
+        this.stops.put("La Planche", "Rochecorbon");
+        this.stops.put("La Pleiade", "La Riche");
+        this.stops.put("La Prévauderie", "Notre-Dame-d'Oé");
+        this.stops.put("La Rabinière", "Saint-Genouph");
+        this.stops.put("L'Arche d'Oé", "Notre-Dame-d'Oé");
+        this.stops.put("La Riche Centre", "La Riche");
+        this.stops.put("La Riche Soleil", "La Riche");
+        this.stops.put("La Taillerie", "Ballan-Miré");
+        this.stops.put("La Tesserie", "Rochecorbon");
+        this.stops.put("La Vallée", "Parçay-Meslay");
+        this.stops.put("La Ville aux Dames Centre", "La Ville-aux-Dames");
+        this.stops.put("Lebrun", "Saint-Cyr-sur-Loire");
+        this.stops.put("Leccia", "Tours");
+        this.stops.put("Le Chausse", "Fondettes");
+        this.stops.put("Le Clos", "Vernou-sur-Brenne");
+        this.stops.put("Le Coq", "Saint-Cyr-sur-Loire");
+        this.stops.put("Lecouvreur", "La Ville-aux-Dames");
+        this.stops.put("Le Marais", "Notre-Dame-d'Oé");
+        this.stops.put("Lenine", "Saint-Pierre-des-Corps");
+        this.stops.put("L'Epend", "Joué-lès-Tours");
+        this.stops.put("Le Pin", "Saint-Etienne-de-Chigny");
+        this.stops.put("Le Pluvier", "Parçay-Meslay");
+        this.stops.put("Les Atlantes", "Saint-Pierre-des-Corps");
+        this.stops.put("Les Aubuis", "Fondettes");
+        this.stops.put("Le Sauge", "Saint-Genouph");
+        this.stops.put("Les Bas Chemins", "Berthenay");
+        this.stops.put("Les Batonneries", "Rochecorbon");
+        this.stops.put("Les Bévenières", "Notre-Dame-d'Oé");
+        this.stops.put("Les Bidaudières", "Vouvray");
+        this.stops.put("L'escale", "Saint-Cyr-sur-Loire");
+        this.stops.put("Les Charmes", "Chanceaux-sur-Choisille");
+        this.stops.put("Les Claies", "Saint-Avertin");
+        this.stops.put("Les Clouets", "Rochecorbon");
+        this.stops.put("Les Ecoles", "Saint-Genouph");
+        this.stops.put("Les Emmonieres", "Berthenay");
+        this.stops.put("Les Fougerolles", "La Ville-aux-Dames");
+        this.stops.put("Les Gatinières", "Rochecorbon");
+        this.stops.put("Les Granges", "Saint-Avertin");
+        this.stops.put("Les Guessières", "Notre-Dame-d'Oé");
+        this.stops.put("Les Locquets", "Parçay-Meslay");
+        this.stops.put("Les Montils", "Saint-Genouph");
+        this.stops.put("Les Muses", "Fondettes");
+        this.stops.put("Les Nouis", "Saint-Genouph");
+        this.stops.put("Les Patis", "Vouvray");
+        this.stops.put("Les Pavillons", "Saint-Genouph");
+        this.stops.put("L'Espérance", "Saint-Etienne-de-Chigny");
+        this.stops.put("Les Pitoisières", "Rochecorbon");
+        this.stops.put("Les Prés de Ballan", "Ballan-Miré");
+        this.stops.put("Les Rochettes", "Tours");
+        this.stops.put("Les Roncières", "Fondettes");
+        this.stops.put("Les Sablonnières", "Parçay-Meslay");
+        this.stops.put("L'essart", "Saint-Avertin");
+        this.stops.put("L'Hopitau", "Notre-Dame-d'Oé");
+        this.stops.put("Liberté", "Saint-Pierre-des-Corps");
+        this.stops.put("Lilas", "Luynes");
+        this.stops.put("Loing", "Tours");
+        this.stops.put("Loiseau d'Entraigues", "Tours");
+        this.stops.put("L'Ouche du Mont", "Vouvray");
+        this.stops.put("Louise Michel", "La Ville-aux-Dames");
+        this.stops.put("LP Agricole", "Chambray-lès-Tours");
+        this.stops.put("LP Bayet", "Tours");
+        this.stops.put("LP Clouet", "Tours");
+        this.stops.put("LP Eiffel", "Tours");
+        this.stops.put("LP Nadaud", "Saint-Pierre-des-Corps");
+        this.stops.put("Luxembourg", "Tours");
+        this.stops.put("Luynes Centre", "Luynes");
+        this.stops.put("Lycée Choiseul", "Tours");
+        this.stops.put("Lycée Grandmont", "Tours");
+        this.stops.put("Lycée Paul Louis Courier", "Tours");
+        this.stops.put("Lycée Vaucanson", "Tours");
+        this.stops.put("Maginot", "Tours");
+        this.stops.put("Mailloux", "Saint-Cyr-sur-Loire");
+        this.stops.put("Maine", "Tours");
+        this.stops.put("Mairie De Berthenay", "Berthenay");
+        this.stops.put("Mairie de Chambray", "Chambray-lès-Tours");
+        this.stops.put("Maison d'Ardoise", "Fondettes");
+        this.stops.put("Maison de Beaune", "Ballan-Miré");
+        this.stops.put("Maisons Blanches", "Saint-Cyr-sur-Loire");
+        this.stops.put("Maisons Rouges", "Fondettes");
+        this.stops.put("Malines", "Tours");
+        this.stops.put("Mallarme", "Ballan-Miré");
+        this.stops.put("Manet", "Saint-Cyr-sur-Loire");
+        this.stops.put("Marbellière", "Joué-lès-Tours");
+        this.stops.put("Marceau", "Tours");
+        this.stops.put("Marchanderie", "Joué-lès-Tours");
+        this.stops.put("Maréchal Juin", "Tours");
+        this.stops.put("Mareuil", "Fondettes");
+        this.stops.put("Marmoutier", "Tours");
+        this.stops.put("Marteau", "Saint-Pierre-des-Corps");
+        this.stops.put("Martigny", "Fondettes");
+        this.stops.put("Martin", "Tours");
+        this.stops.put("Martyrs", "Joué-lès-Tours");
+        this.stops.put("Maryse Bastié", "Tours");
+        this.stops.put("Maucannière", "Joué-lès-Tours");
+        this.stops.put("Maupas", "Chambray-lès-Tours");
+        this.stops.put("Maurière", "Saint-Etienne-de-Chigny");
+        this.stops.put("Melies", "Tours");
+        this.stops.put("Mérieux", "Tours");
+        this.stops.put("Mermoz", "Tours");
+        this.stops.put("Mésangerie", "Saint-Cyr-sur-Loire");
+        this.stops.put("Mesliers", "Chambray-lès-Tours");
+        this.stops.put("Michelin", "Tours");
+        this.stops.put("Mi-Côte", "Tours");
+        this.stops.put("Mignardières", "Joué-lès-Tours");
+        this.stops.put("Milletière", "Tours");
+        this.stops.put("Miquel", "Tours");
+        this.stops.put("Mirabeau", "Tours");
+        this.stops.put("Molière", "Saint-Pierre-des-Corps");
+        this.stops.put("Moncontour", "Vouvray");
+        this.stops.put("Monsoudun", "Tours");
+        this.stops.put("Montaigne", "Saint-Cyr-sur-Loire");
+        this.stops.put("Monteil", "Saint-Pierre-des-Corps");
+        this.stops.put("Montjoie", "Saint-Cyr-sur-Loire");
+        this.stops.put("Montjoyeux", "Tours");
+        this.stops.put("Montreuil Bellay", "Joué-lès-Tours");
+        this.stops.put("Morier", "Joué-lès-Tours");
+        this.stops.put("Mouchotte", "Tours");
+        this.stops.put("Moulin Ragot", "Saint-Etienne-de-Chigny");
+        this.stops.put("Moulin Tann", "Saint-Etienne-de-Chigny");
+        this.stops.put("Mozart", "Tours");
+        this.stops.put("Muguet", "Luynes");
+        this.stops.put("Murier", "Saint-Cyr-sur-Loire");
+        this.stops.put("Nationale", "Tours");
+        this.stops.put("Naurod", "Fondettes");
+        this.stops.put("Nécropole D'esvres", "Chambray-lès-Tours");
+        this.stops.put("Ninon de l'Enclos", "La Ville-aux-Dames");
+        this.stops.put("Notre-Dame d'Oé Centre", "Notre-Dame-d'Oé");
+        this.stops.put("Nouveau Bois", "Saint-Avertin");
+        this.stops.put("Observaloire", "Rochecorbon");
+        this.stops.put("Ockeghem", "Tours");
+        this.stops.put("Office De Tourisme Villandry", "Villandry");
+        this.stops.put("Oiselet", "Saint-Avertin");
+        this.stops.put("Onze Arpents", "Saint-Avertin");
+        this.stops.put("Orangerie", "Saint-Avertin");
+        this.stops.put("Ormeau", "Saint-Avertin");
+        this.stops.put("Ormes", "Joué-lès-Tours");
+        this.stops.put("Pablo Neruda", "La Ville-aux-Dames");
+        this.stops.put("Palais des Sports", "Tours");
+        this.stops.put("Papoterie", "Saint-Avertin");
+        this.stops.put("Parcay-Meslay Centre", "Parçay-Meslay");
+        this.stops.put("Parc des Expositions", "Saint-Pierre-des-Corps");
+        this.stops.put("Parc des Phalènes", "Saint-Avertin");
+        this.stops.put("Parc Grandmont", "Tours");
+        this.stops.put("Parc Mirabeau", "Tours");
+        this.stops.put("Parc Nord", "Tours");
+        this.stops.put("Passerelle", "Tours");
+        this.stops.put("Passe-temps", "Berthenay");
+        this.stops.put("Pasteur", "Luynes");
+        this.stops.put("Patalisse", "Joué-lès-Tours");
+        this.stops.put("Paul Bert", "Tours");
+        this.stops.put("Paul Fort", "Joué-lès-Tours");
+        this.stops.put("Pavillon Chinois", "Fondettes");
+        this.stops.put("Perce Neige", "Vernou-sur-Brenne");
+        this.stops.put("Peri", "Saint-Pierre-des-Corps");
+        this.stops.put("Perrières", "Parçay-Meslay");
+        this.stops.put("Perriers", "Chambray-lès-Tours");
+        this.stops.put("Perrin", "Chambray-lès-Tours");
+        this.stops.put("Petit Bois", "Saint-Avertin");
+        this.stops.put("Petite Arche", "Tours");
+        this.stops.put("Petites Boucheries", "Tours");
+        this.stops.put("Petit Pré", "Tours");
+        this.stops.put("Petit Versailles", "Rochecorbon");
+        this.stops.put("Peupleraie", "Saint-Pierre-des-Corps");
+        this.stops.put("Peupliers", "Tours");
+        this.stops.put("Philippe Le Bon", "Joué-lès-Tours");
+        this.stops.put("Picardie", "Tours");
+        this.stops.put("Pichotière", "Saint-Pierre-des-Corps");
+        this.stops.put("Pierre Couverte", "Tours");
+        this.stops.put("Pierres Plates", "Saint-Avertin");
+        this.stops.put("Pinterie", "Saint-Avertin");
+        this.stops.put("Place Choiseul", "Tours");
+        this.stops.put("Place de la Liberté", "Tours");
+        this.stops.put("Place Tulasne", "Tours");
+        this.stops.put("Place Velpeau", "Tours");
+        this.stops.put("Plantin", "Tours");
+        this.stops.put("Poirrier", "Joué-lès-Tours");
+        this.stops.put("Pôle Santé Alliance", "Saint-Cyr-sur-Loire");
+        this.stops.put("Pôle Santé Vinci", "Chambray-lès-Tours");
+        this.stops.put("Polytech", "Tours");
+        this.stops.put("Pompidou", "Saint-Avertin");
+        this.stops.put("Pompiers", "Tours");
+        this.stops.put("Pont Cher", "Joué-lès-Tours");
+        this.stops.put("Pont de la Motte", "Fondettes");
+        this.stops.put("Pont du Milieu", "Tours");
+        this.stops.put("Pont Napoleon", "Tours");
+        this.stops.put("Poré", "Joué-lès-Tours");
+        this.stops.put("Port de Vallières", "Fondettes");
+        this.stops.put("Portillon", "Saint-Cyr-sur-Loire");
+        this.stops.put("Portoville", "Berthenay");
+        this.stops.put("Pot de Fer", "Saint-Cyr-sur-Loire");
+        this.stops.put("Prebendes", "Tours");
+        this.stops.put("Preney", "Saint-Cyr-sur-Loire");
+        this.stops.put("Priestley", "Tours");
+        this.stops.put("Primeveres", "Chanceaux-sur-Choisille");
+        this.stops.put("Prony", "Joué-lès-Tours");
+        this.stops.put("P+R Sagerie", "Chambray-lès-Tours");
+        this.stops.put("Puits Tessier", "Ballan-Miré");
+        this.stops.put("Quatre Bornes", "Joué-lès-Tours");
+        this.stops.put("Quatre Chemins", "Saint-Avertin");
+        this.stops.put("Queue de Merluche", "Saint-Etienne-de-Chigny");
+        this.stops.put("Rabelais", "Tours");
+        this.stops.put("Raphaël", "Joué-lès-Tours");
+        this.stops.put("Raspail", "Tours");
+        this.stops.put("Rembrandt", "Saint-Cyr-sur-Loire");
+        this.stops.put("Rempart", "Tours");
+        this.stops.put("Renan", "Tours");
+        this.stops.put("Renoir", "Saint-Avertin");
+        this.stops.put("Republique", "Tours");
+        this.stops.put("Richardières", "Luynes");
+        this.stops.put("Richemont", "Saint-Avertin");
+        this.stops.put("Rimoneaux", "Saint-Cyr-sur-Loire");
+        this.stops.put("Rochebise", "Fondettes");
+        this.stops.put("Rochecorbon Centre", "Rochecorbon");
+        this.stops.put("Rochepinard", "Tours");
+        this.stops.put("Romarins", "Saint-Pierre-des-Corps");
+        this.stops.put("Rotonde", "Tours");
+        this.stops.put("Rotterdam", "Tours");
+        this.stops.put("Rougemont", "Tours");
+        this.stops.put("Rouget de l'Isle", "Tours");
+        this.stops.put("Rousseau", "Notre-Dame-d'Oé");
+        this.stops.put("Route de St-Genouph", "Saint-Genouph");
+        this.stops.put("Roux", "Saint-Cyr-sur-Loire");
+        this.stops.put("Ruaux", "Saint-Etienne-de-Chigny");
+        this.stops.put("Rue Neuve", "Vernou-sur-Brenne");
+        this.stops.put("Rue Noire", "Berthenay");
+        this.stops.put("Saboterie", "Saint-Avertin");
+        this.stops.put("Sagerie", "Saint-Avertin");
+        this.stops.put("Sainterie", "Notre-Dame-d'Oé");
+        this.stops.put("Salengro", "Tours");
+        this.stops.put("Sanitas", "Tours");
+        this.stops.put("Sapaille", "Tours");
+        this.stops.put("Saulnier", "Parçay-Meslay");
+        this.stops.put("Savonnieres Grottes Petrifiantes", "Savonnières");
+        this.stops.put("Savonnieres Poste", "Savonnières");
+        this.stops.put("Schweitzer", "Tours");
+        this.stops.put("Scotto", "Tours");
+        this.stops.put("Semard", "Saint-Pierre-des-Corps");
+        this.stops.put("Séverine", "Tours");
+        this.stops.put("Sévigné", "La Ville-aux-Dames");
+        this.stops.put("Sibotière", "Saint-Cyr-sur-Loire");
+        this.stops.put("Simone Signoret", "La Ville-aux-Dames");
+        this.stops.put("Sorbiers", "Joué-lès-Tours");
+        this.stops.put("Stade", "Saint-Pierre-des-Corps");
+        this.stops.put("Stade Varenne", "Luynes");
+        this.stops.put("Stalingrad", "Saint-Pierre-des-Corps");
+        this.stops.put("St Augustin", "Tours");
+        this.stops.put("St Avertin Centre", "Saint-Avertin");
+        this.stops.put("St Avertin Mairie", "Saint-Avertin");
+        this.stops.put("St Barthélemy", "Tours");
+        this.stops.put("St Cyr Croix Chidaine", "Saint-Cyr-sur-Loire");
+        this.stops.put("St Cyr Eglise", "Tours");
+        this.stops.put("St Cyr Equatop", "Saint-Cyr-sur-Loire");
+        this.stops.put("St Cyr Mairie", "Saint-Cyr-sur-Loire");
+        this.stops.put("Ste Agathe", "Chanceaux-sur-Choisille");
+        this.stops.put("Ste Anne", "La Riche");
+        this.stops.put("St Eloi", "Tours");
+        this.stops.put("Stendhal", "Tours");
+        this.stops.put("Ste Radegonde Centre", "Tours");
+        this.stops.put("Ste Radegonde-Ermitage", "Tours");
+        this.stops.put("Ste Radegonde", "Tours");
+        this.stops.put("St Etienne de Chigny Centre", "Saint-Etienne-de-Chigny");
+        this.stops.put("Ste Ursule", "Tours");
+        this.stops.put("St Exupery", "Saint-Cyr-sur-Loire");
+        this.stops.put("St François", "Tours");
+        this.stops.put("St Gatien", "Joué-lès-Tours");
+        this.stops.put("St Georges", "Rochecorbon");
+        this.stops.put("St Joseph", "Tours");
+        this.stops.put("St Léger", "Joué-lès-Tours");
+        this.stops.put("St Libert", "Tours");
+        this.stops.put("St Malo", "Tours");
+        this.stops.put("St Martin", "Tours");
+        this.stops.put("St Paul", "Tours");
+        this.stops.put("St Pierre Centre", "Saint-Pierre-des-Corps");
+        this.stops.put("St Pierre Gare", "Saint-Pierre-des-Corps");
+        this.stops.put("St Pierre Justices", "Saint-Pierre-des-Corps");
+        this.stops.put("Strasbourg", "Tours");
+        this.stops.put("St Roch", "Rochecorbon");
+        this.stops.put("St Sauveur", "Tours");
+        this.stops.put("St Symphorien", "Tours");
+        this.stops.put("St Venant", "Luynes");
+        this.stops.put("St Vincent", "Vouvray");
+        this.stops.put("Suède", "Tours");
+        this.stops.put("Tamaris", "Chambray-lès-Tours");
+        this.stops.put("Tanneurs", "Tours");
+        this.stops.put("Tartifume", "Fondettes");
+        this.stops.put("Tavant", "Tours");
+        this.stops.put("Terre Fortes", "Saint-Genouph");
+        this.stops.put("Terres Rouges", "Saint-Etienne-de-Chigny");
+        this.stops.put("Thalès", "Tours");
+        this.stops.put("Thibaudière", "Chambray-lès-Tours");
+        this.stops.put("Thorez", "Saint-Pierre-des-Corps");
+        this.stops.put("Tilleuls", "Chambray-lès-Tours");
+        this.stops.put("Tonnellé", "Tours");
+        this.stops.put("Torricelli", "Tours");
+        this.stops.put("Tour d'Auvergne", "Tours");
+        this.stops.put("Tourettes", "Tours");
+        this.stops.put("Touvoie", "Rochecorbon");
+        this.stops.put("Tranchée", "Tours");
+        this.stops.put("Traversiere", "Tours");
+        this.stops.put("Tremblay", "Tours");
+        this.stops.put("Trianon", "Tours");
+        this.stops.put("Trobriand", "Joué-lès-Tours");
+        this.stops.put("Troènes", "Saint-Avertin");
+        this.stops.put("Trois Rivières", "Tours");
+        this.stops.put("Trois Tonneaux", "Saint-Cyr-sur-Loire");
+        this.stops.put("Tulipes", "Ballan-Miré");
+        this.stops.put("Ursulines", "Tours");
+        this.stops.put("Val Fleuri", "Saint-Pierre-des-Corps");
+        this.stops.put("Vallée Chartier", "Vouvray");
+        this.stops.put("Vallée Violette", "Joué-lès-Tours");
+        this.stops.put("Vallières", "Fondettes");
+        this.stops.put("Vanneaux", "Chambray-lès-Tours");
+        this.stops.put("Vaudasnière", "Rochecorbon");
+        this.stops.put("Vaugareau", "Luynes");
+        this.stops.put("Vauvert", "Rochecorbon");
+        this.stops.put("Venien", "Tours");
+        this.stops.put("Verdun", "Tours");
+        this.stops.put("Vernou Centre", "Vernou-sur-Brenne");
+        this.stops.put("Viala", "Saint-Pierre-des-Corps");
+        this.stops.put("Victor Hugo", "Saint-Cyr-sur-Loire");
+        this.stops.put("Vieux Bourg", "Notre-Dame-d'Oé");
+        this.stops.put("Vieux Bourg", "Saint-Etienne-de-Chigny");
+        this.stops.put("Villandry Chateau Galle", "Villandry");
+        this.stops.put("Voisin", "Saint-Cyr-sur-Loire");
+        this.stops.put("Voltaire", "Tours");
+        this.stops.put("Vouvray Centre", "Vouvray");
+        this.stops.put("Vrillonnerie", "Chambray-lès-Tours");
+        this.stops.put("Wedells", "Tours");
+        this.stops.put("Willy Brandt", "Notre-Dame-d'Oé");
+        this.stops.put("ZA d'Oé", "Notre-Dame-d'Oé");
+        this.stops.put("ZA Papillon", "Parçay-Meslay");
+        this.stops.put("ZI Les Aubuis", "Saint-Avertin");
+
+        Log.e("BusTours:BusStops", "Registered " + this.stops.size() + " stops");
+    }
+
+    public String[] getStopCity(String stop) {
+        String[] res = new String[2];
+
+        Iterator itStop = this.stops.entrySet().iterator();
+        while(itStop.hasNext()) {
+            Map.Entry<String, String> entry = (Map.Entry<String, String>)itStop.next();
+            if (stop.startsWith(entry.getKey())) {
+                res[0] = entry.getKey();
+                res[1] = entry.getValue();
+                break;
+            }
+        }
+
+        return res;
     }
 
     public String[] getStops() {
-        return new String[] {
-            "2 Lions",
-            "Abbaye Gatines",
-            "Acacias",
-            "Adapei",
-            "Aérogare",
-            "Aitre des Gauthiers",
-            "Ajoncs",
-            "Aliénor d'Aquitaine",
-            "Allende",
-            "Alouette",
-            "Alsace",
-            "Ampère",
-            "Anatole France",
-            "Anguille",
-            "Anne de Bretagne",
-            "Anne de France",
-            "Apollinaire",
-            "Arago",
-            "Arche du Lude",
-            "Archives",
-            "Arsonval",
-            "Assas",
-            "Ateliers",
-            "Atlantes",
-            "Aubepines",
-            "Audenet",
-            "Augereau",
-            "Auvergne",
-            "Aviron",
-            "Azay Le Rideau",
-            "Bad Camberg",
-            "Baillardière",
-            "Ballan Gare",
-            "Barberonne",
-            "Barbinière",
-            "Bas Champeigne",
-            "Base 705",
-            "Basses Rivières",
-            "Baugé",
-            "Bd de Chinon",
-            "Beaujardin",
-            "Beaulieu",
-            "Beauregard",
-            "Beauverger",
-            "Bechellerie",
-            "Bedel",
-            "Beethoven",
-            "Beffroi",
-            "Béguine",
-            "Béjauderie",
-            "Belgique",
-            "Belle Isle",
-            "Béranger",
-            "Berchottière",
-            "Bergeonnerie",
-            "Bergson",
-            "Berthelot",
-            "Bialy",
-            "Blanqui",
-            "Blot",
-            "Bocage",
-            "Boileau",
-            "Bois Aubry",
-            "Bois Cormier",
-            "Bois de Chambray",
-            "Boisdenier",
-            "Bois de Plante",
-            "Bois des Hâtes",
-            "Bois Gibert",
-            "Bonamy",
-            "Bordiers",
-            "Botanique",
-            "Bouleaux",
-            "Boutteville",
-            "Boyer",
-            "Boylesve",
-            "Branchoire",
-            "Brassens",
-            "Bretonneau",
-            "Bretonnières",
-            "Briand",
-            "Bruère",
-            "Bugeaud",
-            "Buisson",
-            "Cachin",
-            "Calder",
-            "Calmette",
-            "Camélias",
-            "Camus",
-            "Camusière",
-            "Canal",
-            "Canauderie",
-            "Cap Soleil",
-            "Capucins",
-            "Carlotti",
-            "Carnot",
-            "Casse Droit",
-            "Cassin",
-            "Castellerie",
-            "Cathédrale",
-            "Cathelas",
-            "CAT Les Vallées",
-            "Caulaincourt",
-            "Cèdres",
-            "CFA Aforproba",
-            "CFA Le Bon",
-            "Chabottiere",
-            "Chagall",
-            "Chambray 2",
-            "Chambray Centre",
-            "Champ Chardon",
-            "Champ de Courses",
-            "Champ Girault",
-            "Champ Joli",
-            "Chanceaux Centre",
-            "Chantelouze",
-            "Chantemerle",
-            "Chantepie",
-            "Chappe",
-            "Charbonniere",
-            "Charcot",
-            "Charentais",
-            "Charleroi",
-            "Charles Peguy",
-            "Château de Luynes",
-            "Château de Tours",
-            "Chateau De Villandry",
-            "Château Fraisier",
-            "Château Gaillard",
-            "Châteauneuf",
-            "Chatigny",
-            "Chaudron",
-            "Chaumette",
-            "Chemin Vert",
-            "Chêne Vert",
-            "Chenonceaux",
-            "Chevalerie",
-            "Chevalette",
-            "Chopin",
-            "Christ Roi",
-            "Churchill",
-            "Cimetière des Ricotières",
-            "Clarté",
-            "Clinique Velpeau",
-            "Clocheville",
-            "Clos Besnard",
-            "Clos de Vernou",
-            "Clos Lucé",
-            "Clos Mignot",
-            "Clos Neuf",
-            "Clos Robert",
-            "Clos Vaumont",
-            "Colette",
-            "Collège de Vouvray",
-            "Collège Ronsard",
-            "Compagnonnage",
-            "Condorcet",
-            "Constantine",
-            "Coppée",
-            "Coquinière",
-            "Corneille Becquerel",
-            "Cornouillers",
-            "Cosson",
-            "Cottier",
-            "Coubertin",
-            "Couleuvrou",
-            "Coulomb",
-            "Courbet",
-            "Cousinerie",
-            "Cousseau",
-            "Croix de Pierre",
-            "Croix Pasquier",
-            "Croix Perray",
-            "Crouzillère",
-            "Crucifix",
-            "Cugnot",
-            "D'Alembert",
-            "Dames Blanches",
-            "Danemark",
-            "Dassault",
-            "Debré",
-            "De Gaulle",
-            "De La Motte",
-            "Delaroche",
-            "De La Rochefoucauld",
-            "Déportés",
-            "Deslandes",
-            "Desmoulins",
-            "Deux Croix",
-            "Devildé",
-            "Devinière",
-            "Dewoitine",
-            "D'Indy",
-            "Docteur Chaumier",
-            "Docteur Fournier",
-            "Dorgelès",
-            "Douets Lycée Choiseul",
-            "Douzillère",
-            "Droits de l'Homme",
-            "Duclos - Atlantes",
-            "Dujardin",
-            "Dumont-d'Urville",
-            "Duperre",
-            "Duplessis",
-            "Dupuy",
-            "Duquerie",
-            "Duquesne",
-            "Echeneau",
-            "Ecole de Commerce",
-            "Ecole d'Infirmières",
-            "Ecorcheveau",
-            "Eglise de St Avertin",
-            "Emile Zola",
-            "Erables",
-            "Espace Malraux",
-            "Estienne d'Orves",
-            "Eugénie Grandet",
-            "Europarc",
-            "Europe",
-            "Eve Lavallière",
-            "Faculté de Grandmont",
-            "Faculté des Tanneurs",
-            "Faidherbe",
-            "Farges",
-            "Fauvettes",
-            "Febvotte",
-            "Félix",
-            "Ferme de la Milletière",
-            "Ferranderie",
-            "Florian",
-            "Foch",
-            "Fondettes Centre",
-            "Fondettes Gare",
-            "Fontaine Blanche",
-            "Fontaines",
-            "Fontenelles",
-            "Forest",
-            "Fosse Poitevinne",
-            "Fosses Blancs",
-            "Fosses Boissées",
-            "Fourbisserie",
-            "Fourneau",
-            "François Sicard",
-            "Frasne",
-            "Fresnel",
-            "Freyssinet",
-            "Frumeaud",
-            "Fusaparc",
-            "Gabrielle d'Estrée",
-            "Gagnerie",
-            "Galbrunes",
-            "Gamard",
-            "Gambetta",
-            "Gannay",
-            "Gare de Tours",
-            "Gare Vinci",
-            "Gauguin",
-            "Général Estienne",
-            "Général Mocquery",
-            "Général Renault",
-            "Giraudeau",
-            "Gitonnière",
-            "Gloriette",
-            "Golf",
-            "Grand Carroi",
-            "Grand Cour",
-            "Grand Mail",
-            "Grand Marché",
-            "Grand Moulin",
-            "Grand Ormeau",
-            "Grands Cèdres",
-            "Grands Champs",
-            "Grands Mortiers",
-            "Grand Sud",
-            "Grand Théâtre",
-            "Grand Village",
-            "Grange de Meslay",
-            "Granges Galand",
-            "Grenouillère",
-            "Gros Chêne",
-            "Guérin",
-            "Guesde",
-            "Guesne",
-            "Guignardière",
-            "Guignière",
-            "Guillon",
-            "Gutemberg",
-            "Guynemer",
-            "Halles",
-            "Halte Douzillère",
-            "Haut-bourg",
-            "Haute Limougère",
-            "Hautes Roches",
-            "Héraults",
-            "Hérissières",
-            "Heurteloup",
-            "Holnon",
-            "Homme Noir",
-            "Hopital De Luynes",
-            "Hôpital Trousseau",
-            "Horizon Vert",
-            "Hospitalité",
-            "Huygens",
-            "Ile Aucard",
-            "IME",
-            "IUT",
-            "Jacques Decour",
-            "Jacques Monod",
-            "Jaunay",
-            "Jean Bonnin",
-            "Jean de la Fontaine",
-            "Jean Jaurès",
-            "Jean Moulin",
-            "Jeanne D'arc",
-            "Jeanne De France",
-            "Jéricho",
-            "Joffre",
-            "Joliot Curie",
-            "Jolivet",
-            "Jonquilles",
-            "Joué Blotterie",
-            "Joué Centre",
-            "Joué Gare",
-            "Joué Lycée Jean Monnet",
-            "Joule",
-            "J.P. Rameau",
-            "Jules Romains",
-            "Jumeaux",
-            "Katrineholm",
-            "Kleber",
-            "La Boire Futembre",
-            "La Bonde",
-            "La Bonnetiere",
-            "La Borde",
-            "Lac",
-            "La Chappe",
-            "Lachenal",
-            "La Coudrière",
-            "La Croix Buissée",
-            "La Cure",
-            "La Forge",
-            "La Fortillère",
-            "La Fuye",
-            "La Grange",
-            "L'aireau Des Bergeons",
-            "La Madeleine",
-            "Lamartine",
-            "Lande",
-            "Langennerie",
-            "Langevin",
-            "La Pasqueraie",
-            "La Pécaudinière",
-            "La Perouse",
-            "La Plaine",
-            "La Planche",
-            "La Pleiade",
-            "La Prévauderie",
-            "La Rabinière",
-            "L'Arche d'Oé",
-            "La Riche Centre",
-            "La Riche Soleil",
-            "La Taillerie",
-            "La Tesserie",
-            "La Vallée",
-            "La Ville aux Dames Centre",
-            "Lebrun",
-            "Leccia",
-            "Le Chausse",
-            "Le Clos",
-            "Le Coq",
-            "Lecouvreur",
-            "Le Marais",
-            "Lenine",
-            "L'Epend",
-            "Le Pin",
-            "Le Pluvier",
-            "Les Atlantes",
-            "Les Aubuis",
-            "Le Sauge",
-            "Les Bas Chemins",
-            "Les Batonneries",
-            "Les Bévenières",
-            "Les Bidaudières",
-            "L'escale",
-            "Les Charmes",
-            "Les Claies",
-            "Les Clouets",
-            "Les Ecoles",
-            "Les Emmonieres",
-            "Les Fougerolles",
-            "Les Gatinières",
-            "Les Granges",
-            "Les Guessières",
-            "Les Locquets",
-            "Les Montils",
-            "Les Muses",
-            "Les Nouis",
-            "Les Patis",
-            "Les Pavillons",
-            "L'Espérance",
-            "Les Pitoisières",
-            "Les Prés de Ballan",
-            "Les Rochettes",
-            "Les Roncières",
-            "Les Sablonnières",
-            "L'essart",
-            "L'Hopitau",
-            "Liberté",
-            "Lilas",
-            "Loing",
-            "Loiseau d'Entraigues",
-            "L'Ouche du Mont",
-            "Louise Michel",
-            "LP Agricole",
-            "LP Bayet",
-            "LP Clouet",
-            "LP Eiffel",
-            "LP Nadaud",
-            "Luxembourg",
-            "Luynes Centre",
-            "Lycée Choiseul",
-            "Lycée Grandmont",
-            "Lycée Paul Louis Courier",
-            "Lycée Vaucanson",
-            "Maginot",
-            "Mailloux",
-            "Maine",
-            "Mairie De Berthenay",
-            "Mairie de Chambray",
-            "Maison d'Ardoise",
-            "Maison de Beaune",
-            "Maisons Blanches",
-            "Maisons Rouges",
-            "Malines",
-            "Mallarme",
-            "Manet",
-            "Marbellière",
-            "Marceau",
-            "Marchanderie",
-            "Maréchal Juin",
-            "Mareuil",
-            "Marmoutier",
-            "Marteau",
-            "Martigny",
-            "Martin",
-            "Martyrs",
-            "Maryse Bastié",
-            "Maucannière",
-            "Maupas",
-            "Maurière",
-            "Melies",
-            "Mérieux",
-            "Mermoz",
-            "Mésangerie",
-            "Mesliers",
-            "Michelin",
-            "Mi-Côte",
-            "Mignardières",
-            "Milletière",
-            "Miquel",
-            "Mirabeau",
-            "Molière",
-            "Moncontour",
-            "Monsoudun",
-            "Montaigne",
-            "Monteil",
-            "Montjoie",
-            "Montjoyeux",
-            "Montreuil Bellay",
-            "Morier",
-            "Mouchotte",
-            "Moulin Ragot",
-            "Moulin Tann",
-            "Mozart",
-            "Muguet",
-            "Murier",
-            "Nationale",
-            "Naurod",
-            "Nécropole D'esvres",
-            "Ninon de l'Enclos",
-            "Notre-Dame d'Oé Centre",
-            "Nouveau Bois",
-            "Observaloire",
-            "Ockeghem",
-            "Office De Tourisme Villandry",
-            "Oiselet",
-            "Onze Arpents",
-            "Orangerie",
-            "Ormeau",
-            "Ormes",
-            "Pablo Neruda",
-            "Palais des Sports",
-            "Papoterie",
-            "Parcay-Meslay Centre",
-            "Parc des Expositions",
-            "Parc des Phalènes",
-            "Parc Grandmont",
-            "Parc Mirabeau",
-            "Parc Nord",
-            "Passerelle",
-            "Passe-temps",
-            "Pasteur",
-            "Patalisse",
-            "Paul Bert",
-            "Paul Fort",
-            "Pavillon Chinois",
-            "Perce Neige",
-            "Peri",
-            "Perrières",
-            "Perriers",
-            "Perrin",
-            "Petit Bois",
-            "Petite Arche",
-            "Petites Boucheries",
-            "Petit Pré",
-            "Petit Versailles",
-            "Peupleraie",
-            "Peupliers",
-            "Philippe Le Bon",
-            "Picardie",
-            "Pichotière",
-            "Pierre Couverte",
-            "Pierres Plates",
-            "Pinterie",
-            "Place Choiseul",
-            "Place de la Liberté",
-            "Place Tulasne",
-            "Place Velpeau",
-            "Plantin",
-            "Poirrier",
-            "Pôle Santé Alliance",
-            "Pôle Santé Vinci",
-            "Polytech",
-            "Pompidou",
-            "Pompiers",
-            "Pont Cher",
-            "Pont de la Motte",
-            "Pont du Milieu",
-            "Pont Napoleon",
-            "Poré",
-            "Port de Vallières",
-            "Portillon",
-            "Portoville",
-            "Pot de Fer",
-            "Prebendes",
-            "Preney",
-            "Priestley",
-            "Primeveres",
-            "Prony",
-            "P+R Sagerie",
-            "Puits Tessier",
-            "Quatre Bornes",
-            "Quatre Chemins",
-            "Queue de Merluche",
-            "Rabelais",
-            "Raphaël",
-            "Raspail",
-            "Rembrandt",
-            "Rempart",
-            "Renan",
-            "Renoir",
-            "Republique",
-            "Richardières",
-            "Richemont",
-            "Rimoneaux",
-            "Rochebise",
-            "Rochecorbon Centre",
-            "Rochepinard",
-            "Romarins",
-            "Rotonde",
-            "Rotterdam",
-            "Rougemont",
-            "Rouget de l'Isle",
-            "Rousseau",
-            "Route de St-Genouph",
-            "Roux",
-            "Ruaux",
-            "Rue Neuve",
-            "Rue Noire",
-            "Saboterie",
-            "Sagerie",
-            "Sainterie",
-            "Salengro",
-            "Sanitas",
-            "Sapaille",
-            "Saulnier",
-            "Savonnieres Grottes Petrifiantes",
-            "Savonnieres Poste",
-            "Schweitzer",
-            "Scotto",
-            "Semard",
-            "Séverine",
-            "Sévigné",
-            "Sibotière",
-            "Simone Signoret",
-            "Sorbiers",
-            "Stade",
-            "Stade Varenne",
-            "Stalingrad",
-            "St Augustin",
-            "St Avertin Centre",
-            "St Avertin Mairie",
-            "St Barthélemy",
-            "St Cyr Croix Chidaine",
-            "St Cyr Eglise",
-            "St Cyr Equatop",
-            "St Cyr Mairie",
-            "Ste Agathe",
-            "Ste Anne",
-            "St Eloi",
-            "Stendhal",
-            "Ste Radegonde",
-            "Ste Radegonde Centre",
-            "Ste Radegonde-Ermitage",
-            "St Etienne de Chigny Centre",
-            "Ste Ursule",
-            "St Exupery",
-            "St François",
-            "St Gatien",
-            "St Georges",
-            "St Joseph",
-            "St Léger",
-            "St Libert",
-            "St Malo",
-            "St Martin",
-            "St Paul",
-            "St Pierre Centre",
-            "St Pierre Gare",
-            "St Pierre Justices",
-            "Strasbourg",
-            "St Roch",
-            "St Sauveur",
-            "St Symphorien",
-            "St Venant",
-            "St Vincent",
-            "Suède",
-            "Tamaris",
-            "Tanneurs",
-            "Tartifume",
-            "Tavant",
-            "Terre Fortes",
-            "Terres Rouges",
-            "Thalès",
-            "Thibaudière",
-            "Thorez",
-            "Tilleuls",
-            "Tonnellé",
-            "Torricelli",
-            "Tour d'Auvergne",
-            "Tourettes",
-            "Touvoie",
-            "Tranchée",
-            "Traversiere",
-            "Tremblay",
-            "Trianon",
-            "Trobriand",
-            "Troènes",
-            "Trois Rivières",
-            "Trois Tonneaux",
-            "Tulipes",
-            "Ursulines",
-            "Val Fleuri",
-            "Vallée Chartier",
-            "Vallée Violette",
-            "Vallières",
-            "Vanneaux",
-            "Vaudasnière",
-            "Vaugareau",
-            "Vauvert",
-            "Venien",
-            "Verdun",
-            "Vernou Centre",
-            "Viala",
-            "Victor Hugo",
-            "Vieux Bourg",
-            "Villandry Chateau Galle",
-            "Voisin",
-            "Voltaire",
-            "Vouvray Centre",
-            "Vrillonnerie",
-            "Wedells",
-            "Willy Brandt",
-            "ZA d'Oé",
-            "ZA Papillon",
-            "ZI Les Aubuis"
-        };
+        List<String> values = new ArrayList<String>();
+        String[] res;
+
+        Iterator itStop = this.stops.entrySet().iterator();
+        while(itStop.hasNext()) {
+            Map.Entry<String, String> entry = (Map.Entry<String, String>)itStop.next();
+            values.add(new String(entry.getKey() + " (" + entry.getValue() + ")"));
+        }
+
+        return values.toArray(new String[values.size()]);
     }
 }

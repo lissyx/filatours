@@ -48,10 +48,8 @@ public class BusToursActivity extends Activity
 	private static Context context;
     private DatePicker date;
     private TimePicker time;
-    private AutoCompleteTextView txtCityDeparture;
     private AutoCompleteTextView txtStopDeparture;
     private Spinner sens;
-    private AutoCompleteTextView txtCityArrival;
     private AutoCompleteTextView txtStopArrival;
     private Spinner listCriteria;
     private Button btnGetJourney;
@@ -66,6 +64,7 @@ public class BusToursActivity extends Activity
     private int journeyDetailsProcessing;
 
     private URLs urls;
+    private BusStops stops;
 
     /** Called when the activity is first created. */
     @Override
@@ -76,16 +75,16 @@ public class BusToursActivity extends Activity
         this.context = this;
         this.date               = (DatePicker)findViewById(R.id.date);
         this.time               = (TimePicker)findViewById(R.id.time);
-        this.txtCityDeparture   = (AutoCompleteTextView)findViewById(R.id.txtCityDeparture);
         this.txtStopDeparture   = (AutoCompleteTextView)findViewById(R.id.txtStopDeparture);
         this.sens               = (Spinner)findViewById(R.id.Sens);
-        this.txtCityArrival     = (AutoCompleteTextView)findViewById(R.id.txtCityArrival);
         this.txtStopArrival     = (AutoCompleteTextView)findViewById(R.id.txtStopArrival);
         this.listCriteria       = (Spinner)findViewById(R.id.listCriteria);
         this.btnGetJourney      = (Button)findViewById(R.id.btnGetJourney);
 
         this.journeyCriteriaValues  = getResources().getStringArray(R.array.journeyCriteriaValues);
         this.sensValues             = getResources().getStringArray(R.array.sensValues);
+
+        this.stops = new BusStops();
 
         this.fill();
         this.bindWidgets();
@@ -103,26 +102,16 @@ public class BusToursActivity extends Activity
         sensAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         this.sens.setAdapter(sensAdapter);
 
-        BusCities cities = new BusCities();
-        BusStops stops = new BusStops();
-
-        // fill city autocomplete
-        ArrayAdapter<String> cityAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, cities.getCities());
-        this.txtCityDeparture.setAdapter(cityAdapter);
-        this.txtCityArrival.setAdapter(cityAdapter);
-
         // fill stop autocomplete
-        ArrayAdapter<String> stopAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, stops.getStops());
+        ArrayAdapter<String> stopAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, this.stops.getStops());
         this.txtStopDeparture.setAdapter(stopAdapter);
         this.txtStopArrival.setAdapter(stopAdapter);
     }
 
     public void bindWidgets()
     {
-        this.txtCityDeparture.setThreshold(1);
-        this.txtCityArrival.setThreshold(1);
-        this.txtStopDeparture.setThreshold(1);
-        this.txtStopArrival.setThreshold(1);
+        this.txtStopDeparture.setThreshold(2);
+        this.txtStopArrival.setThreshold(2);
         this.time.setIs24HourView(true);
         this.btnGetJourney.setOnClickListener(new View.OnClickListener() { public void onClick(View arg0) { onClick_btnGetJourney(); } });
     }
@@ -139,11 +128,14 @@ public class BusToursActivity extends Activity
 
     public void onClick_btnGetJourney()
     {
+        String[] cityStopDep = this.stops.getStopCity(this.txtStopDeparture.getEditableText().toString());
+        String[] cityStopArr = this.stops.getStopCity(this.txtStopArrival.getEditableText().toString());
+
         BusJourney j = new BusJourney();
-        j.setCityDep(this.txtCityDeparture.getEditableText().toString());
-        j.setCityArr(this.txtCityArrival.getEditableText().toString());
-        j.setStopDep(this.txtStopDeparture.getEditableText().toString());
-        j.setStopArr(this.txtStopArrival.getEditableText().toString());
+        j.setCityDep(cityStopDep[1]);
+        j.setCityArr(cityStopArr[1]);
+        j.setStopDep(cityStopDep[0]);
+        j.setStopArr(cityStopArr[0]);
         j.setDate(new String()
             + String.valueOf(this.date.getDayOfMonth())
             + "/"

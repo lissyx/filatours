@@ -2,10 +2,8 @@
 <!-- vim: set ts=4 sw=4 et: -->
 <resources>
     <string name="app_name">BusToursActivity</string>
-    <string name="lblCityDeparture">City departure</string>
-    <string name="lblCityArrival">City arrival</string>
-    <string name="lblStopDeparture">Stop departure</string>
-    <string name="lblStopArrival">Stop arrival</string>
+    <string name="lblStopDeparture">Departure</string>
+    <string name="lblStopArrival">Arrival</string>
     <string name="sensPrompt">Arriving/Departing</string>
     <string name="lblCriteria">Search criteria</string>
     <string name="btnGetJourney">Get journey</string>
