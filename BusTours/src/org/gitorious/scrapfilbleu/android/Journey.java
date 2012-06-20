@@ -85,7 +85,10 @@ public class Journey {
         if (m.group(1) == null) {
             this.duration = "0h" + m.group(2);
         } else {
-            this.duration = m.group(1) + "h" + m.group(2);
+            this.duration = m.group(1) + "h";
+            if (m.find()) {
+                this.duration += m.group(2);
+            }
         }
     }
 
