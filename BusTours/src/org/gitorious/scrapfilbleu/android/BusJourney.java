@@ -49,13 +49,15 @@ public class BusJourney {
         Log.e("BusTours:BusJourney", "RAZ=" + this.urlraz);
         Log.e("BusTours:BusJourney", "URL=" + this.urlbase);
 
-        parent.progress(20, R.string.jsoupConnect);
+        parent.progress(20, R.string.jsoupAskRaz);
 
         Log.e("BusTours:BusJourney", "dep='" + dep + "'");
         Log.e("BusTours:BusJourney", "arr='" + arr + "'");
 
         Response res = Jsoup.connect(this.urlraz).method(Method.GET).execute();
         Log.e("BusTours:BusJourney", "Got RAZ.");
+
+        parent.progress(30, R.string.jsoupGotRaz);
 
         this.cookies = res.cookies();
 
@@ -71,6 +73,8 @@ public class BusJourney {
             .post();
         Log.e("BusTours:BusJourney", "Posted form.");
 
+        parent.progress(40, R.string.jsoupPostedForm);
+
         Elements navig = reply.getElementsByAttributeValue("class", "navig");
         Log.e("BusTours:BusJourney", "Retrieved elements.");
         if (navig.isEmpty()) {
@@ -79,12 +83,16 @@ public class BusJourney {
             throw new ScrappingException("Not a result page");
         }
 
+        parent.progress(50, R.string.jsoupGotNavig);
+
         Elements table = reply.getElementsByAttributeValue("summary", "Propositions");
         if (table.isEmpty()) {
             Log.e("BusTours:BusJourney", "NO Table !!!");
             Log.e("BusTours:BusJourney", "navig::" + navig.html());
             throw new ScrappingException("Missing table");
         }
+
+        parent.progress(55, R.string.jsoupGotPropositions);
 
         Elements trips = table.first().getElementsByTag("tr");
         if (trips.isEmpty()) {
@@ -93,11 +101,16 @@ public class BusJourney {
             throw new ScrappingException("No journey");
         }
 
+        parent.progress(60, R.string.jsoupGotJourneys);
+
         Iterator<Element> it = trips.iterator();
         // bypass first element, table heading
         it.next();
+        int iProgress = 60;
         while (it.hasNext()) {
+            parent.progress(iProgress, R.string.jsoupGotTrip);
             this.journeys.add(new Journey(it.next(), this.cookies));
+            iProgress += 10;
         }
 
         return this.journeys;

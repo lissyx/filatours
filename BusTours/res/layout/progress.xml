@@ -10,20 +10,29 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="horizontal"
+    android:layout_marginRight="15dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginBottom="15dp"
     >
 <TextView
     android:id="@+id/statusProgressHttp"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="5dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginBottom="15dp"
     />
 <ProgressBar
     android:id="@+id/progressHttp"
     style="@android:style/Widget.ProgressBar.Horizontal"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="5dp"
-    android:layout_marginRight="5dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginBottom="15dp"
     android:layout_gravity="center_horizontal" />
 </TableLayout>
 </LinearLayout>

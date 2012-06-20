@@ -21,4 +21,11 @@
     <string name="scrappError">Error while scrapping</string>
     <string name="scrapping_progress_raz">Got cleanup page</string>
     <string name="journey_list">List of journeys</string>
+    <string name="jsoupAskRaz">Asked for clearing</string>
+    <string name="jsoupGotRaz">Got clearing, taking off</string>
+    <string name="jsoupPostedForm">Form has been submitted</string>
+    <string name="jsoupGotNavig">Got a reply with navigation</string>
+    <string name="jsoupGotPropositions">Found propositions</string>
+    <string name="jsoupGotJourneys">Found journeys</string>
+    <string name="jsoupGotTrip">Added a trip</string>
 </resources>
