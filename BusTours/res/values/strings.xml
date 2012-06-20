@@ -32,4 +32,7 @@
     <string name="jsoupGotDetails">Got details page</string>
     <string name="noDetails">No details</string>
     <string name="noDetailsTxt">No details for this journey</string>
+    <string name="jsoupGotDetailsTable">Found table for details</string>
+    <string name="jsoupGotDetailsElems">Found elements for details</string>
+    <string name="jsoupGotFullDetails">Full journey details fetched</string>
 </resources>

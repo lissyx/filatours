@@ -137,16 +137,48 @@ public class Journey {
 
     public void getDetails(BusToursActivity.ProcessScrapping parent) throws java.io.IOException, java.net.SocketTimeoutException, ScrappingException {
         String link = new URLs("").getURL() + this.getUrl().replace("page.php?", "");
-        parent.progress(20, R.string.jsoupStartGetDetails);
 
+        parent.progress(20, R.string.jsoupStartGetDetails);
         Log.e("BusTours:BusJourney", "Asking details at " + link);
 
         Document reply = Jsoup.connect(link)
             .cookies(this.cookies)
             .get();
 
-        parent.progress(30, R.string.jsoupGotDetails);
+        Elements itin = reply.getElementsByAttributeValue("class", "itineraire");
+        if (itin.isEmpty()) {
+            Log.e("BusTours:BusJourney", "NO Itin !!!");
+            Log.e("BusTours:BusJourney", "BODY::" + reply.body().html());
+            throw new ScrappingException("Not a details page");
+        }
 
+        parent.progress(30, R.string.jsoupGotDetails);
         Log.e("BusTours:BusJourney", "Got details page.");
+
+        Elements table = itin.first().getElementsByTag("table");
+        if (table.isEmpty()) {
+            Log.e("BusTours:BusJourney", "NO Table !!!");
+            Log.e("BusTours:BusJourney", "itin::" + itin.html());
+            throw new ScrappingException("Missing table");
+        }
+
+        parent.progress(40, R.string.jsoupGotDetailsTable);
+        Log.e("BusTours:BusJourney", "Got details table.");
+
+        Elements trips = table.first().getElementsByTag("tr");
+        if (trips.isEmpty()) {
+            Log.e("BusTours:BusJourney", "NO Trips !!!");
+            Log.e("BusTours:BusJourney", "table::" + table.html());
+            throw new ScrappingException("No journey");
+        }
+
+        parent.progress(40, R.string.jsoupGotDetailsElems);
+        Log.e("BusTours:BusJourney", "Got details elements.");
+
+        this.details = new JourneyDetails(trips);
+
+        parent.progress(100, R.string.jsoupGotFullDetails);
+        Log.e("BusTours:BusJourney", "Got full details.");
+        Log.e("BusTours:BusJourney", "Details: " + this.details);
     }
 }
