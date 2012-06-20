@@ -195,6 +195,11 @@ public class BusToursActivity extends Activity
     }
 
     public void onAsyncTaskScrapJourneyListComplete() {
+        if (this.journeys == null) {
+            Log.e("BusTours", "No journey to display");
+            return;
+        }
+
         ExpandableListView list;
         journeyList = new Dialog(this);
         journeyList.setContentView(R.layout.journey);
