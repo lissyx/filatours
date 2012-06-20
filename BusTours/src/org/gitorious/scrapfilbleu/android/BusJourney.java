@@ -128,7 +128,7 @@ public class BusJourney {
         s = s.replaceAll("[ûù]","u");
         s = s.replaceAll("[ïî]","i");
         s = s.replaceAll("[àâ]","a");
-        s = s.replaceAll("Ô","o");
+        s = s.replaceAll("ô","o");
         s = s.replaceAll("[ÈÉÊË]","E");
         s = s.replaceAll("[ÛÙ]","U");
         s = s.replaceAll("[ÏÎ]","I");
