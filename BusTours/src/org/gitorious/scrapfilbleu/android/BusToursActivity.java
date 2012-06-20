@@ -255,13 +255,17 @@ public class BusToursActivity extends Activity
         journeyList.show();
     }
 
-    private class ProcessScrapping extends AsyncTask<BusJourney, Integer, Boolean> {
+    public class ProcessScrapping extends AsyncTask<BusJourney, Integer, Boolean> {
         private Exception exc;
 
         // Showing Async progress
         private Dialog dialog;
         private TextView statusProgressHttp;
         private ProgressBar progressHttp;
+
+        public void progress(Integer ... progress) {
+            this.publishProgress(progress);
+        }
 
         protected void onPreExecute() {
             dialog = new Dialog(context);
@@ -279,7 +283,7 @@ public class BusToursActivity extends Activity
             publishProgress(0, R.string.startHttpScrapping);
             try {
                 publishProgress(10, R.string.jsoupConnect);
-                setJourneys(journey[0].getBusJourneys());
+                setJourneys(journey[0].getBusJourneys(this));
                 publishProgress(100, R.string.jsoupDocReady);
                 return true;
             } catch (Exception e) {

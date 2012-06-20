@@ -10,6 +10,8 @@ import java.util.Iterator;
 
 import android.util.Log;
 
+import android.os.AsyncTask;
+
 import org.jsoup.Jsoup;
 import org.jsoup.Connection.Response;
 import org.jsoup.Connection.Method;
@@ -40,12 +42,14 @@ public class BusJourney {
         this.journeys = new ArrayList<Journey>();
     }
 
-    public ArrayList<Journey> getBusJourneys() throws java.io.IOException, java.net.SocketTimeoutException, ScrappingException {
+    public ArrayList<Journey> getBusJourneys(BusToursActivity.ProcessScrapping parent) throws java.io.IOException, java.net.SocketTimeoutException, ScrappingException {
         String dep = this.cityDep + " - " + this.stopDep;
         String arr = this.cityArr  + " - " + this.stopArr;
 
         Log.e("BusTours:BusJourney", "RAZ=" + this.urlraz);
         Log.e("BusTours:BusJourney", "URL=" + this.urlbase);
+
+        parent.progress(20, R.string.jsoupConnect);
 
         Log.e("BusTours:BusJourney", "dep='" + dep + "'");
         Log.e("BusTours:BusJourney", "arr='" + arr + "'");
