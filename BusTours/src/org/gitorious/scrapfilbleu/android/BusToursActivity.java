@@ -325,8 +325,8 @@ public class BusToursActivity extends Activity
             List<HashMap<String, String>> children = new ArrayList<HashMap<String, String>>();
 
             HashMap<String, String> curChildMap = new HashMap<String, String>();
-            curChildMap.put("head", "Duration: " + j.getDuration());
-            curChildMap.put("more", "Connections: " + j.getConnections());
+            curChildMap.put("head", getString(R.string.duration) + " " + j.getDuration());
+            curChildMap.put("more", getString(R.string.connections) + " " + j.getConnections());
             children.add(curChildMap);
 
             jListChild.add(children);
