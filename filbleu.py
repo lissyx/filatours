@@ -8,6 +8,7 @@ import argparse
 import datetime
 import BeautifulSoup
 import unicodedata
+import pyproj
 
 class JourneyPart:
 	def __init__(self, type, mode, indication, time, duration):
@@ -106,6 +107,14 @@ class FilBleu:
 
 	def strip_accents(self, s):
 		return ''.join((c for c in unicodedata.normalize('NFD', s) if unicodedata.category(c) != 'Mn'))
+
+	# in navitia, lat is first (and east) and lon is second (and north)
+	def lambert2c_to_deg(self, lat, lon):
+		wgs84 = pyproj.Proj('+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs')
+		# navitia lambert 2c: http://code.google.com/p/pyproj/source/browse/trunk/lib/pyproj/data/IGNF?spec=svn162&r=162#266
+		lambert2c = pyproj.Proj('+proj=lcc +nadgrids=ntf_r93.gsb,null +towgs84=-168.0000,-60.0000,320.0000 +a=6378249.2000 +rf=293.4660210000000 +pm=2.337229167 +lat_0=46.800000000 +lon_0=0.000000000 +k_0=0.99987742 +lat_1=46.800000000 +x_0=600000.000 +y_0=2200000.000 +units=m +no_defs')
+		newlon, newlat = pyproj.transform(lambert2c, wgs84,lat,lon)
+		return (newlat, newlon)
 
 	def html_br_strip(self, text):
 		return "".join([l.strip() for l in text.split("\n")])
@@ -221,8 +230,7 @@ class FilBleu:
 			east = float(values[6])
 			north = float(values[7])
 
-			degrees_e = east
-			degrees_n = north
+			(degrees_e, degrees_n) = self.lambert2c_to_deg(east, north)
 
 			l = "Found a stop matching stopArea: [%(stop_area)s]; Lambert2+: {E:%(lb2p_e)f, N:%(lb2p_n)f}; Degrees: {E:%(degrees_e)f, N:%(degrees_n)f}\n" % {'stop_area': stopArea, 'lb2p_e': east, 'lb2p_n': north, 'degrees_e': degrees_e, 'degrees_n': degrees_n}
 			l = l.encode('utf-8')
