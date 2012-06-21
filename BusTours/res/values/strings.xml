@@ -46,4 +46,5 @@
     <string name="detailWalkTo">To stop:</string>
     <string name="duration">Duration:</string>
     <string name="connections">Connections:</string>
+    <string name="closest_stops">Closest stops</string>
 </resources>

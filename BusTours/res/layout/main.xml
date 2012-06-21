@@ -33,7 +33,16 @@
 	android:layout_width="fill_parent"
 	android:layout_height="wrap_content"
 	android:layout_gravity="right"
-	/>
+    android:layout_weight="1"
+	/>	
+<ImageButton
+    android:id="@+id/btnGetClosestStopDeparture"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+	android:layout_gravity="right"
+    android:layout_weight="0"
+    android:src="@android:drawable/ic_menu_mylocation"
+    />
 </LinearLayout>
 <LinearLayout
 	android:id="@+id/widget76"
@@ -58,6 +67,15 @@
 	android:layout_width="fill_parent"
 	android:layout_height="wrap_content"
 	android:layout_gravity="right"
+    android:layout_weight="1"
+	/>	
+<ImageButton
+    android:id="@+id/btnGetClosestStopArrival"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+	android:layout_gravity="right"
+    android:layout_weight="0"
+    android:src="@android:drawable/ic_menu_mylocation"
     />
 </LinearLayout>
 <LinearLayout

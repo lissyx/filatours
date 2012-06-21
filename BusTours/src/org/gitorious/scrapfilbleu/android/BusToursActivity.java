@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.text.DecimalFormat;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -43,6 +44,10 @@ import android.widget.ExpandableListView;
 import android.widget.ExpandableListAdapter;
 import android.widget.SimpleExpandableListAdapter;
 import android.widget.ExpandableListView.OnChildClickListener;
+import android.widget.ImageButton;
+import android.widget.ListView;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -56,10 +61,13 @@ public class BusToursActivity extends Activity
     private Spinner sens;
     private AutoCompleteTextView txtStopArrival;
     private Spinner listCriteria;
+    private ImageButton btnGetClosestStopDeparture;
+    private ImageButton btnGetClosestStopArrival;
     private Button btnGetJourney;
 
     private Dialog journeyList;
     private Dialog journeyDetails;
+    private Dialog closestStops;
 
     private String[] journeyCriteriaValues;
     private String[] sensValues;
@@ -69,6 +77,7 @@ public class BusToursActivity extends Activity
 
     private URLs urls;
     private BusStops stops;
+    private List<BusStops.BusStop> nearests;
     private LocationManager mLocManager;
     private String mLocProvider;
 
@@ -85,6 +94,8 @@ public class BusToursActivity extends Activity
         this.sens               = (Spinner)findViewById(R.id.Sens);
         this.txtStopArrival     = (AutoCompleteTextView)findViewById(R.id.txtStopArrival);
         this.listCriteria       = (Spinner)findViewById(R.id.listCriteria);
+        this.btnGetClosestStopDeparture = (ImageButton)findViewById(R.id.btnGetClosestStopDeparture);
+        this.btnGetClosestStopArrival = (ImageButton)findViewById(R.id.btnGetClosestStopArrival);
         this.btnGetJourney      = (Button)findViewById(R.id.btnGetJourney);
 
         this.journeyCriteriaValues  = getResources().getStringArray(R.array.journeyCriteriaValues);
@@ -124,6 +135,8 @@ public class BusToursActivity extends Activity
         this.txtStopDeparture.setThreshold(2);
         this.txtStopArrival.setThreshold(2);
         this.time.setIs24HourView(true);
+        this.btnGetClosestStopDeparture.setOnClickListener(new View.OnClickListener() { public void onClick(View arg0) { onClick_btnGetClosestStopDeparture(); } });
+        this.btnGetClosestStopArrival.setOnClickListener(new View.OnClickListener() { public void onClick(View arg0) { onClick_btnGetClosestStopArrival(); } });
         this.btnGetJourney.setOnClickListener(new View.OnClickListener() { public void onClick(View arg0) { onClick_btnGetJourney(); } });
     }
 
@@ -142,20 +155,6 @@ public class BusToursActivity extends Activity
         String[] cityStopDep = this.stops.getStopCity(this.txtStopDeparture.getEditableText().toString());
         String[] cityStopArr = this.stops.getStopCity(this.txtStopArrival.getEditableText().toString());
 
-        Log.e("BusTours", "Using provider: " + this.mLocProvider);
-        Location lastLoc = this.mLocManager.getLastKnownLocation(this.mLocProvider);
-        if (lastLoc == null) {
-            Log.e("BusTours", "No last known location");
-        } else {
-            List<BusStops.BusStop> nearests = this.stops.getNearestStop(lastLoc.getLatitude(), lastLoc.getLongitude());
-            Iterator itMinDist = nearests.iterator();
-            while(itMinDist.hasNext()) {
-                BusStops.BusStop bs = (BusStops.BusStop)itMinDist.next();
-                Log.e("BusTours", "Current lastKnown (lat;lon)=(" + String.valueOf(lastLoc.getLatitude()) + ";" + String.valueOf(lastLoc.getLongitude()) + ")");
-                Log.e("BusTours", "Closest bus stop at (lat;lon)=(" + String.valueOf(bs.lat) + ";" + String.valueOf(bs.lon) + ") :: " + bs.name + " is " + bs.dist + "m");
-            }
-        }
-
         BusJourney j = new BusJourney();
         j.setCityDep(cityStopDep[1]);
         j.setCityArr(cityStopArr[1]);
@@ -173,6 +172,95 @@ public class BusToursActivity extends Activity
         j.setSens(String.valueOf(this.getSensValue()));
         j.setCriteria(String.valueOf(this.getJourneyCriteriaValue()));
         new ProcessScrapping().execute(j);
+    }
+
+    public void onClick_btnGetClosestStopDeparture() {
+        this.buildClosestStopsUi("dep");
+    }
+
+    public void onClick_btnGetClosestStopArrival() {
+        this.buildClosestStopsUi("arr");
+    }
+
+    public void setDepartureStopName(String name) {
+        this.txtStopDeparture.setText(name);
+        closestStops.dismiss();
+    }
+
+    public void setArrivalStopName(String name) {
+        this.txtStopArrival.setText(name);
+        closestStops.dismiss();
+    }
+
+    public List<BusStops.BusStop> getNearests() {
+        return this.nearests;
+    }
+
+    public BusStops.BusStop getNearest(int pos) {
+        return this.nearests.get(pos);
+    }
+
+    public void buildClosestStopsUi(String type) {
+        closestStops = new Dialog(context);
+        closestStops.setContentView(R.layout.closest);
+        closestStops.setTitle(getString(R.string.closest_stops));
+
+        ListView list = (ListView)closestStops.findViewById(R.id.listClosestStops);
+        if (type.equals("dep")) {
+            list.setOnItemClickListener(new OnItemClickListener() {
+                public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                    BusStops.BusStop bs = getNearest(position);
+                    if (bs != null) {
+                        setDepartureStopName(bs.name);
+                    }
+                }
+            });
+        }
+        if (type.equals("arr")) {
+            list.setOnItemClickListener(new OnItemClickListener() {
+                public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                    BusStops.BusStop bs = getNearest(position);
+                    if (bs != null) {
+                        setArrivalStopName(bs.name);
+                    }
+                }
+            });
+        }
+        list.setAdapter(this.buildClosestStopsAdapter());
+        list.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+
+        closestStops.show();
+    }
+
+    public ArrayAdapter<String> buildClosestStopsAdapter() {
+        this.getClosestStops();
+        DecimalFormat df = new DecimalFormat("###");
+        List<String> listClosest = new ArrayList<String>();
+
+        Iterator itMinDist = this.nearests.iterator();
+        while(itMinDist.hasNext()) {
+            BusStops.BusStop bs = (BusStops.BusStop)itMinDist.next();
+            listClosest.add(new String(bs.name + " (" + df.format(bs.dist) + "m)"));
+        }
+
+        return new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listClosest);
+    }
+
+    public void getClosestStops() {
+        List<BusStops.BusStop> nearests = null;
+        Log.e("BusTours", "Using provider: " + this.mLocProvider);
+        Location lastLoc = this.mLocManager.getLastKnownLocation(this.mLocProvider);
+        if (lastLoc == null) {
+            Log.e("BusTours", "No last known location");
+        } else {
+            this.nearests = this.stops.getNearestStop(lastLoc.getLatitude(), lastLoc.getLongitude());
+            Iterator itMinDist = this.nearests.iterator();
+            while(itMinDist.hasNext()) {
+                BusStops.BusStop bs = (BusStops.BusStop)itMinDist.next();
+                Log.e("BusTours", "Current lastKnown (lat;lon)=(" + String.valueOf(lastLoc.getLatitude()) + ";" + String.valueOf(lastLoc.getLongitude()) + ")");
+                Log.e("BusTours", "Closest bus stop at (lat;lon)=(" + String.valueOf(bs.lat) + ";" + String.valueOf(bs.lon) + ") :: " + bs.name + " is " + bs.dist + "m");
+            }
+        }
     }
 
     public static void messageBox(String text) {
