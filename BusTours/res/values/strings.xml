@@ -47,4 +47,6 @@
     <string name="duration">Duration:</string>
     <string name="connections">Connections:</string>
     <string name="closest_stops">Closest stops</string>
+    <string name="sens_arrival">Arrival</string>
+    <string name="sens_departure">Departure</string>
 </resources>

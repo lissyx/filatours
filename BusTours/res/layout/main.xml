@@ -89,6 +89,7 @@
 	android:layout_height="wrap_content"
     />
 </LinearLayout>
+<!--
 <LinearLayout
 	android:id="@+id/widget84"
 	android:layout_width="fill_parent"
@@ -100,6 +101,38 @@
 	android:layout_height="wrap_content"
     android:prompt="@string/sensPrompt"
     />
+</LinearLayout>
+-->
+<LinearLayout
+	android:id="@+id/widget888"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:orientation="horizontal">
+<RadioGroup
+    android:id="@+id/radioGroupSens"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+<RadioButton
+    android:id="@+id/radioButtonDeparture"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+    android:text="@string/sens_departure"
+    android:checked="true"
+    android:layout_weight="1"
+    android:layout_gravity="left"
+    />
+<RadioButton
+    android:id="@+id/radioButtonArrival"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+    android:text="@string/sens_arrival"
+    android:checked="false"
+    android:layout_weight="0"
+    android:layout_gravity="right"
+    />
+</RadioGroup>
 </LinearLayout>
 <LinearLayout
 	android:id="@+id/widget79"

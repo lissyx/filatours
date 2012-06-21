@@ -48,6 +48,7 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.RadioButton;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -64,6 +65,8 @@ public class BusToursActivity extends Activity
     private ImageButton btnGetClosestStopDeparture;
     private ImageButton btnGetClosestStopArrival;
     private Button btnGetJourney;
+    private RadioButton targetDeparture;
+    private RadioButton targetArrival;
 
     private Dialog journeyList;
     private Dialog journeyDetails;
@@ -91,7 +94,9 @@ public class BusToursActivity extends Activity
         this.date               = (DatePicker)findViewById(R.id.date);
         this.time               = (TimePicker)findViewById(R.id.time);
         this.txtStopDeparture   = (AutoCompleteTextView)findViewById(R.id.txtStopDeparture);
-        this.sens               = (Spinner)findViewById(R.id.Sens);
+        // this.sens               = (Spinner)findViewById(R.id.Sens);
+        this.targetDeparture    = (RadioButton)findViewById(R.id.radioButtonDeparture);
+        this.targetArrival    = (RadioButton)findViewById(R.id.radioButtonArrival);
         this.txtStopArrival     = (AutoCompleteTextView)findViewById(R.id.txtStopArrival);
         this.listCriteria       = (Spinner)findViewById(R.id.listCriteria);
         this.btnGetClosestStopDeparture = (ImageButton)findViewById(R.id.btnGetClosestStopDeparture);
@@ -119,10 +124,12 @@ public class BusToursActivity extends Activity
         criteriaAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         this.listCriteria.setAdapter(criteriaAdapter);
 
+        /*
         // fill sens
         ArrayAdapter<CharSequence> sensAdapter = ArrayAdapter.createFromResource(this, R.array.sens, android.R.layout.simple_spinner_item);
         sensAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         this.sens.setAdapter(sensAdapter);
+        */
 
         // fill stop autocomplete
         ArrayAdapter<String> stopAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, this.stops.getStops());
@@ -147,7 +154,13 @@ public class BusToursActivity extends Activity
 
     public int getSensValue()
     {
-        return Integer.parseInt(this.sensValues[this.sens.getSelectedItemPosition()]);
+        // return Integer.parseInt(this.sensValues[this.sens.getSelectedItemPosition()]);
+        int retval = 0;
+
+        if (this.targetDeparture.isChecked()) retval = 1;
+        if (this.targetArrival.isChecked()) retval = -1;
+
+        return retval;
     }
 
     public void onClick_btnGetJourney()
