@@ -7,17 +7,34 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import android.util.Log;
 
 public class BusStops {
     private Map<String, Map<String, String>> stops;
 
+    public class BusStopDistanceComparator implements Comparator<BusStop> {
+        public int compare(BusStop b1, BusStop b2) {
+            return b1.dist.compareTo(b2.dist);
+        }
+    }
+
     public class BusStop {
         public String name;
         public String city;
         public Double lat;
         public Double lon;
+        public Double dist;
+
+        public BusStop(String name, String city, Double lat, Double lon, Double dist) {
+            this.name = name;
+            this.city = city;
+            this.lat  = lat;
+            this.lon  = lon;
+            this.dist = dist;
+        }
     }
 
     public BusStops() {
@@ -1402,6 +1419,44 @@ public class BusStops {
         this.stops.put("ZI Les Aubuis", v);
 
         Log.e("BusTours:BusStops", "Registered " + this.stops.size() + " stops");
+    }
+
+	private Double distance(Double lat1, Double lon1, Double lat2, Double lon2) {
+        Double R = 6378000.0;
+
+        // to rad
+        Double sourcelatitude = (Math.PI * lat2) / 180.0;
+        Double sourcelongitude = (Math.PI * lon2) / 180.0;
+
+        Double latitude = (Math.PI * lat1) / 180.0;
+        Double longitude = (Math.PI * lon1) / 180.0;
+
+        // Distance en metre
+        // http://www.zeguigui.com/weblog/archives/2006/05/calcul-de-la-di.php
+        Double d = R * (Math.PI/2 - Math.asin( Math.sin(latitude) * Math.sin(sourcelatitude) + Math.cos(longitude - sourcelongitude) * Math.cos(latitude) * Math.cos(sourcelatitude)));
+
+        return d;
+	}
+
+    public List<BusStop> getNearestStop(Double lat, Double lon) {
+        List<BusStop> Stops = new ArrayList<BusStop>();
+        Double minDist = Double.MAX_VALUE;
+        Double d;
+
+        Iterator itStop = this.stops.entrySet().iterator();
+        while(itStop.hasNext()) {
+            Map.Entry<String, Map<String, String>> entry = (Map.Entry<String, Map<String, String>>)itStop.next();
+            Double curStopLat = Double.parseDouble(entry.getValue().get("lat"));
+            Double curStopLon = Double.parseDouble(entry.getValue().get("lon"));
+            d = this.distance(lat, lon, curStopLat, curStopLon);
+            if (d < minDist) {
+                Stops.add(new BusStop(entry.getKey(), entry.getValue().get("city"), curStopLat, curStopLon, d));
+            }
+        }
+
+        Collections.sort(Stops, new BusStopDistanceComparator());
+
+        return Stops.subList(0, 10);
     }
 
     public String[] getStopCity(String stop) {

@@ -18,6 +18,10 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
+
 import android.util.Log;
 
 import android.os.Bundle;
@@ -65,6 +69,8 @@ public class BusToursActivity extends Activity
 
     private URLs urls;
     private BusStops stops;
+    private LocationManager mLocManager;
+    private String mLocProvider;
 
     /** Called when the activity is first created. */
     @Override
@@ -85,6 +91,11 @@ public class BusToursActivity extends Activity
         this.sensValues             = getResources().getStringArray(R.array.sensValues);
 
         this.stops = new BusStops();
+
+        this.mLocManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+        Criteria crit = new Criteria();
+        crit.setAccuracy(Criteria.ACCURACY_COARSE);
+        this.mLocProvider = this.mLocManager.getBestProvider(crit, true);
 
         this.fill();
         this.bindWidgets();
@@ -130,6 +141,20 @@ public class BusToursActivity extends Activity
     {
         String[] cityStopDep = this.stops.getStopCity(this.txtStopDeparture.getEditableText().toString());
         String[] cityStopArr = this.stops.getStopCity(this.txtStopArrival.getEditableText().toString());
+
+        Log.e("BusTours", "Using provider: " + this.mLocProvider);
+        Location lastLoc = this.mLocManager.getLastKnownLocation(this.mLocProvider);
+        if (lastLoc == null) {
+            Log.e("BusTours", "No last known location");
+        } else {
+            List<BusStops.BusStop> nearests = this.stops.getNearestStop(lastLoc.getLatitude(), lastLoc.getLongitude());
+            Iterator itMinDist = nearests.iterator();
+            while(itMinDist.hasNext()) {
+                BusStops.BusStop bs = (BusStops.BusStop)itMinDist.next();
+                Log.e("BusTours", "Current lastKnown (lat;lon)=(" + String.valueOf(lastLoc.getLatitude()) + ";" + String.valueOf(lastLoc.getLongitude()) + ")");
+                Log.e("BusTours", "Closest bus stop at (lat;lon)=(" + String.valueOf(bs.lat) + ";" + String.valueOf(bs.lon) + ") :: " + bs.name + " is " + bs.dist + "m");
+            }
+        }
 
         BusJourney j = new BusJourney();
         j.setCityDep(cityStopDep[1]);
