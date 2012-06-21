@@ -7,6 +7,7 @@ import cookielib
 import argparse
 import datetime
 import BeautifulSoup
+import unicodedata
 
 class JourneyPart:
 	def __init__(self, type, mode, indication, time, duration):
@@ -86,6 +87,7 @@ class FilBleu:
 		self.parser = argparse.ArgumentParser(description="FilBleu Scrapper")
 		self.parser.add_argument("--list-lines", action="store_true", help="List lines")
 		self.parser.add_argument("--list-stops", help="List stops of a line (format: n|M)")
+		self.parser.add_argument("--get-stop-coords", help="Get a stop GPS coordinates")
 		self.parser.add_argument("--httpdebug", action="store_true", help="Show HTTP debug")
 		journey = self.parser.add_argument_group("Journey")
 		journey.add_argument("--journey", action="store_true", help="Compute journey")
@@ -101,6 +103,9 @@ class FilBleu:
 		self.browser.set_debug_http(self.args.httpdebug)
 
 		self.__process__()
+
+	def strip_accents(self, s):
+		return ''.join((c for c in unicodedata.normalize('NFD', s) if unicodedata.category(c) != 'Mn'))
 
 	def html_br_strip(self, text):
 		return "".join([l.strip() for l in text.split("\n")])
@@ -181,6 +186,49 @@ class FilBleu:
 					stop = self.html_br_strip(line.text)
 					if len(stop) > 0:
 						self.lines[lineid].add_end(stop)
+
+	def get_stop_coords(self):
+		self.journeys = []
+		self.page_journey()
+		self.raz()
+		self.browser.select_form(name="formulaire")
+		self.browser["Departure"] = self.strip_accents(unicode(self.args.get_stop_coords, "UTF-8"))
+		self.browser["Arrival"] = "Unknwonstop"
+		self.browser["Sens"] = [ "1" ]
+		self.browser["Date"] = "42/42/2042"
+		self.browser["Hour"] = [ "13" ]
+		self.browser["Minute"] = [ "35" ]
+		self.browser["Criteria"] = [ "1" ]
+		self.browser.submit()
+		soup = BeautifulSoup.BeautifulSoup(self.browser.response().read())
+		form = soup.find('form', attrs = {'name': 'formulaire'})
+		if form:
+			depart = form.find('input', attrs = {'id': 'Departure'})
+			stopArea = ""
+			if depart:
+				# stop is recognized; get WGS84/Lambert2+ coords
+				stopArea = depart["value"]
+			else:
+				depart = form.find('select', attrs = {'id': 'Departure'})
+				# ok, we have to find the first stop
+				optgroup = form.find('optgroup')
+				if optgroup:
+					stopArea = optgroup.option["value"]
+				else:
+					print "No optgroup!"
+
+			values = stopArea.replace(",", ".").split("|")
+			east = float(values[6])
+			north = float(values[7])
+
+			degrees_e = east
+			degrees_n = north
+
+			l = "Found a stop matching stopArea: [%(stop_area)s]; Lambert2+: {E:%(lb2p_e)f, N:%(lb2p_n)f}; Degrees: {E:%(degrees_e)f, N:%(degrees_n)f}\n" % {'stop_area': stopArea, 'lb2p_e': east, 'lb2p_n': north, 'degrees_e': degrees_e, 'degrees_n': degrees_n}
+			l = l.encode('utf-8')
+			sys.stdout.write(l)
+		else:
+			print "No form result."
 
 	def get_journeys(self):
 		self.journeys = []
@@ -305,6 +353,8 @@ class FilBleu:
 			self.list_lines()
 		if self.args.list_stops:
 			self.list_stops()
+		if self.args.get_stop_coords:
+			self.get_stop_coords()
 		if self.args.journey:
 			self.list_journeys()
 
