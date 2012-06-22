@@ -294,11 +294,11 @@ public class BusToursActivity extends Activity
         if (lastLoc == null) {
             Log.e("BusTours", "No last known location");
         } else {
+            Log.e("BusTours", "Current lastKnown (lat;lon)=(" + String.valueOf(lastLoc.getLatitude()) + ";" + String.valueOf(lastLoc.getLongitude()) + ")");
             this.nearests = this.stops.getNearestStop(lastLoc.getLatitude(), lastLoc.getLongitude());
             Iterator itMinDist = this.nearests.iterator();
             while(itMinDist.hasNext()) {
                 BusStops.BusStop bs = (BusStops.BusStop)itMinDist.next();
-                Log.e("BusTours", "Current lastKnown (lat;lon)=(" + String.valueOf(lastLoc.getLatitude()) + ";" + String.valueOf(lastLoc.getLongitude()) + ")");
                 Log.e("BusTours", "Closest bus stop at (lat;lon)=(" + String.valueOf(bs.lat) + ";" + String.valueOf(bs.lon) + ") :: " + bs.name + " is " + bs.dist + "m");
             }
         }
