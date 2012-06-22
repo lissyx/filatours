@@ -49,4 +49,6 @@
     <string name="closest_stops">Closest stops</string>
     <string name="sens_arrival">Arrival</string>
     <string name="sens_departure">Departure</string>
+    <string name="whereAmI">Show where I am</string>
+    <string name="youAreHere">Your position</string>
 </resources>

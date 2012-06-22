@@ -4,7 +4,16 @@
     android:id="@+id/widget32"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    >
+<Button
+    android:id="@+id/btnWhereAmI"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:text="@string/whereAmI"
+    />
 <ListView
     android:id="@+id/listClosestStops"
     android:layout_width="fill_parent"

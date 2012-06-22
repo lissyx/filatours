@@ -18,6 +18,7 @@ import android.app.Dialog;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 
 import android.location.Criteria;
 import android.location.Location;
@@ -27,6 +28,8 @@ import android.util.Log;
 
 import android.os.Bundle;
 import android.os.AsyncTask;
+
+import android.net.Uri;
 
 import android.view.View;
 
@@ -213,10 +216,35 @@ public class BusToursActivity extends Activity
         return this.nearests.get(pos);
     }
 
+    public Location getLastLocation() {
+        return this.mLocManager.getLastKnownLocation(this.mLocProvider);
+    }
+
     public void buildClosestStopsUi(String type) {
         closestStops = new Dialog(context);
         closestStops.setContentView(R.layout.closest);
         closestStops.setTitle(getString(R.string.closest_stops));
+        Button btnWhereAmI = (Button)closestStops.findViewById(R.id.btnWhereAmI);
+
+        btnWhereAmI.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                Location lastLoc = getLastLocation();
+                Intent intent = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse(
+                        "geo:"
+                        + lastLoc.getLatitude()
+                        + ","
+                        + lastLoc.getLongitude()
+                        + "?q="
+                        + lastLoc.getLatitude()
+                        + ","
+                        + lastLoc.getLongitude()
+                        + "(" + getString(R.string.youAreHere) + ")"
+                        )
+                    );
+                startActivity(intent);
+            }
+        });
 
         ListView list = (ListView)closestStops.findViewById(R.id.listClosestStops);
         if (type.equals("dep")) {
@@ -262,7 +290,7 @@ public class BusToursActivity extends Activity
     public void getClosestStops() {
         List<BusStops.BusStop> nearests = null;
         Log.e("BusTours", "Using provider: " + this.mLocProvider);
-        Location lastLoc = this.mLocManager.getLastKnownLocation(this.mLocProvider);
+        Location lastLoc = this.getLastLocation();
         if (lastLoc == null) {
             Log.e("BusTours", "No last known location");
         } else {
