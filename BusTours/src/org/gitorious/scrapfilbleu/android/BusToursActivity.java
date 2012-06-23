@@ -195,6 +195,7 @@ public class BusToursActivity extends Activity
         j.setMinute(String.valueOf(this.time.getCurrentMinute()));
         j.setSens(String.valueOf(this.getSensValue()));
         j.setCriteria(String.valueOf(this.getJourneyCriteriaValue()));
+
         new ProcessScrapping().execute(j);
     }
 
@@ -545,6 +546,7 @@ public class BusToursActivity extends Activity
             try {
                 publishProgress(10, R.string.jsoupConnect);
                 if (className.equals("BusJourney")) {
+                    setJourneys(null);
                     BusJourney j = (BusJourney)journey[0];
                     setJourneys(j.getBusJourneys(this));
                 }
