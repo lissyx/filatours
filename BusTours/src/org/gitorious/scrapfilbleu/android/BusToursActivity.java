@@ -187,7 +187,7 @@ public class BusToursActivity extends Activity
         j.setDate(new String()
             + String.valueOf(this.date.getDayOfMonth())
             + "/"
-            + String.valueOf(this.date.getMonth())
+            + String.valueOf(this.date.getMonth() + 1)
             + "/"
             + String.valueOf(this.date.getYear())
         );
