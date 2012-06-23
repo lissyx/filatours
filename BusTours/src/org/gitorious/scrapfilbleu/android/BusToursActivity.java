@@ -168,8 +168,16 @@ public class BusToursActivity extends Activity
 
     public void onClick_btnGetJourney()
     {
-        String[] cityStopDep = this.stops.getStopCity(this.txtStopDeparture.getEditableText().toString());
-        String[] cityStopArr = this.stops.getStopCity(this.txtStopArrival.getEditableText().toString());
+        String dep = this.txtStopDeparture.getEditableText().toString();
+        String arr = this.txtStopArrival.getEditableText().toString();
+
+        if (dep.length() < 1 || arr.length() < 1) {
+            this.alertErrorBox(getString(R.string.missingValues), getString(R.string.descMissingValues));
+            return;
+        }
+
+        String[] cityStopDep = this.stops.getStopCity(dep);
+        String[] cityStopArr = this.stops.getStopCity(arr);
 
         BusJourney j = new BusJourney();
         j.setCityDep(cityStopDep[1]);
@@ -278,10 +286,12 @@ public class BusToursActivity extends Activity
         DecimalFormat df = new DecimalFormat("###");
         List<String> listClosest = new ArrayList<String>();
 
-        Iterator itMinDist = this.nearests.iterator();
-        while(itMinDist.hasNext()) {
-            BusStops.BusStop bs = (BusStops.BusStop)itMinDist.next();
-            listClosest.add(new String(bs.name + " (" + df.format(bs.dist) + "m)"));
+        if (this.nearests != null) {
+            Iterator itMinDist = this.nearests.iterator();
+            while(itMinDist.hasNext()) {
+                BusStops.BusStop bs = (BusStops.BusStop)itMinDist.next();
+                listClosest.add(new String(bs.name + " (" + df.format(bs.dist) + "m)"));
+            }
         }
 
         return new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listClosest);

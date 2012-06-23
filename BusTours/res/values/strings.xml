@@ -51,4 +51,6 @@
     <string name="sens_departure">Departure</string>
     <string name="whereAmI">Show where I am</string>
     <string name="youAreHere">Your position</string>
+    <string name="missingValues">Missing values</string>
+    <string name="descMissingValues">One or more missing values.</string>
 </resources>
