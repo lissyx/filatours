@@ -71,7 +71,14 @@ public class BusJourney {
             .data("Minute", this.minute)
             .data("Criteria", this.criteria)
             .post();
-        Log.e("BusTours:BusJourney", "Posted form.");
+        Log.e("BusTours:BusJourney", "Posted form:");
+        Log.e("BusTours:BusJourney", "    Departure=" + dep);
+        Log.e("BusTours:BusJourney", "    Arrival=" + arr);
+        Log.e("BusTours:BusJourney", "    Sens=" + this.sens);
+        Log.e("BusTours:BusJourney", "    Date=" + this.date);
+        Log.e("BusTours:BusJourney", "    Hour=" + this.hour);
+        Log.e("BusTours:BusJourney", "    Minute=" + this.minute);
+        Log.e("BusTours:BusJourney", "    Criteria=" + this.criteria);
 
         Elements optgroups = reply.getElementsByAttributeValue("label", "Arrêts");
         if (!optgroups.isEmpty()) {
@@ -107,16 +114,34 @@ public class BusJourney {
                 .data("Minute", this.minute)
                 .data("Criteria", this.criteria)
                 .post();
-            Log.e("BusTours:BusJourney", "Re-posted form.");
+            Log.e("BusTours:BusJourney", "Re-posted form: ");
+            Log.e("BusTours:BusJourney", "    Departure=" + dep);
+            Log.e("BusTours:BusJourney", "    Arrival=" + arr);
+            Log.e("BusTours:BusJourney", "    Sens=" + this.sens);
+            Log.e("BusTours:BusJourney", "    Date=" + this.date);
+            Log.e("BusTours:BusJourney", "    Hour=" + this.hour);
+            Log.e("BusTours:BusJourney", "    Minute=" + this.minute);
+            Log.e("BusTours:BusJourney", "    Criteria=" + this.criteria);
         }
 
         parent.progress(40, R.string.jsoupPostedForm);
 
+        Elements alerte = reply.getElementsByAttributeValue("class", "alerte");
+        if (alerte.isEmpty()) {
+            Log.e("BusTours:BusJourney", "No alerte, cool.");
+        } else {
+            Log.e("BusTours:BusJourney", "Got alerte:" + alerte.first().text());
+            throw new ScrappingException(alerte.first().text());
+        }
+
         Elements navig = reply.getElementsByAttributeValue("class", "navig");
-        Log.e("BusTours:BusJourney", "Retrieved elements.");
+        Log.e("BusTours:BusJourney", "Retrieved elements: " + navig.size());
         if (navig.isEmpty()) {
             Log.e("BusTours:BusJourney", "NO Navig !!!");
-            Log.e("BusTours:BusJourney", "BODY::" + reply.body().html());
+            String[] parts = reply.body().html().split("\\r?\\n");
+            for (int i = 0; i < parts.length; i++) {
+                Log.e("BusTours:BusJourney", "BODY::" + parts[i]);
+            }
             throw new ScrappingException("Not a result page");
         }
 
