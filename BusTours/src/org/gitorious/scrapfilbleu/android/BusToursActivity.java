@@ -230,6 +230,12 @@ public class BusToursActivity extends Activity
     }
 
     public void buildClosestStopsUi(String type) {
+        ArrayAdapter<String> stopsAdapter = this.buildClosestStopsAdapter();
+        if (stopsAdapter.getCount() < 1) {
+            Log.e("BusTours", "No stop. Dismissing dialog.");
+            return;
+        }
+
         closestStops = new Dialog(context);
         closestStops.setContentView(R.layout.closest);
         closestStops.setTitle(getString(R.string.closest_stops));
@@ -276,7 +282,7 @@ public class BusToursActivity extends Activity
                 }
             });
         }
-        list.setAdapter(this.buildClosestStopsAdapter());
+        list.setAdapter(stopsAdapter);
         list.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
         closestStops.show();
@@ -304,6 +310,7 @@ public class BusToursActivity extends Activity
         Location lastLoc = this.getLastLocation();
         if (lastLoc == null) {
             Log.e("BusTours", "No last known location");
+            this.alertInfoBox(getString(R.string.noLocation), getString(R.string.descNoLocation));
         } else {
             Log.e("BusTours", "Current lastKnown (lat;lon)=(" + String.valueOf(lastLoc.getLatitude()) + ";" + String.valueOf(lastLoc.getLongitude()) + ")");
             this.nearests = this.stops.getNearestStop(lastLoc.getLatitude(), lastLoc.getLongitude());

@@ -53,4 +53,6 @@
     <string name="youAreHere">Your position</string>
     <string name="missingValues">Missing values</string>
     <string name="descMissingValues">One or more missing values.</string>
+    <string name="noLocation">No last location</string>
+    <string name="descNoLocation">System has no last known location.</string>
 </resources>
