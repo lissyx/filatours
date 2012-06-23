@@ -410,7 +410,7 @@ public class BusToursActivity extends Activity
                 }
 
                 if (indic.getType().equals("walk")) {
-                    map.put("head", getString(R.string.walkIndic) + " '" + indic.getStop() + "'");
+                    map.put("head", getString(R.string.walkIndic) + " '" + indic.getStop() + "'" + " (" + jp.getDuration() + ")");
                     curChildMap.put("head", getString(R.string.detailWalkTo) + " " + indic.getDirection());
                     curChildMap.put("more", getString(R.string.detailWalkFrom) + " " + indic.getStop());
                 }
