@@ -163,7 +163,55 @@ class FilBleu:
 		self.get_lines()
 		for line in self.lines:
 			line = self.lines[line]
-			out = "Line: %(line_number)s [%(line_id)s]\n" % { 'line_number': line.number, 'line_id': line.id }
+			out = "Line(id=%(line_id)s): " % { 'line_id': line.id }
+			# circular lines
+			if len(line.ends) == 1:
+				out += "number=%(line_number)s; name='%(ends)s'" % { 'line_number': line.number, 'ends': line.ends[0] }
+			else:
+				# classic, one end on both 
+				if type(line.ends[0]) == unicode and type(line.ends[1]) == unicode:
+					if line.ends[0].startswith("A |") or line.ends[0].startswith("B |") or line.ends[1].startswith("A |") or line.ends[1].startswith("B |"):
+						AorB_end_one = line.ends[0].split("|")[0].strip()
+						AorB_end_two = line.ends[1].split("|")[0].strip()
+						out += "\n\tnumber=%(line_number)s; name={'%(end_one)s'}" % { 'line_number': line.number + AorB_end_one, 'end_one': line.ends[0].split("|")[1].strip() }
+						out += "\n\tnumber=%(line_number)s; name={'%(end_two)s'}" % { 'line_number': line.number + AorB_end_two, 'end_two': line.ends[1].split("|")[1].strip() }
+					else:
+						out += "number=%(line_number)s; name={'%(end_one)s','%(end_two)s'}" % { 'line_number': line.number, 'end_one': line.ends[0], 'end_two': line.ends[1] }
+				else:
+					# one side is good
+					if type(line.ends[0]) == unicode:
+						AorB_end_one = line.ends[1][0].split("|")[0].strip()
+						AorB_end_two = line.ends[1][1].split("|")[0].strip()
+						out += "\n\tnumber=%(line_number)s; name={'%(end_one)s','%(end_two)s'}" % { 'line_number': line.number + AorB_end_one, 'end_one': line.ends[0], 'end_two': line.ends[1][0].split("|")[1].strip() }
+						out += "\n\tnumber=%(line_number)s; name={'%(end_one)s','%(end_two)s'}" % { 'line_number': line.number + AorB_end_two, 'end_one': line.ends[0], 'end_two': line.ends[1][1].split("|")[1].strip() }
+					if type(line.ends[1]) == unicode:
+						AorB_end_one = line.ends[0][0].split("|")[0].strip()
+						AorB_end_two = line.ends[0][1].split("|")[0].strip()
+						out += "\n\tnumber=%(line_number)s; name={'%(end_one)s','%(end_two)s'}" % { 'line_number': line.number + AorB_end_one, 'end_one': line.ends[0], 'end_two': line.ends[0][0].split("|")[1].strip() }
+						out += "\n\tnumber=%(line_number)s; name={'%(end_one)s','%(end_two)s'}" % { 'line_number': line.number + AorB_end_two, 'end_one': line.ends[0], 'end_two': line.ends[0][1].split("|")[1].strip() }
+
+					if type(line.ends[0]) == list and type(line.ends[1]) == list:
+						end_one_first = ""
+						end_one_second = ""
+						end_two_first = ""
+						end_two_second = ""
+						AorB_end_one_first = line.ends[0][0].split("|")[0].strip()
+						AorB_end_two_first = line.ends[0][1].split("|")[0].strip()
+						AorB_end_one_second = line.ends[1][0].split("|")[0].strip()
+						AorB_end_two_second = line.ends[1][1].split("|")[0].strip()
+
+						if AorB_end_one_first == 'A' and AorB_end_one_second == 'A':
+							end_one_first = line.ends[0][0].split("|")[1].strip()
+							end_two_first = line.ends[1][0].split("|")[1].strip()
+
+						if AorB_end_two_first == 'B' and AorB_end_two_second == 'B':
+							end_one_second = line.ends[0][1].split("|")[1].strip()
+							end_two_second = line.ends[1][1].split("|")[1].strip()
+
+						out += "\n\tnumber=%(line_number)s; name={'%(end_one)s','%(end_two)s'}" % { 'line_number': line.number + 'A', 'end_one': end_one_first, 'end_two': end_two_first }
+						out += "\n\tnumber=%(line_number)s; name={'%(end_one)s','%(end_two)s'}" % { 'line_number': line.number + 'B', 'end_one': end_one_second, 'end_two': end_two_second }
+
+			out += "\n"
 			out = out.encode('utf-8')
 			sys.stdout.write(out)
 
