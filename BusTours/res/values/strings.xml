@@ -58,4 +58,6 @@
     <string name="invalidValues">Invalid stop name(s)</string>
     <string name="descInvalidValuesDep">Please check your departure stop\'s name</string>
     <string name="descInvalidValuesArr">Please check your arrival stop\'s name</string>
+    <string name="waitLoc">Waiting location ...</string>
+    <string name="waitingForGeolocation">Please wait while we request a more up-to-date geolocation.</string>
 </resources>

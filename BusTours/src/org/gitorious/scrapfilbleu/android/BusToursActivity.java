@@ -23,11 +23,13 @@ import android.content.Intent;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
+import android.location.LocationListener;
 
 import android.util.Log;
 
 import android.os.Bundle;
 import android.os.AsyncTask;
+import android.os.Looper;
 
 import android.net.Uri;
 
@@ -86,6 +88,9 @@ public class BusToursActivity extends Activity
     private List<BusStops.BusStop> nearests;
     private LocationManager mLocManager;
     private String mLocProvider;
+    private String geoLocTarget;
+    private ProgressDialog geoLocDialog;
+    private static final int FIX_RECENT_BUFFER_TIME = 30000;
 
     /** Called when the activity is first created. */
     @Override
@@ -209,12 +214,68 @@ public class BusToursActivity extends Activity
         new ProcessScrapping().execute(j);
     }
 
+    public void updateLocation(String target) {
+        this.setGeoLocTarget(target);
+
+        Location lastKnown = this.getLastLocation();
+        if (lastKnown == null) {
+            Log.e("BusTours", "Location error.");
+            buildClosestStopsUi(getGeoLocTarget());
+            return;
+        }
+
+        if (lastKnown.getTime() <= (System.currentTimeMillis() - FIX_RECENT_BUFFER_TIME)) {
+            /* Location is not that old, keep it ... */
+            Log.e("BusTours", "Location is good, keep it.");
+            buildClosestStopsUi(getGeoLocTarget());
+            return;
+        }
+
+        Log.e("BusTours", "Location is too old, request update.");
+
+        geoLocDialog = ProgressDialog.show(context, getString(R.string.waitLoc), getString(R.string.waitingForGeolocation), true);
+
+        LocationListener locationListener = new LocationListener() {
+            @Override
+            public void onStatusChanged(String provider, int status, Bundle extras) {
+                Log.v("BusTours:LocationListener", "onStatusChanged");
+            }
+
+            @Override
+            public void onProviderEnabled(String provider) {
+                Log.v("BusTours:LocationListener", "onProviderEnabled");
+            }
+
+            @Override
+            public void onProviderDisabled(String provider) {
+                Log.v("BusTours:LocationListener", "onProviderDisabled");
+            }
+
+            @Override
+            public void onLocationChanged(Location location) {
+                Log.v("BusTours:LocationListener", "onLocationChanged");
+                buildClosestStopsUi(getGeoLocTarget());
+                geoLocDialog.dismiss();
+            }
+        };
+
+        this.mLocManager.requestLocationUpdates(this.mLocProvider, 0, 0, locationListener);
+    }
+
     public void onClick_btnGetClosestStopDeparture() {
-        this.buildClosestStopsUi("dep");
+        this.updateLocation("dep");
     }
 
     public void onClick_btnGetClosestStopArrival() {
-        this.buildClosestStopsUi("arr");
+        this.updateLocation("arr");
+    }
+
+    public String getGeoLocTarget() {
+        return this.geoLocTarget;
+    }
+
+    public void setGeoLocTarget(String v) {
+        this.geoLocTarget = v;
     }
 
     public void setDepartureStopName(String name) {
@@ -322,6 +383,7 @@ public class BusToursActivity extends Activity
             Log.e("BusTours", "No last known location");
             this.alertInfoBox(getString(R.string.noLocation), getString(R.string.descNoLocation));
         } else {
+            Log.e("BusTours", "From provider: " + lastLoc.getProvider() + ", fix time at " + lastLoc.getTime());
             Log.e("BusTours", "Current lastKnown (lat;lon)=(" + String.valueOf(lastLoc.getLatitude()) + ";" + String.valueOf(lastLoc.getLongitude()) + ")");
             this.nearests = this.stops.getNearestStop(lastLoc.getLatitude(), lastLoc.getLongitude());
             Iterator itMinDist = this.nearests.iterator();
