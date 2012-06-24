@@ -9,6 +9,7 @@ import datetime
 import BeautifulSoup
 import unicodedata
 import pyproj
+import difflib
 
 class JourneyPart:
 	def __init__(self, type, mode, indication, time, duration):
@@ -270,7 +271,16 @@ class FilBleu:
 				# ok, we have to find the first stop
 				optgroup = form.find('optgroup')
 				if optgroup:
-					stopArea = optgroup.option["value"]
+					options = optgroup.findAll('option')
+					if options:
+						bestSim = 0
+						bestValue = ""
+						for option in options:
+							sim = difflib.SequenceMatcher(a=self.strip_accents(unicode(self.args.get_stop_coords, "UTF-8")), b=option.text).ratio()
+							if (sim > bestSim):
+								bestSim = sim
+								bestValue = option["value"]
+						stopArea = bestValue
 				else:
 					print "No optgroup!"
 
