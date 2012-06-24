@@ -113,7 +113,7 @@ public class BusToursActivity extends Activity
 
         this.mLocManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
         Criteria crit = new Criteria();
-        crit.setAccuracy(Criteria.ACCURACY_COARSE);
+        crit.setAccuracy(Criteria.NO_REQUIREMENT);
         this.mLocProvider = this.mLocManager.getBestProvider(crit, true);
 
         this.fill();
