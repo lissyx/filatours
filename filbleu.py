@@ -9,6 +9,8 @@ import datetime
 import BeautifulSoup
 import unicodedata
 import pyproj
+import math
+import copy
 import difflib
 
 class JourneyPart:
@@ -89,6 +91,8 @@ class FilBleu:
 		self.parser = argparse.ArgumentParser(description="FilBleu Scrapper")
 		self.parser.add_argument("--list-lines", action="store_true", help="List lines")
 		self.parser.add_argument("--list-stops", help="List stops of a line (format: n|M)")
+		self.parser.add_argument("--build-line", help="Build given line, using lines.txt and stops_coords.txt")
+		self.parser.add_argument("--build-line-gpx", action="store_true", default=True, required=False, help="Build given line, output as GPX")
 		self.parser.add_argument("--get-stop-coords", help="Get a stop GPS coordinates")
 		self.parser.add_argument("--httpdebug", action="store_true", help="Show HTTP debug")
 		journey = self.parser.add_argument_group("Journey")
@@ -413,6 +417,123 @@ class FilBleu:
 				url += self.periode + p
 
 			self.browser.open(url)
+	
+	def distance(self, p1, p2):
+		R = 6378000.0
+		sourcelatitude = (math.pi * p2['lat']) / 180.0;
+		sourcelongitude = (math.pi * p2['lon']) / 180.0;
+		latitude = (math.pi * p1['lat']) / 180.0;
+		longitude = (math.pi * p1['lon']) / 180.0;
+		return R * (math.pi/2 - math.asin( math.sin(latitude) * math.sin(sourcelatitude) + math.cos(longitude - sourcelongitude) * math.cos(latitude) * math.cos(sourcelatitude)));
+	
+	def build_line(self):
+		line_to_build = self.args.build_line
+		stopAreas = {}
+		lineStops = {}
+		lineSpecs = []
+
+		stopArea = re.compile(r"Found a stop matching stopArea: \[StopArea\|(.*)\|(.*)\|(.*)\|\|\|.*\|.*\|.*\]; Lambert2\+: {E:.*, N:.*}; Degrees: {E:(.*), N:(.*)}")
+		for line in open('stops_coords.txt','r').readlines():
+			if line.startswith("Found"):
+				results = stopArea.search(line)
+				if results:
+					stopId   = results.group(1)
+					stopName = results.group(2)
+					cityName = results.group(3)
+					lat = float(results.group(4))
+					lon = float(results.group(5))
+					stopAreas[stopId] = {'name': stopName, 'city': cityName, 'lat': lat, 'lon': lon}
+
+		lineStop = re.compile(r"Stop:.*=> (.*)\|(.*)\|(.*)")
+		for line in open('stops.' + line_to_build + '.txt','r').readlines():
+			results = lineStop.search(line)
+			if results:
+				stopId   = results.group(1)
+				stopName = results.group(2)
+				cityName = results.group(3)
+				lineStops[stopId] = {'name': stopName, 'city': cityName}
+
+		getLineNumber = re.compile(r"number=(.*); ")
+		for line in open('lines.txt').readlines():
+			if line.startswith("Line(id=" + line_to_build + ")"):
+				line = line.replace("Line(id=" + line_to_build + "): ", "")
+				subparts = line.split("|")
+				for subpart in subparts:
+					number = getLineNumber.search(subpart)
+					names = subpart.split(";")[1].replace("name=", "").replace("'", "").replace("{", "").replace("}", "").split(",")
+					if number:
+						ends = []
+						for name in names:
+							ends.append(name.strip())
+						lineSpecs.append({'number': number.group(1), 'ends': ends})
+
+		print lineStops
+		lineResults = []
+		for lineSpec in lineSpecs:
+			print "Dealing with:", lineSpec['number']
+
+			stopsVisited = []
+			localLineStops = copy.deepcopy(lineStops)
+			root1 = None
+			root2 = None
+			if len(lineSpec['ends']) > 1:
+				(root1, root2) = lineSpec['ends']
+			else:
+				print "ends:", lineSpec['ends']
+				root2 = lineSpec['ends'][0]
+
+			print "root2=", root2
+
+			# find the root
+			for stop in localLineStops.items():
+				(key, value) = stop
+				if root2.startswith(value['name']):
+					stopsVisited.append(stop)
+					del localLineStops[key]
+			
+			print "init:", stopsVisited
+
+			# populate
+			cont = True
+			while (cont):
+				minDist = 32768
+				closeStop = None
+				closeId = -1
+				(lastId, lastStop) = stopsVisited[-1]
+				for stop in localLineStops.items():
+					(key, value) = stop
+					d = self.distance({'lat': stopAreas[lastId]['lat'], 'lon': stopAreas[lastId]['lon']}, {'lat': stopAreas[key]['lat'], 'lon': stopAreas[key]['lon']})
+					if d < minDist:
+						minDist = d
+						closeStop = stop
+						closeId = key
+
+				# print "last:", lastStop
+				# print "closest:", closeStop
+
+				stopsVisited.append(closeStop)
+				del localLineStops[closeId]
+
+				if len(localLineStops) == 0:
+					cont = False
+					break
+
+				(key, value) = closeStop
+				if value['name'] == root1:
+					cont = False
+					break
+
+			print "visited:", stopsVisited
+			lineResults.append({'number': lineSpec['number'], 'visited': stopsVisited})
+
+		if self.args.build_line_gpx:
+			for lineResult in lineResults:
+				f = open('filbleu_route.' + lineResult['number'] + '.gpx', 'w')
+				f.write('<?xml version="1.0" encoding="UTF-8" standalone="yes"?><gpx version="1.1" creator="FilBleu Scrapper"><metadata>Filbleu ligne ' + lineSpec['number'] + '</metadata><trk><trkseg>')
+				for (key, val) in lineResult['visited']:
+					f.write('<trkpt lat="' + str(stopAreas[key]['lat']) + '" lon="' + str(stopAreas[key]['lon']) + '"><ele>0.0</ele><name>' + val['name'] + '</name><time>0</time></trkpt>')
+				f.write('</trkseg></trk></gpx>')
+				f.close()
 
 	def __process__(self):
 		if self.args.list_lines:
@@ -423,6 +544,8 @@ class FilBleu:
 			self.get_stop_coords()
 		if self.args.journey:
 			self.list_journeys()
+		if self.args.build_line:
+			self.build_line()
 
 if __name__ == '__main__':
 	FilBleu()
