@@ -179,6 +179,16 @@ public class BusToursActivity extends Activity
         String[] cityStopDep = this.stops.getStopCity(dep);
         String[] cityStopArr = this.stops.getStopCity(arr);
 
+        if (cityStopDep[0] == null || cityStopDep[1] == null) {
+            this.alertErrorBox(getString(R.string.invalidValues), getString(R.string.descInvalidValuesDep));
+            return;
+        }
+
+        if (cityStopArr[0] == null || cityStopArr[1] == null) {
+            this.alertErrorBox(getString(R.string.invalidValues), getString(R.string.descInvalidValuesArr));
+            return;
+        }
+
         BusJourney j = new BusJourney();
         j.setCityDep(cityStopDep[1]);
         j.setCityArr(cityStopArr[1]);

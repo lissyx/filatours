@@ -55,4 +55,7 @@
     <string name="descMissingValues">One or more missing values.</string>
     <string name="noLocation">No last location</string>
     <string name="descNoLocation">System has no last known location.</string>
+    <string name="invalidValues">Invalid stop name(s)</string>
+    <string name="descInvalidValuesDep">Please check your departure stop\'s name</string>
+    <string name="descInvalidValuesArr">Please check your arrival stop\'s name</string>
 </resources>
