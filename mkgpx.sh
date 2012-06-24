@@ -7,7 +7,7 @@ echo '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <metadata>Filbleu</metadata>';
 
 for LINE in $LINES; do
-	name=$(grep "(id=$LINE)" lines.txt | sed -e "s/Line(id=$LINE): //g" -e 's/name={.*} //g' -e 's/name={.*}$//g' -e 's/number=//g' -e 's/;//g' -e 's/ | /, /g' -e 's/ $//g')
+	name=$(grep "(id=$LINE)" lines.txt | sed -e "s/Line(id=$LINE): //g" -e 's/name={.*} //g' -e 's/name={.*}$//g' -e "s/name='.*'//g" -e 's/number=//g' -e 's/;//g' -e 's/ | /, /g' -e 's/ $//g')
 	echo "	<trk>"
 	echo "		<name>Ligne $name</name>"
 	echo "		<trkseg>"
