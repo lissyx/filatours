@@ -118,7 +118,7 @@ public class BusToursActivity extends Activity
 
         this.mLocManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
         Criteria crit = new Criteria();
-        crit.setAccuracy(Criteria.NO_REQUIREMENT);
+        crit.setAccuracy(Criteria.ACCURACY_FINE);
         this.mLocProvider = this.mLocManager.getBestProvider(crit, true);
 
         this.fill();
@@ -219,16 +219,14 @@ public class BusToursActivity extends Activity
 
         Location lastKnown = this.getLastLocation();
         if (lastKnown == null) {
-            Log.e("BusTours", "Location error.");
-            buildClosestStopsUi(getGeoLocTarget());
-            return;
-        }
-
-        if (lastKnown.getTime() <= (System.currentTimeMillis() - FIX_RECENT_BUFFER_TIME)) {
-            /* Location is not that old, keep it ... */
-            Log.e("BusTours", "Location is good, keep it.");
-            buildClosestStopsUi(getGeoLocTarget());
-            return;
+            Log.e("BusTours", "Location missing.");
+        } else {
+            if (lastKnown.getTime() <= (System.currentTimeMillis() - FIX_RECENT_BUFFER_TIME)) {
+                /* Location is not that old, keep it ... */
+                Log.e("BusTours", "Location is good, keep it.");
+                buildClosestStopsUi(getGeoLocTarget());
+                return;
+            }
         }
 
         Log.e("BusTours", "Location is too old, request update.");
@@ -254,6 +252,7 @@ public class BusToursActivity extends Activity
             @Override
             public void onLocationChanged(Location location) {
                 Log.v("BusTours:LocationListener", "onLocationChanged");
+                getLocationManager().removeUpdates(this);
                 buildClosestStopsUi(getGeoLocTarget());
                 geoLocDialog.dismiss();
             }
@@ -298,6 +297,10 @@ public class BusToursActivity extends Activity
 
     public Location getLastLocation() {
         return this.mLocManager.getLastKnownLocation(this.mLocProvider);
+    }
+
+    public LocationManager getLocationManager() {
+        return this.mLocManager;
     }
 
     public void buildClosestStopsUi(String type) {
