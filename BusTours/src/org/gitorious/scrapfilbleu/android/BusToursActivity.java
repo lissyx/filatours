@@ -90,7 +90,7 @@ public class BusToursActivity extends Activity
     private String mLocProvider;
     private String geoLocTarget;
     private ProgressDialog geoLocDialog;
-    private static final int FIX_RECENT_BUFFER_TIME = 30000;
+    private static final long maxLocationAge = 15 * 1000 * 60;
 
     /** Called when the activity is first created. */
     @Override
@@ -221,7 +221,9 @@ public class BusToursActivity extends Activity
         if (lastKnown == null) {
             Log.e("BusTours", "Location missing.");
         } else {
-            if (lastKnown.getTime() <= (System.currentTimeMillis() - FIX_RECENT_BUFFER_TIME)) {
+            long age = lastKnown.getTime() - System.currentTimeMillis();
+            Log.e("BusTours", "Location age: " + String.valueOf(age) + "ms");
+            if (age > this.maxLocationAge) {
                 /* Location is not that old, keep it ... */
                 Log.e("BusTours", "Location is good, keep it.");
                 buildClosestStopsUi(getGeoLocTarget());
