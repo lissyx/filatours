@@ -484,12 +484,36 @@ class FilBleu:
 
 			print "root2=", root2
 
+			if root2.find(" par ") != -1 or root2.find(" puis ") != -1:
+				split_par = root2.split(" par ")
+				print "par::", split_par
+				tmproot = [ ]
+				for sp in split_par:
+					split_puis = sp.split(" puis ")
+					tmproot += split_puis
+					print "puis::", split_puis
+				print "tmproot::", tmproot
+				root2 = tmproot
+
 			# find the root
-			for stop in localLineStops.items():
-				(key, value) = stop
-				if root2.startswith(value['name']):
-					stopsVisited.append(stop)
-					del localLineStops[key]
+			bestSim = 0
+			bestValue = None
+			bestKey = None
+			for rooteval in root2:
+				for stop in localLineStops.items():
+					(key, value) = stop
+					sim = difflib.SequenceMatcher(a=rooteval, b=value['name']).ratio()
+					if (sim > bestSim):
+						bestSim = sim
+						bestValue = stop
+						bestKey = key
+
+			print "bestSim=", bestSim
+			print "bestValue=", bestValue
+			print "bestKey=", bestKey
+
+			stopsVisited.append(bestValue)
+			del localLineStops[bestKey]
 			
 			print "init:", stopsVisited
 
