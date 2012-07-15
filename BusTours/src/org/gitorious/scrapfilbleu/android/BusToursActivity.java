@@ -319,6 +319,7 @@ public class BusToursActivity extends Activity
 
         btnWhereAmI.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
+                /*
                 Location lastLoc = getLastLocation();
                 Intent intent = new Intent(Intent.ACTION_VIEW,
                     Uri.parse(
@@ -334,6 +335,8 @@ public class BusToursActivity extends Activity
                         )
                     );
                 startActivity(intent);
+                */
+                showMap();
             }
         });
 
@@ -690,5 +693,12 @@ public class BusToursActivity extends Activity
                 onAsyncTaskScrapJourneyDetailsComplete();
             }
         }
+    }
+
+    public void showMap() {
+        // HashMap<String, String> hashMap= adapter.getItem(position);
+        Intent intentMapView = new Intent(this, MapViewActivity.class);
+        // intent.putExtra("hashMap", hashMap);
+        startActivity(intentMapView);
     }
 }
