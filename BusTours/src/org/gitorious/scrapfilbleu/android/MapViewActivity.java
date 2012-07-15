@@ -30,7 +30,7 @@ public class MapViewActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mapview);
 
-        this.geoPointTours = new GeoPoint(47.3883 * 1000000, 0.7276 * 1000000);
+        this.geoPointTours = new GeoPoint((int)(47.3883*1e6), (int)(0.7276*1e6));
 
         osmMap = (MapView)findViewById(R.id.map);
         osmMap.setTileSource(TileSourceFactory.MAPNIK);
