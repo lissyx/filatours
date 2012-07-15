@@ -697,8 +697,8 @@ public class BusToursActivity extends Activity
 
     public void showMap() {
         // HashMap<String, String> hashMap= adapter.getItem(position);
-        Intent intentMapView = new Intent(this, MapViewActivity.class);
+        Intent intentStopsView = new Intent(this, StopsMapActivity.class);
         // intent.putExtra("hashMap", hashMap);
-        startActivity(intentMapView);
+        startActivity(intentStopsView);
     }
 }
