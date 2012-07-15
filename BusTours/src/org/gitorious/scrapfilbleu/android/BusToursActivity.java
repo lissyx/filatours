@@ -696,9 +696,29 @@ public class BusToursActivity extends Activity
     }
 
     public void showMap() {
-        // HashMap<String, String> hashMap= adapter.getItem(position);
+        String[] stopsNames = new String[10];
+        double[] latitudes = new double[10];
+        double[] longitudes = new double[10];
+
+        List<BusStops.BusStop> stops = this.getNearests();
+        if (stops != null) {
+            Iterator it = stops.iterator();
+            int pos = 0;
+            while(it.hasNext()) {
+                BusStops.BusStop bs = (BusStops.BusStop)it.next();
+                stopsNames[pos] = bs.name;
+                latitudes[pos] = bs.lat;
+                longitudes[pos] = bs.lon;
+                pos += 1;
+            }
+        }
+
         Intent intentStopsView = new Intent(this, StopsMapActivity.class);
-        // intent.putExtra("hashMap", hashMap);
+
+        intentStopsView.putExtra("stopsNames", stopsNames);
+        intentStopsView.putExtra("latitudes", latitudes);
+        intentStopsView.putExtra("longitudes", longitudes);
+
         startActivity(intentStopsView);
     }
 }

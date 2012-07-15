@@ -36,7 +36,11 @@ public class MapViewActivity extends Activity
         osmMap.setTileSource(TileSourceFactory.MAPNIK);
         osmMap.setBuiltInZoomControls(true);
         osmMap.setMultiTouchControls(true);
-        osmMap.getController().setZoom(16);
+        osmMap.getController().setZoom(13);
         osmMap.getController().setCenter(this.geoPointTours);
+    }
+
+    public MapView getOsmMap() {
+        return this.osmMap;
     }
 }
