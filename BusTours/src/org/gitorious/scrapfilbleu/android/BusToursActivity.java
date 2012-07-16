@@ -718,6 +718,7 @@ public class BusToursActivity extends Activity
         intentStopsView.putExtra("stopsNames", stopsNames);
         intentStopsView.putExtra("latitudes", latitudes);
         intentStopsView.putExtra("longitudes", longitudes);
+        intentStopsView.putExtra("location", this.getLastLocation());
 
         startActivity(intentStopsView);
     }
