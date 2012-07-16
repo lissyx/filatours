@@ -233,7 +233,7 @@ public class BusToursActivity extends Activity
 
         Log.e("BusTours", "Location is too old, request update.");
 
-        geoLocDialog = ProgressDialog.show(context, getString(R.string.waitLoc), getString(R.string.waitingForGeolocation), true);
+        geoLocDialog = ProgressDialog.show(context, getString(R.string.waitLoc), getString(R.string.waitingForGeolocation), true, true);
 
         LocationListener locationListener = new LocationListener() {
             @Override
