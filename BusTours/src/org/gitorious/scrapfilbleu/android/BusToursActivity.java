@@ -319,24 +319,7 @@ public class BusToursActivity extends Activity
 
         btnWhereAmI.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                /*
-                Location lastLoc = getLastLocation();
-                Intent intent = new Intent(Intent.ACTION_VIEW,
-                    Uri.parse(
-                        "geo:"
-                        + lastLoc.getLatitude()
-                        + ","
-                        + lastLoc.getLongitude()
-                        + "?q="
-                        + lastLoc.getLatitude()
-                        + ","
-                        + lastLoc.getLongitude()
-                        + "(" + getString(R.string.youAreHere) + ")"
-                        )
-                    );
-                startActivity(intent);
-                */
-                showMap();
+                showClosestStopsMap();
             }
         });
 
@@ -695,7 +678,22 @@ public class BusToursActivity extends Activity
         }
     }
 
-    public void showMap() {
+    /**
+     * all arrays must be of the same size
+     **/
+    public void startStopsMapActivity(String[] stopsNames, double[] latitudes, double[] longitudes) {
+
+        Intent intentStopsView = new Intent(this, StopsMapActivity.class);
+
+        intentStopsView.putExtra("stopsNames", stopsNames);
+        intentStopsView.putExtra("latitudes", latitudes);
+        intentStopsView.putExtra("longitudes", longitudes);
+        intentStopsView.putExtra("location", this.getLastLocation());
+
+        startActivity(intentStopsView);
+    }
+
+    public void showClosestStopsMap() {
         String[] stopsNames = new String[10];
         double[] latitudes = new double[10];
         double[] longitudes = new double[10];
@@ -713,13 +711,6 @@ public class BusToursActivity extends Activity
             }
         }
 
-        Intent intentStopsView = new Intent(this, StopsMapActivity.class);
-
-        intentStopsView.putExtra("stopsNames", stopsNames);
-        intentStopsView.putExtra("latitudes", latitudes);
-        intentStopsView.putExtra("longitudes", longitudes);
-        intentStopsView.putExtra("location", this.getLastLocation());
-
-        startActivity(intentStopsView);
+        this.startStopsMapActivity(stopsNames, latitudes, longitudes);
     }
 }
