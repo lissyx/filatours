@@ -72,6 +72,7 @@ public class BusToursActivity extends Activity
     private Button btnGetJourney;
     private RadioButton targetDeparture;
     private RadioButton targetArrival;
+    private Button btnShowStops;
 
     private Dialog journeyList;
     private Dialog journeyDetails;
@@ -110,6 +111,7 @@ public class BusToursActivity extends Activity
         this.btnGetClosestStopDeparture = (ImageButton)findViewById(R.id.btnGetClosestStopDeparture);
         this.btnGetClosestStopArrival = (ImageButton)findViewById(R.id.btnGetClosestStopArrival);
         this.btnGetJourney      = (Button)findViewById(R.id.btnGetJourney);
+        this.btnShowStops       = (Button)findViewById(R.id.btnShowStops);
 
         this.journeyCriteriaValues  = getResources().getStringArray(R.array.journeyCriteriaValues);
         this.sensValues             = getResources().getStringArray(R.array.sensValues);
@@ -153,6 +155,7 @@ public class BusToursActivity extends Activity
         this.btnGetClosestStopDeparture.setOnClickListener(new View.OnClickListener() { public void onClick(View arg0) { onClick_btnGetClosestStopDeparture(); } });
         this.btnGetClosestStopArrival.setOnClickListener(new View.OnClickListener() { public void onClick(View arg0) { onClick_btnGetClosestStopArrival(); } });
         this.btnGetJourney.setOnClickListener(new View.OnClickListener() { public void onClick(View arg0) { onClick_btnGetJourney(); } });
+        this.btnShowStops.setOnClickListener(new View.OnClickListener() { public void onClick(View arg0) { onClick_btnShowStops(); } });
     }
 
     public int getJourneyCriteriaValue()
@@ -212,6 +215,26 @@ public class BusToursActivity extends Activity
         j.setCriteria(String.valueOf(this.getJourneyCriteriaValue()));
 
         new ProcessScrapping().execute(j);
+    }
+
+    public void onClick_btnShowStops() {
+        List<BusStops.BusStop> stops = this.stops.getStopsList();
+
+        String[] stopsNames = new String[stops.size()];
+        double[] latitudes = new double[stops.size()];
+        double[] longitudes = new double[stops.size()];
+
+        Iterator it = stops.iterator();
+        int pos = 0;
+        while(it.hasNext()) {
+            BusStops.BusStop bs = (BusStops.BusStop)it.next();
+            stopsNames[pos] = bs.name;
+            latitudes[pos] = bs.lat;
+            longitudes[pos] = bs.lon;
+            pos += 1;
+        }
+
+        this.startStopsMapActivity(stopsNames, latitudes, longitudes);
     }
 
     public void updateLocation(String target) {

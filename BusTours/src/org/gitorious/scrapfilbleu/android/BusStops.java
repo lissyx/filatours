@@ -1487,4 +1487,21 @@ public class BusStops {
 
         return values.toArray(new String[values.size()]);
     }
+
+    public List<BusStop> getStopsList() {
+        List<BusStop> Stops = new ArrayList<BusStop>();
+        Double minDist = Double.MAX_VALUE;
+        Double d;
+
+        Iterator itStop = this.stops.entrySet().iterator();
+        while(itStop.hasNext()) {
+            Map.Entry<String, Map<String, String>> entry = (Map.Entry<String, Map<String, String>>)itStop.next();
+            Double curStopLat = Double.parseDouble(entry.getValue().get("lat"));
+            Double curStopLon = Double.parseDouble(entry.getValue().get("lon"));
+            Double curDistance = new Double(0.0);
+            Stops.add(new BusStop(entry.getKey(), entry.getValue().get("city"), curStopLat, curStopLon, curDistance));
+        }
+
+        return Stops;
+    }
 }
