@@ -12,6 +12,8 @@ import android.location.Location;
 
 import android.widget.Toast;
 
+import android.graphics.drawable.Drawable;
+
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.util.BoundingBoxE6;
 import org.osmdroid.views.overlay.ItemizedIconOverlay;
@@ -27,8 +29,11 @@ public class StopsMapActivity extends MapViewActivity
     private double[] longitudes;
     private Location whereAmI;
     private BoundingBoxE6 bbox;
+    private Drawable stopsMarker;
+    private Drawable posMarker;
 
-    private ItemizedOverlay<OverlayItem> mMyLocationOverlay;
+    private ItemizedOverlay<OverlayItem> stopsOverlay;
+    private ItemizedOverlay<OverlayItem> myLocationOverlay;
     private ResourceProxy mResourceProxy;
 
     /** Called when the activity is first created. */
@@ -39,7 +44,10 @@ public class StopsMapActivity extends MapViewActivity
         super.onCreate(savedInstanceState);
 
         this.mResourceProxy = new DefaultResourceProxyImpl(getApplicationContext());
+        this.stopsMarker = this.mResourceProxy.getDrawable(ResourceProxy.bitmap.marker_default);
+        this.posMarker = this.mResourceProxy.getDrawable(ResourceProxy.bitmap.center);
         ArrayList<OverlayItem> items = new ArrayList<OverlayItem>();
+        ArrayList<OverlayItem> pos = new ArrayList<OverlayItem>();
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -82,7 +90,8 @@ public class StopsMapActivity extends MapViewActivity
         }
 
         /* OnTapListener for the Markers, shows a simple Toast. */
-        this.mMyLocationOverlay = new ItemizedIconOverlay<OverlayItem>(items,
+        this.stopsOverlay = new ItemizedIconOverlay<OverlayItem>(items,
+            this.stopsMarker,
             new ItemizedIconOverlay.OnItemGestureListener<OverlayItem>() {
                 @Override
                 public boolean onItemSingleTapUp(final int index,
@@ -102,7 +111,31 @@ public class StopsMapActivity extends MapViewActivity
                 }
             }, mResourceProxy);
 
-        this.getOsmMap().getOverlays().add(this.mMyLocationOverlay);
+        pos.add(new OverlayItem("Your location", "Your location", new GeoPoint((int)(this.whereAmI.getLatitude()*1e6), (int)(this.whereAmI.getLongitude()*1e6))));
+        this.myLocationOverlay = new ItemizedIconOverlay<OverlayItem>(
+            pos,
+            this.posMarker,
+            new ItemizedIconOverlay.OnItemGestureListener<OverlayItem>() {
+                @Override
+                public boolean onItemSingleTapUp(final int index,
+                        final OverlayItem item) {
+                    Toast.makeText(
+                            StopsMapActivity.this,
+                            item.mTitle, Toast.LENGTH_LONG).show();
+                    return true; // We 'handled' this event.
+                }
+                @Override
+                public boolean onItemLongPress(final int index,
+                        final OverlayItem item) {
+                    Toast.makeText(
+                            StopsMapActivity.this,
+                            item.mTitle ,Toast.LENGTH_LONG).show();
+                    return false;
+                }
+            }, mResourceProxy);
+
+        this.getOsmMap().getOverlays().add(this.stopsOverlay);
+        this.getOsmMap().getOverlays().add(this.myLocationOverlay);
         /* Inverting coords, otherwise buggy results ?! */
         this.bbox = new BoundingBoxE6(bboxEast, bboxNorth, bboxWest, bboxSouth);
     }
