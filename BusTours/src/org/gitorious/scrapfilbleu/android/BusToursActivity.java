@@ -18,6 +18,7 @@ import android.app.Dialog;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
 
 import android.location.Criteria;
@@ -88,6 +89,7 @@ public class BusToursActivity extends Activity
     private BusStops stops;
     private List<BusStops.BusStop> nearests;
     private LocationManager mLocManager;
+    private LocationListener locationListener;
     private String mLocProvider;
     private String geoLocTarget;
     private ProgressDialog geoLocDialog;
@@ -256,9 +258,18 @@ public class BusToursActivity extends Activity
 
         Log.e("BusTours", "Location is too old, request update.");
 
-        geoLocDialog = ProgressDialog.show(context, getString(R.string.waitLoc), getString(R.string.waitingForGeolocation), true, true);
+        geoLocDialog = ProgressDialog.show(
+            context, getString(R.string.waitLoc),
+            getString(R.string.waitingForGeolocation),
+            true, true,
+                new DialogInterface.OnCancelListener() {
+                    public void onCancel(DialogInterface dialog) {
+                        getLocationManager().removeUpdates(getLocationListener());
+                    }
+                }
+            );
 
-        LocationListener locationListener = new LocationListener() {
+        this.locationListener = new LocationListener() {
             @Override
             public void onStatusChanged(String provider, int status, Bundle extras) {
                 Log.v("BusTours:LocationListener", "onStatusChanged");
@@ -326,6 +337,10 @@ public class BusToursActivity extends Activity
 
     public LocationManager getLocationManager() {
         return this.mLocManager;
+    }
+
+    public LocationListener getLocationListener() {
+        return this.locationListener;
     }
 
     public void buildClosestStopsUi(String type) {
