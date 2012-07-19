@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- vim: set ts=4 sw=4 et: -->
 <resources>
-    <string name="app_name">BusToursActivity</string>
+    <string name="app_name">Fil@Tours</string>
     <string name="lblStopDeparture">Departure</string>
     <string name="lblStopArrival">Arrival</string>
     <string name="sensPrompt">Arriving/Departing</string>
