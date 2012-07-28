@@ -53,6 +53,7 @@ public class StopsMapActivity extends MapViewActivity
     private Location whereAmI;
     private BoundingBoxE6 bbox;
     private Drawable stopsMarker;
+    private Drawable searchStopsMarker;
     private Drawable posMarker;
     private boolean saveBBOX;
     private CharSequence[] selectStopsItems;
@@ -77,7 +78,8 @@ public class StopsMapActivity extends MapViewActivity
 
         this.mResourceProxy = new DefaultResourceProxyImpl(getApplicationContext());
         this.stopsMarker = this.mResourceProxy.getDrawable(ResourceProxy.bitmap.marker_default);
-        this.posMarker = this.mResourceProxy.getDrawable(ResourceProxy.bitmap.center);
+        this.searchStopsMarker = getResources().getDrawable(android.R.drawable.star_big_on);
+        this.posMarker = getResources().getDrawable(R.drawable.ic_maps_indicator_current_position_anim);
         ArrayList<OverlayItem> items = new ArrayList<OverlayItem>();
         ArrayList<OverlayItem> pos = new ArrayList<OverlayItem>();
         this.search = new ArrayList<OverlayItem>();
@@ -185,7 +187,7 @@ public class StopsMapActivity extends MapViewActivity
             }, mResourceProxy);
         this.searchOverlay = new ItemizedIconOverlay<OverlayItem>(
             search,
-            this.stopsMarker,
+            this.searchStopsMarker,
             new ItemizedIconOverlay.OnItemGestureListener<OverlayItem>() {
                 @Override
                 public boolean onItemSingleTapUp(final int index,
