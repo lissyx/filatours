@@ -31,6 +31,7 @@ public class StopsMapActivity extends MapViewActivity
     private BoundingBoxE6 bbox;
     private Drawable stopsMarker;
     private Drawable posMarker;
+    private boolean saveBBOX;
 
     private ItemizedOverlay<OverlayItem> stopsOverlay;
     private ItemizedOverlay<OverlayItem> myLocationOverlay;
@@ -48,6 +49,7 @@ public class StopsMapActivity extends MapViewActivity
         this.posMarker = this.mResourceProxy.getDrawable(ResourceProxy.bitmap.center);
         ArrayList<OverlayItem> items = new ArrayList<OverlayItem>();
         ArrayList<OverlayItem> pos = new ArrayList<OverlayItem>();
+        this.saveBBOX = true;
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -136,6 +138,22 @@ public class StopsMapActivity extends MapViewActivity
 
         this.getOsmMap().getOverlays().add(this.stopsOverlay);
         this.getOsmMap().getOverlays().add(this.myLocationOverlay);
+        this.getOsmMap().setMapListener(new MapListener() {
+            public boolean onScroll(ScrollEvent event) {
+                Log.e("BusTours:StopsMap", "ScrollEvent");
+                if (saveBBOX) {
+                    bbox = getOsmMap().getBoundingBox();
+                }
+                return true;
+            }
+            public boolean onZoom(ZoomEvent event) {
+                Log.e("BusTours:StopsMap", "ZoomEvent");
+                if (saveBBOX) {
+                    bbox = getOsmMap().getBoundingBox();
+                }
+                return true;
+            }
+        });
         this.bbox = new BoundingBoxE6(bboxNorth, bboxEast, bboxSouth, bboxWest);
     }
 
@@ -143,10 +161,12 @@ public class StopsMapActivity extends MapViewActivity
     public void onWindowFocusChanged(boolean hasFocus)
     {
         if (hasFocus) {
+            this.saveBBOX = false;
             Log.e("BusTours:StopsMap", "Got focus, zooming to " + this.bbox);
             Log.e("BusTours:StopsMap", "Targeting &lat=" + (this.bbox.getCenter().getLatitudeE6()/1E6) + "&lon=" + (this.bbox.getCenter().getLongitudeE6()/1E6) + "&zoom=15");
-            this.getOsmMap().getController().zoomToSpan(this.bbox);
             this.getOsmMap().getController().setCenter(this.bbox.getCenter());
+            this.getOsmMap().getController().zoomToSpan(this.bbox);
+            this.saveBBOX = true;
         }
     }
 }
