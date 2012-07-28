@@ -45,6 +45,18 @@
     />
 </LinearLayout>
 <LinearLayout
+	android:id="@+id/widget83"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:orientation="horizontal">
+<Button
+	android:id="@+id/btnShowStops"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="@string/btnShowStops"
+	/>
+</LinearLayout>
+<LinearLayout
 	android:id="@+id/widget76"
 	android:layout_width="fill_parent"
 	android:layout_height="wrap_content"
@@ -167,18 +179,6 @@
 	android:layout_width="fill_parent"
 	android:layout_height="wrap_content"
 	android:text="@string/btnGetJourney"
-	/>
-</LinearLayout>
-<LinearLayout
-	android:id="@+id/widget83"
-	android:layout_width="fill_parent"
-	android:layout_height="wrap_content"
-	android:orientation="horizontal">
-<Button
-	android:id="@+id/btnShowStops"
-	android:layout_width="fill_parent"
-	android:layout_height="wrap_content"
-	android:text="@string/btnShowStops"
 	/>
 </LinearLayout>
 </LinearLayout>
