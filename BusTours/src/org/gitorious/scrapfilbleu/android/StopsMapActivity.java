@@ -13,8 +13,11 @@ import android.location.Location;
 import android.widget.Toast;
 
 import android.app.AlertDialog;
+
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
+import android.content.Intent;
 
 import android.graphics.drawable.Drawable;
 
@@ -32,6 +35,7 @@ import org.osmdroid.events.ScrollEvent;
 
 public class StopsMapActivity extends MapViewActivity
 {
+	private static Context context;
     private String[] stopsNames;
     private double[] latitudes;
     private double[] longitudes;
@@ -55,6 +59,8 @@ public class StopsMapActivity extends MapViewActivity
     {
         double bboxNorth = 0, bboxEast = 0, bboxSouth = 0, bboxWest = 0;
         super.onCreate(savedInstanceState);
+
+        this.context = this;
 
         this.mResourceProxy = new DefaultResourceProxyImpl(getApplicationContext());
         this.stopsMarker = this.mResourceProxy.getDrawable(ResourceProxy.bitmap.marker_default);
@@ -211,6 +217,7 @@ public class StopsMapActivity extends MapViewActivity
 
     public void selectStop(OverlayItem item)
     {
+        this.selectedStop = item.mTitle;
         AlertDialog.Builder dialog = new AlertDialog.Builder(StopsMapActivity.this);
         dialog.setTitle(getString(R.string.select_stop));
         // dialog.setMessage(getString(R.string.select_stop_msg) + " " + item.mTitle);
@@ -220,6 +227,12 @@ public class StopsMapActivity extends MapViewActivity
                 public void onClick(DialogInterface dialog, int id) {
                     Log.e("BusTours:StopsMap", "checked: " + selectStopsItems[id]);
                     dialog.dismiss();
+                    Intent intentMainView = new Intent(context, BusToursActivity.class);
+
+                    intentMainView.putExtra("sens", selectStopsItems[id]);
+                    intentMainView.putExtra("stop", selectedStop);
+
+                    startActivity(intentMainView);
                 }
             }
         );

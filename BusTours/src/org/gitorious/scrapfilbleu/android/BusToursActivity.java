@@ -147,6 +147,21 @@ public class BusToursActivity extends Activity
         ArrayAdapter<String> stopAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, this.stops.getStops());
         this.txtStopDeparture.setAdapter(stopAdapter);
         this.txtStopArrival.setAdapter(stopAdapter);
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            Log.e("BusTours:Bundle", "Got bundle!");
+            String sens = (String)extras.get("sens");
+            String stop = (String)extras.get("stop");
+            Log.e("BusTours:Bundle", "Got sens=" + sens);
+            Log.e("BusTours:Bundle", "Got stop=" + stop);
+            if (sens.contains(getString(R.string.sens_departure))) {
+                this.setDepartureStopName(stop);
+            }
+            if (sens.contains(getString(R.string.sens_arrival))) {
+                this.setArrivalStopName(stop);
+            }
+        }
     }
 
     public void bindWidgets()
@@ -315,12 +330,10 @@ public class BusToursActivity extends Activity
 
     public void setDepartureStopName(String name) {
         this.txtStopDeparture.setText(name);
-        closestStops.dismiss();
     }
 
     public void setArrivalStopName(String name) {
         this.txtStopArrival.setText(name);
-        closestStops.dismiss();
     }
 
     public List<BusStops.BusStop> getNearests() {
@@ -368,6 +381,7 @@ public class BusToursActivity extends Activity
                     BusStops.BusStop bs = getNearest(position);
                     if (bs != null) {
                         setDepartureStopName(bs.name);
+                        closestStops.dismiss();
                     }
                 }
             });
@@ -378,6 +392,7 @@ public class BusToursActivity extends Activity
                     BusStops.BusStop bs = getNearest(position);
                     if (bs != null) {
                         setArrivalStopName(bs.name);
+                        closestStops.dismiss();
                     }
                 }
             });
