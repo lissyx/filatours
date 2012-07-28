@@ -21,6 +21,10 @@ import android.content.Intent;
 
 import android.graphics.drawable.Drawable;
 
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.MenuInflater;
+
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.util.BoundingBoxE6;
 import org.osmdroid.views.overlay.ItemizedIconOverlay;
@@ -48,6 +52,7 @@ public class StopsMapActivity extends MapViewActivity
     private boolean saveBBOX;
     private CharSequence[] selectStopsItems;
     private String selectedStop;
+    private boolean showStopsOverlay;
 
     private ItemizedOverlay<OverlayItem> stopsOverlay;
     private ItemizedOverlay<OverlayItem> myLocationOverlay;
@@ -68,6 +73,7 @@ public class StopsMapActivity extends MapViewActivity
         ArrayList<OverlayItem> items = new ArrayList<OverlayItem>();
         ArrayList<OverlayItem> pos = new ArrayList<OverlayItem>();
         this.saveBBOX = true;
+        this.showStopsOverlay = false;
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -163,7 +169,6 @@ public class StopsMapActivity extends MapViewActivity
                 }
             }, mResourceProxy);
 
-        this.getOsmMap().getOverlays().add(this.stopsOverlay);
         this.getOsmMap().getOverlays().add(this.myLocationOverlay);
         this.getOsmMap().setMapListener(new MapListener() {
             public boolean onScroll(ScrollEvent event) {
@@ -182,6 +187,36 @@ public class StopsMapActivity extends MapViewActivity
             }
         });
         this.bbox = new BoundingBoxE6(bboxNorth, bboxEast, bboxSouth, bboxWest);
+
+        if (!this.showStopsOverlay) {
+                Toast.makeText(StopsMapActivity.this, getString(R.string.stops_overlay), Toast.LENGTH_LONG).show();
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.stops, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.layerSwitcher:
+                if (this.showStopsOverlay) {
+                    this.showStopsOverlay = false;
+                    item.setTitle(R.string.layerSwitcher_enable);
+                } else {
+                    this.showStopsOverlay = true;
+                    item.setTitle(R.string.layerSwitcher_disable);
+                }
+                this.updateStopsOverlay();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override
@@ -243,5 +278,15 @@ public class StopsMapActivity extends MapViewActivity
         intentMainView.putExtra("stop", selectedStop);
         this.setResult(RESULT_OK, intentMainView);
         this.finish();
+    }
+
+    public void updateStopsOverlay()
+    {
+        if (this.showStopsOverlay) {
+            this.getOsmMap().getOverlays().add(this.stopsOverlay);
+        } else {
+            this.getOsmMap().getOverlays().remove(this.stopsOverlay);
+        }
+        this.getOsmMap().invalidate();
     }
 }

@@ -66,4 +66,7 @@
     <string name="select_stop">Stop selection</string>
     <string name="select_stop_msg">What do you want to do with stop:</string>
     <string name="your_location">Your location</string>
+    <string name="layerSwitcher_enable">Show stops</string>
+    <string name="layerSwitcher_disable">Hide stops</string>
+    <string name="stops_overlay">Stops overlay are hidden, please use menu to show.</string>
 </resources>
