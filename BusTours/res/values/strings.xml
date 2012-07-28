@@ -10,6 +10,7 @@
     <string name="msgErrorTitle">Error</string>
     <string name="msgInfoTitle">Info</string>
     <string name="okay">Ok</string>
+    <string name="cancel">Cancel</string>
     <string name="scrapping">Scrapping ...</string>
     <string name="startHttpScrapping">Starting to scrap.</string>
     <string name="jsoupConnect">Initiating connection</string>
@@ -70,4 +71,8 @@
     <string name="layerSwitcher_disable">Hide stops</string>
     <string name="stops_overlay">Stops overlay are hidden, please use menu to show.</string>
     <string name="missing_location">Your system has no last location, so it cannot be displayed on this map.</string>
+    <string name="search_stop">Search for a stop</string>
+    <string name="stop_search">Stop search</string>
+    <string name="stop_search_msg">Enter the name of a stop to search for:</string>
+    <string name="no_search_result">No result found!</string>
 </resources>

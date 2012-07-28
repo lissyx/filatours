@@ -3,6 +3,8 @@
 package org.gitorious.scrapfilbleu.android;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Iterator;
 
 import android.util.Log;
 
@@ -11,6 +13,9 @@ import android.os.Bundle;
 import android.location.Location;
 
 import android.widget.Toast;
+import android.widget.EditText;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 
 import android.app.AlertDialog;
 
@@ -53,9 +58,12 @@ public class StopsMapActivity extends MapViewActivity
     private CharSequence[] selectStopsItems;
     private String selectedStop;
     private boolean showStopsOverlay;
+    private BusStops stops;
 
-    private ItemizedOverlay<OverlayItem> stopsOverlay;
-    private ItemizedOverlay<OverlayItem> myLocationOverlay;
+    private ItemizedIconOverlay<OverlayItem> stopsOverlay;
+    private ItemizedIconOverlay<OverlayItem> myLocationOverlay;
+    private ItemizedIconOverlay<OverlayItem> searchOverlay;
+    private ArrayList<OverlayItem> search;
     private ResourceProxy mResourceProxy;
 
     /** Called when the activity is first created. */
@@ -72,6 +80,7 @@ public class StopsMapActivity extends MapViewActivity
         this.posMarker = this.mResourceProxy.getDrawable(ResourceProxy.bitmap.center);
         ArrayList<OverlayItem> items = new ArrayList<OverlayItem>();
         ArrayList<OverlayItem> pos = new ArrayList<OverlayItem>();
+        this.search = new ArrayList<OverlayItem>();
         this.saveBBOX = true;
         this.showStopsOverlay = false;
 
@@ -172,8 +181,26 @@ public class StopsMapActivity extends MapViewActivity
                     return false;
                 }
             }, mResourceProxy);
+        this.searchOverlay = new ItemizedIconOverlay<OverlayItem>(
+            search,
+            this.stopsMarker,
+            new ItemizedIconOverlay.OnItemGestureListener<OverlayItem>() {
+                @Override
+                public boolean onItemSingleTapUp(final int index,
+                        final OverlayItem item) {
+                    displayStopInfos(item);
+                    return true; // We 'handled' this event.
+                }
+                @Override
+                public boolean onItemLongPress(final int index,
+                        final OverlayItem item) {
+                    selectStop(item);
+                    return false;
+                }
+            }, mResourceProxy);
 
         this.getOsmMap().getOverlays().add(this.myLocationOverlay);
+        this.getOsmMap().getOverlays().add(this.searchOverlay);
         this.getOsmMap().setMapListener(new MapListener() {
             public boolean onScroll(ScrollEvent event) {
                 // Log.e("BusTours:StopsMap", "ScrollEvent");
@@ -218,6 +245,9 @@ public class StopsMapActivity extends MapViewActivity
                 }
                 this.updateStopsOverlay();
                 return true;
+            case R.id.searchStop:
+                this.enterStopSearch();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -234,6 +264,60 @@ public class StopsMapActivity extends MapViewActivity
             this.getOsmMap().getController().zoomToSpan(this.bbox);
             this.saveBBOX = true;
         }
+    }
+
+    public void enterStopSearch()
+    {
+        this.stops = new BusStops();
+        ArrayAdapter<String> stopAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, this.stops.getStops());
+        final AutoCompleteTextView inputStop = new AutoCompleteTextView(this);
+        inputStop.setThreshold(1);
+        inputStop.setAdapter(stopAdapter);
+        AlertDialog.Builder dialog = new AlertDialog.Builder(StopsMapActivity.this);
+        dialog.setTitle(getString(R.string.stop_search));
+        dialog.setMessage(getString(R.string.stop_search_msg));
+        dialog.setView(inputStop);
+        dialog.setPositiveButton(
+            getString(R.string.okay),
+            new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    String stop = inputStop.getText().toString();
+                    Log.e("BusTours:StopsMap", "Searching for: " + stop);
+                    searchStop(stop);
+                    dialog.dismiss();
+                }
+            }
+        );
+        dialog.setNegativeButton(
+            getString(R.string.cancel),
+            new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    dialog.cancel();
+                }
+            }
+        );
+
+        AlertDialog d = dialog.create();
+        d.show();
+    }
+
+    public void searchStop(String name)
+    {
+        BusStops.BusStop foundStop = this.stops.findStop(name);
+        if (foundStop == null) {
+            Toast.makeText(StopsMapActivity.this, getString(R.string.no_search_result), Toast.LENGTH_LONG).show();
+            return;
+        }
+        Log.e("BusTours:StopsMap", "Found: " + foundStop.name);
+        this.searchOverlay.addItem(
+            new OverlayItem(
+                foundStop.name, foundStop.name,
+                new GeoPoint(
+                    (int)(foundStop.lat*1e6), (int)(foundStop.lon*1e6)
+                )
+            )
+        );
+        this.getOsmMap().invalidate();
     }
 
     public void displayStopInfos(OverlayItem item)

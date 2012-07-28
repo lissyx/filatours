@@ -10,6 +10,7 @@
     <string name="msgErrorTitle">Erreur</string>
     <string name="msgInfoTitle">Info</string>
     <string name="okay">Ok</string>
+    <string name="cancel">Annuler</string>
     <string name="scrapping">Récupération ...</string>
     <string name="startHttpScrapping">Début de la récupération.</string>
     <string name="jsoupConnect">Connexion en cours</string>
@@ -70,4 +71,8 @@
     <string name="layerSwitcher_disable">Cacher les arrêts</string>
     <string name="stops_overlay">La couche contenant les arrêts est cachée, utilisez le menu pour l\'afficher.</string>
     <string name="missing_location">Votre système ne possède pas de dernière localisation connue, il est donc impossible de l\'afficher sur cette carte.</string>
+    <string name="search_stop">Rechercher un arrêt</string>
+    <string name="stop_search">Recherche d\'arrêt</string>
+    <string name="stop_search_msg">Entrez le nom d\'un arrêt à chercher :</string>
+    <string name="no_search_result">Aucun résultat trouvé !</string>
 </resources>

@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- vim: set ts=4 sw=4 et: -->
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/layerSwitcher"
+    <item
+        android:id="@+id/layerSwitcher"
         android:title="@string/layerSwitcher_enable"
+        />
+    <item
+        android:id="@+id/searchStop"
+        android:title="@string/search_stop"
         />
 </menu>
