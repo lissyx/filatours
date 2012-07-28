@@ -42,6 +42,8 @@ public class StopsMapActivity extends MapViewActivity
     private Drawable stopsMarker;
     private Drawable posMarker;
     private boolean saveBBOX;
+    private CharSequence[] selectStopsItems;
+    private String selectedStop;
 
     private ItemizedOverlay<OverlayItem> stopsOverlay;
     private ItemizedOverlay<OverlayItem> myLocationOverlay;
