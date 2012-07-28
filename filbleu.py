@@ -136,11 +136,12 @@ class FilBleu:
 
 	def list_stops(self):
 		self.get_stops()
-		for stop in self.stops:
-			stop = self.stops[stop]
-			line = "Stop: %(stop_name)s (%(stop_city)s) => %(stop_area)s\n" % { 'stop_name': stop.stop_name, 'stop_city': stop.city, 'stop_area': stop.stopArea }
-			line = line.encode('utf-8')
-			sys.stdout.write(line)
+		for lineid in self.stops:
+			for stop in self.stops[lineid]:
+				stop = self.stops[lineid][stop]
+				line = "Stop: %(stop_name)s (%(stop_city)s) => %(stop_area)s [%(lineid)s]\n" % { 'lineid': lineid, 'stop_name': stop.stop_name, 'stop_city': stop.city, 'stop_area': stop.stopArea }
+				line = line.encode('utf-8')
+				sys.stdout.write(line)
 
 	def get_stops_sens(self, sens):
 		self.page_stops()
@@ -158,11 +159,22 @@ class FilBleu:
 		for soup in soups:
 			sens = soup.find("form")
 			stops = sens.findAll("option")
+			for fs in sens.findAll("fieldset"):
+				fs.clear()
+			for t in sens.findAll("table"):
+				t.clear()
+			lineid = self.args.list_stops
+			multi = self.html_br_strip(sens.getText())
+			if multi.count(" |") == 1:
+				search = re.compile(r"(.*) \|(.*)").search(multi)
+				if search:
+					lineid = self.args.list_stops + "" + search.group(1)
+			self.stops[lineid] = {}
 			for stop in stops:
 				if not stop["value"] == "":
 					s = BusStop(stop.text)
 					s.set_stopArea(stop["value"])
-					self.stops[s.id] = s
+					self.stops[lineid][s.id] = s
 
 	def list_lines(self):
 		self.get_lines()
@@ -430,6 +442,9 @@ class FilBleu:
 		line_to_build = self.args.build_line
 		stopAreas = {}
 		lineStops = {}
+		lineStops["all"] = {}
+		lineStops["A"] = {}
+		lineStops["B"] = {}
 		lineSpecs = []
 
 		stopArea = re.compile(r"Found a stop matching stopArea: \[StopArea\|(.*)\|(.*)\|(.*)\|\|\|.*\|.*\|.*\]; Lambert2\+: {E:.*, N:.*}; Degrees: {E:(.*), N:(.*)}")
@@ -444,14 +459,20 @@ class FilBleu:
 					lon = float(results.group(5))
 					stopAreas[stopId] = {'name': stopName, 'city': cityName, 'lat': lat, 'lon': lon}
 
-		lineStop = re.compile(r"Stop:.*=> (.*)\|(.*)\|(.*)")
+		lineStop = re.compile(r"Stop:.*=> (.*)\|(.*)\|(.*) \[(.*)\]")
 		for line in open('stops.' + line_to_build + '.txt','r').readlines():
 			results = lineStop.search(line)
 			if results:
 				stopId   = results.group(1)
 				stopName = results.group(2)
 				cityName = results.group(3)
-				lineStops[stopId] = {'name': stopName, 'city': cityName}
+				subLine  = results.group(4)
+				spec = "all"
+				if subLine.count("A"):
+					spec = "A"
+				if subLine.count("B"):
+					spec = "B"
+				lineStops[spec][stopId] = {'name': stopName, 'city': cityName }
 
 		getLineNumber = re.compile(r"number=(.*); ")
 		for line in open('lines.txt').readlines():
@@ -465,15 +486,20 @@ class FilBleu:
 						ends = []
 						for name in names:
 							ends.append(name.strip())
-						lineSpecs.append({'number': number.group(1), 'ends': ends})
+						spec = "all"
+						if number.group(1).count("A"):
+							spec = "A"
+						if number.group(1).count("B"):
+							spec = "B"
+						lineSpecs.append({'number': number.group(1), 'ends': ends, 'spec': spec})
 
 		print lineStops
 		lineResults = []
 		for lineSpec in lineSpecs:
-			print "Dealing with:", lineSpec['number']
+			print "Dealing with:", lineSpec['number'], " spec:", lineSpec['spec']
 
 			stopsVisited = []
-			localLineStops = copy.deepcopy(lineStops)
+			localLineStops = copy.deepcopy(lineStops[lineSpec['spec']])
 			root1 = None
 			root2 = None
 			if len(lineSpec['ends']) > 1:
