@@ -125,17 +125,13 @@ public class StopsMapActivity extends MapViewActivity
                 @Override
                 public boolean onItemSingleTapUp(final int index,
                         final OverlayItem item) {
-                    Toast.makeText(
-                            StopsMapActivity.this,
-                            item.mTitle, Toast.LENGTH_LONG).show();
+                    displayStopInfos(item);
                     return true; // We 'handled' this event.
                 }
                 @Override
                 public boolean onItemLongPress(final int index,
                         final OverlayItem item) {
-                    Toast.makeText(
-                            StopsMapActivity.this,
-                            item.mTitle ,Toast.LENGTH_LONG).show();
+                    selectStop(item);
                     return false;
                 }
             }, mResourceProxy);
@@ -172,5 +168,42 @@ public class StopsMapActivity extends MapViewActivity
             this.getOsmMap().getController().zoomToSpan(this.bbox);
             this.saveBBOX = true;
         }
+    }
+
+    public void displayStopInfos(OverlayItem item)
+    {
+		AlertDialog.Builder dialog = new AlertDialog.Builder(StopsMapActivity.this);
+		dialog.setTitle(getString(R.string.stop_info));
+		dialog.setMessage(getString(R.string.stop_info_msg) + " " + item.mTitle);
+		dialog.setPositiveButton(
+			getString(R.string.okay),
+			new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog, int id) {
+					dialog.cancel();
+				}
+			}
+		);
+
+		AlertDialog d = dialog.create();
+		d.show();
+    }
+
+    public void selectStop(OverlayItem item)
+    {
+		AlertDialog.Builder dialog = new AlertDialog.Builder(StopsMapActivity.this);
+		dialog.setTitle(getString(R.string.select_stop));
+		// dialog.setMessage(getString(R.string.select_stop_msg) + " " + item.mTitle);
+		dialog.setSingleChoiceItems(
+			selectStopsItems, -1,
+			new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog, int id) {
+                    Log.e("BusTours:StopsMap", "checked: " + selectStopsItems[id]);
+                    dialog.dismiss();
+				}
+			}
+		);
+
+		AlertDialog d = dialog.create();
+		d.show();
     }
 }
