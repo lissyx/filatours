@@ -65,17 +65,17 @@ public class StopsMapActivity extends MapViewActivity
                 for (i = 0; i < this.stopsNames.length; i++) {
                     Log.e("BusTours:StopsMaps", "Stops @ (" + String.valueOf(this.latitudes[i]) + ", " + String.valueOf(this.longitudes[i]) + ") == " + this.stopsNames[i]);
                     items.add(new OverlayItem(this.stopsNames[i], this.stopsNames[i], new GeoPoint((int)(this.latitudes[i]*1e6), (int)(this.longitudes[i]*1e6))));
-                    if (this.latitudes[i] < minEast) {
-                        minEast = this.latitudes[i];
+                    if (this.latitudes[i] < minNorth) {
+                        minNorth = this.latitudes[i];
                     }
-                    if (this.latitudes[i] > maxWest) {
-                        maxWest = this.latitudes[i];
+                    if (this.latitudes[i] > maxSouth) {
+                        maxSouth = this.latitudes[i];
                     }
-                    if (this.longitudes[i] < minNorth) {
-                        minNorth = this.longitudes[i];
+                    if (this.longitudes[i] < minEast) {
+                        minEast = this.longitudes[i];
                     }
-                    if (this.longitudes[i] > maxSouth) {
-                        maxSouth = this.longitudes[i];
+                    if (this.longitudes[i] > maxWest) {
+                        maxWest = this.longitudes[i];
                     }
                 }
                 Log.e("BusTours:StopsMaps", "minEast=" + String.valueOf(minEast));
@@ -136,8 +136,7 @@ public class StopsMapActivity extends MapViewActivity
 
         this.getOsmMap().getOverlays().add(this.stopsOverlay);
         this.getOsmMap().getOverlays().add(this.myLocationOverlay);
-        /* Inverting coords, otherwise buggy results ?! */
-        this.bbox = new BoundingBoxE6(bboxEast, bboxNorth, bboxWest, bboxSouth);
+        this.bbox = new BoundingBoxE6(bboxNorth, bboxEast, bboxSouth, bboxWest);
     }
 
     @Override
