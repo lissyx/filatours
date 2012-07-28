@@ -30,6 +30,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MenuInflater;
 
+import android.text.TextUtils;
+
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.util.BoundingBoxE6;
 import org.osmdroid.views.overlay.ItemizedIconOverlay;
@@ -60,6 +62,7 @@ public class StopsMapActivity extends MapViewActivity
     private String selectedStop;
     private boolean showStopsOverlay;
     private BusStops stops;
+    private BusLines lines;
 
     private ItemizedIconOverlay<OverlayItem> stopsOverlay;
     private ItemizedIconOverlay<OverlayItem> myLocationOverlay;
@@ -85,6 +88,8 @@ public class StopsMapActivity extends MapViewActivity
         this.search = new ArrayList<OverlayItem>();
         this.saveBBOX = true;
         this.showStopsOverlay = false;
+
+        this.lines = new BusLines();
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -347,9 +352,12 @@ public class StopsMapActivity extends MapViewActivity
 
     public void displayStopInfos(OverlayItem item)
     {
+        List<String> lines = this.lines.getLine(item.mTitle);
+        String msg = getString(R.string.stop_info_msg_lines) + " " + TextUtils.join(", ", lines);
+
         AlertDialog.Builder dialog = new AlertDialog.Builder(StopsMapActivity.this);
-        dialog.setTitle(getString(R.string.stop_info));
-        dialog.setMessage(getString(R.string.stop_info_msg) + " " + item.mTitle);
+        dialog.setTitle(item.mTitle);
+        dialog.setMessage(msg);
         dialog.setPositiveButton(
             getString(R.string.okay),
             new DialogInterface.OnClickListener() {
