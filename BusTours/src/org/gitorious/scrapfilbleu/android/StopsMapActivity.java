@@ -92,11 +92,11 @@ public class StopsMapActivity extends MapViewActivity
 
         if (this.stopsNames != null && this.latitudes != null && this.longitudes != null) {
             if (this.stopsNames.length == this.latitudes.length && this.latitudes.length == this.longitudes.length && this.longitudes.length > 0) {
-                Log.e("BusTours:StopsMaps", "Got some points ...");
+                // Log.e("BusTours:StopsMaps", "Got some points ...");
                 int i;
                 double minNorth = 180, minEast = 180, maxSouth = -180, maxWest = -180;
                 for (i = 0; i < this.stopsNames.length; i++) {
-                    Log.e("BusTours:StopsMaps", "Stops @ (" + String.valueOf(this.latitudes[i]) + ", " + String.valueOf(this.longitudes[i]) + ") == " + this.stopsNames[i]);
+                    // Log.e("BusTours:StopsMaps", "Stops @ (" + String.valueOf(this.latitudes[i]) + ", " + String.valueOf(this.longitudes[i]) + ") == " + this.stopsNames[i]);
                     items.add(new OverlayItem(this.stopsNames[i], this.stopsNames[i], new GeoPoint((int)(this.latitudes[i]*1e6), (int)(this.longitudes[i]*1e6))));
                     if (this.latitudes[i] < minNorth) {
                         minNorth = this.latitudes[i];
@@ -111,10 +111,10 @@ public class StopsMapActivity extends MapViewActivity
                         maxWest = this.longitudes[i];
                     }
                 }
-                Log.e("BusTours:StopsMaps", "minEast=" + String.valueOf(minEast));
-                Log.e("BusTours:StopsMaps", "maxWest=" + String.valueOf(maxWest));
-                Log.e("BusTours:StopsMaps", "minNorth=" + String.valueOf(minNorth));
-                Log.e("BusTours:StopsMaps", "maxSouth=" + String.valueOf(maxSouth));
+                // Log.e("BusTours:StopsMaps", "minEast=" + String.valueOf(minEast));
+                // Log.e("BusTours:StopsMaps", "maxWest=" + String.valueOf(maxWest));
+                // Log.e("BusTours:StopsMaps", "minNorth=" + String.valueOf(minNorth));
+                // Log.e("BusTours:StopsMaps", "maxSouth=" + String.valueOf(maxSouth));
                 bboxNorth = minNorth;
                 bboxEast = minEast;
                 bboxSouth = maxSouth;
@@ -167,14 +167,14 @@ public class StopsMapActivity extends MapViewActivity
         this.getOsmMap().getOverlays().add(this.myLocationOverlay);
         this.getOsmMap().setMapListener(new MapListener() {
             public boolean onScroll(ScrollEvent event) {
-                Log.e("BusTours:StopsMap", "ScrollEvent");
+                // Log.e("BusTours:StopsMap", "ScrollEvent");
                 if (saveBBOX) {
                     bbox = getOsmMap().getBoundingBox();
                 }
                 return true;
             }
             public boolean onZoom(ZoomEvent event) {
-                Log.e("BusTours:StopsMap", "ZoomEvent");
+                // Log.e("BusTours:StopsMap", "ZoomEvent");
                 if (saveBBOX) {
                     bbox = getOsmMap().getBoundingBox();
                 }
