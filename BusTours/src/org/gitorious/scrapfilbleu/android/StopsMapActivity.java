@@ -189,7 +189,7 @@ public class StopsMapActivity extends MapViewActivity
         this.bbox = new BoundingBoxE6(bboxNorth, bboxEast, bboxSouth, bboxWest);
 
         if (!this.showStopsOverlay) {
-                Toast.makeText(StopsMapActivity.this, getString(R.string.stops_overlay), Toast.LENGTH_LONG).show();
+            Toast.makeText(StopsMapActivity.this, getString(R.string.stops_overlay), Toast.LENGTH_LONG).show();
         }
     }
 
