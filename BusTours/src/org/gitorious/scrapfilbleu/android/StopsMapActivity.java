@@ -12,6 +12,10 @@ import android.location.Location;
 
 import android.widget.Toast;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnCancelListener;
+
 import android.graphics.drawable.Drawable;
 
 import org.osmdroid.util.GeoPoint;
@@ -28,9 +32,11 @@ import org.osmdroid.events.ScrollEvent;
 
 public class StopsMapActivity extends MapViewActivity
 {
-	private String[] stopsNames;
+    private String[] stopsNames;
     private double[] latitudes;
     private double[] longitudes;
+    private boolean dep;
+    private boolean arr;
     private Location whereAmI;
     private BoundingBoxE6 bbox;
     private Drawable stopsMarker;
@@ -61,6 +67,19 @@ public class StopsMapActivity extends MapViewActivity
             this.latitudes = extras.getDoubleArray("latitudes");
             this.longitudes = extras.getDoubleArray("longitudes");
             this.whereAmI = (Location)extras.get("location");
+            this.dep = extras.getBoolean("selectDeparture");
+            this.arr = extras.getBoolean("selectArrival");
+
+            if (this.dep && this.arr) {
+                this.selectStopsItems = new CharSequence[] { getString(R.string.sens_departure), getString(R.string.sens_arrival) };
+            } else {
+                if (this.dep) {
+                    this.selectStopsItems = new CharSequence[] { getString(R.string.sens_departure) };
+                }
+                if (this.arr) {
+                    this.selectStopsItems = new CharSequence[] { getString(R.string.sens_arrival) };
+                }
+            }
         }
 
         if (this.stopsNames != null && this.latitudes != null && this.longitudes != null) {

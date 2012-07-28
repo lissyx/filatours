@@ -61,4 +61,8 @@
     <string name="waitLoc">Waiting location ...</string>
     <string name="waitingForGeolocation">Please wait while we request a more up-to-date geolocation.</string>
     <string name="btnShowStops">Stops map</string>
+    <string name="stop_info">Stop infos</string>
+    <string name="stop_info_msg">Stop name:</string>
+    <string name="select_stop">Stop selection</string>
+    <string name="select_stop_msg">What do you want to do with stop:</string>
 </resources>

@@ -236,7 +236,7 @@ public class BusToursActivity extends Activity
             pos += 1;
         }
 
-        this.startStopsMapActivity(stopsNames, latitudes, longitudes);
+        this.startStopsMapActivity(stopsNames, latitudes, longitudes, true, true);
     }
 
     public void updateLocation(String target) {
@@ -719,7 +719,7 @@ public class BusToursActivity extends Activity
     /**
      * all arrays must be of the same size
      **/
-    public void startStopsMapActivity(String[] stopsNames, double[] latitudes, double[] longitudes) {
+    public void startStopsMapActivity(String[] stopsNames, double[] latitudes, double[] longitudes, boolean selectDeparture, boolean selectArrival) {
 
         Intent intentStopsView = new Intent(this, StopsMapActivity.class);
 
@@ -728,6 +728,9 @@ public class BusToursActivity extends Activity
         intentStopsView.putExtra("longitudes", longitudes);
         intentStopsView.putExtra("location", this.getLastLocation());
 
+        intentStopsView.putExtra("selectDeparture", selectDeparture);
+        intentStopsView.putExtra("selectArrival", selectArrival);
+
         startActivity(intentStopsView);
     }
 
@@ -735,6 +738,7 @@ public class BusToursActivity extends Activity
         String[] stopsNames = new String[10];
         double[] latitudes = new double[10];
         double[] longitudes = new double[10];
+        String type = this.getGeoLocTarget();
 
         List<BusStops.BusStop> stops = this.getNearests();
         if (stops != null) {
@@ -749,6 +753,6 @@ public class BusToursActivity extends Activity
             }
         }
 
-        this.startStopsMapActivity(stopsNames, latitudes, longitudes);
+        this.startStopsMapActivity(stopsNames, latitudes, longitudes, (type == "dep"), (type == "arr"));
     }
 }
