@@ -524,6 +524,9 @@ class FilBleu:
 				print "tmproot::", tmproot
 				root2 = tmproot
 
+			if type(root2) == str:
+				root2 = [ root2 ]
+
 			# find the root
 			bestSim = 0
 			bestValue = None
