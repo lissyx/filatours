@@ -225,19 +225,23 @@ public class StopsMapActivity extends MapViewActivity
             selectStopsItems, -1,
             new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
-                    Log.e("BusTours:StopsMap", "checked: " + selectStopsItems[id]);
                     dialog.dismiss();
-                    Intent intentMainView = new Intent(context, BusToursActivity.class);
-
-                    intentMainView.putExtra("sens", selectStopsItems[id]);
-                    intentMainView.putExtra("stop", selectedStop);
-
-                    startActivity(intentMainView);
+                    pushBackSelectedStop(id);
                 }
             }
         );
 
         AlertDialog d = dialog.create();
         d.show();
+    }
+
+    public void pushBackSelectedStop(int id)
+    {
+        Log.e("BusTours:StopsMap", "checked: " + this.selectStopsItems[id]);
+        Intent intentMainView = this.getIntent();
+        intentMainView.putExtra("sens", selectStopsItems[id]);
+        intentMainView.putExtra("stop", selectedStop);
+        this.setResult(RESULT_OK, intentMainView);
+        this.finish();
     }
 }

@@ -100,6 +100,9 @@ public class BusToursActivity extends Activity
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
+        Log.e("BusTours", "onCreate:" + savedInstanceState);
+
         setContentView(R.layout.main);
         this.context = this;
         this.date               = (DatePicker)findViewById(R.id.date);
@@ -125,11 +128,45 @@ public class BusToursActivity extends Activity
         crit.setAccuracy(Criteria.ACCURACY_FINE);
         this.mLocProvider = this.mLocManager.getBestProvider(crit, true);
 
-        this.fill();
+        this.fill(savedInstanceState);
         this.bindWidgets();
     }
-    
-    public void fill()
+
+    @Override
+    public void onSaveInstanceState(Bundle outState)
+    {
+        Log.e("BusTours", "onSaveInstanceState");
+        outState.putString("arrivalStopName", this.getArrivalStopName());
+        outState.putString("departureStopName", this.getDepartureStopName());
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    public void onNewIntent(Intent intent)
+    {
+        Log.e("BusTours", "onNewIntent");
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        Log.e("BusTours", "onActivityResult: " + String.valueOf(requestCode) + "; " + String.valueOf(resultCode));
+        if (resultCode != RESULT_OK) {
+            Log.e("BusTours", "Error selecting result, aborting.");
+            return;
+        }
+
+        if (requestCode == 2) {
+            this.setFromIntent(data.getExtras());
+        }
+
+        if (requestCode == 1) {
+            this.setFromIntent(data.getExtras());
+            closestStops.dismiss();
+        }
+    }
+
+    public void fill(Bundle state)
     {
         // fill journey criteria
         ArrayAdapter<CharSequence> criteriaAdapter = ArrayAdapter.createFromResource(this, R.array.journeyCriteria, android.R.layout.simple_spinner_item);
@@ -148,7 +185,17 @@ public class BusToursActivity extends Activity
         this.txtStopDeparture.setAdapter(stopAdapter);
         this.txtStopArrival.setAdapter(stopAdapter);
 
-        Bundle extras = getIntent().getExtras();
+        if (state != null) {
+            Log.e("BusTours:Bundle", "Restoring values ...");
+            this.setDepartureStopName(state.getString("departureStopName"));
+            this.setArrivalStopName(state.getString("arrivalStopName"));
+        }
+
+        this.setFromIntent(getIntent().getExtras());
+    }
+
+    public void setFromIntent(Bundle extras)
+    {
         if (extras != null) {
             Log.e("BusTours:Bundle", "Got bundle!");
             String sens = (String)extras.get("sens");
@@ -193,8 +240,8 @@ public class BusToursActivity extends Activity
 
     public void onClick_btnGetJourney()
     {
-        String dep = this.txtStopDeparture.getEditableText().toString();
-        String arr = this.txtStopArrival.getEditableText().toString();
+        String dep = this.getDepartureStopName();
+        String arr = this.getArrivalStopName();
 
         if (dep.length() < 1 || arr.length() < 1) {
             this.alertErrorBox(getString(R.string.missingValues), getString(R.string.descMissingValues));
@@ -336,6 +383,14 @@ public class BusToursActivity extends Activity
 
     public void setArrivalStopName(String name) {
         this.txtStopArrival.setText(name);
+    }
+
+    public String getDepartureStopName() {
+        return this.txtStopDeparture.getEditableText().toString();
+    }
+
+    public String getArrivalStopName() {
+        return this.txtStopArrival.getEditableText().toString();
     }
 
     public List<BusStops.BusStop> getNearests() {
@@ -738,6 +793,7 @@ public class BusToursActivity extends Activity
      **/
     public void startStopsMapActivity(String[] stopsNames, double[] latitudes, double[] longitudes, boolean selectDeparture, boolean selectArrival) {
 
+        int req = 1;
         Intent intentStopsView = new Intent(this, StopsMapActivity.class);
 
         intentStopsView.putExtra("stopsNames", stopsNames);
@@ -748,7 +804,11 @@ public class BusToursActivity extends Activity
         intentStopsView.putExtra("selectDeparture", selectDeparture);
         intentStopsView.putExtra("selectArrival", selectArrival);
 
-        startActivity(intentStopsView);
+        if (selectDeparture && selectArrival) {
+            req = 2;
+        }
+
+        startActivityForResult(intentStopsView, req);
     }
 
     public void showClosestStopsMap() {
