@@ -69,4 +69,5 @@
     <string name="layerSwitcher_enable">Afficher les arrêts</string>
     <string name="layerSwitcher_disable">Cacher les arrêts</string>
     <string name="stops_overlay">La couche contenant les arrêts est cachée, utilisez le menu pour l\'afficher.</string>
+    <string name="missing_location">Votre système ne possède pas de dernière localisation connue, il est donc impossible de l\'afficher sur cette carte.</string>
 </resources>

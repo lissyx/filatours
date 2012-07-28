@@ -146,7 +146,11 @@ public class StopsMapActivity extends MapViewActivity
                 }
             }, mResourceProxy);
 
-        pos.add(new OverlayItem(getString(R.string.your_location), getString(R.string.your_location), new GeoPoint((int)(this.whereAmI.getLatitude()*1e6), (int)(this.whereAmI.getLongitude()*1e6))));
+        if (this.whereAmI != null) {
+            pos.add(new OverlayItem(getString(R.string.your_location), getString(R.string.your_location), new GeoPoint((int)(this.whereAmI.getLatitude()*1e6), (int)(this.whereAmI.getLongitude()*1e6))));
+        } else {
+            Toast.makeText(StopsMapActivity.this, getString(R.string.missing_location), Toast.LENGTH_LONG).show();
+        }
         this.myLocationOverlay = new ItemizedIconOverlay<OverlayItem>(
             pos,
             this.posMarker,

@@ -69,4 +69,5 @@
     <string name="layerSwitcher_enable">Show stops</string>
     <string name="layerSwitcher_disable">Hide stops</string>
     <string name="stops_overlay">Stops overlay are hidden, please use menu to show.</string>
+    <string name="missing_location">Your system has no last location, so it cannot be displayed on this map.</string>
 </resources>
