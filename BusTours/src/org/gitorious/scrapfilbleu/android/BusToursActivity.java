@@ -280,6 +280,8 @@ public class BusToursActivity extends Activity
                 new DialogInterface.OnCancelListener() {
                     public void onCancel(DialogInterface dialog) {
                         getLocationManager().removeUpdates(getLocationListener());
+                        Log.e("BusTours", "Location is old, but user want to use it.");
+                        buildClosestStopsUi(getGeoLocTarget());
                     }
                 }
             );

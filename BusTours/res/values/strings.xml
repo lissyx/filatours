@@ -59,7 +59,7 @@
     <string name="descInvalidValuesDep">Please check your departure stop\'s name</string>
     <string name="descInvalidValuesArr">Please check your arrival stop\'s name</string>
     <string name="waitLoc">Waiting location ...</string>
-    <string name="waitingForGeolocation">Please wait while we request a more up-to-date geolocation.</string>
+    <string name="waitingForGeolocation">Please wait while we request a more up-to-date geolocation. You can still press \'back\' to use the last known location of the system, if you want.</string>
     <string name="btnShowStops">Stops map</string>
     <string name="stop_info">Stop infos</string>
     <string name="stop_info_msg">Stop name:</string>
