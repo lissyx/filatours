@@ -219,7 +219,7 @@ public class StopsMapActivity extends MapViewActivity
     {
         this.selectedStop = item.mTitle;
         AlertDialog.Builder dialog = new AlertDialog.Builder(StopsMapActivity.this);
-        dialog.setTitle(getString(R.string.select_stop));
+        dialog.setTitle(item.mTitle);
         // dialog.setMessage(getString(R.string.select_stop_msg) + " " + item.mTitle);
         dialog.setSingleChoiceItems(
             selectStopsItems, -1,
