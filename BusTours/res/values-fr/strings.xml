@@ -59,7 +59,7 @@
     <string name="descInvalidValuesDep">Merci de véfifier le nom de l\'arrêt de départ</string>
     <string name="descInvalidValuesArr">Merci de véfifier le nom de l\'arrêt d\'arrivée</string>
     <string name="waitLoc">Attente de la localisation ...</string>
-    <string name="waitingForGeolocation">Merci de patienter pendant l\'obtention d\'une location plus à jour. Vous pouvez toujours appuyez sur le bouton \'retour\' pour annuler et utiliser la dernière location connue du système, si vous voulez.</string>
+    <string name="waitingForGeolocation">Merci de patienter pendant l\'obtention d\'une localisation plus à jour. Vous pouvez toujours appuyez sur le bouton \'retour\' pour annuler et utiliser la dernière location connue du système, si vous voulez.</string>
     <string name="btnShowStops">Carte des arrêts</string>
     <string name="stop_info">Informations sur l\'arrêt</string>
     <string name="stop_info_msg">Nom de l\'arrêt :</string>
