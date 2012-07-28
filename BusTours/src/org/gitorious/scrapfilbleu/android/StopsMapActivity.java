@@ -137,6 +137,8 @@ public class StopsMapActivity extends MapViewActivity
             }
         }
 
+        this.bbox = new BoundingBoxE6(bboxNorth, bboxEast, bboxSouth, bboxWest);
+
         /* OnTapListener for the Markers, shows a simple Toast. */
         this.stopsOverlay = new ItemizedIconOverlay<OverlayItem>(items,
             this.stopsMarker,
@@ -217,7 +219,6 @@ public class StopsMapActivity extends MapViewActivity
                 return true;
             }
         });
-        this.bbox = new BoundingBoxE6(bboxNorth, bboxEast, bboxSouth, bboxWest);
 
         if (!this.showStopsOverlay) {
             Toast.makeText(StopsMapActivity.this, getString(R.string.stops_overlay), Toast.LENGTH_LONG).show();
