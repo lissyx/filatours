@@ -102,17 +102,13 @@ public class StopsMapActivity extends MapViewActivity
                 @Override
                 public boolean onItemSingleTapUp(final int index,
                         final OverlayItem item) {
-                    Toast.makeText(
-                            StopsMapActivity.this,
-                            item.mTitle, Toast.LENGTH_LONG).show();
+                    displayStopInfos(item);
                     return true; // We 'handled' this event.
                 }
                 @Override
                 public boolean onItemLongPress(final int index,
                         final OverlayItem item) {
-                    Toast.makeText(
-                            StopsMapActivity.this,
-                            item.mTitle ,Toast.LENGTH_LONG).show();
+                    selectStop(item);
                     return false;
                 }
             }, mResourceProxy);
@@ -125,13 +121,17 @@ public class StopsMapActivity extends MapViewActivity
                 @Override
                 public boolean onItemSingleTapUp(final int index,
                         final OverlayItem item) {
-                    displayStopInfos(item);
+                    Toast.makeText(
+                            StopsMapActivity.this,
+                            item.mTitle, Toast.LENGTH_LONG).show();
                     return true; // We 'handled' this event.
                 }
                 @Override
                 public boolean onItemLongPress(final int index,
                         final OverlayItem item) {
-                    selectStop(item);
+                    Toast.makeText(
+                            StopsMapActivity.this,
+                            item.mTitle ,Toast.LENGTH_LONG).show();
                     return false;
                 }
             }, mResourceProxy);
