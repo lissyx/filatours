@@ -310,15 +310,37 @@ public class StopsMapActivity extends MapViewActivity
             return;
         }
         Log.e("BusTours:StopsMap", "Found: " + foundStop.name);
-        this.searchOverlay.addItem(
-            new OverlayItem(
-                foundStop.name, foundStop.name,
-                new GeoPoint(
-                    (int)(foundStop.lat*1e6), (int)(foundStop.lon*1e6)
-                )
-            )
-        );
-        this.getOsmMap().invalidate();
+
+        GeoPoint target = new GeoPoint((int)(foundStop.lat*1e6), (int)(foundStop.lon*1e6));
+
+        double minNorth = target.getLatitudeE6()/1E6, minEast = target.getLongitudeE6()/1E6, maxSouth = target.getLatitudeE6()/1E6, maxWest = target.getLongitudeE6()/1E6;
+
+        Iterator it = this.search.iterator();
+        while(it.hasNext()) {
+            OverlayItem i = (OverlayItem)it.next();
+            GeoPoint geo = i.getPoint();
+
+            if ((geo.getLatitudeE6()/1E6) < minNorth) {
+                minNorth = (geo.getLatitudeE6()/1E6);
+            }
+            if ((geo.getLatitudeE6()/1E6) > maxSouth) {
+                maxSouth = (geo.getLatitudeE6()/1E6);
+            }
+            if ((geo.getLongitudeE6()/1E6) < minEast) {
+                minEast = (geo.getLongitudeE6()/1E6);
+            }
+            if ((geo.getLongitudeE6()/1E6) > maxWest) {
+                maxWest = (geo.getLongitudeE6()/1E6);
+            }
+        }
+
+        this.saveBBOX = false;
+        this.bbox = new BoundingBoxE6(minNorth, minEast, maxSouth, maxWest);
+        Log.e("BusTours:StopsMap", "Found bounding box: " + this.bbox);
+        this.getOsmMap().getController().setCenter(target);
+        this.getOsmMap().getController().zoomToSpan(this.bbox);
+        this.searchOverlay.addItem(new OverlayItem(foundStop.name, foundStop.name, target));
+        this.saveBBOX = true;
     }
 
     public void displayStopInfos(OverlayItem item)
