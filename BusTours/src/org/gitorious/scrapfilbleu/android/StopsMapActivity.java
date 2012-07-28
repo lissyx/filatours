@@ -22,6 +22,10 @@ import org.osmdroid.views.overlay.OverlayItem;
 import org.osmdroid.DefaultResourceProxyImpl;
 import org.osmdroid.ResourceProxy;
 
+import org.osmdroid.events.MapListener;
+import org.osmdroid.events.ZoomEvent;
+import org.osmdroid.events.ScrollEvent;
+
 public class StopsMapActivity extends MapViewActivity
 {
 	private String[] stopsNames;
