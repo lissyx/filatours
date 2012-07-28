@@ -499,7 +499,10 @@ class FilBleu:
 			print "Dealing with:", lineSpec['number'], " spec:", lineSpec['spec']
 
 			stopsVisited = []
-			localLineStops = copy.deepcopy(lineStops[lineSpec['spec']])
+			spec = "all"
+			if len(lineStops[lineSpec['spec']]) > 0:
+				spec = lineSpec['spec']
+			localLineStops = copy.deepcopy(lineStops[spec])
 			root1 = None
 			root2 = None
 			if len(lineSpec['ends']) > 1:
