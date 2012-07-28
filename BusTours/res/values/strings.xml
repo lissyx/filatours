@@ -65,4 +65,5 @@
     <string name="stop_info_msg">Stop name:</string>
     <string name="select_stop">Stop selection</string>
     <string name="select_stop_msg">What do you want to do with stop:</string>
+    <string name="your_location">Your location</string>
 </resources>

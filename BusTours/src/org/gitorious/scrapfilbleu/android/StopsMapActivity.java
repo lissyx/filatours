@@ -134,7 +134,7 @@ public class StopsMapActivity extends MapViewActivity
                 }
             }, mResourceProxy);
 
-        pos.add(new OverlayItem("Your location", "Your location", new GeoPoint((int)(this.whereAmI.getLatitude()*1e6), (int)(this.whereAmI.getLongitude()*1e6))));
+        pos.add(new OverlayItem(getString(R.string.your_location), getString(R.string.your_location), new GeoPoint((int)(this.whereAmI.getLatitude()*1e6), (int)(this.whereAmI.getLongitude()*1e6))));
         this.myLocationOverlay = new ItemizedIconOverlay<OverlayItem>(
             pos,
             this.posMarker,
