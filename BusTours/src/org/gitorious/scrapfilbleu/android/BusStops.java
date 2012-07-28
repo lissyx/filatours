@@ -1459,17 +1459,27 @@ public class BusStops {
         return Stops.subList(0, 10);
     }
 
-    public String[] getStopCity(String stop) {
-        String[] res = new String[2];
-
+    public BusStop findStop(String stop) {
+        BusStop res = null;
         Iterator itStop = this.stops.entrySet().iterator();
         while(itStop.hasNext()) {
             Map.Entry<String, Map<String, String>> entry = (Map.Entry<String, Map<String, String>>)itStop.next();
             if (stop.startsWith(entry.getKey())) {
-                res[0] = entry.getKey();
-                res[1] = entry.getValue().get("city");
+                res = new BusStop(entry.getKey(), entry.getValue().get("city"), Double.parseDouble(entry.getValue().get("lat")), Double.parseDouble(entry.getValue().get("lon")), 0.0);
                 break;
             }
+        }
+
+        return res;
+    }
+
+    public String[] getStopCity(String stop) {
+        String[] res = new String[2];
+        BusStop s = this.findStop(stop);
+
+        if (s != null) {
+            res[0] = s.name;
+            res[1] = s.city;
         }
 
         return res;
