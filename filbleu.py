@@ -451,6 +451,7 @@ class FilBleu:
 									except KeyError as e:
 										self.lines_found[line] = 1
 		print "Found lines: ", self.lines_found.keys()
+		return self.lines_found.keys()
 
 	def raz(self):
 		if not self.current_id == "":
