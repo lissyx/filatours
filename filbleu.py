@@ -155,6 +155,31 @@ class FilBleu:
 						lineSpecs.append({'number': number.group(1), 'ends': ends, 'spec': spec})
 		return lineSpecs
 
+	def extract_stopArea(self, source, id)
+		depart = source.find('input', attrs = {'id': id})
+		stopArea = ""
+		if depart:
+			# stop is recognized; get WGS84/Lambert2+ coords
+			stopArea = depart["value"]
+		else:
+			depart = source.find('select', attrs = {'id': id})
+			# ok, we have to find the first stop
+			optgroup = source.find('optgroup')
+			if optgroup:
+				options = optgroup.findAll('option')
+				if options:
+					bestSim = 0
+					bestValue = ""
+					for option in options:
+						sim = difflib.SequenceMatcher(a=self.strip_accents(unicode(self.args.get_stop_coords, "UTF-8")), b=option.text).ratio()
+						if (sim > bestSim):
+							bestSim = sim
+							bestValue = option["value"]
+					stopArea = bestValue
+			else:
+				print "No optgroup!"
+		return stopArea
+
 	def page_lines(self):
 		self.current_id = "1-2"
 		self.etape = ""
@@ -309,29 +334,7 @@ class FilBleu:
 		soup = BeautifulSoup.BeautifulSoup(self.browser.response().read())
 		form = soup.find('form', attrs = {'name': 'formulaire'})
 		if form:
-			depart = form.find('input', attrs = {'id': 'Departure'})
-			stopArea = ""
-			if depart:
-				# stop is recognized; get WGS84/Lambert2+ coords
-				stopArea = depart["value"]
-			else:
-				depart = form.find('select', attrs = {'id': 'Departure'})
-				# ok, we have to find the first stop
-				optgroup = form.find('optgroup')
-				if optgroup:
-					options = optgroup.findAll('option')
-					if options:
-						bestSim = 0
-						bestValue = ""
-						for option in options:
-							sim = difflib.SequenceMatcher(a=self.strip_accents(unicode(self.args.get_stop_coords, "UTF-8")), b=option.text).ratio()
-							if (sim > bestSim):
-								bestSim = sim
-								bestValue = option["value"]
-						stopArea = bestValue
-				else:
-					print "No optgroup!"
-
+			stopArea = self.extract_stopArea(form, 'Departure')
 			values = stopArea.replace(",", ".").split("|")
 			east = float(values[6])
 			north = float(values[7])
