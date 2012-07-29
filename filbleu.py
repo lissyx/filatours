@@ -164,18 +164,19 @@ class FilBleu:
 		else:
 			depart = source.find('select', attrs = {'id': id})
 			# ok, we have to find the first stop
-			optgroup = depart.find('optgroup')
-			if optgroup:
-				options = optgroup.findAll('option')
-				if options:
-					bestSim = 0
-					bestValue = ""
-					for option in options:
-						sim = difflib.SequenceMatcher(a=searchName, b=option.text).ratio()
-						if (sim > bestSim):
-							bestSim = sim
-							bestValue = option["value"]
-					stopArea = bestValue
+			if depart:
+				optgroup = depart.find('optgroup')
+				if optgroup:
+					options = optgroup.findAll('option')
+					if options:
+						bestSim = 0
+						bestValue = ""
+						for option in options:
+							sim = difflib.SequenceMatcher(a=searchName, b=option.text).ratio()
+							if (sim > bestSim):
+								bestSim = sim
+								bestValue = option["value"]
+						stopArea = bestValue
 		return stopArea
 
 	def page_lines(self):
