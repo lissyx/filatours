@@ -472,7 +472,7 @@ class FilBleu:
 		for timestamp in self.datespan(datetime.datetime(jour.tm_year, jour.tm_mon, jour.tm_mday, 5, 0), datetime.datetime(jour.tm_year, jour.tm_mon, jour.tm_mday, 20, 0), delta=datetime.timedelta(seconds=15*60)):
 			print timestamp
 			if only_lines == self.lines_found.keys():
-				print "Successfully matched:", self.lines_found.keys()
+				sys.stderr.write("Successfully matched:" + str(self.lines_found.keys()) + "\n")
 				success = True
 				break
 			self.args.hour = timestamp.hour
@@ -490,7 +490,8 @@ class FilBleu:
 										self.lines_found[line] += 1
 									except KeyError as e:
 										self.lines_found[line] = 1
-		print "Found lines: ", self.lines_found.keys()
+
+		sys.stderr.write("Found lines:" + str(self.lines_found.keys()) + "\n")
 		return self.lines_found.keys()
 
 	def raz(self):
