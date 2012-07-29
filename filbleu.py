@@ -266,6 +266,10 @@ class FilBleu:
 						if dep != arr:
 							self.args.only_lines = ",".join(expected)
 							service = self.bruteforce_find_lines(dep, arr)
+							if len(currentSpec['ends']) == 1 and currentSpec['spec'] == "all":
+								sys.stderr.write("Round line, asking reverse.\n")
+								service += self.bruteforce_find_lines(arr, dep)
+								sys.stderr.write("Finally found: " + str(service) + "\n")
 						else:
 							service = expected
 						self.service[key] = service
