@@ -164,7 +164,7 @@ class FilBleu:
 		else:
 			depart = source.find('select', attrs = {'id': id})
 			# ok, we have to find the first stop
-			optgroup = source.find('optgroup')
+			optgroup = depart.find('optgroup')
 			if optgroup:
 				options = optgroup.findAll('option')
 				if options:
