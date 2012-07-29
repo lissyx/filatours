@@ -551,6 +551,7 @@ class FilBleu:
 				print "ends:", lineSpec['ends']
 				root2 = lineSpec['ends'][0]
 
+			print "root1=", root1
 			print "root2=", root2
 
 			if root2.find(" par ") != -1 or root2.find(" puis ") != -1:
@@ -564,8 +565,28 @@ class FilBleu:
 				print "tmproot::", tmproot
 				root2 = tmproot
 
+			if type(root1) == str:
+				root1 = [ root1 ]
+
 			if type(root2) == str:
 				root2 = [ root2 ]
+
+			# find the target
+			bestTgtSim = 0
+			bestTgtValue = None
+			bestTgtKey = None
+			for rooteval in root1:
+				for stop in localLineStops.items():
+					(key, value) = stop
+					sim = difflib.SequenceMatcher(a=rooteval, b=value['name']).ratio()
+					if (sim > bestTgtSim):
+						bestTgtSim = sim
+						bestTgtValue = stop
+						bestTgtKey = key
+
+			print "bestTgtSim=", bestTgtSim
+			print "bestTgtValue=", bestTgtValue
+			print "bestTgtKey=", bestTgtKey
 
 			# find the root
 			bestSim = 0
