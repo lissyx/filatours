@@ -355,7 +355,7 @@ class FilBleu:
 							departure = sDate.group(1)
 							arrival = sDate.group(2)
 
-						print "Departure:", departure, "Arrival:", arrival, "Duration:", duration, "Connections:", connections, "[", link, "]"
+						# print "Departure:", departure, "Arrival:", arrival, "Duration:", duration, "Connections:", connections, "[", link, "]"
 						self.journeys.append({'departure': departure, 'arrival': arrival, 'duration': duration, 'connections': connections, 'link': link})
 			else:
 				print "No table"
