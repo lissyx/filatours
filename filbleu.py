@@ -188,13 +188,76 @@ class FilBleu:
 
 	def page_journey(self):
 		self.current_id = "1-1"
+		self.etape = ""
 
 	def list_stops(self):
 		self.get_stops()
+		self.specs = {}
+		if len(self.stops.keys()) == 1:
+			self.newstops = {}
+			for lineid in self.stops:
+				lineid = str(int(lineid.replace("A", "").replace("B", "")))
+				linespecs = self.lines_to_lineSpec(lineid)
+				self.specs[lineid] = linespecs
+				if len(linespecs) == 2:
+					self.newstops[lineid + linespecs[0]["spec"]] = self.stops[lineid]
+					self.newstops[lineid + linespecs[1]["spec"]] = self.stops[lineid]
+			if len(self.newstops) > 0:
+				self.stops = self.newstops
+
+		self.service = {}
+
 		for lineid in self.stops:
+			pureid = str(int(lineid.replace("A", "").replace("B", "")))
+			expected = []
+			currentSpec = None
+			for spec in self.specs[pureid]:
+				expected.append(spec['number'])
+				if spec['spec'] != "all":
+					if lineid.find(spec['spec']) > 0:
+						currentSpec = spec
+				else:
+					currentSpec = spec
+
+			startCity = ""
+			startStop = unicode(currentSpec['ends'][0].decode('utf-8'))
 			for stop in self.stops[lineid]:
 				stop = self.stops[lineid][stop]
-				line = "Stop: %(stop_name)s (%(stop_city)s) => %(stop_area)s [%(lineid)s]\n" % { 'lineid': lineid, 'stop_name': stop.stop_name, 'stop_city': stop.city, 'stop_area': stop.stopArea }
+				if stop.stop_name == startStop:
+					startCity = stop.city
+
+			i = 0
+			for stop in self.stops[lineid]:
+				stop = self.stops[lineid][stop]
+				i += 1
+				line = ""
+				if len(expected) > 1:
+					msg = "[%(current)d/%(total)d] Expected: %(expected)s. Running %(lineid)s. Checking stop: '%(citystop)s - %(stop)s' from: '%(city)s - %(from)s'\n" % {'expected': expected, 'stop': stop.stop_name, 'citystop': stop.city, 'city': startCity, 'from': startStop, 'lineid': lineid, 'current': i, 'total': len(self.stops[lineid])}
+					msg = msg.encode('utf-8')
+					sys.stderr.write(msg)
+
+					service = []
+					key = stop.name
+					try:
+						service = self.service[key]
+					except KeyError as e:
+						sys.stderr.write("Need to retrieve from da web\n")
+						dep = startCity + " - " + startStop
+						arr = stop.city + " - " + stop.name
+						if dep != arr:
+							self.args.only_lines = ",".join(expected)
+							service = self.bruteforce_find_lines(dep, arr)
+						else:
+							service = expected
+						self.service[key] = service
+
+					if currentSpec['number'] in service:
+						line = "Stop: %(stop_name)s (%(stop_city)s) => %(stop_area)s [%(lineid)s]\n" % { 'lineid': lineid, 'stop_name': stop.stop_name, 'stop_city': stop.city, 'stop_area': stop.stopArea }
+					else:
+						sys.stderr.write("No this time, bro. Next time, it will be good.\n")
+						print self.service
+				else:
+					line = "Stop: %(stop_name)s (%(stop_city)s) => %(stop_area)s [%(lineid)s]\n" % { 'lineid': lineid, 'stop_name': stop.stop_name, 'stop_city': stop.city, 'stop_area': stop.stopArea }
 				line = line.encode('utf-8')
 				sys.stdout.write(line)
 
