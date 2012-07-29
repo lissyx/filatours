@@ -133,6 +133,28 @@ class FilBleu:
 			yield currentDate
 			currentDate += delta
 
+	def lines_to_lineSpec(self, line_to_build):
+		lineSpecs = []
+		getLineNumber = re.compile(r"number=(.*); ")
+		for line in open('lines.txt').readlines():
+			if line.startswith("Line(id=" + line_to_build + ")"):
+				line = line.replace("Line(id=" + line_to_build + "): ", "")
+				subparts = line.split("|")
+				for subpart in subparts:
+					number = getLineNumber.search(subpart)
+					names = subpart.split(";")[1].replace("name=", "").replace("'", "").replace("{", "").replace("}", "").split(",")
+					if number:
+						ends = []
+						for name in names:
+							ends.append(name.strip())
+						spec = "all"
+						if number.group(1).count("A"):
+							spec = "A"
+						if number.group(1).count("B"):
+							spec = "B"
+						lineSpecs.append({'number': number.group(1), 'ends': ends, 'spec': spec})
+		return lineSpecs
+
 	def page_lines(self):
 		self.current_id = "1-2"
 
@@ -516,24 +538,7 @@ class FilBleu:
 					spec = "B"
 				lineStops[spec][stopId] = {'name': stopName, 'city': cityName }
 
-		getLineNumber = re.compile(r"number=(.*); ")
-		for line in open('lines.txt').readlines():
-			if line.startswith("Line(id=" + line_to_build + ")"):
-				line = line.replace("Line(id=" + line_to_build + "): ", "")
-				subparts = line.split("|")
-				for subpart in subparts:
-					number = getLineNumber.search(subpart)
-					names = subpart.split(";")[1].replace("name=", "").replace("'", "").replace("{", "").replace("}", "").split(",")
-					if number:
-						ends = []
-						for name in names:
-							ends.append(name.strip())
-						spec = "all"
-						if number.group(1).count("A"):
-							spec = "A"
-						if number.group(1).count("B"):
-							spec = "B"
-						lineSpecs.append({'number': number.group(1), 'ends': ends, 'spec': spec})
+		lineSpecs = self.lines_to_lineSpec(line_to_build)
 
 		print lineStops
 		lineResults = []
