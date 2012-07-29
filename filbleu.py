@@ -425,6 +425,7 @@ class FilBleu:
 		self.lines_found = {}
 		success = False
 		self.args.criteria = 2
+		self.args.way = 1
 		self.args.stop_from = depStop
 		self.args.stop_to = arrStop
 		jour = time.strptime("04/06/2012", "%d/%m/%Y")
@@ -662,7 +663,7 @@ class FilBleu:
 		if self.args.journey:
 			self.list_journeys()
 		if self.args.bruteforce:
-			self.list_journeys_day()
+			self.bruteforce_find_lines(self.args.stop_from, self.args.stop_to)
 		if self.args.build_line:
 			self.build_line()
 
