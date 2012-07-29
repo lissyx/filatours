@@ -359,6 +359,21 @@ class FilBleu:
 		self.browser["Criteria"] = [ str(self.args.criteria) ]
 		self.browser.submit()
 		soup = BeautifulSoup.BeautifulSoup(self.browser.response().read())
+		stopAreaDep = self.extract_stopArea(soup, 'Departure', self.strip_accents(self.args.stop_from))
+		stopAreaArr = self.extract_stopArea(soup, 'Arrival', self.strip_accents(self.args.stop_to))
+		if stopAreaDep != "" or stopAreaArr != "":
+			self.page_journey()
+			self.raz()
+			self.browser.select_form(name="formulaire")
+			self.browser["Departure"] = self.strip_accents(stopAreaDep)
+			self.browser["Arrival"] = self.strip_accents(stopAreaArr)
+			self.browser["Sens"] = [ str(self.args.way) ]
+			self.browser["Date"] = str(self.args.date)
+			self.browser["Hour"] = [ str(self.args.hour) ]
+			self.browser["Minute"] = [ str(self.args.min) ]
+			self.browser["Criteria"] = [ str(self.args.criteria) ]
+			self.browser.submit()
+		soup = BeautifulSoup.BeautifulSoup(self.browser.response().read())
 		navig = soup.find('div', attrs = {'class': 'navig'})
 		if navig:
 			table = soup.find('table', attrs = {'summary': 'Propositions'})
