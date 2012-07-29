@@ -194,7 +194,6 @@ class FilBleu:
 	def list_stops(self):
 		self.get_stops()
 		self.specs = {}
-		print self.stops.keys()
 		if len(self.stops.keys()) >= 1:
 			self.newstops = {}
 			for lineid in self.stops:
@@ -275,7 +274,6 @@ class FilBleu:
 						line = "Stop: %(stop_name)s (%(stop_city)s) => %(stop_area)s [%(lineid)s]\n" % { 'lineid': lineid, 'stop_name': stop.stop_name, 'stop_city': stop.city, 'stop_area': stop.stopArea }
 					else:
 						sys.stderr.write("No this time, bro. Next time, it will be good.\n")
-						print self.service
 				else:
 					line = "Stop: %(stop_name)s (%(stop_city)s) => %(stop_area)s [%(lineid)s]\n" % { 'lineid': lineid, 'stop_name': stop.stop_name, 'stop_city': stop.city, 'stop_area': stop.stopArea }
 				line = line.encode('utf-8')
