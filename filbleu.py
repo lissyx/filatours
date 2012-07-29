@@ -193,15 +193,18 @@ class FilBleu:
 	def list_stops(self):
 		self.get_stops()
 		self.specs = {}
-		if len(self.stops.keys()) == 1:
+		print self.stops.keys()
+		if len(self.stops.keys()) >= 1:
 			self.newstops = {}
 			for lineid in self.stops:
+				origlineid = lineid
 				lineid = str(int(lineid.replace("A", "").replace("B", "")))
 				linespecs = self.lines_to_lineSpec(lineid)
 				self.specs[lineid] = linespecs
-				if len(linespecs) == 2:
-					self.newstops[lineid + linespecs[0]["spec"]] = self.stops[lineid]
-					self.newstops[lineid + linespecs[1]["spec"]] = self.stops[lineid]
+				if len(linespecs) >= 2:
+					for lspec in linespecs:
+						self.newstops[lineid + lspec["spec"]] = self.stops[origlineid]
+						self.newstops[lineid + lspec["spec"]] = self.stops[origlineid]
 			if len(self.newstops) > 0:
 				self.stops = self.newstops
 
@@ -221,10 +224,26 @@ class FilBleu:
 
 			startCity = ""
 			startStop = unicode(currentSpec['ends'][0].decode('utf-8'))
+			if startStop.find(" par ") != -1 or startStop.find(" puis ") != -1:
+				split_par = startStop.split(" par ")
+				tmproot = [ ]
+				for sp in split_par:
+					split_puis = sp.split(" puis ")
+					tmproot += split_puis
+				startStop = tmproot[0]
+
+			bestSim = 0
+			bestStop = ""
+			bestCity = ""
 			for stop in self.stops[lineid]:
 				stop = self.stops[lineid][stop]
-				if stop.stop_name == startStop:
-					startCity = stop.city
+				sim = difflib.SequenceMatcher(a=startStop, b=stop.stop_name).ratio()
+				if (sim > bestSim):
+					bestSim = sim
+					bestStop = stop.stop_name
+					bestCity = stop.city
+			startStop = bestStop
+			startCity = bestCity
 
 			i = 0
 			for stop in self.stops[lineid]:
