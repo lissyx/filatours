@@ -12,6 +12,7 @@ import pyproj
 import math
 import copy
 import difflib
+import time
 
 class JourneyPart:
 	def __init__(self, type, mode, indication, time, duration):
@@ -104,6 +105,8 @@ class FilBleu:
 		journey.add_argument("--hour", help="Hour")
 		journey.add_argument("--min", help="Minute")
 		journey.add_argument("--criteria", type=int, help="Criteria: (1) Fastest; (2) Min changes; (3) Min walking; (4) Min waiting")
+		journey.add_argument("--bruteforce", action="store_true", help="Bruteforce find lines that goes between two specific stops. Needs --only-lines")
+		journey.add_argument("--only-lines", help="When running --bruteforce only consider those lines (comma-separated: 09A,09B)")
 		self.args = self.parser.parse_args()
 
 		self.browser.set_debug_http(self.args.httpdebug)
@@ -123,6 +126,12 @@ class FilBleu:
 
 	def html_br_strip(self, text):
 		return "".join([l.strip() for l in text.split("\n")])
+
+	def datespan(self, startDate, endDate, delta=datetime.timedelta(days=1)):
+		currentDate = startDate
+		while currentDate < endDate:
+			yield currentDate
+			currentDate += delta
 
 	def page_lines(self):
 		self.current_id = "1-2"
@@ -411,6 +420,37 @@ class FilBleu:
 					print "	Type:", journey_part.type, " Mode:", journey_part.mode, " Time:", journey_part.time, " Duration:", journey_part.duration
 			print ""
 
+	def bruteforce_find_lines(self, depStop, arrStop):
+		only_lines = self.args.only_lines.split(",")
+		self.lines_found = {}
+		success = False
+		self.args.criteria = 2
+		self.args.stop_from = depStop
+		self.args.stop_to = arrStop
+		jour = time.strptime("04/06/2012", "%d/%m/%Y")
+		for timestamp in self.datespan(datetime.datetime(jour.tm_year, jour.tm_mon, jour.tm_mday, 5, 0), datetime.datetime(jour.tm_year, jour.tm_mon, jour.tm_mday, 20, 0), delta=datetime.timedelta(seconds=15*60)):
+			print timestamp
+			if only_lines == self.lines_found.keys():
+				print "Successfully matched:", self.lines_found.keys()
+				success = True
+				break
+			self.args.hour = timestamp.hour
+			self.args.min = timestamp.minute
+			self.get_journeys()
+			for j in self.journeys:
+				if j['connections'] == "Aucune":
+					jd = self.get_journey(j)
+					if len(jd) == 2:
+						for journey_part in jd:
+							if journey_part.mode == "Bus":
+								if journey_part.indic.line in only_lines:
+									line = str(journey_part.indic.line)
+									try:
+										self.lines_found[line] += 1
+									except KeyError as e:
+										self.lines_found[line] = 1
+		print "Found lines: ", self.lines_found.keys()
+
 	def raz(self):
 		if not self.current_id == "":
 			url = self.baseurl + "?id=" + self.current_id
@@ -600,6 +640,8 @@ class FilBleu:
 			self.get_stop_coords()
 		if self.args.journey:
 			self.list_journeys()
+		if self.args.bruteforce:
+			self.list_journeys_day()
 		if self.args.build_line:
 			self.build_line()
 
