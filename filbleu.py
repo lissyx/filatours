@@ -564,7 +564,7 @@ class FilBleu:
 				if (timestamp < nexttime):
 					continue
 			sys.stderr.write("Date: " + str(timestamp) + "\n")
-			if only_lines == self.lines_found.keys():
+			if len(self.lines_found.keys()) > 0 and only_lines.sort() == self.lines_found.keys().sort():
 				sys.stderr.write("Successfully matched:" + str(self.lines_found.keys()) + "\n")
 				success = True
 				break
