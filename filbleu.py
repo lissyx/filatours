@@ -352,8 +352,8 @@ class FilBleu:
 		self.page_journey()
 		self.raz()
 		self.browser.select_form(name="formulaire")
-		self.browser["Departure"] = str(self.args.stop_from)
-		self.browser["Arrival"] = str(self.args.stop_to)
+		self.browser["Departure"] = self.strip_accents(self.args.stop_from)
+		self.browser["Arrival"] = self.strip_accents(self.args.stop_to)
 		self.browser["Sens"] = [ str(self.args.way) ]
 		self.browser["Date"] = str(self.args.date)
 		self.browser["Hour"] = [ str(self.args.hour) ]
