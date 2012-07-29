@@ -546,6 +546,11 @@ class FilBleu:
 		self.lines_found = {}
 		lastTime = ""
 		success = False
+		if type(depStop) == str:
+			depStop = unicode(depStop)
+		if type(arrStop) == str:
+			arrStop = unicode(arrStop)
+
 		self.args.criteria = 2
 		self.args.way = 1
 		self.args.stop_from = depStop
