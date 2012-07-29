@@ -470,7 +470,7 @@ class FilBleu:
 		self.args.date = "04/06/2012"
 		jour = time.strptime("04/06/2012", "%d/%m/%Y")
 		for timestamp in self.datespan(datetime.datetime(jour.tm_year, jour.tm_mon, jour.tm_mday, 5, 0), datetime.datetime(jour.tm_year, jour.tm_mon, jour.tm_mday, 20, 0), delta=datetime.timedelta(seconds=15*60)):
-			print timestamp
+			sys.stderr.write("Date: " + str(timestamp) + "\n")
 			if only_lines == self.lines_found.keys():
 				sys.stderr.write("Successfully matched:" + str(self.lines_found.keys()) + "\n")
 				success = True
