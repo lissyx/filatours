@@ -176,8 +176,6 @@ class FilBleu:
 							bestSim = sim
 							bestValue = option["value"]
 					stopArea = bestValue
-			else:
-				print "No optgroup!"
 		return stopArea
 
 	def page_lines(self):
