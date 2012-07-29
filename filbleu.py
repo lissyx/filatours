@@ -157,6 +157,7 @@ class FilBleu:
 
 	def page_lines(self):
 		self.current_id = "1-2"
+		self.etape = ""
 
 	def page_stops(self):
 		self.current_id = "1-2"
