@@ -1,30 +1,29 @@
-#!/bin/sh
-
-# LINES=$(cat lines.txt | sed -e 's/ /_/g' | cut -d')' -f1 | cut -d'(' -f2 | grep ^id= | cut -d'=' -f2 | sort -n)
-LINES=1
-
-#for LINE in $LINES; do
-#	name=$(grep "(id=$LINE)" lines.txt | sed -e "s/Line(id=$LINE): //g" -e 's/name={.*} //g' -e 's/name={.*}$//g' -e "s/name='.*'//g" -e 's/number=//g' -e 's/;//g' -e 's/ | / /g' -e 's/ $//g')
-#	for subline in $name; do 
-#		for stop in $(cat stops.$LINE.txt | sed -e 's/ /_/g' | cut -d'=' -f2 | sed -e 's/^>_//g'); do
-#			# line:
-#			# Found_a_stop_matching_stopArea:_[StopArea|676|Voltaire|Tours|||475666,50|2267709,00|1598!0!14;1597!0!14;];_Lambert2+:_{E:475666.500000,_N:2267709.000000};_Degrees:_{E:47.397322,_N:0.689295}
-#			line=$(grep "$(echo $stop | sed -e 's/_/ /g')" stops_coords.txt | sed -e 's/ /_/g');
-#			arret=$(echo $line | cut -d'|' -f3 | sed -e 's/_/ /g');
-#			echo "        this.lines.put(\"$arret\", \"$subline\");";
-#		done;
-#	done;
-#done;
+#!/bin/bash
 
 for line in $(grep ^Found stops_coords.txt | sed -e 's/ /_/g'); do
 	arret=$(echo $line | cut -d'|' -f3 | sed -e 's/_/ /g');
 	files=$(grep "$arret" stops.*.txt | cut -d':' -f1 | sed -e 's/^stops\.//g' -e 's/\.txt$//g')
+	lineids=$(grep "$arret" stops.*.txt | cut -d'[' -f2 | cut -d']' -f1)
 	names=""
-	for id in $files; do
-		name=$(grep "(id=$id)" lines.txt | sed -e "s/Line(id=$id): //g" -e 's/name={.*} //g' -e 's/name={.*}$//g' -e "s/name='.*'//g" -e 's/number=//g' -e 's/;//g' -e 's/ | / /g' -e 's/ $//g')
-		for n in $name; do
-			names="$names $n"
-		done;
+	for lid in $lineids; do
+		id=$(echo $lid | sed -e 's/A//g' -e 's/B//g')
+		if [ -f stops.$id.txt ]; then
+			name=$(grep "(id=$id)" lines.txt | sed -e "s/Line(id=$id): //g" -e 's/name={.*} //g' -e 's/name={.*}$//g' -e "s/name='.*'//g" -e 's/number=//g' -e 's/;//g' -e 's/ | / /g' -e 's/ $//g')
+			echo $lid | egrep -q 'A|B'
+			if [ $? -eq 0 ]; then
+				# echo "lid=$lid ;; name==$name"
+				for na in $name; do
+					res=$(echo $na | sed -e "s/$lid//g")
+					if [ "$res" = "0" ]; then
+						# echo "lid=$lid ;; na==$na ==> $res"
+						finalname=$na
+					fi
+				done;
+			else
+				finalname=$name
+			fi;
+		fi
+		names="$names $finalname"
 	done;
 	names=$(echo $names | sed -e 's/ /\n/g' | sort | uniq);
 	echo -n "        l = new ArrayList<String>();";
