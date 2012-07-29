@@ -305,7 +305,8 @@ class FilBleu:
 				search = re.compile(r"(.*) \|(.*)").search(multi)
 				if search:
 					lineid = self.args.list_stops + "" + search.group(1)
-			self.stops[lineid] = {}
+			if not lineid in self.stops.keys():
+				self.stops[lineid] = {}
 			for stop in stops:
 				if not stop["value"] == "":
 					s = BusStop(stop.text)
