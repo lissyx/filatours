@@ -155,7 +155,7 @@ class FilBleu:
 						lineSpecs.append({'number': number.group(1), 'ends': ends, 'spec': spec})
 		return lineSpecs
 
-	def extract_stopArea(self, source, id)
+	def extract_stopArea(self, source, id):
 		depart = source.find('input', attrs = {'id': id})
 		stopArea = ""
 		if depart:
