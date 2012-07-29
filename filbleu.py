@@ -462,6 +462,7 @@ class FilBleu:
 	def bruteforce_find_lines(self, depStop, arrStop):
 		only_lines = self.args.only_lines.split(",")
 		self.lines_found = {}
+		lastTime = ""
 		success = False
 		self.args.criteria = 2
 		self.args.way = 1
@@ -470,6 +471,11 @@ class FilBleu:
 		self.args.date = "04/06/2012"
 		jour = time.strptime("04/06/2012", "%d/%m/%Y")
 		for timestamp in self.datespan(datetime.datetime(jour.tm_year, jour.tm_mon, jour.tm_mday, 5, 0), datetime.datetime(jour.tm_year, jour.tm_mon, jour.tm_mday, 20, 0), delta=datetime.timedelta(seconds=15*60)):
+			if (lastTime != ""):
+				last = time.strptime("04/06/2012 " + lastTime, "%d/%m/%Y %Hh%M")
+				nexttime = datetime.datetime.fromtimestamp(time.mktime(last))
+				if (timestamp < nexttime):
+					continue
 			sys.stderr.write("Date: " + str(timestamp) + "\n")
 			if only_lines == self.lines_found.keys():
 				sys.stderr.write("Successfully matched:" + str(self.lines_found.keys()) + "\n")
@@ -481,9 +487,10 @@ class FilBleu:
 			for j in self.journeys:
 				if j['connections'] == "Aucune":
 					jd = self.get_journey(j)
-					if len(jd) == 2:
+					if len(jd) >= 2:
 						for journey_part in jd:
 							if journey_part.mode == "Bus":
+								lastTime = journey_part.time
 								if journey_part.indic.line in only_lines:
 									line = str(journey_part.indic.line)
 									try:
