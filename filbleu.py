@@ -551,7 +551,6 @@ class FilBleu:
 		only_lines = self.args.only_lines.split(",")
 		self.lines_found = {}
 		lastTime = ""
-		success = False
 		if type(depStop) == str:
 			depStop = unicode(depStop)
 		if type(arrStop) == str:
@@ -561,39 +560,41 @@ class FilBleu:
 		self.args.way = 1
 		self.args.stop_from = depStop
 		self.args.stop_to = arrStop
-		self.args.date = "04/06/2012"
-		jour = time.strptime("04/06/2012", "%d/%m/%Y")
-		for timestamp in self.datespan(datetime.datetime(jour.tm_year, jour.tm_mon, jour.tm_mday, 5, 0), datetime.datetime(jour.tm_year, jour.tm_mon, jour.tm_mday, 20, 0), delta=datetime.timedelta(seconds=15*60)):
-			if (lastTime != ""):
-				last = time.strptime("04/06/2012 " + lastTime, "%d/%m/%Y %Hh%M")
-				nexttime = datetime.datetime.fromtimestamp(time.mktime(last))
-				if (timestamp < nexttime):
-					continue
-			sys.stderr.write("Date: " + str(timestamp) + "\n")
-			only_lines_sort = only_lines
-			only_lines_sort.sort()
-			keys_sort = self.lines_found.keys()
-			keys_sort.sort()
-			if len(keys_sort) > 0 and only_lines_sort == keys_sort:
-				sys.stderr.write("Successfully matched: " + str(keys_sort) + " with " + str(only_lines_sort) + "\n")
-				success = True
-				break
-			self.args.hour = timestamp.hour
-			self.args.min = timestamp.minute
-			self.get_journeys()
-			for j in self.journeys:
-				if j['connections'] == "Aucune":
-					jd = self.get_journey(j)
-					if len(jd) >= 2:
-						for journey_part in jd:
-							if journey_part.mode == "Bus":
-								lastTime = journey_part.time
-								if journey_part.indic.line in only_lines:
-									line = str(journey_part.indic.line)
-									try:
-										self.lines_found[line] += 1
-									except KeyError as e:
-										self.lines_found[line] = 1
+		dates = ['04/06/2012', '03/06/2012']
+		for date_extract in dates:
+			self.args.date = date_extract
+			jour = time.strptime(date_extract, "%d/%m/%Y")
+			for timestamp in self.datespan(datetime.datetime(jour.tm_year, jour.tm_mon, jour.tm_mday, 5, 0), datetime.datetime(jour.tm_year, jour.tm_mon, jour.tm_mday, 20, 0), delta=datetime.timedelta(seconds=15*60)):
+				if (lastTime != ""):
+					last = time.strptime(date_extract + " " + lastTime, "%d/%m/%Y %Hh%M")
+					nexttime = datetime.datetime.fromtimestamp(time.mktime(last))
+					if (timestamp < nexttime):
+						continue
+				sys.stderr.write("Date: " + str(timestamp) + "\n")
+				only_lines_sort = only_lines
+				only_lines_sort.sort()
+				keys_sort = self.lines_found.keys()
+				keys_sort.sort()
+				if len(keys_sort) > 0 and only_lines_sort == keys_sort:
+					sys.stderr.write("Successfully matched: " + str(keys_sort) + " with " + str(only_lines_sort) + "\n")
+					sys.stderr.write("Found lines:" + str(self.lines_found.keys()) + "\n")
+					return self.lines_found.keys()
+				self.args.hour = timestamp.hour
+				self.args.min = timestamp.minute
+				self.get_journeys()
+				for j in self.journeys:
+					if j['connections'] == "Aucune":
+						jd = self.get_journey(j)
+						if len(jd) == 2:
+							for journey_part in jd:
+								if journey_part.mode == "Bus":
+									lastTime = journey_part.time
+									if journey_part.indic.line in only_lines:
+										line = str(journey_part.indic.line)
+										try:
+											self.lines_found[line] += 1
+										except KeyError as e:
+											self.lines_found[line] = 1
 
 		sys.stderr.write("Found lines:" + str(self.lines_found.keys()) + "\n")
 		return self.lines_found.keys()
