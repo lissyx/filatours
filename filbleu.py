@@ -125,8 +125,9 @@ class Indication:
 			self.stop = bs[0].text
 
 class BusStop:
-	def __init__(self, name):
+	def __init__(self, name, linkbase):
 		self.name = name
+		self.linkbase = linkbase
 
 	def parse_stopArea(self):
 		search = re.compile(r"(.*)\|(.*)\|(.*)").search(self.stopArea)
@@ -401,13 +402,13 @@ class FilBleu:
 		self.current_id = "1-2"
 		self.raz()
 		self.stops = {}
-		self.linkBase = ""
+		linkBase = ""
 		soups = [ self.get_stops_sens(1), self.get_stops_sens(-1) ]
 		for soup in soups:
 			sens = soup.find("input", attrs = {'name': 'Sens'})
 			searchLinkBase = re.compile(r"grille-horaires.*\.php").search(soup.text)
 			if searchLinkBase:
-				self.linkBase = searchLinkBase.group(0) + "?Sens=" + sens["value"] + "&"
+				linkBase = searchLinkBase.group(0) + "?Sens=" + sens["value"] + "&"
 
 			sens = soup.find("form")
 			stops = sens.findAll("option")
@@ -425,7 +426,7 @@ class FilBleu:
 				self.stops[lineid] = {}
 			for stop in stops:
 				if not stop["value"] == "":
-					s = BusStop(stop.text)
+					s = BusStop(stop.text, linkBase)
 					s.set_stopArea(stop["value"])
 					self.stops[lineid][s.id] = s
 
