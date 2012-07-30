@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1" creator="FilBleuExporter">
+	<metadata>Filbleu - Ligne V</metadata>
+	<wpt lon="0.607522" lat="47.359181">
+		<ele>0.0</ele>
+		<name>Grand Moulin</name>
+	</wpt>
+	<wpt lon="0.488155" lat="47.331110">
+		<ele>0.0</ele>
+		<name>Villandry Chateau Galle</name>
+	</wpt>
+	<wpt lon="0.677264" lat="47.365547">
+		<ele>0.0</ele>
+		<name>Mérieux</name>
+	</wpt>
+	<wpt lon="0.531192" lat="47.345858">
+		<ele>0.0</ele>
+		<name>Savonnieres Grottes Petrifiantes</name>
+	</wpt>
+	<wpt lon="0.547265" lat="47.348191">
+		<ele>0.0</ele>
+		<name>Savonnieres Poste</name>
+	</wpt>
+	<wpt lon="0.694038" lat="47.390016">
+		<ele>0.0</ele>
+		<name>Gare de Tours</name>
+	</wpt>
+	<wpt lon="0.511067" lat="47.340715">
+		<ele>0.0</ele>
+		<name>Office De Tourisme Villandry</name>
+	</wpt>
+	<wpt lon="0.513563" lat="47.341267">
+		<ele>0.0</ele>
+		<name>Chateau De Villandry</name>
+	</wpt>
+</gpx>

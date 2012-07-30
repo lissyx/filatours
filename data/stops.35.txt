@@ -1,0 +1,7 @@
+Stop: Grand Moulin (Ballan-Miré) => 10|Grand Moulin|Ballan-Miré [35]
+Stop: Villandry Chateau Galle (Villandry) => 690|Villandry Chateau Galle|Villandry [35]
+Stop: Mérieux (Tours) => 600|Mérieux|Tours [35]
+Stop: Savonnieres Grottes Petrifiantes (Savonnières) => 451|Savonnieres Grottes Petrifiantes|Savonnières [35]
+Stop: Savonnieres Poste (Savonnières) => 452|Savonnieres Poste|Savonnières [35]
+Stop: Gare de Tours (Tours) => 541|Gare de Tours|Tours [35]
+Stop: Office De Tourisme Villandry (Villandry) => 689|Office De Tourisme Villandry|Villandry [35]

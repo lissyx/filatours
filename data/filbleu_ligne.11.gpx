@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1" creator="FilBleuExporter">
+	<metadata>Filbleu - Ligne 11</metadata>
+	<wpt lon="0.701716" lat="47.355845">
+		<ele>0.0</ele>
+		<name>Arsonval</name>
+	</wpt>
+	<wpt lon="0.677821" lat="47.394687">
+		<ele>0.0</ele>
+		<name>Tanneurs</name>
+	</wpt>
+	<wpt lon="0.672870" lat="47.351159">
+		<ele>0.0</ele>
+		<name>Morier</name>
+	</wpt>
+	<wpt lon="0.694569" lat="47.376186">
+		<ele>0.0</ele>
+		<name>Charcot</name>
+	</wpt>
+	<wpt lon="0.679472" lat="47.392553">
+		<ele>0.0</ele>
+		<name>Grand Marché</name>
+	</wpt>
+	<wpt lon="0.616320" lat="47.404627">
+		<ele>0.0</ele>
+		<name>La Forge</name>
+	</wpt>
+	<wpt lon="0.695388" lat="47.373957">
+		<ele>0.0</ele>
+		<name>Verdun</name>
+	</wpt>
+	<wpt lon="0.678890" lat="47.350941">
+		<ele>0.0</ele>
+		<name>Bruère</name>
+	</wpt>
+	<wpt lon="0.669657" lat="47.351188">
+		<ele>0.0</ele>
+		<name>Bugeaud</name>
+	</wpt>
+	<wpt lon="0.671459" lat="47.353407">
+		<ele>0.0</ele>
+		<name>Béguine</name>
+	</wpt>
+	<wpt lon="0.648055" lat="47.340292">
+		<ele>0.0</ele>
+		<name>Cap Soleil</name>
+	</wpt>
+	<wpt lon="0.702396" lat="47.357182">
+		<ele>0.0</ele>
+		<name>Faculté de Grandmont</name>
+	</wpt>
+	<wpt lon="0.707334" lat="47.361337">
+		<ele>0.0</ele>
+		<name>Montjoyeux</name>
+	</wpt>
+	<wpt lon="0.559950" lat="47.385331">
+		<ele>0.0</ele>
+		<name>Stade Varenne</name>
+	</wpt>
+	<wpt lon="0.555235" lat="47.384683">
+		<ele>0.0</ele>
+		<name>St Venant</name>
+	</wpt>
+	<wpt lon="0.538320" lat="47.392294">
+		<ele>0.0</ele>
+		<name>Vaugareau</name>
+	</wpt>
+	<wpt lon="0.555780" lat="47.395569">
+		<ele>0.0</ele>
+		<name>Muguet</name>
+	</wpt>
+	<wpt lon="0.553547" lat="47.385642">
+		<ele>0.0</ele>
+		<name>Luynes Centre</name>
+	</wpt>
+	<wpt lon="0.555536" lat="47.397320">
+		<ele>0.0</ele>
+		<name>Richardières</name>
+	</wpt>
+	<wpt lon="0.546865" lat="47.390159">
+		<ele>0.0</ele>
+		<name>Pasteur</name>
+	</wpt>
+	<wpt lon="0.596045" lat="47.402543">
+		<ele>0.0</ele>
+		<name>Fondettes Centre</name>
+	</wpt>
+	<wpt lon="0.645524" lat="47.398301">
+		<ele>0.0</ele>
+		<name>Fondettes Gare</name>
+	</wpt>
+	<wpt lon="0.595847" lat="47.400497">
+		<ele>0.0</ele>
+		<name>Rochebise</name>
+	</wpt>
+	<wpt lon="0.592611" lat="47.393881">
+		<ele>0.0</ele>
+		<name>Chantemerle</name>
+	</wpt>
+	<wpt lon="0.589264" lat="47.389498">
+		<ele>0.0</ele>
+		<name>Chatigny</name>
+	</wpt>
+	<wpt lon="0.594513" lat="47.396914">
+		<ele>0.0</ele>
+		<name>Chantelouze</name>
+	</wpt>
+	<wpt lon="0.622667" lat="47.403840">
+		<ele>0.0</ele>
+		<name>Deux Croix</name>
+	</wpt>
+	<wpt lon="0.598525" lat="47.407776">
+		<ele>0.0</ele>
+		<name>Dupuy</name>
+	</wpt>
+	<wpt lon="0.630057" lat="47.402316">
+		<ele>0.0</ele>
+		<name>Crucifix</name>
+	</wpt>
+	<wpt lon="0.704788" lat="47.353653">
+		<ele>0.0</ele>
+		<name>Dumont-d'Urville</name>
+	</wpt>
+	<wpt lon="0.655920" lat="47.395317">
+		<ele>0.0</ele>
+		<name>Maisons Blanches</name>
+	</wpt>
+	<wpt lon="0.646199" lat="47.393610">
+		<ele>0.0</ele>
+		<name>Pont de la Motte</name>
+	</wpt>
+	<wpt lon="0.596128" lat="47.406525">
+		<ele>0.0</ele>
+		<name>Maison d'Ardoise</name>
+	</wpt>
+	<wpt lon="0.601974" lat="47.405444">
+		<ele>0.0</ele>
+		<name>Maisons Rouges</name>
+	</wpt>
+	<wpt lon="0.584524" lat="47.389192">
+		<ele>0.0</ele>
+		<name>Les Muses</name>
+	</wpt>
+	<wpt lon="0.606737" lat="47.405078">
+		<ele>0.0</ele>
+		<name>Les Roncières</name>
+	</wpt>
+	<wpt lon="0.593462" lat="47.404956">
+		<ele>0.0</ele>
+		<name>Naurod</name>
+	</wpt>
+	<wpt lon="0.593241" lat="47.390501">
+		<ele>0.0</ele>
+		<name>Mareuil</name>
+	</wpt>
+	<wpt lon="0.666765" lat="47.397435">
+		<ele>0.0</ele>
+		<name>St Cyr Eglise</name>
+	</wpt>
+	<wpt lon="0.673569" lat="47.399148">
+		<ele>0.0</ele>
+		<name>Pont Napoleon</name>
+	</wpt>
+	<wpt lon="0.703977" lat="47.360857">
+		<ele>0.0</ele>
+		<name>Lycée Grandmont</name>
+	</wpt>
+	<wpt lon="0.703313" lat="47.350816">
+		<ele>0.0</ele>
+		<name>Parc Grandmont</name>
+	</wpt>
+	<wpt lon="0.652759" lat="47.345169">
+		<ele>0.0</ele>
+		<name>St Léger</name>
+	</wpt>
+	<wpt lon="0.651955" lat="47.334999">
+		<ele>0.0</ele>
+		<name>St Gatien</name>
+	</wpt>
+	<wpt lon="0.686322" lat="47.351733">
+		<ele>0.0</ele>
+		<name>Quatre Bornes</name>
+	</wpt>
+	<wpt lon="0.537797" lat="47.390513">
+		<ele>0.0</ele>
+		<name>CAT Les Vallées</name>
+	</wpt>
+	<wpt lon="0.549989" lat="47.390621">
+		<ele>0.0</ele>
+		<name>Château de Luynes</name>
+	</wpt>
+	<wpt lon="0.543633" lat="47.390127">
+		<ele>0.0</ele>
+		<name>Barbinière</name>
+	</wpt>
+	<wpt lon="0.554488" lat="47.383447">
+		<ele>0.0</ele>
+		<name>Baugé</name>
+	</wpt>
+	<wpt lon="0.554795" lat="47.393718">
+		<ele>0.0</ele>
+		<name>Hopital De Luynes</name>
+	</wpt>
+	<wpt lon="0.541866" lat="47.388498">
+		<ele>0.0</ele>
+		<name>IME</name>
+	</wpt>
+	<wpt lon="0.569967" lat="47.387468">
+		<ele>0.0</ele>
+		<name>Chêne Vert</name>
+	</wpt>
+	<wpt lon="0.552181" lat="47.391433">
+		<ele>0.0</ele>
+		<name>Clos Mignot</name>
+	</wpt>
+	<wpt lon="0.563420" lat="47.386140">
+		<ele>0.0</ele>
+		<name>La Planche</name>
+	</wpt>
+	<wpt lon="0.551734" lat="47.387188">
+		<ele>0.0</ele>
+		<name>Lilas</name>
+	</wpt>
+	<wpt lon="0.703168" lat="47.364411">
+		<ele>0.0</ele>
+		<name>Beethoven</name>
+	</wpt>
+	<wpt lon="0.690352" lat="47.386473">
+		<ele>0.0</ele>
+		<name>Salengro</name>
+	</wpt>
+	<wpt lon="0.698441" lat="47.355575">
+		<ele>0.0</ele>
+		<name>Bd de Chinon</name>
+	</wpt>
+	<wpt lon="0.704289" lat="47.352661">
+		<ele>0.0</ele>
+		<name>La Perouse</name>
+	</wpt>
+	<wpt lon="0.698146" lat="47.367334">
+		<ele>0.0</ele>
+		<name>Lac</name>
+	</wpt>
+	<wpt lon="0.650963" lat="47.394309">
+		<ele>0.0</ele>
+		<name>Barberonne</name>
+	</wpt>
+	<wpt lon="0.626537" lat="47.403204">
+		<ele>0.0</ele>
+		<name>Les Aubuis</name>
+	</wpt>
+	<wpt lon="0.633988" lat="47.400192">
+		<ele>0.0</ele>
+		<name>Le Chausse</name>
+	</wpt>
+	<wpt lon="0.612196" lat="47.404719">
+		<ele>0.0</ele>
+		<name>Grand Ormeau</name>
+	</wpt>
+	<wpt lon="0.578077" lat="47.388415">
+		<ele>0.0</ele>
+		<name>Gannay</name>
+	</wpt>
+	<wpt lon="0.595487" lat="47.398531">
+		<ele>0.0</ele>
+		<name>Guesne</name>
+	</wpt>
+	<wpt lon="0.666361" lat="47.351008">
+		<ele>0.0</ele>
+		<name>Martyrs</name>
+	</wpt>
+	<wpt lon="0.619666" lat="47.404421">
+		<ele>0.0</ele>
+		<name>Haute Limougère</name>
+	</wpt>
+	<wpt lon="0.639325" lat="47.400284">
+		<ele>0.0</ele>
+		<name>La Plaine</name>
+	</wpt>
+	<wpt lon="0.681346" lat="47.351358">
+		<ele>0.0</ele>
+		<name>Montreuil Bellay</name>
+	</wpt>
+	<wpt lon="0.663789" lat="47.350789">
+		<ele>0.0</ele>
+		<name>Joué Centre</name>
+	</wpt>
+	<wpt lon="0.646073" lat="47.337892">
+		<ele>0.0</ele>
+		<name>Joué Blotterie</name>
+	</wpt>
+	<wpt lon="0.701145" lat="47.363663">
+		<ele>0.0</ele>
+		<name>Parc Nord</name>
+	</wpt>
+	<wpt lon="0.688495" lat="47.389854">
+		<ele>0.0</ele>
+		<name>Jean Jaurès</name>
+	</wpt>
+	<wpt lon="0.691843" lat="47.353551">
+		<ele>0.0</ele>
+		<name>Jumeaux</name>
+	</wpt>
+	<wpt lon="0.701769" lat="47.360588">
+		<ele>0.0</ele>
+		<name>J.P. Rameau</name>
+	</wpt>
+	<wpt lon="0.681577" lat="47.391089">
+		<ele>0.0</ele>
+		<name>Halles</name>
+	</wpt>
+	<wpt lon="0.659669" lat="47.348329">
+		<ele>0.0</ele>
+		<name>Berthelot</name>
+	</wpt>
+	<wpt lon="0.653199" lat="47.338774">
+		<ele>0.0</ele>
+		<name>Halte Douzillère</name>
+	</wpt>
+	<wpt lon="0.663614" lat="47.348537">
+		<ele>0.0</ele>
+		<name>Gamard</name>
+	</wpt>
+	<wpt lon="0.650664" lat="47.342754">
+		<ele>0.0</ele>
+		<name>Fauvettes</name>
+	</wpt>
+	<wpt lon="0.655079" lat="47.346530">
+		<ele>0.0</ele>
+		<name>Forest</name>
+	</wpt>
+	<wpt lon="0.692710" lat="47.379563">
+		<ele>0.0</ele>
+		<name>Place de la Liberté</name>
+	</wpt>
+	<wpt lon="0.683797" lat="47.389803">
+		<ele>0.0</ele>
+		<name>Béranger</name>
+	</wpt>
+	<wpt lon="0.691499" lat="47.383901">
+		<ele>0.0</ele>
+		<name>Boisdenier</name>
+	</wpt>
+	<wpt lon="0.703592" lat="47.354239">
+		<ele>0.0</ele>
+		<name>Bonamy</name>
+	</wpt>
+	<wpt lon="0.659620" lat="47.396270">
+		<ele>0.0</ele>
+		<name>Le Coq</name>
+	</wpt>
+</gpx>
