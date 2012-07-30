@@ -19,6 +19,7 @@ from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.pdfdevice import PDFDevice
 from pdfminer.converter import PDFConverter, TextConverter
 from pdfminer.layout import LTContainer, LTText, LTTextBox
+from cStringIO import StringIO
 
 class FilBleuPDFStopExtractor(TextConverter):
 	def __init__(self, rsrcmgr, line, ends, codec='utf-8', pageno=1, laparams=None, showpageno=False):
@@ -57,11 +58,8 @@ class FilBleuPDFStopExtractor(TextConverter):
 
 	def write_text(self, text):
 		self.inbuf += text.encode(self.codec, 'ignore')
-		if not self.foundline:
-			self.try_foundline()
-		else:
-			if not self.identified:
-				self.try_identified()
+		if not self.identified:
+			self.try_identified()
 		return
 
 	def end_page(self, page):
@@ -87,7 +85,7 @@ class FilBleuPDFStopExtractor(TextConverter):
 			str = ident[p['pos']:]
 			ident = ident.replace(str, "")
 			final = str.replace(key, "")
-			result.append({'number': self.currentLine, 'end': p['end'], 'name': final})
+			result.append({'number': self.line, 'end': p['end'], 'name': final})
 		self.result = result
 
 	def get_result(self):
@@ -261,9 +259,7 @@ class FilBleu:
 						stopArea = bestValue
 		return stopArea
 
-	def process_pdf_stop(file, line, ends):
-		# Open a PDF file.
-		fp = open(file, 'rb')
+	def process_pdf_stop(self, fp, line, ends):
 		# Create a PDF parser object associated with the file object.
 		parser = PDFParser(fp)
 		# Create a PDF document object that stores the document structure.
@@ -284,6 +280,33 @@ class FilBleu:
 		fp.close()
 		return device.get_result()
 
+	def pdfurl_to_line(self, url, line, ends):
+		res = None
+		self.browser.open(url.encode('utf-8'))
+		pdf = StringIO()
+		response = self.browser.response()
+		if response.code == 200:
+			infos = response.info()
+			isPdf = False
+
+			for e in infos.keys():
+				isPdf = (e == 'content-type' and infos[e] == 'application/pdf')
+
+			if isPdf:
+				pdf.write(response.read())
+				res = self.process_pdf_stop(pdf, line, ends)
+			else:
+				noSchedule = re.compile(r"Aucun horaire n'existe").search(str(response.read()))
+				if noSchedule:
+					sys.stderr.write("No schedule for this one, bypassing.\n")
+				else:
+					sys.stderr.write("Not a PDF !\n")
+					sys.stderr.write("Code=" + str(response.code) + "\n")
+					sys.stderr.write(str(infos) + "\n")
+					sys.stderr.write(str(response.read()) + "\n")
+		pdf.close()
+		return res
+
 	def page_lines(self):
 		self.current_id = "1-2"
 		self.etape = ""
@@ -299,9 +322,26 @@ class FilBleu:
 	def list_stops(self):
 		self.get_stops()
 		for lineid in self.stops:
+			ends = []
+			line = ""
+			linespecs = self.lines_to_lineSpec(lineid)
+			for lspec in linespecs:
+				line = lspec['number'].replace("A", "").replace("B", "")
+				if lspec['spec'] != "all":
+					ends += lspec['spec']
 			for stop in self.stops[lineid]:
 				s = self.stops[lineid][stop]
-				print self.linkbase + "StopArea=" + s.stopArea
+				url = (self.base + s.linkbase + "StopArea=" + s.stopArea)
+				msg = "Found stop %(stopName)s, downloading PDF at %(pdfURL)s\n" % {'stopName': s.stop_name, 'pdfURL': url}
+				msg = msg.encode('utf-8')
+				sys.stderr.write(msg)
+
+				res = self.pdfurl_to_line(url, line, ends)
+				if res != None:
+					for r in res:
+						line = "Stop: %(stop_name)s (%(stop_city)s) => %(stop_area)s [%(lineid)s]\n" % { 'lineid': lineid + r['end'], 'stop_name': s.stop_name, 'stop_city': s.city, 'stop_area': s.stopArea }
+						line = line.encode('utf-8')
+						sys.stdout.write(line)
 
 	def list_stops_complex(self):
 		self.get_stops()
@@ -412,10 +452,10 @@ class FilBleu:
 		linkBase = ""
 		soups = [ self.get_stops_sens(1), self.get_stops_sens(-1) ]
 		for soup in soups:
-			sens = soup.find("input", attrs = {'name': 'Sens'})
+			sensInput = soup.find("input", attrs = {'name': 'Sens'})
 			searchLinkBase = re.compile(r"grille-horaires.*\.php").search(soup.text)
 			if searchLinkBase:
-				linkBase = searchLinkBase.group(0) + "?Sens=" + sens["value"] + "&"
+				linkBase = searchLinkBase.group(0) + "?Sens=" + sensInput["value"] + "&"
 
 			sens = soup.find("form")
 			stops = sens.findAll("option")
@@ -435,7 +475,7 @@ class FilBleu:
 				if not stop["value"] == "":
 					s = BusStop(stop.text, linkBase)
 					s.set_stopArea(stop["value"])
-					self.stops[lineid][s.id] = s
+					self.stops[lineid][s.id+sensInput["value"]] = s
 
 	def list_lines(self):
 		self.get_lines()
