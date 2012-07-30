@@ -298,6 +298,13 @@ class FilBleu:
 
 	def list_stops(self):
 		self.get_stops()
+		for lineid in self.stops:
+			for stop in self.stops[lineid]:
+				s = self.stops[lineid][stop]
+				print self.linkBase + "StopArea=" + s.stopArea
+
+	def list_stops_complex(self):
+		self.get_stops()
 		self.specs = {}
 		if len(self.stops.keys()) >= 1:
 			self.newstops = {}
