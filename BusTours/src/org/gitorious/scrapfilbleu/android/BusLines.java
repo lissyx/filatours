@@ -16,15 +16,6 @@ public class BusLines {
         this.lines = new HashMap<String, List<String>>();
         List<String> l;
 
-
-        Log.e("BusTours:BusLines", "Registered " + this.lines.size() + " stops lines");
-    }
-
-    public List<String> getLine(String stop)
-    {
-        return this.lines.get(stop);
-    }
-}
         l = new ArrayList<String>(); l.add("01A"); l.add("01B"); l.add("05A"); l.add("05B"); l.add("06"); l.add("N1"); l.add("N3"); l.add("N4"); this.lines.put("2 Lions", l);
         l = new ArrayList<String>(); l.add("01A"); l.add("01B"); l.add("02B"); l.add("08B"); l.add("10"); l.add("21"); l.add("N1"); this.lines.put("Abbaye Gatines", l);
         l = new ArrayList<String>(); l.add("30"); this.lines.put("Acacias", l);
@@ -741,3 +732,12 @@ public class BusLines {
         l = new ArrayList<String>(); l.add("01A"); this.lines.put("ZA d'Oé", l);
         l = new ArrayList<String>(); l.add("60"); this.lines.put("ZA Papillon", l);
         l = new ArrayList<String>(); l.add("13"); this.lines.put("ZI Les Aubuis", l);
+
+        Log.e("BusTours:BusLines", "Registered " + this.lines.size() + " stops lines");
+    }
+
+    public List<String> getLine(String stop)
+    {
+        return this.lines.get(stop);
+    }
+}
