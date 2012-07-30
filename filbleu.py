@@ -162,7 +162,8 @@ class FilBleu:
 		self.browser = mechanize.Browser()
 		self.cj = cookielib.LWPCookieJar()
 		self.browser.set_cookiejar(self.cj)
-		self.baseurl = "http://www.filbleu.fr/page.php"
+		self.base    = "http://www.filbleu.fr/"
+		self.baseurl = self.base + "page.php"
 		self.url_raz = "&raz"
 		self.periode = "&periode="
 		self.current_id = ""
@@ -595,7 +596,7 @@ class FilBleu:
 
 	def get_journey(self, journey):
 		if journey['link']:
-			self.browser.open(self.baseurl + journey['link'].replace('page.php', ''))
+			self.browser.open(self.base + journey['link'])
 			soup = BeautifulSoup.BeautifulSoup(self.browser.response().read())
 			itin = soup.find('fieldset', attrs = {'class': 'itineraire'})
 			if itin:
