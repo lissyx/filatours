@@ -92,6 +92,7 @@ class FilBleu:
 		self.parser = argparse.ArgumentParser(description="FilBleu Scrapper")
 		self.parser.add_argument("--list-lines", action="store_true", help="List lines")
 		self.parser.add_argument("--list-stops", help="List stops of a line (format: n|M)")
+		self.parser.add_argument("--list-stops-basic", action="store_true", help="When listing stops, just displaying without any filtering")
 		self.parser.add_argument("--build-line", help="Build given line, using lines.txt and stops_coords.txt")
 		self.parser.add_argument("--build-line-gpx", action="store_true", default=True, required=False, help="Build given line, output as GPX")
 		self.parser.add_argument("--get-stop-coords", help="Get a stop GPS coordinates")
@@ -250,7 +251,7 @@ class FilBleu:
 				stop = self.stops[lineid][stop]
 				i += 1
 				line = ""
-				if len(expected) > 1:
+				if (not self.args.list_stops_basic) and len(expected) > 1:
 					msg = "[%(current)d/%(total)d] Expected: %(expected)s. Running %(lineid)s. Checking stop: '%(citystop)s - %(stop)s' from: '%(city)s - %(from)s'\n" % {'expected': expected, 'stop': stop.stop_name, 'citystop': stop.city, 'city': startCity, 'from': startStop, 'lineid': lineid, 'current': i, 'total': len(self.stops[lineid])}
 					msg = msg.encode('utf-8')
 					sys.stderr.write(msg)
