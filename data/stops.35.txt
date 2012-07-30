@@ -5,3 +5,4 @@ Stop: Savonnieres Grottes Petrifiantes (Savonnières) => 451|Savonnieres Grottes
 Stop: Savonnieres Poste (Savonnières) => 452|Savonnieres Poste|Savonnières [35]
 Stop: Gare de Tours (Tours) => 541|Gare de Tours|Tours [35]
 Stop: Office De Tourisme Villandry (Villandry) => 689|Office De Tourisme Villandry|Villandry [35]
+Stop: Chateau De Villandry (Villandry) => 688|Chateau De Villandry|Villandry [35]

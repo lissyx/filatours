@@ -13,6 +13,7 @@ Stop: Castel (La Membrolle-sur-Choisille) => 200|Castel|La Membrolle-sur-Choisil
 Stop: La Membrolle Centre (La Membrolle-sur-Choisille) => 203|La Membrolle Centre|La Membrolle-sur-Choisille [21]
 Stop: Croix Julia (La Membrolle-sur-Choisille) => 202|Croix Julia|La Membrolle-sur-Choisille [21]
 Stop: Le Lavoir (La Membrolle-sur-Choisille) => 205|Le Lavoir|La Membrolle-sur-Choisille [21]
+Stop: La Membrolle Gare (La Membrolle-sur-Choisille) => 204|La Membrolle Gare|La Membrolle-sur-Choisille [21]
 Stop: Moulin Milon (La Membrolle-sur-Choisille) => 207|Moulin Milon|La Membrolle-sur-Choisille [21]
 Stop: Maison Neuve (La Membrolle-sur-Choisille) => 206|Maison Neuve|La Membrolle-sur-Choisille [21]
 Stop: Rocailles (La Membrolle-sur-Choisille) => 208|Rocailles|La Membrolle-sur-Choisille [21]
