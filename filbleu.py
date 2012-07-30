@@ -301,7 +301,7 @@ class FilBleu:
 		for lineid in self.stops:
 			for stop in self.stops[lineid]:
 				s = self.stops[lineid][stop]
-				print self.linkBase + "StopArea=" + s.stopArea
+				print self.linkbase + "StopArea=" + s.stopArea
 
 	def list_stops_complex(self):
 		self.get_stops()
