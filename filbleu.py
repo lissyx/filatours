@@ -401,8 +401,14 @@ class FilBleu:
 		self.current_id = "1-2"
 		self.raz()
 		self.stops = {}
+		self.linkBase = ""
 		soups = [ self.get_stops_sens(1), self.get_stops_sens(-1) ]
 		for soup in soups:
+			sens = soup.find("input", attrs = {'name': 'Sens'})
+			searchLinkBase = re.compile(r"grille-horaires.*\.php").search(soup.text)
+			if searchLinkBase:
+				self.linkBase = searchLinkBase.group(0) + "?Sens=" + sens["value"] + "&"
+
 			sens = soup.find("form")
 			stops = sens.findAll("option")
 			for fs in sens.findAll("fieldset"):
