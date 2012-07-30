@@ -1,0 +1,35 @@
+Line(id=1): number=01A; name={'Joué Lycée Jean Monnet','Europarc'} | number=01B; name={'Joué Lycée Jean Monnet','Douets Lycée Choiseul'}
+Line(id=2): number=02A; name={'Pôle Santé Vinci','Pôle Santé Alliance'} | number=02B; name={'St Avertin Centre','Douets Lycée Choiseul'}
+Line(id=3): number=03A; name={'Hôpital Trousseau','La Riche Soleil'} | number=03B; name={'St Avertin Centre','Botanique'}
+Line(id=4): number=04A; name={'Saint Paul par Anatole France puis Velpeau'} | number=04B; name={'Saint Paul par Anatole France puis Bretonneau'}
+Line(id=5): number=05B; name={'St Pierre Gare par Jean Jaurès puis Deux Lions'} | number=05A; name={'St Pierre Gare par 2 Lions puis Jean Jaurès'}
+Line(id=6): number=06; name={'Hôpital Trousseau','Atlantes'}
+Line(id=7): number=07; name={'Parc Grandmont','Ste Radegonde Ermitage'}
+Line(id=8): number=08A; name={'St Pierre Justices','Pôle Santé Alliance'} | number=08B; name={'St Pierre Justices','Douets Lycée Choiseul'}
+Line(id=9): number=09A; name={'Gare de Tours','Chambray 2'} | number=09B; name={'Gare de Tours','Joué Gare'}
+Line(id=10): number=10; name={'Atlantes','Douets Lycée Choiseul'}
+Line(id=11): number=11; name={'Joué Blotterie','Fondettes Mareuil'}
+Line(id=12): number=12; name={'Chambray 2','Lycée Grandmont (Jean Jaurès)'}
+Line(id=13): number=13; name={'Les Granges','Lycée Grandmont (Jean Jaurès)'}
+Line(id=14): number=14; name={'Joué Gare','St Symphorien'}
+Line(id=15): number=15; name={'St Avertin Centre','Ste Radegonde Ermitage'}
+Line(id=16): number=21; name={'Jean Jaurès','Pôle Santé Alliance'}
+Line(id=17): number=22; name={'Jean Jaurès','St Cyr Croix Chidaine'}
+Line(id=18): number=30; name={'Ballan Gare','Joué Centre (Jean Jaurès)'}
+Line(id=19): number=31; name={'Bretonnières','Joué Centre (Jean Jaurès)'}
+Line(id=20): number=50; name={'Luynes Vaugareau','La Ville aux Dames Bois de Plante'}
+Line(id=21): number=51; name={'Constantine','La Membrolle Croix Julia'}
+Line(id=22): number=52; name={'Constantine','Mettray'}
+Line(id=23): number=56; name={'Gare Vinci','Chanceaux Langennerie Les Charmes'}
+Line(id=24): number=57; name={'Gare Vinci','St Etienne de Chigny Queue de Merluche'}
+Line(id=25): number=60; name={'Anatole France par Parçay Meslay et Rochecorbon','Petite Arche par Rochecorbon et Parçay Meslay'}
+Line(id=26): number=61; name={'Anatole France','Clos de Vernou'}
+Line(id=27): number=71; name={'Gare Vinci','Berthenay l'Aireau des Bergeons'}
+Line(id=28): number=74; name={'Nécropôle d'Esvres','Gare Vinci'}
+Line(id=29): number=Citadine; name={'Botanique','Beaujardin'}
+Line(id=30): number=N1; name={'Bruère','Douets Lycée Choiseul'}
+Line(id=31): number=N2; name={'Hôpital Trousseau','Europe'}
+Line(id=32): number=N3; name='Gare Vinci par 2 Lions puis Tonnellé'
+Line(id=33): number=N4; name='Gare Vinci par Tonnellé puis 2 Lions'
+Line(id=34): number=P'tite Cit; name='St Augustin'
+Line(id=35): number=V; name={'Gare de Tours','Villandry Château Galle'}
