@@ -14,6 +14,85 @@ import copy
 import difflib
 import time
 
+from pdfminer.pdfparser import PDFParser, PDFDocument
+from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
+from pdfminer.pdfdevice import PDFDevice
+from pdfminer.converter import PDFConverter, TextConverter
+from pdfminer.layout import LTContainer, LTText, LTTextBox
+
+class FilBleuPDFStopExtractor(TextConverter):
+	def __init__(self, rsrcmgr, line, ends, codec='utf-8', pageno=1, laparams=None, showpageno=False):
+		PDFConverter.__init__(self, rsrcmgr, None, codec=codec, pageno=pageno, laparams=laparams)
+		self.showpageno = showpageno
+		self.line = line
+		self.ends = ends
+		self.inbuf = ""
+		self.foundline = False
+		self.foundends = not(len(self.ends) > 0)
+		self.currentLine = ""
+		self.identified = False
+		self.identifier = ""
+		self.result = None
+		return
+
+	def try_foundline(self):
+		if self.inbuf.find(self.line) == 0:
+			self.foundline = True
+			self.currentLine = self.inbuf
+			self.inbuf = ""
+		return
+
+	def try_foundends(self):
+		for end in self.ends:
+			if self.inbuf.find(end) == 0:
+				self.foundends = True
+				self.inbuf = ""
+		return
+
+	def try_identified(self):
+		if self.inbuf.find("ARRÊT") > 0:
+			self.identifier = self.inbuf.replace("ARRÊT", "")
+			self.identified = True
+		return
+
+	def write_text(self, text):
+		self.inbuf += text.encode(self.codec, 'ignore')
+		if not self.foundline:
+			self.try_foundline()
+		else:
+			if not self.identified:
+				self.try_identified()
+		return
+
+	def end_page(self, page):
+		TextConverter.end_page(self, page)
+		self.process()
+
+	def process(self):
+		ident = self.identifier
+		poslist = []
+		result = []
+
+		if len(self.ends) == 0:
+			self.ends = [""]
+
+		for end in self.ends:
+			pos = ident.find(end + "Vers ")
+			if pos >= 0:
+				poslist.append({'end': end, 'pos': pos})
+
+		poslist.reverse()
+		for p in poslist:
+			key = p['end'] + "Vers "
+			str = ident[p['pos']:]
+			ident = ident.replace(str, "")
+			final = str.replace(key, "")
+			result.append({'number': self.currentLine, 'end': p['end'], 'name': final})
+		self.result = result
+
+	def get_result(self):
+		return self.result
+
 class JourneyPart:
 	def __init__(self, type, mode, indication, time, duration):
 		self.type = type
@@ -179,6 +258,29 @@ class FilBleu:
 								bestValue = option["value"]
 						stopArea = bestValue
 		return stopArea
+
+	def process_pdf_stop(file, line, ends):
+		# Open a PDF file.
+		fp = open(file, 'rb')
+		# Create a PDF parser object associated with the file object.
+		parser = PDFParser(fp)
+		# Create a PDF document object that stores the document structure.
+		doc = PDFDocument()
+		# Connect the parser and document objects.
+		parser.set_document(doc)
+		doc.set_parser(parser)
+		# Create a PDF resource manager object that stores shared resources.
+		rsrcmgr = PDFResourceManager()
+		# Create a PDF device object.
+		device = FilBleuPDFStopExtractor(rsrcmgr, line, ends)
+		# Create a PDF interpreter object.
+		interpreter = PDFPageInterpreter(rsrcmgr, device)
+		# Process each page contained in the document.
+		for page in doc.get_pages():
+		    interpreter.process_page(page)
+		device.close()
+		fp.close()
+		return device.get_result()
 
 	def page_lines(self):
 		self.current_id = "1-2"
