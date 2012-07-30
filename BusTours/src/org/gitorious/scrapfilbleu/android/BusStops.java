@@ -91,6 +91,8 @@ public class BusStops {
         this.stops.put("Atlantes", v);
         v = new HashMap<String, String>(); v.put("city", "Ballan-Miré"); v.put("lat", "47.356104"); v.put("lon", "0.634507");
         this.stops.put("Aubepines", v);
+        v = new HashMap<String, String>(); v.put("city", "La Membrolle-sur-Choisille"); v.put("lat", "47.438716"); v.put("lon", "0.631995");
+        this.stops.put("Aubrière", v);
         v = new HashMap<String, String>(); v.put("city", "Saint-Pierre-des-Corps"); v.put("lat", "47.389103"); v.put("lon", "0.709957");
         this.stops.put("Audenet", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.423938"); v.put("lon", "0.674075");
@@ -103,6 +105,8 @@ public class BusStops {
         this.stops.put("Azay Le Rideau", v);
         v = new HashMap<String, String>(); v.put("city", "Chambray-lès-Tours"); v.put("lat", "47.338930"); v.put("lon", "0.708975");
         this.stops.put("Bad Camberg", v);
+        v = new HashMap<String, String>(); v.put("city", "Mettray"); v.put("lat", "47.445914"); v.put("lon", "0.661314");
+        this.stops.put("Bagatelle", v);
         v = new HashMap<String, String>(); v.put("city", "Berthenay"); v.put("lat", "47.369006"); v.put("lon", "0.555070");
         this.stops.put("Baillardière", v);
         v = new HashMap<String, String>(); v.put("city", "Ballan-Miré"); v.put("lat", "47.336949"); v.put("lon", "0.618142");
@@ -141,6 +145,8 @@ public class BusStops {
         this.stops.put("Béguine", v);
         v = new HashMap<String, String>(); v.put("city", "Joué-lès-Tours"); v.put("lat", "47.356385"); v.put("lon", "0.692014");
         this.stops.put("Béjauderie", v);
+        v = new HashMap<String, String>(); v.put("city", "La Membrolle-sur-Choisille"); v.put("lat", "47.437763"); v.put("lon", "0.645823");
+        this.stops.put("Bel Air", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.425649"); v.put("lon", "0.692735");
         this.stops.put("Belgique", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.409035"); v.put("lon", "0.707958");
@@ -157,6 +163,8 @@ public class BusStops {
         this.stops.put("Berthelot", v);
         v = new HashMap<String, String>(); v.put("city", "La Riche"); v.put("lat", "47.381772"); v.put("lon", "0.653141");
         this.stops.put("Bialy", v);
+        v = new HashMap<String, String>(); v.put("city", "La Membrolle-sur-Choisille"); v.put("lat", "47.434707"); v.put("lon", "0.629776");
+        this.stops.put("Billonnière", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.397019"); v.put("lon", "0.699050");
         this.stops.put("Blanqui", v);
         v = new HashMap<String, String>(); v.put("city", "Saint-Cyr-sur-Loire"); v.put("lat", "47.409246"); v.put("lon", "0.660690");
@@ -187,6 +195,10 @@ public class BusStops {
         this.stops.put("Botanique", v);
         v = new HashMap<String, String>(); v.put("city", "Saint-Pierre-des-Corps"); v.put("lat", "47.391784"); v.put("lon", "0.719236");
         this.stops.put("Bouleaux", v);
+        v = new HashMap<String, String>(); v.put("city", "Mettray"); v.put("lat", "47.452746"); v.put("lon", "0.649453");
+        this.stops.put("Bourg de Mettray", v);
+        v = new HashMap<String, String>(); v.put("city", "Mettray"); v.put("lat", "47.447717"); v.put("lon", "0.658108");
+        this.stops.put("Bourgetteries", v);
         v = new HashMap<String, String>(); v.put("city", "Saint-Avertin"); v.put("lat", "47.361326"); v.put("lon", "0.708208");
         this.stops.put("Boutteville", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.393644"); v.put("lon", "0.671853");
@@ -237,6 +249,8 @@ public class BusStops {
         this.stops.put("Casse Droit", v);
         v = new HashMap<String, String>(); v.put("city", "Ballan-Miré"); v.put("lat", "47.344169"); v.put("lon", "0.614501");
         this.stops.put("Cassin", v);
+        v = new HashMap<String, String>(); v.put("city", "La Membrolle-sur-Choisille"); v.put("lat", "47.435754"); v.put("lon", "0.633071");
+        this.stops.put("Castel", v);
         v = new HashMap<String, String>(); v.put("city", "Saint-Avertin"); v.put("lat", "47.358725"); v.put("lon", "0.721932");
         this.stops.put("Castellerie", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.395074"); v.put("lon", "0.693823");
@@ -277,6 +291,8 @@ public class BusStops {
         this.stops.put("Chantemerle", v);
         v = new HashMap<String, String>(); v.put("city", "Joué-lès-Tours"); v.put("lat", "47.355594"); v.put("lon", "0.661229");
         this.stops.put("Chantepie", v);
+        v = new HashMap<String, String>(); v.put("city", "Saint-Cyr-sur-Loire"); v.put("lat", "47.415464"); v.put("lon", "0.678203");
+        this.stops.put("Chanterie", v);
         v = new HashMap<String, String>(); v.put("city", "Chambray-lès-Tours"); v.put("lat", "47.344325"); v.put("lon", "0.697971");
         this.stops.put("Chappe", v);
         v = new HashMap<String, String>(); v.put("city", "Berthenay"); v.put("lat", "47.356876"); v.put("lon", "0.510548");
@@ -317,6 +333,8 @@ public class BusStops {
         this.stops.put("Chevalerie", v);
         v = new HashMap<String, String>(); v.put("city", "Fondettes"); v.put("lat", "47.389294"); v.put("lon", "0.597206");
         this.stops.put("Chevalette", v);
+        v = new HashMap<String, String>(); v.put("city", "La Membrolle-sur-Choisille"); v.put("lat", "47.436997"); v.put("lon", "0.637169");
+        this.stops.put("Choisille", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.412415"); v.put("lon", "0.702792");
         this.stops.put("Chopin", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.411656"); v.put("lon", "0.684394");
@@ -383,6 +401,8 @@ public class BusStops {
         this.stops.put("Cousseau", v);
         v = new HashMap<String, String>(); v.put("city", "Saint-Cyr-sur-Loire"); v.put("lat", "47.425648"); v.put("lon", "0.651411");
         this.stops.put("Croix de Pierre", v);
+        v = new HashMap<String, String>(); v.put("city", "La Membrolle-sur-Choisille"); v.put("lat", "47.442778"); v.put("lon", "0.640260");
+        this.stops.put("Croix Julia", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.409539"); v.put("lon", "0.689361");
         this.stops.put("Croix Pasquier", v);
         v = new HashMap<String, String>(); v.put("city", "Saint-Avertin"); v.put("lat", "47.356359"); v.put("lon", "0.728074");
@@ -405,6 +425,8 @@ public class BusStops {
         this.stops.put("Debré", v);
         v = new HashMap<String, String>(); v.put("city", "Saint-Avertin"); v.put("lat", "47.355658"); v.put("lon", "0.723948");
         this.stops.put("De Gaulle", v);
+        v = new HashMap<String, String>(); v.put("city", "Saint-Cyr-sur-Loire"); v.put("lat", "47.419892"); v.put("lon", "0.673625");
+        this.stops.put("Delacroix", v);
         v = new HashMap<String, String>(); v.put("city", "La Ville-aux-Dames"); v.put("lat", "47.386139"); v.put("lon", "0.761037");
         this.stops.put("De La Motte", v);
         v = new HashMap<String, String>(); v.put("city", "Joué-lès-Tours"); v.put("lat", "47.359578"); v.put("lon", "0.696077");
@@ -433,6 +455,8 @@ public class BusStops {
         this.stops.put("Docteur Chaumier", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.385179"); v.put("lon", "0.700534");
         this.stops.put("Docteur Fournier", v);
+        v = new HashMap<String, String>(); v.put("city", "Mettray"); v.put("lat", "47.454292"); v.put("lon", "0.646891");
+        this.stops.put("Dolmen", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.408938"); v.put("lon", "0.706225");
         this.stops.put("Dorgelès", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.436421"); v.put("lon", "0.684108");
@@ -469,6 +493,8 @@ public class BusStops {
         this.stops.put("Eglise de St Avertin", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.393365"); v.put("lon", "0.687390");
         this.stops.put("Emile Zola", v);
+        v = new HashMap<String, String>(); v.put("city", "Saint-Cyr-sur-Loire"); v.put("lat", "47.411971"); v.put("lon", "0.674607");
+        this.stops.put("Engerand", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.376733"); v.put("lon", "0.678983");
         this.stops.put("Erables", v);
         v = new HashMap<String, String>(); v.put("city", "Joué-lès-Tours"); v.put("lat", "47.346036"); v.put("lon", "0.643445");
@@ -511,6 +537,8 @@ public class BusStops {
         this.stops.put("Fondettes Gare", v);
         v = new HashMap<String, String>(); v.put("city", "Chambray-lès-Tours"); v.put("lat", "47.341765"); v.put("lon", "0.689711");
         this.stops.put("Fontaine Blanche", v);
+        v = new HashMap<String, String>(); v.put("city", "Mettray"); v.put("lat", "47.432787"); v.put("lon", "0.673760");
+        this.stops.put("Fontaine De Mie", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.367468"); v.put("lon", "0.713378");
         this.stops.put("Fontaines", v);
         v = new HashMap<String, String>(); v.put("city", "Rochecorbon"); v.put("lat", "47.416836"); v.put("lon", "0.756035");
@@ -555,6 +583,8 @@ public class BusStops {
         this.stops.put("Gare de Tours", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.390745"); v.put("lon", "0.692803");
         this.stops.put("Gare Vinci", v);
+        v = new HashMap<String, String>(); v.put("city", "Saint-Cyr-sur-Loire"); v.put("lat", "47.440903"); v.put("lon", "0.672253");
+        this.stops.put("Gatinière", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.413440"); v.put("lon", "0.679824");
         this.stops.put("Gauguin", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.413552"); v.put("lon", "0.693015");
@@ -603,6 +633,8 @@ public class BusStops {
         this.stops.put("Grenouillère", v);
         v = new HashMap<String, String>(); v.put("city", "La Ville-aux-Dames"); v.put("lat", "47.397517"); v.put("lon", "0.759482");
         this.stops.put("Gros Chêne", v);
+        v = new HashMap<String, String>(); v.put("city", "Mettray"); v.put("lat", "47.448693"); v.put("lon", "0.644528");
+        this.stops.put("Gué Andreau", v);
         v = new HashMap<String, String>(); v.put("city", "Saint-Cyr-sur-Loire"); v.put("lat", "47.410101"); v.put("lon", "0.649238");
         this.stops.put("Guérin", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.379559"); v.put("lon", "0.704056");
@@ -737,6 +769,10 @@ public class BusStops {
         this.stops.put("La Madeleine", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.392419"); v.put("lon", "0.672666");
         this.stops.put("Lamartine", v);
+        v = new HashMap<String, String>(); v.put("city", "La Membrolle-sur-Choisille"); v.put("lat", "47.435898"); v.put("lon", "0.640141");
+        this.stops.put("La Membrolle Centre", v);
+        v = new HashMap<String, String>(); v.put("city", "La Membrolle-sur-Choisille"); v.put("lat", "47.432608"); v.put("lon", "0.641260");
+        this.stops.put("La Membrolle Gare", v);
         v = new HashMap<String, String>(); v.put("city", "Saint-Cyr-sur-Loire"); v.put("lat", "47.418590"); v.put("lon", "0.664426");
         this.stops.put("Lande", v);
         v = new HashMap<String, String>(); v.put("city", "Chanceaux-sur-Choisille"); v.put("lat", "47.490933"); v.put("lon", "0.697635");
@@ -787,6 +823,8 @@ public class BusStops {
         this.stops.put("Le Coq", v);
         v = new HashMap<String, String>(); v.put("city", "La Ville-aux-Dames"); v.put("lat", "47.388150"); v.put("lon", "0.776345");
         this.stops.put("Lecouvreur", v);
+        v = new HashMap<String, String>(); v.put("city", "La Membrolle-sur-Choisille"); v.put("lat", "47.439368"); v.put("lon", "0.638426");
+        this.stops.put("Le Lavoir", v);
         v = new HashMap<String, String>(); v.put("city", "Notre-Dame-d'Oé"); v.put("lat", "47.444162"); v.put("lon", "0.699564");
         this.stops.put("Le Marais", v);
         v = new HashMap<String, String>(); v.put("city", "Saint-Pierre-des-Corps"); v.put("lat", "47.393642"); v.put("lon", "0.738358");
@@ -845,6 +883,8 @@ public class BusStops {
         this.stops.put("Les Pavillons", v);
         v = new HashMap<String, String>(); v.put("city", "Saint-Etienne-de-Chigny"); v.put("lat", "47.381760"); v.put("lon", "0.500099");
         this.stops.put("L'Espérance", v);
+        v = new HashMap<String, String>(); v.put("city", "Saint-Cyr-sur-Loire"); v.put("lat", "47.421371"); v.put("lon", "0.660793");
+        this.stops.put("Les Perrets", v);
         v = new HashMap<String, String>(); v.put("city", "Rochecorbon"); v.put("lat", "47.415532"); v.put("lon", "0.758075");
         this.stops.put("Les Pitoisières", v);
         v = new HashMap<String, String>(); v.put("city", "Ballan-Miré"); v.put("lat", "47.345134"); v.put("lon", "0.612491");
@@ -907,6 +947,8 @@ public class BusStops {
         this.stops.put("Maison d'Ardoise", v);
         v = new HashMap<String, String>(); v.put("city", "Ballan-Miré"); v.put("lat", "47.339109"); v.put("lon", "0.610932");
         this.stops.put("Maison de Beaune", v);
+        v = new HashMap<String, String>(); v.put("city", "La Membrolle-sur-Choisille"); v.put("lat", "47.440288"); v.put("lon", "0.632754");
+        this.stops.put("Maison Neuve", v);
         v = new HashMap<String, String>(); v.put("city", "Saint-Cyr-sur-Loire"); v.put("lat", "47.395317"); v.put("lon", "0.655920");
         this.stops.put("Maisons Blanches", v);
         v = new HashMap<String, String>(); v.put("city", "Fondettes"); v.put("lat", "47.405444"); v.put("lon", "0.601974");
@@ -917,6 +959,8 @@ public class BusStops {
         this.stops.put("Mallarme", v);
         v = new HashMap<String, String>(); v.put("city", "Saint-Cyr-sur-Loire"); v.put("lat", "47.412009"); v.put("lon", "0.647727");
         this.stops.put("Manet", v);
+        v = new HashMap<String, String>(); v.put("city", "Mettray"); v.put("lat", "47.453092"); v.put("lon", "0.644767");
+        this.stops.put("Manoir", v);
         v = new HashMap<String, String>(); v.put("city", "Joué-lès-Tours"); v.put("lat", "47.357344"); v.put("lon", "0.663696");
         this.stops.put("Marbellière", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.393507"); v.put("lon", "0.685000");
@@ -947,6 +991,8 @@ public class BusStops {
         this.stops.put("Maurière", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.427705"); v.put("lon", "0.697179");
         this.stops.put("Melies", v);
+        v = new HashMap<String, String>(); v.put("city", "Saint-Cyr-sur-Loire"); v.put("lat", "47.418122"); v.put("lon", "0.675039");
+        this.stops.put("Ménardière", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.365547"); v.put("lon", "0.677264");
         this.stops.put("Mérieux", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.381308"); v.put("lon", "0.702088");
@@ -955,6 +1001,8 @@ public class BusStops {
         this.stops.put("Mésangerie", v);
         v = new HashMap<String, String>(); v.put("city", "Chambray-lès-Tours"); v.put("lat", "47.331239"); v.put("lon", "0.708808");
         this.stops.put("Mesliers", v);
+        v = new HashMap<String, String>(); v.put("city", "Mettray"); v.put("lat", "47.453279"); v.put("lon", "0.650843");
+        this.stops.put("Mettray", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.367668"); v.put("lon", "0.682092");
         this.stops.put("Michelin", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.405536"); v.put("lon", "0.682627");
@@ -987,6 +1035,10 @@ public class BusStops {
         this.stops.put("Morier", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.437770"); v.put("lon", "0.708492");
         this.stops.put("Mouchotte", v);
+        v = new HashMap<String, String>(); v.put("city", "Mettray"); v.put("lat", "47.448522"); v.put("lon", "0.651278");
+        this.stops.put("Moulin Maillet", v);
+        v = new HashMap<String, String>(); v.put("city", "La Membrolle-sur-Choisille"); v.put("lat", "47.434856"); v.put("lon", "0.641785");
+        this.stops.put("Moulin Milon", v);
         v = new HashMap<String, String>(); v.put("city", "Saint-Etienne-de-Chigny"); v.put("lat", "47.369448"); v.put("lon", "0.510098");
         this.stops.put("Moulin Ragot", v);
         v = new HashMap<String, String>(); v.put("city", "Saint-Etienne-de-Chigny"); v.put("lat", "47.389978"); v.put("lon", "0.524844");
@@ -1071,6 +1123,8 @@ public class BusStops {
         this.stops.put("Petit Bois", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.427436"); v.put("lon", "0.698783");
         this.stops.put("Petite Arche", v);
+        v = new HashMap<String, String>(); v.put("city", "Saint-Cyr-sur-Loire"); v.put("lat", "47.431005"); v.put("lon", "0.673106");
+        this.stops.put("Petite Gironde", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.396768"); v.put("lon", "0.697202");
         this.stops.put("Petites Boucheries", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.394211"); v.put("lon", "0.696420");
@@ -1091,6 +1145,8 @@ public class BusStops {
         this.stops.put("Pierre Couverte", v);
         v = new HashMap<String, String>(); v.put("city", "Saint-Avertin"); v.put("lat", "47.358084"); v.put("lon", "0.735466");
         this.stops.put("Pierres Plates", v);
+        v = new HashMap<String, String>(); v.put("city", "Saint-Cyr-sur-Loire"); v.put("lat", "47.425617"); v.put("lon", "0.672545");
+        this.stops.put("Pinauderie", v);
         v = new HashMap<String, String>(); v.put("city", "Saint-Avertin"); v.put("lat", "47.363197"); v.put("lon", "0.740422");
         this.stops.put("Pinterie", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.401383"); v.put("lon", "0.684652");
@@ -1101,8 +1157,6 @@ public class BusStops {
         this.stops.put("Place Tulasne", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.387262"); v.put("lon", "0.703217");
         this.stops.put("Place Velpeau", v);
-        v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.390719"); v.put("lon", "0.705245");
-        this.stops.put("Plantin", v);
         v = new HashMap<String, String>(); v.put("city", "Joué-lès-Tours"); v.put("lat", "47.343757"); v.put("lon", "0.661772");
         this.stops.put("Poirrier", v);
         v = new HashMap<String, String>(); v.put("city", "Saint-Cyr-sur-Loire"); v.put("lat", "47.432206"); v.put("lon", "0.666876");
@@ -1125,6 +1179,8 @@ public class BusStops {
         this.stops.put("Pont Napoleon", v);
         v = new HashMap<String, String>(); v.put("city", "Joué-lès-Tours"); v.put("lat", "47.342695"); v.put("lon", "0.663910");
         this.stops.put("Poré", v);
+        v = new HashMap<String, String>(); v.put("city", "Saint-Cyr-sur-Loire"); v.put("lat", "47.410675"); v.put("lon", "0.677424");
+        this.stops.put("Portail d'Ormeau", v);
         v = new HashMap<String, String>(); v.put("city", "Fondettes"); v.put("lat", "47.388313"); v.put("lon", "0.609520");
         this.stops.put("Port de Vallières", v);
         v = new HashMap<String, String>(); v.put("city", "Saint-Cyr-sur-Loire"); v.put("lat", "47.400556"); v.put("lon", "0.678282");
@@ -1155,6 +1211,8 @@ public class BusStops {
         this.stops.put("Queue de Merluche", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.384992"); v.put("lon", "0.676772");
         this.stops.put("Rabelais", v);
+        v = new HashMap<String, String>(); v.put("city", "Mettray"); v.put("lat", "47.451705"); v.put("lon", "0.644977");
+        this.stops.put("Ragonnière", v);
         v = new HashMap<String, String>(); v.put("city", "Joué-lès-Tours"); v.put("lat", "47.360410"); v.put("lon", "0.653927");
         this.stops.put("Raphaël", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.378728"); v.put("lon", "0.710512");
@@ -1169,12 +1227,16 @@ public class BusStops {
         this.stops.put("Renoir", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.411349"); v.put("lon", "0.690909");
         this.stops.put("Republique", v);
+        v = new HashMap<String, String>(); v.put("city", "Mettray"); v.put("lat", "47.443751"); v.put("lon", "0.664784");
+        this.stops.put("Ribellerie", v);
         v = new HashMap<String, String>(); v.put("city", "Luynes"); v.put("lat", "47.397320"); v.put("lon", "0.555536");
         this.stops.put("Richardières", v);
         v = new HashMap<String, String>(); v.put("city", "Saint-Avertin"); v.put("lat", "47.366565"); v.put("lon", "0.720876");
         this.stops.put("Richemont", v);
         v = new HashMap<String, String>(); v.put("city", "Saint-Cyr-sur-Loire"); v.put("lat", "47.411130"); v.put("lon", "0.659670");
         this.stops.put("Rimoneaux", v);
+        v = new HashMap<String, String>(); v.put("city", "La Membrolle-sur-Choisille"); v.put("lat", "47.438637"); v.put("lon", "0.629419");
+        this.stops.put("Rocailles", v);
         v = new HashMap<String, String>(); v.put("city", "Fondettes"); v.put("lat", "47.400497"); v.put("lon", "0.595847");
         this.stops.put("Rochebise", v);
         v = new HashMap<String, String>(); v.put("city", "Rochecorbon"); v.put("lat", "47.414632"); v.put("lon", "0.755079");
@@ -1221,8 +1283,6 @@ public class BusStops {
         this.stops.put("Savonnieres Grottes Petrifiantes", v);
         v = new HashMap<String, String>(); v.put("city", "Savonnières"); v.put("lat", "47.348191"); v.put("lon", "0.547265");
         this.stops.put("Savonnieres Poste", v);
-        v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.389030"); v.put("lon", "0.706051");
-        this.stops.put("Schweitzer", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.407787"); v.put("lon", "0.679303");
         this.stops.put("Scotto", v);
         v = new HashMap<String, String>(); v.put("city", "Saint-Pierre-des-Corps"); v.put("lat", "47.387357"); v.put("lon", "0.710600");
@@ -1341,8 +1401,6 @@ public class BusStops {
         this.stops.put("Tonnellé", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.428331"); v.put("lon", "0.700786");
         this.stops.put("Torricelli", v);
-        v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.384307"); v.put("lon", "0.705454");
-        this.stops.put("Tour d'Auvergne", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.412132"); v.put("lon", "0.696293");
         this.stops.put("Tourettes", v);
         v = new HashMap<String, String>(); v.put("city", "Rochecorbon"); v.put("lat", "47.419521"); v.put("lon", "0.753708");
@@ -1371,8 +1429,6 @@ public class BusStops {
         this.stops.put("Val Fleuri", v);
         v = new HashMap<String, String>(); v.put("city", "Vouvray"); v.put("lat", "47.411859"); v.put("lon", "0.822172");
         this.stops.put("Vallée Chartier", v);
-        v = new HashMap<String, String>(); v.put("city", "Joué-lès-Tours"); v.put("lat", "47.343488"); v.put("lon", "0.675858");
-        this.stops.put("Vallée Violette", v);
         v = new HashMap<String, String>(); v.put("city", "Fondettes"); v.put("lat", "47.389179"); v.put("lon", "0.606988");
         this.stops.put("Vallières", v);
         v = new HashMap<String, String>(); v.put("city", "Chambray-lès-Tours"); v.put("lat", "47.348019"); v.put("lon", "0.722289");
