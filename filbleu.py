@@ -321,6 +321,7 @@ class FilBleu:
 
 	def list_stops(self):
 		self.get_stops()
+		self.founds = {}
 		for lineid in self.stops:
 			ends = []
 			line = ""
@@ -329,19 +330,37 @@ class FilBleu:
 				line = lspec['number'].replace("A", "").replace("B", "")
 				if lspec['spec'] != "all":
 					ends += lspec['spec']
-			for stop in self.stops[lineid]:
-				s = self.stops[lineid][stop]
-				url = (self.base + s.linkbase + "StopArea=" + s.stopArea)
-				msg = "Found stop %(stopName)s, downloading PDF at %(pdfURL)s\n" % {'stopName': s.stop_name, 'pdfURL': url}
-				msg = msg.encode('utf-8')
-				sys.stderr.write(msg)
+			if len(ends) > 0:
+				current = 0
+				total = len(self.stops[lineid])
+				for stop in self.stops[lineid]:
+					stop_clean = stop.split(":")[0]
+					s = self.stops[lineid][stop]
+					url = (self.base + s.linkbase + "StopArea=" + s.stopArea)
+					msg = "[%(current)d/%(total)d:%(lineid)s] Found stop %(stopName)s, downloading PDF at %(pdfURL)s\n" % {'stopName': s.stop_name, 'pdfURL': url, 'current': current, 'total': total, 'lineid': lineid}
+					msg = msg.encode('utf-8')
+					sys.stderr.write(msg)
 
-				res = self.pdfurl_to_line(url, line, ends)
-				if res != None:
-					for r in res:
-						line = "Stop: %(stop_name)s (%(stop_city)s) => %(stop_area)s [%(lineid)s]\n" % { 'lineid': lineid + r['end'], 'stop_name': s.stop_name, 'stop_city': s.city, 'stop_area': s.stopArea }
-						line = line.encode('utf-8')
-						sys.stdout.write(line)
+					res = self.pdfurl_to_line(url, line, ends)
+					if res != None:
+						for r in res:
+							try:
+								self.founds[stop_clean] = {'stop': s, 'ends': list(set(self.founds[stop_clean]['ends']+[lineid+r['end']]))}
+							except KeyError as e:
+								self.founds[stop_clean] = {'stop': s, 'ends': [lineid+r['end']]}
+					current += 1
+			else:
+				for stop in self.stops[lineid]:
+					stop_clean = stop.split(":")[0]
+					s = self.stops[lineid][stop]
+					self.founds[stop_clean] = {'stop': s, 'ends': [ lineid ]}
+
+		for found in self.founds:
+			ff = self.founds[found]
+			for e in ff['ends']:
+				line = "Stop: %(stop_name)s (%(stop_city)s) => %(stop_area)s [%(lineid)s]\n" % { 'lineid': e, 'stop_name': ff['stop'].stop_name, 'stop_city': ff['stop'].city, 'stop_area': ff['stop'].stopArea }
+				line = line.encode('utf-8')
+				sys.stdout.write(line)
 
 	def list_stops_complex(self):
 		self.get_stops()
@@ -475,7 +494,7 @@ class FilBleu:
 				if not stop["value"] == "":
 					s = BusStop(stop.text, linkBase)
 					s.set_stopArea(stop["value"])
-					self.stops[lineid][s.id+sensInput["value"]] = s
+					self.stops[lineid][s.id+':'+sensInput["value"]] = s
 
 	def list_lines(self):
 		self.get_lines()
