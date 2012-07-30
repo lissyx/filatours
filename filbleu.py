@@ -256,7 +256,7 @@ class FilBleu:
 					sys.stderr.write(msg)
 
 					service = []
-					key = stop.name
+					key = startCity + startStop + stop.name
 					try:
 						service = self.service[key]
 					except KeyError as e:
