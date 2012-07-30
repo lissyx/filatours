@@ -325,6 +325,8 @@ class FilBleu:
 		for lineid in self.stops:
 			ends = []
 			line = ""
+			olineid = lineid
+			lineid = lineid.replace("A", "").replace("B", "").encode('utf-8')
 			linespecs = self.lines_to_lineSpec(lineid)
 			for lspec in linespecs:
 				line = lspec['number'].replace("A", "").replace("B", "")
@@ -332,10 +334,10 @@ class FilBleu:
 					ends += lspec['spec']
 			if len(ends) > 0:
 				current = 0
-				total = len(self.stops[lineid])
-				for stop in self.stops[lineid]:
+				total = len(self.stops[olineid])
+				for stop in self.stops[olineid]:
 					stop_clean = stop.split(":")[0]
-					s = self.stops[lineid][stop]
+					s = self.stops[olineid][stop]
 					url = (self.base + s.linkbase + "StopArea=" + s.stopArea)
 					msg = "[%(current)d/%(total)d:%(lineid)s] Found stop %(stopName)s, downloading PDF at %(pdfURL)s\n" % {'stopName': s.stop_name, 'pdfURL': url, 'current': current, 'total': total, 'lineid': lineid}
 					msg = msg.encode('utf-8')
@@ -350,9 +352,9 @@ class FilBleu:
 								self.founds[stop_clean] = {'stop': s, 'ends': [lineid+r['end']]}
 					current += 1
 			else:
-				for stop in self.stops[lineid]:
+				for stop in self.stops[olineid]:
 					stop_clean = stop.split(":")[0]
-					s = self.stops[lineid][stop]
+					s = self.stops[olineid][stop]
 					self.founds[stop_clean] = {'stop': s, 'ends': [ lineid ]}
 
 		for found in self.founds:
