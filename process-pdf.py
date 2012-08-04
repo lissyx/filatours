@@ -131,13 +131,19 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 	def __init__(self, rsrcmgr, codec='utf-8', pageno=1, laparams=None, showpageno=False):
 		PDFConverter.__init__(self, rsrcmgr, None, codec=codec, pageno=pageno, laparams=laparams)
 		self.outfp = sys.stdout
+		self.current_title = ""
 		self.current_period_name  = ""
 		self.current_period_dates = []
 		self.current_schedule = {}
 		self.current_schedule_hours_buckets = []
+		self.current_lines = []
 		self.schedules = []
 		self.needMerge = False
 		return
+	
+	def bbox_intersect_x(self, hour, minute):
+		middle = (minute['x0'] + minute['x1']) / 2.0
+		return (middle >= hour['x0'] and middle <= hour['x1'])
 
 	def specs_to_periods(self, specs):
 		# print "specs=", specs
@@ -214,6 +220,10 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 						txt += enc(child.get_text(), self.codec)
 				
 				#self.outfp.write(txt)
+
+				if txt.find("Vers ") >= 0:
+					self.current_title = txt
+					self.current_lines_head = [ {'coords': None, 'number': txt.split("Vers ")[0]} ]
 				
 				if txt.find("Lundi au Samedi") >= 0 or txt.find("Dimanche et jours fériés") >= 0:
 					if self.needMerge:
@@ -221,16 +231,16 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 							'period': self.current_period_name,
 							'dates': self.current_period_dates,
 							'schedule': self.current_schedule,
-							'lines': self.current_lines,
+							'lines': self.current_lines + self.current_lines_head,
 						})
-					self.current_period_name = txt
-					self.needMerge = True
-				else:
-					if txt.find("horaires valables") >= 0:
-						self.current_period_dates = self.extract_periods(txt)
 						self.current_schedule_hours_buckets = []
 						self.current_schedule = {}
 						self.current_lines = []
+					self.current_period_name = txt.strip()
+					self.needMerge = True
+				else:
+					if txt.find("horaires valables") >= 0:
+						self.current_period_dates = self.extract_periods(txt.strip())
 					else:
 						if len(self.current_period_name) > 0 and len(self.current_period_dates) > 0:
 							(x0, y0, x1, y1) = item.bbox
@@ -244,7 +254,7 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 									self.current_schedule[txt] = []
 								else:
 									for hbucket in self.current_schedule_hours_buckets:
-										if coords['x0'] >= hbucket['coords']['x0'] and coords['x1'] <= hbucket['coords']['x1']:
+										if self.bbox_intersect_x(minute=coords, hour=hbucket['coords']):
 											self.current_schedule[hbucket['hour']].append({ 'minute': txt, 'coords': coords })
 					
 				#self.outfp.write('</textline>\n')
@@ -282,12 +292,13 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 	def get_matching_line_number(self, schedule, minute):
 		if len(schedule['lines']) > 1:
 			for line in schedule['lines']:
-				(ly0, ly1) = (line['coords']['y0'], line['coords']['y1'])
-				(my0, my1) = (minute['coords']['y0'], minute['coords']['y1'])
-				n = line['number']
-				# print "(ly0, ly1) = (%(ly0)f, %(ly1)f) ; (my0, my1) = (%(my0)f, %(my1)f)" % {'ly0': ly0, 'ly1': ly1, 'my0': my0, 'my1': my1}
-				if (my0 >= ly0 and my1 <= ly1):
-					return n
+				if line['coords'] is not None:
+					(ly0, ly1) = (line['coords']['y0'], line['coords']['y1'])
+					(my0, my1) = (minute['coords']['y0'], minute['coords']['y1'])
+					n = line['number']
+					# print "(ly0, ly1) = (%(ly0)f, %(ly1)f) ; (my0, my1) = (%(my0)f, %(my1)f)" % {'ly0': ly0, 'ly1': ly1, 'my0': my0, 'my1': my1}
+					if (my0 >= ly0 and my1 <= ly1):
+						return n
 		else:
 			return schedule['lines'][0]['number']
 	
