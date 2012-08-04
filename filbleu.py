@@ -1107,7 +1107,7 @@ class FilBleu:
 					if content is not None:
 						pdf.write(content)
 						res = self.process_pdf_schedule(pdf)
-						print "Stop:", s.stop_name
+						print "Stop:", s.stop_name.encode('utf-8')
 						pp.pprint(res)
 					pdf.close()
 				current += 1
