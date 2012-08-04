@@ -13,12 +13,20 @@ import math
 import copy
 import difflib
 import time
+import datetime
+import locale
+import hashlib
+import os
 
 from pdfminer.pdfparser import PDFParser, PDFDocument
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.pdfdevice import PDFDevice
-from pdfminer.converter import PDFConverter, TextConverter
-from pdfminer.layout import LTContainer, LTText, LTTextBox
+from pdfminer.converter import PDFConverter, TextConverter, XMLConverter
+from pdfminer.layout import LTContainer, LTPage, LTText, LTLine, LTRect, LTCurve
+from pdfminer.layout import LTFigure, LTImage, LTChar, LTTextLine
+from pdfminer.layout import LTTextBox, LTTextBoxVertical, LTTextGroup
+from pdfminer.layout import LAParams
+from pdfminer.utils import enc, bbox2str, create_bmp
 from cStringIO import StringIO
 
 class FilBleuPDFStopExtractor(TextConverter):
@@ -90,6 +98,256 @@ class FilBleuPDFStopExtractor(TextConverter):
 
 	def get_result(self):
 		return self.result
+
+class FilBleuPDFScheduleExtractor(PDFConverter):
+
+	def __init__(self, rsrcmgr, codec='utf-8', pageno=1, laparams=None, showpageno=False):
+		PDFConverter.__init__(self, rsrcmgr, None, codec=codec, pageno=pageno, laparams=laparams)
+		self.outfp = sys.stdout
+		self.current_schedule_hours_buckets = []
+		self.current_schedule = 0
+		self.schedules = []
+		self.needMerge = False
+		return
+	
+	def bbox_intersect_schedule(self, hour, minute):
+		middle = (minute['x0'] + minute['x1']) / 2.0
+		return (middle >= hour['x0'] and middle <= hour['x1'])
+
+	def specs_to_periods(self, specs):
+		# print "specs=", specs
+		full_periods = []
+		for multi in specs.split(" et du "):
+			speriod = []
+			for submulti in multi.strip().split(" au "):
+				speriod += [ submulti.replace("du ", "").strip() ]
+			full_periods += [ speriod ]
+		return full_periods
+	
+	def extract_periods(self, data):
+		full_periods = []
+		periods = data.split("horaires valables")[1:]
+		for period in periods:
+			full_periods = self.specs_to_periods(period)
+		return full_periods
+
+	def write_header(self):
+		self.outfp.write('<?xml version="1.0" encoding="%s" ?>\n' % self.codec)
+		self.outfp.write('<pages>\n')
+		return
+
+	def write_footer(self):
+		self.outfp.write('</pages>\n')
+		return
+	
+	def write_text(self, text):
+		self.outfp.write(enc(text, self.codec))
+		return
+
+	def receive_layout(self, ltpage):
+		def show_group(item):
+			if isinstance(item, LTTextBox):
+				pass
+				# self.outfp.write('<textbox id="%d" bbox="%s" />\n' % (item.index, bbox2str(item.bbox)))
+			elif isinstance(item, LTTextGroup):
+				#self.outfp.write('<textgroup bbox="%s">\n' % bbox2str(item.bbox))
+				for child in item:
+					show_group(child)
+				#self.outfp.write('</textgroup>\n')
+			return
+		def render(item):
+			if isinstance(item, LTPage):
+				# self.outfp.write('<page id="%s" bbox="%s" rotate="%d">\n' % (item.pageid, bbox2str(item.bbox), item.rotate))
+				for child in item:
+					render(child)
+				if item.groups is not None:
+					#self.outfp.write('<layout>\n')
+					for group in item.groups:
+						show_group(group)
+					#self.outfp.write('</layout>\n')
+				# self.outfp.write('</page>\n')
+			elif isinstance(item, LTLine):
+				pass
+				#self.outfp.write('<line linewidth="%d" bbox="%s" />\n' % (item.linewidth, bbox2str(item.bbox)))
+			elif isinstance(item, LTRect):
+				pass
+				#self.outfp.write('<rect linewidth="%d" bbox="%s" />\n' % (item.linewidth, bbox2str(item.bbox)))
+			elif isinstance(item, LTCurve):
+				pass
+				#self.outfp.write('<curve linewidth="%d" bbox="%s" pts="%s"/>\n' % (item.linewidth, bbox2str(item.bbox), item.get_pts()))
+			elif isinstance(item, LTFigure):
+				pass
+				#self.outfp.write('<figure name="%s" bbox="%s">\n' % (item.name, bbox2str(item.bbox)))
+				#for child in item:
+				#	render(child)
+				#self.outfp.write('</figure>\n')
+			elif isinstance(item, LTTextLine):
+				#self.outfp.write('<textline bbox="%s">' % bbox2str(item.bbox))
+				txt = ""
+				for child in item:
+					if isinstance(child, LTChar):
+						txt += enc(child.get_text(), self.codec)
+				
+				# print txt
+
+				if txt.find("Vers ") >= 0:
+					self.current_line_number = txt.split("Vers ")[0]
+					return
+				
+				if txt.find("Lundi au Samedi") >= 0 or txt.find("Dimanche et jours fériés") >= 0:
+					self.current_schedule = len(self.schedules)
+					self.schedules.append({
+						'period': "",
+						'dates': [],
+						'schedule': {},
+						'lines': [ {'coords': None, 'number': self.current_line_number} ],
+						'notes': {},
+					})
+					self.schedules[self.current_schedule]['period'] = txt.strip()
+				else:
+					try:
+						if self.schedules[self.current_schedule]:
+							pass
+					except IndexError as e:
+						return
+
+					if txt.find("horaires valables") >= 0:
+						self.schedules[self.current_schedule]['dates'] = self.extract_periods(txt.replace("er", "").strip())
+						self.current_schedule_hours_buckets = []
+					else:
+						if len(self.schedules[self.current_schedule]['period']) > 0 and len(self.schedules[self.current_schedule]['dates']) > 0:
+							(x0, y0, x1, y1) = item.bbox
+							coords = {'x0': x0, 'y0': y0, 'x1': x1, 'y1': y1}
+
+							# lines numbers are x0=29.09 and x1=43.762
+							if (x0 >= 28 and x1 <= 44):
+								if len(self.schedules[self.current_schedule]['lines']) == 1:
+									if self.schedules[self.current_schedule]['lines'][0]['coords'] == None:
+										self.schedules[self.current_schedule]['lines'] = [ {'number': txt, 'coords': coords} ]
+									else:
+										self.schedules[self.current_schedule]['lines'].append({'number': txt, 'coords': coords})
+								else:
+									self.schedules[self.current_schedule]['lines'].append({'number': txt, 'coords': coords})
+							else:
+								# notes are y0=81.491 y1=89.583
+								if coords['y0'] > 85 and coords['y1'] > 95:
+									if txt.find("h") > 0:
+										txt = txt.replace("h", "")
+										self.current_schedule_hours_buckets.append({'hour': txt, 'coords': coords})
+										self.schedules[self.current_schedule]['schedule'][txt] = []
+									else:
+										for hbucket in self.current_schedule_hours_buckets:
+											if self.bbox_intersect_schedule(minute=coords, hour=hbucket['coords']):
+												self.schedules[self.current_schedule]['schedule'][hbucket['hour']].append({ 'minute': txt, 'coords': coords })
+								else:
+									start = re.compile(r"^([a-z] )").search(txt)
+									if start:
+										self.last_note_key = start.group(1).strip()
+										txt = txt.replace(start.group(1), "")
+										self.schedules[self.current_schedule]['notes'][self.last_note_key] = txt
+									else:
+										self.schedules[self.current_schedule]['notes'][self.last_note_key] += " " + txt
+					
+				#self.outfp.write('</textline>\n')
+			elif isinstance(item, LTTextBox):
+				wmode = ''
+				if isinstance(item, LTTextBoxVertical):
+					wmode = ' wmode="vertical"'
+				#self.outfp.write('<textbox id="%d" bbox="%s"%s>\n' % (item.index, bbox2str(item.bbox), wmode))
+				for child in item:
+					render(child)
+				#self.outfp.write('</textbox>\n')
+			elif isinstance(item, LTChar):
+				pass
+				#self.outfp.write('<text font="%s" bbox="%s" size="%.3f">' % (enc(item.fontname), bbox2str(item.bbox), item.size))
+				#self.write_text(item.get_text())
+				#self.outfp.write('</text>\n')
+			elif isinstance(item, LTText):
+				pass
+				#self.outfp.write('<text>%s</text>\n' % item.get_text())
+			elif isinstance(item, LTImage):
+				pass
+##				if self.outdir:
+##					name = self.write_image(item)
+##					self.outfp.write('<image src="%s" width="%d" height="%d" />\n' %
+##									 (enc(name), item.width, item.height))
+##				else:
+##					self.outfp.write('<image width="%d" height="%d" />\n' %
+##									 (item.width, item.height))
+			else:
+				assert 0, item
+			return
+		render(ltpage)
+		return
+	
+	def get_matching_line_number(self, schedule, minute):
+		if len(schedule['lines']) > 1:
+			for line in schedule['lines']:
+				if line['coords'] is not None:
+					(ly0, ly1) = (line['coords']['y0'], line['coords']['y1'])
+					(my0, my1) = (minute['coords']['y0'], minute['coords']['y1'])
+					n = line['number']
+					# print "(ly0, ly1) = (%(ly0)f, %(ly1)f) ; (my0, my1) = (%(my0)f, %(my1)f)" % {'ly0': ly0, 'ly1': ly1, 'my0': my0, 'my1': my1}
+					if (my0 >= ly0 and my1 <= ly1):
+						return n
+		else:
+			return schedule['lines'][0]['number']
+	
+	def merge_lines(self):
+		for schedule in self.schedules:
+			for h in schedule['schedule']:
+				hour = schedule['schedule'][h]
+				for minute in hour:
+					minute['line'] = self.get_matching_line_number(schedule, minute)
+					del minute['coords']
+
+	def merge_notes(self):
+		newNotes = {}
+		for schedule in self.schedules:
+			if len(schedule['notes']) > 0:
+				newNotes = schedule['notes']
+
+		if len(newNotes) > 0:
+			for schedule in self.schedules:
+				schedule['notes'] = newNotes
+
+	def explode_notes(self):
+		for schedule in self.schedules:
+			for h in schedule['schedule']:
+				hour = schedule['schedule'][h]
+				for minute in hour:
+					minute['notes'] = list(re.sub(r"[0-9]*", "", minute['minute']))
+					minute['minute'] = re.sub(r"[a-z]*", "", minute['minute'])
+
+	def process_dates(self):
+		oldlocale = locale.getlocale()
+		locale.setlocale(locale.LC_ALL, ('fr_FR', 'UTF-8'))
+		for schedule in self.schedules:
+			newInterval = []
+			for interval in schedule['dates']:
+				(begin, end) = interval
+				arBegin = begin.split(" ")
+				arEnd = end.split(" ")
+
+				if len(arBegin) == 2:
+					arBegin.append(arEnd[2])
+
+				sBegin = " ".join(arBegin) + " 00:00:00"
+				sEnd = " ".join(arEnd) + " 23:59:59"
+
+				dBegin = datetime.datetime.strptime(sBegin, "%d %B %Y %H:%M:%S")
+				dEnd = datetime.datetime.strptime(sEnd, "%d %B %Y %H:%M:%S")
+
+				newInterval += [ [ dBegin, dEnd ] ]
+			schedule['dates'] = newInterval
+		locale.setlocale(locale.LC_ALL, oldlocale)
+
+	def close(self):
+		self.merge_lines()
+		self.merge_notes()
+		self.explode_notes()
+		self.process_dates()
+		return self.schedules
 
 class JourneyPart:
 	def __init__(self, type, mode, indication, time, duration):
@@ -167,6 +425,7 @@ class FilBleu:
 		self.periode = "&periode="
 		self.current_id = ""
 		self.etape = ""
+		self.pdfs_dir = "pdfs"
 
 		self.parser = argparse.ArgumentParser(description="FilBleu Scrapper")
 		self.parser.add_argument("--list-lines", action="store_true", help="List lines")
@@ -187,6 +446,12 @@ class FilBleu:
 		journey.add_argument("--criteria", type=int, help="Criteria: (1) Fastest; (2) Min changes; (3) Min walking; (4) Min waiting")
 		journey.add_argument("--bruteforce", action="store_true", help="Bruteforce find lines that goes between two specific stops. Needs --only-lines")
 		journey.add_argument("--only-lines", help="When running --bruteforce only consider those lines (comma-separated: 09A,09B)")
+
+		stopschedule = self.parser.add_argument_group("Stop schedule PDF Scrapping")
+		stopschedule.add_argument("--stop-schedule", action="store_true", help="Process PDF stop schedule")
+		stopschedule.add_argument("--line", help="Line")
+		stopschedule.add_argument("--stop", help="Stop")
+
 		self.args = self.parser.parse_args()
 
 		self.browser.set_debug_http(self.args.httpdebug)
@@ -280,30 +545,68 @@ class FilBleu:
 		fp.close()
 		return device.get_result()
 
+	def process_pdf_schedule(self, fp):
+		laparams = LAParams()
+		# Create a PDF parser object associated with the file object.
+		parser = PDFParser(fp)
+		# Create a PDF document object that stores the document structure.
+		doc = PDFDocument()
+		# Connect the parser and document objects.
+		parser.set_document(doc)
+		doc.set_parser(parser)
+		# Create a PDF resource manager object that stores shared resources.
+		rsrcmgr = PDFResourceManager()
+		# Create a PDF device object.
+		# device = FilBleuPDFStopExtractor(rsrcmgr, line, ends)
+		device = FilBleuPDFScheduleExtractor(rsrcmgr=rsrcmgr, laparams=laparams)
+		# Create a PDF interpreter object.
+		interpreter = PDFPageInterpreter(rsrcmgr, device)
+		# Process each page contained in the document.
+		for page in doc.get_pages():
+		    interpreter.process_page(page)
+		fp.close()
+		return device.close()
+
+	def download_pdf(self, url):
+		retval = None
+		md5 = hashlib.md5(url.encode('utf-8')).hexdigest()
+		fname = md5 + ".pdf"
+		try:
+			with open(self.pdfs_dir + os.path.sep + fname, 'r') as f:
+				retval = f.read()
+		except IOError as e:
+			self.browser.open(url.encode('utf-8'))
+			response = self.browser.response()
+			if response.code == 200:
+				infos = response.info()
+				isPdf = False
+
+				for e in infos.keys():
+					isPdf = (e == 'content-type' and infos[e] == 'application/pdf')
+
+				if isPdf:
+					retval = response.read()
+					with open(self.pdfs_dir + os.path.sep + fname, 'w') as f:
+						f.write(retval)
+				else:
+					noSchedule = re.compile(r"Aucun horaire n'existe").search(str(response.read()))
+					if noSchedule:
+						sys.stderr.write("No schedule for this one, bypassing.\n")
+					else:
+						sys.stderr.write("Not a PDF !\n")
+						sys.stderr.write("Code=" + str(response.code) + "\n")
+						sys.stderr.write(str(infos) + "\n")
+						sys.stderr.write(str(response.read()) + "\n")
+		return retval
+
+
 	def pdfurl_to_line(self, url, line, ends):
 		res = None
-		self.browser.open(url.encode('utf-8'))
 		pdf = StringIO()
-		response = self.browser.response()
-		if response.code == 200:
-			infos = response.info()
-			isPdf = False
-
-			for e in infos.keys():
-				isPdf = (e == 'content-type' and infos[e] == 'application/pdf')
-
-			if isPdf:
-				pdf.write(response.read())
-				res = self.process_pdf_stop(pdf, line, ends)
-			else:
-				noSchedule = re.compile(r"Aucun horaire n'existe").search(str(response.read()))
-				if noSchedule:
-					sys.stderr.write("No schedule for this one, bypassing.\n")
-				else:
-					sys.stderr.write("Not a PDF !\n")
-					sys.stderr.write("Code=" + str(response.code) + "\n")
-					sys.stderr.write(str(infos) + "\n")
-					sys.stderr.write(str(response.read()) + "\n")
+		content = self.download_pdf(url)
+		if content is not None:
+			pdf.write(content)
+			res = self.process_pdf_stop(pdf, line, ends)
 		pdf.close()
 		return res
 
@@ -778,6 +1081,28 @@ class FilBleu:
 		sys.stderr.write("Found lines:" + str(self.lines_found.keys()) + "\n")
 		return self.lines_found.keys()
 
+	def scrap_pdf_stop_schedule(self):
+		self.args.list_stops = self.args.line
+		self.get_stops()
+		for lineid in self.stops:
+			current = 0
+			total = len(self.stops[lineid])
+			for stop in self.stops[lineid]:
+				stop_clean = stop.split(":")[0]
+				s = self.stops[lineid][stop]
+				url = (self.base + s.linkbase + "StopArea=" + s.stopArea)
+				msg = "[%(current)d/%(total)d:%(lineid)s] Found stop %(stopName)s, downloading PDF at %(pdfURL)s\n" % {'stopName': s.stop_name, 'pdfURL': url, 'current': current, 'total': total, 'lineid': lineid}
+				msg = msg.encode('utf-8')
+				sys.stderr.write(msg)
+				pdf = StringIO()
+				content = self.download_pdf(url)
+				if content is not None:
+					pdf.write(content)
+					res = self.process_pdf_schedule(pdf)
+					print res
+				pdf.close()
+				current += 1
+
 	def raz(self):
 		if not self.current_id == "":
 			url = self.baseurl + "?id=" + self.current_id
@@ -975,6 +1300,8 @@ class FilBleu:
 			self.bruteforce_find_lines(self.args.stop_from, self.args.stop_to)
 		if self.args.build_line:
 			self.build_line()
+		if self.args.stop_schedule:
+			self.scrap_pdf_stop_schedule()
 
 if __name__ == '__main__':
 	FilBleu()
