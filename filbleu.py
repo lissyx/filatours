@@ -571,6 +571,7 @@ class FilBleu:
 		retval = None
 		md5 = hashlib.md5(url.encode('utf-8')).hexdigest()
 		fname = md5 + ".pdf"
+		sys.stderr.write("Filename is: '" + fname + "'\n")
 		try:
 			with open(self.pdfs_dir + os.path.sep + fname, 'r') as f:
 				retval = f.read()
