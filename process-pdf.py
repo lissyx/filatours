@@ -247,7 +247,13 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 
 							# lines numbers are x0=29.09 and x1=43.762
 							if (x0 >= 28 and x1 <= 44):
-								self.schedules[self.current_schedule]['lines'].append({'number': txt, 'coords': coords})
+								if len(self.schedules[self.current_schedule]['lines']) == 1:
+									if self.schedules[self.current_schedule]['lines'][0]['coords'] == None:
+										self.schedules[self.current_schedule]['lines'] = [ {'number': txt, 'coords': coords} ]
+									else:
+										self.schedules[self.current_schedule]['lines'].append({'number': txt, 'coords': coords})
+								else:
+									self.schedules[self.current_schedule]['lines'].append({'number': txt, 'coords': coords})
 							else:
 								# notes are y0=81.491 y1=89.583
 								if coords['y0'] > 85 and coords['y1'] > 95:
@@ -312,8 +318,18 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 					minute['line'] = self.get_matching_line_number(schedule, minute)
 					del minute['coords']
 
+	def explode_notes(self):
+		for schedule in self.schedules:
+			for h in schedule['schedule']:
+				hour = schedule['schedule'][h]
+				for minute in hour:
+					minute['notes'] = list(re.sub(r"[0-9]*", "", minute['minute']))
+					minute['minute'] = re.sub(r"[a-z]*", "", minute['minute'])
+
+
 	def close(self):
 		self.merge_lines()
+		self.explode_notes()
 		pp.pprint(self.schedules)
 		return
 
