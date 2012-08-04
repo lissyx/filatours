@@ -17,6 +17,8 @@ import datetime
 import locale
 import hashlib
 import os
+import pprint
+pp = pprint.PrettyPrinter(indent=1)
 
 from pdfminer.pdfparser import PDFParser, PDFDocument
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
@@ -1105,7 +1107,8 @@ class FilBleu:
 					if content is not None:
 						pdf.write(content)
 						res = self.process_pdf_schedule(pdf)
-						print res
+						print "Stop:", s.stop_name
+						pp.pprint(res)
 					pdf.close()
 				current += 1
 
