@@ -376,8 +376,7 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 		self.merge_notes()
 		self.explode_notes()
 		self.process_dates()
-		pp.pprint(self.schedules)
-		return
+		return self.schedules
 
 def process_pdf(fp, line, ends):
 	laparams = LAParams()
@@ -398,8 +397,8 @@ def process_pdf(fp, line, ends):
 	# Process each page contained in the document.
 	for page in doc.get_pages():
 	    interpreter.process_page(page)
-	device.close()
 	fp.close()
+	return device.close()
 
 	# return device.get_result()
 
