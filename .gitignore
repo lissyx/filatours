@@ -1,2 +1,6 @@
 index.html
 cookies*.jar
+stops.*.txt
+.*.swp
+data/pdfs/*
+data/err*.txt
