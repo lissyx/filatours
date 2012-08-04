@@ -1,1 +1,558 @@
-Stop: 
+Stop: Général Estienne
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Jumeaux
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Jolivet
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Pierre Couverte
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Devildé
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Maréchal Juin
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Chopin
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Faculté de Grandmont
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Morier
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Champ Chardon
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Martyrs
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Rochepinard
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Gare de Tours
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Docteur Fournier
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Bd de Chinon
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: IUT
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Champ Girault
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Jolivet
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Joué Gare
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Peupliers
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Bd de Chinon
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Séverine
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Pompiers
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Bruère
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Beaujardin
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Bugeaud
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Arsonval
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Raspail
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Passerelle
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Trianon
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Tremblay
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Bugeaud
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: J.P. Rameau
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Devildé
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Pompiers
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Lac
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Heurteloup
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Rochepinard
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Republique
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Séverine
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Champ Joli
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Lycée Grandmont
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Quatre Bornes
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Montreuil Bellay
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Beaujardin
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Croix Pasquier
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Champ Girault
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Champ Joli
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Verdun
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Maréchal Juin
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Faculté de Grandmont
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Collège Ronsard
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Pierre Couverte
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Peupliers
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Clinique Velpeau
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Arsonval
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Ursulines
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Montreuil Bellay
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Martyrs
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Croix Pasquier
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Beethoven
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Ursulines
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Heurteloup
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Docteur Fournier
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Verdun
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Gare Vinci
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Leccia
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Bruère
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Quatre Bornes
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Leccia
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Republique
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Gare de Tours
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Langevin
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Clinique Velpeau
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: IUT
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Parc Nord
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Général Estienne
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Collège Ronsard
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Traversiere
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Tremblay
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Champ Chardon
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Loiseau d'Entraigues
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Morier
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Lac
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Jumeaux
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Raspail
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Loiseau d'Entraigues
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: J.P. Rameau
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Passerelle
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Trianon
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Chopin
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: St Symphorien
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
+Stop: Langevin
+[{'dates': [],
+  'lines': [{'coords': None, 'number': '14'}],
+  'notes': {},
+  'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
+  'schedule': {}}]
