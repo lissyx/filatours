@@ -131,17 +131,13 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 	def __init__(self, rsrcmgr, codec='utf-8', pageno=1, laparams=None, showpageno=False):
 		PDFConverter.__init__(self, rsrcmgr, None, codec=codec, pageno=pageno, laparams=laparams)
 		self.outfp = sys.stdout
-		self.current_title = ""
-		self.current_period_name  = ""
-		self.current_period_dates = []
-		self.current_schedule = {}
 		self.current_schedule_hours_buckets = []
-		self.current_lines = []
+		self.current_schedule = 0
 		self.schedules = []
 		self.needMerge = False
 		return
 	
-	def bbox_intersect_x(self, hour, minute):
+	def bbox_intersect_schedule(self, hour, minute):
 		middle = (minute['x0'] + minute['x1']) / 2.0
 		return (middle >= hour['x0'] and middle <= hour['x1'])
 
@@ -219,43 +215,49 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 					if isinstance(child, LTChar):
 						txt += enc(child.get_text(), self.codec)
 				
-				#self.outfp.write(txt)
+				# print txt
 
 				if txt.find("Vers ") >= 0:
-					self.current_title = txt
-					self.current_lines_head = [ {'coords': None, 'number': txt.split("Vers ")[0]} ]
+					self.current_line_number = txt.split("Vers ")[0]
+					return
 				
 				if txt.find("Lundi au Samedi") >= 0 or txt.find("Dimanche et jours fériés") >= 0:
-					if self.needMerge:
-						self.schedules.append({
-							'period': self.current_period_name,
-							'dates': self.current_period_dates,
-							'schedule': self.current_schedule,
-							'lines': self.current_lines + self.current_lines_head,
-						})
-						self.current_schedule_hours_buckets = []
-						self.current_schedule = {}
-						self.current_lines = []
-					self.current_period_name = txt.strip()
-					self.needMerge = True
+					self.current_schedule = len(self.schedules)
+					self.schedules.append({
+						'period': "",
+						'dates': [],
+						'schedule': {},
+						'lines': [ {'coords': None, 'number': self.current_line_number} ],
+					})
+					self.schedules[self.current_schedule]['period'] = txt.strip()
 				else:
+					try:
+						if self.schedules[self.current_schedule]:
+							pass
+					except IndexError as e:
+						return
+
 					if txt.find("horaires valables") >= 0:
-						self.current_period_dates = self.extract_periods(txt.strip())
+						self.schedules[self.current_schedule]['dates'] = self.extract_periods(txt.strip())
+						self.current_schedule_hours_buckets = []
 					else:
-						if len(self.current_period_name) > 0 and len(self.current_period_dates) > 0:
+						if len(self.schedules[self.current_schedule]['period']) > 0 and len(self.schedules[self.current_schedule]['dates']) > 0:
 							(x0, y0, x1, y1) = item.bbox
 							coords = {'x0': x0, 'y0': y0, 'x1': x1, 'y1': y1}
 
+							# lines numbers are x0=29.09 and x1=43.762
 							if (x0 >= 28 and x1 <= 44):
-								self.current_lines.append({'number': txt, 'coords': coords})
+								self.schedules[self.current_schedule]['lines'].append({'number': txt, 'coords': coords})
 							else:
-								if txt.find("h") > 0:
-									self.current_schedule_hours_buckets.append({'hour': txt, 'coords': coords})
-									self.current_schedule[txt] = []
-								else:
-									for hbucket in self.current_schedule_hours_buckets:
-										if self.bbox_intersect_x(minute=coords, hour=hbucket['coords']):
-											self.current_schedule[hbucket['hour']].append({ 'minute': txt, 'coords': coords })
+								# notes are y0=81.491 y1=89.583
+								if coords['y0'] > 85 and coords['y1'] > 95:
+									if txt.find("h") > 0:
+										self.current_schedule_hours_buckets.append({'hour': txt, 'coords': coords})
+										self.schedules[self.current_schedule]['schedule'][txt] = []
+									else:
+										for hbucket in self.current_schedule_hours_buckets:
+											if self.bbox_intersect_schedule(minute=coords, hour=hbucket['coords']):
+												self.schedules[self.current_schedule]['schedule'][hbucket['hour']].append({ 'minute': txt, 'coords': coords })
 					
 				#self.outfp.write('</textline>\n')
 			elif isinstance(item, LTTextBox):
