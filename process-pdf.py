@@ -223,6 +223,31 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 					self.current_line_number = txt.split("Vers ")[0]
 					return
 				
+				if txt.find("Nuit") >= 0:
+					self.current_is_night = True
+					self.current_schedule = len(self.schedules)
+					self.schedules.append({
+						'period': "",
+						'dates': [],
+						'schedule': {},
+						'lines': [ {'coords': None, 'number': self.current_line_number} ],
+						'notes': {},
+					})
+					self.schedules[self.current_schedule]['period'] = txt.strip()
+					return
+
+				if self.current_is_night:
+					if txt.find("horaires valables") >= 0:
+						self.schedules[self.current_schedule]['dates'] = self.extract_periods(txt.replace("er", "").strip())
+					else:
+						isTime = re.compile(r"([0-9]{2})\.([0-9]{2})").search(txt)
+						if isTime:
+							(hour, minute) = (isTime.group(1), isTime.group(2))
+							try:
+								self.schedules[self.current_schedule]['schedule'][hour].append({ 'minute': minute, 'coords': None })
+							except KeyError as e:
+								self.schedules[self.current_schedule]['schedule'][hour] = [ { 'minute': minute, 'coords': None } ]
+
 				if txt.find("Lundi au Samedi") >= 0 or txt.find("Dimanche et jours fériés") >= 0:
 					self.current_schedule = len(self.schedules)
 					self.schedules.append({
