@@ -239,7 +239,7 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 						return
 
 					if txt.find("horaires valables") >= 0:
-						self.schedules[self.current_schedule]['dates'] = self.extract_periods(txt.strip())
+						self.schedules[self.current_schedule]['dates'] = self.extract_periods(txt.replace("er", "").strip())
 						self.current_schedule_hours_buckets = []
 					else:
 						if len(self.schedules[self.current_schedule]['period']) > 0 and len(self.schedules[self.current_schedule]['dates']) > 0:
