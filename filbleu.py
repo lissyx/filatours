@@ -1115,7 +1115,11 @@ class FilBleu:
 			if not self.etape == "":
 				url += "&etape=" + self.etape
 				if self.args.list_stops:
-					url += "&Line=" + self.args.list_stops
+					linespecs = self.lines_to_lineSpec(self.args.list_stops)
+					line = ""
+					for lspec in linespecs:
+						line = lspec['number'].replace("A", "").replace("B", "")
+					url += "&Line=" + self.args.list_stops + "|" + line
 			else:
 				url += self.url_raz
 				today = datetime.date.today()
