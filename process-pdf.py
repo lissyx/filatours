@@ -259,6 +259,7 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 								# notes are y0=81.491 y1=89.583
 								if coords['y0'] > 85 and coords['y1'] > 95:
 									if txt.find("h") > 0:
+										txt = txt.replace("h", "")
 										self.current_schedule_hours_buckets.append({'hour': txt, 'coords': coords})
 										self.schedules[self.current_schedule]['schedule'][txt] = []
 									else:
