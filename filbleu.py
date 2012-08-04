@@ -1085,23 +1085,28 @@ class FilBleu:
 	def scrap_pdf_stop_schedule(self):
 		self.args.list_stops = self.args.line
 		self.get_stops()
+		perform = True
 		for lineid in self.stops:
 			current = 0
 			total = len(self.stops[lineid])
 			for stop in self.stops[lineid]:
-				stop_clean = stop.split(":")[0]
 				s = self.stops[lineid][stop]
-				url = (self.base + s.linkbase + "StopArea=" + s.stopArea)
-				msg = "[%(current)d/%(total)d:%(lineid)s] Found stop %(stopName)s, downloading PDF at %(pdfURL)s\n" % {'stopName': s.stop_name, 'pdfURL': url, 'current': current, 'total': total, 'lineid': lineid}
-				msg = msg.encode('utf-8')
-				sys.stderr.write(msg)
-				pdf = StringIO()
-				content = self.download_pdf(url)
-				if content is not None:
-					pdf.write(content)
-					res = self.process_pdf_schedule(pdf)
-					print res
-				pdf.close()
+				if self.args.stop:
+					perform = (self.args.stop.encode('utf-8') == s.stop_name)
+
+				if perform:
+					stop_clean = stop.split(":")[0]
+					url = (self.base + s.linkbase + "StopArea=" + s.stopArea)
+					msg = "[%(current)d/%(total)d:%(lineid)s] Found stop %(stopName)s, downloading PDF at %(pdfURL)s\n" % {'stopName': s.stop_name, 'pdfURL': url, 'current': current, 'total': total, 'lineid': lineid}
+					msg = msg.encode('utf-8')
+					sys.stderr.write(msg)
+					pdf = StringIO()
+					content = self.download_pdf(url)
+					if content is not None:
+						pdf.write(content)
+						res = self.process_pdf_schedule(pdf)
+						print res
+					pdf.close()
 				current += 1
 
 	def raz(self):
