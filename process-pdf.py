@@ -228,6 +228,7 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 						'dates': [],
 						'schedule': {},
 						'lines': [ {'coords': None, 'number': self.current_line_number} ],
+						'notes': {},
 					})
 					self.schedules[self.current_schedule]['period'] = txt.strip()
 				else:
@@ -264,6 +265,14 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 										for hbucket in self.current_schedule_hours_buckets:
 											if self.bbox_intersect_schedule(minute=coords, hour=hbucket['coords']):
 												self.schedules[self.current_schedule]['schedule'][hbucket['hour']].append({ 'minute': txt, 'coords': coords })
+								else:
+									start = re.compile(r"^([a-z] )").search(txt)
+									if start:
+										self.last_note_key = start.group(1).strip()
+										txt = txt.replace(start.group(1), "")
+										self.schedules[self.current_schedule]['notes'][self.last_note_key] = txt
+									else:
+										self.schedules[self.current_schedule]['notes'][self.last_note_key] += " " + txt
 					
 				#self.outfp.write('</textline>\n')
 			elif isinstance(item, LTTextBox):
@@ -318,6 +327,16 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 					minute['line'] = self.get_matching_line_number(schedule, minute)
 					del minute['coords']
 
+	def merge_notes(self):
+		newNotes = {}
+		for schedule in self.schedules:
+			if len(schedule['notes']) > 0:
+				newNotes = schedule['notes']
+
+		if len(newNotes) > 0:
+			for schedule in self.schedules:
+				schedule['notes'] = newNotes
+
 	def explode_notes(self):
 		for schedule in self.schedules:
 			for h in schedule['schedule']:
@@ -329,6 +348,7 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 
 	def close(self):
 		self.merge_lines()
+		self.merge_notes()
 		self.explode_notes()
 		pp.pprint(self.schedules)
 		return
