@@ -14,6 +14,8 @@ from cStringIO import StringIO
 import re
 import sys
 import pprint
+import datetime
+import locale
 
 pp = pprint.PrettyPrinter(indent=1)
 
@@ -346,11 +348,34 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 					minute['notes'] = list(re.sub(r"[0-9]*", "", minute['minute']))
 					minute['minute'] = re.sub(r"[a-z]*", "", minute['minute'])
 
+	def process_dates(self):
+		oldlocale = locale.getlocale()
+		locale.setlocale(locale.LC_ALL, ('fr_FR', 'UTF-8'))
+		for schedule in self.schedules:
+			newInterval = []
+			for interval in schedule['dates']:
+				(begin, end) = interval
+				arBegin = begin.split(" ")
+				arEnd = end.split(" ")
+
+				if len(arBegin) == 2:
+					arBegin.append(arEnd[2])
+
+				sBegin = " ".join(arBegin) + " 00:00:00"
+				sEnd = " ".join(arEnd) + " 23:59:59"
+
+				dBegin = datetime.datetime.strptime(sBegin, "%d %B %Y %H:%M:%S")
+				dEnd = datetime.datetime.strptime(sEnd, "%d %B %Y %H:%M:%S")
+
+				newInterval += [ [ dBegin, dEnd ] ]
+			schedule['dates'] = newInterval
+		locale.setlocale(locale.LC_ALL, oldlocale)
 
 	def close(self):
 		self.merge_lines()
 		self.merge_notes()
 		self.explode_notes()
+		self.process_dates()
 		pp.pprint(self.schedules)
 		return
 
