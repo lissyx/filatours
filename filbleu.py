@@ -1094,11 +1094,11 @@ class FilBleu:
 			for stop in self.stops[lineid]:
 				s = self.stops[lineid][stop]
 				if self.args.stop:
-					perform = (self.args.stop.encode('utf-8') == s.stop_name)
+					perform = (self.args.stop.decode('utf-8') == s.stop_name)
 
 				if perform:
 					stop_clean = stop.split(":")[0]
-					url = (self.base + s.linkbase + "StopArea=" + s.stopArea)
+					url = (self.base + s.linkbase + "StopArea=" + s.stopArea + "&Line=" + self.args.line)
 					msg = "[%(current)d/%(total)d:%(lineid)s] Found stop %(stopName)s, downloading PDF at %(pdfURL)s\n" % {'stopName': s.stop_name, 'pdfURL': url, 'current': current, 'total': total, 'lineid': lineid}
 					msg = msg.encode('utf-8')
 					sys.stderr.write(msg)
