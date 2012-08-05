@@ -348,12 +348,16 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 		newlines = []
 		tmplines = []
 		for schedule in self.schedules:
-			tmplines += schedule['lines']
+			for line in schedule['lines']:
+				if line not in tmplines:
+					tmplines += [ line ]
 
 		if len(tmplines) > 1:
 			for line in tmplines:
 				if line['coords'] is not None:
 					newlines += [ line ]
+		else:
+			newlines = tmplines
 
 		for schedule in self.schedules:
 			schedule['lines'] = newlines
