@@ -333,6 +333,15 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 					minute['line'] = self.get_matching_line_number(schedule, minute)
 					del minute['coords']
 
+	def purge_coords(self):
+		for schedule in self.schedules:
+			newList = []
+
+			for line in schedule['lines']:
+				newList.append(line['number'])
+
+			schedule['lines'] = list(set(newList))
+
 	def merge_notes(self):
 		newNotes = {}
 		for schedule in self.schedules:
@@ -379,6 +388,7 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 		self.merge_notes()
 		self.explode_notes()
 		self.process_dates()
+		self.purge_coords()
 		return self.schedules
 
 class JourneyPart:
