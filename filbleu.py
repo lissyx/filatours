@@ -265,8 +265,9 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 								else:
 									self.schedules[self.current_schedule]['lines'].append({'number': txt, 'coords': coords})
 							else:
-								# notes are y0=81.491 y1=89.583
-								if coords['y0'] > 85 and coords['y1'] > 95:
+								# notes are below y0=81.491 y1=89.583
+								# head is over y0=697.0169999999999 y1=707.727
+								if coords['y0'] > 85 and coords['y0'] < 710 and coords['y1'] > 95 and coords['y1'] < 720:
 									if txt.find("h") > 0:
 										txt = txt.replace("h", "")
 										self.current_schedule_hours_buckets.append({'hour': txt, 'coords': coords})
@@ -276,13 +277,18 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 											if self.bbox_intersect_schedule(minute=coords, hour=hbucket['coords']):
 												self.schedules[self.current_schedule]['schedule'][hbucket['hour']].append({ 'minute': txt, 'coords': coords })
 								else:
-									start = re.compile(r"^([a-z] )").search(txt)
-									if start:
-										self.last_note_key = start.group(1).strip()
-										txt = re.sub(r"^[a-z] ", "", txt)
-										self.schedules[self.current_schedule]['notes'][self.last_note_key] = txt
-									else:
-										self.schedules[self.current_schedule]['notes'][self.last_note_key] += " " + txt
+									# notes
+									if coords['y0'] <= 85 and coords['y1'] <= 95:
+										start = re.compile(r"^([a-z] )").search(txt)
+										if start:
+											self.last_note_key = start.group(1).strip()
+											txt = re.sub(r"^[a-z] ", "", txt)
+											self.schedules[self.current_schedule]['notes'][self.last_note_key] = txt
+										else:
+											self.schedules[self.current_schedule]['notes'][self.last_note_key] += " " + txt
+									# head
+									if coords['y0'] >= 710 and coords['y1'] >= 720:
+										pass
 					
 				#self.outfp.write('</textline>\n')
 			elif isinstance(item, LTTextBox):
