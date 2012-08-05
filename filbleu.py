@@ -323,17 +323,40 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 		return
 	
 	def get_matching_line_number(self, schedule, minute):
+		okValue = ""
 		if len(schedule['lines']) > 1:
+			minDist = 32768
 			for line in schedule['lines']:
 				if line['coords'] is not None:
 					(ly0, ly1) = (line['coords']['y0'], line['coords']['y1'])
 					(my0, my1) = (minute['coords']['y0'], minute['coords']['y1'])
 					n = line['number']
 					# print "(ly0, ly1) = (%(ly0)f, %(ly1)f) ; (my0, my1) = (%(my0)f, %(my1)f)" % {'ly0': ly0, 'ly1': ly1, 'my0': my0, 'my1': my1}
-					if (my0 >= ly0 and my1 <= ly1):
-						return n
+					middle_minutes = (my0 + my1) / 2.0
+					middle_line = (ly0 + ly1) / 2.0
+					dist = math.fabs(middle_minutes - middle_line)
+					if (dist < minDist):
+						minDist = dist
+						okValue = n
 		else:
-			return schedule['lines'][0]['number']
+			okValue = schedule['lines'][0]['number']
+
+		return okValue
+
+	def fixup_lines(self):
+		# collect all lines
+		newlines = []
+		tmplines = []
+		for schedule in self.schedules:
+			tmplines += schedule['lines']
+
+		if len(tmplines) > 1:
+			for line in tmplines:
+				if line['coords'] is not None:
+					newlines += [ line ]
+
+		for schedule in self.schedules:
+			schedule['lines'] = newlines
 	
 	def merge_lines(self):
 		for schedule in self.schedules:
@@ -394,6 +417,7 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 		locale.setlocale(locale.LC_ALL, oldlocale)
 
 	def close(self):
+		self.fixup_lines()
 		self.merge_lines()
 		self.merge_notes()
 		self.explode_notes()
