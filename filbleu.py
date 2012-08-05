@@ -397,6 +397,19 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 					minute['notes'] = list(re.sub(r"[0-9]*", "", minute['minute']))
 					minute['minute'] = re.sub(r"[a-z]*", "", minute['minute'])
 
+	def normalize_direction(self):
+		for schedule in self.schedules:
+			schedule['direction'] = list(set(schedule['direction']))
+
+	def normalize_lines(self):
+		for schedule in self.schedules:
+			schedule['lines'] = []
+			for h in schedule['schedule']:
+				hour = schedule['schedule'][h]
+				for minute in hour:
+					if minute['line'] not in schedule['lines']:
+						schedule['lines'] += [ minute['line'] ]
+
 	def process_dates(self):
 		oldlocale = locale.getlocale()
 		locale.setlocale(locale.LC_ALL, ('fr_FR', 'UTF-8'))
@@ -427,6 +440,8 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 		self.explode_notes()
 		self.process_dates()
 		self.purge_coords()
+		self.normalize_direction()
+		self.normalize_lines()
 		return self.schedules
 
 class JourneyPart:
