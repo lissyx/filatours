@@ -1,7 +1,8 @@
 Stop: Charcot
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '08', 'notes': []}],
@@ -12,7 +13,8 @@ Stop: Charcot
 Stop: Jacques Monod
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '38', 'notes': []}],
@@ -23,7 +25,8 @@ Stop: Jacques Monod
 Stop: Jean Jaurès
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '46', 'notes': []}],
@@ -34,7 +37,8 @@ Stop: Jean Jaurès
 Stop: 2 Lions
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '36', 'notes': []}],
@@ -45,7 +49,8 @@ Stop: 2 Lions
 Stop: La Grange
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '30', 'notes': []}],
@@ -56,7 +61,8 @@ Stop: La Grange
 Stop: Mi-Côte
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '36', 'notes': []}],
@@ -67,7 +73,8 @@ Stop: Mi-Côte
 Stop: Mérieux
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '35', 'notes': []}],
@@ -78,7 +85,8 @@ Stop: Mérieux
 Stop: Morier
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '27', 'notes': []}],
@@ -89,7 +97,8 @@ Stop: Morier
 Stop: Martyrs
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '29', 'notes': []}],
@@ -100,7 +109,8 @@ Stop: Martyrs
 Stop: Pont Cher
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '34', 'notes': []}],
@@ -112,7 +122,8 @@ Stop: Pont Cher
 Stop: Gloriette
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '17', 'notes': []}],
@@ -123,7 +134,8 @@ Stop: Gloriette
 Stop: Mérieux
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '16', 'notes': []}],
@@ -134,7 +146,8 @@ Stop: Mérieux
 Stop: Lycée Choiseul
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '24', 'notes': []}],
@@ -148,7 +161,8 @@ Stop: Lycée Choiseul
 Stop: Marceau
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '43', 'notes': []}],
@@ -159,7 +173,8 @@ Stop: Marceau
 Stop: Marceau
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '05', 'notes': []}],
@@ -170,7 +185,8 @@ Stop: Marceau
 Stop: Jean Jaurès
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '03', 'notes': []}],
@@ -181,7 +197,8 @@ Stop: Jean Jaurès
 Stop: Lycée Choiseul
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '26', 'notes': []}],
@@ -192,7 +209,8 @@ Stop: Lycée Choiseul
 Stop: Chevalerie
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '17', 'notes': []}],
@@ -204,7 +222,8 @@ Stop: Chevalerie
 Stop: Chevalerie
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '31', 'notes': []}],
@@ -215,7 +234,8 @@ Stop: Chevalerie
 Stop: Charcot
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '42', 'notes': []}],
@@ -227,7 +247,8 @@ Stop: Charcot
 Stop: Europe
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '29', 'notes': []}],
@@ -238,7 +259,8 @@ Stop: Europe
 Stop: Constantine
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '06', 'notes': []}],
@@ -249,7 +271,8 @@ Stop: Constantine
 Stop: Faculté des Tanneurs
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '07', 'notes': []}],
@@ -260,7 +283,8 @@ Stop: Faculté des Tanneurs
 Stop: Beffroi
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '19', 'notes': []}],
@@ -271,7 +295,8 @@ Stop: Beffroi
 Stop: Boisdenier
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '06', 'notes': []}],
@@ -282,7 +307,8 @@ Stop: Boisdenier
 Stop: Abbaye Gatines
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '26', 'notes': []}],
@@ -293,7 +319,8 @@ Stop: Abbaye Gatines
 Stop: Bugeaud
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '28', 'notes': []}],
@@ -304,7 +331,8 @@ Stop: Bugeaud
 Stop: Place Choiseul
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '37', 'notes': []}],
@@ -315,7 +343,8 @@ Stop: Place Choiseul
 Stop: Gauguin
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '33', 'notes': []}],
@@ -326,7 +355,8 @@ Stop: Gauguin
 Stop: Faculté des Tanneurs
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '41', 'notes': []}],
@@ -337,7 +367,8 @@ Stop: Faculté des Tanneurs
 Stop: Christ Roi
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '14', 'notes': []}],
@@ -349,7 +380,8 @@ Stop: Christ Roi
 Stop: Bugeaud
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '23', 'notes': []}],
@@ -360,7 +392,8 @@ Stop: Bugeaud
 Stop: Beauverger
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '16', 'notes': []}],
@@ -371,7 +404,8 @@ Stop: Beauverger
 Stop: Tranchée
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '12', 'notes': []}],
@@ -383,7 +417,8 @@ Stop: Tranchée
 Stop: Gare Vinci
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '00', 'notes': []}],
@@ -394,7 +429,8 @@ Stop: Gare Vinci
 Stop: Gloriette
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '34', 'notes': []}],
@@ -405,7 +441,8 @@ Stop: Gloriette
 Stop: Salengro
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '05', 'notes': []}],
@@ -416,7 +453,8 @@ Stop: Salengro
 Stop: 2 Lions
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '15', 'notes': []}],
@@ -427,7 +465,8 @@ Stop: 2 Lions
 Stop: Compagnonnage
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '22', 'notes': []}],
@@ -438,7 +477,8 @@ Stop: Compagnonnage
 Stop: Beffroi
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '29', 'notes': []}],
@@ -449,7 +489,8 @@ Stop: Beffroi
 Stop: Pont Cher
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '17', 'notes': []}],
@@ -460,7 +501,8 @@ Stop: Pont Cher
 Stop: Emile Zola
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '03', 'notes': []}],
@@ -471,7 +513,8 @@ Stop: Emile Zola
 Stop: Abbaye Gatines
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '24', 'notes': []}],
@@ -482,7 +525,8 @@ Stop: Abbaye Gatines
 Stop: Auvergne
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '18', 'notes': []}],
@@ -493,7 +537,8 @@ Stop: Auvergne
 Stop: Tranchée
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '36', 'notes': []}],
@@ -504,7 +549,8 @@ Stop: Tranchée
 Stop: Maine
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '20', 'notes': []}],
@@ -515,7 +561,8 @@ Stop: Maine
 Stop: Verdun
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '09', 'notes': []}],
@@ -526,7 +573,8 @@ Stop: Verdun
 Stop: Maginot
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '13', 'notes': []}],
@@ -537,7 +585,8 @@ Stop: Maginot
 Stop: Bruère
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '25', 'notes': []}],
@@ -548,7 +597,8 @@ Stop: Bruère
 Stop: Churchill
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '40', 'notes': []}],
@@ -560,7 +610,8 @@ Stop: Churchill
 Stop: Boisdenier
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '44', 'notes': []}],
@@ -571,7 +622,8 @@ Stop: Boisdenier
 Stop: La Grange
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '21', 'notes': []}],
@@ -582,7 +634,8 @@ Stop: La Grange
 Stop: Place de la Liberté
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '07', 'notes': []}],
@@ -593,7 +646,8 @@ Stop: Place de la Liberté
 Stop: Compagnonnage
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '28', 'notes': []}],
@@ -604,7 +658,8 @@ Stop: Compagnonnage
 Stop: Kleber
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '20', 'notes': []}],
@@ -615,7 +670,8 @@ Stop: Kleber
 Stop: Martyrs
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '22', 'notes': []}],
@@ -626,7 +682,8 @@ Stop: Martyrs
 Stop: St Sauveur
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '12', 'notes': []}],
@@ -637,7 +694,8 @@ Stop: St Sauveur
 Stop: Delaroche
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '30', 'notes': []}],
@@ -648,7 +706,8 @@ Stop: Delaroche
 Stop: Place de la Liberté
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '43', 'notes': []}],
@@ -659,7 +718,8 @@ Stop: Place de la Liberté
 Stop: Kleber
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '31', 'notes': []}],
@@ -670,7 +730,8 @@ Stop: Kleber
 Stop: Salengro
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '45', 'notes': []}],
@@ -681,7 +742,8 @@ Stop: Salengro
 Stop: Douets Lycée Choiseul
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '25', 'notes': []}],
@@ -692,7 +754,8 @@ Stop: Douets Lycée Choiseul
 Stop: Auvergne
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '33', 'notes': []}],
@@ -703,7 +766,8 @@ Stop: Auvergne
 Stop: Verdun
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '41', 'notes': []}],
@@ -714,7 +778,8 @@ Stop: Verdun
 Stop: Gare Vinci
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '00', 'notes': []}],
@@ -725,7 +790,8 @@ Stop: Gare Vinci
 Stop: Michelin
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '37', 'notes': []}],
@@ -737,7 +803,8 @@ Stop: Michelin
 Stop: Constantine
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '42', 'notes': []}],
@@ -748,7 +815,8 @@ Stop: Constantine
 Stop: Charles Peguy
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '15', 'notes': []}],
@@ -760,7 +828,8 @@ Stop: Charles Peguy
 Stop: Portillon
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '39', 'notes': []}],
@@ -771,7 +840,8 @@ Stop: Portillon
 Stop: Charleroi
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '29', 'notes': []}],
@@ -782,7 +852,8 @@ Stop: Charleroi
 Stop: Trois Rivières
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '17', 'notes': []}],
@@ -793,7 +864,8 @@ Stop: Trois Rivières
 Stop: Michelin
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '14', 'notes': []}],
@@ -804,7 +876,8 @@ Stop: Michelin
 Stop: Trois Rivières
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '32', 'notes': []}],
@@ -815,7 +888,8 @@ Stop: Trois Rivières
 Stop: Europe
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '19', 'notes': []}],
@@ -826,7 +900,8 @@ Stop: Europe
 Stop: Mi-Côte
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '11', 'notes': []}],
@@ -837,7 +912,8 @@ Stop: Mi-Côte
 Stop: Delaroche
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '18', 'notes': []}],
@@ -849,7 +925,8 @@ Stop: Delaroche
 Stop: Morier
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '23', 'notes': []}],
@@ -860,7 +937,8 @@ Stop: Morier
 Stop: Jacques Monod
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '13', 'notes': []}],
@@ -871,7 +949,8 @@ Stop: Jacques Monod
 Stop: Place Choiseul
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '10', 'notes': []}],
@@ -883,7 +962,8 @@ Stop: Place Choiseul
 Stop: Maginot
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '35', 'notes': []}],
@@ -894,7 +974,8 @@ Stop: Maginot
 Stop: Churchill
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Bru\xc3\xa8re',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '11', 'notes': []}],
@@ -905,7 +986,8 @@ Stop: Churchill
 Stop: Portillon
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '10', 'notes': []}],
@@ -916,7 +998,8 @@ Stop: Portillon
 Stop: St Sauveur
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N1'}],
+  'direction': 'Douets Lyc\xc3\xa9e Choiseul',
+  'lines': ['N1'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N1', 'minute': '38', 'notes': []}],

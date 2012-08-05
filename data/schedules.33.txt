@@ -1,7 +1,8 @@
 Stop: Maryse Bastié
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '47', 'notes': []}],
@@ -12,7 +13,8 @@ Stop: Maryse Bastié
 Stop: Alouette
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '59', 'notes': []}],
@@ -23,7 +25,8 @@ Stop: Alouette
 Stop: Constantine
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '37', 'notes': []}],
@@ -34,7 +37,8 @@ Stop: Constantine
 Stop: Camus
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '57', 'notes': []}],
@@ -45,7 +49,8 @@ Stop: Camus
 Stop: Bretonneau
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '44', 'notes': []}],
@@ -56,7 +61,8 @@ Stop: Bretonneau
 Stop: L'essart
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '06', 'notes': []}],
@@ -67,7 +73,8 @@ Stop: L'essart
 Stop: Strasbourg
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '49', 'notes': []}],
@@ -78,7 +85,8 @@ Stop: Strasbourg
 Stop: Jolivet
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '15', 'notes': []}],
@@ -88,7 +96,8 @@ Stop: Jolivet
 Stop: Lycée Grandmont
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '00', 'notes': []}],
@@ -99,7 +108,8 @@ Stop: Lycée Grandmont
 Stop: Camélias
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '57', 'notes': []}],
@@ -110,7 +120,8 @@ Stop: Camélias
 Stop: Michelin
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '53', 'notes': []}],
@@ -122,7 +133,8 @@ Stop: Michelin
 Stop: Erables
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '49', 'notes': []}],
@@ -133,7 +145,8 @@ Stop: Erables
 Stop: Peupliers
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '16', 'notes': []}],
@@ -143,7 +156,8 @@ Stop: Peupliers
 Stop: Trobriand
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '56', 'notes': []}],
@@ -154,7 +168,8 @@ Stop: Trobriand
 Stop: Mozart
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '03', 'notes': []}],
@@ -165,7 +180,8 @@ Stop: Mozart
 Stop: Boyer
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '41', 'notes': []}],
@@ -176,7 +192,8 @@ Stop: Boyer
 Stop: Stendhal
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '04', 'notes': []}],
@@ -188,7 +205,8 @@ Stop: Stendhal
 Stop: Dames Blanches
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '39', 'notes': []}],
@@ -202,7 +220,8 @@ Stop: Dames Blanches
 Stop: Raspail
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '14', 'notes': []}],
@@ -212,7 +231,8 @@ Stop: Raspail
 Stop: Faculté des Tanneurs
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '38', 'notes': []}],
@@ -223,7 +243,8 @@ Stop: Faculté des Tanneurs
 Stop: Gare de Tours
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '20', 'notes': []}],
@@ -233,7 +254,8 @@ Stop: Gare de Tours
 Stop: Leccia
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '13', 'notes': []}],
@@ -243,7 +265,8 @@ Stop: Leccia
 Stop: Dassault
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '55', 'notes': []}],
@@ -254,7 +277,8 @@ Stop: Dassault
 Stop: D'Indy
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '04', 'notes': []}],
@@ -265,7 +289,8 @@ Stop: D'Indy
 Stop: Parc des Expositions
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '10', 'notes': []}],
@@ -275,7 +300,8 @@ Stop: Parc des Expositions
 Stop: De La Rochefoucauld
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '58', 'notes': []}],
@@ -289,7 +315,8 @@ Stop: De La Rochefoucauld
 Stop: Emile Zola
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '34', 'notes': []}],
@@ -300,7 +327,8 @@ Stop: Emile Zola
 Stop: Jacques Monod
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '50', 'notes': []}],
@@ -311,7 +339,8 @@ Stop: Jacques Monod
 Stop: Ecole de Commerce
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '02', 'notes': []}],
@@ -322,7 +351,8 @@ Stop: Ecole de Commerce
 Stop: 2 Lions
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '53', 'notes': []}],
@@ -333,7 +363,8 @@ Stop: 2 Lions
 Stop: Docteur Chaumier
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '42', 'notes': []}],
@@ -347,7 +378,8 @@ Stop: Docteur Chaumier
 Stop: J.P. Rameau
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'01': [{'line': 'N4', 'minute': '00', 'notes': []},
@@ -358,7 +390,8 @@ Stop: J.P. Rameau
 Stop: Gare Vinci
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '30', 'notes': []}],
@@ -369,7 +402,8 @@ Stop: Gare Vinci
 Stop: Marceau
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '36', 'notes': []}],
@@ -380,7 +414,8 @@ Stop: Marceau
 Stop: Mérieux
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '51', 'notes': []}],
@@ -391,7 +426,8 @@ Stop: Mérieux
 Stop: Desmoulins
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '43', 'notes': []}],
@@ -402,7 +438,8 @@ Stop: Desmoulins
 Stop: LP Bayet
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '42', 'notes': []}],
@@ -413,7 +450,8 @@ Stop: LP Bayet
 Stop: Champ Girault
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '19', 'notes': []}],
@@ -424,7 +462,8 @@ Stop: Champ Girault
 Stop: Polytech
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '54', 'notes': []}],
@@ -436,7 +475,8 @@ Stop: Polytech
 Stop: Tonnellé
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '45', 'notes': []}],
@@ -447,7 +487,8 @@ Stop: Tonnellé
 Stop: St Sauveur
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '49', 'notes': []}],
@@ -458,7 +499,8 @@ Stop: St Sauveur
 Stop: Docteur Fournier
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '18', 'notes': []}],
@@ -468,7 +510,8 @@ Stop: Docteur Fournier
 Stop: Général Renault
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '48', 'notes': []}],
@@ -479,7 +522,8 @@ Stop: Général Renault
 Stop: St François
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '46', 'notes': []}],
@@ -490,7 +534,8 @@ Stop: St François
 Stop: Champ Joli
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'lines': [{'coords': None, 'number': 'N4'}],
+  'direction': 'Gare Vinci par Tonnell\xc3\xa9 puis 2 Lions',
+  'lines': ['N4'],
   'notes': {},
   'period': 'Nuit',
   'schedule': {'00': [{'line': 'N4', 'minute': '14', 'notes': []}],

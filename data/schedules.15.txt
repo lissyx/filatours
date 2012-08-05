@@ -1,438 +1,511 @@
 Stop: Mermoz
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Ste Radegonde Centre
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Paul Bert
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: L'essart
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: St Joseph
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Constantine
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Belle Isle
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Jean Jaurès
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: St Avertin Centre
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Chaudron
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Emile Zola
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Constantine
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Capucins
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Champ Joli
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: L'essart
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Venien
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Monsoudun
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: La Borde
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Faculté des Tanneurs
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Granges Galand
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Sanitas
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Boisdenier
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Dorgelès
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Paul Bert
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Palais des Sports
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Parc des Expositions
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: St Libert
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Venien
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Ste Radegonde Centre
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Boisdenier
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Leccia
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: St Joseph
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Palais des Sports
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Place Choiseul
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: La Borde
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Parc des Expositions
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Richemont
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Jean Jaurès
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Rotonde
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Faculté des Tanneurs
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Raspail
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Leccia
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Marceau
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Portillon
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Ile Aucard
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Granges Galand
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Ste Radegonde-Ermitage
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: St Libert
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Belle Isle
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Richemont
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Place Choiseul
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Capucins
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Sanitas
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Raspail
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Monsoudun
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: St Avertin Mairie
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Marceau
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Salengro
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Cottier
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Dorgelès
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Ile Aucard
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Portillon
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Golf
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Wedells
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Golf
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Rotonde
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Salengro
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Wedells
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: St Avertin Mairie
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Mermoz
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'Ste Radegonde Ermitage',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Champ Joli
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Duclos - Atlantes
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Chaudron
 [{'dates': [],
-  'lines': [{'coords': None, 'number': '15'}],
+  'direction': 'St Avertin Centre',
+  'lines': ['15'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
