@@ -109,6 +109,7 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 		self.current_schedule_hours_buckets = []
 		self.current_schedule = 0
 		self.current_is_night = False
+		self.current_direction = ""
 		self.schedules = []
 		self.needMerge = False
 		return
@@ -195,6 +196,7 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 
 				if txt.find("Vers ") >= 0:
 					self.current_line_number = txt.split("Vers ")[0]
+					self.current_direction = txt.split("Vers ")[1].strip()
 					return
 				
 				if txt.find("Nuit") >= 0:
@@ -206,6 +208,7 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 						'schedule': {},
 						'lines': [ {'coords': None, 'number': self.current_line_number} ],
 						'notes': {},
+						'direction': self.current_direction,
 					})
 					self.schedules[self.current_schedule]['period'] = txt.strip()
 					return
@@ -230,6 +233,7 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 						'schedule': {},
 						'lines': [ {'coords': None, 'number': self.current_line_number} ],
 						'notes': {},
+						'direction': self.current_direction,
 					})
 					self.schedules[self.current_schedule]['period'] = txt.strip()
 				else:
