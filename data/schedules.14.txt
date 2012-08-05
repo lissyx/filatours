@@ -1,650 +1,650 @@
 Stop: Général Estienne
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Jumeaux
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Jolivet
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Pierre Couverte
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Devildé
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Maréchal Juin
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Chopin
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Faculté de Grandmont
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Morier
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Champ Chardon
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Martyrs
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Rochepinard
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Gare de Tours
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Docteur Fournier
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Bd de Chinon
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: IUT
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Champ Girault
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Jolivet
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Joué Gare
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Peupliers
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Bd de Chinon
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Séverine
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Pompiers
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Bruère
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Beaujardin
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Bugeaud
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Arsonval
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Raspail
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Passerelle
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Trianon
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Tremblay
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Bugeaud
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: J.P. Rameau
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Devildé
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Pompiers
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Lac
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Heurteloup
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Rochepinard
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Republique
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Séverine
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Champ Joli
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Lycée Grandmont
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Quatre Bornes
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Montreuil Bellay
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Beaujardin
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Croix Pasquier
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Champ Girault
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Champ Joli
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Verdun
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Maréchal Juin
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Faculté de Grandmont
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Collège Ronsard
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Pierre Couverte
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Peupliers
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Clinique Velpeau
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Arsonval
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Ursulines
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Montreuil Bellay
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Martyrs
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Croix Pasquier
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Beethoven
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Ursulines
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Heurteloup
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Docteur Fournier
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Verdun
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Gare Vinci
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Leccia
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Bruère
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Quatre Bornes
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Leccia
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Republique
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Gare de Tours
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Langevin
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Clinique Velpeau
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: IUT
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Parc Nord
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Général Estienne
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Collège Ronsard
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Traversiere
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Tremblay
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Champ Chardon
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Loiseau d'Entraigues
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Morier
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Lac
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Jumeaux
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Raspail
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Loiseau d'Entraigues
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: J.P. Rameau
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Passerelle
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Trianon
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Chopin
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: St Symphorien
 [{'dates': [],
-  'direction': 'Jou\xc3\xa9 Gare',
+  'direction': ['Jou\xc3\xa9 Gare'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',
   'schedule': {}}]
 Stop: Langevin
 [{'dates': [],
-  'direction': 'St Symphorien',
+  'direction': ['St Symphorien'],
   'lines': ['14'],
   'notes': {},
   'period': 'Dimanche et jours f\xc3\xa9ri\xc3\xa9s',

@@ -1,7 +1,7 @@
 Stop: Charcot
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -14,7 +14,7 @@ Stop: Charcot
 Stop: Coppée
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -26,7 +26,7 @@ Stop: Coppée
 Stop: Salengro
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -38,7 +38,7 @@ Stop: Salengro
 Stop: Dujardin
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -50,7 +50,7 @@ Stop: Dujardin
 Stop: Europe
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -62,7 +62,7 @@ Stop: Europe
 Stop: Beffroi
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -74,7 +74,7 @@ Stop: Beffroi
 Stop: P+R Sagerie
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -86,7 +86,7 @@ Stop: P+R Sagerie
 Stop: Verdun
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -98,7 +98,7 @@ Stop: Verdun
 Stop: Sapaille
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -110,7 +110,7 @@ Stop: Sapaille
 Stop: Ursulines
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -122,7 +122,7 @@ Stop: Ursulines
 Stop: IUT
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -134,7 +134,7 @@ Stop: IUT
 Stop: Petite Arche
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -147,7 +147,7 @@ Stop: Petite Arche
 Stop: Luxembourg
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -159,7 +159,7 @@ Stop: Luxembourg
 Stop: Parc Nord
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -171,7 +171,7 @@ Stop: Parc Nord
 Stop: Faculté de Grandmont
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -183,7 +183,7 @@ Stop: Faculté de Grandmont
 Stop: Petite Arche
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -195,7 +195,7 @@ Stop: Petite Arche
 Stop: Passerelle
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -207,7 +207,7 @@ Stop: Passerelle
 Stop: Luxembourg
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -219,7 +219,7 @@ Stop: Luxembourg
 Stop: Passerelle
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -231,7 +231,7 @@ Stop: Passerelle
 Stop: Jean Jaurès
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -243,7 +243,7 @@ Stop: Jean Jaurès
 Stop: Base 705
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -255,7 +255,7 @@ Stop: Base 705
 Stop: Chopin
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -267,7 +267,7 @@ Stop: Chopin
 Stop: Sapaille
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -279,7 +279,7 @@ Stop: Sapaille
 Stop: Coppée
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -291,7 +291,7 @@ Stop: Coppée
 Stop: Boisdenier
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -303,7 +303,7 @@ Stop: Boisdenier
 Stop: Traversiere
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -315,7 +315,7 @@ Stop: Traversiere
 Stop: Arsonval
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -327,7 +327,7 @@ Stop: Arsonval
 Stop: Melies
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -339,7 +339,7 @@ Stop: Melies
 Stop: J.P. Rameau
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -351,7 +351,7 @@ Stop: J.P. Rameau
 Stop: Place de la Liberté
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -363,7 +363,7 @@ Stop: Place de la Liberté
 Stop: Hôpital Trousseau
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -375,7 +375,7 @@ Stop: Hôpital Trousseau
 Stop: Fusaparc
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -387,7 +387,7 @@ Stop: Fusaparc
 Stop: Arsonval
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -399,7 +399,7 @@ Stop: Arsonval
 Stop: Jean Jaurès
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -411,7 +411,7 @@ Stop: Jean Jaurès
 Stop: Ursulines
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -423,7 +423,7 @@ Stop: Ursulines
 Stop: Rotterdam
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -435,7 +435,7 @@ Stop: Rotterdam
 Stop: Lac
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -447,7 +447,7 @@ Stop: Lac
 Stop: Fourbisserie
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -459,7 +459,7 @@ Stop: Fourbisserie
 Stop: Lac
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -471,7 +471,7 @@ Stop: Lac
 Stop: Salengro
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -483,7 +483,7 @@ Stop: Salengro
 Stop: P+R Sagerie
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -495,7 +495,7 @@ Stop: P+R Sagerie
 Stop: D'Alembert
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -507,7 +507,7 @@ Stop: D'Alembert
 Stop: Base 705
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -519,7 +519,7 @@ Stop: Base 705
 Stop: Fusaparc
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -531,7 +531,7 @@ Stop: Fusaparc
 Stop: Faculté de Grandmont
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -543,7 +543,7 @@ Stop: Faculté de Grandmont
 Stop: IUT
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -555,7 +555,7 @@ Stop: IUT
 Stop: Maréchal Juin
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -570,7 +570,7 @@ Stop: Maréchal Juin
 Stop: J.P. Rameau
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -582,7 +582,7 @@ Stop: J.P. Rameau
 Stop: Loiseau d'Entraigues
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -594,7 +594,7 @@ Stop: Loiseau d'Entraigues
 Stop: Heurteloup
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -606,7 +606,7 @@ Stop: Heurteloup
 Stop: Rotterdam
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -618,7 +618,7 @@ Stop: Rotterdam
 Stop: D'Alembert
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -630,7 +630,7 @@ Stop: D'Alembert
 Stop: Gare Vinci
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -642,7 +642,7 @@ Stop: Gare Vinci
 Stop: Loiseau d'Entraigues
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -654,7 +654,7 @@ Stop: Loiseau d'Entraigues
 Stop: Dujardin
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -666,7 +666,7 @@ Stop: Dujardin
 Stop: Lycée Vaucanson
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -678,7 +678,7 @@ Stop: Lycée Vaucanson
 Stop: Heurteloup
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -690,7 +690,7 @@ Stop: Heurteloup
 Stop: Beethoven
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -702,7 +702,7 @@ Stop: Beethoven
 Stop: Chopin
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -715,7 +715,7 @@ Stop: Chopin
 Stop: Verdun
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -727,7 +727,7 @@ Stop: Verdun
 Stop: Lycée Vaucanson
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -739,7 +739,7 @@ Stop: Lycée Vaucanson
 Stop: Melies
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -751,7 +751,7 @@ Stop: Melies
 Stop: Bois Cormier
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -763,7 +763,7 @@ Stop: Bois Cormier
 Stop: Place de la Liberté
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -775,7 +775,7 @@ Stop: Place de la Liberté
 Stop: Boisdenier
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -787,7 +787,7 @@ Stop: Boisdenier
 Stop: Horizon Vert
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -799,7 +799,7 @@ Stop: Horizon Vert
 Stop: Gare Vinci
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -811,7 +811,7 @@ Stop: Gare Vinci
 Stop: Beffroi
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'H\xc3\xb4pital Trousseau',
+  'direction': ['H\xc3\xb4pital Trousseau'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -823,7 +823,7 @@ Stop: Beffroi
 Stop: Charcot
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -835,7 +835,7 @@ Stop: Charcot
 Stop: Maréchal Juin
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -847,7 +847,7 @@ Stop: Maréchal Juin
 Stop: Lycée Grandmont
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
@@ -859,7 +859,7 @@ Stop: Lycée Grandmont
 Stop: Ecole d'Infirmières
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
-  'direction': 'Europe',
+  'direction': ['Europe'],
   'lines': ['N2'],
   'notes': {},
   'period': 'Nuit',
