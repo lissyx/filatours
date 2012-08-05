@@ -227,6 +227,9 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 							except KeyError as e:
 								self.schedules[self.current_schedule]['schedule'][hour] = [ { 'minute': minute, 'coords': None } ]
 
+				(x0, y0, x1, y1) = item.bbox
+				coords = {'x0': x0, 'y0': y0, 'x1': x1, 'y1': y1}
+
 				if txt.find("Lundi au Samedi") >= 0 or txt.find("Dimanche et jours fériés") >= 0:
 					self.current_schedule = len(self.schedules)
 					self.schedules.append({
@@ -252,9 +255,6 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 						self.current_schedule_hours_buckets = []
 					else:
 						if len(self.schedules[self.current_schedule]['period']) > 0 and len(self.schedules[self.current_schedule]['dates']) > 0:
-							(x0, y0, x1, y1) = item.bbox
-							coords = {'x0': x0, 'y0': y0, 'x1': x1, 'y1': y1}
-
 							# lines numbers are x0=29.09 and x1=43.762
 							if (x0 >= 28 and x1 <= 44):
 								if len(self.schedules[self.current_schedule]['lines']) == 1:
