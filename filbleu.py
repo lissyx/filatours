@@ -275,7 +275,7 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 									start = re.compile(r"^([a-z] )").search(txt)
 									if start:
 										self.last_note_key = start.group(1).strip()
-										txt = txt.replace(start.group(1), "")
+										txt = re.sub(r"^[a-z] ", "", txt)
 										self.schedules[self.current_schedule]['notes'][self.last_note_key] = txt
 									else:
 										self.schedules[self.current_schedule]['notes'][self.last_note_key] += " " + txt
