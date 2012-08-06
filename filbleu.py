@@ -459,13 +459,14 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 			raise NotImplementedError("Night schedule with more than one line:" + str(lines))
 
 		for t in self.content[name]:
-			isTime = re.compile(r"([0-9]{2})\.([0-9]{2})").search(t['txt'])
+			isTime = re.compile(r"([0-9]{2})\.([0-9]{2})([a-z]*)").search(t['txt'])
 			if isTime:
 				(hour, minute) = (isTime.group(1), isTime.group(2))
+				notes = list(re.sub(r"[0-9]*", "", isTime.group(3)))
 				try:
-					schedule[hour].append({ 'minute': minute, 'notes': [], 'line': line })
+					schedule[hour].append({ 'minute': minute, 'notes': notes, 'line': line })
 				except KeyError as e:
-					schedule[hour] = [ { 'minute': minute, 'notes': [], 'line': line } ]
+					schedule[hour] = [ { 'minute': minute, 'notes': notes, 'line': line } ]
 
 		return schedule
 
