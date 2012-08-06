@@ -57,8 +57,7 @@ Stop: Beethoven
                '01': [{'line': 'N3', 'minute': '17', 'notes': []}],
                '21': [{'line': 'N3', 'minute': '18', 'notes': []}],
                '22': [{'line': 'N3', 'minute': '18', 'notes': []}],
-               '23': [{'line': 'N3', 'minute': '18', 'notes': []}],
-               'Beetoven': []}}]
+               '23': [{'line': 'N3', 'minute': '18', 'notes': []}]}}]
 Stop: Bretonneau
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
@@ -130,8 +129,7 @@ Stop: Michelin
                '01': [{'line': 'N3', 'minute': '25', 'notes': []}],
                '21': [{'line': 'N3', 'minute': '27', 'notes': []}],
                '22': [{'line': 'N3', 'minute': '27', 'notes': []}],
-               '23': [{'line': 'N3', 'minute': '27', 'notes': []}],
-               'Micelin': []}}]
+               '23': [{'line': 'N3', 'minute': '27', 'notes': []}]}}]
 Stop: Camélias
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
@@ -227,8 +225,7 @@ Stop: Stendhal
                '01': [{'line': 'N3', 'minute': '13', 'notes': []}],
                '21': [{'line': 'N3', 'minute': '14', 'notes': []}],
                '22': [{'line': 'N3', 'minute': '14', 'notes': []}],
-               '23': [{'line': 'N3', 'minute': '14', 'notes': []}],
-               'Stendal': []}}]
+               '23': [{'line': 'N3', 'minute': '14', 'notes': []}]}}]
 Stop: Dames Blanches
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
@@ -240,10 +237,7 @@ Stop: Dames Blanches
                '01': [{'line': 'N3', 'minute': '39', 'notes': []}],
                '21': [{'line': 'N3', 'minute': '42', 'notes': []}],
                '22': [{'line': 'N3', 'minute': '42', 'notes': []}],
-               '23': [{'line': 'N3', 'minute': '41', 'notes': []}],
-               'DamesBlanc': [{'line': 'N3',
-                               'minute': '',
-                               'notes': ['e', 's']}]}}]
+               '23': [{'line': 'N3', 'minute': '41', 'notes': []}]}}]
 Stop: Jean Jaurès
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
@@ -327,10 +321,7 @@ Stop: De La Rochefoucauld
                '01': [{'line': 'N3', 'minute': '20', 'notes': []}],
                '21': [{'line': 'N3', 'minute': '21', 'notes': []}],
                '22': [{'line': 'N3', 'minute': '21', 'notes': []}],
-               '23': [{'line': 'N3', 'minute': '21', 'notes': []}],
-               'DeLaRocefo': [{'line': 'N3',
-                               'minute': '',
-                               'notes': ['u', 'c', 'a', 'u', 'l', 'd']}]}}]
+               '23': [{'line': 'N3', 'minute': '21', 'notes': []}]}}]
 Stop: Gare de Tours
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
@@ -390,10 +381,7 @@ Stop: Docteur Chaumier
                '01': [{'line': 'N3', 'minute': '36', 'notes': []}],
                '21': [{'line': 'N3', 'minute': '39', 'notes': []}],
                '22': [{'line': 'N3', 'minute': '39', 'notes': []}],
-               '23': [{'line': 'N3', 'minute': '38', 'notes': []}],
-               'DocteurCau': [{'line': 'N3',
-                               'minute': '',
-                               'notes': ['m', 'i', 'e', 'r']}]}}]
+               '23': [{'line': 'N3', 'minute': '38', 'notes': []}]}}]
 Stop: J.P. Rameau
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
@@ -477,8 +465,7 @@ Stop: Champ Girault
                '01': [{'line': 'N3', 'minute': '01', 'notes': []}],
                '21': [{'line': 'N3', 'minute': '01', 'notes': []}],
                '22': [{'line': 'N3', 'minute': '01', 'notes': []}],
-               '23': [{'line': 'N3', 'minute': '01', 'notes': []}],
-               'CampGirault': []}}]
+               '23': [{'line': 'N3', 'minute': '01', 'notes': []}]}}]
 Stop: Polytech
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
@@ -490,8 +477,7 @@ Stop: Polytech
                '01': [{'line': 'N3', 'minute': '24', 'notes': []}],
                '21': [{'line': 'N3', 'minute': '26', 'notes': []}],
                '22': [{'line': 'N3', 'minute': '26', 'notes': []}],
-               '23': [{'line': 'N3', 'minute': '26', 'notes': []}],
-               'Polytec': []}}]
+               '23': [{'line': 'N3', 'minute': '26', 'notes': []}]}}]
 Stop: Tonnellé
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
@@ -563,8 +549,7 @@ Stop: Champ Joli
                '01': [{'line': 'N3', 'minute': '04', 'notes': []}],
                '21': [{'line': 'N3', 'minute': '05', 'notes': []}],
                '22': [{'line': 'N3', 'minute': '05', 'notes': []}],
-               '23': [{'line': 'N3', 'minute': '05', 'notes': []}],
-               'CampJoli': []}}]
+               '23': [{'line': 'N3', 'minute': '05', 'notes': []}]}}]
 Stop: Duclos - Atlantes
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],

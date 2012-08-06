@@ -117,8 +117,7 @@ Stop: Pont Cher
                '01': [{'line': 'N1', 'minute': '33', 'notes': []}],
                '21': [{'line': 'N1', 'minute': '36', 'notes': []}],
                '22': [{'line': 'N1', 'minute': '36', 'notes': []}],
-               '23': [{'line': 'N1', 'minute': '35', 'notes': []}],
-               'PontCer': []}}]
+               '23': [{'line': 'N1', 'minute': '35', 'notes': []}]}}]
 Stop: Gloriette
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
@@ -154,10 +153,7 @@ Stop: Lycée Choiseul
                '01': [{'line': 'N1', 'minute': '24', 'notes': []}],
                '21': [{'line': 'N1', 'minute': '24', 'notes': []}],
                '22': [{'line': 'N1', 'minute': '24', 'notes': []}],
-               '23': [{'line': 'N1', 'minute': '24', 'notes': []}],
-               'Lyc\xc3\x83\xc2\xa9eCois': [{'line': 'N1',
-                                             'minute': '',
-                                             'notes': ['e', 'u', 'l']}]}}]
+               '23': [{'line': 'N1', 'minute': '24', 'notes': []}]}}]
 Stop: Marceau
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
@@ -217,8 +213,7 @@ Stop: Chevalerie
                '01': [{'line': 'N1', 'minute': '17', 'notes': []}],
                '21': [{'line': 'N1', 'minute': '17', 'notes': []}],
                '22': [{'line': 'N1', 'minute': '17', 'notes': []}],
-               '23': [{'line': 'N1', 'minute': '17', 'notes': []}],
-               'Cevalerie': []}}]
+               '23': [{'line': 'N1', 'minute': '17', 'notes': []}]}}]
 Stop: Chevalerie
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
@@ -242,8 +237,7 @@ Stop: Charcot
                '01': [{'line': 'N1', 'minute': '41', 'notes': []}],
                '21': [{'line': 'N1', 'minute': '46', 'notes': []}],
                '22': [{'line': 'N1', 'minute': '46', 'notes': []}],
-               '23': [{'line': 'N1', 'minute': '43', 'notes': []}],
-               'Carcot': []}}]
+               '23': [{'line': 'N1', 'minute': '43', 'notes': []}]}}]
 Stop: Europe
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
@@ -375,8 +369,7 @@ Stop: Christ Roi
                '01': [{'line': 'N1', 'minute': '14', 'notes': []}],
                '21': [{'line': 'N1', 'minute': '14', 'notes': []}],
                '22': [{'line': 'N1', 'minute': '14', 'notes': []}],
-               '23': [{'line': 'N1', 'minute': '14', 'notes': []}],
-               'CristRoi': []}}]
+               '23': [{'line': 'N1', 'minute': '14', 'notes': []}]}}]
 Stop: Bugeaud
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
@@ -412,8 +405,7 @@ Stop: Tranchée
                '01': [{'line': 'N1', 'minute': '12', 'notes': []}],
                '21': [{'line': 'N1', 'minute': '12', 'notes': []}],
                '22': [{'line': 'N1', 'minute': '12', 'notes': []}],
-               '23': [{'line': 'N1', 'minute': '12', 'notes': []}],
-               'Tranc\xc3\x83\xc2\xa9e': []}}]
+               '23': [{'line': 'N1', 'minute': '12', 'notes': []}]}}]
 Stop: Gare Vinci
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
@@ -605,8 +597,7 @@ Stop: Churchill
                '01': [{'line': 'N1', 'minute': '39', 'notes': []}],
                '21': [{'line': 'N1', 'minute': '43', 'notes': []}],
                '22': [{'line': 'N1', 'minute': '43', 'notes': []}],
-               '23': [{'line': 'N1', 'minute': '41', 'notes': []}],
-               'Curcill': []}}]
+               '23': [{'line': 'N1', 'minute': '41', 'notes': []}]}}]
 Stop: Boisdenier
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
@@ -798,8 +789,7 @@ Stop: Michelin
                '01': [{'line': 'N1', 'minute': '36', 'notes': []}],
                '21': [{'line': 'N1', 'minute': '40', 'notes': []}],
                '22': [{'line': 'N1', 'minute': '40', 'notes': []}],
-               '23': [{'line': 'N1', 'minute': '38', 'notes': []}],
-               'Micelin': []}}]
+               '23': [{'line': 'N1', 'minute': '38', 'notes': []}]}}]
 Stop: Constantine
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
@@ -823,8 +813,7 @@ Stop: Charles Peguy
                '01': [{'line': 'N1', 'minute': '15', 'notes': []}],
                '21': [{'line': 'N1', 'minute': '15', 'notes': []}],
                '22': [{'line': 'N1', 'minute': '15', 'notes': []}],
-               '23': [{'line': 'N1', 'minute': '15', 'notes': []}],
-               'CarlesPeguy': []}}]
+               '23': [{'line': 'N1', 'minute': '15', 'notes': []}]}}]
 Stop: Portillon
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
@@ -920,8 +909,7 @@ Stop: Delaroche
                '01': [{'line': 'N1', 'minute': '18', 'notes': []}],
                '21': [{'line': 'N1', 'minute': '18', 'notes': []}],
                '22': [{'line': 'N1', 'minute': '18', 'notes': []}],
-               '23': [{'line': 'N1', 'minute': '18', 'notes': []}],
-               'Delaroce': []}}]
+               '23': [{'line': 'N1', 'minute': '18', 'notes': []}]}}]
 Stop: Morier
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
@@ -957,8 +945,7 @@ Stop: Place Choiseul
                '01': [{'line': 'N1', 'minute': '10', 'notes': []}],
                '21': [{'line': 'N1', 'minute': '10', 'notes': []}],
                '22': [{'line': 'N1', 'minute': '10', 'notes': []}],
-               '23': [{'line': 'N1', 'minute': '10', 'notes': []}],
-               'PlaceCoiseu': [{'line': 'N1', 'minute': '', 'notes': ['l']}]}}]
+               '23': [{'line': 'N1', 'minute': '10', 'notes': []}]}}]
 Stop: Maginot
 [{'dates': [[datetime.datetime(2012, 7, 1, 0, 0),
              datetime.datetime(2012, 8, 26, 23, 59, 59)]],
