@@ -452,9 +452,9 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 	def extract_night_schedule_from_bucket(self, name, lines):
 		schedule = {}
 
-		line = []
+		line = ""
 		if len(lines) == 1:
-			line = [ lines[0]['number'] ]
+			line = lines[0]['number']
 		else:
 			raise NotImplementedError("Night schedule with more than one line:" + str(lines))
 
