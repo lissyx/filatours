@@ -324,6 +324,13 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 		if lines == []:
 			for d in self.content['directions']:
 				if d['txt'].find("Vers ") >= 0:
+					number = d['txt'].split("Vers ")[0].strip()
+					if number != "":
+						lines += [ {'number': number, 'coords': None} ]
+		print lines
+		if lines == []:
+			for d in self.content['directions']:
+				if d['txt'].find("Vers ") == -1:
 					lines += [ {'number': d['txt'].split("Vers ")[0].strip(), 'coords': None} ]
 
 		return lines
