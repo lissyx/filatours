@@ -132,6 +132,14 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 				'schedule3_desc':  {'x0':  25.0, 'y0': 190.0, 'x1': 570.0, 'y1': 210.0},
 				'notes':      {'x0':  14.0, 'y0':   3.0, 'x1': 580.0, 'y1':  95.0},
 			},
+			'small': {
+				'directions':	   {'x0':  14.0, 'y0': 335.0, 'x1': 480.0, 'y1': 400.0},
+				'stopname':        {'x0': 485.0, 'y0': 330.0, 'x1': 580.0, 'y1': 400.0},
+				'schedule1':       {'x0':  48.0, 'y0': 225.0, 'x1': 570.0, 'y1': 265.0},
+				'schedule1_hours': {'x0':  48.0, 'y0': 265.0, 'x1': 570.0, 'y1': 285.0},
+				'schedule1_desc':  {'x0':  14.0, 'y0': 285.0, 'x1': 570.0, 'y1': 305.0},
+				'notes':           {'x0':  14.0, 'y0':  30.0, 'x1': 580.0, 'y1':  95.0},
+			},
 			'night': {
 				'directions':	   {'x0':  14.0, 'y0': 340.0, 'x1': 480.0, 'y1': 410.0},
 				'stopname':        {'x0': 485.0, 'y0': 340.0, 'x1': 580.0, 'y1': 410.0},
@@ -158,7 +166,7 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 			'notes': [],
 		}
 		return
-	
+
 	def bbox_intersect_schedule(self, hour, minute):
 		middle = (minute['x0'] + minute['x1']) / 2.0
 		return (middle >= hour['x0'] and middle <= hour['x1'])
@@ -206,6 +214,16 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 			return
 		def render(item):
 			if isinstance(item, LTPage):
+				(x0, y0, x1, y1) = item.bbox
+				height = y1 - y0
+				if height == 841.89:
+					# Default size
+					pass
+				else:
+					if height == 420.94:
+						self.selected_layout = 'small'
+					else:
+						raise NotImplementedError("Unable to handle this page size:" + str(height))
 				# self.outfp.write('<page id="%s" bbox="%s" rotate="%d">\n' % (item.pageid, bbox2str(item.bbox), item.rotate))
 				for child in item:
 					render(child)
@@ -284,10 +302,10 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 			## bbox in pdf is in points
 			## x0,y0 is bottom left
 			## x1,y1 is up right
-			if	coords['x0'] >= self.buckets[bucket]['x0'] \
-				and coords['x1'] <= self.buckets[bucket]['x1'] \
-				and coords['y0'] >= self.buckets[bucket]['y0'] \
-				and coords['y1'] <= self.buckets[bucket]['y1']:
+			center_x = (coords['x0'] + coords['x1']) / 2.0
+			center_y = (coords['y0'] + coords['y1']) / 2.0
+			if  (center_x >= self.buckets[bucket]['x0'] and center_x <= self.buckets[bucket]['x1']) \
+			and (center_y >= self.buckets[bucket]['y0'] and center_y <= self.buckets[bucket]['y1']):
 				return bucket
 
 	def extract_directions_from_bucket(self):
@@ -477,10 +495,13 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 		return schedule
 
 	def bucket_to_schedule(self):
-		if not self.current_is_night:
-			return [ self.one_bucket_to_schedule('schedule1'), self.one_bucket_to_schedule('schedule2'), self.one_bucket_to_schedule('schedule3') ]
-		else:
-			return [ self.one_bucket_to_schedule('schedule1') ]
+		sub = [ 'schedule1', 'schedule2', 'schedule3' ]
+		schedules = []
+		for s in sub:
+			r = self.one_bucket_to_schedule(s)
+			if r is not None:
+				schedules += [ r ]
+		return schedules
 
 	def assign_content(self):
 		try:
