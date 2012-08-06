@@ -106,12 +106,57 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 	def __init__(self, rsrcmgr, codec='utf-8', pageno=1, laparams=None, showpageno=False):
 		PDFConverter.__init__(self, rsrcmgr, None, codec=codec, pageno=pageno, laparams=laparams)
 		self.outfp = sys.stdout
-		self.current_schedule_hours_buckets = []
-		self.current_schedule = 0
-		self.current_is_night = False
-		self.current_direction = []
 		self.schedules = []
-		self.needMerge = False
+		self.raw = []
+		## bbox in pdf is in points
+		## x0,y0 is bottom left
+		## x1,y1 is up right
+		self.selected_layout = 'generic'
+		self.current_is_night = False
+		self.buckets = None
+		self.layouts = {
+			'generic': {
+				'directions': {'x0':  14.0, 'y0': 755.0, 'x1': 480.0, 'y1': 835.0},
+				'stopname':   {'x0': 485.0, 'y0': 760.0, 'x1': 580.0, 'y1': 835.0},
+				'schedule1':  {'x0':  48.0, 'y0': 550.0, 'x1': 570.0, 'y1': 690.0},
+				'schedule2':  {'x0':  48.0, 'y0': 395.0, 'x1': 570.0, 'y1': 495.0},
+				'schedule3':  {'x0':  48.0, 'y0': 130.0, 'x1': 570.0, 'y1': 172.0},
+				'schedule1_hours': {'x0':  48.0, 'y0': 690.0, 'x1': 570.0, 'y1': 710.0},
+				'schedule2_hours': {'x0':  48.0, 'y0': 495.0, 'x1': 570.0, 'y1': 515.0},
+				'schedule3_hours': {'x0':  48.0, 'y0': 170.0, 'x1': 570.0, 'y1': 195.0},
+				'schedule1_lines': {'x0':  25.0, 'y0': 550.0, 'x1':  48.0, 'y1': 690.0},
+				'schedule2_lines': {'x0':  25.0, 'y0': 395.0, 'x1':  48.0, 'y1': 495.0},
+				'schedule3_lines': {'x0':  25.0, 'y0': 128.0, 'x1':  48.0, 'y1': 170.0},
+				'schedule1_desc':  {'x0':  25.0, 'y0': 710.0, 'x1': 570.0, 'y1': 730.0},
+				'schedule2_desc':  {'x0':  25.0, 'y0': 515.0, 'x1': 570.0, 'y1': 535.0},
+				'schedule3_desc':  {'x0':  25.0, 'y0': 190.0, 'x1': 570.0, 'y1': 210.0},
+				'notes':      {'x0':  14.0, 'y0':   3.0, 'x1': 580.0, 'y1':  95.0},
+			},
+			'night': {
+				'directions':	   {'x0':  14.0, 'y0': 340.0, 'x1': 480.0, 'y1': 410.0},
+				'stopname':        {'x0': 485.0, 'y0': 340.0, 'x1': 580.0, 'y1': 410.0},
+				'schedule1':       {'x0':  37.0, 'y0': 250.0, 'x1': 260.0, 'y1': 310.0},
+				'schedule1_desc':  {'x0':  14.0, 'y0': 310.0, 'x1': 580.0, 'y1': 330.0},
+				'notes':     	   {'x0': 280.0, 'y0': 250.0, 'x1': 580.0, 'y1': 310.0},
+			},
+		}
+		self.content = {
+			'directions': [],
+			'stopname': [],
+			'schedule1': [],
+			'schedule2': [],
+			'schedule3': [],
+			'schedule1_hours': [],
+			'schedule2_hours': [],
+			'schedule3_hours': [],
+			'schedule1_lines': [],
+			'schedule2_lines': [],
+			'schedule3_lines': [],
+			'schedule1_desc': [],
+			'schedule2_desc': [],
+			'schedule3_desc': [],
+			'notes': [],
+		}
 		return
 	
 	def bbox_intersect_schedule(self, hour, minute):
@@ -127,7 +172,7 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 				speriod += [ submulti.replace("du ", "").strip() ]
 			full_periods += [ speriod ]
 		return full_periods
-	
+
 	def extract_periods(self, data):
 		full_periods = []
 		periods = data.split("horaires valables")[1:]
@@ -143,7 +188,7 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 	def write_footer(self):
 		self.outfp.write('</pages>\n')
 		return
-	
+
 	def write_text(self, text):
 		self.outfp.write(enc(text, self.codec))
 		return
@@ -191,105 +236,17 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 				for child in item:
 					if isinstance(child, LTChar):
 						txt += enc(child.get_text(), self.codec)
-				
-				# print txt
-
-				if txt.find("Vers ") >= 0:
-					self.current_line_number = txt.split("Vers ")[0]
-					self.current_direction += [ txt.split("Vers ")[1].strip() ]
-					if self.current_line_number == "":
-						self.current_line_number = self.old
-					return
-				
-				if txt.find("Nuit") >= 0:
-					self.current_is_night = True
-					self.current_schedule = len(self.schedules)
-					self.schedules.append({
-						'period': "",
-						'dates': [],
-						'schedule': {},
-						'lines': [ {'coords': None, 'number': self.current_line_number} ],
-						'notes': {},
-						'direction': self.current_direction,
-					})
-					self.schedules[self.current_schedule]['period'] = txt.strip()
-					return
-
-				if self.current_is_night:
-					if txt.find("horaires valables") >= 0:
-						self.schedules[self.current_schedule]['dates'] = self.extract_periods(txt.replace("er", "").strip())
-					else:
-						isTime = re.compile(r"([0-9]{2})\.([0-9]{2})").search(txt)
-						if isTime:
-							(hour, minute) = (isTime.group(1), isTime.group(2))
-							try:
-								self.schedules[self.current_schedule]['schedule'][hour].append({ 'minute': minute, 'coords': None })
-							except KeyError as e:
-								self.schedules[self.current_schedule]['schedule'][hour] = [ { 'minute': minute, 'coords': None } ]
 
 				(x0, y0, x1, y1) = item.bbox
 				coords = {'x0': x0, 'y0': y0, 'x1': x1, 'y1': y1}
 
-				if txt.find("Lundi au Samedi") >= 0 or txt.find("Dimanche et jours fériés") >= 0:
-					self.current_schedule = len(self.schedules)
-					self.schedules.append({
-						'period': "",
-						'dates': [],
-						'schedule': {},
-						'lines': [ {'coords': None, 'number': self.current_line_number} ],
-						'notes': {},
-						'direction': self.current_direction,
-					})
-					self.schedules[self.current_schedule]['period'] = txt.strip()
-				else:
-					self.old = txt
+				self.raw += [ {'txt': txt, 'coords': coords } ]
 
-					try:
-						if self.schedules[self.current_schedule]:
-							pass
-					except IndexError as e:
-						return
+				if txt.find("Nuit") >= 0:
+					self.selected_layout = 'night'
+					self.current_is_night = True
+				return
 
-					if txt.find("horaires valables") >= 0:
-						self.schedules[self.current_schedule]['dates'] = self.extract_periods(txt.replace("er", "").strip())
-						self.current_schedule_hours_buckets = []
-					else:
-						if len(self.schedules[self.current_schedule]['period']) > 0 and len(self.schedules[self.current_schedule]['dates']) > 0:
-							# lines numbers are x0=29.09 and x1=43.762
-							if (x0 >= 28 and x1 <= 44):
-								if len(self.schedules[self.current_schedule]['lines']) == 1:
-									if self.schedules[self.current_schedule]['lines'][0]['coords'] == None:
-										self.schedules[self.current_schedule]['lines'] = [ {'number': txt, 'coords': coords} ]
-									else:
-										self.schedules[self.current_schedule]['lines'].append({'number': txt, 'coords': coords})
-								else:
-									self.schedules[self.current_schedule]['lines'].append({'number': txt, 'coords': coords})
-							else:
-								# notes are below y0=81.491 y1=89.583
-								# head is over y0=697.0169999999999 y1=707.727
-								if coords['y0'] > 85 and coords['y0'] < 710 and coords['y1'] > 95 and coords['y1'] < 720:
-									if txt.find("h") > 0:
-										txt = txt.replace("h", "")
-										self.current_schedule_hours_buckets.append({'hour': txt, 'coords': coords})
-										self.schedules[self.current_schedule]['schedule'][txt] = []
-									else:
-										for hbucket in self.current_schedule_hours_buckets:
-											if self.bbox_intersect_schedule(minute=coords, hour=hbucket['coords']):
-												self.schedules[self.current_schedule]['schedule'][hbucket['hour']].append({ 'minute': txt, 'coords': coords })
-								else:
-									# notes
-									if coords['y0'] <= 85 and coords['y1'] <= 95:
-										start = re.compile(r"^([a-z] )").search(txt)
-										if start:
-											self.last_note_key = start.group(1).strip()
-											txt = re.sub(r"^[a-z] ", "", txt)
-											self.schedules[self.current_schedule]['notes'][self.last_note_key] = txt
-										else:
-											self.schedules[self.current_schedule]['notes'][self.last_note_key] += " " + txt
-									# head
-									if coords['y0'] >= 710 and coords['y1'] >= 720:
-										pass
-					
 				#self.outfp.write('</textline>\n')
 			elif isinstance(item, LTTextBox):
 				wmode = ''
@@ -321,12 +278,121 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 			return
 		render(ltpage)
 		return
-	
-	def get_matching_line_number(self, schedule, minute):
+
+	def get_bucket_name(self, coords):
+		for bucket in self.buckets:
+			## bbox in pdf is in points
+			## x0,y0 is bottom left
+			## x1,y1 is up right
+			if	coords['x0'] >= self.buckets[bucket]['x0'] \
+				and coords['x1'] <= self.buckets[bucket]['x1'] \
+				and coords['y0'] >= self.buckets[bucket]['y0'] \
+				and coords['y1'] <= self.buckets[bucket]['y1']:
+				return bucket
+
+	def extract_directions_from_bucket(self):
+		directions = []
+		for d in self.content['directions']:
+			if d['txt'].find("Vers ") >= 0:
+				directions += [ d['txt'].split("Vers ")[1].strip() ]
+
+		return directions
+
+	def extract_lines_from_bucket(self, name):
+		lines = []
+		for t in self.content[name]:
+			if (t['coords']['x0'] >= 28) and (t['coords']['x1'] <= 44):
+				lines += [ {'number': t['txt'], 'coords': t['coords']} ]
+		if lines == []:
+			for d in self.content['directions']:
+				if d['txt'].find("Vers ") >= 0:
+					lines += [ {'number': d['txt'].split("Vers ")[0].strip(), 'coords': None} ]
+
+		return lines
+
+	def extract_dates_from_bucket(self, name):
+		dates = []
+		for t in self.content[name + "_desc"]:
+			if t['txt'].find("horaires valables") >= 0:
+				dates = self.extract_periods(t['txt'].replace("er", "").strip())
+		return self.process_dates(dates)
+
+	def extract_period_from_bucket(self, name):
+		period = []
+		for t in self.content[name + "_desc"]:
+			if t['txt'].find("Lundi au Samedi") >= 0 or t['txt'].find("Dimanche") >= 0 or t['txt'].find("Nuit") >= 0:
+				period = t['txt'].strip()
+		return period
+
+	def extract_notes_from_bucket(self):
+		notes = {}
+		for note in self.content['notes']:
+			start = re.compile(r"^([a-z] )").search(note['txt'])
+			if start:
+				key = start.group(1).strip()
+				txt = re.sub(r"^[a-z] ", "", note['txt'])
+				notes[key] = txt
+		for note in self.content['notes']:
+			start = re.compile(r"^([a-z] )").search(note['txt'])
+			if not start:
+				middle_y_note = (note['coords']['y0'] + note['coords']['y1']) / 2.0
+				minDist = 32768
+				matched = None
+				for note_father in self.content['notes']:
+					start = re.compile(r"^([a-z] )").search(note_father['txt'])
+					if start:
+						middle_y_father = (note_father['coords']['y0'] + note_father['coords']['y1']) / 2.0
+						dist = middle_y_father - middle_y_note
+						if dist >= 0 and dist <= minDist:
+							minDist = dist
+							matched = note_father
+
+				if matched is not None:
+					start = re.compile(r"^([a-z] )").search(matched['txt'])
+					if start:
+						notes[start.group(1).strip()] += " " + re.sub(r"^[a-z] ", "", note['txt'])
+					else:
+						raise NotImplementedError("Note continuation: " + str(note))
+				else:
+					raise NotImplementedError("Note continuation: " + str(note))
+		return notes
+
+	def extract_schedule_hours_from_bucket(self, name):
+		hours = []
+		for s in self.content[name]:
+			hourRe = re.compile(r"^[0-9]+h").search(s['txt'])
+			if hourRe:
+				hours += [ {'hour': s['txt'].replace("h", ""), 'coords': s['coords']} ]
+
+		if (not self.current_is_night) and (len(hours) != 17):
+			raise NotImplementedError("Inconsistent number of hours: " + str(len(hours)) + ".\n" + str(hours))
+
+		return hours
+
+	def extract_schedule_minutes_from_bucket(self, name):
+		minutes = []
+		for s in self.content[name]:
+			minuteRe = re.compile(r"^[0-9]+[a-z]*").search(s['txt'])
+			hourRe = re.compile(r"^[0-9]+h").search(s['txt'])
+			if minuteRe and not hourRe:
+				notes = list(re.sub(r"[0-9]*", "", s['txt']))
+				minute = re.sub(r"[a-z]*", "", s['txt'])
+				minutes += [ {'minute': minute, 'coords': s['coords'], 'notes': notes, 'line': None} ]
+
+		return minutes
+
+	def assign_line_to_minutes_from_bucket(self, name, raw):
+		minutes = []
+		for minute in raw:
+			minute['line'] = self.match_line_with_minute_from_bucket(name, minute)
+			minutes += [ minute ]
+		return minutes
+
+	def match_line_with_minute_from_bucket(self, lines, minute):
 		okValue = ""
-		if len(schedule['lines']) > 1:
+		if len(lines) > 1:
 			minDist = 32768
-			for line in schedule['lines']:
+			for line in lines:
 				if line['coords'] is not None:
 					(ly0, ly1) = (line['coords']['y0'], line['coords']['y1'])
 					(my0, my1) = (minute['coords']['y0'], minute['coords']['y1'])
@@ -339,109 +405,120 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 						minDist = dist
 						okValue = n
 		else:
-			okValue = schedule['lines'][0]['number']
+			okValue = lines[0]['number']
 
 		return okValue
 
-	def fixup_lines(self):
-		# collect all lines
-		newlines = []
-		tmplines = []
-		for schedule in self.schedules:
-			for line in schedule['lines']:
-				if line not in tmplines:
-					tmplines += [ line ]
+	def assign_minutes_to_hours_from_bucket(self, hours, minutes):
+		sched = {}
+		for hour in hours:
+			sched[hour['hour']] = [ ]
+			minLeft  = hour['coords']['x0']
+			maxRight = hour['coords']['x1']
+			for minute in minutes:
+				middle = (minute['coords']['x0'] + minute['coords']['x1']) / 2.0
+				if middle >= minLeft and middle <= maxRight:
+					sched[hour['hour']] += [ { 'minute': minute['minute'], 'line': minute['line'], 'notes': minute['notes'] } ]
+		return sched
 
-		if len(tmplines) > 1:
-			for line in tmplines:
-				if line['coords'] is not None:
-					newlines += [ line ]
+	def extract_schedule_from_bucket(self, name, lines):
+		schedule = {}
+
+		hours = self.extract_schedule_hours_from_bucket(name + "_hours")
+		minutes_raw = self.extract_schedule_minutes_from_bucket(name)
+		minutes = self.assign_line_to_minutes_from_bucket(lines, minutes_raw)
+		schedule = self.assign_minutes_to_hours_from_bucket(hours, minutes)
+
+		return schedule
+
+	def extract_night_schedule_from_bucket(self, name, lines):
+		schedule = {}
+
+		for t in self.content[name]:
+			isTime = re.compile(r"([0-9]{2})\.([0-9]{2})").search(t['txt'])
+			if isTime:
+				(hour, minute) = (isTime.group(1), isTime.group(2))
+				try:
+					schedule[hour].append({ 'minute': minute, 'coords': None })
+				except KeyError as e:
+					schedule[hour] = [ { 'minute': minute, 'coords': None } ]
+
+		return schedule
+
+	def one_bucket_to_schedule(self, name):
+		if len(self.content[name]) == 0:
+			return None
+
+		period = self.extract_period_from_bucket(name)
+		dates = self.extract_dates_from_bucket(name)
+		notes = self.extract_notes_from_bucket()
+		direction = self.extract_directions_from_bucket()
+
+		tlines = self.extract_lines_from_bucket(name + "_lines")
+		if not self.current_is_night:
+			schedule = self.extract_schedule_from_bucket(name, tlines)
 		else:
-			newlines = tmplines
+			schedule = self.extract_night_schedule_from_bucket(name, tlines)
 
-		for schedule in self.schedules:
-			schedule['lines'] = newlines
-	
-	def merge_lines(self):
-		for schedule in self.schedules:
-			for h in schedule['schedule']:
-				hour = schedule['schedule'][h]
-				for minute in hour:
-					minute['line'] = self.get_matching_line_number(schedule, minute)
-					del minute['coords']
+		lines = []
+		for line in tlines:
+			lines += [ line['number'] ]
+		lines = list(set(lines))
 
-	def purge_coords(self):
-		for schedule in self.schedules:
-			newList = []
+		schedule = {
+			'period': period,
+			'dates': dates,
+			'schedule': schedule,
+			'lines': lines,
+			'notes': notes,
+			'direction': direction,
+		}
 
-			for line in schedule['lines']:
-				newList.append(line['number'])
+		return schedule
 
-			schedule['lines'] = list(set(newList))
+	def bucket_to_schedule(self):
+		if not self.current_is_night:
+			return [ self.one_bucket_to_schedule('schedule1'), self.one_bucket_to_schedule('schedule2'), self.one_bucket_to_schedule('schedule3') ]
+		else:
+			return [ self.one_bucket_to_schedule('schedule1') ]
 
-	def merge_notes(self):
-		newNotes = {}
-		for schedule in self.schedules:
-			if len(schedule['notes']) > 0:
-				newNotes = schedule['notes']
+	def assign_content(self):
+		try:
+			self.buckets = self.layouts[self.selected_layout]
+		except KeyError as e:
+			raise NotImplementedError("No bucket found: do you have the matching layout '" + self.selected_layout + "' ?")
 
-		if len(newNotes) > 0:
-			for schedule in self.schedules:
-				schedule['notes'] = newNotes
+		for raw_element in self.raw:
+			bucket = self.get_bucket_name(raw_element['coords'])
+			if bucket is not None:
+				self.content[bucket] += [ raw_element ]
 
-	def explode_notes(self):
-		for schedule in self.schedules:
-			for h in schedule['schedule']:
-				hour = schedule['schedule'][h]
-				for minute in hour:
-					minute['notes'] = list(re.sub(r"[0-9]*", "", minute['minute']))
-					minute['minute'] = re.sub(r"[a-z]*", "", minute['minute'])
-
-	def normalize_direction(self):
-		for schedule in self.schedules:
-			schedule['direction'] = list(set(schedule['direction']))
-
-	def normalize_lines(self):
-		for schedule in self.schedules:
-			schedule['lines'] = []
-			for h in schedule['schedule']:
-				hour = schedule['schedule'][h]
-				for minute in hour:
-					if minute['line'] not in schedule['lines']:
-						schedule['lines'] += [ minute['line'] ]
-
-	def process_dates(self):
+	def process_dates(self, dates):
 		oldlocale = locale.getlocale()
 		locale.setlocale(locale.LC_ALL, ('fr_FR', 'UTF-8'))
-		for schedule in self.schedules:
-			newInterval = []
-			for interval in schedule['dates']:
-				(begin, end) = interval
-				arBegin = begin.split(" ")
-				arEnd = end.split(" ")
+		newDates = []
+		for interval in dates:
+			(begin, end) = interval
+			arBegin = begin.split(" ")
+			arEnd = end.split(" ")
 
-				if len(arBegin) == 2:
-					arBegin.append(arEnd[2])
+			if len(arBegin) == 2:
+				arBegin.append(arEnd[2])
 
-				sBegin = " ".join(arBegin) + " 00:00:00"
-				sEnd = " ".join(arEnd) + " 23:59:59"
+			sBegin = " ".join(arBegin) + " 00:00:00"
+			sEnd = " ".join(arEnd) + " 23:59:59"
 
-				dBegin = datetime.datetime.strptime(sBegin, "%d %B %Y %H:%M:%S")
-				dEnd = datetime.datetime.strptime(sEnd, "%d %B %Y %H:%M:%S")
+			dBegin = datetime.datetime.strptime(sBegin, "%d %B %Y %H:%M:%S")
+			dEnd = datetime.datetime.strptime(sEnd, "%d %B %Y %H:%M:%S")
 
-				newInterval += [ [ dBegin, dEnd ] ]
-			schedule['dates'] = newInterval
+			newDates += [ [ dBegin, dEnd ] ]
 		locale.setlocale(locale.LC_ALL, oldlocale)
+		return newDates
 
 	def close(self):
-		self.fixup_lines()
-		self.merge_lines()
-		self.merge_notes()
-		self.explode_notes()
-		self.process_dates()
-		self.purge_coords()
-		self.normalize_direction()
-		self.normalize_lines()
+		self.assign_content()
+		self.schedules = self.bucket_to_schedule()
+		# self.check_schedule()
 		return self.schedules
 
 class JourneyPart:
