@@ -452,14 +452,20 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 	def extract_night_schedule_from_bucket(self, name, lines):
 		schedule = {}
 
+		line = []
+		if len(lines) == 1:
+			line = [ lines[0]['number'] ]
+		else:
+			raise NotImplementedError("Night schedule with more than one line:" + str(lines))
+
 		for t in self.content[name]:
 			isTime = re.compile(r"([0-9]{2})\.([0-9]{2})").search(t['txt'])
 			if isTime:
 				(hour, minute) = (isTime.group(1), isTime.group(2))
 				try:
-					schedule[hour].append({ 'minute': minute, 'coords': None })
+					schedule[hour].append({ 'minute': minute, 'notes': [], 'line': line })
 				except KeyError as e:
-					schedule[hour] = [ { 'minute': minute, 'coords': None } ]
+					schedule[hour] = [ { 'minute': minute, 'notes': [], 'line': line } ]
 
 		return schedule
 
