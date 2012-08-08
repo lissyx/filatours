@@ -20,7 +20,7 @@ for line in $(grep ^Found stops_coords.txt | sed -e 's/ /_/g'); do
 					fi
 				done;
 			else
-				finalname=$name
+				finalname=$(echo $name | sed -e 's/ /_/g')
 			fi;
 		fi
 		names="$names $finalname"
@@ -28,6 +28,7 @@ for line in $(grep ^Found stops_coords.txt | sed -e 's/ /_/g'); do
 	names=$(echo $names | sed -e 's/ /\n/g' | sort | uniq);
 	echo -n "        l = new ArrayList<String>();";
 	for name in $names; do
+		name=$(echo $name | sed -e 's/_/ /g')
 		echo -n " l.add(\"$name\");";
 	done;
 	echo " this.lines.put(\"$arret\", l);"
