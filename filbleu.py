@@ -716,15 +716,17 @@ class FilBleu:
 				stopName = results.group(2)
 				cityName = results.group(3)
 				subLine  = results.group(4)
+				stopArea = str(stopId) + "|" + stopName + "|" + cityName
 				spec = "all"
 				if subLine.count("A"):
 					spec = "A"
 				if subLine.count("B"):
 					spec = "B"
+				h = {'name': stopName, 'city': cityName, 'stop': stopArea }
 				try:
-					lineStops[spec][stopId] = {'name': stopName, 'city': cityName }
+					lineStops[spec][stopId] = h
 				except KeyError as e:
-					lineStops[spec] = { stopId: {'name': stopName, 'city': cityName } }
+					lineStops[spec] = { stopId: h }
 		return lineStops
 
 	def extract_stopArea(self, source, id, searchName):
