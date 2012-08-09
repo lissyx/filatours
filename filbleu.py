@@ -1038,6 +1038,22 @@ class FilBleu:
 					s.set_stopArea(stop["value"])
 					self.stops[lineid][s.id+':'+sensInput["value"]] = s
 
+	def get_stops_offline(self, lineid):
+		self.stops = {}
+		self.stops[lineid] = {}
+		sensS = [ -1, 1 ]
+		lineStops = self.lines_to_lineStop(lineid)
+		for spec in lineStops:
+			ls = lineStops[spec]
+			for stop_id in ls:
+				for sens in sensS:
+					s = ls[stop_id]
+					linkBase = "grille-horaires-v4ete.php?Sens=" + str(sens) + "&"
+					stopArea = s['stop']
+					st = BusStop(s['name'], linkBase)
+					st.set_stopArea(s["stop"].decode('utf-8'))
+					self.stops[lineid][str(stop_id)+':'+str(sens)] = st
+
 	def list_lines(self):
 		self.get_lines()
 		for line in self.lines:
