@@ -802,6 +802,9 @@ class FilBleu:
 		try:
 			with open(self.pdfs_dir + os.path.sep + fname, 'r') as f:
 				retval = f.read()
+				if (retval == "missing"):
+					sys.stderr.write("No schedule exists for this one, bypassing.\n")
+					retval = None
 			sys.stderr.write("Cache hit.\n")
 		except IOError as e:
 			sys.stderr.write("Cache miss.\n")
@@ -822,6 +825,8 @@ class FilBleu:
 					noSchedule = re.compile(r"Aucun horaire n'existe").search(str(response.read()))
 					if noSchedule:
 						sys.stderr.write("No schedule for this one, bypassing.\n")
+						with open(self.pdfs_dir + os.path.sep + fname, 'w') as f:
+							f.write("missing")
 					else:
 						sys.stderr.write("Not a PDF !\n")
 						sys.stderr.write("Code=" + str(response.code) + "\n")
