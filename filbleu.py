@@ -706,6 +706,27 @@ class FilBleu:
 						lineSpecs.append({'number': number.group(1), 'ends': ends, 'spec': spec})
 		return lineSpecs
 
+	def lines_to_lineStop(self, line_to_build):
+		lineStops = {}
+		lineStop = re.compile(r"Stop:.*=> (.*)\|(.*)\|(.*) \[(.*)\]")
+		for line in open('stops.' + line_to_build + '.txt','r').readlines():
+			results = lineStop.search(line)
+			if results:
+				stopId   = results.group(1)
+				stopName = results.group(2)
+				cityName = results.group(3)
+				subLine  = results.group(4)
+				spec = "all"
+				if subLine.count("A"):
+					spec = "A"
+				if subLine.count("B"):
+					spec = "B"
+				try:
+					lineStops[spec][stopId] = {'name': stopName, 'city': cityName }
+				except KeyError as e:
+					lineStops[spec] = { stopId: {'name': stopName, 'city': cityName } }
+		return lineStops
+
 	def extract_stopArea(self, source, id, searchName):
 		depart = source.find('input', attrs = {'id': id})
 		stopArea = ""
@@ -1370,21 +1391,7 @@ class FilBleu:
 					lon = float(results.group(5))
 					stopAreas[stopId] = {'name': stopName, 'city': cityName, 'lat': lat, 'lon': lon}
 
-		lineStop = re.compile(r"Stop:.*=> (.*)\|(.*)\|(.*) \[(.*)\]")
-		for line in open('stops.' + line_to_build + '.txt','r').readlines():
-			results = lineStop.search(line)
-			if results:
-				stopId   = results.group(1)
-				stopName = results.group(2)
-				cityName = results.group(3)
-				subLine  = results.group(4)
-				spec = "all"
-				if subLine.count("A"):
-					spec = "A"
-				if subLine.count("B"):
-					spec = "B"
-				lineStops[spec][stopId] = {'name': stopName, 'city': cityName }
-
+		lineStops = self.lines_to_lineStop(line_to_build)
 		lineSpecs = self.lines_to_lineSpec(line_to_build)
 
 		print lineStops
