@@ -838,6 +838,7 @@ class FilBleu:
 						sys.stderr.write("Not a PDF !\n")
 						sys.stderr.write("Code=" + str(response.code) + "\n")
 						sys.stderr.write(str(infos) + "\n")
+						sys.stderr.write("Content:\n")
 						sys.stderr.write(str(response.read()) + "\n")
 		return retval
 
