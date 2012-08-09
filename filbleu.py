@@ -662,6 +662,7 @@ class FilBleu:
 		stopschedule.add_argument("--stop-schedule", action="store_true", help="Process PDF stop schedule")
 		stopschedule.add_argument("--line", help="Line")
 		stopschedule.add_argument("--stop", help="Stop")
+		stopschedule.add_argument("--offline", action="store_true", default=False, help="Offline mode.")
 
 		self.args = self.parser.parse_args()
 
@@ -1342,7 +1343,11 @@ class FilBleu:
 		return self.lines_found.keys()
 
 	def scrap_pdf_stop_schedule(self):
-		self.get_stops_offline(self.args.line)
+		if self.args.offline:
+			self.get_stops_offline(self.args.line)
+		else:
+			self.args.list_stops = self.args.line
+			self.get_stops()
 		perform = True
 		for lineid in self.stops:
 			current = 0
