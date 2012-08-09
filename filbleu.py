@@ -1335,8 +1335,7 @@ class FilBleu:
 		return self.lines_found.keys()
 
 	def scrap_pdf_stop_schedule(self):
-		self.args.list_stops = self.args.line
-		self.get_stops()
+		self.get_stops_offline(self.args.line)
 		perform = True
 		for lineid in self.stops:
 			current = 0
