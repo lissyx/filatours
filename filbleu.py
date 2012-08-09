@@ -1045,6 +1045,7 @@ class FilBleu:
 					self.stops[lineid][s.id+':'+sensInput["value"]] = s
 
 	def get_stops_offline(self, lineid):
+		self.args.list_stops = lineid
 		self.stops = {}
 		self.stops[lineid] = {}
 		sensS = [ -1, 1 ]
