@@ -625,6 +625,11 @@ class FilBleu:
 		self.browser = mechanize.Browser()
 		self.cj = cookielib.LWPCookieJar()
 		self.browser.set_cookiejar(self.cj)
+		self.browser.set_handle_equiv(True)
+		self.browser.set_handle_redirect(True)
+		self.browser.set_handle_referer(True)
+		self.browser.set_handle_robots(False)
+
 		self.base    = "http://www.filbleu.fr/"
 		self.baseurl = self.base + "page.php"
 		self.url_raz = "&raz"
