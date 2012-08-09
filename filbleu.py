@@ -816,6 +816,8 @@ class FilBleu:
 			sys.stderr.write("Cache hit.\n")
 		except IOError as e:
 			sys.stderr.write("Cache miss.\n")
+			if self.args.offline:
+				return None
 			self.browser.open(url.encode('utf-8'))
 			response = self.browser.response()
 			if response.code == 200:
