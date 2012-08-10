@@ -643,6 +643,7 @@ class FilBleu:
 		self.parser.add_argument("--list-stops", help="List stops of a line (format: n|M)")
 		self.parser.add_argument("--list-stops-basic", action="store_true", help="When listing stops, just displaying without any filtering")
 		self.parser.add_argument("--build-line", help="Build given line, using lines.txt and stops_coords.txt")
+		self.parser.add_argument("--build-line-from-schedules", help="Build given line, using schedules.*.txt (implies --offline)")
 		self.parser.add_argument("--build-line-gpx", action="store_true", default=True, required=False, help="Build given line, output as GPX")
 		self.parser.add_argument("--get-stop-coords", help="Get a stop GPS coordinates")
 		self.parser.add_argument("--httpdebug", action="store_true", help="Show HTTP debug")
@@ -1405,6 +1406,84 @@ class FilBleu:
 		latitude = (math.pi * p1['lat']) / 180.0;
 		longitude = (math.pi * p1['lon']) / 180.0;
 		return R * (math.pi/2 - math.asin( math.sin(latitude) * math.sin(sourcelatitude) + math.cos(longitude - sourcelongitude) * math.cos(latitude) * math.cos(sourcelatitude)));
+
+	def build_line_from_schedules(self):
+		line_to_build = self.args.build_line_from_schedules
+		self.args.offline = True
+		self.get_stops_offline(line_to_build)
+		perform = True
+		passages = {}
+		relations = {}
+		stops = []
+		for lineid in self.stops:
+			total = len(self.stops[lineid])
+			for stop in self.stops[lineid]:
+				s = self.stops[lineid][stop]
+				if perform:
+					url = (self.base + s.linkbase + "StopArea=" + s.stopArea + "&Line=" + line_to_build)
+					pdf = StringIO()
+					content = self.download_pdf(url)
+					if content is not None:
+						pdf.write(content)
+						res = self.process_pdf_schedule(pdf)
+						stops += [ { 'name': s.stop_name, 'schedules': res } ]
+					pdf.close()
+
+		for stop in stops:
+			scheds = stop['schedules']
+			for sched in scheds:
+				times = sched['schedule']
+				dir = sched['direction']
+				if len(dir) > 1:
+					raise NotImplementedError("Too much directions")
+				else:
+					dir = dir[0]
+				jour = {}
+				best = {}
+				for line in sched['lines']:
+					jour[line] = sched['dates'][0][0]
+					best[line] = sched['dates'][-1][-1]
+				for hour in times:
+					for m in times[hour]:
+						minute = m['minute']
+						j = jour[m['line']]
+						b = best[m['line']]
+						d = datetime.datetime(j.year, j.month, j.day, int(hour), int(minute))
+						if d <= b:
+							best[m['line']] = d
+
+				for line in sched['lines']:
+					content = {'period': sched['period'], 'line': line, 'time': best[line], 'stop': stop['name']}
+					try:
+						passages[dir][jour[line]] += [ content ]
+					except KeyError as e:
+						try:
+							passages[dir][jour[line]] = [ content ]
+						except KeyError as e:
+							passages[dir] = {jour[line]: [ content ]}
+
+		for dir in passages:
+			e = passages[dir]
+			relations[dir] = {}
+			for date in e:
+				entry = passages[dir][date]
+				relations[dir][date] = []
+				cont = True
+				while cont:
+					low = entry[0]['time']
+					lowest = None
+					for stop in entry:
+						if stop['time'] <= low:
+							low = stop['time']
+							lowest = stop
+					relations[dir][date] += [ lowest ]
+					entry.remove(lowest)
+					cont = len(entry) > 0
+				# Adding terminus, since the website won't let us access the matching schedule, claiming nothing matches
+				content = {'period': sched['period'], 'line': line, 'time': relations[dir][date][-1]['time'] + datetime.timedelta(minutes=5), 'stop': dir}
+				relations[dir][date] += [ content ]
+
+		pp.pprint(relations)
 	
 	def build_line(self):
 		line_to_build = self.args.build_line
@@ -1562,6 +1641,8 @@ class FilBleu:
 			self.bruteforce_find_lines(self.args.stop_from, self.args.stop_to)
 		if self.args.build_line:
 			self.build_line()
+		if self.args.build_line_from_schedules:
+			self.build_line_from_schedules()
 		if self.args.stop_schedule:
 			self.scrap_pdf_stop_schedule()
 
