@@ -1454,8 +1454,6 @@ class FilBleu:
 					s = stops[stop]['name']
 					l = datetime.time(hour=lowest[line].hour, minute=lowest[line].minute)
 
-					print p, s, sens, line, l
-
 					try:
 						passages[dt][p][line][sens][s] = l
 					except KeyError as e:
