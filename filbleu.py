@@ -1414,23 +1414,25 @@ class FilBleu:
 		perform = True
 		passages = {}
 		relations = {}
-		stops = []
+		stops = {}
 		for lineid in self.stops:
 			total = len(self.stops[lineid])
 			for stop in self.stops[lineid]:
+				stop_clean = stop.split(":")[0]
+				sens = stop.split(":")[1]
 				s = self.stops[lineid][stop]
-				if perform:
-					url = (self.base + s.linkbase + "StopArea=" + s.stopArea + "&Line=" + line_to_build)
-					pdf = StringIO()
-					content = self.download_pdf(url)
-					if content is not None:
-						pdf.write(content)
-						res = self.process_pdf_schedule(pdf)
-						stops += [ { 'name': s.stop_name, 'schedules': res } ]
-					pdf.close()
+				url = (self.base + s.linkbase + "StopArea=" + s.stopArea + "&Line=" + line_to_build)
+				pdf = StringIO()
+				content = self.download_pdf(url)
+				if content is not None:
+					pdf.write(content)
+					res = self.process_pdf_schedule(pdf)
+					stops[stop] = { 'name': s.stop_name, 'schedules': res }
+				pdf.close()
 
 		for stop in stops:
-			for sched in stop['schedules']:
+			sens = stop.split(":")[1]
+			for sched in stops[stop]['schedules']:
 				lowest = {}
 				curtime = {}
 				dirs = {}
@@ -1438,57 +1440,60 @@ class FilBleu:
 					dt = sched['dates'][0][0]
 					lowest[line] = datetime.datetime(year=dt.year, month=dt.month, day=dt.day, hour=23,minute=59,second=59)
 					curtime[line] = None
-					dirs[line] = sched['direction'][sched['lines'].index(line)].decode('utf-8')
-					print stop['name'], line, dirs[line], sched['period']
 					for hour in sched['schedule']:
 						for m in sched['schedule'][hour]:
 							if m['line'] == line:
+								dirs[sched['period']]= { line: sched['direction'][sched['lines'].index(line)].decode('utf-8') }
 								minute = m['minute']
 								curtime[line] = datetime.datetime(year=dt.year, month=dt.month, day=dt.day, hour=int(hour),minute=int(minute),second=00)
 								if curtime[line] < lowest[line]:
 									lowest[line] = curtime[line]
 
-				for line in sched['lines']:
 					dt = sched['dates'][0][0]
+					p = sched['period']
+					s = stops[stop]['name']
 					l = datetime.time(hour=lowest[line].hour, minute=lowest[line].minute)
+
+					print p, s, sens, line, l
+
 					try:
-						passages[sched['dates'][0][0]][sched['period']][line][dirs[line]][stop['name']] = l
+						passages[dt][p][line][sens][s] = l
 					except KeyError as e:
 						try:
-							passages[sched['dates'][0][0]][sched['period']][line][dirs[line]] = { stop['name']: l }
+							passages[dt][p][line][sens] = { s: l }
 						except KeyError as e:
 							try:
-								passages[sched['dates'][0][0]][sched['period']][line] = { dirs[line]: { stop['name']: l } }
+								passages[dt][p][line] = { sens: { s: l } }
 							except KeyError as e:
 								try:
-									passages[sched['dates'][0][0]][sched['period']] = { line: { dirs[line]: { stop['name']: l } } }
+									passages[dt][p] = { line: { sens: { s: l } } }
 								except KeyError as e:
-									passages[sched['dates'][0][0]] = { sched['period']: { line: { dirs[line]: { stop['name']: l } } } }
+									passages[dt] = { p: { line: { sens: { s: l } } } }
 
 		relations = passages
 
 		for date in relations:
 			for period in relations[date]:
 				for line in relations[date][period]:
-					for direction in relations[date][period][line]:
-						d = relations[date][period][line][direction]
+					for dir in relations[date][period][line]:
+						d = relations[date][period][line][dir]
 						s = sorted(d, key=d.get)
 						last = s[-1]
-						tl = relations[date][period][line][direction][last]
+						tl = relations[date][period][line][dir][last]
 						nd = datetime.datetime(year=date.year, month=date.month, day=date.day, hour=tl.hour, minute=tl.minute, second=00) + datetime.timedelta(minutes=2)
 						termtime = datetime.time(hour=nd.hour, minute=nd.minute)
 
 						# Forcing addition of terminus, since buggy website does not provide it
-						relations[date][period][line][direction][direction] = termtime
+						# relations[date][period][line][dir] = termtime
 
-						d = relations[date][period][line][direction]
+						d = relations[date][period][line][dir]
 						s = sorted(d, key=d.get)
 
 						ar = []
 						for st in s:
-							time = relations[date][period][line][direction][st]
+							time = relations[date][period][line][dir][st]
 							ar += [ {'stop': st, 'time': time } ]
-						relations[date][period][line][direction] = ar
+						relations[date][period][line][dir] = ar
 
 		pprint.pprint( relations )
 
