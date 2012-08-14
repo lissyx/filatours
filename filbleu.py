@@ -1430,61 +1430,68 @@ class FilBleu:
 					pdf.close()
 
 		for stop in stops:
-			scheds = stop['schedules']
-			for sched in scheds:
-				times = sched['schedule']
-				dir = sched['direction']
-				if len(dir) > 1:
-					raise NotImplementedError("Too much directions")
-				else:
-					dir = dir[0]
-				jour = {}
-				best = {}
+			for sched in stop['schedules']:
+				lowest = {}
+				curtime = {}
+				dirs = {}
 				for line in sched['lines']:
-					jour[line] = sched['dates'][0][0]
-					best[line] = sched['dates'][-1][-1]
-				for hour in times:
-					for m in times[hour]:
-						minute = m['minute']
-						j = jour[m['line']]
-						b = best[m['line']]
-						d = datetime.datetime(j.year, j.month, j.day, int(hour), int(minute))
-						if d <= b:
-							best[m['line']] = d
+					dt = sched['dates'][0][0]
+					lowest[line] = datetime.datetime(year=dt.year, month=dt.month, day=dt.day, hour=23,minute=59,second=59)
+					curtime[line] = None
+					dirs[line] = sched['direction'][sched['lines'].index(line)].decode('utf-8')
+					print stop['name'], line, dirs[line], sched['period']
+					for hour in sched['schedule']:
+						for m in sched['schedule'][hour]:
+							if m['line'] == line:
+								minute = m['minute']
+								curtime[line] = datetime.datetime(year=dt.year, month=dt.month, day=dt.day, hour=int(hour),minute=int(minute),second=00)
+								if curtime[line] < lowest[line]:
+									lowest[line] = curtime[line]
 
 				for line in sched['lines']:
-					content = {'period': sched['period'], 'line': line, 'time': best[line], 'stop': stop['name']}
+					dt = sched['dates'][0][0]
+					l = datetime.time(hour=lowest[line].hour, minute=lowest[line].minute)
 					try:
-						passages[dir][jour[line]] += [ content ]
+						passages[sched['dates'][0][0]][sched['period']][line][dirs[line]][stop['name']] = l
 					except KeyError as e:
 						try:
-							passages[dir][jour[line]] = [ content ]
+							passages[sched['dates'][0][0]][sched['period']][line][dirs[line]] = { stop['name']: l }
 						except KeyError as e:
-							passages[dir] = {jour[line]: [ content ]}
+							try:
+								passages[sched['dates'][0][0]][sched['period']][line] = { dirs[line]: { stop['name']: l } }
+							except KeyError as e:
+								try:
+									passages[sched['dates'][0][0]][sched['period']] = { line: { dirs[line]: { stop['name']: l } } }
+								except KeyError as e:
+									passages[sched['dates'][0][0]] = { sched['period']: { line: { dirs[line]: { stop['name']: l } } } }
 
-		for dir in passages:
-			e = passages[dir]
-			relations[dir] = {}
-			for date in e:
-				entry = passages[dir][date]
-				relations[dir][date] = []
-				cont = True
-				while cont:
-					low = entry[0]['time']
-					lowest = None
-					for stop in entry:
-						if stop['time'] <= low:
-							low = stop['time']
-							lowest = stop
-					relations[dir][date] += [ lowest ]
-					entry.remove(lowest)
-					cont = len(entry) > 0
-				# Adding terminus, since the website won't let us access the matching schedule, claiming nothing matches
-				content = {'period': sched['period'], 'line': line, 'time': relations[dir][date][-1]['time'] + datetime.timedelta(minutes=5), 'stop': dir}
-				relations[dir][date] += [ content ]
+		relations = passages
 
-		pp.pprint(relations)
-	
+		for date in relations:
+			for period in relations[date]:
+				for line in relations[date][period]:
+					for direction in relations[date][period][line]:
+						d = relations[date][period][line][direction]
+						s = sorted(d, key=d.get)
+						last = s[-1]
+						tl = relations[date][period][line][direction][last]
+						nd = datetime.datetime(year=date.year, month=date.month, day=date.day, hour=tl.hour, minute=tl.minute, second=00) + datetime.timedelta(minutes=2)
+						termtime = datetime.time(hour=nd.hour, minute=nd.minute)
+
+						# Forcing addition of terminus, since buggy website does not provide it
+						relations[date][period][line][direction][direction] = termtime
+
+						d = relations[date][period][line][direction]
+						s = sorted(d, key=d.get)
+
+						ar = []
+						for st in s:
+							time = relations[date][period][line][direction][st]
+							ar += [ {'stop': st, 'time': time } ]
+						relations[date][period][line][direction] = ar
+
+		pprint.pprint( relations )
+
 	def build_line(self):
 		line_to_build = self.args.build_line
 		stopAreas = {}
