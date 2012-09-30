@@ -69,7 +69,7 @@
     <string name="your_location">Votre localisation</string>
     <string name="layerSwitcher_enable">Afficher les arrêts</string>
     <string name="layerSwitcher_disable">Cacher les arrêts</string>
-    <string name="stops_overlay">La couche contenant les arrêts est cachée, utilisez le menu pour l\'afficher.</string>
+    <string name="stops_overlay">La couche contenant les arrêts est cachée, utilisez le menu pour l\'afficher. Une pression courte sur un arrêt permet d\'afficher les lignes qui le desservent. Un appui long permettra de choisir cet arrêt comme départ ou arrivée.</string>
     <string name="missing_location">Votre système ne possède pas de dernière localisation connue, il est donc impossible de l\'afficher sur cette carte.</string>
     <string name="search_stop">Rechercher un arrêt</string>
     <string name="stop_search">Recherche d\'arrêt</string>

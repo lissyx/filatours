@@ -69,7 +69,7 @@
     <string name="your_location">Your location</string>
     <string name="layerSwitcher_enable">Show stops</string>
     <string name="layerSwitcher_disable">Hide stops</string>
-    <string name="stops_overlay">Stops overlay are hidden, please use menu to show.</string>
+    <string name="stops_overlay">Stops overlay are hidden, please use menu to show. Tap on a stop to display the available bus lines. Long tap to select as departure or arrival stop.</string>
     <string name="missing_location">Your system has no last location, so it cannot be displayed on this map.</string>
     <string name="search_stop">Search for a stop</string>
     <string name="stop_search">Stop search</string>
