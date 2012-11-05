@@ -1,0 +1,17 @@
+{
+  "name": "Fil@Tours",
+  "description": "Mobile Application for Fil Bleu",
+  "type": "certified",
+  "launch_path": "/index.html#root",
+  "developer": {
+    "name": "lissyx",
+    "url": "https://github.com/lissyx/gaia/tree/image-uploader"
+  },
+  "permissions": {
+    "systemXHR":{},
+    "geolocation":{}
+  },
+  "icons": {
+    "128": "/style/icons/filatours.png"
+  }
+}

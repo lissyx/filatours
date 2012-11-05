@@ -1,0 +1,44 @@
+/* Stolen from gaia's settings, kthxbye kazé. */
+
+ul {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style: none;
+}
+
+ul li {
+  position: relative;
+  border-bottom: 0.1rem solid #e6e6e3;
+  color: #000;
+  -moz-box-sizing: border-box;
+  min-height: 6rem;
+}
+
+ul li.active,
+ul li:active {
+  background-color: #ddf;
+  color: #222;
+}
+
+ul li > a,
+ul li > span {
+  display: block;
+  text-decoration: none;
+  outline: 0;
+  color: #000;
+  -moz-box-sizing: border-box;
+  height: 6rem;
+  font-size: 1.8rem;
+  line-height: 6rem;
+  padding: 0 3rem;
+}
+
+ul li.disabled > a {
+  color: gray;
+  pointer-events: none;
+}
+
+/******************************************************************************
+ * Definition lists
+ */

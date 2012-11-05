@@ -1,0 +1,117 @@
+html, body {
+  margin: 0;
+  font-size: 10px;
+  overflow: hidden !important;
+  font-family: "MozTT", sans-serif;
+}
+
+/******************************************************************************
+ * Explanation texts
+ */
+
+.explanation {
+  padding: 0.5rem 3rem;
+  font-style: italic;
+  font-size: 1.4rem;
+  color: #505859;
+}
+
+.description {
+  padding: 1rem 3rem;
+  font-size: 1.5rem;
+  white-space: normal;
+}
+
+.link-text, .tel-text {
+  font-size: 1.2rem;
+  color: #336699;
+  text-decoration: underline;
+}
+
+/***/
+
+button[data-geoloc] {
+  width: 3.4rem;
+  height: 3.4rem;
+  padding: 0;
+  margin: -1.7rem 3.4rem 0;
+  font: 0/0 a;
+  border: none;
+  position: absolute;
+  right: 0rem;
+  top: 50%;
+  background: url(icons/ic_menu_mylocation.png) no-repeat center center;
+}
+
+a.journey,
+li.journey,
+li.journey li span {
+  color: #eee;
+}
+
+a.journey:active,
+li.journey:active,
+li.journey li span:active {
+  color: #333;
+}
+
+a.journey {
+  font-size: 1.2rem;
+}
+
+li.journey li span {
+  height: 3rem;
+  line-height: 3rem;
+  font-size: 1.2rem;
+}
+
+ul li.journey li {
+  min-height: 3rem;
+}
+
+li.journey {
+  background: url(icons/open.png) no-repeat -0.2rem 1.5rem transparent;
+  list-style-type: none;
+}
+
+li.journey-details {
+  background: url(icons/opened.png) no-repeat -0.2rem 1.5rem transparent;
+}
+
+li.journeypart p {
+  font-size: 1em;
+  padding-left: 4rem;
+  margin-top: -1rem;
+}
+
+li.journeypart {
+  list-style-type: none;
+}
+
+li.journeymount {
+  background-image: url(icons/stationin.png), url(icons/line.png);
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: scroll, scroll;
+  background-position: left top, left bottom;
+}
+
+li.journeyumount {
+  background-image: url(icons/stationout.png), url(icons/line.png);
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: scroll, scroll;
+  background-position: left bottom, left top;
+}
+
+li.journeyconnection {
+  background-image: url(icons/stationconnect.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: left center;
+}
+
+li.journeywalk {
+  background-image: url(icons/walk.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: left center;
+}
