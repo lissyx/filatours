@@ -1,6 +1,8 @@
-index.html
+/index.html
 cookies*.jar
 stops.*.txt
 .*.swp
 data/pdfs/*
 data/err*.txt
+FilATours_HTML5/shared
+FilATours_HTML5/test
