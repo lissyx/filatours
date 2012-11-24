@@ -33,24 +33,32 @@ function showmap() {
   var mapnik = new OpenLayers.Layer.OSM("OpenStreetMap (Mapnik)");
   map.addLayers([mapnik]);
 
-  stops = new OpenLayers.Layer.Markers( "Stops" );
+  stops = new OpenLayers.Layer.Vector("Stops", {
+      isBaseLayer: false,
+      features: [],
+      visibility: true
+  });
   map.addLayer(stops);
 
-  var size = new OpenLayers.Size(21,25);
-  var offset = new OpenLayers.Pixel(-(size.w/2), -size.h);
-
-  stopsIcon = new OpenLayers.Icon('ext/OpenLayers/img/marker-green.png', size, offset);
+  stopsIcon = OpenLayers.Util.extend({}, OpenLayers.Feature.Vector.style['default']);
+  stopsIcon.graphicWidth = 21;
+  stopsIcon.graphicHeight = 25;
+  stopsIcon.graphicXOffset = -(21/2);
+  stopsIcon.graphicYOffset = -25;
+  stopsIcon.externalGraphic = 'ext/OpenLayers/img/marker-green.png';
+  stopsIcon.fillOpacity = 1;
 }
 
 function showstops() {
   var all = BusStops.getAllStops();
+  var features = [];
   for (var s in all) {
     var se = all[s];
     var stopPos = new OpenLayers.LonLat(se._longitude, se._latitude)
       .transform(map.options.displayProjection, map.options.projection);
-    var mm = new OpenLayers.Marker(stopPos, stopsIcon.clone());
-    stops.addMarker(mm);
+    features.push(new OpenLayers.Feature.Vector(new OpenLayers.Geometry.Point(stopPos.lon, stopPos.lat), {}, stopsIcon));
   }
+  stops.addFeatures(features);
   map.zoomToExtent(stops.getDataExtent());
 }
 
