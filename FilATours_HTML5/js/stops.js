@@ -3,6 +3,7 @@
 
 'use strict';
 
+var all;
 var map;
 var select;
 var stops;
@@ -73,6 +74,14 @@ function showmap() {
 
   map.addControl(select);
   select.activate();
+
+  map.events.on({
+    "moveend": onMapMove
+  });
+
+  var tours = new OpenLayers.LonLat(0.683, 47.383)
+      .transform(map.options.displayProjection, map.options.projection);
+  map.setCenter(tours, 11, false, true);
 }
 
 function featureToHtml(feature) {
@@ -101,24 +110,32 @@ function onFeatureUnselect(event) {
   }
 }
 
-function showstops() {
-  var all = BusStops.getAllStops();
+function onMapMove(event) {
+  var viewport = map.getExtent();
   var features = [];
+  stops.removeAllFeatures();
+
+  /* if we will display too much points, avoid */
+  if (map.getZoom() <= 14) {
+    return;
+  }
+
   for (var s in all) {
     var se = all[s];
     var stopPos = new OpenLayers.LonLat(se._longitude, se._latitude)
-      .transform(map.options.displayProjection, map.options.projection);
-    features.push(
-        new OpenLayers.Feature.Vector(
-          new OpenLayers.Geometry.Point(stopPos.lon, stopPos.lat),
-          se,
-          stopsIcon));
+      .transform(map.options.displayProjection, map.options.projection)
+    if (viewport.containsLonLat(stopPos)) {
+      features.push(
+          new OpenLayers.Feature.Vector(
+            new OpenLayers.Geometry.Point(stopPos.lon, stopPos.lat),
+            se,
+            stopsIcon));
+      }
   }
   stops.addFeatures(features);
-  map.zoomToExtent(stops.getDataExtent());
 }
 
 window.addEventListener('DOMContentLoaded', function() {
   showmap();
-  showstops();
+  all = BusStops.getAllStops();
 });
