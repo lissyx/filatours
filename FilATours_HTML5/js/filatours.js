@@ -172,6 +172,7 @@ var FilBleu = (function FilBleu() {
 
       this.updateScrappingStatus(80, 'Extracting journeys.');
 
+      this._journeys = new Array();
       // first one is header, skip it
       for (var j = 1; j < journeys.length; j++) {
         var journey = this.extractJourney(journeys[j]);
