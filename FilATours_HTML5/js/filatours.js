@@ -490,6 +490,32 @@ var FilBleu = (function FilBleu() {
       if (button) {
         button.addEventListener('click', this.getJourney.bind(this));
       }
+      var pick = document.getElementById('pick');
+      if (pick) {
+        pick.addEventListener('click', this.sendPick.bind(this));
+      }
+    },
+
+    sendPick: function() {
+      var a = new MozActivity({
+        name: 'select-stop'
+      });
+
+      a.onerror = function(e) {
+        console.warn("select stop activity error:", a.error.name);
+      };
+
+      a.onsuccess = function(e) {
+        var type = a.result.type;
+        var stop = a.result.stop;
+        console.log("got stop: " + JSON.stringify(stop));
+        var target = document.getElementById(type);
+        if (!target) {
+          console.error('No target, cannot fill stop name');
+          return;
+        }
+        target.value = stop.name + ' (' + stop.city + ')';
+      };
     },
 
     ensureClean: function(id) {

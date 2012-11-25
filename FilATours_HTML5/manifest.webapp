@@ -11,6 +11,13 @@
     "systemXHR":{},
     "geolocation":{}
   },
+  "activities": {
+    "select-stop": {
+      "disposition": "inline",
+      "returnValue": true,
+      "href": "/stops.html"
+    }
+  },
   "icons": {
     "128": "/style/icons/filatours.png"
   }

@@ -9,6 +9,7 @@ var select;
 var stops;
 var stopsIcon;
 var selectedStopsIcon;
+var selectActivity = null;
 
 function showmap() {
   // Options of the map
@@ -86,7 +87,14 @@ function showmap() {
 
 function featureToHtml(feature) {
   var o = feature.data;
-  return '<h1>' + o._name + '</h1>';
+  var html = '<h1>' + o._name + '</h1>';
+  if (selectActivity != null) {
+    html += '<p data-stopname="' + o._name + '" data-stopcity="' + o._city + '">';
+    html += '<button class="recommended" name="departure" onclick="handleSelectEvent(this);">Departure</button>';
+    html += '<button class="recommended" name="arrival" onclick="handleSelectEvent(this);">Arrival</button>';
+    html += '</p>';
+  }
+  return html;
 }
 
 function onFeatureSelect(event) {
@@ -139,3 +147,36 @@ window.addEventListener('DOMContentLoaded', function() {
   showmap();
   all = BusStops.getAllStops();
 });
+
+function handleSelectEvent(button) {
+  selectActivity.postResult({
+    type: button.name,
+    stop: {
+      name: button.parentNode.dataset['stopname'],
+      city: button.parentNode.dataset['stopcity']
+    }
+  });
+  endSelect();
+}
+
+function startSelect(request) {
+  selectActivity = request;
+}
+
+function endSelect() {
+  selectActivity = null;
+}
+
+window.onload = function() {
+  if (!navigator.mozSetMessageHandler) {
+    return;
+  }
+
+  navigator.mozSetMessageHandler('activity', function handler(activityRequest) {
+    var activityName = activityRequest.source.name;
+    if (activityName !== 'select-stop')
+      return;
+    startSelect(activityRequest);
+    document.location.hash = 'stops-map';
+  });
+};
