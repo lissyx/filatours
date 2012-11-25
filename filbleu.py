@@ -120,16 +120,20 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 				'stopname':   {'x0': 485.0, 'y0': 760.0, 'x1': 580.0, 'y1': 835.0},
 				'schedule1':  {'x0':  48.0, 'y0': 550.0, 'x1': 570.0, 'y1': 690.0},
 				'schedule2':  {'x0':  48.0, 'y0': 395.0, 'x1': 570.0, 'y1': 495.0},
-				'schedule3':  {'x0':  48.0, 'y0': 130.0, 'x1': 570.0, 'y1': 172.0},
+				'schedule3':  {'x0':  48.0, 'y0': 230.0, 'x1': 570.0, 'y1': 340.0},
+				'schedule4':  {'x0':  48.0, 'y0': 130.0, 'x1': 570.0, 'y1': 172.0},
 				'schedule1_hours': {'x0':  48.0, 'y0': 690.0, 'x1': 570.0, 'y1': 710.0},
 				'schedule2_hours': {'x0':  48.0, 'y0': 495.0, 'x1': 570.0, 'y1': 515.0},
-				'schedule3_hours': {'x0':  48.0, 'y0': 170.0, 'x1': 570.0, 'y1': 195.0},
+				'schedule3_hours': {'x0':  48.0, 'y0': 345.0, 'x1': 570.0, 'y1': 365.0},
+				'schedule4_hours': {'x0':  48.0, 'y0': 170.0, 'x1': 570.0, 'y1': 195.0},
 				'schedule1_lines': {'x0':  25.0, 'y0': 550.0, 'x1':  48.0, 'y1': 690.0},
 				'schedule2_lines': {'x0':  25.0, 'y0': 395.0, 'x1':  48.0, 'y1': 495.0},
-				'schedule3_lines': {'x0':  25.0, 'y0': 128.0, 'x1':  48.0, 'y1': 170.0},
+				'schedule3_lines': {'x0':  25.0, 'y0': 230.0, 'x1':  48.0, 'y1': 340.0},
+				'schedule4_lines': {'x0':  25.0, 'y0': 128.0, 'x1':  48.0, 'y1': 170.0},
 				'schedule1_desc':  {'x0':  25.0, 'y0': 710.0, 'x1': 570.0, 'y1': 730.0},
 				'schedule2_desc':  {'x0':  25.0, 'y0': 515.0, 'x1': 570.0, 'y1': 535.0},
-				'schedule3_desc':  {'x0':  25.0, 'y0': 190.0, 'x1': 570.0, 'y1': 210.0},
+				'schedule3_desc':  {'x0':  25.0, 'y0': 360.0, 'x1': 570.0, 'y1': 380.0},
+				'schedule4_desc':  {'x0':  25.0, 'y0': 190.0, 'x1': 570.0, 'y1': 210.0},
 				'notes':      {'x0':  14.0, 'y0':   3.0, 'x1': 580.0, 'y1':  95.0},
 			},
 			'small': {
@@ -154,15 +158,19 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 			'schedule1': [],
 			'schedule2': [],
 			'schedule3': [],
+			'schedule4': [],
 			'schedule1_hours': [],
 			'schedule2_hours': [],
 			'schedule3_hours': [],
+			'schedule4_hours': [],
 			'schedule1_lines': [],
 			'schedule2_lines': [],
 			'schedule3_lines': [],
+			'schedule4_lines': [],
 			'schedule1_desc': [],
 			'schedule2_desc': [],
 			'schedule3_desc': [],
+			'schedule4_desc': [],
 			'notes': [],
 		}
 		return
@@ -344,7 +352,7 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 	def extract_period_from_bucket(self, name):
 		period = []
 		for t in self.content[name + "_desc"]:
-			if t['txt'].find("Lundi au Samedi") >= 0 or t['txt'].find("Dimanche") >= 0 or t['txt'].find("Nuit") >= 0:
+			if t['txt'].find("Lundi au Vendredi") >= 0 or t['txt'].find("Samedi") >= 0 or t['txt'].find("Dimanche") >= 0 or t['txt'].find("Nuit") >= 0 or t['txt'].find("Vacances scolaires") >= 0:
 				period = t['txt'].strip()
 		return period
 
@@ -508,7 +516,7 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 		return schedule
 
 	def bucket_to_schedule(self):
-		sub = [ 'schedule1', 'schedule2', 'schedule3' ]
+		sub = [ 'schedule1', 'schedule2', 'schedule3', 'schedule4' ]
 		schedules = []
 		for s in sub:
 			r = self.one_bucket_to_schedule(s)
