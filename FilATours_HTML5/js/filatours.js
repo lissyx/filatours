@@ -480,7 +480,7 @@ var FilBleu = (function FilBleu() {
     updateScrappingStatus: function(progress, message) {
       var p = document.getElementById('scrapping-progress');
       var m = document.getElementById('scrapping-status');
-      p.value = progress;
+      p.value = progress / 100.0;
       m.textContent = message;
       document.location.hash = this._scrapping;
     },
