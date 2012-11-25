@@ -127,8 +127,11 @@ function onMapMove(event) {
 
   /* if we will display too much points, avoid */
   if (map.getZoom() <= 14) {
+    document.getElementById('zoom-needed').style.display = 'block';
     return;
   }
+
+  document.getElementById('zoom-needed').style.display = 'none';
 
   for (var s in all) {
     var se = all[s];
