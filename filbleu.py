@@ -1371,7 +1371,8 @@ class FilBleu:
 
 				if perform:
 					stop_clean = stop.split(":")[0]
-					url = (self.base + s.linkbase + "StopArea=" + s.stopArea + "&Line=" + self.args.line)
+					stop_area = s.stopArea.replace(' ', '+')
+					url = (self.base + s.linkbase + "StopArea=" + stop_area + "&Line=" + self.args.line)
 					msg = "[%(current)d/%(total)d:%(lineid)s] Found stop %(stopName)s, downloading PDF at %(pdfURL)s\n" % {'stopName': s.stop_name, 'pdfURL': url, 'current': current, 'total': total, 'lineid': lineid}
 					msg = msg.encode('utf-8')
 					sys.stderr.write(msg)
