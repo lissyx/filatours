@@ -22,10 +22,6 @@ DialogSelectStop.prototype.bindButtons = function() {
   cancel.addEventListener('click', function() {
     document.location.hash = 'schedule';
   });
-
-  showMap.addEventListener('click', function() {
-    console.log("Showing on a map ...");
-  })
 };
 
 DialogSelectStop.prototype.ensureClean = function() {
