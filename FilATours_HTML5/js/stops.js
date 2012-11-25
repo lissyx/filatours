@@ -88,6 +88,8 @@ function showmap() {
 function featureToHtml(feature) {
   var o = feature.data;
   var html = '<h1>' + o._name + '</h1>';
+  var lines = BusLines.getLine(o._name);
+  html += '<p>The following lines stops here: ' + lines.join(", ") + '</p>';
   if (selectActivity != null) {
     html += '<p data-stopname="' + o._name + '" data-stopcity="' + o._city + '">';
     html += '<button class="recommended" name="departure" onclick="handleSelectEvent(this);">Departure</button>';
