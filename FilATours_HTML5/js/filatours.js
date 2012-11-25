@@ -145,7 +145,11 @@ var FilBleu = (function FilBleu() {
           }
           console.debug(e.status);
           self.updateScrappingStatus(60, 'Got reply, reading ....');
-          self.extractJourneysList(e.responseText);
+          try {
+            self.extractJourneysList(e.responseText);
+          } catch (e) {
+            self.handleException(e);
+          }
         });
       });
     },
@@ -178,9 +182,13 @@ var FilBleu = (function FilBleu() {
       this._journeys = new Array();
       // first one is header, skip it
       for (var j = 1; j < journeys.length; j++) {
-        var journey = this.extractJourney(journeys[j]);
-        console.debug(JSON.stringify(journey));
-        this._journeys.push(journey);
+        try {
+          var journey = this.extractJourney(journeys[j]);
+          console.debug(JSON.stringify(journey));
+          this._journeys.push(journey);
+        } catch (e) {
+          this.handleException(e);
+        }
       }
 
       this.updateScrappingStatus(100, 'Displaying journeys.');
@@ -272,7 +280,11 @@ var FilBleu = (function FilBleu() {
         }
         console.debug(e.status);
         self.updateScrappingStatus(20, 'Got reply, reading ....');
-        self.extractJourneyDetails(e.responseText, link);
+        try {
+          self.extractJourneyDetails(e.responseText, link);
+        } catch (e) {
+          self.handleException(e);
+        }
       });
     },
 
@@ -541,6 +553,44 @@ var FilBleu = (function FilBleu() {
         cont.removeChild(cont.lastChild);
         console.debug("deleted " + cont.lastChild);
       }
+    },
+
+    handleException: function(ex) {
+      console.warn("Excepton:", ex);
+      var error = document.getElementById('error-dialog');
+      if (!error) {
+        console.error("No error dialog!");
+      }
+
+      var ack = document.getElementById('ack-error');
+      if (ack) {
+        ack.addEventListener('click', function() {
+          document.location.hash = 'schedule';
+        });
+      }
+
+      var errmsg = document.getElementById('error-message');
+      var msgvalue = "Unknown error";
+
+      if (ex instanceof JourneysListNotFoundException) {
+        msgvalue = "No result for this search.";
+      }
+
+      if (ex instanceof InvalidJourneyException) {
+        msgvalue = "Requested journey is invalid.";
+      }
+
+      if (ex instanceof JourneyDetailsNotFoundException) {
+        msgvalue = "Cannot find details for this journey.";
+      }
+
+      if (ex instanceof JourneyDetailsUnexpectedElementsException) {
+        msgvalue = "Unexpected output for journey details.";
+      }
+
+      errmsg.innerHTML = msgvalue;
+
+      document.location.hash = 'error-dialog';
     }
   }
 })();
