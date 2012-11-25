@@ -19,11 +19,6 @@ DialogSelectStop.prototype.bindButtons = function() {
     return;
   }
 
-  var showMap = document.getElementById('show-map-select');
-  if (!showMap) {
-    return;
-  }
-
   cancel.addEventListener('click', function() {
     document.location.hash = 'schedule';
   });
