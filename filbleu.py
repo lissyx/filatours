@@ -1068,7 +1068,7 @@ class FilBleu:
 			for stop_id in ls:
 				for sens in sensS:
 					s = ls[stop_id]
-					linkBase = "grille-horaires-v4ete.php?Sens=" + str(sens) + "&"
+					linkBase = "grille-horaires-v4.php?Sens=" + str(sens) + "&"
 					stopArea = s['stop']
 					st = BusStop(s['name'], linkBase)
 					st.set_stopArea(s["stop"].decode('utf-8'))
@@ -1431,7 +1431,9 @@ class FilBleu:
 				stop_clean = stop.split(":")[0]
 				sens = stop.split(":")[1]
 				s = self.stops[lineid][stop]
-				url = (self.base + s.linkbase + "StopArea=" + s.stopArea + "&Line=" + line_to_build)
+				stop_area = s.stopArea.replace(' ', '+')
+				url = (self.base + s.linkbase + "StopArea=" + stop_area + "&Line=" + line_to_build)
+				print url
 				pdf = StringIO()
 				content = self.download_pdf(url)
 				if content is not None:
