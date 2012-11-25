@@ -4,3 +4,9 @@
   top: 5em;
   bottom: 0px;
 }
+
+#zoom-needed {
+  font-size: 200%;
+  margin-bottom: -1em;
+  padding-top: 1em;
+}

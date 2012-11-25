@@ -5,9 +5,11 @@
     <meta charset="utf-8" />
     <meta http-equiv="pragma" content="no-cache" />
     <title>Fil@Tours</title>
+    <script type="application/javascript" src="js/buslines.js"></script>
     <script type="application/javascript" src="js/busstop.js"></script>
     <script type="application/javascript" src="js/busstops.js"></script>
     <script type="application/javascript" src="ext/OpenLayers/OpenLayers.js"></script>
+    <script type="application/javascript" src="js/stops.js"></script>
     <script type="application/javascript" src="js/whereami.js"></script>
     <link rel="stylesheet" type="text/css" href="shared/style/headers.css" />
     <link rel="stylesheet" type="text/css" href="shared/style/status.css" />
@@ -27,6 +29,7 @@
       <div id="map"></div>
     </div>
     <section role="status" id="status-section">
+      <span id="zoom-needed">You need to zoom more to see stops.</span>
       <p id="status"></p>
     </section>
   </body>
