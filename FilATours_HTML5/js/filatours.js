@@ -494,6 +494,15 @@ var FilBleu = (function FilBleu() {
       if (pick) {
         pick.addEventListener('click', this.sendPick.bind(this));
       }
+
+      var date = document.getElementById('date');
+      var time = document.getElementById('time');
+      if (date && time) {
+        var d = new Date();
+        date.value = d.getFullYear() + '-' +
+          (d.getMonth() + 1) + '-' + d.getDate();
+        time.value = d.getHours() + ':' + d.getMinutes();
+      }
     },
 
     sendPick: function() {
