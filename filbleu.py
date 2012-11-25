@@ -347,7 +347,8 @@ class FilBleuPDFScheduleExtractor(PDFConverter):
 		for t in self.content[name + "_desc"]:
 			if t['txt'].find("horaires valables") >= 0:
 				dates = self.extract_periods(t['txt'].replace("er", "").strip())
-		return self.process_dates(dates)
+		# return self.process_dates(dates)
+		return dates
 
 	def extract_period_from_bucket(self, name):
 		period = []
