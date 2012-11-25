@@ -9,6 +9,9 @@ function JourneyNotFoundException() {
 function InvalidJourneyException() {
 }
 
+function JourneysListNotFoundException() {
+}
+
 function JourneyDetailsNotFoundException() {
 }
 
