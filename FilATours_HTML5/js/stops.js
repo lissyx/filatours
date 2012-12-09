@@ -92,8 +92,8 @@ function featureToHtml(feature) {
   html += '<p>The following lines stops here: ' + lines.join(", ") + '.</p>';
   if (selectActivity != null) {
     html += '<p data-stopname="' + o._name + '" data-stopcity="' + o._city + '">';
-    html += '<button class="recommended" name="departure" onclick="handleSelectEvent(this);">Departure</button>';
-    html += '<button class="recommended" name="arrival" onclick="handleSelectEvent(this);">Arrival</button>';
+    html += '<button class="recommended" name="departure">Departure</button>';
+    html += '<button class="recommended" name="arrival">Arrival</button>';
     html += '</p>';
   }
   return html;
@@ -109,6 +109,20 @@ function onFeatureSelect(event) {
     true,
     null);
   map.addPopup(popup, false);
+  var bDep = popup.contentDiv.querySelector('button[name="departure"]');
+  if (bDep) {
+    bDep.addEventListener('click', function(e) {
+      console.debug("Got event: " + JSON.stringify(e));
+      handleSelectEvent(bDep)
+    });
+  }
+  var bArr = popup.contentDiv.querySelector('button[name="arrival"]');
+  if (bArr) {
+    bArr.addEventListener('click', function(e) {
+      console.debug("Got event: " + JSON.stringify(e));
+      handleSelectEvent(bArr)
+    });
+  }
 }
 
 function onFeatureUnselect(event) {
@@ -154,14 +168,18 @@ window.addEventListener('DOMContentLoaded', function() {
 });
 
 function handleSelectEvent(button) {
-  selectActivity.postResult({
+  var resp = {
     type: button.name,
     stop: {
       name: button.parentNode.dataset['stopname'],
       city: button.parentNode.dataset['stopcity']
     }
-  });
-  endSelect();
+  };
+
+  if (selectActivity != null) {
+    selectActivity.postResult(resp);
+    endSelect();
+  }
 }
 
 function startSelect(request) {

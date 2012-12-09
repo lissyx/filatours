@@ -511,6 +511,19 @@ var FilBleu = (function FilBleu() {
         pick.addEventListener('click', this.sendPick.bind(this));
       }
 
+      var journeyDetailsBack = document.getElementById('journey-details-back');
+      if (journeyDetailsBack) {
+        journeyDetailsBack.addEventListener('click', function(e) {
+          document.location.hash='journeys-list';
+        });
+      }
+      var journeyDetailsClose = document.getElementById('journey-details-close');
+      if (journeyDetailsClose) {
+        journeyDetailsClose.addEventListener('click', function(e) {
+          document.location.hash='root';
+        });
+      }
+
       var date = document.getElementById('date');
       var time = document.getElementById('time');
       if (date && time) {
