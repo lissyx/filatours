@@ -61,7 +61,7 @@ public class BusLines {
         l = new ArrayList<String>(); l.add("09A"); l.add("09B"); l.add("14"); l.add("Citadine"); this.lines.put("Beaujardin", l);
         l = new ArrayList<String>(); l.add("31"); this.lines.put("Beaulieu", l);
         l = new ArrayList<String>(); l.add("60"); l.add("61"); this.lines.put("Beauregard", l);
-        l = new ArrayList<String>(); l.add("01A"); l.add("01B"); l.add("N1"); this.lines.put("Beauverger", l);
+        l = new ArrayList<String>(); l.add("01A"); l.add("01B"); l.add("52"); l.add("N1"); this.lines.put("Beauverger", l);
         l = new ArrayList<String>(); l.add("08A"); l.add("21"); l.add("22"); this.lines.put("Bechellerie", l);
         l = new ArrayList<String>(); l.add("Citadine"); this.lines.put("Bedel", l);
         l = new ArrayList<String>(); l.add("02A"); l.add("02B"); l.add("03A"); l.add("05A"); l.add("07"); l.add("09A"); l.add("09B"); l.add("11"); l.add("14"); l.add("74"); l.add("N2"); l.add("N3"); this.lines.put("Beethoven", l);
@@ -90,7 +90,7 @@ public class BusLines {
         l = new ArrayList<String>(); l.add("74"); this.lines.put("Bois des Hâtes", l);
         l = new ArrayList<String>(); l.add("30"); this.lines.put("Bois Gibert", l);
         l = new ArrayList<String>(); l.add("02A"); l.add("03A"); l.add("07"); l.add("11"); l.add("14"); this.lines.put("Bonamy", l);
-        l = new ArrayList<String>(); l.add("21"); l.add("51"); l.add("52"); this.lines.put("Bordiers", l);
+        l = new ArrayList<String>(); l.add("21"); l.add("51"); this.lines.put("Bordiers", l);
         l = new ArrayList<String>(); l.add("03B"); l.add("Citadine"); this.lines.put("Botanique", l);
         l = new ArrayList<String>(); l.add("05A"); l.add("05B"); l.add("06"); l.add("50"); this.lines.put("Bouleaux", l);
         l = new ArrayList<String>(); l.add("52"); this.lines.put("Bourg de Mettray", l);
@@ -144,9 +144,9 @@ public class BusLines {
         l = new ArrayList<String>(); l.add("09A"); l.add("57"); this.lines.put("Chappe", l);
         l = new ArrayList<String>(); l.add("71"); this.lines.put("Charbonniere", l);
         l = new ArrayList<String>(); l.add("01A"); l.add("01B"); l.add("02A"); l.add("02B"); l.add("07"); l.add("11"); l.add("74"); l.add("N1"); l.add("N2"); l.add("V"); this.lines.put("Charcot", l);
-        l = new ArrayList<String>(); l.add("08A"); l.add("08B"); l.add("52"); this.lines.put("Charentais", l);
+        l = new ArrayList<String>(); l.add("08A"); l.add("08B"); this.lines.put("Charentais", l);
         l = new ArrayList<String>(); l.add("01A"); l.add("01B"); l.add("10"); l.add("N1"); this.lines.put("Charleroi", l);
-        l = new ArrayList<String>(); l.add("01A"); l.add("01B"); l.add("N1"); this.lines.put("Charles Peguy", l);
+        l = new ArrayList<String>(); l.add("01A"); l.add("01B"); l.add("52"); l.add("N1"); this.lines.put("Charles Peguy", l);
         l = new ArrayList<String>(); l.add("11"); l.add("50"); l.add("57"); this.lines.put("Château de Luynes", l);
         l = new ArrayList<String>(); l.add("04A"); l.add("04B"); l.add("60"); l.add("61"); this.lines.put("Château de Tours", l);
         l = new ArrayList<String>(); l.add("V"); this.lines.put("Chateau De Villandry", l);
@@ -163,7 +163,7 @@ public class BusLines {
         l = new ArrayList<String>(); l.add("50"); l.add("57"); this.lines.put("Chevalette", l);
         l = new ArrayList<String>(); l.add("51"); l.add("56"); this.lines.put("Choisille", l);
         l = new ArrayList<String>(); l.add("02A"); l.add("02B"); l.add("10"); l.add("14"); l.add("56"); l.add("N2"); this.lines.put("Chopin", l);
-        l = new ArrayList<String>(); l.add("01A"); l.add("01B"); l.add("N1"); this.lines.put("Christ Roi", l);
+        l = new ArrayList<String>(); l.add("01A"); l.add("01B"); l.add("52"); l.add("N1"); this.lines.put("Christ Roi", l);
         l = new ArrayList<String>(); l.add("01A"); l.add("01B"); l.add("N1"); l.add("V"); this.lines.put("Churchill", l);
         l = new ArrayList<String>(); l.add("74"); this.lines.put("Cimetière des Ricotières", l);
         l = new ArrayList<String>(); l.add("08A"); l.add("21"); this.lines.put("Clarté", l);
@@ -242,7 +242,7 @@ public class BusLines {
         l = new ArrayList<String>(); l.add("13"); this.lines.put("Ecorcheveau", l);
         l = new ArrayList<String>(); l.add("12"); this.lines.put("Eglise de St Avertin", l);
         l = new ArrayList<String>(); l.add("01A"); l.add("01B"); l.add("07"); l.add("15"); l.add("21"); l.add("N1"); l.add("N4"); l.add("P'tite Cit"); this.lines.put("Emile Zola", l);
-        l = new ArrayList<String>(); l.add("51"); l.add("52"); this.lines.put("Engerand", l);
+        l = new ArrayList<String>(); l.add("51"); this.lines.put("Engerand", l);
         l = new ArrayList<String>(); l.add("05A"); l.add("05B"); l.add("06"); l.add("30"); l.add("31"); l.add("N3"); l.add("N4"); this.lines.put("Erables", l);
         l = new ArrayList<String>(); l.add("11"); l.add("50"); this.lines.put("Esat Les Vallees", l);
         l = new ArrayList<String>(); l.add("30"); this.lines.put("Espace Malraux", l);
@@ -320,7 +320,7 @@ public class BusLines {
         l = new ArrayList<String>(); l.add("50"); l.add("57"); this.lines.put("Guignière", l);
         l = new ArrayList<String>(); l.add("03A"); l.add("71"); this.lines.put("Guillon", l);
         l = new ArrayList<String>(); l.add("30"); this.lines.put("Gutemberg", l);
-        l = new ArrayList<String>(); l.add("08A"); l.add("08B"); l.add("51"); l.add("52"); this.lines.put("Guynemer", l);
+        l = new ArrayList<String>(); l.add("08A"); l.add("08B"); l.add("51"); this.lines.put("Guynemer", l);
         l = new ArrayList<String>(); l.add("08A"); l.add("08B"); l.add("11"); l.add("22"); l.add("50"); l.add("71"); l.add("Citadine"); l.add("P'tite Cit"); this.lines.put("Halles", l);
         l = new ArrayList<String>(); l.add("01A"); l.add("01B"); l.add("11"); this.lines.put("Halte Douzillère", l);
         l = new ArrayList<String>(); l.add("22"); this.lines.put("Haut-bourg", l);
@@ -382,7 +382,7 @@ public class BusLines {
         l = new ArrayList<String>(); l.add("03A"); l.add("03B"); l.add("57"); this.lines.put("Lamartine", l);
         l = new ArrayList<String>(); l.add("51"); this.lines.put("La Membrolle Centre", l);
         l = new ArrayList<String>(); l.add("51"); this.lines.put("La Membrolle Gare", l);
-        l = new ArrayList<String>(); l.add("08A"); l.add("08B"); l.add("51"); l.add("52"); this.lines.put("Lande", l);
+        l = new ArrayList<String>(); l.add("08A"); l.add("08B"); l.add("51"); this.lines.put("Lande", l);
         l = new ArrayList<String>(); l.add("56"); this.lines.put("Langennerie", l);
         l = new ArrayList<String>(); l.add("09A"); l.add("09B"); l.add("14"); this.lines.put("Langevin", l);
         l = new ArrayList<String>(); l.add("30"); this.lines.put("La Pasqueraie", l);
@@ -529,7 +529,7 @@ public class BusLines {
         l = new ArrayList<String>(); l.add("13"); this.lines.put("Oiselet", l);
         l = new ArrayList<String>(); l.add("13"); this.lines.put("Onze Arpents", l);
         l = new ArrayList<String>(); l.add("13"); this.lines.put("Orangerie", l);
-        l = new ArrayList<String>(); l.add("11"); l.add("13"); l.add("51"); l.add("52"); this.lines.put("Ormeau", l);
+        l = new ArrayList<String>(); l.add("11"); l.add("13"); l.add("51"); this.lines.put("Ormeau", l);
         l = new ArrayList<String>(); l.add("31"); this.lines.put("Ormes", l);
         l = new ArrayList<String>(); l.add("50"); this.lines.put("Pablo Neruda", l);
         l = new ArrayList<String>(); l.add("10"); l.add("15"); this.lines.put("Palais des Sports", l);
@@ -583,7 +583,7 @@ public class BusLines {
         l = new ArrayList<String>(); l.add("04B"); l.add("08A"); l.add("08B"); this.lines.put("Pont du Milieu", l);
         l = new ArrayList<String>(); l.add("11"); l.add("50"); this.lines.put("Pont Napoleon", l);
         l = new ArrayList<String>(); l.add("01A"); l.add("01B"); l.add("30"); l.add("31"); this.lines.put("Poré", l);
-        l = new ArrayList<String>(); l.add("51"); l.add("52"); this.lines.put("Portail d'Ormeau", l);
+        l = new ArrayList<String>(); l.add("51"); this.lines.put("Portail d'Ormeau", l);
         l = new ArrayList<String>(); l.add("50"); l.add("57"); this.lines.put("Port de Vallières", l);
         l = new ArrayList<String>(); l.add("01A"); l.add("01B"); l.add("07"); l.add("08A"); l.add("08B"); l.add("15"); l.add("21"); l.add("22"); l.add("51"); l.add("52"); l.add("N1"); this.lines.put("Portillon", l);
         l = new ArrayList<String>(); l.add("71"); this.lines.put("Portoville", l);
@@ -622,7 +622,7 @@ public class BusLines {
         l = new ArrayList<String>(); l.add("03A"); l.add("03B"); l.add("57"); this.lines.put("Rouget de l'Isle", l);
         l = new ArrayList<String>(); l.add("56"); this.lines.put("Rousseau", l);
         l = new ArrayList<String>(); l.add("71"); this.lines.put("Route de St-Genouph", l);
-        l = new ArrayList<String>(); l.add("08A"); l.add("08B"); l.add("51"); l.add("52"); this.lines.put("Roux", l);
+        l = new ArrayList<String>(); l.add("08A"); l.add("08B"); l.add("51"); this.lines.put("Roux", l);
         l = new ArrayList<String>(); l.add("57"); this.lines.put("Ruaux", l);
         l = new ArrayList<String>(); l.add("61"); this.lines.put("Rue Neuve", l);
         l = new ArrayList<String>(); l.add("71"); this.lines.put("Rue Noire", l);
