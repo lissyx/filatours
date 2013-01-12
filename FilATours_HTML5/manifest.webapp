@@ -1,15 +1,15 @@
 {
   "name": "Fil@Tours",
   "description": "Mobile Application for Fil Bleu",
-  "type": "certified",
+  "type": "privileged",
   "launch_path": "/index.html#root",
   "developer": {
     "name": "lissyx",
     "url": "https://github.com/lissyx/gaia/tree/image-uploader"
   },
   "permissions": {
-    "systemXHR":{},
-    "geolocation":{}
+    "systemXHR":{"description": "Needed to perform scrapping."},
+    "geolocation":{"description": "Needed to find your location and closest bus stops."}
   },
   "activities": {
     "select-stop": {
