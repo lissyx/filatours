@@ -4,9 +4,10 @@ WEBAPP ?= filatours.zip
 all: $(WEBAPP)
 
 clean: 
-	rm -rf $(TEMPDIR)
+	rm ../$(WEBAPP) || true
+	rm -rf $(TEMPDIR) || true
 
-$(TEMPDIR): clean
+$(TEMPDIR):
 	mkdir -p $(TEMPDIR)
 
 webapp: $(TEMPDIR)
@@ -21,8 +22,9 @@ purge:
 	rm -f ext/OpenLayers/*.debug.js; \
 	rm -rf ext/OpenLayers/lib/Firebug/; \
 	rm -rf test/; \
+	find shared/style/ -type f -name "*.html" -exec rm {} \; \
 
-$(WEBAPP): webapp purge
+$(WEBAPP): clean webapp purge
 	cd $(TEMPDIR) && zip -r9 ../$(WEBAPP) *
 
 .PHONY: webapp purge
