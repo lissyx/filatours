@@ -2,7 +2,7 @@
   "name": "Fil@Tours",
   "description": "Mobile Application for Fil Bleu",
   "type": "privileged",
-  "launch_path": "/index.html#root",
+  "launch_path": "/index.html",
   "developer": {
     "name": "lissyx",
     "url": "https://github.com/lissyx/gaia/tree/image-uploader"

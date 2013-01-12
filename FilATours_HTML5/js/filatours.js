@@ -619,4 +619,5 @@ window.addEventListener('DOMContentLoaded', function() {
   FilBleu.bindButtons();
   addGeolocButton('geoloc-dep');
   addGeolocButton('geoloc-arr');
+  document.location.hash = 'root';
 });
