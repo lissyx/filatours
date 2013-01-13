@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1" creator="FilBleuExporter">
 	<metadata>Filbleu - Ligne 57</metadata>
+	<wpt lon="0.555235" lat="47.384683">
+		<ele>0.0</ele>
+		<name>St Venant</name>
+	</wpt>
 	<wpt lon="0.688495" lat="47.389854">
 		<ele>0.0</ele>
 		<name>Jean Jaurès</name>
@@ -9,21 +13,21 @@
 		<ele>0.0</ele>
 		<name>Stade Varenne</name>
 	</wpt>
-	<wpt lon="0.555235" lat="47.384683">
-		<ele>0.0</ele>
-		<name>St Venant</name>
-	</wpt>
-	<wpt lon="0.538320" lat="47.392294">
-		<ele>0.0</ele>
-		<name>Vaugareau</name>
-	</wpt>
 	<wpt lon="0.553547" lat="47.385642">
 		<ele>0.0</ele>
 		<name>Luynes Centre</name>
 	</wpt>
+	<wpt lon="0.551734" lat="47.387188">
+		<ele>0.0</ele>
+		<name>Lilas</name>
+	</wpt>
 	<wpt lon="0.546865" lat="47.390159">
 		<ele>0.0</ele>
 		<name>Pasteur</name>
+	</wpt>
+	<wpt lon="0.531974" lat="47.378546">
+		<ele>0.0</ele>
+		<name>Ruaux</name>
 	</wpt>
 	<wpt lon="0.486640" lat="47.410014">
 		<ele>0.0</ele>
@@ -37,13 +41,13 @@
 		<ele>0.0</ele>
 		<name>Moulin Ragot</name>
 	</wpt>
-	<wpt lon="0.506875" lat="47.370544">
-		<ele>0.0</ele>
-		<name>Maurière</name>
-	</wpt>
 	<wpt lon="0.626033" lat="47.389593">
 		<ele>0.0</ele>
 		<name>Tartifume</name>
+	</wpt>
+	<wpt lon="0.526636" lat="47.384999">
+		<ele>0.0</ele>
+		<name>Vieux Bourg</name>
 	</wpt>
 	<wpt lon="0.512511" lat="47.370925">
 		<ele>0.0</ele>
@@ -53,33 +57,21 @@
 		<ele>0.0</ele>
 		<name>St Etienne de Chigny Centre</name>
 	</wpt>
-	<wpt lon="0.606988" lat="47.389179">
+	<wpt lon="0.554488" lat="47.383447">
 		<ele>0.0</ele>
-		<name>Vallières</name>
+		<name>Baugé</name>
 	</wpt>
-	<wpt lon="0.589264" lat="47.389498">
+	<wpt lon="0.641134" lat="47.391745">
 		<ele>0.0</ele>
-		<name>Chatigny</name>
-	</wpt>
-	<wpt lon="0.524106" lat="47.399621">
-		<ele>0.0</ele>
-		<name>Le Pin</name>
-	</wpt>
-	<wpt lon="0.584524" lat="47.389192">
-		<ele>0.0</ele>
-		<name>Les Muses</name>
+		<name>Guignière</name>
 	</wpt>
 	<wpt lon="0.597206" lat="47.389294">
 		<ele>0.0</ele>
 		<name>Chevalette</name>
 	</wpt>
-	<wpt lon="0.683797" lat="47.389803">
+	<wpt lon="0.606988" lat="47.389179">
 		<ele>0.0</ele>
-		<name>Béranger</name>
-	</wpt>
-	<wpt lon="0.692803" lat="47.390745">
-		<ele>0.0</ele>
-		<name>Gare Vinci</name>
+		<name>Vallières</name>
 	</wpt>
 	<wpt lon="0.549989" lat="47.390621">
 		<ele>0.0</ele>
@@ -89,21 +81,21 @@
 		<ele>0.0</ele>
 		<name>Barbinière</name>
 	</wpt>
-	<wpt lon="0.554488" lat="47.383447">
+	<wpt lon="0.692803" lat="47.390745">
 		<ele>0.0</ele>
-		<name>Baugé</name>
-	</wpt>
-	<wpt lon="0.569967" lat="47.387468">
-		<ele>0.0</ele>
-		<name>Chêne Vert</name>
+		<name>Gare Vinci</name>
 	</wpt>
 	<wpt lon="0.563420" lat="47.386140">
 		<ele>0.0</ele>
-		<name>La Planche</name>
+		<name>Coteaux</name>
 	</wpt>
-	<wpt lon="0.551734" lat="47.387188">
+	<wpt lon="0.538320" lat="47.392294">
 		<ele>0.0</ele>
-		<name>Lilas</name>
+		<name>Vaugareau</name>
+	</wpt>
+	<wpt lon="0.669771" lat="47.393578">
+		<ele>0.0</ele>
+		<name>LP Bayet</name>
 	</wpt>
 	<wpt lon="0.681492" lat="47.389131">
 		<ele>0.0</ele>
@@ -113,9 +105,13 @@
 		<ele>0.0</ele>
 		<name>Rouget de l'Isle</name>
 	</wpt>
-	<wpt lon="0.531974" lat="47.378546">
+	<wpt lon="0.569967" lat="47.387468">
 		<ele>0.0</ele>
-		<name>Ruaux</name>
+		<name>Chêne Vert</name>
+	</wpt>
+	<wpt lon="0.589264" lat="47.389498">
+		<ele>0.0</ele>
+		<name>Chatigny</name>
 	</wpt>
 	<wpt lon="0.672666" lat="47.392419">
 		<ele>0.0</ele>
@@ -137,13 +133,13 @@
 		<ele>0.0</ele>
 		<name>La Chappe</name>
 	</wpt>
-	<wpt lon="0.578077" lat="47.388415">
+	<wpt lon="0.506875" lat="47.370544">
 		<ele>0.0</ele>
-		<name>Gannay</name>
+		<name>Maurière</name>
 	</wpt>
-	<wpt lon="0.641134" lat="47.391745">
+	<wpt lon="0.584524" lat="47.389192">
 		<ele>0.0</ele>
-		<name>Guignière</name>
+		<name>Les Muses</name>
 	</wpt>
 	<wpt lon="0.632461" lat="47.390336">
 		<ele>0.0</ele>
@@ -161,17 +157,17 @@
 		<ele>0.0</ele>
 		<name>Martigny</name>
 	</wpt>
-	<wpt lon="0.669771" lat="47.393578">
-		<ele>0.0</ele>
-		<name>LP Bayet</name>
-	</wpt>
 	<wpt lon="0.677167" lat="47.388553">
 		<ele>0.0</ele>
 		<name>St Eloi</name>
 	</wpt>
-	<wpt lon="0.526636" lat="47.384999">
+	<wpt lon="0.683797" lat="47.389803">
 		<ele>0.0</ele>
-		<name>Vieux Bourg</name>
+		<name>Béranger</name>
+	</wpt>
+	<wpt lon="0.578077" lat="47.388415">
+		<ele>0.0</ele>
+		<name>Gannay</name>
 	</wpt>
 	<wpt lon="0.674851" lat="47.389481">
 		<ele>0.0</ele>

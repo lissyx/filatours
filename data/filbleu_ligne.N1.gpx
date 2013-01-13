@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1" creator="FilBleuExporter">
 	<metadata>Filbleu - Ligne N1</metadata>
-	<wpt lon="0.682627" lat="47.405536">
-		<ele>0.0</ele>
-		<name>Mi-Côte</name>
-	</wpt>
 	<wpt lon="0.682092" lat="47.367668">
 		<ele>0.0</ele>
 		<name>Michelin</name>
 	</wpt>
+	<wpt lon="0.680996" lat="47.409186">
+		<ele>0.0</ele>
+		<name>Maginot</name>
+	</wpt>
 	<wpt lon="0.669050" lat="47.359725">
 		<ele>0.0</ele>
 		<name>Kleber</name>
-	</wpt>
-	<wpt lon="0.677438" lat="47.370273">
-		<ele>0.0</ele>
-		<name>Jacques Monod</name>
 	</wpt>
 	<wpt lon="0.666038" lat="47.355585">
 		<ele>0.0</ele>
@@ -25,25 +21,21 @@
 		<ele>0.0</ele>
 		<name>Tranchée</name>
 	</wpt>
-	<wpt lon="0.683994" lat="47.366534">
+	<wpt lon="0.688495" lat="47.389854">
 		<ele>0.0</ele>
-		<name>2 Lions</name>
+		<name>Jean Jaurès</name>
 	</wpt>
 	<wpt lon="0.686384" lat="47.432513">
 		<ele>0.0</ele>
 		<name>Abbaye Gatines</name>
 	</wpt>
+	<wpt lon="0.686061" lat="47.433647">
+		<ele>0.0</ele>
+		<name>Lycée Choiseul</name>
+	</wpt>
 	<wpt lon="0.675716" lat="47.360181">
 		<ele>0.0</ele>
 		<name>Auvergne</name>
-	</wpt>
-	<wpt lon="0.681611" lat="47.418185">
-		<ele>0.0</ele>
-		<name>Chevalerie</name>
-	</wpt>
-	<wpt lon="0.688495" lat="47.389854">
-		<ele>0.0</ele>
-		<name>Jean Jaurès</name>
 	</wpt>
 	<wpt lon="0.684394" lat="47.411656">
 		<ele>0.0</ele>
@@ -52,10 +44,6 @@
 	<wpt lon="0.685991" lat="47.373464">
 		<ele>0.0</ele>
 		<name>Churchill</name>
-	</wpt>
-	<wpt lon="0.694569" lat="47.376186">
-		<ele>0.0</ele>
-		<name>Charcot</name>
 	</wpt>
 	<wpt lon="0.683077" lat="47.425444">
 		<ele>0.0</ele>
@@ -69,18 +57,6 @@
 		<ele>0.0</ele>
 		<name>Pont Cher</name>
 	</wpt>
-	<wpt lon="0.677264" lat="47.365547">
-		<ele>0.0</ele>
-		<name>Mérieux</name>
-	</wpt>
-	<wpt lon="0.679247" lat="47.374087">
-		<ele>0.0</ele>
-		<name>St Sauveur</name>
-	</wpt>
-	<wpt lon="0.692803" lat="47.390745">
-		<ele>0.0</ele>
-		<name>Gare Vinci</name>
-	</wpt>
 	<wpt lon="0.679824" lat="47.413440">
 		<ele>0.0</ele>
 		<name>Gauguin</name>
@@ -89,61 +65,61 @@
 		<ele>0.0</ele>
 		<name>Emile Zola</name>
 	</wpt>
-	<wpt lon="0.684108" lat="47.436421">
+	<wpt lon="0.692803" lat="47.390745">
 		<ele>0.0</ele>
-		<name>Douets Lycée Choiseul</name>
+		<name>Gare Vinci</name>
 	</wpt>
-	<wpt lon="0.674749" lat="47.364895">
+	<wpt lon="0.677264" lat="47.365547">
 		<ele>0.0</ele>
-		<name>Gloriette</name>
+		<name>Mérieux</name>
 	</wpt>
-	<wpt lon="0.695388" lat="47.373957">
+	<wpt lon="0.681611" lat="47.418185">
 		<ele>0.0</ele>
-		<name>Verdun</name>
-	</wpt>
-	<wpt lon="0.683860" lat="47.395880">
-		<ele>0.0</ele>
-		<name>Constantine</name>
+		<name>Chevalerie</name>
 	</wpt>
 	<wpt lon="0.679099" lat="47.428860">
 		<ele>0.0</ele>
 		<name>Compagnonnage</name>
 	</wpt>
-	<wpt lon="0.685000" lat="47.393507">
+	<wpt lon="0.683860" lat="47.395880">
 		<ele>0.0</ele>
-		<name>Marceau</name>
+		<name>Constantine</name>
 	</wpt>
-	<wpt lon="0.683272" lat="47.422383">
+	<wpt lon="0.677438" lat="47.370273">
 		<ele>0.0</ele>
-		<name>Beffroi</name>
+		<name>Jacques Monod</name>
 	</wpt>
 	<wpt lon="0.690352" lat="47.386473">
 		<ele>0.0</ele>
 		<name>Salengro</name>
 	</wpt>
-	<wpt lon="0.681089" lat="47.409083">
+	<wpt lon="0.683272" lat="47.422383">
 		<ele>0.0</ele>
-		<name>Maginot</name>
+		<name>Beffroi</name>
 	</wpt>
-	<wpt lon="0.686061" lat="47.433647">
+	<wpt lon="0.681797" lat="47.425862">
 		<ele>0.0</ele>
-		<name>Lycée Choiseul</name>
+		<name>Maine</name>
 	</wpt>
 	<wpt lon="0.687079" lat="47.414565">
 		<ele>0.0</ele>
 		<name>Beauverger</name>
 	</wpt>
-	<wpt lon="0.692710" lat="47.379563">
+	<wpt lon="0.684652" lat="47.401383">
 		<ele>0.0</ele>
-		<name>Place de la Liberté</name>
+		<name>Place Choiseul</name>
 	</wpt>
 	<wpt lon="0.683457" lat="47.416153">
 		<ele>0.0</ele>
 		<name>Trois Rivières</name>
 	</wpt>
-	<wpt lon="0.684652" lat="47.401383">
+	<wpt lon="0.692710" lat="47.379563">
 		<ele>0.0</ele>
-		<name>Place Choiseul</name>
+		<name>Place de la Liberté</name>
+	</wpt>
+	<wpt lon="0.682627" lat="47.405536">
+		<ele>0.0</ele>
+		<name>Mi-Côte</name>
 	</wpt>
 	<wpt lon="0.678890" lat="47.350941">
 		<ele>0.0</ele>
@@ -153,36 +129,56 @@
 		<ele>0.0</ele>
 		<name>Bugeaud</name>
 	</wpt>
-	<wpt lon="0.681797" lat="47.425862">
+	<wpt lon="0.685000" lat="47.393507">
 		<ele>0.0</ele>
-		<name>Maine</name>
+		<name>Marceau</name>
+	</wpt>
+	<wpt lon="0.694569" lat="47.376186">
+		<ele>0.0</ele>
+		<name>Charcot</name>
 	</wpt>
 	<wpt lon="0.672870" lat="47.351159">
 		<ele>0.0</ele>
 		<name>Morier</name>
 	</wpt>
+	<wpt lon="0.683994" lat="47.366534">
+		<ele>0.0</ele>
+		<name>2 Lions</name>
+	</wpt>
+	<wpt lon="0.695388" lat="47.373957">
+		<ele>0.0</ele>
+		<name>Verdun</name>
+	</wpt>
 	<wpt lon="0.666361" lat="47.351008">
 		<ele>0.0</ele>
 		<name>Martyrs</name>
 	</wpt>
-	<wpt lon="0.680568" lat="47.395870">
+	<wpt lon="0.678282" lat="47.400556">
 		<ele>0.0</ele>
-		<name>Faculté des Tanneurs</name>
-	</wpt>
-	<wpt lon="0.691499" lat="47.383901">
-		<ele>0.0</ele>
-		<name>Boisdenier</name>
+		<name>Portillon</name>
 	</wpt>
 	<wpt lon="0.680460" lat="47.422289">
 		<ele>0.0</ele>
 		<name>Europe</name>
 	</wpt>
+	<wpt lon="0.684108" lat="47.436421">
+		<ele>0.0</ele>
+		<name>Douets Lycée Choiseul</name>
+	</wpt>
+	<wpt lon="0.691499" lat="47.383901">
+		<ele>0.0</ele>
+		<name>Boisdenier</name>
+	</wpt>
+	<wpt lon="0.680568" lat="47.395870">
+		<ele>0.0</ele>
+		<name>Faculté des Tanneurs</name>
+	</wpt>
+	<wpt lon="0.679247" lat="47.374087">
+		<ele>0.0</ele>
+		<name>St Sauveur</name>
+	</wpt>
 	<wpt lon="0.680678" lat="47.420295">
 		<ele>0.0</ele>
 		<name>Delaroche</name>
-	</wpt>
-	<wpt lon="0.678282" lat="47.400556">
-		<ele>0.0</ele>
-		<name>Portillon</name>
 	</wpt>
 </gpx>

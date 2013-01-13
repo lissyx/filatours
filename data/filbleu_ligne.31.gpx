@@ -5,10 +5,6 @@
 		<ele>0.0</ele>
 		<name>Joué Centre</name>
 	</wpt>
-	<wpt lon="0.701716" lat="47.355845">
-		<ele>0.0</ele>
-		<name>Arsonval</name>
-	</wpt>
 	<wpt lon="0.657900" lat="47.337942">
 		<ele>0.0</ele>
 		<name>Joué Lycée Jean Monnet</name>
@@ -29,25 +25,33 @@
 		<ele>0.0</ele>
 		<name>La Grange</name>
 	</wpt>
-	<wpt lon="0.643109" lat="47.357076">
+	<wpt lon="0.676772" lat="47.384992">
 		<ele>0.0</ele>
-		<name>L'Epend</name>
-	</wpt>
-	<wpt lon="0.663696" lat="47.357344">
-		<ele>0.0</ele>
-		<name>Marbellière</name>
+		<name>Rabelais</name>
 	</wpt>
 	<wpt lon="0.701769" lat="47.360588">
 		<ele>0.0</ele>
 		<name>J.P. Rameau</name>
 	</wpt>
-	<wpt lon="0.676885" lat="47.379980">
+	<wpt lon="0.663696" lat="47.357344">
 		<ele>0.0</ele>
-		<name>Général Renault</name>
+		<name>Marbellière</name>
+	</wpt>
+	<wpt lon="0.688495" lat="47.389854">
+		<ele>0.0</ele>
+		<name>Jean Jaurès</name>
+	</wpt>
+	<wpt lon="0.677438" lat="47.370273">
+		<ele>0.0</ele>
+		<name>Jacques Monod</name>
 	</wpt>
 	<wpt lon="0.676553" lat="47.387148">
 		<ele>0.0</ele>
 		<name>Arago</name>
+	</wpt>
+	<wpt lon="0.701716" lat="47.355845">
+		<ele>0.0</ele>
+		<name>Arsonval</name>
 	</wpt>
 	<wpt lon="0.657688" lat="47.357662">
 		<ele>0.0</ele>
@@ -68,10 +72,6 @@
 	<wpt lon="0.654979" lat="47.358972">
 		<ele>0.0</ele>
 		<name>Ormes</name>
-	</wpt>
-	<wpt lon="0.688495" lat="47.389854">
-		<ele>0.0</ele>
-		<name>Jean Jaurès</name>
 	</wpt>
 	<wpt lon="0.636752" lat="47.357725">
 		<ele>0.0</ele>
@@ -97,21 +97,29 @@
 		<ele>0.0</ele>
 		<name>Pont Cher</name>
 	</wpt>
-	<wpt lon="0.677438" lat="47.370273">
-		<ele>0.0</ele>
-		<name>Jacques Monod</name>
-	</wpt>
 	<wpt lon="0.686322" lat="47.351733">
 		<ele>0.0</ele>
 		<name>Quatre Bornes</name>
+	</wpt>
+	<wpt lon="0.643109" lat="47.357076">
+		<ele>0.0</ele>
+		<name>L'Epend</name>
+	</wpt>
+	<wpt lon="0.680267" lat="47.379617">
+		<ele>0.0</ele>
+		<name>Strasbourg</name>
+	</wpt>
+	<wpt lon="0.677058" lat="47.382401">
+		<ele>0.0</ele>
+		<name>Giraudeau</name>
 	</wpt>
 	<wpt lon="0.634507" lat="47.356104">
 		<ele>0.0</ele>
 		<name>Aubepines</name>
 	</wpt>
-	<wpt lon="0.632851" lat="47.353016">
+	<wpt lon="0.678983" lat="47.376733">
 		<ele>0.0</ele>
-		<name>Ajoncs</name>
+		<name>Erables</name>
 	</wpt>
 	<wpt lon="0.618142" lat="47.336949">
 		<ele>0.0</ele>
@@ -121,21 +129,9 @@
 		<ele>0.0</ele>
 		<name>Cugnot</name>
 	</wpt>
-	<wpt lon="0.679247" lat="47.374087">
+	<wpt lon="0.676885" lat="47.379980">
 		<ele>0.0</ele>
-		<name>St Sauveur</name>
-	</wpt>
-	<wpt lon="0.683797" lat="47.389803">
-		<ele>0.0</ele>
-		<name>Béranger</name>
-	</wpt>
-	<wpt lon="0.678983" lat="47.376733">
-		<ele>0.0</ele>
-		<name>Erables</name>
-	</wpt>
-	<wpt lon="0.680267" lat="47.379617">
-		<ele>0.0</ele>
-		<name>Strasbourg</name>
+		<name>Général Renault</name>
 	</wpt>
 	<wpt lon="0.681492" lat="47.389131">
 		<ele>0.0</ele>
@@ -153,14 +149,6 @@
 		<ele>0.0</ele>
 		<name>Freyssinet</name>
 	</wpt>
-	<wpt lon="0.677058" lat="47.382401">
-		<ele>0.0</ele>
-		<name>Giraudeau</name>
-	</wpt>
-	<wpt lon="0.698441" lat="47.355575">
-		<ele>0.0</ele>
-		<name>Bd de Chinon</name>
-	</wpt>
 	<wpt lon="0.660290" lat="47.354195">
 		<ele>0.0</ele>
 		<name>Jean de la Fontaine</name>
@@ -168,6 +156,14 @@
 	<wpt lon="0.678890" lat="47.350941">
 		<ele>0.0</ele>
 		<name>Bruère</name>
+	</wpt>
+	<wpt lon="0.639357" lat="47.345633">
+		<ele>0.0</ele>
+		<name>Philippe Le Bon</name>
+	</wpt>
+	<wpt lon="0.698441" lat="47.355575">
+		<ele>0.0</ele>
+		<name>Bd de Chinon</name>
 	</wpt>
 	<wpt lon="0.638780" lat="47.344749">
 		<ele>0.0</ele>
@@ -197,6 +193,10 @@
 		<ele>0.0</ele>
 		<name>Montreuil Bellay</name>
 	</wpt>
+	<wpt lon="0.632851" lat="47.353016">
+		<ele>0.0</ele>
+		<name>Ajoncs</name>
+	</wpt>
 	<wpt lon="0.619948" lat="47.340467">
 		<ele>0.0</ele>
 		<name>Puits Tessier</name>
@@ -205,10 +205,6 @@
 		<ele>0.0</ele>
 		<name>Mallarme</name>
 	</wpt>
-	<wpt lon="0.676772" lat="47.384992">
-		<ele>0.0</ele>
-		<name>Rabelais</name>
-	</wpt>
 	<wpt lon="0.677167" lat="47.388553">
 		<ele>0.0</ele>
 		<name>St Eloi</name>
@@ -216,5 +212,13 @@
 	<wpt lon="0.702396" lat="47.357182">
 		<ele>0.0</ele>
 		<name>Faculté de Grandmont</name>
+	</wpt>
+	<wpt lon="0.679247" lat="47.374087">
+		<ele>0.0</ele>
+		<name>St Sauveur</name>
+	</wpt>
+	<wpt lon="0.683797" lat="47.389803">
+		<ele>0.0</ele>
+		<name>Béranger</name>
 	</wpt>
 </gpx>

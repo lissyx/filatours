@@ -1,45 +1,61 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1" creator="FilBleuExporter">
 	<metadata>Filbleu - Ligne 04A, 04B</metadata>
-	<wpt lon="0.702088" lat="47.381308">
+	<wpt lon="0.698523" lat="47.397492">
 		<ele>0.0</ele>
-		<name>Mermoz</name>
+		<name>Mirabeau</name>
 	</wpt>
 	<wpt lon="0.698523" lat="47.397492">
 		<ele>0.0</ele>
 		<name>Mirabeau</name>
 	</wpt>
-	<wpt lon="0.700201" lat="47.392753">
-		<ele>0.0</ele>
-		<name>Traversiere</name>
-	</wpt>
 	<wpt lon="0.705972" lat="47.386307">
 		<ele>0.0</ele>
 		<name>Pont du Milieu</name>
 	</wpt>
-	<wpt lon="0.669771" lat="47.393578">
+	<wpt lon="0.705758" lat="47.381801">
 		<ele>0.0</ele>
-		<name>LP Bayet</name>
+		<name>Jolivet</name>
 	</wpt>
-	<wpt lon="0.700349" lat="47.392317">
+	<wpt lon="0.705758" lat="47.381801">
 		<ele>0.0</ele>
-		<name>Loiseau d'Entraigues</name>
+		<name>Jolivet</name>
 	</wpt>
 	<wpt lon="0.701250" lat="47.392228">
 		<ele>0.0</ele>
 		<name>Rempart</name>
 	</wpt>
-	<wpt lon="0.676885" lat="47.379980">
+	<wpt lon="0.701250" lat="47.392228">
 		<ele>0.0</ele>
-		<name>Général Renault</name>
+		<name>Rempart</name>
 	</wpt>
-	<wpt lon="0.704990" lat="47.381709">
+	<wpt lon="0.700201" lat="47.392753">
 		<ele>0.0</ele>
-		<name>Rotonde</name>
+		<name>Traversiere</name>
+	</wpt>
+	<wpt lon="0.669771" lat="47.393578">
+		<ele>0.0</ele>
+		<name>LP Bayet</name>
+	</wpt>
+	<wpt lon="0.669771" lat="47.393578">
+		<ele>0.0</ele>
+		<name>LP Bayet</name>
+	</wpt>
+	<wpt lon="0.705454" lat="47.384307">
+		<ele>0.0</ele>
+		<name>Tour d'Auvergne</name>
 	</wpt>
 	<wpt lon="0.685875" lat="47.396499">
 		<ele>0.0</ele>
 		<name>Anatole France</name>
+	</wpt>
+	<wpt lon="0.685875" lat="47.396499">
+		<ele>0.0</ele>
+		<name>Anatole France</name>
+	</wpt>
+	<wpt lon="0.703678" lat="47.385622">
+		<ele>0.0</ele>
+		<name>La Fuye</name>
 	</wpt>
 	<wpt lon="0.705245" lat="47.390719">
 		<ele>0.0</ele>
@@ -49,65 +65,97 @@
 		<ele>0.0</ele>
 		<name>Château de Tours</name>
 	</wpt>
-	<wpt lon="0.700534" lat="47.385179">
+	<wpt lon="0.692847" lat="47.397480">
 		<ele>0.0</ele>
-		<name>Docteur Fournier</name>
-	</wpt>
-	<wpt lon="0.706051" lat="47.389030">
-		<ele>0.0</ele>
-		<name>Schweitzer</name>
-	</wpt>
-	<wpt lon="0.705454" lat="47.384307">
-		<ele>0.0</ele>
-		<name>Tour d'Auvergne</name>
-	</wpt>
-	<wpt lon="0.699397" lat="47.379327">
-		<ele>0.0</ele>
-		<name>St Paul</name>
-	</wpt>
-	<wpt lon="0.684747" lat="47.381134">
-		<ele>0.0</ele>
-		<name>Duplessis</name>
-	</wpt>
-	<wpt lon="0.668466" lat="47.381384">
-		<ele>0.0</ele>
-		<name>St François</name>
-	</wpt>
-	<wpt lon="0.680267" lat="47.379617">
-		<ele>0.0</ele>
-		<name>Strasbourg</name>
-	</wpt>
-	<wpt lon="0.680568" lat="47.395870">
-		<ele>0.0</ele>
-		<name>Faculté des Tanneurs</name>
-	</wpt>
-	<wpt lon="0.671274" lat="47.379996">
-		<ele>0.0</ele>
-		<name>Maryse Bastié</name>
-	</wpt>
-	<wpt lon="0.703217" lat="47.387262">
-		<ele>0.0</ele>
-		<name>Place Velpeau</name>
+		<name>Château de Tours</name>
 	</wpt>
 	<wpt lon="0.667968" lat="47.384283">
 		<ele>0.0</ele>
 		<name>Tonnellé</name>
 	</wpt>
-	<wpt lon="0.703192" lat="47.383110">
+	<wpt lon="0.667968" lat="47.384283">
 		<ele>0.0</ele>
-		<name>Peupliers</name>
+		<name>Tonnellé</name>
 	</wpt>
-	<wpt lon="0.705758" lat="47.381801">
+	<wpt lon="0.703992" lat="47.384025">
 		<ele>0.0</ele>
-		<name>Jolivet</name>
+		<name>Florian</name>
+	</wpt>
+	<wpt lon="0.680267" lat="47.379617">
+		<ele>0.0</ele>
+		<name>Strasbourg</name>
+	</wpt>
+	<wpt lon="0.680267" lat="47.379617">
+		<ele>0.0</ele>
+		<name>Strasbourg</name>
+	</wpt>
+	<wpt lon="0.684747" lat="47.381134">
+		<ele>0.0</ele>
+		<name>Duplessis</name>
+	</wpt>
+	<wpt lon="0.684747" lat="47.381134">
+		<ele>0.0</ele>
+		<name>Duplessis</name>
+	</wpt>
+	<wpt lon="0.675109" lat="47.394908">
+		<ele>0.0</ele>
+		<name>Dames Blanches</name>
+	</wpt>
+	<wpt lon="0.675109" lat="47.394908">
+		<ele>0.0</ele>
+		<name>Dames Blanches</name>
+	</wpt>
+	<wpt lon="0.676885" lat="47.379980">
+		<ele>0.0</ele>
+		<name>Général Renault</name>
+	</wpt>
+	<wpt lon="0.676885" lat="47.379980">
+		<ele>0.0</ele>
+		<name>Général Renault</name>
+	</wpt>
+	<wpt lon="0.704990" lat="47.381709">
+		<ele>0.0</ele>
+		<name>Rotonde</name>
+	</wpt>
+	<wpt lon="0.704990" lat="47.381709">
+		<ele>0.0</ele>
+		<name>Rotonde</name>
+	</wpt>
+	<wpt lon="0.671274" lat="47.379996">
+		<ele>0.0</ele>
+		<name>Maryse Bastié</name>
+	</wpt>
+	<wpt lon="0.671274" lat="47.379996">
+		<ele>0.0</ele>
+		<name>Maryse Bastié</name>
+	</wpt>
+	<wpt lon="0.706051" lat="47.389030">
+		<ele>0.0</ele>
+		<name>Schweitzer</name>
 	</wpt>
 	<wpt lon="0.689295" lat="47.397322">
 		<ele>0.0</ele>
 		<name>Voltaire</name>
 	</wpt>
-	<wpt lon="0.703678" lat="47.385622">
+	<wpt lon="0.689295" lat="47.397322">
 		<ele>0.0</ele>
-		<name>La Fuye</name>
+		<name>Voltaire</name>
+	</wpt>
+	<wpt lon="0.703217" lat="47.387262">
+		<ele>0.0</ele>
+		<name>Place Velpeau</name>
+	</wpt>
+	<wpt lon="0.699759" lat="47.395500">
+		<ele>0.0</ele>
+		<name>Ursulines</name>
+	</wpt>
+	<wpt lon="0.699759" lat="47.395500">
+		<ele>0.0</ele>
+		<name>Ursulines</name>
+	</wpt>
+	<wpt lon="0.692710" lat="47.379563">
+		<ele>0.0</ele>
+		<name>Place de la Liberté</name>
 	</wpt>
 	<wpt lon="0.692710" lat="47.379563">
 		<ele>0.0</ele>
@@ -117,13 +165,17 @@
 		<ele>0.0</ele>
 		<name>Place Tulasne</name>
 	</wpt>
-	<wpt lon="0.699759" lat="47.395500">
+	<wpt lon="0.702088" lat="47.381308">
 		<ele>0.0</ele>
-		<name>Ursulines</name>
+		<name>Mermoz</name>
 	</wpt>
-	<wpt lon="0.697051" lat="47.387877">
+	<wpt lon="0.702088" lat="47.381308">
 		<ele>0.0</ele>
-		<name>Champ Girault</name>
+		<name>Mermoz</name>
+	</wpt>
+	<wpt lon="0.688212" lat="47.380468">
+		<ele>0.0</ele>
+		<name>Carnot</name>
 	</wpt>
 	<wpt lon="0.688212" lat="47.380468">
 		<ele>0.0</ele>
@@ -133,21 +185,49 @@
 		<ele>0.0</ele>
 		<name>Canal</name>
 	</wpt>
-	<wpt lon="0.703992" lat="47.384025">
+	<wpt lon="0.668466" lat="47.381384">
 		<ele>0.0</ele>
-		<name>Florian</name>
+		<name>St François</name>
 	</wpt>
-	<wpt lon="0.671853" lat="47.393644">
+	<wpt lon="0.668466" lat="47.381384">
 		<ele>0.0</ele>
-		<name>Boyer</name>
+		<name>St François</name>
 	</wpt>
 	<wpt lon="0.681761" lat="47.381528">
 		<ele>0.0</ele>
 		<name>Boylesve</name>
 	</wpt>
-	<wpt lon="0.675109" lat="47.394908">
+	<wpt lon="0.681761" lat="47.381528">
 		<ele>0.0</ele>
-		<name>Dames Blanches</name>
+		<name>Boylesve</name>
+	</wpt>
+	<wpt lon="0.680568" lat="47.395870">
+		<ele>0.0</ele>
+		<name>Faculté des Tanneurs</name>
+	</wpt>
+	<wpt lon="0.680568" lat="47.395870">
+		<ele>0.0</ele>
+		<name>Faculté des Tanneurs</name>
+	</wpt>
+	<wpt lon="0.671853" lat="47.393644">
+		<ele>0.0</ele>
+		<name>Boyer</name>
+	</wpt>
+	<wpt lon="0.671853" lat="47.393644">
+		<ele>0.0</ele>
+		<name>Boyer</name>
+	</wpt>
+	<wpt lon="0.699397" lat="47.379327">
+		<ele>0.0</ele>
+		<name>St Paul</name>
+	</wpt>
+	<wpt lon="0.699397" lat="47.379327">
+		<ele>0.0</ele>
+		<name>St Paul</name>
+	</wpt>
+	<wpt lon="0.667163" lat="47.387477">
+		<ele>0.0</ele>
+		<name>Bretonneau</name>
 	</wpt>
 	<wpt lon="0.667163" lat="47.387477">
 		<ele>0.0</ele>
@@ -156,6 +236,14 @@
 	<wpt lon="0.668012" lat="47.390208">
 		<ele>0.0</ele>
 		<name>Desmoulins</name>
+	</wpt>
+	<wpt lon="0.668012" lat="47.390208">
+		<ele>0.0</ele>
+		<name>Desmoulins</name>
+	</wpt>
+	<wpt lon="0.668075" lat="47.391781">
+		<ele>0.0</ele>
+		<name>Docteur Chaumier</name>
 	</wpt>
 	<wpt lon="0.668075" lat="47.391781">
 		<ele>0.0</ele>

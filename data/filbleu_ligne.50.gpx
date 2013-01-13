@@ -5,93 +5,69 @@
 		<ele>0.0</ele>
 		<name>Pont Napoleon</name>
 	</wpt>
-	<wpt lon="0.764323" lat="47.386350">
+	<wpt lon="0.703076" lat="47.393837">
 		<ele>0.0</ele>
-		<name>Simone Signoret</name>
-	</wpt>
-	<wpt lon="0.774041" lat="47.397867">
-		<ele>0.0</ele>
-		<name>Sévigné</name>
-	</wpt>
-	<wpt lon="0.725494" lat="47.393607">
-		<ele>0.0</ele>
-		<name>Grand Mail</name>
-	</wpt>
-	<wpt lon="0.786205" lat="47.393739">
-		<ele>0.0</ele>
-		<name>Les Fougerolles</name>
-	</wpt>
-	<wpt lon="0.779268" lat="47.389017">
-		<ele>0.0</ele>
-		<name>Louise Michel</name>
-	</wpt>
-	<wpt lon="0.778720" lat="47.395978">
-		<ele>0.0</ele>
-		<name>Ninon de l'Enclos</name>
-	</wpt>
-	<wpt lon="0.750813" lat="47.397866">
-		<ele>0.0</ele>
-		<name>Pablo Neruda</name>
-	</wpt>
-	<wpt lon="0.759482" lat="47.397517">
-		<ele>0.0</ele>
-		<name>Gros Chêne</name>
-	</wpt>
-	<wpt lon="0.768559" lat="47.395463">
-		<ele>0.0</ele>
-		<name>Jeanne D'arc</name>
-	</wpt>
-	<wpt lon="0.764108" lat="47.396131">
-		<ele>0.0</ele>
-		<name>La Ville aux Dames Centre</name>
-	</wpt>
-	<wpt lon="0.776345" lat="47.388150">
-		<ele>0.0</ele>
-		<name>Lecouvreur</name>
-	</wpt>
-	<wpt lon="0.626033" lat="47.389593">
-		<ele>0.0</ele>
-		<name>Tartifume</name>
-	</wpt>
-	<wpt lon="0.606988" lat="47.389179">
-		<ele>0.0</ele>
-		<name>Vallières</name>
+		<name>Renan</name>
 	</wpt>
 	<wpt lon="0.555235" lat="47.384683">
 		<ele>0.0</ele>
 		<name>St Venant</name>
 	</wpt>
-	<wpt lon="0.589264" lat="47.389498">
+	<wpt lon="0.750813" lat="47.397866">
 		<ele>0.0</ele>
-		<name>Chatigny</name>
+		<name>Pablo Neruda</name>
+	</wpt>
+	<wpt lon="0.688495" lat="47.389854">
+		<ele>0.0</ele>
+		<name>Jean Jaurès</name>
+	</wpt>
+	<wpt lon="0.700378" lat="47.392230">
+		<ele>0.0</ele>
+		<name>Loiseau d'Entraigues</name>
+	</wpt>
+	<wpt lon="0.696975" lat="47.391227">
+		<ele>0.0</ele>
+		<name>Heurteloup</name>
+	</wpt>
+	<wpt lon="0.681577" lat="47.391089">
+		<ele>0.0</ele>
+		<name>Halles</name>
+	</wpt>
+	<wpt lon="0.546865" lat="47.390159">
+		<ele>0.0</ele>
+		<name>Pasteur</name>
+	</wpt>
+	<wpt lon="0.779268" lat="47.389017">
+		<ele>0.0</ele>
+		<name>Louise Michel</name>
+	</wpt>
+	<wpt lon="0.626033" lat="47.389593">
+		<ele>0.0</ele>
+		<name>Tartifume</name>
+	</wpt>
+	<wpt lon="0.723332" lat="47.391926">
+		<ele>0.0</ele>
+		<name>Romarins</name>
+	</wpt>
+	<wpt lon="0.606988" lat="47.389179">
+		<ele>0.0</ele>
+		<name>Vallières</name>
 	</wpt>
 	<wpt lon="0.584524" lat="47.389192">
 		<ele>0.0</ele>
 		<name>Les Muses</name>
 	</wpt>
+	<wpt lon="0.554488" lat="47.383447">
+		<ele>0.0</ele>
+		<name>Baugé</name>
+	</wpt>
+	<wpt lon="0.740259" lat="47.396983">
+		<ele>0.0</ele>
+		<name>St Pierre Justices</name>
+	</wpt>
 	<wpt lon="0.597206" lat="47.389294">
 		<ele>0.0</ele>
 		<name>Chevalette</name>
-	</wpt>
-	<wpt lon="0.768839" lat="47.386605">
-		<ele>0.0</ele>
-		<name>Anne de Bretagne</name>
-	</wpt>
-	<wpt lon="0.777251" lat="47.397947">
-		<ele>0.0</ele>
-		<name>Anne de France</name>
-	</wpt>
-	<wpt lon="0.782523" lat="47.389605">
-		<ele>0.0</ele>
-		<name>Aliénor d'Aquitaine</name>
-	</wpt>
-	<wpt lon="0.761037" lat="47.386139">
-		<ele>0.0</ele>
-		<name>De La Motte</name>
-	</wpt>
-	<wpt lon="0.756698" lat="47.398239">
-		<ele>0.0</ele>
-		<name>Eugénie Grandet</name>
 	</wpt>
 	<wpt lon="0.761715" lat="47.383809">
 		<ele>0.0</ele>
@@ -101,6 +77,14 @@
 		<ele>0.0</ele>
 		<name>Colette</name>
 	</wpt>
+	<wpt lon="0.768839" lat="47.386605">
+		<ele>0.0</ele>
+		<name>Anne de Bretagne</name>
+	</wpt>
+	<wpt lon="0.777251" lat="47.397947">
+		<ele>0.0</ele>
+		<name>Anne de France</name>
+	</wpt>
 	<wpt lon="0.780031" lat="47.394183">
 		<ele>0.0</ele>
 		<name>Gabrielle d'Estrée</name>
@@ -109,89 +93,105 @@
 		<ele>0.0</ele>
 		<name>Grand Village</name>
 	</wpt>
-	<wpt lon="0.666765" lat="47.397435">
-		<ele>0.0</ele>
-		<name>St Cyr Eglise</name>
-	</wpt>
-	<wpt lon="0.537797" lat="47.390513">
-		<ele>0.0</ele>
-		<name>CAT Les Vallées</name>
-	</wpt>
 	<wpt lon="0.549989" lat="47.390621">
 		<ele>0.0</ele>
 		<name>Château de Luynes</name>
+	</wpt>
+	<wpt lon="0.756698" lat="47.398239">
+		<ele>0.0</ele>
+		<name>Eugénie Grandet</name>
+	</wpt>
+	<wpt lon="0.759482" lat="47.397517">
+		<ele>0.0</ele>
+		<name>Gros Chêne</name>
+	</wpt>
+	<wpt lon="0.768559" lat="47.395463">
+		<ele>0.0</ele>
+		<name>Jeanne D'arc</name>
+	</wpt>
+	<wpt lon="0.778720" lat="47.395978">
+		<ele>0.0</ele>
+		<name>Ninon de l'Enclos</name>
 	</wpt>
 	<wpt lon="0.543633" lat="47.390127">
 		<ele>0.0</ele>
 		<name>Barbinière</name>
 	</wpt>
-	<wpt lon="0.554488" lat="47.383447">
+	<wpt lon="0.692803" lat="47.390745">
 		<ele>0.0</ele>
-		<name>Baugé</name>
-	</wpt>
-	<wpt lon="0.554795" lat="47.393718">
-		<ele>0.0</ele>
-		<name>Hopital De Luynes</name>
-	</wpt>
-	<wpt lon="0.541866" lat="47.388498">
-		<ele>0.0</ele>
-		<name>IME</name>
-	</wpt>
-	<wpt lon="0.569967" lat="47.387468">
-		<ele>0.0</ele>
-		<name>Chêne Vert</name>
-	</wpt>
-	<wpt lon="0.552181" lat="47.391433">
-		<ele>0.0</ele>
-		<name>Clos Mignot</name>
+		<name>Gare Vinci</name>
 	</wpt>
 	<wpt lon="0.563420" lat="47.386140">
 		<ele>0.0</ele>
-		<name>La Planche</name>
+		<name>Coteaux</name>
 	</wpt>
-	<wpt lon="0.551734" lat="47.387188">
+	<wpt lon="0.537433" lat="47.390687">
 		<ele>0.0</ele>
-		<name>Lilas</name>
-	</wpt>
-	<wpt lon="0.655920" lat="47.395317">
-		<ele>0.0</ele>
-		<name>Maisons Blanches</name>
-	</wpt>
-	<wpt lon="0.703076" lat="47.393837">
-		<ele>0.0</ele>
-		<name>Renan</name>
-	</wpt>
-	<wpt lon="0.713096" lat="47.395225">
-		<ele>0.0</ele>
-		<name>Jean Bonnin</name>
-	</wpt>
-	<wpt lon="0.650963" lat="47.394309">
-		<ele>0.0</ele>
-		<name>Barberonne</name>
+		<name>Esat Les Vallees</name>
 	</wpt>
 	<wpt lon="0.538320" lat="47.392294">
 		<ele>0.0</ele>
 		<name>Vaugareau</name>
 	</wpt>
-	<wpt lon="0.731517" lat="47.396444">
+	<wpt lon="0.679472" lat="47.392553">
 		<ele>0.0</ele>
-		<name>Marteau</name>
+		<name>Grand Marché</name>
 	</wpt>
-	<wpt lon="0.555780" lat="47.395569">
+	<wpt lon="0.554795" lat="47.393718">
 		<ele>0.0</ele>
-		<name>Muguet</name>
+		<name>Hopital De Luynes</name>
 	</wpt>
-	<wpt lon="0.723332" lat="47.391926">
+	<wpt lon="0.725494" lat="47.393607">
 		<ele>0.0</ele>
-		<name>Romarins</name>
+		<name>Grand Mail</name>
 	</wpt>
-	<wpt lon="0.740259" lat="47.396983">
+	<wpt lon="0.713096" lat="47.395225">
 		<ele>0.0</ele>
-		<name>St Pierre Justices</name>
+		<name>Jean Bonnin</name>
+	</wpt>
+	<wpt lon="0.764323" lat="47.386350">
+		<ele>0.0</ele>
+		<name>Simone Signoret</name>
+	</wpt>
+	<wpt lon="0.709974" lat="47.395743">
+		<ele>0.0</ele>
+		<name>Jéricho</name>
+	</wpt>
+	<wpt lon="0.764108" lat="47.396131">
+		<ele>0.0</ele>
+		<name>La Ville aux Dames Centre</name>
+	</wpt>
+	<wpt lon="0.774041" lat="47.397867">
+		<ele>0.0</ele>
+		<name>Sévigné</name>
+	</wpt>
+	<wpt lon="0.569967" lat="47.387468">
+		<ele>0.0</ele>
+		<name>Chêne Vert</name>
+	</wpt>
+	<wpt lon="0.589264" lat="47.389498">
+		<ele>0.0</ele>
+		<name>Chatigny</name>
+	</wpt>
+	<wpt lon="0.677992" lat="47.394115">
+		<ele>0.0</ele>
+		<name>Victoire</name>
 	</wpt>
 	<wpt lon="0.553547" lat="47.385642">
 		<ele>0.0</ele>
 		<name>Luynes Centre</name>
+	</wpt>
+	<wpt lon="0.552181" lat="47.391433">
+		<ele>0.0</ele>
+		<name>Clos Mignot</name>
+	</wpt>
+	<wpt lon="0.650963" lat="47.394309">
+		<ele>0.0</ele>
+		<name>Barberonne</name>
+	</wpt>
+	<wpt lon="0.551734" lat="47.387188">
+		<ele>0.0</ele>
+		<name>Lilas</name>
 	</wpt>
 	<wpt lon="0.646199" lat="47.393610">
 		<ele>0.0</ele>
@@ -201,17 +201,13 @@
 		<ele>0.0</ele>
 		<name>Port de Vallières</name>
 	</wpt>
-	<wpt lon="0.681577" lat="47.391089">
+	<wpt lon="0.559950" lat="47.385331">
 		<ele>0.0</ele>
-		<name>Halles</name>
+		<name>Stade Varenne</name>
 	</wpt>
-	<wpt lon="0.555536" lat="47.397320">
+	<wpt lon="0.786205" lat="47.393739">
 		<ele>0.0</ele>
-		<name>Richardières</name>
-	</wpt>
-	<wpt lon="0.696975" lat="47.391227">
-		<ele>0.0</ele>
-		<name>Heurteloup</name>
+		<name>Les Fougerolles</name>
 	</wpt>
 	<wpt lon="0.578077" lat="47.388415">
 		<ele>0.0</ele>
@@ -221,9 +217,9 @@
 		<ele>0.0</ele>
 		<name>Guignière</name>
 	</wpt>
-	<wpt lon="0.546865" lat="47.390159">
+	<wpt lon="0.555780" lat="47.395569">
 		<ele>0.0</ele>
-		<name>Pasteur</name>
+		<name>Muguet</name>
 	</wpt>
 	<wpt lon="0.632461" lat="47.390336">
 		<ele>0.0</ele>
@@ -241,29 +237,41 @@
 		<ele>0.0</ele>
 		<name>Martigny</name>
 	</wpt>
-	<wpt lon="0.700349" lat="47.392317">
+	<wpt lon="0.776345" lat="47.388150">
 		<ele>0.0</ele>
-		<name>Loiseau d'Entraigues</name>
+		<name>Lecouvreur</name>
 	</wpt>
-	<wpt lon="0.683797" lat="47.389803">
+	<wpt lon="0.555536" lat="47.397320">
 		<ele>0.0</ele>
-		<name>Béranger</name>
+		<name>Richardières</name>
 	</wpt>
-	<wpt lon="0.679472" lat="47.392553">
+	<wpt lon="0.541866" lat="47.388498">
 		<ele>0.0</ele>
-		<name>Grand Marché</name>
+		<name>IME</name>
 	</wpt>
-	<wpt lon="0.677821" lat="47.394687">
+	<wpt lon="0.761037" lat="47.386139">
 		<ele>0.0</ele>
-		<name>Tanneurs</name>
+		<name>De La Motte</name>
 	</wpt>
-	<wpt lon="0.746201" lat="47.397457">
+	<wpt lon="0.655920" lat="47.395317">
 		<ele>0.0</ele>
-		<name>Cachin</name>
+		<name>Maisons Blanches</name>
+	</wpt>
+	<wpt lon="0.666765" lat="47.397435">
+		<ele>0.0</ele>
+		<name>St Cyr Eglise</name>
 	</wpt>
 	<wpt lon="0.736856" lat="47.396685">
 		<ele>0.0</ele>
 		<name>CFA Aforproba</name>
+	</wpt>
+	<wpt lon="0.716047" lat="47.393601">
+		<ele>0.0</ele>
+		<name>Cornouillers</name>
+	</wpt>
+	<wpt lon="0.782523" lat="47.389605">
+		<ele>0.0</ele>
+		<name>Aliénor d'Aquitaine</name>
 	</wpt>
 	<wpt lon="0.715281" lat="47.395062">
 		<ele>0.0</ele>
@@ -273,25 +281,17 @@
 		<ele>0.0</ele>
 		<name>Bouleaux</name>
 	</wpt>
-	<wpt lon="0.709974" lat="47.395743">
+	<wpt lon="0.746201" lat="47.397457">
 		<ele>0.0</ele>
-		<name>Jéricho</name>
+		<name>Cachin</name>
 	</wpt>
-	<wpt lon="0.559950" lat="47.385331">
+	<wpt lon="0.683797" lat="47.389803">
 		<ele>0.0</ele>
-		<name>Stade Varenne</name>
+		<name>Béranger</name>
 	</wpt>
-	<wpt lon="0.688495" lat="47.389854">
+	<wpt lon="0.731517" lat="47.396444">
 		<ele>0.0</ele>
-		<name>Jean Jaurès</name>
-	</wpt>
-	<wpt lon="0.716047" lat="47.393601">
-		<ele>0.0</ele>
-		<name>Cornouillers</name>
-	</wpt>
-	<wpt lon="0.692803" lat="47.390745">
-		<ele>0.0</ele>
-		<name>Gare Vinci</name>
+		<name>Marteau</name>
 	</wpt>
 	<wpt lon="0.659620" lat="47.396270">
 		<ele>0.0</ele>

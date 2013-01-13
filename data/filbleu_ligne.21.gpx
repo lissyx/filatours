@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1" creator="FilBleuExporter">
 	<metadata>Filbleu - Ligne 21</metadata>
-	<wpt lon="0.682627" lat="47.405536">
+	<wpt lon="0.680996" lat="47.409186">
 		<ele>0.0</ele>
-		<name>Mi-Côte</name>
-	</wpt>
-	<wpt lon="0.688495" lat="47.389854">
-		<ele>0.0</ele>
-		<name>Jean Jaurès</name>
+		<name>Maginot</name>
 	</wpt>
 	<wpt lon="0.661916" lat="47.412400">
 		<ele>0.0</ele>
@@ -17,9 +13,9 @@
 		<ele>0.0</ele>
 		<name>Tranchée</name>
 	</wpt>
-	<wpt lon="0.679303" lat="47.407787">
+	<wpt lon="0.688495" lat="47.389854">
 		<ele>0.0</ele>
-		<name>Scotto</name>
+		<name>Jean Jaurès</name>
 	</wpt>
 	<wpt lon="0.686384" lat="47.432513">
 		<ele>0.0</ele>
@@ -29,29 +25,29 @@
 		<ele>0.0</ele>
 		<name>Bergson</name>
 	</wpt>
-	<wpt lon="0.679829" lat="47.409646">
+	<wpt lon="0.690507" lat="47.429738">
 		<ele>0.0</ele>
-		<name>Bordiers</name>
+		<name>Thalès</name>
 	</wpt>
 	<wpt lon="0.676918" lat="47.408099">
 		<ele>0.0</ele>
 		<name>Bocage</name>
 	</wpt>
+	<wpt lon="0.684108" lat="47.436421">
+		<ele>0.0</ele>
+		<name>Douets Lycée Choiseul</name>
+	</wpt>
 	<wpt lon="0.678823" lat="47.431334">
 		<ele>0.0</ele>
 		<name>Bois Aubry</name>
 	</wpt>
-	<wpt lon="0.679573" lat="47.434957">
+	<wpt lon="0.687390" lat="47.393365">
 		<ele>0.0</ele>
-		<name>Tavant</name>
+		<name>Emile Zola</name>
 	</wpt>
 	<wpt lon="0.670563" lat="47.407576">
 		<ele>0.0</ele>
 		<name>Fosses Boissées</name>
-	</wpt>
-	<wpt lon="0.684108" lat="47.436421">
-		<ele>0.0</ele>
-		<name>Douets Lycée Choiseul</name>
 	</wpt>
 	<wpt lon="0.667309" lat="47.409715">
 		<ele>0.0</ele>
@@ -60,6 +56,10 @@
 	<wpt lon="0.651411" lat="47.425648">
 		<ele>0.0</ele>
 		<name>Croix de Pierre</name>
+	</wpt>
+	<wpt lon="0.688157" lat="47.427716">
+		<ele>0.0</ele>
+		<name>LP Clouet</name>
 	</wpt>
 	<wpt lon="0.656252" lat="47.418224">
 		<ele>0.0</ele>
@@ -73,6 +73,10 @@
 		<ele>0.0</ele>
 		<name>Gagnerie</name>
 	</wpt>
+	<wpt lon="0.683860" lat="47.395880">
+		<ele>0.0</ele>
+		<name>Constantine</name>
+	</wpt>
 	<wpt lon="0.675040" lat="47.407861">
 		<ele>0.0</ele>
 		<name>Mailloux</name>
@@ -81,21 +85,17 @@
 		<ele>0.0</ele>
 		<name>Marceau</name>
 	</wpt>
-	<wpt lon="0.687390" lat="47.393365">
+	<wpt lon="0.679303" lat="47.407787">
 		<ele>0.0</ele>
-		<name>Emile Zola</name>
-	</wpt>
-	<wpt lon="0.681089" lat="47.409083">
-		<ele>0.0</ele>
-		<name>Maginot</name>
-	</wpt>
-	<wpt lon="0.686061" lat="47.433647">
-		<ele>0.0</ele>
-		<name>Lycée Choiseul</name>
+		<name>Scotto</name>
 	</wpt>
 	<wpt lon="0.684652" lat="47.401383">
 		<ele>0.0</ele>
 		<name>Place Choiseul</name>
+	</wpt>
+	<wpt lon="0.682627" lat="47.405536">
+		<ele>0.0</ele>
+		<name>Mi-Côte</name>
 	</wpt>
 	<wpt lon="0.656338" lat="47.425715">
 		<ele>0.0</ele>
@@ -105,21 +105,21 @@
 		<ele>0.0</ele>
 		<name>St Exupery</name>
 	</wpt>
-	<wpt lon="0.668083" lat="47.404450">
+	<wpt lon="0.686061" lat="47.433647">
 		<ele>0.0</ele>
-		<name>Victor Hugo</name>
+		<name>Lycée Choiseul</name>
 	</wpt>
 	<wpt lon="0.660838" lat="47.428495">
 		<ele>0.0</ele>
 		<name>Voisin</name>
 	</wpt>
-	<wpt lon="0.688157" lat="47.427716">
+	<wpt lon="0.679573" lat="47.434957">
 		<ele>0.0</ele>
-		<name>LP Clouet</name>
+		<name>Tavant</name>
 	</wpt>
-	<wpt lon="0.683860" lat="47.395880">
+	<wpt lon="0.679829" lat="47.409646">
 		<ele>0.0</ele>
-		<name>Constantine</name>
+		<name>Bordiers</name>
 	</wpt>
 	<wpt lon="0.657689" lat="47.414911">
 		<ele>0.0</ele>
@@ -136,10 +136,6 @@
 	<wpt lon="0.654242" lat="47.426279">
 		<ele>0.0</ele>
 		<name>Katrineholm</name>
-	</wpt>
-	<wpt lon="0.690507" lat="47.429738">
-		<ele>0.0</ele>
-		<name>Thalès</name>
 	</wpt>
 	<wpt lon="0.680568" lat="47.395870">
 		<ele>0.0</ele>
@@ -160,5 +156,9 @@
 	<wpt lon="0.649939" lat="47.421880">
 		<ele>0.0</ele>
 		<name>Preney</name>
+	</wpt>
+	<wpt lon="0.668083" lat="47.404450">
+		<ele>0.0</ele>
+		<name>Victor Hugo</name>
 	</wpt>
 </gpx>

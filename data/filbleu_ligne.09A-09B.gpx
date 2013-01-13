@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1" creator="FilBleuExporter">
 	<metadata>Filbleu - Ligne 09A, 09B</metadata>
+	<wpt lon="0.672870" lat="47.351159">
+		<ele>0.0</ele>
+		<name>Morier</name>
+	</wpt>
 	<wpt lon="0.663789" lat="47.350789">
 		<ele>0.0</ele>
 		<name>Joué Centre</name>
-	</wpt>
-	<wpt lon="0.701716" lat="47.355845">
-		<ele>0.0</ele>
-		<name>Arsonval</name>
 	</wpt>
 	<wpt lon="0.657900" lat="47.337942">
 		<ele>0.0</ele>
@@ -17,37 +17,69 @@
 		<ele>0.0</ele>
 		<name>Joué Gare</name>
 	</wpt>
+	<wpt lon="0.705758" lat="47.381801">
+		<ele>0.0</ele>
+		<name>Jolivet</name>
+	</wpt>
+	<wpt lon="0.705758" lat="47.381801">
+		<ele>0.0</ele>
+		<name>Jolivet</name>
+	</wpt>
+	<wpt lon="0.697038" lat="47.348419">
+		<ele>0.0</ele>
+		<name>Perriers</name>
+	</wpt>
 	<wpt lon="0.710512" lat="47.378728">
 		<ele>0.0</ele>
 		<name>Raspail</name>
 	</wpt>
-	<wpt lon="0.675858" lat="47.343488">
+	<wpt lon="0.710512" lat="47.378728">
 		<ele>0.0</ele>
-		<name>Vallée Violette</name>
+		<name>Raspail</name>
 	</wpt>
-	<wpt lon="0.710917" lat="47.376148">
+	<wpt lon="0.704890" lat="47.329299">
 		<ele>0.0</ele>
-		<name>Rochepinard</name>
-	</wpt>
-	<wpt lon="0.683748" lat="47.345814">
-		<ele>0.0</ele>
-		<name>Marchanderie</name>
+		<name>Grand Sud</name>
 	</wpt>
 	<wpt lon="0.701769" lat="47.360588">
 		<ele>0.0</ele>
 		<name>J.P. Rameau</name>
 	</wpt>
-	<wpt lon="0.697051" lat="47.387877">
+	<wpt lon="0.701769" lat="47.360588">
 		<ele>0.0</ele>
-		<name>Champ Girault</name>
+		<name>J.P. Rameau</name>
+	</wpt>
+	<wpt lon="0.710917" lat="47.376148">
+		<ele>0.0</ele>
+		<name>Rochepinard</name>
+	</wpt>
+	<wpt lon="0.710917" lat="47.376148">
+		<ele>0.0</ele>
+		<name>Rochepinard</name>
+	</wpt>
+	<wpt lon="0.694053" lat="47.336573">
+		<ele>0.0</ele>
+		<name>Thibaudière</name>
 	</wpt>
 	<wpt lon="0.698461" lat="47.359650">
 		<ele>0.0</ele>
 		<name>Alouette</name>
 	</wpt>
-	<wpt lon="0.705744" lat="47.375669">
+	<wpt lon="0.703977" lat="47.360857">
 		<ele>0.0</ele>
-		<name>Séverine</name>
+		<name>Lycée Grandmont</name>
+	</wpt>
+	<wpt lon="0.703977" lat="47.360857">
+		<ele>0.0</ele>
+		<name>Lycée Grandmont</name>
+	</wpt>
+	<wpt lon="0.699818" lat="47.337406">
+		<ele>0.0</ele>
+		<name>Maupas</name>
+	</wpt>
+	<wpt lon="0.689711" lat="47.341765">
+		<ele>0.0</ele>
+		<name>Fontaine Blanche</name>
 	</wpt>
 	<wpt lon="0.680640" lat="47.346591">
 		<ele>0.0</ele>
@@ -57,9 +89,9 @@
 		<ele>0.0</ele>
 		<name>Mairie de Chambray</name>
 	</wpt>
-	<wpt lon="0.699818" lat="47.337406">
+	<wpt lon="0.678085" lat="47.349359">
 		<ele>0.0</ele>
-		<name>Maupas</name>
+		<name>Chenonceaux</name>
 	</wpt>
 	<wpt lon="0.708808" lat="47.331239">
 		<ele>0.0</ele>
@@ -69,9 +101,9 @@
 		<ele>0.0</ele>
 		<name>De La Rochefoucauld</name>
 	</wpt>
-	<wpt lon="0.697038" lat="47.348419">
+	<wpt lon="0.675858" lat="47.343488">
 		<ele>0.0</ele>
-		<name>Perriers</name>
+		<name>Vallée Violette</name>
 	</wpt>
 	<wpt lon="0.686813" lat="47.346879">
 		<ele>0.0</ele>
@@ -85,13 +117,9 @@
 		<ele>0.0</ele>
 		<name>Tamaris</name>
 	</wpt>
-	<wpt lon="0.699148" lat="47.374155">
+	<wpt lon="0.699416" lat="47.353568">
 		<ele>0.0</ele>
-		<name>Pompiers</name>
-	</wpt>
-	<wpt lon="0.700534" lat="47.385179">
-		<ele>0.0</ele>
-		<name>Docteur Fournier</name>
+		<name>Fourbisserie</name>
 	</wpt>
 	<wpt lon="0.686322" lat="47.351733">
 		<ele>0.0</ele>
@@ -101,9 +129,9 @@
 		<ele>0.0</ele>
 		<name>Parc Nord</name>
 	</wpt>
-	<wpt lon="0.703977" lat="47.360857">
+	<wpt lon="0.701145" lat="47.363663">
 		<ele>0.0</ele>
-		<name>Lycée Grandmont</name>
+		<name>Parc Nord</name>
 	</wpt>
 	<wpt lon="0.696233" lat="47.343185">
 		<ele>0.0</ele>
@@ -125,6 +153,22 @@
 		<ele>0.0</ele>
 		<name>Chambray 2</name>
 	</wpt>
+	<wpt lon="0.683748" lat="47.345814">
+		<ele>0.0</ele>
+		<name>Marchanderie</name>
+	</wpt>
+	<wpt lon="0.694038" lat="47.390016">
+		<ele>0.0</ele>
+		<name>Gare de Tours</name>
+	</wpt>
+	<wpt lon="0.694038" lat="47.390016">
+		<ele>0.0</ele>
+		<name>Gare de Tours</name>
+	</wpt>
+	<wpt lon="0.692803" lat="47.390745">
+		<ele>0.0</ele>
+		<name>Gare Vinci</name>
+	</wpt>
 	<wpt lon="0.692803" lat="47.390745">
 		<ele>0.0</ele>
 		<name>Gare Vinci</name>
@@ -133,41 +177,49 @@
 		<ele>0.0</ele>
 		<name>Peupliers</name>
 	</wpt>
-	<wpt lon="0.694038" lat="47.390016">
+	<wpt lon="0.703192" lat="47.383110">
 		<ele>0.0</ele>
-		<name>Gare de Tours</name>
+		<name>Peupliers</name>
 	</wpt>
-	<wpt lon="0.705758" lat="47.381801">
+	<wpt lon="0.705744" lat="47.375669">
 		<ele>0.0</ele>
-		<name>Jolivet</name>
+		<name>Séverine</name>
 	</wpt>
-	<wpt lon="0.699416" lat="47.353568">
+	<wpt lon="0.705744" lat="47.375669">
 		<ele>0.0</ele>
-		<name>Fourbisserie</name>
+		<name>Séverine</name>
 	</wpt>
-	<wpt lon="0.703926" lat="47.374712">
+	<wpt lon="0.699148" lat="47.374155">
 		<ele>0.0</ele>
-		<name>Langevin</name>
+		<name>Pompiers</name>
 	</wpt>
-	<wpt lon="0.712571" lat="47.377461">
+	<wpt lon="0.699148" lat="47.374155">
 		<ele>0.0</ele>
-		<name>Leccia</name>
+		<name>Pompiers</name>
 	</wpt>
-	<wpt lon="0.703168" lat="47.364411">
+	<wpt lon="0.701716" lat="47.355845">
 		<ele>0.0</ele>
-		<name>Beethoven</name>
-	</wpt>
-	<wpt lon="0.695388" lat="47.373957">
-		<ele>0.0</ele>
-		<name>Verdun</name>
+		<name>Arsonval</name>
 	</wpt>
 	<wpt lon="0.707873" lat="47.376442">
 		<ele>0.0</ele>
 		<name>Beaujardin</name>
 	</wpt>
-	<wpt lon="0.698441" lat="47.355575">
+	<wpt lon="0.707873" lat="47.376442">
 		<ele>0.0</ele>
-		<name>Bd de Chinon</name>
+		<name>Beaujardin</name>
+	</wpt>
+	<wpt lon="0.703168" lat="47.364411">
+		<ele>0.0</ele>
+		<name>Beethoven</name>
+	</wpt>
+	<wpt lon="0.703168" lat="47.364411">
+		<ele>0.0</ele>
+		<name>Beethoven</name>
+	</wpt>
+	<wpt lon="0.698146" lat="47.367334">
+		<ele>0.0</ele>
+		<name>Lac</name>
 	</wpt>
 	<wpt lon="0.698146" lat="47.367334">
 		<ele>0.0</ele>
@@ -177,9 +229,21 @@
 		<ele>0.0</ele>
 		<name>Lachenal</name>
 	</wpt>
-	<wpt lon="0.686105" lat="47.349236">
+	<wpt lon="0.703926" lat="47.374712">
 		<ele>0.0</ele>
-		<name>Jonquilles</name>
+		<name>Langevin</name>
+	</wpt>
+	<wpt lon="0.703926" lat="47.374712">
+		<ele>0.0</ele>
+		<name>Langevin</name>
+	</wpt>
+	<wpt lon="0.712571" lat="47.377461">
+		<ele>0.0</ele>
+		<name>Leccia</name>
+	</wpt>
+	<wpt lon="0.712571" lat="47.377461">
+		<ele>0.0</ele>
+		<name>Leccia</name>
 	</wpt>
 	<wpt lon="0.678890" lat="47.350941">
 		<ele>0.0</ele>
@@ -193,9 +257,9 @@
 		<ele>0.0</ele>
 		<name>Béjauderie</name>
 	</wpt>
-	<wpt lon="0.702334" lat="47.331310">
+	<wpt lon="0.693770" lat="47.358916">
 		<ele>0.0</ele>
-		<name>Vrillonnerie</name>
+		<name>Camus</name>
 	</wpt>
 	<wpt lon="0.692121" lat="47.359418">
 		<ele>0.0</ele>
@@ -205,17 +269,25 @@
 		<ele>0.0</ele>
 		<name>Champ Joli</name>
 	</wpt>
-	<wpt lon="0.694053" lat="47.336573">
+	<wpt lon="0.708655" lat="47.379885">
 		<ele>0.0</ele>
-		<name>Thibaudière</name>
+		<name>Champ Joli</name>
 	</wpt>
-	<wpt lon="0.672870" lat="47.351159">
+	<wpt lon="0.697051" lat="47.387877">
 		<ele>0.0</ele>
-		<name>Morier</name>
+		<name>Champ Girault</name>
+	</wpt>
+	<wpt lon="0.697051" lat="47.387877">
+		<ele>0.0</ele>
+		<name>Champ Girault</name>
 	</wpt>
 	<wpt lon="0.689086" lat="47.355815">
 		<ele>0.0</ele>
 		<name>Patalisse</name>
+	</wpt>
+	<wpt lon="0.686105" lat="47.349236">
+		<ele>0.0</ele>
+		<name>Jonquilles</name>
 	</wpt>
 	<wpt lon="0.666361" lat="47.351008">
 		<ele>0.0</ele>
@@ -249,10 +321,6 @@
 		<ele>0.0</ele>
 		<name>Fosses Blancs</name>
 	</wpt>
-	<wpt lon="0.689711" lat="47.341765">
-		<ele>0.0</ele>
-		<name>Fontaine Blanche</name>
-	</wpt>
 	<wpt lon="0.694656" lat="47.361949">
 		<ele>0.0</ele>
 		<name>Bergeonnerie</name>
@@ -265,10 +333,6 @@
 		<ele>0.0</ele>
 		<name>Grenouillère</name>
 	</wpt>
-	<wpt lon="0.678085" lat="47.349359">
-		<ele>0.0</ele>
-		<name>Chenonceaux</name>
-	</wpt>
 	<wpt lon="0.695585" lat="47.359326">
 		<ele>0.0</ele>
 		<name>Chemin Vert</name>
@@ -277,12 +341,28 @@
 		<ele>0.0</ele>
 		<name>Faculté de Grandmont</name>
 	</wpt>
-	<wpt lon="0.704890" lat="47.329299">
+	<wpt lon="0.698441" lat="47.355575">
 		<ele>0.0</ele>
-		<name>Grand Sud</name>
+		<name>Bd de Chinon</name>
 	</wpt>
-	<wpt lon="0.693770" lat="47.358916">
+	<wpt lon="0.695388" lat="47.373957">
 		<ele>0.0</ele>
-		<name>Camus</name>
+		<name>Verdun</name>
+	</wpt>
+	<wpt lon="0.695388" lat="47.373957">
+		<ele>0.0</ele>
+		<name>Verdun</name>
+	</wpt>
+	<wpt lon="0.702334" lat="47.331310">
+		<ele>0.0</ele>
+		<name>Vrillonnerie</name>
+	</wpt>
+	<wpt lon="0.700534" lat="47.385179">
+		<ele>0.0</ele>
+		<name>Docteur Fournier</name>
+	</wpt>
+	<wpt lon="0.700534" lat="47.385179">
+		<ele>0.0</ele>
+		<name>Docteur Fournier</name>
 	</wpt>
 </gpx>

@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1" creator="FilBleuExporter">
 	<metadata>Filbleu - Ligne 74</metadata>
-	<wpt lon="0.701716" lat="47.355845">
-		<ele>0.0</ele>
-		<name>Arsonval</name>
-	</wpt>
 	<wpt lon="0.701145" lat="47.363663">
 		<ele>0.0</ele>
 		<name>Parc Nord</name>
 	</wpt>
-	<wpt lon="0.688495" lat="47.389854">
+	<wpt lon="0.694569" lat="47.376186">
 		<ele>0.0</ele>
-		<name>Jean Jaurès</name>
-	</wpt>
-	<wpt lon="0.732789" lat="47.337364">
-		<ele>0.0</ele>
-		<name>Ockeghem</name>
+		<name>Charcot</name>
 	</wpt>
 	<wpt lon="0.701769" lat="47.360588">
 		<ele>0.0</ele>
 		<name>J.P. Rameau</name>
 	</wpt>
-	<wpt lon="0.728150" lat="47.339135">
+	<wpt lon="0.688495" lat="47.389854">
 		<ele>0.0</ele>
-		<name>LP Agricole</name>
+		<name>Jean Jaurès</name>
 	</wpt>
 	<wpt lon="0.703977" lat="47.360857">
 		<ele>0.0</ele>
 		<name>Lycée Grandmont</name>
+	</wpt>
+	<wpt lon="0.701716" lat="47.355845">
+		<ele>0.0</ele>
+		<name>Arsonval</name>
+	</wpt>
+	<wpt lon="0.728150" lat="47.339135">
+		<ele>0.0</ele>
+		<name>LP Agricole</name>
 	</wpt>
 	<wpt lon="0.770800" lat="47.321591">
 		<ele>0.0</ele>
@@ -37,13 +37,9 @@
 		<ele>0.0</ele>
 		<name>P+R Sagerie</name>
 	</wpt>
-	<wpt lon="0.694569" lat="47.376186">
+	<wpt lon="0.732789" lat="47.337364">
 		<ele>0.0</ele>
-		<name>Charcot</name>
-	</wpt>
-	<wpt lon="0.703168" lat="47.364411">
-		<ele>0.0</ele>
-		<name>Beethoven</name>
+		<name>Ockeghem</name>
 	</wpt>
 	<wpt lon="0.710370" lat="47.345787">
 		<ele>0.0</ele>
@@ -57,25 +53,25 @@
 		<ele>0.0</ele>
 		<name>Gare Vinci</name>
 	</wpt>
-	<wpt lon="0.702396" lat="47.357182">
-		<ele>0.0</ele>
-		<name>Faculté de Grandmont</name>
-	</wpt>
 	<wpt lon="0.690352" lat="47.386473">
 		<ele>0.0</ele>
 		<name>Salengro</name>
 	</wpt>
-	<wpt lon="0.695388" lat="47.373957">
+	<wpt lon="0.703168" lat="47.364411">
 		<ele>0.0</ele>
-		<name>Verdun</name>
+		<name>Beethoven</name>
+	</wpt>
+	<wpt lon="0.698146" lat="47.367334">
+		<ele>0.0</ele>
+		<name>Lac</name>
 	</wpt>
 	<wpt lon="0.692710" lat="47.379563">
 		<ele>0.0</ele>
 		<name>Place de la Liberté</name>
 	</wpt>
-	<wpt lon="0.698146" lat="47.367334">
+	<wpt lon="0.695388" lat="47.373957">
 		<ele>0.0</ele>
-		<name>Lac</name>
+		<name>Verdun</name>
 	</wpt>
 	<wpt lon="0.723084" lat="47.340969">
 		<ele>0.0</ele>
@@ -96,5 +92,9 @@
 	<wpt lon="0.691499" lat="47.383901">
 		<ele>0.0</ele>
 		<name>Boisdenier</name>
+	</wpt>
+	<wpt lon="0.702396" lat="47.357182">
+		<ele>0.0</ele>
+		<name>Faculté de Grandmont</name>
 	</wpt>
 </gpx>

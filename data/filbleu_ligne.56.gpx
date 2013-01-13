@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1" creator="FilBleuExporter">
 	<metadata>Filbleu - Ligne 56</metadata>
+	<wpt lon="0.703071" lat="47.406118">
+		<ele>0.0</ele>
+		<name>Passerelle</name>
+	</wpt>
 	<wpt lon="0.698213" lat="47.436130">
 		<ele>0.0</ele>
 		<name>Milletière</name>
 	</wpt>
-	<wpt lon="0.688495" lat="47.389854">
+	<wpt lon="0.705561" lat="47.423063">
 		<ele>0.0</ele>
-		<name>Jean Jaurès</name>
+		<name>Lycée Vaucanson</name>
 	</wpt>
 	<wpt lon="0.700201" lat="47.392753">
 		<ele>0.0</ele>
 		<name>Traversiere</name>
 	</wpt>
-	<wpt lon="0.700349" lat="47.392317">
+	<wpt lon="0.703416" lat="47.408903">
+		<ele>0.0</ele>
+		<name>IUT</name>
+	</wpt>
+	<wpt lon="0.688495" lat="47.389854">
+		<ele>0.0</ele>
+		<name>Jean Jaurès</name>
+	</wpt>
+	<wpt lon="0.700378" lat="47.392230">
 		<ele>0.0</ele>
 		<name>Loiseau d'Entraigues</name>
 	</wpt>
@@ -21,17 +33,9 @@
 		<ele>0.0</ele>
 		<name>Torricelli</name>
 	</wpt>
-	<wpt lon="0.703416" lat="47.408903">
+	<wpt lon="0.698783" lat="47.427436">
 		<ele>0.0</ele>
-		<name>IUT</name>
-	</wpt>
-	<wpt lon="0.703071" lat="47.406118">
-		<ele>0.0</ele>
-		<name>Passerelle</name>
-	</wpt>
-	<wpt lon="0.696975" lat="47.391227">
-		<ele>0.0</ele>
-		<name>Heurteloup</name>
+		<name>Petite Arche</name>
 	</wpt>
 	<wpt lon="0.702792" lat="47.412415">
 		<ele>0.0</ele>
@@ -40,6 +44,10 @@
 	<wpt lon="0.695449" lat="47.471225">
 		<ele>0.0</ele>
 		<name>Ste Agathe</name>
+	</wpt>
+	<wpt lon="0.708124" lat="47.456978">
+		<ele>0.0</ele>
+		<name>Notre-Dame d'Oé Centre</name>
 	</wpt>
 	<wpt lon="0.712090" lat="47.455904">
 		<ele>0.0</ele>
@@ -57,41 +65,29 @@
 		<ele>0.0</ele>
 		<name>Gare Vinci</name>
 	</wpt>
-	<wpt lon="0.704019" lat="47.425880">
+	<wpt lon="0.712622" lat="47.451746">
 		<ele>0.0</ele>
-		<name>Fusaparc</name>
-	</wpt>
-	<wpt lon="0.700019" lat="47.472338">
-		<ele>0.0</ele>
-		<name>Primeveres</name>
+		<name>Coquinière</name>
 	</wpt>
 	<wpt lon="0.697196" lat="47.430593">
 		<ele>0.0</ele>
 		<name>D'Alembert</name>
 	</wpt>
-	<wpt lon="0.700524" lat="47.493245">
-		<ele>0.0</ele>
-		<name>Les Charmes</name>
-	</wpt>
-	<wpt lon="0.705561" lat="47.423063">
-		<ele>0.0</ele>
-		<name>Lycée Vaucanson</name>
-	</wpt>
-	<wpt lon="0.698783" lat="47.427436">
-		<ele>0.0</ele>
-		<name>Petite Arche</name>
-	</wpt>
-	<wpt lon="0.704595" lat="47.427980">
-		<ele>0.0</ele>
-		<name>Aérogare</name>
-	</wpt>
 	<wpt lon="0.704339" lat="47.418381">
 		<ele>0.0</ele>
 		<name>Maréchal Juin</name>
 	</wpt>
+	<wpt lon="0.696975" lat="47.391227">
+		<ele>0.0</ele>
+		<name>Heurteloup</name>
+	</wpt>
 	<wpt lon="0.699759" lat="47.395500">
 		<ele>0.0</ele>
 		<name>Ursulines</name>
+	</wpt>
+	<wpt lon="0.704595" lat="47.427980">
+		<ele>0.0</ele>
+		<name>Aérogare</name>
 	</wpt>
 	<wpt lon="0.697635" lat="47.490933">
 		<ele>0.0</ele>
@@ -108,10 +104,6 @@
 	<wpt lon="0.701677" lat="47.472551">
 		<ele>0.0</ele>
 		<name>Chanceaux Centre</name>
-	</wpt>
-	<wpt lon="0.708124" lat="47.456978">
-		<ele>0.0</ele>
-		<name>Notre-Dame d'Oé Centre</name>
 	</wpt>
 	<wpt lon="0.702480" lat="47.466925">
 		<ele>0.0</ele>
@@ -145,12 +137,20 @@
 		<ele>0.0</ele>
 		<name>Couleuvrou</name>
 	</wpt>
-	<wpt lon="0.712622" lat="47.451746">
+	<wpt lon="0.700019" lat="47.472338">
 		<ele>0.0</ele>
-		<name>Coquinière</name>
+		<name>Primeveres</name>
+	</wpt>
+	<wpt lon="0.700524" lat="47.493245">
+		<ele>0.0</ele>
+		<name>Les Charmes</name>
 	</wpt>
 	<wpt lon="0.697699" lat="47.432804">
 		<ele>0.0</ele>
 		<name>Danemark</name>
+	</wpt>
+	<wpt lon="0.704019" lat="47.425880">
+		<ele>0.0</ele>
+		<name>Fusaparc</name>
 	</wpt>
 </gpx>

@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1" creator="FilBleuExporter">
 	<metadata>Filbleu - Ligne N2</metadata>
-	<wpt lon="0.701716" lat="47.355845">
-		<ele>0.0</ele>
-		<name>Arsonval</name>
-	</wpt>
 	<wpt lon="0.703071" lat="47.406118">
 		<ele>0.0</ele>
 		<name>Passerelle</name>
@@ -13,17 +9,13 @@
 		<ele>0.0</ele>
 		<name>Parc Nord</name>
 	</wpt>
-	<wpt lon="0.688495" lat="47.389854">
+	<wpt lon="0.705561" lat="47.423063">
 		<ele>0.0</ele>
-		<name>Jean Jaurès</name>
+		<name>Lycée Vaucanson</name>
 	</wpt>
-	<wpt lon="0.700201" lat="47.392753">
+	<wpt lon="0.697179" lat="47.427705">
 		<ele>0.0</ele>
-		<name>Traversiere</name>
-	</wpt>
-	<wpt lon="0.700349" lat="47.392317">
-		<ele>0.0</ele>
-		<name>Loiseau d'Entraigues</name>
+		<name>Melies</name>
 	</wpt>
 	<wpt lon="0.701769" lat="47.360588">
 		<ele>0.0</ele>
@@ -33,17 +25,25 @@
 		<ele>0.0</ele>
 		<name>IUT</name>
 	</wpt>
-	<wpt lon="0.696864" lat="47.425242">
+	<wpt lon="0.688495" lat="47.389854">
 		<ele>0.0</ele>
-		<name>Luxembourg</name>
+		<name>Jean Jaurès</name>
+	</wpt>
+	<wpt lon="0.700378" lat="47.392230">
+		<ele>0.0</ele>
+		<name>Loiseau d'Entraigues</name>
 	</wpt>
 	<wpt lon="0.696975" lat="47.391227">
 		<ele>0.0</ele>
 		<name>Heurteloup</name>
 	</wpt>
-	<wpt lon="0.703977" lat="47.360857">
+	<wpt lon="0.698783" lat="47.427436">
 		<ele>0.0</ele>
-		<name>Lycée Grandmont</name>
+		<name>Petite Arche</name>
+	</wpt>
+	<wpt lon="0.696864" lat="47.425242">
+		<ele>0.0</ele>
+		<name>Luxembourg</name>
 	</wpt>
 	<wpt lon="0.706465" lat="47.347091">
 		<ele>0.0</ele>
@@ -53,17 +53,9 @@
 		<ele>0.0</ele>
 		<name>Chopin</name>
 	</wpt>
-	<wpt lon="0.694569" lat="47.376186">
+	<wpt lon="0.701716" lat="47.355845">
 		<ele>0.0</ele>
-		<name>Charcot</name>
-	</wpt>
-	<wpt lon="0.703168" lat="47.364411">
-		<ele>0.0</ele>
-		<name>Beethoven</name>
-	</wpt>
-	<wpt lon="0.690352" lat="47.386473">
-		<ele>0.0</ele>
-		<name>Salengro</name>
+		<name>Arsonval</name>
 	</wpt>
 	<wpt lon="0.716047" lat="47.345628">
 		<ele>0.0</ele>
@@ -73,13 +65,21 @@
 		<ele>0.0</ele>
 		<name>Dujardin</name>
 	</wpt>
+	<wpt lon="0.694038" lat="47.390016">
+		<ele>0.0</ele>
+		<name>Gare de Tours</name>
+	</wpt>
+	<wpt lon="0.700201" lat="47.392753">
+		<ele>0.0</ele>
+		<name>Traversiere</name>
+	</wpt>
+	<wpt lon="0.704603" lat="47.429658">
+		<ele>0.0</ele>
+		<name>Base 705</name>
+	</wpt>
 	<wpt lon="0.692803" lat="47.390745">
 		<ele>0.0</ele>
 		<name>Gare Vinci</name>
-	</wpt>
-	<wpt lon="0.704019" lat="47.425880">
-		<ele>0.0</ele>
-		<name>Fusaparc</name>
 	</wpt>
 	<wpt lon="0.697196" lat="47.430593">
 		<ele>0.0</ele>
@@ -89,57 +89,57 @@
 		<ele>0.0</ele>
 		<name>Coppée</name>
 	</wpt>
-	<wpt lon="0.686574" lat="47.422965">
+	<wpt lon="0.680460" lat="47.422289">
 		<ele>0.0</ele>
-		<name>Rotterdam</name>
-	</wpt>
-	<wpt lon="0.683272" lat="47.422383">
-		<ele>0.0</ele>
-		<name>Beffroi</name>
-	</wpt>
-	<wpt lon="0.691499" lat="47.383901">
-		<ele>0.0</ele>
-		<name>Boisdenier</name>
-	</wpt>
-	<wpt lon="0.705561" lat="47.423063">
-		<ele>0.0</ele>
-		<name>Lycée Vaucanson</name>
-	</wpt>
-	<wpt lon="0.693285" lat="47.423814">
-		<ele>0.0</ele>
-		<name>Sapaille</name>
-	</wpt>
-	<wpt lon="0.695388" lat="47.373957">
-		<ele>0.0</ele>
-		<name>Verdun</name>
-	</wpt>
-	<wpt lon="0.698783" lat="47.427436">
-		<ele>0.0</ele>
-		<name>Petite Arche</name>
-	</wpt>
-	<wpt lon="0.692710" lat="47.379563">
-		<ele>0.0</ele>
-		<name>Place de la Liberté</name>
-	</wpt>
-	<wpt lon="0.698146" lat="47.367334">
-		<ele>0.0</ele>
-		<name>Lac</name>
-	</wpt>
-	<wpt lon="0.704603" lat="47.429658">
-		<ele>0.0</ele>
-		<name>Base 705</name>
-	</wpt>
-	<wpt lon="0.697179" lat="47.427705">
-		<ele>0.0</ele>
-		<name>Melies</name>
+		<name>Europe</name>
 	</wpt>
 	<wpt lon="0.704339" lat="47.418381">
 		<ele>0.0</ele>
 		<name>Maréchal Juin</name>
 	</wpt>
+	<wpt lon="0.686574" lat="47.422965">
+		<ele>0.0</ele>
+		<name>Rotterdam</name>
+	</wpt>
+	<wpt lon="0.690352" lat="47.386473">
+		<ele>0.0</ele>
+		<name>Salengro</name>
+	</wpt>
+	<wpt lon="0.683272" lat="47.422383">
+		<ele>0.0</ele>
+		<name>Beffroi</name>
+	</wpt>
+	<wpt lon="0.693285" lat="47.423814">
+		<ele>0.0</ele>
+		<name>Sapaille</name>
+	</wpt>
+	<wpt lon="0.703168" lat="47.364411">
+		<ele>0.0</ele>
+		<name>Beethoven</name>
+	</wpt>
+	<wpt lon="0.698146" lat="47.367334">
+		<ele>0.0</ele>
+		<name>Lac</name>
+	</wpt>
 	<wpt lon="0.699759" lat="47.395500">
 		<ele>0.0</ele>
 		<name>Ursulines</name>
+	</wpt>
+	<wpt lon="0.692710" lat="47.379563">
+		<ele>0.0</ele>
+		<name>Place de la Liberté</name>
+	</wpt>
+	<wpt lon="0.703977" lat="47.360857">
+		<ele>0.0</ele>
+		<name>Lycée Grandmont</name>
+	</wpt>
+	<wpt lon="0.694569" lat="47.376186">
+		<ele>0.0</ele>
+		<name>Charcot</name>
+	</wpt>
+	<wpt lon="0.695388" lat="47.373957">
+		<ele>0.0</ele>
+		<name>Verdun</name>
 	</wpt>
 	<wpt lon="0.711617" lat="47.347901">
 		<ele>0.0</ele>
@@ -157,12 +157,16 @@
 		<ele>0.0</ele>
 		<name>Fourbisserie</name>
 	</wpt>
+	<wpt lon="0.691499" lat="47.383901">
+		<ele>0.0</ele>
+		<name>Boisdenier</name>
+	</wpt>
 	<wpt lon="0.702396" lat="47.357182">
 		<ele>0.0</ele>
 		<name>Faculté de Grandmont</name>
 	</wpt>
-	<wpt lon="0.680460" lat="47.422289">
+	<wpt lon="0.704019" lat="47.425880">
 		<ele>0.0</ele>
-		<name>Europe</name>
+		<name>Fusaparc</name>
 	</wpt>
 </gpx>

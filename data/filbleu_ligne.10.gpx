@@ -1,49 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1" creator="FilBleuExporter">
 	<metadata>Filbleu - Ligne 10</metadata>
-	<wpt lon="0.702088" lat="47.381308">
-		<ele>0.0</ele>
-		<name>Mermoz</name>
-	</wpt>
 	<wpt lon="0.698213" lat="47.436130">
 		<ele>0.0</ele>
 		<name>Milletière</name>
 	</wpt>
-	<wpt lon="0.688495" lat="47.389854">
+	<wpt lon="0.703071" lat="47.406118">
 		<ele>0.0</ele>
-		<name>Jean Jaurès</name>
+		<name>Passerelle</name>
+	</wpt>
+	<wpt lon="0.705561" lat="47.423063">
+		<ele>0.0</ele>
+		<name>Lycée Vaucanson</name>
 	</wpt>
 	<wpt lon="0.695055" lat="47.383665">
 		<ele>0.0</ele>
 		<name>Palais des Sports</name>
 	</wpt>
-	<wpt lon="0.696293" lat="47.412132">
+	<wpt lon="0.710512" lat="47.378728">
 		<ele>0.0</ele>
-		<name>Tourettes</name>
+		<name>Raspail</name>
 	</wpt>
-	<wpt lon="0.700349" lat="47.392317">
+	<wpt lon="0.696696" lat="47.416465">
 		<ele>0.0</ele>
-		<name>Loiseau d'Entraigues</name>
+		<name>Tremblay</name>
 	</wpt>
-	<wpt lon="0.685391" lat="47.426259">
+	<wpt lon="0.700201" lat="47.392753">
 		<ele>0.0</ele>
-		<name>Loing</name>
+		<name>Traversiere</name>
 	</wpt>
 	<wpt lon="0.703416" lat="47.408903">
 		<ele>0.0</ele>
 		<name>IUT</name>
 	</wpt>
+	<wpt lon="0.688495" lat="47.389854">
+		<ele>0.0</ele>
+		<name>Jean Jaurès</name>
+	</wpt>
 	<wpt lon="0.686384" lat="47.432513">
 		<ele>0.0</ele>
 		<name>Abbaye Gatines</name>
 	</wpt>
-	<wpt lon="0.693015" lat="47.413552">
+	<wpt lon="0.700786" lat="47.428331">
 		<ele>0.0</ele>
-		<name>Général Estienne</name>
+		<name>Torricelli</name>
 	</wpt>
-	<wpt lon="0.696975" lat="47.391227">
+	<wpt lon="0.698783" lat="47.427436">
 		<ele>0.0</ele>
-		<name>Heurteloup</name>
+		<name>Petite Arche</name>
+	</wpt>
+	<wpt lon="0.686061" lat="47.433647">
+		<ele>0.0</ele>
+		<name>Lycée Choiseul</name>
+	</wpt>
+	<wpt lon="0.679573" lat="47.434957">
+		<ele>0.0</ele>
+		<name>Tavant</name>
+	</wpt>
+	<wpt lon="0.718399" lat="47.379405">
+		<ele>0.0</ele>
+		<name>Les Atlantes</name>
+	</wpt>
+	<wpt lon="0.688818" lat="47.406744">
+		<ele>0.0</ele>
+		<name>Clinique Velpeau</name>
 	</wpt>
 	<wpt lon="0.702792" lat="47.412415">
 		<ele>0.0</ele>
@@ -53,125 +73,109 @@
 		<ele>0.0</ele>
 		<name>Charleroi</name>
 	</wpt>
-	<wpt lon="0.696696" lat="47.416465">
-		<ele>0.0</ele>
-		<name>Tremblay</name>
-	</wpt>
-	<wpt lon="0.690352" lat="47.386473">
-		<ele>0.0</ele>
-		<name>Salengro</name>
-	</wpt>
-	<wpt lon="0.704990" lat="47.381709">
-		<ele>0.0</ele>
-		<name>Rotonde</name>
-	</wpt>
-	<wpt lon="0.692803" lat="47.390745">
-		<ele>0.0</ele>
-		<name>Gare Vinci</name>
-	</wpt>
-	<wpt lon="0.704019" lat="47.425880">
-		<ele>0.0</ele>
-		<name>Fusaparc</name>
-	</wpt>
-	<wpt lon="0.699884" lat="47.412281">
-		<ele>0.0</ele>
-		<name>St Barthélemy</name>
-	</wpt>
-	<wpt lon="0.684108" lat="47.436421">
-		<ele>0.0</ele>
-		<name>Douets Lycée Choiseul</name>
-	</wpt>
-	<wpt lon="0.716051" lat="47.377569">
-		<ele>0.0</ele>
-		<name>Duclos - Atlantes</name>
-	</wpt>
 	<wpt lon="0.697196" lat="47.430593">
 		<ele>0.0</ele>
 		<name>D'Alembert</name>
 	</wpt>
-	<wpt lon="0.689640" lat="47.434426">
+	<wpt lon="0.736472" lat="47.376566">
 		<ele>0.0</ele>
-		<name>Cousinerie</name>
-	</wpt>
-	<wpt lon="0.689361" lat="47.409539">
-		<ele>0.0</ele>
-		<name>Croix Pasquier</name>
-	</wpt>
-	<wpt lon="0.703047" lat="47.418361">
-		<ele>0.0</ele>
-		<name>Collège Ronsard</name>
-	</wpt>
-	<wpt lon="0.679099" lat="47.428860">
-		<ele>0.0</ele>
-		<name>Compagnonnage</name>
-	</wpt>
-	<wpt lon="0.688818" lat="47.406744">
-		<ele>0.0</ele>
-		<name>Clinique Velpeau</name>
-	</wpt>
-	<wpt lon="0.691983" lat="47.435197">
-		<ele>0.0</ele>
-		<name>Suède</name>
-	</wpt>
-	<wpt lon="0.690909" lat="47.411349">
-		<ele>0.0</ele>
-		<name>Republique</name>
-	</wpt>
-	<wpt lon="0.712571" lat="47.377461">
-		<ele>0.0</ele>
-		<name>Leccia</name>
-	</wpt>
-	<wpt lon="0.703071" lat="47.406118">
-		<ele>0.0</ele>
-		<name>Passerelle</name>
-	</wpt>
-	<wpt lon="0.710512" lat="47.378728">
-		<ele>0.0</ele>
-		<name>Raspail</name>
-	</wpt>
-	<wpt lon="0.705561" lat="47.423063">
-		<ele>0.0</ele>
-		<name>Lycée Vaucanson</name>
-	</wpt>
-	<wpt lon="0.696672" lat="47.382338">
-		<ele>0.0</ele>
-		<name>Sanitas</name>
-	</wpt>
-	<wpt lon="0.698914" lat="47.380712">
-		<ele>0.0</ele>
-		<name>Venien</name>
-	</wpt>
-	<wpt lon="0.686061" lat="47.433647">
-		<ele>0.0</ele>
-		<name>Lycée Choiseul</name>
-	</wpt>
-	<wpt lon="0.698783" lat="47.427436">
-		<ele>0.0</ele>
-		<name>Petite Arche</name>
-	</wpt>
-	<wpt lon="0.704595" lat="47.427980">
-		<ele>0.0</ele>
-		<name>Aérogare</name>
+		<name>Peupleraie</name>
 	</wpt>
 	<wpt lon="0.691174" lat="47.406634">
 		<ele>0.0</ele>
 		<name>Trianon</name>
 	</wpt>
-	<wpt lon="0.691798" lat="47.409612">
+	<wpt lon="0.699884" lat="47.412281">
 		<ele>0.0</ele>
-		<name>Pierre Couverte</name>
+		<name>St Barthélemy</name>
 	</wpt>
-	<wpt lon="0.679573" lat="47.434957">
+	<wpt lon="0.690909" lat="47.411349">
 		<ele>0.0</ele>
-		<name>Tavant</name>
+		<name>Republique</name>
+	</wpt>
+	<wpt lon="0.691983" lat="47.435197">
+		<ele>0.0</ele>
+		<name>Suède</name>
+	</wpt>
+	<wpt lon="0.692803" lat="47.390745">
+		<ele>0.0</ele>
+		<name>Gare Vinci</name>
+	</wpt>
+	<wpt lon="0.716051" lat="47.377569">
+		<ele>0.0</ele>
+		<name>Duclos - Atlantes</name>
+	</wpt>
+	<wpt lon="0.689361" lat="47.409539">
+		<ele>0.0</ele>
+		<name>Croix Pasquier</name>
 	</wpt>
 	<wpt lon="0.738549" lat="47.385048">
 		<ele>0.0</ele>
 		<name>Farges</name>
 	</wpt>
-	<wpt lon="0.700786" lat="47.428331">
+	<wpt lon="0.693015" lat="47.413552">
 		<ele>0.0</ele>
-		<name>Torricelli</name>
+		<name>Général Estienne</name>
+	</wpt>
+	<wpt lon="0.689640" lat="47.434426">
+		<ele>0.0</ele>
+		<name>Cousinerie</name>
+	</wpt>
+	<wpt lon="0.679099" lat="47.428860">
+		<ele>0.0</ele>
+		<name>Compagnonnage</name>
+	</wpt>
+	<wpt lon="0.696293" lat="47.412132">
+		<ele>0.0</ele>
+		<name>Tourettes</name>
+	</wpt>
+	<wpt lon="0.718405" lat="47.379226">
+		<ele>0.0</ele>
+		<name>Atlantes</name>
+	</wpt>
+	<wpt lon="0.704990" lat="47.381709">
+		<ele>0.0</ele>
+		<name>Rotonde</name>
+	</wpt>
+	<wpt lon="0.685391" lat="47.426259">
+		<ele>0.0</ele>
+		<name>Loing</name>
+	</wpt>
+	<wpt lon="0.700378" lat="47.392230">
+		<ele>0.0</ele>
+		<name>Loiseau d'Entraigues</name>
+	</wpt>
+	<wpt lon="0.690352" lat="47.386473">
+		<ele>0.0</ele>
+		<name>Salengro</name>
+	</wpt>
+	<wpt lon="0.696672" lat="47.382338">
+		<ele>0.0</ele>
+		<name>Sanitas</name>
+	</wpt>
+	<wpt lon="0.691798" lat="47.409612">
+		<ele>0.0</ele>
+		<name>Pierre Couverte</name>
+	</wpt>
+	<wpt lon="0.696975" lat="47.391227">
+		<ele>0.0</ele>
+		<name>Heurteloup</name>
+	</wpt>
+	<wpt lon="0.699759" lat="47.395500">
+		<ele>0.0</ele>
+		<name>Ursulines</name>
+	</wpt>
+	<wpt lon="0.702088" lat="47.381308">
+		<ele>0.0</ele>
+		<name>Mermoz</name>
+	</wpt>
+	<wpt lon="0.712571" lat="47.377461">
+		<ele>0.0</ele>
+		<name>Leccia</name>
+	</wpt>
+	<wpt lon="0.698914" lat="47.380712">
+		<ele>0.0</ele>
+		<name>Venien</name>
 	</wpt>
 	<wpt lon="0.708655" lat="47.379885">
 		<ele>0.0</ele>
@@ -181,21 +185,13 @@
 		<ele>0.0</ele>
 		<name>Champ Chardon</name>
 	</wpt>
-	<wpt lon="0.700201" lat="47.392753">
-		<ele>0.0</ele>
-		<name>Traversiere</name>
-	</wpt>
-	<wpt lon="0.699759" lat="47.395500">
-		<ele>0.0</ele>
-		<name>Ursulines</name>
-	</wpt>
-	<wpt lon="0.718405" lat="47.379226">
-		<ele>0.0</ele>
-		<name>Atlantes</name>
-	</wpt>
 	<wpt lon="0.678823" lat="47.431334">
 		<ele>0.0</ele>
 		<name>Bois Aubry</name>
+	</wpt>
+	<wpt lon="0.691499" lat="47.383901">
+		<ele>0.0</ele>
+		<name>Boisdenier</name>
 	</wpt>
 	<wpt lon="0.732336" lat="47.377143">
 		<ele>0.0</ele>
@@ -205,32 +201,36 @@
 		<ele>0.0</ele>
 		<name>Aviron</name>
 	</wpt>
-	<wpt lon="0.691499" lat="47.383901">
+	<wpt lon="0.700625" lat="47.434022">
 		<ele>0.0</ele>
-		<name>Boisdenier</name>
+		<name>Brassens</name>
 	</wpt>
-	<wpt lon="0.736472" lat="47.376566">
+	<wpt lon="0.704595" lat="47.427980">
 		<ele>0.0</ele>
-		<name>Peupleraie</name>
-	</wpt>
-	<wpt lon="0.697699" lat="47.432804">
-		<ele>0.0</ele>
-		<name>Danemark</name>
+		<name>Aérogare</name>
 	</wpt>
 	<wpt lon="0.719238" lat="47.376560">
 		<ele>0.0</ele>
 		<name>Parc des Expositions</name>
 	</wpt>
-	<wpt lon="0.700625" lat="47.434022">
+	<wpt lon="0.697699" lat="47.432804">
 		<ele>0.0</ele>
-		<name>Brassens</name>
+		<name>Danemark</name>
 	</wpt>
-	<wpt lon="0.718399" lat="47.379405">
+	<wpt lon="0.703047" lat="47.418361">
 		<ele>0.0</ele>
-		<name>Les Atlantes</name>
+		<name>Collège Ronsard</name>
 	</wpt>
 	<wpt lon="0.692736" lat="47.411415">
 		<ele>0.0</ele>
 		<name>Devildé</name>
+	</wpt>
+	<wpt lon="0.684108" lat="47.436421">
+		<ele>0.0</ele>
+		<name>Douets Lycée Choiseul</name>
+	</wpt>
+	<wpt lon="0.704019" lat="47.425880">
+		<ele>0.0</ele>
+		<name>Fusaparc</name>
 	</wpt>
 </gpx>

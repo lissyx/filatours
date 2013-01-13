@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1" creator="FilBleuExporter">
 	<metadata>Filbleu - Ligne 61</metadata>
-	<wpt lon="0.688495" lat="47.389854">
+	<wpt lon="0.698523" lat="47.397492">
 		<ele>0.0</ele>
-		<name>Jean Jaurès</name>
-	</wpt>
-	<wpt lon="0.700349" lat="47.392317">
-		<ele>0.0</ele>
-		<name>Loiseau d'Entraigues</name>
+		<name>Mirabeau</name>
 	</wpt>
 	<wpt lon="0.801632" lat="47.410382">
 		<ele>0.0</ele>
 		<name>Collège de Vouvray</name>
 	</wpt>
-	<wpt lon="0.721256" lat="47.402523">
+	<wpt lon="0.790644" lat="47.410164">
 		<ele>0.0</ele>
-		<name>Les Rochettes</name>
+		<name>Echeneau</name>
+	</wpt>
+	<wpt lon="0.688495" lat="47.389854">
+		<ele>0.0</ele>
+		<name>Jean Jaurès</name>
+	</wpt>
+	<wpt lon="0.700378" lat="47.392230">
+		<ele>0.0</ele>
+		<name>Loiseau d'Entraigues</name>
 	</wpt>
 	<wpt lon="0.696975" lat="47.391227">
 		<ele>0.0</ele>
 		<name>Heurteloup</name>
+	</wpt>
+	<wpt lon="0.685875" lat="47.396499">
+		<ele>0.0</ele>
+		<name>Anatole France</name>
 	</wpt>
 	<wpt lon="0.755079" lat="47.414632">
 		<ele>0.0</ele>
@@ -33,93 +41,93 @@
 		<ele>0.0</ele>
 		<name>St Roch</name>
 	</wpt>
-	<wpt lon="0.726807" lat="47.403887">
+	<wpt lon="0.750431" lat="47.407812">
 		<ele>0.0</ele>
-		<name>Beauregard</name>
-	</wpt>
-	<wpt lon="0.692847" lat="47.397480">
-		<ele>0.0</ele>
-		<name>Château de Tours</name>
+		<name>Basses Rivières</name>
 	</wpt>
 	<wpt lon="0.766513" lat="47.409624">
 		<ele>0.0</ele>
 		<name>Vauvert</name>
 	</wpt>
-	<wpt lon="0.698523" lat="47.397492">
+	<wpt lon="0.692847" lat="47.397480">
 		<ele>0.0</ele>
-		<name>Mirabeau</name>
-	</wpt>
-	<wpt lon="0.692803" lat="47.390745">
-		<ele>0.0</ele>
-		<name>Gare Vinci</name>
-	</wpt>
-	<wpt lon="0.701405" lat="47.403175">
-		<ele>0.0</ele>
-		<name>Golf</name>
-	</wpt>
-	<wpt lon="0.711682" lat="47.402506">
-		<ele>0.0</ele>
-		<name>Ste Radegonde</name>
-	</wpt>
-	<wpt lon="0.830308" lat="47.411906">
-		<ele>0.0</ele>
-		<name>Les Bidaudières</name>
+		<name>Château de Tours</name>
 	</wpt>
 	<wpt lon="0.717257" lat="47.401783">
 		<ele>0.0</ele>
 		<name>Marmoutier</name>
 	</wpt>
-	<wpt lon="0.847529" lat="47.418881">
+	<wpt lon="0.801690" lat="47.411341">
 		<ele>0.0</ele>
-		<name>Adapei</name>
+		<name>Holnon</name>
 	</wpt>
-	<wpt lon="0.840299" lat="47.412706">
+	<wpt lon="0.692803" lat="47.390745">
 		<ele>0.0</ele>
-		<name>Aitre des Gauthiers</name>
+		<name>Gare Vinci</name>
 	</wpt>
-	<wpt lon="0.822172" lat="47.411859">
+	<wpt lon="0.711682" lat="47.402506">
 		<ele>0.0</ele>
-		<name>Vallée Chartier</name>
+		<name>Ste Radegonde</name>
+	</wpt>
+	<wpt lon="0.701405" lat="47.403175">
+		<ele>0.0</ele>
+		<name>Golf</name>
 	</wpt>
 	<wpt lon="0.797474" lat="47.410471">
 		<ele>0.0</ele>
 		<name>St Vincent</name>
 	</wpt>
-	<wpt lon="0.784855" lat="47.410307">
+	<wpt lon="0.721256" lat="47.402523">
 		<ele>0.0</ele>
-		<name>Moncontour</name>
+		<name>Les Rochettes</name>
 	</wpt>
 	<wpt lon="0.781261" lat="47.410394">
 		<ele>0.0</ele>
 		<name>Les Patis</name>
 	</wpt>
+	<wpt lon="0.840299" lat="47.412706">
+		<ele>0.0</ele>
+		<name>Aitre des Gauthiers</name>
+	</wpt>
+	<wpt lon="0.842757" lat="47.421721">
+		<ele>0.0</ele>
+		<name>Briand</name>
+	</wpt>
+	<wpt lon="0.800493" lat="47.410822">
+		<ele>0.0</ele>
+		<name>Vouvray Centre</name>
+	</wpt>
+	<wpt lon="0.822172" lat="47.411859">
+		<ele>0.0</ele>
+		<name>Vallée Chartier</name>
+	</wpt>
 	<wpt lon="0.689295" lat="47.397322">
 		<ele>0.0</ele>
 		<name>Voltaire</name>
 	</wpt>
-	<wpt lon="0.807365" lat="47.411974">
+	<wpt lon="0.784855" lat="47.410307">
 		<ele>0.0</ele>
-		<name>La Croix Buissée</name>
+		<name>Moncontour</name>
 	</wpt>
-	<wpt lon="0.813575" lat="47.411926">
+	<wpt lon="0.847529" lat="47.418881">
 		<ele>0.0</ele>
-		<name>L'Ouche du Mont</name>
+		<name>Adapei</name>
 	</wpt>
-	<wpt lon="0.801690" lat="47.411341">
+	<wpt lon="0.830308" lat="47.411906">
 		<ele>0.0</ele>
-		<name>Holnon</name>
-	</wpt>
-	<wpt lon="0.790644" lat="47.410164">
-		<ele>0.0</ele>
-		<name>Echeneau</name>
+		<name>Les Bidaudières</name>
 	</wpt>
 	<wpt lon="0.699759" lat="47.395500">
 		<ele>0.0</ele>
 		<name>Ursulines</name>
 	</wpt>
-	<wpt lon="0.744153" lat="47.406808">
+	<wpt lon="0.813575" lat="47.411926">
 		<ele>0.0</ele>
-		<name>La Tesserie</name>
+		<name>L'Ouche du Mont</name>
+	</wpt>
+	<wpt lon="0.807365" lat="47.411974">
+		<ele>0.0</ele>
+		<name>La Croix Buissée</name>
 	</wpt>
 	<wpt lon="0.774943" lat="47.410250">
 		<ele>0.0</ele>
@@ -129,13 +137,13 @@
 		<ele>0.0</ele>
 		<name>Fontenelles</name>
 	</wpt>
-	<wpt lon="0.758075" lat="47.415532">
+	<wpt lon="0.726807" lat="47.403887">
 		<ele>0.0</ele>
-		<name>Les Pitoisières</name>
+		<name>Beauregard</name>
 	</wpt>
-	<wpt lon="0.685875" lat="47.396499">
+	<wpt lon="0.757897" lat="47.413461">
 		<ele>0.0</ele>
-		<name>Anatole France</name>
+		<name>Les Gatinières</name>
 	</wpt>
 	<wpt lon="0.759483" lat="47.410266">
 		<ele>0.0</ele>
@@ -145,6 +153,10 @@
 		<ele>0.0</ele>
 		<name>Les Batonneries</name>
 	</wpt>
+	<wpt lon="0.744153" lat="47.406808">
+		<ele>0.0</ele>
+		<name>La Tesserie</name>
+	</wpt>
 	<wpt lon="0.737986" lat="47.406053">
 		<ele>0.0</ele>
 		<name>Petit Versailles</name>
@@ -153,29 +165,17 @@
 		<ele>0.0</ele>
 		<name>Observaloire</name>
 	</wpt>
-	<wpt lon="0.847132" lat="47.417648">
-		<ele>0.0</ele>
-		<name>Rue Neuve</name>
-	</wpt>
-	<wpt lon="0.750431" lat="47.407812">
-		<ele>0.0</ele>
-		<name>Basses Rivières</name>
-	</wpt>
-	<wpt lon="0.800493" lat="47.410822">
-		<ele>0.0</ele>
-		<name>Vouvray Centre</name>
-	</wpt>
 	<wpt lon="0.704946" lat="47.403086">
 		<ele>0.0</ele>
 		<name>St Joseph</name>
 	</wpt>
+	<wpt lon="0.847132" lat="47.417648">
+		<ele>0.0</ele>
+		<name>Rue Neuve</name>
+	</wpt>
 	<wpt lon="0.845198" lat="47.418095">
 		<ele>0.0</ele>
 		<name>Perce Neige</name>
-	</wpt>
-	<wpt lon="0.850380" lat="47.414069">
-		<ele>0.0</ele>
-		<name>Le Clos</name>
 	</wpt>
 	<wpt lon="0.845516" lat="47.420934">
 		<ele>0.0</ele>
@@ -189,16 +189,12 @@
 		<ele>0.0</ele>
 		<name>Clos de Vernou</name>
 	</wpt>
-	<wpt lon="0.842757" lat="47.421721">
+	<wpt lon="0.850380" lat="47.414069">
 		<ele>0.0</ele>
-		<name>Briand</name>
+		<name>Le Clos</name>
 	</wpt>
 	<wpt lon="0.848273" lat="47.415490">
 		<ele>0.0</ele>
 		<name>Debré</name>
-	</wpt>
-	<wpt lon="0.757897" lat="47.413461">
-		<ele>0.0</ele>
-		<name>Les Gatinières</name>
 	</wpt>
 </gpx>

@@ -1,41 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1" creator="FilBleuExporter">
 	<metadata>Filbleu - Ligne 14</metadata>
-	<wpt lon="0.701716" lat="47.355845">
-		<ele>0.0</ele>
-		<name>Arsonval</name>
-	</wpt>
-	<wpt lon="0.703313" lat="47.350816">
-		<ele>0.0</ele>
-		<name>Parc Grandmont</name>
-	</wpt>
 	<wpt lon="0.703071" lat="47.406118">
 		<ele>0.0</ele>
 		<name>Passerelle</name>
+	</wpt>
+	<wpt lon="0.701145" lat="47.363663">
+		<ele>0.0</ele>
+		<name>Parc Nord</name>
 	</wpt>
 	<wpt lon="0.667132" lat="47.354150">
 		<ele>0.0</ele>
 		<name>Joué Gare</name>
 	</wpt>
-	<wpt lon="0.710512" lat="47.378728">
+	<wpt lon="0.703168" lat="47.364411">
 		<ele>0.0</ele>
-		<name>Raspail</name>
+		<name>Beethoven</name>
 	</wpt>
 	<wpt lon="0.691843" lat="47.353551">
 		<ele>0.0</ele>
 		<name>Jumeaux</name>
 	</wpt>
-	<wpt lon="0.700201" lat="47.392753">
+	<wpt lon="0.710512" lat="47.378728">
 		<ele>0.0</ele>
-		<name>Traversiere</name>
+		<name>Raspail</name>
 	</wpt>
-	<wpt lon="0.710917" lat="47.376148">
+	<wpt lon="0.696696" lat="47.416465">
 		<ele>0.0</ele>
-		<name>Rochepinard</name>
-	</wpt>
-	<wpt lon="0.700349" lat="47.392317">
-		<ele>0.0</ele>
-		<name>Loiseau d'Entraigues</name>
+		<name>Tremblay</name>
 	</wpt>
 	<wpt lon="0.701769" lat="47.360588">
 		<ele>0.0</ele>
@@ -45,105 +37,113 @@
 		<ele>0.0</ele>
 		<name>IUT</name>
 	</wpt>
-	<wpt lon="0.693015" lat="47.413552">
+	<wpt lon="0.710917" lat="47.376148">
 		<ele>0.0</ele>
-		<name>Général Estienne</name>
+		<name>Rochepinard</name>
+	</wpt>
+	<wpt lon="0.700378" lat="47.392230">
+		<ele>0.0</ele>
+		<name>Loiseau d'Entraigues</name>
 	</wpt>
 	<wpt lon="0.696975" lat="47.391227">
 		<ele>0.0</ele>
 		<name>Heurteloup</name>
 	</wpt>
-	<wpt lon="0.705744" lat="47.375669">
-		<ele>0.0</ele>
-		<name>Séverine</name>
-	</wpt>
 	<wpt lon="0.703977" lat="47.360857">
 		<ele>0.0</ele>
 		<name>Lycée Grandmont</name>
 	</wpt>
-	<wpt lon="0.672870" lat="47.351159">
+	<wpt lon="0.701716" lat="47.355845">
 		<ele>0.0</ele>
-		<name>Morier</name>
+		<name>Arsonval</name>
 	</wpt>
-	<wpt lon="0.701145" lat="47.363663">
+	<wpt lon="0.697051" lat="47.387877">
 		<ele>0.0</ele>
-		<name>Parc Nord</name>
-	</wpt>
-	<wpt lon="0.702792" lat="47.412415">
-		<ele>0.0</ele>
-		<name>Chopin</name>
+		<name>Champ Girault</name>
 	</wpt>
 	<wpt lon="0.699148" lat="47.374155">
 		<ele>0.0</ele>
 		<name>Pompiers</name>
 	</wpt>
-	<wpt lon="0.686322" lat="47.351733">
+	<wpt lon="0.688818" lat="47.406744">
 		<ele>0.0</ele>
-		<name>Quatre Bornes</name>
+		<name>Clinique Velpeau</name>
 	</wpt>
-	<wpt lon="0.696696" lat="47.416465">
+	<wpt lon="0.702792" lat="47.412415">
 		<ele>0.0</ele>
-		<name>Tremblay</name>
-	</wpt>
-	<wpt lon="0.692803" lat="47.390745">
-		<ele>0.0</ele>
-		<name>Gare Vinci</name>
-	</wpt>
-	<wpt lon="0.703192" lat="47.383110">
-		<ele>0.0</ele>
-		<name>Peupliers</name>
-	</wpt>
-	<wpt lon="0.694038" lat="47.390016">
-		<ele>0.0</ele>
-		<name>Gare de Tours</name>
-	</wpt>
-	<wpt lon="0.698197" lat="47.408389">
-		<ele>0.0</ele>
-		<name>St Symphorien</name>
-	</wpt>
-	<wpt lon="0.704788" lat="47.353653">
-		<ele>0.0</ele>
-		<name>Dumont-d'Urville</name>
+		<name>Chopin</name>
 	</wpt>
 	<wpt lon="0.705758" lat="47.381801">
 		<ele>0.0</ele>
 		<name>Jolivet</name>
 	</wpt>
+	<wpt lon="0.686322" lat="47.351733">
+		<ele>0.0</ele>
+		<name>Quatre Bornes</name>
+	</wpt>
+	<wpt lon="0.691174" lat="47.406634">
+		<ele>0.0</ele>
+		<name>Trianon</name>
+	</wpt>
+	<wpt lon="0.703313" lat="47.350816">
+		<ele>0.0</ele>
+		<name>Parc Grandmont</name>
+	</wpt>
+	<wpt lon="0.700201" lat="47.392753">
+		<ele>0.0</ele>
+		<name>Traversiere</name>
+	</wpt>
+	<wpt lon="0.694038" lat="47.390016">
+		<ele>0.0</ele>
+		<name>Gare de Tours</name>
+	</wpt>
+	<wpt lon="0.692803" lat="47.390745">
+		<ele>0.0</ele>
+		<name>Gare Vinci</name>
+	</wpt>
+	<wpt lon="0.704788" lat="47.353653">
+		<ele>0.0</ele>
+		<name>Dumont-d'Urville</name>
+	</wpt>
+	<wpt lon="0.698197" lat="47.408389">
+		<ele>0.0</ele>
+		<name>St Symphorien</name>
+	</wpt>
 	<wpt lon="0.689361" lat="47.409539">
 		<ele>0.0</ele>
 		<name>Croix Pasquier</name>
+	</wpt>
+	<wpt lon="0.693015" lat="47.413552">
+		<ele>0.0</ele>
+		<name>Général Estienne</name>
+	</wpt>
+	<wpt lon="0.703192" lat="47.383110">
+		<ele>0.0</ele>
+		<name>Peupliers</name>
+	</wpt>
+	<wpt lon="0.705744" lat="47.375669">
+		<ele>0.0</ele>
+		<name>Séverine</name>
 	</wpt>
 	<wpt lon="0.703047" lat="47.418361">
 		<ele>0.0</ele>
 		<name>Collège Ronsard</name>
 	</wpt>
-	<wpt lon="0.688818" lat="47.406744">
+	<wpt lon="0.704339" lat="47.418381">
 		<ele>0.0</ele>
-		<name>Clinique Velpeau</name>
+		<name>Maréchal Juin</name>
 	</wpt>
-	<wpt lon="0.703926" lat="47.374712">
+	<wpt lon="0.690909" lat="47.411349">
 		<ele>0.0</ele>
-		<name>Langevin</name>
+		<name>Republique</name>
 	</wpt>
-	<wpt lon="0.712571" lat="47.377461">
+	<wpt lon="0.691798" lat="47.409612">
 		<ele>0.0</ele>
-		<name>Leccia</name>
-	</wpt>
-	<wpt lon="0.703168" lat="47.364411">
-		<ele>0.0</ele>
-		<name>Beethoven</name>
-	</wpt>
-	<wpt lon="0.695388" lat="47.373957">
-		<ele>0.0</ele>
-		<name>Verdun</name>
+		<name>Pierre Couverte</name>
 	</wpt>
 	<wpt lon="0.707873" lat="47.376442">
 		<ele>0.0</ele>
 		<name>Beaujardin</name>
-	</wpt>
-	<wpt lon="0.698441" lat="47.355575">
-		<ele>0.0</ele>
-		<name>Bd de Chinon</name>
 	</wpt>
 	<wpt lon="0.704289" lat="47.352661">
 		<ele>0.0</ele>
@@ -153,13 +153,17 @@
 		<ele>0.0</ele>
 		<name>Lac</name>
 	</wpt>
-	<wpt lon="0.704339" lat="47.418381">
+	<wpt lon="0.699759" lat="47.395500">
 		<ele>0.0</ele>
-		<name>Maréchal Juin</name>
+		<name>Ursulines</name>
 	</wpt>
-	<wpt lon="0.691174" lat="47.406634">
+	<wpt lon="0.698441" lat="47.355575">
 		<ele>0.0</ele>
-		<name>Trianon</name>
+		<name>Bd de Chinon</name>
+	</wpt>
+	<wpt lon="0.712571" lat="47.377461">
+		<ele>0.0</ele>
+		<name>Leccia</name>
 	</wpt>
 	<wpt lon="0.678890" lat="47.350941">
 		<ele>0.0</ele>
@@ -169,25 +173,25 @@
 		<ele>0.0</ele>
 		<name>Bugeaud</name>
 	</wpt>
-	<wpt lon="0.691798" lat="47.409612">
+	<wpt lon="0.703926" lat="47.374712">
 		<ele>0.0</ele>
-		<name>Pierre Couverte</name>
+		<name>Langevin</name>
 	</wpt>
 	<wpt lon="0.708655" lat="47.379885">
 		<ele>0.0</ele>
 		<name>Champ Joli</name>
 	</wpt>
-	<wpt lon="0.697051" lat="47.387877">
+	<wpt lon="0.672870" lat="47.351159">
 		<ele>0.0</ele>
-		<name>Champ Girault</name>
+		<name>Morier</name>
 	</wpt>
 	<wpt lon="0.694451" lat="47.416644">
 		<ele>0.0</ele>
 		<name>Champ Chardon</name>
 	</wpt>
-	<wpt lon="0.699759" lat="47.395500">
+	<wpt lon="0.695388" lat="47.373957">
 		<ele>0.0</ele>
-		<name>Ursulines</name>
+		<name>Verdun</name>
 	</wpt>
 	<wpt lon="0.666361" lat="47.351008">
 		<ele>0.0</ele>
@@ -197,24 +201,20 @@
 		<ele>0.0</ele>
 		<name>Montreuil Bellay</name>
 	</wpt>
-	<wpt lon="0.690909" lat="47.411349">
+	<wpt lon="0.703592" lat="47.354239">
 		<ele>0.0</ele>
-		<name>Republique</name>
-	</wpt>
-	<wpt lon="0.700534" lat="47.385179">
-		<ele>0.0</ele>
-		<name>Docteur Fournier</name>
+		<name>Bonamy</name>
 	</wpt>
 	<wpt lon="0.702396" lat="47.357182">
 		<ele>0.0</ele>
 		<name>Faculté de Grandmont</name>
 	</wpt>
-	<wpt lon="0.703592" lat="47.354239">
-		<ele>0.0</ele>
-		<name>Bonamy</name>
-	</wpt>
 	<wpt lon="0.692736" lat="47.411415">
 		<ele>0.0</ele>
 		<name>Devildé</name>
+	</wpt>
+	<wpt lon="0.700534" lat="47.385179">
+		<ele>0.0</ele>
+		<name>Docteur Fournier</name>
 	</wpt>
 </gpx>

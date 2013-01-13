@@ -5,21 +5,21 @@
 		<ele>0.0</ele>
 		<name>Renoir</name>
 	</wpt>
-	<wpt lon="0.703977" lat="47.360857">
+	<wpt lon="0.705758" lat="47.381801">
 		<ele>0.0</ele>
-		<name>Lycée Grandmont</name>
+		<name>Jolivet</name>
+	</wpt>
+	<wpt lon="0.710512" lat="47.378728">
+		<ele>0.0</ele>
+		<name>Raspail</name>
+	</wpt>
+	<wpt lon="0.701769" lat="47.360588">
+		<ele>0.0</ele>
+		<name>J.P. Rameau</name>
 	</wpt>
 	<wpt lon="0.688495" lat="47.389854">
 		<ele>0.0</ele>
 		<name>Jean Jaurès</name>
-	</wpt>
-	<wpt lon="0.712571" lat="47.377461">
-		<ele>0.0</ele>
-		<name>Leccia</name>
-	</wpt>
-	<wpt lon="0.740249" lat="47.355687">
-		<ele>0.0</ele>
-		<name>Ormeau</name>
 	</wpt>
 	<wpt lon="0.752084" lat="47.362633">
 		<ele>0.0</ele>
@@ -29,9 +29,9 @@
 		<ele>0.0</ele>
 		<name>Pompidou</name>
 	</wpt>
-	<wpt lon="0.740422" lat="47.363197">
+	<wpt lon="0.703977" lat="47.360857">
 		<ele>0.0</ele>
-		<name>Pinterie</name>
+		<name>Lycée Grandmont</name>
 	</wpt>
 	<wpt lon="0.735466" lat="47.358084">
 		<ele>0.0</ele>
@@ -45,17 +45,9 @@
 		<ele>0.0</ele>
 		<name>Boutteville</name>
 	</wpt>
-	<wpt lon="0.710512" lat="47.378728">
+	<wpt lon="0.703192" lat="47.383110">
 		<ele>0.0</ele>
-		<name>Raspail</name>
-	</wpt>
-	<wpt lon="0.692803" lat="47.390745">
-		<ele>0.0</ele>
-		<name>Gare Vinci</name>
-	</wpt>
-	<wpt lon="0.730776" lat="47.368367">
-		<ele>0.0</ele>
-		<name>St Avertin Centre</name>
+		<name>Peupliers</name>
 	</wpt>
 	<wpt lon="0.723948" lat="47.355658">
 		<ele>0.0</ele>
@@ -65,13 +57,25 @@
 		<ele>0.0</ele>
 		<name>Croix Perray</name>
 	</wpt>
+	<wpt lon="0.694038" lat="47.390016">
+		<ele>0.0</ele>
+		<name>Gare de Tours</name>
+	</wpt>
+	<wpt lon="0.740422" lat="47.363197">
+		<ele>0.0</ele>
+		<name>Pinterie</name>
+	</wpt>
+	<wpt lon="0.730776" lat="47.368367">
+		<ele>0.0</ele>
+		<name>St Avertin Centre</name>
+	</wpt>
 	<wpt lon="0.720876" lat="47.366565">
 		<ele>0.0</ele>
 		<name>Richemont</name>
 	</wpt>
-	<wpt lon="0.743130" lat="47.358295">
+	<wpt lon="0.692803" lat="47.390745">
 		<ele>0.0</ele>
-		<name>Saboterie</name>
+		<name>Gare Vinci</name>
 	</wpt>
 	<wpt lon="0.730451" lat="47.346027">
 		<ele>0.0</ele>
@@ -81,10 +85,6 @@
 		<ele>0.0</ele>
 		<name>St Avertin Mairie</name>
 	</wpt>
-	<wpt lon="0.705758" lat="47.381801">
-		<ele>0.0</ele>
-		<name>Jolivet</name>
-	</wpt>
 	<wpt lon="0.736623" lat="47.355857">
 		<ele>0.0</ele>
 		<name>Canauderie</name>
@@ -93,13 +93,9 @@
 		<ele>0.0</ele>
 		<name>Château Fraisier</name>
 	</wpt>
-	<wpt lon="0.701769" lat="47.360588">
+	<wpt lon="0.725595" lat="47.367675">
 		<ele>0.0</ele>
-		<name>J.P. Rameau</name>
-	</wpt>
-	<wpt lon="0.694038" lat="47.390016">
-		<ele>0.0</ele>
-		<name>Gare de Tours</name>
+		<name>Cottier</name>
 	</wpt>
 	<wpt lon="0.737965" lat="47.361863">
 		<ele>0.0</ele>
@@ -108,10 +104,6 @@
 	<wpt lon="0.750472" lat="47.360956">
 		<ele>0.0</ele>
 		<name>Onze Arpents</name>
-	</wpt>
-	<wpt lon="0.703192" lat="47.383110">
-		<ele>0.0</ele>
-		<name>Peupliers</name>
 	</wpt>
 	<wpt lon="0.734993" lat="47.346635">
 		<ele>0.0</ele>
@@ -129,9 +121,17 @@
 		<ele>0.0</ele>
 		<name>Les Granges</name>
 	</wpt>
+	<wpt lon="0.712571" lat="47.377461">
+		<ele>0.0</ele>
+		<name>Leccia</name>
+	</wpt>
 	<wpt lon="0.722289" lat="47.348019">
 		<ele>0.0</ele>
 		<name>Vanneaux</name>
+	</wpt>
+	<wpt lon="0.740249" lat="47.355687">
+		<ele>0.0</ele>
+		<name>Ormeau</name>
 	</wpt>
 	<wpt lon="0.708655" lat="47.379885">
 		<ele>0.0</ele>
@@ -141,13 +141,17 @@
 		<ele>0.0</ele>
 		<name>Champ Girault</name>
 	</wpt>
+	<wpt lon="0.743130" lat="47.358295">
+		<ele>0.0</ele>
+		<name>Saboterie</name>
+	</wpt>
 	<wpt lon="0.726845" lat="47.347511">
 		<ele>0.0</ele>
 		<name>Branchoire</name>
 	</wpt>
-	<wpt lon="0.700534" lat="47.385179">
+	<wpt lon="0.744848" lat="47.359727">
 		<ele>0.0</ele>
-		<name>Docteur Fournier</name>
+		<name>Droits de l'Homme</name>
 	</wpt>
 	<wpt lon="0.736294" lat="47.343639">
 		<ele>0.0</ele>
@@ -161,17 +165,13 @@
 		<ele>0.0</ele>
 		<name>Granges Galand</name>
 	</wpt>
-	<wpt lon="0.725595" lat="47.367675">
-		<ele>0.0</ele>
-		<name>Cottier</name>
-	</wpt>
 	<wpt lon="0.748411" lat="47.364378">
 		<ele>0.0</ele>
 		<name>Fosse Poitevinne</name>
 	</wpt>
-	<wpt lon="0.744848" lat="47.359727">
+	<wpt lon="0.700534" lat="47.385179">
 		<ele>0.0</ele>
-		<name>Droits de l'Homme</name>
+		<name>Docteur Fournier</name>
 	</wpt>
 	<wpt lon="0.738309" lat="47.366537">
 		<ele>0.0</ele>

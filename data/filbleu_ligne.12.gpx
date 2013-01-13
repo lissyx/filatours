@@ -9,17 +9,17 @@
 		<ele>0.0</ele>
 		<name>Quatre Chemins</name>
 	</wpt>
-	<wpt lon="0.688495" lat="47.389854">
+	<wpt lon="0.705758" lat="47.381801">
 		<ele>0.0</ele>
-		<name>Jean Jaurès</name>
-	</wpt>
-	<wpt lon="0.708655" lat="47.379885">
-		<ele>0.0</ele>
-		<name>Champ Joli</name>
+		<name>Jolivet</name>
 	</wpt>
 	<wpt lon="0.732789" lat="47.337364">
 		<ele>0.0</ele>
 		<name>Ockeghem</name>
+	</wpt>
+	<wpt lon="0.710512" lat="47.378728">
+		<ele>0.0</ele>
+		<name>Raspail</name>
 	</wpt>
 	<wpt lon="0.722670" lat="47.365645">
 		<ele>0.0</ele>
@@ -29,13 +29,17 @@
 		<ele>0.0</ele>
 		<name>Papoterie</name>
 	</wpt>
-	<wpt lon="0.701769" lat="47.360588">
+	<wpt lon="0.688495" lat="47.389854">
 		<ele>0.0</ele>
-		<name>J.P. Rameau</name>
+		<name>Jean Jaurès</name>
 	</wpt>
 	<wpt lon="0.717369" lat="47.365562">
 		<ele>0.0</ele>
 		<name>Pompidou</name>
+	</wpt>
+	<wpt lon="0.703977" lat="47.360857">
+		<ele>0.0</ele>
+		<name>Lycée Grandmont</name>
 	</wpt>
 	<wpt lon="0.735466" lat="47.358084">
 		<ele>0.0</ele>
@@ -53,10 +57,6 @@
 		<ele>0.0</ele>
 		<name>Mairie de Chambray</name>
 	</wpt>
-	<wpt lon="0.703977" lat="47.360857">
-		<ele>0.0</ele>
-		<name>Lycée Grandmont</name>
-	</wpt>
 	<wpt lon="0.739811" lat="47.358600">
 		<ele>0.0</ele>
 		<name>Apollinaire</name>
@@ -69,9 +69,9 @@
 		<ele>0.0</ele>
 		<name>Camusière</name>
 	</wpt>
-	<wpt lon="0.714365" lat="47.361130">
+	<wpt lon="0.723948" lat="47.355658">
 		<ele>0.0</ele>
-		<name>Sagerie</name>
+		<name>De Gaulle</name>
 	</wpt>
 	<wpt lon="0.736965" lat="47.337138">
 		<ele>0.0</ele>
@@ -85,17 +85,21 @@
 		<ele>0.0</ele>
 		<name>Chambray Centre</name>
 	</wpt>
-	<wpt lon="0.723948" lat="47.355658">
+	<wpt lon="0.714365" lat="47.361130">
 		<ele>0.0</ele>
-		<name>De Gaulle</name>
+		<name>Sagerie</name>
 	</wpt>
-	<wpt lon="0.703192" lat="47.383110">
+	<wpt lon="0.701769" lat="47.360588">
 		<ele>0.0</ele>
-		<name>Peupliers</name>
+		<name>J.P. Rameau</name>
 	</wpt>
-	<wpt lon="0.743130" lat="47.358295">
+	<wpt lon="0.694038" lat="47.390016">
 		<ele>0.0</ele>
-		<name>Saboterie</name>
+		<name>Gare de Tours</name>
+	</wpt>
+	<wpt lon="0.692803" lat="47.390745">
+		<ele>0.0</ele>
+		<name>Gare Vinci</name>
 	</wpt>
 	<wpt lon="0.715349" lat="47.359016">
 		<ele>0.0</ele>
@@ -117,21 +121,13 @@
 		<ele>0.0</ele>
 		<name>Clos Vaumont</name>
 	</wpt>
+	<wpt lon="0.703192" lat="47.383110">
+		<ele>0.0</ele>
+		<name>Peupliers</name>
+	</wpt>
 	<wpt lon="0.744683" lat="47.353278">
 		<ele>0.0</ele>
 		<name>Courbet</name>
-	</wpt>
-	<wpt lon="0.694038" lat="47.390016">
-		<ele>0.0</ele>
-		<name>Gare de Tours</name>
-	</wpt>
-	<wpt lon="0.712571" lat="47.377461">
-		<ele>0.0</ele>
-		<name>Leccia</name>
-	</wpt>
-	<wpt lon="0.692803" lat="47.390745">
-		<ele>0.0</ele>
-		<name>Gare Vinci</name>
 	</wpt>
 	<wpt lon="0.721986" lat="47.363306">
 		<ele>0.0</ele>
@@ -161,29 +157,33 @@
 		<ele>0.0</ele>
 		<name>Les Granges</name>
 	</wpt>
-	<wpt lon="0.736834" lat="47.350790">
+	<wpt lon="0.712571" lat="47.377461">
 		<ele>0.0</ele>
-		<name>Nouveau Bois</name>
-	</wpt>
-	<wpt lon="0.710512" lat="47.378728">
-		<ele>0.0</ele>
-		<name>Raspail</name>
-	</wpt>
-	<wpt lon="0.705758" lat="47.381801">
-		<ele>0.0</ele>
-		<name>Jolivet</name>
+		<name>Leccia</name>
 	</wpt>
 	<wpt lon="0.723084" lat="47.340969">
 		<ele>0.0</ele>
 		<name>Tilleuls</name>
 	</wpt>
+	<wpt lon="0.708655" lat="47.379885">
+		<ele>0.0</ele>
+		<name>Champ Joli</name>
+	</wpt>
 	<wpt lon="0.697051" lat="47.387877">
 		<ele>0.0</ele>
 		<name>Champ Girault</name>
 	</wpt>
+	<wpt lon="0.736834" lat="47.350790">
+		<ele>0.0</ele>
+		<name>Nouveau Bois</name>
+	</wpt>
 	<wpt lon="0.713588" lat="47.336073">
 		<ele>0.0</ele>
 		<name>Tamaris</name>
+	</wpt>
+	<wpt lon="0.743130" lat="47.358295">
+		<ele>0.0</ele>
+		<name>Saboterie</name>
 	</wpt>
 	<wpt lon="0.706219" lat="47.338432">
 		<ele>0.0</ele>
@@ -196,10 +196,6 @@
 	<wpt lon="0.718277" lat="47.339326">
 		<ele>0.0</ele>
 		<name>Bois de Chambray</name>
-	</wpt>
-	<wpt lon="0.700534" lat="47.385179">
-		<ele>0.0</ele>
-		<name>Docteur Fournier</name>
 	</wpt>
 	<wpt lon="0.736294" lat="47.343639">
 		<ele>0.0</ele>
@@ -224,5 +220,9 @@
 	<wpt lon="0.726194" lat="47.366473">
 		<ele>0.0</ele>
 		<name>Eglise de St Avertin</name>
+	</wpt>
+	<wpt lon="0.700534" lat="47.385179">
+		<ele>0.0</ele>
+		<name>Docteur Fournier</name>
 	</wpt>
 </gpx>

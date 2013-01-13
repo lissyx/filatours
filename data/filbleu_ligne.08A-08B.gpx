@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1" creator="FilBleuExporter">
 	<metadata>Filbleu - Ligne 08A, 08B</metadata>
+	<wpt lon="0.674075" lat="47.423938">
+		<ele>0.0</ele>
+		<name>Augereau</name>
+	</wpt>
 	<wpt lon="0.705972" lat="47.386307">
 		<ele>0.0</ele>
 		<name>Pont du Milieu</name>
 	</wpt>
-	<wpt lon="0.703382" lat="47.385767">
+	<wpt lon="0.705972" lat="47.386307">
 		<ele>0.0</ele>
-		<name>Deslandes</name>
-	</wpt>
-	<wpt lon="0.688495" lat="47.389854">
-		<ele>0.0</ele>
-		<name>Jean Jaurès</name>
+		<name>Pont du Milieu</name>
 	</wpt>
 	<wpt lon="0.661916" lat="47.412400">
 		<ele>0.0</ele>
 		<name>Clarté</name>
 	</wpt>
-	<wpt lon="0.729470" lat="47.390932">
+	<wpt lon="0.675864" lat="47.422475">
 		<ele>0.0</ele>
-		<name>Viala</name>
+		<name>LP Eiffel</name>
 	</wpt>
-	<wpt lon="0.676662" lat="47.407690">
+	<wpt lon="0.688157" lat="47.427716">
 		<ele>0.0</ele>
-		<name>Calmette</name>
+		<name>LP Clouet</name>
+	</wpt>
+	<wpt lon="0.663564" lat="47.420393">
+		<ele>0.0</ele>
+		<name>Charentais</name>
 	</wpt>
 	<wpt lon="0.663564" lat="47.420393">
 		<ele>0.0</ele>
@@ -33,69 +37,117 @@
 		<ele>0.0</ele>
 		<name>Abbaye Gatines</name>
 	</wpt>
-	<wpt lon="0.667252" lat="47.412580">
+	<wpt lon="0.681577" lat="47.391089">
 		<ele>0.0</ele>
-		<name>Bergson</name>
-	</wpt>
-	<wpt lon="0.675864" lat="47.422475">
-		<ele>0.0</ele>
-		<name>LP Eiffel</name>
+		<name>Halles</name>
 	</wpt>
 	<wpt lon="0.681577" lat="47.391089">
 		<ele>0.0</ele>
 		<name>Halles</name>
 	</wpt>
-	<wpt lon="0.690507" lat="47.429738">
+	<wpt lon="0.686061" lat="47.433647">
 		<ele>0.0</ele>
-		<name>Thalès</name>
+		<name>Lycée Choiseul</name>
 	</wpt>
-	<wpt lon="0.686574" lat="47.422965">
+	<wpt lon="0.669988" lat="47.404772">
 		<ele>0.0</ele>
-		<name>Rotterdam</name>
+		<name>Montjoie</name>
 	</wpt>
-	<wpt lon="0.694038" lat="47.390016">
+	<wpt lon="0.669988" lat="47.404772">
 		<ele>0.0</ele>
-		<name>Gare de Tours</name>
-	</wpt>
-	<wpt lon="0.700534" lat="47.385179">
-		<ele>0.0</ele>
-		<name>Docteur Fournier</name>
+		<name>Montjoie</name>
 	</wpt>
 	<wpt lon="0.725425" lat="47.388424">
 		<ele>0.0</ele>
 		<name>Molière</name>
 	</wpt>
-	<wpt lon="0.690475" lat="47.426720">
+	<wpt lon="0.725425" lat="47.388424">
 		<ele>0.0</ele>
-		<name>Malines</name>
+		<name>Molière</name>
+	</wpt>
+	<wpt lon="0.688495" lat="47.389854">
+		<ele>0.0</ele>
+		<name>Jean Jaurès</name>
+	</wpt>
+	<wpt lon="0.688495" lat="47.389854">
+		<ele>0.0</ele>
+		<name>Jean Jaurès</name>
+	</wpt>
+	<wpt lon="0.670563" lat="47.407576">
+		<ele>0.0</ele>
+		<name>Fosses Boissées</name>
+	</wpt>
+	<wpt lon="0.670563" lat="47.407576">
+		<ele>0.0</ele>
+		<name>Fosses Boissées</name>
+	</wpt>
+	<wpt lon="0.690507" lat="47.429738">
+		<ele>0.0</ele>
+		<name>Thalès</name>
 	</wpt>
 	<wpt lon="0.659201" lat="47.412356">
 		<ele>0.0</ele>
 		<name>Sibotière</name>
 	</wpt>
-	<wpt lon="0.716433" lat="47.388973">
+	<wpt lon="0.741876" lat="47.394730">
 		<ele>0.0</ele>
-		<name>Grand Cour</name>
+		<name>LP Nadaud</name>
+	</wpt>
+	<wpt lon="0.741876" lat="47.394730">
+		<ele>0.0</ele>
+		<name>LP Nadaud</name>
 	</wpt>
 	<wpt lon="0.672045" lat="47.413079">
 		<ele>0.0</ele>
 		<name>Roux</name>
 	</wpt>
-	<wpt lon="0.684108" lat="47.436421">
+	<wpt lon="0.672045" lat="47.413079">
 		<ele>0.0</ele>
-		<name>Douets Lycée Choiseul</name>
+		<name>Roux</name>
 	</wpt>
-	<wpt lon="0.686061" lat="47.433647">
+	<wpt lon="0.717178" lat="47.388205">
 		<ele>0.0</ele>
-		<name>Lycée Choiseul</name>
+		<name>Ateliers</name>
+	</wpt>
+	<wpt lon="0.717178" lat="47.388205">
+		<ele>0.0</ele>
+		<name>Ateliers</name>
+	</wpt>
+	<wpt lon="0.656252" lat="47.418224">
+		<ele>0.0</ele>
+		<name>Montaigne</name>
+	</wpt>
+	<wpt lon="0.738358" lat="47.393642">
+		<ele>0.0</ele>
+		<name>Lenine</name>
+	</wpt>
+	<wpt lon="0.738358" lat="47.393642">
+		<ele>0.0</ele>
+		<name>Lenine</name>
+	</wpt>
+	<wpt lon="0.664426" lat="47.418590">
+		<ele>0.0</ele>
+		<name>Lande</name>
+	</wpt>
+	<wpt lon="0.664426" lat="47.418590">
+		<ele>0.0</ele>
+		<name>Lande</name>
+	</wpt>
+	<wpt lon="0.694038" lat="47.390016">
+		<ele>0.0</ele>
+		<name>Gare de Tours</name>
+	</wpt>
+	<wpt lon="0.694038" lat="47.390016">
+		<ele>0.0</ele>
+		<name>Gare de Tours</name>
 	</wpt>
 	<wpt lon="0.692803" lat="47.390745">
 		<ele>0.0</ele>
 		<name>Gare Vinci</name>
 	</wpt>
-	<wpt lon="0.670563" lat="47.407576">
+	<wpt lon="0.692803" lat="47.390745">
 		<ele>0.0</ele>
-		<name>Fosses Boissées</name>
+		<name>Gare Vinci</name>
 	</wpt>
 	<wpt lon="0.666336" lat="47.423224">
 		<ele>0.0</ele>
@@ -105,77 +157,145 @@
 		<ele>0.0</ele>
 		<name>Cousseau</name>
 	</wpt>
+	<wpt lon="0.667309" lat="47.409715">
+		<ele>0.0</ele>
+		<name>Cousseau</name>
+	</wpt>
 	<wpt lon="0.675670" lat="47.406781">
 		<ele>0.0</ele>
 		<name>Mésangerie</name>
 	</wpt>
-	<wpt lon="0.677045" lat="47.403049">
+	<wpt lon="0.675670" lat="47.406781">
 		<ele>0.0</ele>
-		<name>Cèdres</name>
+		<name>Mésangerie</name>
+	</wpt>
+	<wpt lon="0.679472" lat="47.392553">
+		<ele>0.0</ele>
+		<name>Grand Marché</name>
+	</wpt>
+	<wpt lon="0.679472" lat="47.392553">
+		<ele>0.0</ele>
+		<name>Grand Marché</name>
 	</wpt>
 	<wpt lon="0.662273" lat="47.424474">
 		<ele>0.0</ele>
 		<name>Murier</name>
 	</wpt>
-	<wpt lon="0.718988" lat="47.388384">
-		<ele>0.0</ele>
-		<name>Estienne d'Orves</name>
-	</wpt>
 	<wpt lon="0.668300" lat="47.423162">
 		<ele>0.0</ele>
 		<name>Ampère</name>
 	</wpt>
-	<wpt lon="0.669988" lat="47.404772">
+	<wpt lon="0.690088" lat="47.423357">
 		<ele>0.0</ele>
-		<name>Montjoie</name>
+		<name>Coppée</name>
 	</wpt>
 	<wpt lon="0.647115" lat="47.424421">
 		<ele>0.0</ele>
 		<name>Gagnerie</name>
 	</wpt>
+	<wpt lon="0.680460" lat="47.422289">
+		<ele>0.0</ele>
+		<name>Europe</name>
+	</wpt>
+	<wpt lon="0.709957" lat="47.389103">
+		<ele>0.0</ele>
+		<name>Audenet</name>
+	</wpt>
+	<wpt lon="0.709957" lat="47.389103">
+		<ele>0.0</ele>
+		<name>Audenet</name>
+	</wpt>
 	<wpt lon="0.726356" lat="47.390070">
 		<ele>0.0</ele>
 		<name>Jean Moulin</name>
 	</wpt>
-	<wpt lon="0.675040" lat="47.407861">
+	<wpt lon="0.726356" lat="47.390070">
 		<ele>0.0</ele>
-		<name>Mailloux</name>
+		<name>Jean Moulin</name>
 	</wpt>
-	<wpt lon="0.717743" lat="47.389680">
+	<wpt lon="0.686574" lat="47.422965">
 		<ele>0.0</ele>
-		<name>Thorez</name>
+		<name>Rotterdam</name>
+	</wpt>
+	<wpt lon="0.729642" lat="47.391929">
+		<ele>0.0</ele>
+		<name>Viala</name>
+	</wpt>
+	<wpt lon="0.729642" lat="47.391929">
+		<ele>0.0</ele>
+		<name>Viala</name>
+	</wpt>
+	<wpt lon="0.684108" lat="47.436421">
+		<ele>0.0</ele>
+		<name>Douets Lycée Choiseul</name>
 	</wpt>
 	<wpt lon="0.683272" lat="47.422383">
 		<ele>0.0</ele>
 		<name>Beffroi</name>
 	</wpt>
-	<wpt lon="0.651411" lat="47.425648">
+	<wpt lon="0.690475" lat="47.426720">
 		<ele>0.0</ele>
-		<name>Croix de Pierre</name>
+		<name>Malines</name>
+	</wpt>
+	<wpt lon="0.677992" lat="47.394115">
+		<ele>0.0</ele>
+		<name>Victoire</name>
+	</wpt>
+	<wpt lon="0.677992" lat="47.394115">
+		<ele>0.0</ele>
+		<name>Victoire</name>
+	</wpt>
+	<wpt lon="0.675040" lat="47.407861">
+		<ele>0.0</ele>
+		<name>Mailloux</name>
+	</wpt>
+	<wpt lon="0.675040" lat="47.407861">
+		<ele>0.0</ele>
+		<name>Mailloux</name>
 	</wpt>
 	<wpt lon="0.710600" lat="47.387357">
 		<ele>0.0</ele>
 		<name>Semard</name>
 	</wpt>
-	<wpt lon="0.677821" lat="47.394687">
+	<wpt lon="0.710600" lat="47.387357">
 		<ele>0.0</ele>
-		<name>Tanneurs</name>
+		<name>Semard</name>
 	</wpt>
-	<wpt lon="0.680460" lat="47.422289">
+	<wpt lon="0.716433" lat="47.388973">
 		<ele>0.0</ele>
-		<name>Europe</name>
+		<name>Grand Cour</name>
+	</wpt>
+	<wpt lon="0.716433" lat="47.388973">
+		<ele>0.0</ele>
+		<name>Grand Cour</name>
+	</wpt>
+	<wpt lon="0.717743" lat="47.389680">
+		<ele>0.0</ele>
+		<name>Thorez</name>
+	</wpt>
+	<wpt lon="0.717743" lat="47.389680">
+		<ele>0.0</ele>
+		<name>Thorez</name>
+	</wpt>
+	<wpt lon="0.657689" lat="47.414911">
+		<ele>0.0</ele>
+		<name>Bechellerie</name>
 	</wpt>
 	<wpt lon="0.737649" lat="47.392327">
 		<ele>0.0</ele>
 		<name>Stade</name>
 	</wpt>
-	<wpt lon="0.740259" lat="47.396983">
+	<wpt lon="0.737649" lat="47.392327">
 		<ele>0.0</ele>
-		<name>St Pierre Justices</name>
+		<name>Stade</name>
 	</wpt>
-	<wpt lon="0.674075" lat="47.423938">
+	<wpt lon="0.667252" lat="47.412580">
 		<ele>0.0</ele>
-		<name>Augereau</name>
+		<name>Bergson</name>
+	</wpt>
+	<wpt lon="0.667252" lat="47.412580">
+		<ele>0.0</ele>
+		<name>Bergson</name>
 	</wpt>
 	<wpt lon="0.656338" lat="47.425715">
 		<ele>0.0</ele>
@@ -184,6 +304,14 @@
 	<wpt lon="0.666424" lat="47.406652">
 		<ele>0.0</ele>
 		<name>St Exupery</name>
+	</wpt>
+	<wpt lon="0.666424" lat="47.406652">
+		<ele>0.0</ele>
+		<name>St Exupery</name>
+	</wpt>
+	<wpt lon="0.668083" lat="47.404450">
+		<ele>0.0</ele>
+		<name>Victor Hugo</name>
 	</wpt>
 	<wpt lon="0.668083" lat="47.404450">
 		<ele>0.0</ele>
@@ -197,45 +325,65 @@
 		<ele>0.0</ele>
 		<name>Champ Girault</name>
 	</wpt>
-	<wpt lon="0.690088" lat="47.423357">
+	<wpt lon="0.697051" lat="47.387877">
 		<ele>0.0</ele>
-		<name>Coppée</name>
+		<name>Champ Girault</name>
 	</wpt>
-	<wpt lon="0.688157" lat="47.427716">
+	<wpt lon="0.740259" lat="47.396983">
 		<ele>0.0</ele>
-		<name>LP Clouet</name>
+		<name>St Pierre Justices</name>
 	</wpt>
-	<wpt lon="0.656252" lat="47.418224">
+	<wpt lon="0.740259" lat="47.396983">
 		<ele>0.0</ele>
-		<name>Montaigne</name>
+		<name>St Pierre Justices</name>
+	</wpt>
+	<wpt lon="0.676662" lat="47.407690">
+		<ele>0.0</ele>
+		<name>Calmette</name>
+	</wpt>
+	<wpt lon="0.676662" lat="47.407690">
+		<ele>0.0</ele>
+		<name>Calmette</name>
+	</wpt>
+	<wpt lon="0.703382" lat="47.385767">
+		<ele>0.0</ele>
+		<name>Deslandes</name>
+	</wpt>
+	<wpt lon="0.703382" lat="47.385767">
+		<ele>0.0</ele>
+		<name>Deslandes</name>
+	</wpt>
+	<wpt lon="0.651411" lat="47.425648">
+		<ele>0.0</ele>
+		<name>Croix de Pierre</name>
 	</wpt>
 	<wpt lon="0.683797" lat="47.389803">
 		<ele>0.0</ele>
 		<name>Béranger</name>
 	</wpt>
-	<wpt lon="0.657689" lat="47.414911">
+	<wpt lon="0.683797" lat="47.389803">
 		<ele>0.0</ele>
-		<name>Bechellerie</name>
-	</wpt>
-	<wpt lon="0.721671" lat="47.388367">
-		<ele>0.0</ele>
-		<name>Cathelas</name>
-	</wpt>
-	<wpt lon="0.714727" lat="47.387343">
-		<ele>0.0</ele>
-		<name>Liberté</name>
-	</wpt>
-	<wpt lon="0.679472" lat="47.392553">
-		<ele>0.0</ele>
-		<name>Grand Marché</name>
+		<name>Béranger</name>
 	</wpt>
 	<wpt lon="0.733721" lat="47.391864">
 		<ele>0.0</ele>
 		<name>Déportés</name>
 	</wpt>
-	<wpt lon="0.664426" lat="47.418590">
+	<wpt lon="0.733721" lat="47.391864">
 		<ele>0.0</ele>
-		<name>Lande</name>
+		<name>Déportés</name>
+	</wpt>
+	<wpt lon="0.649939" lat="47.421880">
+		<ele>0.0</ele>
+		<name>Preney</name>
+	</wpt>
+	<wpt lon="0.721671" lat="47.388367">
+		<ele>0.0</ele>
+		<name>Cathelas</name>
+	</wpt>
+	<wpt lon="0.721671" lat="47.388367">
+		<ele>0.0</ele>
+		<name>Cathelas</name>
 	</wpt>
 	<wpt lon="0.655160" lat="47.420916">
 		<ele>0.0</ele>
@@ -245,29 +393,37 @@
 		<ele>0.0</ele>
 		<name>Katrineholm</name>
 	</wpt>
-	<wpt lon="0.741876" lat="47.394730">
+	<wpt lon="0.700534" lat="47.385179">
 		<ele>0.0</ele>
-		<name>LP Nadaud</name>
+		<name>Docteur Fournier</name>
 	</wpt>
-	<wpt lon="0.709957" lat="47.389103">
+	<wpt lon="0.700534" lat="47.385179">
 		<ele>0.0</ele>
-		<name>Audenet</name>
+		<name>Docteur Fournier</name>
 	</wpt>
-	<wpt lon="0.738358" lat="47.393642">
+	<wpt lon="0.677045" lat="47.403049">
 		<ele>0.0</ele>
-		<name>Lenine</name>
+		<name>Cèdres</name>
 	</wpt>
-	<wpt lon="0.712303" lat="47.389505">
+	<wpt lon="0.677045" lat="47.403049">
 		<ele>0.0</ele>
-		<name>Peri</name>
+		<name>Cèdres</name>
 	</wpt>
 	<wpt lon="0.667976" lat="47.415915">
 		<ele>0.0</ele>
 		<name>Guynemer</name>
 	</wpt>
-	<wpt lon="0.717178" lat="47.388205">
+	<wpt lon="0.667976" lat="47.415915">
 		<ele>0.0</ele>
-		<name>Ateliers</name>
+		<name>Guynemer</name>
+	</wpt>
+	<wpt lon="0.712303" lat="47.389505">
+		<ele>0.0</ele>
+		<name>Peri</name>
+	</wpt>
+	<wpt lon="0.712303" lat="47.389505">
+		<ele>0.0</ele>
+		<name>Peri</name>
 	</wpt>
 	<wpt lon="0.656996" lat="47.416274">
 		<ele>0.0</ele>
@@ -277,16 +433,36 @@
 		<ele>0.0</ele>
 		<name>Portillon</name>
 	</wpt>
+	<wpt lon="0.678282" lat="47.400556">
+		<ele>0.0</ele>
+		<name>Portillon</name>
+	</wpt>
 	<wpt lon="0.666876" lat="47.432206">
 		<ele>0.0</ele>
 		<name>Pôle Santé Alliance</name>
 	</wpt>
-	<wpt lon="0.649939" lat="47.421880">
+	<wpt lon="0.718988" lat="47.388384">
 		<ele>0.0</ele>
-		<name>Preney</name>
+		<name>Estienne d'Orves</name>
+	</wpt>
+	<wpt lon="0.718988" lat="47.388384">
+		<ele>0.0</ele>
+		<name>Estienne d'Orves</name>
 	</wpt>
 	<wpt lon="0.678647" lat="47.400967">
 		<ele>0.0</ele>
 		<name>Lebrun</name>
+	</wpt>
+	<wpt lon="0.678647" lat="47.400967">
+		<ele>0.0</ele>
+		<name>Lebrun</name>
+	</wpt>
+	<wpt lon="0.714727" lat="47.387343">
+		<ele>0.0</ele>
+		<name>Liberté</name>
+	</wpt>
+	<wpt lon="0.714727" lat="47.387343">
+		<ele>0.0</ele>
+		<name>Liberté</name>
 	</wpt>
 </gpx>

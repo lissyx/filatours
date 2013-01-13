@@ -5,6 +5,14 @@
 		<ele>0.0</ele>
 		<name>Traversiere</name>
 	</wpt>
+	<wpt lon="0.700201" lat="47.392753">
+		<ele>0.0</ele>
+		<name>Traversiere</name>
+	</wpt>
+	<wpt lon="0.700786" lat="47.428331">
+		<ele>0.0</ele>
+		<name>Torricelli</name>
+	</wpt>
 	<wpt lon="0.700786" lat="47.428331">
 		<ele>0.0</ele>
 		<name>Torricelli</name>
@@ -21,29 +29,49 @@
 		<ele>0.0</ele>
 		<name>Chopin</name>
 	</wpt>
-	<wpt lon="0.694569" lat="47.376186">
+	<wpt lon="0.702792" lat="47.412415">
 		<ele>0.0</ele>
-		<name>Charcot</name>
+		<name>Chopin</name>
 	</wpt>
 	<wpt lon="0.692803" lat="47.390745">
 		<ele>0.0</ele>
 		<name>Gare Vinci</name>
 	</wpt>
-	<wpt lon="0.704019" lat="47.425880">
+	<wpt lon="0.692803" lat="47.390745">
 		<ele>0.0</ele>
-		<name>Fusaparc</name>
+		<name>Gare Vinci</name>
 	</wpt>
 	<wpt lon="0.725595" lat="47.367675">
 		<ele>0.0</ele>
 		<name>Cottier</name>
 	</wpt>
-	<wpt lon="0.686061" lat="47.433647">
+	<wpt lon="0.700378" lat="47.392230">
 		<ele>0.0</ele>
-		<name>Lycée Choiseul</name>
+		<name>Loiseau d'Entraigues</name>
+	</wpt>
+	<wpt lon="0.700378" lat="47.392230">
+		<ele>0.0</ele>
+		<name>Loiseau d'Entraigues</name>
 	</wpt>
 	<wpt lon="0.699759" lat="47.395500">
 		<ele>0.0</ele>
 		<name>Ursulines</name>
+	</wpt>
+	<wpt lon="0.699759" lat="47.395500">
+		<ele>0.0</ele>
+		<name>Ursulines</name>
+	</wpt>
+	<wpt lon="0.695388" lat="47.373957">
+		<ele>0.0</ele>
+		<name>Verdun</name>
+	</wpt>
+	<wpt lon="0.695388" lat="47.373957">
+		<ele>0.0</ele>
+		<name>Verdun</name>
+	</wpt>
+	<wpt lon="0.701716" lat="47.355845">
+		<ele>0.0</ele>
+		<name>Arsonval</name>
 	</wpt>
 	<wpt lon="0.706219" lat="47.338432">
 		<ele>0.0</ele>
@@ -69,13 +97,13 @@
 		<ele>0.0</ele>
 		<name>Fontaines</name>
 	</wpt>
+	<wpt lon="0.736294" lat="47.343639">
+		<ele>0.0</ele>
+		<name>Général Mocquery</name>
+	</wpt>
 	<wpt lon="0.702396" lat="47.357182">
 		<ele>0.0</ele>
 		<name>Faculté de Grandmont</name>
-	</wpt>
-	<wpt lon="0.680460" lat="47.422289">
-		<ele>0.0</ele>
-		<name>Europe</name>
 	</wpt>
 	<wpt lon="0.718998" lat="47.369166">
 		<ele>0.0</ele>
@@ -85,6 +113,14 @@
 		<ele>0.0</ele>
 		<name>Pôle Santé Alliance</name>
 	</wpt>
+	<wpt lon="0.704019" lat="47.425880">
+		<ele>0.0</ele>
+		<name>Fusaparc</name>
+	</wpt>
+	<wpt lon="0.704019" lat="47.425880">
+		<ele>0.0</ele>
+		<name>Fusaparc</name>
+	</wpt>
 	<wpt lon="0.708495" lat="47.366036">
 		<ele>0.0</ele>
 		<name>Mozart</name>
@@ -93,37 +129,33 @@
 		<ele>0.0</ele>
 		<name>Papoterie</name>
 	</wpt>
-	<wpt lon="0.690475" lat="47.426720">
-		<ele>0.0</ele>
-		<name>Malines</name>
-	</wpt>
 	<wpt lon="0.705468" lat="47.364333">
 		<ele>0.0</ele>
 		<name>Ecole de Commerce</name>
-	</wpt>
-	<wpt lon="0.684108" lat="47.436421">
-		<ele>0.0</ele>
-		<name>Douets Lycée Choiseul</name>
 	</wpt>
 	<wpt lon="0.704788" lat="47.353653">
 		<ele>0.0</ele>
 		<name>Dumont-d'Urville</name>
 	</wpt>
-	<wpt lon="0.736294" lat="47.343639">
+	<wpt lon="0.680460" lat="47.422289">
 		<ele>0.0</ele>
-		<name>Général Mocquery</name>
-	</wpt>
-	<wpt lon="0.705561" lat="47.423063">
-		<ele>0.0</ele>
-		<name>Lycée Vaucanson</name>
-	</wpt>
-	<wpt lon="0.734993" lat="47.346635">
-		<ele>0.0</ele>
-		<name>Joliot Curie</name>
+		<name>Europe</name>
 	</wpt>
 	<wpt lon="0.704339" lat="47.418381">
 		<ele>0.0</ele>
 		<name>Maréchal Juin</name>
+	</wpt>
+	<wpt lon="0.704339" lat="47.418381">
+		<ele>0.0</ele>
+		<name>Maréchal Juin</name>
+	</wpt>
+	<wpt lon="0.690475" lat="47.426720">
+		<ele>0.0</ele>
+		<name>Malines</name>
+	</wpt>
+	<wpt lon="0.734993" lat="47.346635">
+		<ele>0.0</ele>
+		<name>Joliot Curie</name>
 	</wpt>
 	<wpt lon="0.737515" lat="47.341601">
 		<ele>0.0</ele>
@@ -145,29 +177,25 @@
 		<ele>0.0</ele>
 		<name>Bois Cormier</name>
 	</wpt>
+	<wpt lon="0.684108" lat="47.436421">
+		<ele>0.0</ele>
+		<name>Douets Lycée Choiseul</name>
+	</wpt>
 	<wpt lon="0.676926" lat="47.425639">
 		<ele>0.0</ele>
 		<name>St Malo</name>
 	</wpt>
-	<wpt lon="0.701716" lat="47.355845">
+	<wpt lon="0.705561" lat="47.423063">
 		<ele>0.0</ele>
-		<name>Arsonval</name>
+		<name>Lycée Vaucanson</name>
 	</wpt>
-	<wpt lon="0.703977" lat="47.360857">
+	<wpt lon="0.705561" lat="47.423063">
 		<ele>0.0</ele>
-		<name>Lycée Grandmont</name>
+		<name>Lycée Vaucanson</name>
 	</wpt>
-	<wpt lon="0.700349" lat="47.392317">
+	<wpt lon="0.723084" lat="47.340969">
 		<ele>0.0</ele>
-		<name>Loiseau d'Entraigues</name>
-	</wpt>
-	<wpt lon="0.686384" lat="47.432513">
-		<ele>0.0</ele>
-		<name>Abbaye Gatines</name>
-	</wpt>
-	<wpt lon="0.696864" lat="47.425242">
-		<ele>0.0</ele>
-		<name>Luxembourg</name>
+		<name>Tilleuls</name>
 	</wpt>
 	<wpt lon="0.675864" lat="47.422475">
 		<ele>0.0</ele>
@@ -176,6 +204,26 @@
 	<wpt lon="0.688157" lat="47.427716">
 		<ele>0.0</ele>
 		<name>LP Clouet</name>
+	</wpt>
+	<wpt lon="0.686384" lat="47.432513">
+		<ele>0.0</ele>
+		<name>Abbaye Gatines</name>
+	</wpt>
+	<wpt lon="0.703977" lat="47.360857">
+		<ele>0.0</ele>
+		<name>Lycée Grandmont</name>
+	</wpt>
+	<wpt lon="0.686061" lat="47.433647">
+		<ele>0.0</ele>
+		<name>Lycée Choiseul</name>
+	</wpt>
+	<wpt lon="0.696864" lat="47.425242">
+		<ele>0.0</ele>
+		<name>Luxembourg</name>
+	</wpt>
+	<wpt lon="0.696864" lat="47.425242">
+		<ele>0.0</ele>
+		<name>Luxembourg</name>
 	</wpt>
 	<wpt lon="0.728150" lat="47.339135">
 		<ele>0.0</ele>
@@ -225,33 +273,49 @@
 		<ele>0.0</ele>
 		<name>Rotterdam</name>
 	</wpt>
-	<wpt lon="0.683272" lat="47.422383">
+	<wpt lon="0.690352" lat="47.386473">
 		<ele>0.0</ele>
-		<name>Beffroi</name>
-	</wpt>
-	<wpt lon="0.703168" lat="47.364411">
-		<ele>0.0</ele>
-		<name>Beethoven</name>
+		<name>Salengro</name>
 	</wpt>
 	<wpt lon="0.690352" lat="47.386473">
 		<ele>0.0</ele>
 		<name>Salengro</name>
 	</wpt>
+	<wpt lon="0.683272" lat="47.422383">
+		<ele>0.0</ele>
+		<name>Beffroi</name>
+	</wpt>
 	<wpt lon="0.693285" lat="47.423814">
 		<ele>0.0</ele>
 		<name>Sapaille</name>
 	</wpt>
-	<wpt lon="0.704289" lat="47.352661">
+	<wpt lon="0.703168" lat="47.364411">
 		<ele>0.0</ele>
-		<name>La Perouse</name>
+		<name>Beethoven</name>
+	</wpt>
+	<wpt lon="0.703168" lat="47.364411">
+		<ele>0.0</ele>
+		<name>Beethoven</name>
 	</wpt>
 	<wpt lon="0.698146" lat="47.367334">
 		<ele>0.0</ele>
 		<name>Lac</name>
 	</wpt>
-	<wpt lon="0.703313" lat="47.350816">
+	<wpt lon="0.698146" lat="47.367334">
 		<ele>0.0</ele>
-		<name>Parc Grandmont</name>
+		<name>Lac</name>
+	</wpt>
+	<wpt lon="0.704595" lat="47.427980">
+		<ele>0.0</ele>
+		<name>Aérogare</name>
+	</wpt>
+	<wpt lon="0.704595" lat="47.427980">
+		<ele>0.0</ele>
+		<name>Aérogare</name>
+	</wpt>
+	<wpt lon="0.703071" lat="47.406118">
+		<ele>0.0</ele>
+		<name>Passerelle</name>
 	</wpt>
 	<wpt lon="0.703071" lat="47.406118">
 		<ele>0.0</ele>
@@ -261,9 +325,9 @@
 		<ele>0.0</ele>
 		<name>Parc Nord</name>
 	</wpt>
-	<wpt lon="0.688495" lat="47.389854">
+	<wpt lon="0.703313" lat="47.350816">
 		<ele>0.0</ele>
-		<name>Jean Jaurès</name>
+		<name>Parc Grandmont</name>
 	</wpt>
 	<wpt lon="0.701769" lat="47.360588">
 		<ele>0.0</ele>
@@ -273,9 +337,37 @@
 		<ele>0.0</ele>
 		<name>IUT</name>
 	</wpt>
+	<wpt lon="0.703416" lat="47.408903">
+		<ele>0.0</ele>
+		<name>IUT</name>
+	</wpt>
+	<wpt lon="0.688495" lat="47.389854">
+		<ele>0.0</ele>
+		<name>Jean Jaurès</name>
+	</wpt>
+	<wpt lon="0.688495" lat="47.389854">
+		<ele>0.0</ele>
+		<name>Jean Jaurès</name>
+	</wpt>
 	<wpt lon="0.696975" lat="47.391227">
 		<ele>0.0</ele>
 		<name>Heurteloup</name>
+	</wpt>
+	<wpt lon="0.696975" lat="47.391227">
+		<ele>0.0</ele>
+		<name>Heurteloup</name>
+	</wpt>
+	<wpt lon="0.698783" lat="47.427436">
+		<ele>0.0</ele>
+		<name>Petite Arche</name>
+	</wpt>
+	<wpt lon="0.698783" lat="47.427436">
+		<ele>0.0</ele>
+		<name>Petite Arche</name>
+	</wpt>
+	<wpt lon="0.692735" lat="47.425649">
+		<ele>0.0</ele>
+		<name>Belgique</name>
 	</wpt>
 	<wpt lon="0.716047" lat="47.345628">
 		<ele>0.0</ele>
@@ -313,17 +405,17 @@
 		<ele>0.0</ele>
 		<name>St Avertin Mairie</name>
 	</wpt>
-	<wpt lon="0.695388" lat="47.373957">
+	<wpt lon="0.704289" lat="47.352661">
 		<ele>0.0</ele>
-		<name>Verdun</name>
+		<name>La Perouse</name>
 	</wpt>
 	<wpt lon="0.678072" lat="47.426519">
 		<ele>0.0</ele>
 		<name>Picardie</name>
 	</wpt>
-	<wpt lon="0.698783" lat="47.427436">
+	<wpt lon="0.692710" lat="47.379563">
 		<ele>0.0</ele>
-		<name>Petite Arche</name>
+		<name>Place de la Liberté</name>
 	</wpt>
 	<wpt lon="0.692710" lat="47.379563">
 		<ele>0.0</ele>
@@ -333,17 +425,17 @@
 		<ele>0.0</ele>
 		<name>Vanneaux</name>
 	</wpt>
-	<wpt lon="0.723084" lat="47.340969">
+	<wpt lon="0.694569" lat="47.376186">
 		<ele>0.0</ele>
-		<name>Tilleuls</name>
+		<name>Charcot</name>
+	</wpt>
+	<wpt lon="0.694569" lat="47.376186">
+		<ele>0.0</ele>
+		<name>Charcot</name>
 	</wpt>
 	<wpt lon="0.694053" lat="47.336573">
 		<ele>0.0</ele>
 		<name>Thibaudière</name>
-	</wpt>
-	<wpt lon="0.704595" lat="47.427980">
-		<ele>0.0</ele>
-		<name>Aérogare</name>
 	</wpt>
 	<wpt lon="0.676320" lat="47.424218">
 		<ele>0.0</ele>
@@ -353,9 +445,9 @@
 		<ele>0.0</ele>
 		<name>Bois Aubry</name>
 	</wpt>
-	<wpt lon="0.692735" lat="47.425649">
+	<wpt lon="0.691499" lat="47.383901">
 		<ele>0.0</ele>
-		<name>Belgique</name>
+		<name>Boisdenier</name>
 	</wpt>
 	<wpt lon="0.691499" lat="47.383901">
 		<ele>0.0</ele>

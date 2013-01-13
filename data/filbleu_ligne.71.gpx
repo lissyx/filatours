@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1" creator="FilBleuExporter">
 	<metadata>Filbleu - Ligne 71</metadata>
-	<wpt lon="0.688495" lat="47.389854">
-		<ele>0.0</ele>
-		<name>Jean Jaurès</name>
-	</wpt>
 	<wpt lon="0.676772" lat="47.384992">
 		<ele>0.0</ele>
 		<name>Rabelais</name>
@@ -13,49 +9,53 @@
 		<ele>0.0</ele>
 		<name>LP Bayet</name>
 	</wpt>
-	<wpt lon="0.667968" lat="47.384283">
+	<wpt lon="0.681577" lat="47.391089">
 		<ele>0.0</ele>
-		<name>Tonnellé</name>
-	</wpt>
-	<wpt lon="0.677821" lat="47.394687">
-		<ele>0.0</ele>
-		<name>Tanneurs</name>
+		<name>Halles</name>
 	</wpt>
 	<wpt lon="0.676553" lat="47.387148">
 		<ele>0.0</ele>
 		<name>Arago</name>
 	</wpt>
-	<wpt lon="0.648543" lat="47.385578">
+	<wpt lon="0.665468" lat="47.390610">
 		<ele>0.0</ele>
-		<name>Grand Carroi</name>
-	</wpt>
-	<wpt lon="0.654250" lat="47.377698">
-		<ele>0.0</ele>
-		<name>Guillon</name>
-	</wpt>
-	<wpt lon="0.606683" lat="47.376722">
-		<ele>0.0</ele>
-		<name>La Rabinière</name>
+		<name>Ste Anne</name>
 	</wpt>
 	<wpt lon="0.583631" lat="47.372196">
 		<ele>0.0</ele>
 		<name>Château Gaillard</name>
 	</wpt>
-	<wpt lon="0.657115" lat="47.376705">
+	<wpt lon="0.661220" lat="47.389424">
 		<ele>0.0</ele>
-		<name>La Riche Soleil</name>
+		<name>Félix</name>
 	</wpt>
-	<wpt lon="0.665468" lat="47.390610">
+	<wpt lon="0.648543" lat="47.385578">
 		<ele>0.0</ele>
-		<name>Ste Anne</name>
+		<name>Grand Carroi</name>
 	</wpt>
-	<wpt lon="0.652282" lat="47.387717">
+	<wpt lon="0.634679" lat="47.383323">
 		<ele>0.0</ele>
-		<name>La Pleiade</name>
+		<name>Le Sauge</name>
+	</wpt>
+	<wpt lon="0.655165" lat="47.387123">
+		<ele>0.0</ele>
+		<name>Buisson</name>
 	</wpt>
 	<wpt lon="0.658836" lat="47.388544">
 		<ele>0.0</ele>
 		<name>La Riche Centre</name>
+	</wpt>
+	<wpt lon="0.657115" lat="47.376705">
+		<ele>0.0</ele>
+		<name>La Riche Soleil</name>
+	</wpt>
+	<wpt lon="0.654250" lat="47.377698">
+		<ele>0.0</ele>
+		<name>Guillon</name>
+	</wpt>
+	<wpt lon="0.652282" lat="47.387717">
+		<ele>0.0</ele>
+		<name>La Pleiade</name>
 	</wpt>
 	<wpt lon="0.513377" lat="47.355454">
 		<ele>0.0</ele>
@@ -93,10 +93,6 @@
 		<ele>0.0</ele>
 		<name>Passe-temps</name>
 	</wpt>
-	<wpt lon="0.692803" lat="47.390745">
-		<ele>0.0</ele>
-		<name>Gare Vinci</name>
-	</wpt>
 	<wpt lon="0.593950" lat="47.375393">
 		<ele>0.0</ele>
 		<name>Terre Fortes</name>
@@ -117,37 +113,45 @@
 		<ele>0.0</ele>
 		<name>Les Montils</name>
 	</wpt>
-	<wpt lon="0.600277" lat="47.376361">
+	<wpt lon="0.679472" lat="47.392553">
 		<ele>0.0</ele>
-		<name>Les Ecoles</name>
+		<name>Grand Marché</name>
 	</wpt>
-	<wpt lon="0.634679" lat="47.383323">
+	<wpt lon="0.688495" lat="47.389854">
 		<ele>0.0</ele>
-		<name>Le Sauge</name>
-	</wpt>
-	<wpt lon="0.655165" lat="47.387123">
-		<ele>0.0</ele>
-		<name>Buisson</name>
+		<name>Jean Jaurès</name>
 	</wpt>
 	<wpt lon="0.681492" lat="47.389131">
 		<ele>0.0</ele>
 		<name>Clocheville</name>
 	</wpt>
-	<wpt lon="0.661220" lat="47.389424">
+	<wpt lon="0.692803" lat="47.390745">
 		<ele>0.0</ele>
-		<name>Félix</name>
+		<name>Gare Vinci</name>
 	</wpt>
-	<wpt lon="0.681577" lat="47.391089">
+	<wpt lon="0.677821" lat="47.394687">
 		<ele>0.0</ele>
-		<name>Halles</name>
+		<name>Tanneurs</name>
+	</wpt>
+	<wpt lon="0.606683" lat="47.376722">
+		<ele>0.0</ele>
+		<name>La Rabinière</name>
+	</wpt>
+	<wpt lon="0.600277" lat="47.376361">
+		<ele>0.0</ele>
+		<name>Les Ecoles</name>
+	</wpt>
+	<wpt lon="0.667968" lat="47.384283">
+		<ele>0.0</ele>
+		<name>Tonnellé</name>
 	</wpt>
 	<wpt lon="0.653141" lat="47.381772">
 		<ele>0.0</ele>
 		<name>Bialy</name>
 	</wpt>
-	<wpt lon="0.683797" lat="47.389803">
+	<wpt lon="0.675109" lat="47.394908">
 		<ele>0.0</ele>
-		<name>Béranger</name>
+		<name>Dames Blanches</name>
 	</wpt>
 	<wpt lon="0.521282" lat="47.356982">
 		<ele>0.0</ele>
@@ -157,25 +161,21 @@
 		<ele>0.0</ele>
 		<name>Portoville</name>
 	</wpt>
-	<wpt lon="0.679472" lat="47.392553">
+	<wpt lon="0.677167" lat="47.388553">
 		<ele>0.0</ele>
-		<name>Grand Marché</name>
+		<name>St Eloi</name>
 	</wpt>
 	<wpt lon="0.671853" lat="47.393644">
 		<ele>0.0</ele>
 		<name>Boyer</name>
 	</wpt>
-	<wpt lon="0.677167" lat="47.388553">
-		<ele>0.0</ele>
-		<name>St Eloi</name>
-	</wpt>
-	<wpt lon="0.675109" lat="47.394908">
-		<ele>0.0</ele>
-		<name>Dames Blanches</name>
-	</wpt>
 	<wpt lon="0.667163" lat="47.387477">
 		<ele>0.0</ele>
 		<name>Bretonneau</name>
+	</wpt>
+	<wpt lon="0.683797" lat="47.389803">
+		<ele>0.0</ele>
+		<name>Béranger</name>
 	</wpt>
 	<wpt lon="0.668012" lat="47.390208">
 		<ele>0.0</ele>
