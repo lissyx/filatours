@@ -10,7 +10,7 @@ for LINE in $LINES; do
 	echo '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1" creator="FilBleuExporter">' > $GPX
 	echo "	<metadata>Filbleu - Ligne $name</metadata>" >> $GPX
-	for stop in $(cat stops.$LINE.txt | sed -e 's/ /_/g' | cut -d'=' -f2 | sed -e 's/^>_//g'); do
+	for stop in $(cat stops.$LINE.txt | sed -e 's/ /_/g' | cut -d'=' -f2 | cut -d'[' -f1 | sed -e 's/^>_//g' -e 's/_$//g'); do
 		# line:
 		# Found_a_stop_matching_stopArea:_[StopArea|676|Voltaire|Tours|||475666,50|2267709,00|1598!0!14;1597!0!14;];_Lambert2+:_{E:475666.500000,_N:2267709.000000};_Degrees:_{E:47.397322,_N:0.689295}
 		line=$(grep "$(echo $stop | sed -e 's/_/ /g')" stops_coords.txt | sed -e 's/ /_/g');
