@@ -237,7 +237,7 @@ var FilBleu = (function FilBleu() {
         var licont = document.createElement('li');
         licont.style.display = 'none';
         var details = document.createElement('span');
-        details.textContent = 'Connections: ' + bj.conn;
+        details.textContent = _('connections') ': ' + bj.conn;
         details.dataset['link'] = bj.link;
         
         var self = this;
