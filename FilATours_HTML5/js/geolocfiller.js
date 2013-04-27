@@ -13,18 +13,22 @@ GeolocFiller.prototype.startGeoloc = function() {
   document.getElementById(this._dialog)
     .addEventListener('click', this.geolocCancel.bind(this));
   this.showWaiting();
+  this._cancel = false;
   navigator.geolocation.getCurrentPosition(
     this.geolocSuccess.bind(this),
     this.geolocError.bind(this));
 };
 
 GeolocFiller.prototype.geolocCancel = function(ev) {
+  this._cancel = true;
   this.hideWaiting();
 };
 
 GeolocFiller.prototype.geolocSuccess = function(ev) {
-  var stops = BusStops.getNearestStop(ev.coords);
-  new DialogSelectStop(stops, this.geolocFill.bind(this));
+  if (!this._cancel) {
+    var stops = BusStops.getNearestStop(ev.coords);
+    new DialogSelectStop(stops, this.geolocFill.bind(this));
+  }
 };
 
 GeolocFiller.prototype.geolocError = function(ev) {
