@@ -20,5 +20,16 @@
   },
   "icons": {
     "128": "/style/icons/filatours.png"
-  }
+  },
+  "locales": {
+    "en-US": {
+      "name": "Fil@Tours",
+      "description": "Mobile Application for Fil Bleu"
+    },
+    "fr": {
+      "name": "Fil@Tours",
+      "description": "Application mobile pour le site Fil Bleu"
+    }
+  },
+  "default_locale": "en-US"
 }
