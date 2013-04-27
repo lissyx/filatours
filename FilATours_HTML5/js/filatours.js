@@ -457,22 +457,22 @@ var FilBleu = (function FilBleu() {
           }
 
           if (step.indic.type == 'mount') {
-            detailsText = '<strong>Line</strong>: ' +
+            detailsText = '<strong>' + _('line') + '</strong>: ' +
               step.indic.line + '<br />' +
-              '<strong>Direction</strong>: ' + step.indic.direction;
+              '<strong>' + _('direction') + '</strong>: ' + step.indic.direction;
           }
           if (step.indic.type == 'umount') {
-            detailsText = 'Get off';
+            detailsText = _('get-off');
           }
           if (step.indic.type == 'walk') {
-            detailsText = 'From stop <strong>' + step.indic.stop +
-              '</strong> walk to <strong>' + step.indic.direction + '</strong>';
+            detailsText = _('from-stop') + ' <strong>' + step.indic.stop +
+              '</strong> ' + _('walk-to') + ' <strong>' + step.indic.direction + '</strong>';
           }
         }
 
         if (step.type == 'connection') {
-          title = 'Connection';
-          detailsText = 'Waiting time: <strong>' + step.duration + '</strong>';
+          title = _('connection');
+          detailsText = _('waiting-time') + ': <strong>' + step.duration + '</strong>';
         }
 
         a.textContent = title;
@@ -590,19 +590,19 @@ var FilBleu = (function FilBleu() {
       var msgvalue = "Unknown error";
 
       if (ex instanceof JourneysListNotFoundException) {
-        msgvalue = "No result for this search.";
+        msgvalue = _('error-no-result');
       }
 
       if (ex instanceof InvalidJourneyException) {
-        msgvalue = "Requested journey is invalid.";
+        msgvalue = _('error-invalid-journey');
       }
 
       if (ex instanceof JourneyDetailsNotFoundException) {
-        msgvalue = "Cannot find details for this journey.";
+        msgvalue = _('error-no-details');
       }
 
       if (ex instanceof JourneyDetailsUnexpectedElementsException) {
-        msgvalue = "Unexpected output for journey details.";
+        msgvalue = _('error-unexpected-details');
       }
 
       errmsg.innerHTML = msgvalue;
