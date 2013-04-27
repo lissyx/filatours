@@ -96,7 +96,8 @@ var FilBleu = (function FilBleu() {
 
     getDate: function(str) {
       var ar = str.split("-");
-      var date = new Date(ar[0] + "-" + this.pad(ar[1]) + "-" + this.pad(ar[2]));
+      str = parseInt(ar[0]) + "-" + this.pad(parseInt(ar[1])) + "-" + this.pad(parseInt(ar[2]));
+      var date = new Date(str);
       return this.pad(date.getDate()) + '/' +
         this.pad(date.getMonth() + 1) + '/' +
         date.getFullYear();
