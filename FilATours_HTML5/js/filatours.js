@@ -3,6 +3,8 @@
 
 'use strict';
 
+var _ = window.navigator.mozL10n.get;
+
 function JourneyNotFoundException() {
 }
 
@@ -109,7 +111,7 @@ var FilBleu = (function FilBleu() {
     },
 
     getJourney: function() {
-      this.updateScrappingStatus(0, 'Initializing ...');
+      this.updateScrappingStatus(0, _('initializing'));
       var date = this.getDate(document.getElementById('date').value);
       var hour = this.getHour(document.getElementById('time').value);
       var min = this.getMin(document.getElementById('time').value);
@@ -133,19 +135,19 @@ var FilBleu = (function FilBleu() {
         this._idJourney + '&' + this._etapeJourney;
       console.debug("params: " + JSON.stringify(params));
 
-      this.updateScrappingStatus(10, 'Asking for clearing');
+      this.updateScrappingStatus(10, _('asked-for-clearing'));
       var self = this;
       this.prepareXHR(this._idJourney, function(e) {
         if (e.status != 200) {
           return;
         }
-        self.updateScrappingStatus(30, 'Got clearing, taking off.');
+        self.updateScrappingStatus(30, _('got-clearing'));
         self.XHR(targeturl, 'POST', params, function(e) {
           if (e.status != 200) {
             return;
           }
           console.debug(e.status);
-          self.updateScrappingStatus(60, 'Got reply, reading ....');
+          self.updateScrappingStatus(60, _('got-reply'));
           try {
             self.extractJourneysList(e.responseText);
           } catch (e) {
@@ -170,7 +172,7 @@ var FilBleu = (function FilBleu() {
         throw new JourneysListNotFoundException();
       }
       
-      this.updateScrappingStatus(70, 'Found journeys.');
+      this.updateScrappingStatus(70, _('found-journeys'));
 
       var journeys = propositions.getElementsByTagName('tr');
       console.debug(journeys);
@@ -178,7 +180,7 @@ var FilBleu = (function FilBleu() {
         throw new JourneysListNotFoundException();
       }
 
-      this.updateScrappingStatus(80, 'Extracting journeys.');
+      this.updateScrappingStatus(80, _('extracting-journeys'));
 
       this._journeys = new Array();
       // first one is header, skip it
@@ -192,7 +194,7 @@ var FilBleu = (function FilBleu() {
         }
       }
 
-      this.updateScrappingStatus(100, 'Displaying journeys.');
+      this.updateScrappingStatus(100, _('displaying-journeys'));
       this.showJourneysList();
     },
 
@@ -264,7 +266,7 @@ var FilBleu = (function FilBleu() {
     },
 
     getJourneyDetails: function(link) {
-      this.updateScrappingStatus(0, 'Checking cache ...');
+      this.updateScrappingStatus(0, _('checking-cache'));
       var cache = this._journeyDetailsInfo[link];
       console.debug(cache);
       if (cache != undefined) {
@@ -272,7 +274,7 @@ var FilBleu = (function FilBleu() {
         return;
       }
 
-      this.updateScrappingStatus(10, 'Not in cache.');
+      this.updateScrappingStatus(10, _('cache-miss'));
       this._journeyDetailsInfo[link] = new Array();
       var self = this;
       this.XHR(this._baseurl + link, 'GET', {}, function(e) {
@@ -280,7 +282,7 @@ var FilBleu = (function FilBleu() {
           return;
         }
         console.debug(e.status);
-        self.updateScrappingStatus(20, 'Got reply, reading ....');
+        self.updateScrappingStatus(20, _('got-reply'));
         try {
           self.extractJourneyDetails(e.responseText, link);
         } catch (e) {
@@ -297,7 +299,7 @@ var FilBleu = (function FilBleu() {
         throw new JourneyDetailsNotFoundException();
       }
       
-      this.updateScrappingStatus(30, 'Found journey details.');
+      this.updateScrappingStatus(30, _('found-journey-details'));
 
       var list = itineraire.querySelector('table');
       console.debug(list);
@@ -311,7 +313,7 @@ var FilBleu = (function FilBleu() {
         throw new JourneyDetailsNotFoundException();
       }
 
-      this.updateScrappingStatus(40, 'Extracting journey details.');
+      this.updateScrappingStatus(40, _('extracting-journey-details'));
 
       // first one is header, skip it
       for (var j = 1; j < journey.length; j++) {
@@ -320,7 +322,7 @@ var FilBleu = (function FilBleu() {
         this._journeyDetailsInfo[link].push(step);
       }
 
-      this.updateScrappingStatus(100, 'Displaying journey details.');
+      this.updateScrappingStatus(100, _('displaying-journey-details'));
       this.showJourneyDetails(link);
     },
 

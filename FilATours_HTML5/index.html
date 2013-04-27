@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta http-equiv="pragma" content="no-cache" />
     <title>Fil@Tours</title>
+    <script type="application/javascript" src="shared/js/l10n.js"></script>
     <script type="application/javascript" src="ext/latinise_compact.js"></script>
     <script type="application/javascript" src="js/busstop.js"></script>
     <script type="application/javascript" src="js/busstops.js"></script>
     <script type="application/javascript" src="js/dialogselectstop.js"></script>
     <script type="application/javascript" src="js/geolocfiller.js"></script>
     <script type="application/javascript" src="js/filatours.js"></script>
-    <script type="application/javascript" src="shared/js/l10n.js"></script>
     <link rel="stylesheet" type="text/css" href="shared/style/headers.css" />
     <link rel="stylesheet" type="text/css" href="shared/style/input_areas.css" />
     <link rel="stylesheet" type="text/css" href="shared/style/buttons.css" />
@@ -48,22 +48,22 @@
     <section role="region" id="schedule" data-leaf>
       <header>
         <a href="#root"><span data-l10n-id="back" class="icon icon-back">Back</span></a>
-        <h1>Search schedule</h1>
+        <h1 data-l10n-id="search-schedule">Search schedule</h1>
       </header>
       <form>
         <datalist id="stops-list"></datalist>
         <p>
-          <input type="text" list="stops-list" id="departure" placeholder="Departure" />
+          <input type="text" list="stops-list" id="departure" data-l10n-id="departure" placeholder="Departure" />
           <button type="reset">clear</button>
           <button data-geoloc id="geoloc-dep" data-target="departure">nearest</button>
         </p>
         <p>
-          <input type="text" list="stops-list" id="arrival" placeholder="Arrival" />
+          <input type="text" list="stops-list" id="arrival" data-l10n-id="arrival" placeholder="Arrival" />
           <button type="reset">clear</button>
           <button data-geoloc id="geoloc-arr" data-target="arrival">nearest</button>
         </p>
         <p>
-          <button id="pick">Pick from map</button>
+          <button id="pick" data-l10n-id="pick-from-map">Pick from map</button>
         </p>
         <p>
           <input placeholder="Date" type="date" id="date" />
@@ -73,18 +73,18 @@
         </p>
         <p>
           <select id="sens">
-            <option value="1">Departure</option>
-            <option value="-1">Arrival</option>
+            <option value="1" data-l10n-id="dir-departure">Departure</option>
+            <option value="-1" data-l10n-id="dir-arrival">Arrival</option>
           </select>
           <select id="crit">
-            <option value="1">Duration</option>
-            <option value="2">Connections</option>
-            <option value="3">Walking</option>
-            <option value="4">Waiting</option>
+            <option value="1" data-l10n-id="crit-duration">Duration</option>
+            <option value="2" data-l10n-id="crit-connections">Connections</option>
+            <option value="3" data-l10n-id="crit-walking">Walking</option>
+            <option value="4" data-l10n-id="crit-waiting">Waiting</option>
           </select>
         </p>
         <p>
-          <button class="recommended" id="start">Get journey</button>
+          <button class="recommended" id="start" data-l10n-id="get-journey">Get journey</button>
         </p>
       </form>
     </section>
@@ -92,58 +92,59 @@
     <section role="region" id="about" data-leaf>
       <header>
         <a href="#root"><span data-l10n-id="back" class="icon icon-back">Back</span></a>
-        <h1>About</h1>
+        <h1 data-l10n-id="about">About</h1>
       </header>
 
       <header>
-        <h2>What is Fil@Tours ?</h2>
+        <h2 data-l10n-id="about-what-is-filatours">What is Fil@Tours?</h2>
       </header>
       <ul>
-        <li class="description">
+        <li class="description" data-l10n-id="about-description-whats">
         Fil@Tours is an application dedicated to allow you enhanced access to
         the Fil Bleu website by circumventing a lot of its limitations.
         </li>
       </ul>
 
       <header>
-        <h2>Author</h2>
+        <h2 data-l10n-id="about-author">Author</h2>
       </header>
       <ul>
-        <li class="description">
+        <li class="description" data-l10n-id="about-description-author">
         This application is not endorsed by the Fil Bleu network nor by the
         SITCAT.
         </li>
       </ul>
 
       <header>
-        <h2>License</h2>
+        <h2 data-l10n-id="about-license">License</h2>
       </header>
       <ul>
-        <li class="description">
+        <li class="description" data-l10n-id="about-description-license">
         The source code of the applications is available under the terms of the
         GPLv3 license.
         </li>
+        <li class="description" data-l10n-id="about-description-sources">
+        The application's sources are hosted at:</li>
         <li class="description">
-        The application's sources are hosted at
         <a class="link-text"
-        href="https://gitorious.org/scrapfilbleu">https://gitorious.org/scrapfilbleu</a>.
+        href="https://gitorious.org/scrapfilbleu">https://gitorious.org/scrapfilbleu</a>
         </li>
       </ul>
     </section>
 
     <section role="region" id="select-stop" data-leaf>
       <header>
-        <h1>Please select stop</h1>
+        <h1 data-l10n-id="select-stop">Please select stop</h1>
       </header>
       <ul id="select-stop-list">
       </ul>
-      <button class="danger" id="cancel-select-stop">Cancel</button>
+      <button class="danger" id="cancel-select-stop" data-l10n-id="cancel">Cancel</button>
     </section>
 
     <section role="region" id="scrapping" data-leaf>
       <form role="dialog" data-type="confirm">
         <section>
-          <h1>Processing data</h1>
+          <h1 data-l10n-id="scrapping-process">Processing data</h1>
           <p role="status">
             <span id="scrapping-status"></span>
             <progress id="scrapping-progress" value="0"></progress>
@@ -159,7 +160,7 @@
           </ul>
         </section>
         <menu>
-          <button id="close-journeys-list" class="danger">Cancel</button>
+          <button id="close-journeys-list" class="danger" data-l10n-id="cancel">Cancel</button>
         </menu>
       </form>
     </section>
@@ -167,12 +168,12 @@
     <section role="region" id="journey-details" data-leaf>
       <header>
         <button id="journey-details-back">
-          <span class="icon icon-back">Back</span>
+          <span class="icon icon-back" data-l10n-id="back">Back</span>
           </button>
         <menu type="toolbar">
-          <button id="journey-details-close">close</button>
+          <button id="journey-details-close" data-l10n-id="close">close</button>
         </menu>
-        <h1>Journey details</h1>
+        <h1 data-l10n-id="journey-details">Journey details</h1>
       </header>
       <ul id="journey-details-container">
       </ul>
@@ -181,14 +182,14 @@
     <section role="region" id="waiting-location" data-leaf>
       <form role="dialog" data-type="confirm">
         <section>
-          <h1>Waiting for geolocation ...</h1>
+          <h1 data-l10n-id="waiting-geolocation">Waiting for geolocation ...</h1>
           <p role="status">
             <progress></progress>
-            <span>Geolocation from GPS has been requested, waiting for a reply ...</span>
+            <span data-l10n-id="waiting-for-geolocation">Geolocation from GPS has been requested, waiting for a reply ...</span>
           </p>
         </section>
         <menu>
-          <button class="danger">Cancel</button>
+          <button class="danger" data-l10n-id="cancel">Cancel</button>
         </menu>
       </form>
     </section>
@@ -196,13 +197,13 @@
     <section role="region" id="error-dialog" data-leaf>
       <form role="dialog" data-type="confirm">
         <section>
-          <h1>An error has occured</h1>
+          <h1 data-l10n-id="error">An error has occured</h1>
           <p role="status">
             <span id="error-message"></span>
           </p>
         </section>
         <menu>
-          <button id="ack-error">Ok</button>
+          <button id="ack-error" data-l10n-id="ok">Ok</button>
         </menu>
       </form>
     </section>
