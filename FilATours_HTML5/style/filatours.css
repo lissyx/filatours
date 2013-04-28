@@ -93,14 +93,14 @@ li.journeypart {
 
 li.journeymount {
   background-image: url(icons/stationin.png), url(icons/line.png);
-  background-repeat: no-repeat, no-repeat;
+  background-repeat: no-repeat, repeat-y;
   background-attachment: scroll, scroll;
   background-position: left top, left bottom;
 }
 
 li.journeyumount {
   background-image: url(icons/stationout.png), url(icons/line.png);
-  background-repeat: no-repeat, no-repeat;
+  background-repeat: no-repeat, repeat-y;
   background-attachment: scroll, scroll;
   background-position: left bottom, left top;
 }
