@@ -533,8 +533,8 @@ var FilBleu = (function FilBleu() {
       if (date && time) {
         var d = new Date();
         date.value = d.getFullYear() + '-' +
-          (d.getMonth() + 1) + '-' + d.getDate();
-        time.value = d.getHours() + ':' + d.getMinutes();
+          this.pad(d.getMonth() + 1) + '-' + this.pad(d.getDate());
+        time.value = this.pad(d.getHours()) + ':' + this.pad(d.getMinutes());
       }
     },
 
