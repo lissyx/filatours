@@ -4,7 +4,7 @@ body.hidden * {
   display: none;
 }
 
-[role=region] {
+section[role="region"] {
   position: absolute;
   top: 0;
   left: 0;
@@ -13,17 +13,36 @@ body.hidden * {
   border: 0;
 }
 
-[role="region"] {
+section[role="region"] {
   visibility: hidden;
   transform: translateX(100%);
 }
 
-[role="region"]:target {
+section[role="region"]:target {
   visibility: visible;
   transform: translateX(0);
 }
 
-[role="region"]:target ~ [role="region"]:not([data-leaf]) {
+/**
+ * Headers should not scroll with the rest of the page, except for #root.
+ */
+section[role="region"] > header {
+  position: absolute;
+}
+
+section[role="region"] > div {
+  position: absolute;
+  top: 5rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 5rem);
+  overflow-y: scroll;
+}
+
+/*
+section[role="region"]:target ~ [role="region"]:not([data-leaf]) {
   transform: translateX(-100%);
 }
 
@@ -32,12 +51,12 @@ body.hidden #root {
   transition: none;
 }
 
-[role="region"]:not(#root) > header:first-child {
+section[role="region"]:not(#root) > header:first-child {
   position: fixed;
   width: 100%;
 }
 
-[role="region"]:not(#root) > header:first-child + * {
+section[role="region"]:not(#root) > header:first-child + * {
   margin-top: 5rem;
 }
-
+*/

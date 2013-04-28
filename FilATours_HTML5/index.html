@@ -45,7 +45,7 @@
       </ul>
     </section>
 
-    <section role="region" id="schedule" data-leaf>
+    <section role="region" id="schedule">
       <header>
         <a href="#root"><span data-l10n-id="back" class="icon icon-back">Back</span></a>
         <h1 data-l10n-id="search-schedule">Search schedule</h1>
@@ -89,7 +89,7 @@
       </form>
     </section>
 
-    <section role="region" id="about" data-leaf>
+    <section role="region" id="about">
       <header>
         <a href="#root"><span data-l10n-id="back" class="icon icon-back">Back</span></a>
         <h1 data-l10n-id="about">About</h1>
@@ -132,16 +132,18 @@
       </ul>
     </section>
 
-    <section role="region" id="select-stop" data-leaf>
+    <section role="region" id="select-stop">
       <header>
         <h1 data-l10n-id="select-stop">Please select stop</h1>
       </header>
-      <ul id="select-stop-list">
-      </ul>
-      <button class="danger" id="cancel-select-stop" data-l10n-id="cancel">Cancel</button>
+      <div>
+        <ul id="select-stop-list">
+        </ul>
+        <button class="danger" id="cancel-select-stop" data-l10n-id="cancel">Cancel</button>
+      </div>
     </section>
 
-    <section role="region" id="scrapping" data-leaf>
+    <section role="region" id="scrapping">
       <form role="dialog" data-type="confirm">
         <section>
           <h1 data-l10n-id="scrapping-process">Processing data</h1>
@@ -153,7 +155,7 @@
       </form>
     </section>
 
-    <section role="region" id="journeys-list" data-leaf>
+    <section role="region" id="journeys-list">
       <form role="dialog" data-type="confirm">
         <section>
           <ul id="journeys-list-container">
@@ -165,7 +167,7 @@
       </form>
     </section>
 
-    <section role="region" id="journey-details" data-leaf>
+    <section role="region" id="journey-details">
       <header>
         <button id="journey-details-back">
           <span class="icon icon-back" data-l10n-id="back">Back</span>
@@ -175,11 +177,13 @@
         </menu>
         <h1 data-l10n-id="journey-details">Journey details</h1>
       </header>
-      <ul id="journey-details-container">
-      </ul>
+      <div>
+        <ul id="journey-details-container">
+        </ul>
+      </div>
     </section>
 
-    <section role="region" id="waiting-location" data-leaf>
+    <section role="region" id="waiting-location">
       <form role="dialog" data-type="confirm">
         <section>
           <h1 data-l10n-id="waiting-geolocation">Waiting for geolocation ...</h1>
@@ -194,7 +198,7 @@
       </form>
     </section>
 
-    <section role="region" id="error-dialog" data-leaf>
+    <section role="region" id="error-dialog">
       <form role="dialog" data-type="confirm">
         <section>
           <h1 data-l10n-id="error">An error has occured</h1>
