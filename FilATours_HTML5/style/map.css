@@ -3,4 +3,12 @@
   position: absolute;
   top: 5rem;
   bottom: 0;
+  font-size: 1.3rem;
+}
+
+.olControlZoom a {
+  font-size: 3rem !important;
+  height: 3rem !important;
+  width: 3rem !important;
+  line-height: 2.5rem !important;
 }
