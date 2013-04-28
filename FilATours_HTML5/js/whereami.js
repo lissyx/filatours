@@ -32,7 +32,7 @@ function updateCurPosMarker(newPos) {
 }
 
 function showPosition(ev) {
-  updateStatus("Updating location.");
+  updateStatus(_('updating-location'));
   var olc = new OpenLayers.LonLat(
         ev.coords.longitude,
         ev.coords.latitude)
@@ -48,13 +48,13 @@ function showPosition(ev) {
     console.debug("accuracy: " + ev.coords.accuracy);
     if (dist <= ev.coords.accuracy && ev.coords.accuracy <= 100) {
       navigator.geolocation.clearWatch(wid);
-      updateStatus("Final location found!");
+      updateStatus(_('final-location'));
       window.setTimeout(function() {
         var s = document.getElementById('status-section');
         s.style.display = 'none';
       }, 10000);
     } else {
-      updateStatus("Waiting for better location.");
+      updateStatus(_('waiting-better-location'));
     }
   }
 
@@ -88,7 +88,7 @@ function updateStatus(msg) {
 }
 
 window.addEventListener('DOMContentLoaded', function() {
-  updateStatus("Waiting for location ...");
+  updateStatus(_('waiting-location'));
   whereami();
   findme();
 });
