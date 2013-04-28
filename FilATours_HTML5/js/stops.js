@@ -3,6 +3,8 @@
 
 'use strict';
 
+var _ = window.navigator.mozL10n.get;
+
 var all;
 var map;
 var select;
@@ -89,11 +91,11 @@ function featureToHtml(feature) {
   var o = feature.data;
   var html = '<h1>' + o._name + '</h1>';
   var lines = BusLines.getLine(o._name);
-  html += '<p>The following lines stops here: ' + lines.join(", ") + '.</p>';
+  html += '<p>' + _('lines-stops') + ': ' + lines.join(", ") + '.</p>';
   if (selectActivity != null) {
     html += '<p data-stopname="' + o._name + '" data-stopcity="' + o._city + '">';
-    html += '<button class="recommended" name="departure">Departure</button>';
-    html += '<button class="recommended" name="arrival">Arrival</button>';
+    html += '<button class="recommended" name="departure" data-l10n-id="departure">Departure</button>';
+    html += '<button class="recommended" name="arrival" data-l10n-id="arrival">Arrival</button>';
     html += '</p>';
   }
   return html;

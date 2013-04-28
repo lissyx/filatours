@@ -3,6 +3,8 @@
 
 'use strict';
 
+var _ = window.navigator.mozL10n.get;
+
 var wid;
 var prev = undefined;
 
