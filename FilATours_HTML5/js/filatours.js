@@ -605,7 +605,7 @@ var FilBleu = (function FilBleu() {
       date.setMinutes(newMins);
 
       // set to 15 min before actual departure
-      var newTime = date.getTime() - 15*1000;
+      var newTime = date.getTime() - 15*60*1000;
 
       if (newHours < hour && (hour - newHours >= 12)) {
         newTime += 86400*1000; // add a day
