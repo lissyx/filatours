@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="shared/style/input_areas.css" />
     <link rel="stylesheet" type="text/css" href="shared/style/buttons.css" />
     <link rel="stylesheet" type="text/css" href="shared/style/confirm.css" />
+    <link rel="stylesheet" type="text/css" href="shared/style/status.css" />
     <link rel="stylesheet" type="text/css" href="shared/style_unstable/progress_activity.css" />
     <link rel="stylesheet" type="text/css" href="shared/style_unstable/toolbars.css" />
     <link rel="stylesheet" type="text/css" href="style/filatours.css" />
@@ -184,12 +185,15 @@
         </ul>
         <div role="toolbar">
           <ul>
-            <li><button class="pack-icon-mark">Mark</li>
+            <li><button class="pack-icon-mark" id="add-journey-alarm">Mark</li>
           </ul>
           <ul class="end">
-            <li><button class="pack-icon-share">Share</li>
+            <li><button class="pack-icon-share" id="share-journey">Share</li>
           </ul>
         </div>
+        <section id="alarm-status" role="status">
+          <p data-l10n-id="alarm-set">Alarm has been set!</p>
+        </section>
       </div>
     </section>
 

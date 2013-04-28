@@ -9,7 +9,8 @@
   },
   "permissions": {
     "systemXHR":{"description": "Needed to perform scrapping."},
-    "geolocation":{"description": "Needed to find your location and closest bus stops."}
+    "geolocation":{"description": "Needed to find your location and closest bus stops."},
+    "alarms":{"description": "Needed to be able to set an alarm."}
   },
   "activities": {
     "select-stop": {
@@ -18,6 +19,9 @@
       "href": "/stops.html"
     }
   },
+  "messages": [
+    {"alarm": "/alarm.html"}
+  ],
   "icons": {
     "128": "/style/icons/filatours.png"
   },

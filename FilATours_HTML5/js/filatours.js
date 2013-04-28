@@ -32,6 +32,7 @@ var FilBleu = (function FilBleu() {
     _journeysList: 'journeys-list',
     _journeyDetails: 'journey-details',
     _journeyDetailsInfo: {},
+    _currentJourneyDetailsId: undefined,
 
     XHR: function(url, method, params, callback) {
       var self = this;
@@ -94,10 +95,14 @@ var FilBleu = (function FilBleu() {
 
     pad: function(n) { return n < 10 ? '0' + n : n },
 
-    getDate: function(str) {
+    getJSDate: function(str) {
       var ar = str.split("-");
       str = parseInt(ar[0]) + "-" + this.pad(parseInt(ar[1])) + "-" + this.pad(parseInt(ar[2]));
-      var date = new Date(str);
+      return new Date(str);
+    },
+
+    getDate: function(str) {
+      var date = this.getJSDate(str);
       return this.pad(date.getDate()) + '/' +
         this.pad(date.getMonth() + 1) + '/' +
         date.getFullYear();
@@ -428,6 +433,7 @@ var FilBleu = (function FilBleu() {
     },
 
     showJourneyDetails: function(id) {
+      this._currentJourneyDetailsId = id;
       this.ensureClean('journey-details-container');
       document.location.hash = this._journeyDetails;
       var c = document.getElementById('journey-details-container');
@@ -536,6 +542,72 @@ var FilBleu = (function FilBleu() {
           this.pad(d.getMonth() + 1) + '-' + this.pad(d.getDate());
         time.value = this.pad(d.getHours()) + ':' + this.pad(d.getMinutes());
       }
+
+      var alarm = document.getElementById('add-journey-alarm');
+      if (alarm) {
+        alarm.addEventListener('click', this.addJourneyAlarm.bind(this));
+      }
+
+      var share = document.getElementById('share-journey');
+      if (share) {
+        share.addEventListener('click', this.shareJourney.bind(this))
+      }
+    },
+
+    addJourneyAlarm: function() {
+      var cjd = this._journeyDetailsInfo[this._currentJourneyDetailsId];
+      console.log("Journeys: " + JSON.stringify(this._journeys));
+      console.log("Journey: " + JSON.stringify(this._currentJourneyDetailsId));
+      console.log("Will add an alarm for" + JSON.stringify(cjd));
+      var date = this.getJSDate(document.getElementById('date').value);
+      var hour = this.getHour(document.getElementById('time').value);
+      var dep;
+      var newHours, newMins;
+
+      for (var i = 0; i < this._journeys.length; i++) {
+        if (this._journeys[i]["link"] == this._currentJourneyDetailsId) {
+          dep = this._journeys[i]["dep"];
+          break;
+        }
+      }
+
+      var time = dep.split("h");
+
+      newHours = parseInt(time[0]);
+      newMins = parseInt(time[1]);
+
+      date.setHours(newHours);
+      date.setMinutes((newMins - 15) % 60);
+
+      if (newHours < hour && (hour - newHours >= 12)) {
+        date.setDate(date.getDate() + 1);
+      }
+
+      console.log("addJourneyAlarm: startTime=" + date);
+      var request = navigator.mozAlarms.add(date, "honorTimezone", {"dep": dep, "journey": cjd});
+      request.onsuccess = function (e) {
+        var banner = document.getElementById("alarm-status");
+        banner.style.visibility = "visible";
+        window.setTimeout(function() {
+          banner.style.visibility = "hidden";
+        }, 4000);
+      };
+      request.onerror = function (e) {
+        var msg = e.target.error.name;
+        if (e.target.error.name == "InvalidStateError") {
+          msg = _('alarm-set-in-past') + ' ' + date;
+        } else {
+          msg = _('alarm-unknown-error');
+        }
+
+        alert(msg);
+      };
+    },
+
+    shareJourney: function() {
+      var cjd = this._journeyDetailsInfo[this._currentJourneyDetailsId];
+      console.log("Will share" + JSON.stringify(cjd));
+      alert("Not yet implemented");
     },
 
     sendPick: function() {
@@ -624,4 +696,5 @@ window.addEventListener('DOMContentLoaded', function() {
   addGeolocButton('geoloc-dep');
   addGeolocButton('geoloc-arr');
   document.location.hash = 'root';
+
 });
