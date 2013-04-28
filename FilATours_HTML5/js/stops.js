@@ -94,8 +94,8 @@ function featureToHtml(feature) {
   html += '<p>' + _('lines-stops') + ': ' + lines.join(", ") + '.</p>';
   if (selectActivity != null) {
     html += '<p data-stopname="' + o._name + '" data-stopcity="' + o._city + '">';
-    html += '<button class="recommended" name="departure" data-l10n-id="departure">Departure</button>';
-    html += '<button class="recommended" name="arrival" data-l10n-id="arrival">Arrival</button>';
+    html += '<button class="recommended" name="departure">' + _('departure') + '</button>';
+    html += '<button class="recommended" name="arrival">' + _('arrival') + '</button>';
     html += '</p>';
   }
   return html;
