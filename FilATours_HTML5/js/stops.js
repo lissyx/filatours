@@ -184,6 +184,21 @@ function handleSelectEvent(button) {
   }
 }
 
+function cancelSelectActivity() {
+  var resp = {
+    type: "",
+    stop: {
+      name: "",
+      city: ""
+    }
+  };
+
+  if (selectActivity != null) {
+    selectActivity.postResult(resp);
+    endSelect();
+  }
+}
+
 function startSelect(request) {
   selectActivity = request;
 }
@@ -203,5 +218,13 @@ window.onload = function() {
       return;
     startSelect(activityRequest);
     document.location.hash = 'stops-map';
+    var mapback = document.getElementById('map-back');
+    if (mapback) {
+      mapback.setAttribute('href', '');
+      mapback.addEventListener('click', function(e) {
+        cancelSelectActivity();
+        document.location = 'index.html#schedule';
+      });
+    }
   });
 };
