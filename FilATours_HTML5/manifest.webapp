@@ -20,7 +20,7 @@
     }
   },
   "messages": [
-    {"alarm": "/alarm.html"}
+    {"alarm": "/index.html"}
   ],
   "icons": {
     "128": "/style/icons/filatours.png"

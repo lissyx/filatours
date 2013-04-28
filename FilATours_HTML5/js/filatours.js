@@ -554,6 +554,31 @@ var FilBleu = (function FilBleu() {
       }
     },
 
+    handleJourneyAlarm: function(message) {
+      console.log("alarm fired: " + JSON.stringify(message));
+      var link = "alarm://" + message.id;
+      this._journeyDetailsInfo[link] = message.data.journey;
+      this.showJourneyDetails(link);
+
+      var journeyDetailsBack = document.getElementById('journey-details-back');
+      journeyDetailsBack.style.visibility = "hidden";
+
+      var journeyDetailsTb = document.getElementById('journey-details-toolbar');
+      journeyDetailsTb.style.visibility = "hidden";
+
+      var journeyDetailsClose = document.getElementById('journey-details-close');
+      if (journeyDetailsClose) {
+        journeyDetailsClose.addEventListener('click', function(e) {
+          document.location.hash='root';
+          journeyDetailsBack.style.visibility = "visible";
+          journeyDetailsTb.style.visibility = "visible";
+        });
+      }
+
+      navigator.vibrate([100, 200, 300, 200, 100, 1000, 500, 500]);
+      return;
+    },
+
     addJourneyAlarm: function() {
       var cjd = this._journeyDetailsInfo[this._currentJourneyDetailsId];
       console.log("Journeys: " + JSON.stringify(this._journeys));
@@ -584,7 +609,7 @@ var FilBleu = (function FilBleu() {
       }
 
       console.log("addJourneyAlarm: startTime=" + date);
-      var request = navigator.mozAlarms.add(date, "honorTimezone", {"dep": dep, "journey": cjd});
+      var request = navigator.mozAlarms.add(date, "ignoreTimezone", {dep: dep, journey: cjd});
       request.onsuccess = function (e) {
         var banner = document.getElementById("alarm-status");
         banner.style.visibility = "visible";
@@ -696,5 +721,14 @@ window.addEventListener('DOMContentLoaded', function() {
   addGeolocButton('geoloc-dep');
   addGeolocButton('geoloc-arr');
   document.location.hash = 'root';
-
 });
+
+window.onload = function() {
+  if (!navigator.mozSetMessageHandler) {
+    return;
+  }
+  navigator.mozSetMessageHandler("alarm", function(message) {
+    console.log("calling handler for alarm: " + JSON.stringify(message));
+    FilBleu.handleJourneyAlarm(message);
+  });
+};
