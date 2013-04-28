@@ -602,11 +602,16 @@ var FilBleu = (function FilBleu() {
       newMins = parseInt(time[1]);
 
       date.setHours(newHours);
-      date.setMinutes((newMins - 15) % 60);
+      date.setMinutes(newMins);
+
+      // set to 15 min before actual departure
+      var newTime = date.getTime() - 15*1000;
 
       if (newHours < hour && (hour - newHours >= 12)) {
-        date.setDate(date.getDate() + 1);
+        newTime += 86400*1000; // add a day
       }
+
+      date.setTime(newTime);
 
       console.log("addJourneyAlarm: startTime=" + date);
       var request = navigator.mozAlarms.add(date, "ignoreTimezone", {dep: dep, journey: cjd});
