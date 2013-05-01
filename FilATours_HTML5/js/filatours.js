@@ -637,7 +637,14 @@ var FilBleu = (function FilBleu() {
     shareJourney: function() {
       var cjd = this._journeyDetailsInfo[this._currentJourneyDetailsId];
       console.log("Will share" + JSON.stringify(cjd));
-      alert("Not yet implemented");
+      var payload = JSON.stringify(cjd);
+      var a = new MozActivity({
+        name: 'new',
+        data: {
+          url: "mailto:?subject=Trajet Fil Bleu&body=" + payload, // for emails,
+          body: payload // for SMS
+        }
+      });
     },
 
     sendPick: function() {
