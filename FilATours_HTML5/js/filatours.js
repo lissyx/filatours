@@ -637,12 +637,12 @@ var FilBleu = (function FilBleu() {
     shareJourney: function() {
       var cjd = this._journeyDetailsInfo[this._currentJourneyDetailsId];
       var payload = this.journeyToHuman(cjd);
-      var subject = encodeURI("Trajet Fil Bleu");
+      var subject = encodeURI(_('steps-subject'));
       console.log("Will share: (" + JSON.stringify(cjd) + ") as (" + payload + ")");
       var a = new MozActivity({
         name: 'new',
         data: {
-          url: "mailto:?subject=&body=" + encodeURI(payload), // for emails,
+          url: "mailto:?subject=" + subject + "&body=" + encodeURI(payload), // for emails,
           body: payload, // for SMS
           type: [
             "websms/sms", "mail"
