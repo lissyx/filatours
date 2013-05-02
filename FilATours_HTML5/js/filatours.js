@@ -673,8 +673,8 @@ journeyToHuman: function(journey) {
         }
 
         if (step.type == 'connection') {
-          title = _('connection');
-          detailsText = _('waiting-time', {duration: step.duration});
+          title = _('steps-connection');
+          detailsText = _('steps-waiting-time', {duration: step.duration});
         }
 
         humanJourney.push(_('steps-final', {title: title, details: detailsText}));
