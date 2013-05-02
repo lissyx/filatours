@@ -636,15 +636,54 @@ var FilBleu = (function FilBleu() {
 
     shareJourney: function() {
       var cjd = this._journeyDetailsInfo[this._currentJourneyDetailsId];
-      console.log("Will share" + JSON.stringify(cjd));
-      var payload = JSON.stringify(cjd);
+      var payload = this.journeyToHuman(cjd);
+      var subject = encodeURI("Trajet Fil Bleu");
+      console.log("Will share: (" + JSON.stringify(cjd) + ") as (" + payload + ")");
       var a = new MozActivity({
         name: 'new',
         data: {
-          url: "mailto:?subject=Trajet Fil Bleu&body=" + payload, // for emails,
+          url: "mailto:?subject=&body=" + encodeURI(payload), // for emails,
           body: payload // for SMS
         }
       });
+    },
+
+journeyToHuman: function(journey) {
+      var humanJourney = new Array();
+      for (var si in journey) {
+        var step = journey[si];
+        var title, detailsText;
+
+        if (step.type == 'indication') {
+          if (step.time) {
+            title = step.time + ': ' + step.indic.stop;
+          } else {
+            title = step.indic.stop;
+          }
+
+          if (step.indic.type == 'mount') {
+            detailsText = '*' + _('line') + '*: ' +
+              step.indic.line + ' ' +
+              '*' + _('direction') + '*: ' + step.indic.direction;
+          }
+          if (step.indic.type == 'umount') {
+            detailsText = _('get-off');
+          }
+          if (step.indic.type == 'walk') {
+            detailsText = _('from-stop') + ' *' + step.indic.stop +
+              '* ' + _('walk-to') + ' *' + step.indic.direction + '*';
+          }
+        }
+
+        if (step.type == 'connection') {
+          title = _('connection');
+          detailsText = _('waiting-time') + ': *' + step.duration + '*';
+        }
+
+        humanJourney.push(title + '\n' + detailsText);
+      }
+
+      return humanJourney.join('\n\n');
     },
 
     sendPick: function() {
