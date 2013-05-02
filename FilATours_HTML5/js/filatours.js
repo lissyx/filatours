@@ -652,35 +652,28 @@ journeyToHuman: function(journey) {
       var humanJourney = new Array();
       for (var si in journey) {
         var step = journey[si];
-        var title, detailsText;
+        var text;
 
         if (step.type == 'indication') {
-          if (step.time) {
-            title = _('steps-starting-time', {time: step.time, stop: step.indic.stop});
-          } else {
-            title = _('steps-starting-notime', {stop: step.indic.stop});
-          }
-
           if (step.indic.type == 'mount') {
-            detailsText = _('steps-mount', {line: step.indic.line, direction: step.indic.direction});
+            text = _('steps-mount', {line: step.indic.line, direction: step.indic.direction, time: step.time, stop: step.indic.stop});
           }
           if (step.indic.type == 'umount') {
-            detailsText = _('steps-get-off');
+            text = _('steps-umount', {line: step.indic.line, direction: step.indic.direction, time: step.time, stop: step.indic.stop});
           }
           if (step.indic.type == 'walk') {
-            detailsText = _('steps-walk', {from: step.indic.stop, to: step.indic.direction});
+            text = _('steps-walk', {from: step.indic.stop, to: step.indic.direction, duration: step.duration});
           }
         }
 
         if (step.type == 'connection') {
-          title = _('steps-connection');
-          detailsText = _('steps-waiting-time', {duration: step.duration});
+          text = _('steps-connection', {duration: step.duration});
         }
 
-        humanJourney.push(_('steps-final', {title: title, details: detailsText}));
+        humanJourney.push(text);
       }
 
-      return humanJourney.join('\n\n');
+      return humanJourney.join('\n');
     },
 
     sendPick: function() {
