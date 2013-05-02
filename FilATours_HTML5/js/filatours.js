@@ -643,7 +643,10 @@ var FilBleu = (function FilBleu() {
         name: 'new',
         data: {
           url: "mailto:?subject=&body=" + encodeURI(payload), // for emails,
-          body: payload // for SMS
+          body: payload, // for SMS
+          type: [
+            "websms/sms", "mail"
+          ]
         }
       });
     },
