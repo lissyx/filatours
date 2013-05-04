@@ -651,7 +651,7 @@ var FilBleu = (function FilBleu() {
       });
     },
 
-journeyToHuman: function(journey) {
+    journeyToHuman: function(journey) {
       var humanJourney = new Array();
       for (var si in journey) {
         var step = journey[si];
