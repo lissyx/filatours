@@ -662,7 +662,7 @@ var FilBleu = (function FilBleu() {
             text = _('steps-umount', {line: step.indic.line, direction: step.indic.direction, time: step.time, stop: step.indic.stop});
           }
           if (step.indic.type == 'walk') {
-            text = _('steps-walk', {from: step.indic.stop, to: step.indic.direction, duration: step.duration});
+            text = _('steps-walk', {stop: step.indic.stop, to: step.indic.direction, duration: step.duration});
           }
         }
 
