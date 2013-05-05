@@ -11,7 +11,8 @@
   "permissions": {
     "systemXHR":{"description": "Needed to perform scrapping."},
     "geolocation":{"description": "Needed to find your location and closest bus stops."},
-    "alarms":{"description": "Needed to be able to set an alarm."}
+    "alarms":{"description": "Needed to be able to set an alarm."},
+    "desktop-notification": {"description": "Needed to be able to send alarm notifications."}
   },
   "activities": {
     "select-stop": {
