@@ -574,9 +574,6 @@ var FilBleu = (function FilBleu() {
           journeyDetailsTb.style.visibility = "visible";
         });
       }
-
-      navigator.vibrate([100, 200, 300, 200, 100, 1000, 500, 500]);
-      return;
     },
 
     addJourneyAlarm: function() {
