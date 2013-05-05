@@ -14,6 +14,8 @@
     <link rel="stylesheet" type="text/css" href="shared/style/headers.css" />
     <link rel="stylesheet" type="text/css" href="shared/style/status.css" />
     <link rel="stylesheet" type="text/css" href="shared/style/buttons.css" />
+    <link rel="stylesheet" type="text/css" href="shared/style/input_areas.css" />
+    <link rel="stylesheet" type="text/css" href="shared/style_unstable/progress_activity.css" />
     <link rel="stylesheet" type="text/css" href="style/filatours.css" />
     <link rel="stylesheet" type="text/css" href="style/map.css" />
     <link rel="stylesheet" type="text/css" href="style/stops.css" />
@@ -25,6 +27,8 @@
       <header>
         <a href="index.html#root" id="map-back"><span data-l10n-id="back" class="icon icon-back">Back</span></a>
         <h1 data-l10n-id="stops-map">Stops map</h1>
+        <input type="text" placeholder="Enter an address, then press Enter" id="address" data-l10n-id="address" mozactionhint="search" />
+        <progress id="nominatim-search"></progress>
       </header>
       <div class="bb-docs">
         <div id="map"></div>

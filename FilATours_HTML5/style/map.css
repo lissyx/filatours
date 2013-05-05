@@ -1,9 +1,16 @@
 #map {
   width: 100%;
   position: absolute;
-  top: 5rem;
+  top: 8rem;
   bottom: 0;
   font-size: 1.3rem;
+}
+
+#nominatim-search {
+  position: relative;
+  float: right;
+  top: -3rem;
+  visibility: hidden;
 }
 
 .olControlZoom a {

@@ -13,6 +13,12 @@ var stopsIcon;
 var selectedStopsIcon;
 var selectActivity = null;
 
+var selectNominatim;
+var nominatimResults;
+var nominatimResultsIcon;
+
+var toursExtent;
+
 function showmap() {
   // Options of the map
   var options = {
@@ -50,14 +56,6 @@ function showmap() {
   });
   map.addLayer(stops);
 
-  select = new OpenLayers.Control.SelectFeature(stops,
-    {
-      clickout: true,
-      toggle: false,
-      multiple: false,
-      hover: false
-    });
-
   stopsIcon = OpenLayers.Util.extend({}, OpenLayers.Feature.Vector.style['default']);
   stopsIcon.graphicWidth = 21;
   stopsIcon.graphicHeight = 25;
@@ -73,8 +71,34 @@ function showmap() {
   selectedStopsIcon.graphicYOffset = -25;
   selectedStopsIcon.externalGraphic = 'ext/OpenLayers/img/marker-blue.png';
   selectedStopsIcon.fillOpacity = 1
-  select.selectStyle = selectedStopsIcon;
 
+  nominatimResults = new OpenLayers.Layer.Vector("NominatimResults", {
+      isBaseLayer: false,
+      features: [],
+      visibility: true
+  });
+  nominatimResults.events.on({
+    "featureselected": onFeatureSelectNominatim,
+    "featureunselected": onFeatureUnselect
+  });
+  map.addLayer(nominatimResults);
+
+  nominatimResultsIcon = OpenLayers.Util.extend({}, OpenLayers.Feature.Vector.style['default']);
+  nominatimResultsIcon.graphicWidth = 21;
+  nominatimResultsIcon.graphicHeight = 25;
+  nominatimResultsIcon.graphicXOffset = -(21/2);
+  nominatimResultsIcon.graphicYOffset = -25;
+  nominatimResultsIcon.externalGraphic = 'ext/OpenLayers/img/marker-gold.png';
+  nominatimResultsIcon.fillOpacity = 1;
+
+  select = new OpenLayers.Control.SelectFeature([stops, nominatimResults],
+    {
+      clickout: true,
+      toggle: false,
+      multiple: false,
+      hover: false
+    });
+  select.selectStyle = selectedStopsIcon;
   map.addControl(select);
   select.activate();
 
@@ -85,6 +109,7 @@ function showmap() {
   var tours = new OpenLayers.LonLat(0.683, 47.383)
       .transform(map.options.displayProjection, map.options.projection);
   map.setCenter(tours, 11, false, true);
+  toursExtent = map.getExtent().transform(map.options.projection, map.options.displayProjection);
 }
 
 function featureToHtml(feature) {
@@ -99,6 +124,25 @@ function featureToHtml(feature) {
     html += '</p>';
   }
   return html;
+}
+
+function NominatimFeatureToHtml(feature) {
+  var o = feature.data;
+  var html = '<h1>' + _('address') + '</h1>';
+  html += '<p>' + o.display_name + '</p>';
+  return html;
+}
+
+function onFeatureSelectNominatim(event) {
+  var f = event.feature;
+  var popup = new OpenLayers.Popup.FramedCloud("chicken",
+    f.geometry.getBounds().getCenterLonLat(),
+    new OpenLayers.Size(200, 100),
+    NominatimFeatureToHtml(f),
+    null,
+    true,
+    null);
+  map.addPopup(popup, false);
 }
 
 function onFeatureSelect(event) {
@@ -164,9 +208,71 @@ function onMapMove(event) {
   stops.addFeatures(features);
 }
 
+function handleNominatim(obj) {
+  var progress = document.getElementById('nominatim-search');
+  var url = "http://nominatim.openstreetmap.org/search?";
+  var params = "&format=json&bounded=1&limit=5";
+  var query = obj.value;
+  var bounds = toursExtent;
+  params += "&viewbox=" + bounds.left + "," + bounds.bottom + "," + bounds.right + "," + bounds.top;
+  var fullURL = url + "q=" + encodeURI(query) + params;
+  console.log(fullURL);
+  progress.style.visibility = "visible";
+
+    var self = this;
+    var xhr = new XMLHttpRequest({mozSystem: true});
+    xhr.open("GET", fullURL, true);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == XMLHttpRequest.DONE) {
+        var feats = JSON.parse(xhr.responseText);
+        if (feats.length > 0) {
+          showNominatimResults(feats);
+        } else {
+          alert(_('no-result'));
+        }
+        obj.blur();
+        progress.style.visibility = "hidden";
+      }
+    };
+    xhr.onerror = function() {
+      progress.style.visibility = "hidden";
+      alert(_("error-nominatim"));
+    }
+    xhr.send(null);
+}
+
+function showNominatimResults(feats) {
+  var features = [];
+  nominatimResults.removeAllFeatures();
+
+  for (var s in feats) {
+    var se = feats[s];
+    var resultPos = new OpenLayers.LonLat(se.lon, se.lat)
+      .transform(map.options.displayProjection, map.options.projection)
+      features.push(
+          new OpenLayers.Feature.Vector(
+            new OpenLayers.Geometry.Point(resultPos.lon, resultPos.lat),
+            se,
+            nominatimResultsIcon));
+  }
+
+  nominatimResults.addFeatures(features);
+
+  var ex = nominatimResults.getDataExtent();
+  map.zoomToExtent(ex);
+}
+
 window.addEventListener('DOMContentLoaded', function() {
   showmap();
   all = BusStops.getAllStops();
+  var address = document.getElementById('address');
+  if (address) {
+    address.addEventListener('keydown', function(ev) {
+      if (ev.keyCode == 13) {
+        handleNominatim(address);
+      }
+    });
+  }
 });
 
 function handleSelectEvent(button) {
