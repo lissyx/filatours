@@ -2,11 +2,11 @@
   "name": "Fil@Tours",
   "description": "Mobile Application for Fil Bleu",
   "type": "privileged",
-  "version": "1.2",
+  "version": "1.3",
   "launch_path": "/index.html",
   "developer": {
     "name": "lissyx",
-    "url": "https://github.com/lissyx/gaia/tree/image-uploader"
+    "url": "https://gitorious.org/scrapfilbleu"
   },
   "permissions": {
     "systemXHR":{"description": "Needed to perform scrapping."},
