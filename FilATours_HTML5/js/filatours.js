@@ -121,8 +121,13 @@ var FilBleu = (function FilBleu() {
       var date = this.getDate(document.getElementById('date').value);
       var hour = this.getHour(document.getElementById('time').value);
       var min = this.getMin(document.getElementById('time').value);
-      var d = BusStops.getMatchingStop(document.getElementById('departure').value);
-      var a = BusStops.getMatchingStop(document.getElementById('arrival').value);
+      var d, a;
+      try {
+        d = BusStops.getMatchingStop(document.getElementById('departure').value);
+        a = BusStops.getMatchingStop(document.getElementById('arrival').value);
+      } catch (e) {
+        this.handleException(e);
+      }
       // Expected:
       // Departure=Ballan-Mir%E9+-+La+Taillerie&Arrival=Saint-Pierre-des-Corps+-+St+Pierre+Gare&Date=06%2F11%2F2012&Sens=1&Hour=8&Minute=0&Criteria=1
       // Got:
@@ -726,6 +731,10 @@ var FilBleu = (function FilBleu() {
 
       var errmsg = document.getElementById('error-message');
       var msgvalue = "Unknown error";
+
+      if (ex instanceof InvalidBusStopException) {
+        msgvalue = _('error-invalid-busstop');
+      }
 
       if (ex instanceof JourneysListNotFoundException) {
         msgvalue = _('error-no-result');
