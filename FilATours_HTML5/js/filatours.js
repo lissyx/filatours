@@ -768,14 +768,48 @@ window.addEventListener('DOMContentLoaded', function() {
   addGeolocButton('geoloc-dep');
   addGeolocButton('geoloc-arr');
   document.location.hash = 'root';
+
+  /*
+  var alarms = navigator.mozAlarms;
+  if (alarms != null) {
+    var cDate = new Date();
+    var aDate = new Date(Date.now() + 30*1000);
+    console.log("Alarm at " + aDate + " -- " + cDate);
+    var request = alarms.add(aDate, "honorTimezone", {dep: "00h00", journey: [{"mode":"Bus","type":"indication","time":"08h31","duration":"08min","indic":{"type":"mount","line":"30","direction":"Ballan Gare","stop":"La Taillerie"}},{"type":"indication","time":"08h39","indic":{"type":"umount","stop":"Ballan Gare"}},{"type":"connection","duration":"06min"},{"mode":"Bus","type":"indication","time":"08h45","duration":"28min","indic":{"type":"mount","line":"31","direction":"Joué Centre (Jean Jaurès)","stop":"Ballan Gare"}},{"type":"indication","time":"09h13","indic":{"type":"umount","stop":"Joué Gare"}},{"mode":"Marche à pied","type":"indication","duration":"05min","indic":{"type":"walk","direction":"La Grange","stop":"Joué Gare"}},{"type":"connection","duration":"14min"},{"mode":"Bus","type":"indication","time":"09h32","duration":"07min","indic":{"type":"mount","line":"01B","direction":"Douets Lycée Choiseul","stop":"La Grange"}},{"type":"indication","time":"09h39","indic":{"type":"umount","stop":"2 Lions"}},{"mode":"Marche à pied","type":"indication","duration":"09min","indic":{"type":"walk","direction":"Polytech","stop":"2 Lions"}}]});
+    console.log("Alarm at " + aDate + " -- " + cDate);
+
+    var request = alarms.getAll();
+    request.onsuccess = function (e) { console.log(JSON.stringify(e.target.result)); };
+    request.onerror = function (e) { console.log(e.target.error.name); };
+  } else {
+    alert("No mozAlarms!");
+  }
+  */
+
 });
 
 window.onload = function() {
+  var now = new Date();
+  console.log("Alarm fired " + now);
   if (!navigator.mozSetMessageHandler) {
     return;
   }
+  console.log("Alarm fired " + now);
+
   navigator.mozSetMessageHandler("alarm", function(message) {
     console.log("calling handler for alarm: " + JSON.stringify(message));
-    FilBleu.handleJourneyAlarm(message);
+
+    navigator.mozApps.getSelf().onsuccess = function(evt) {
+      var app = evt.target.result;
+      var iconURL = NotificationHelper.getIconURI(app);
+      var shortname = _('alarm-title');
+      var description = _('alarm-description', {time: message.data.dep});
+      var handleFunction = function() {
+        console.log("Notification!!!!");
+        app.launch();
+        FilBleu.handleJourneyAlarm(message);
+      };
+      var notification = NotificationHelper.send(shortname, description, iconURL, handleFunction);
+    };
   });
 };
