@@ -611,7 +611,7 @@ var FilBleu = (function FilBleu() {
       date.setTime(newTime);
 
       console.log("addJourneyAlarm: startTime=" + date);
-      var request = navigator.mozAlarms.add(date, "ignoreTimezone", {dep: dep, journey: cjd});
+      var request = navigator.mozAlarms.add(date, "honorTimezone", {dep: dep, journey: cjd});
       request.onsuccess = function (e) {
         var banner = document.getElementById("alarm-status");
         banner.style.visibility = "visible";
