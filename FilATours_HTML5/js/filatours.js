@@ -751,13 +751,19 @@ var FilBleu = (function FilBleu() {
 })();
 
 function addGeolocButton(id) {
-  document.getElementById(id).addEventListener('click', function(ev) {
-    new GeolocFiller(ev.target.dataset["target"]).startGeoloc();
-  });
+  var e = document.getElementById(id);
+  if (e){
+    e.addEventListener('click', function(ev) {
+      new GeolocFiller(ev.target.dataset["target"]).startGeoloc();
+    });
+  }
 }
 
 window.addEventListener('DOMContentLoaded', function() {
-  BusStops.attach(document.getElementById('stops-list'));
+  var stopsList = document.getElementById('stops-list');
+  if (stopsList) {
+    BusStops.attach(stopsList);
+  }
   FilBleu.bindButtons();
   addGeolocButton('geoloc-dep');
   addGeolocButton('geoloc-arr');
