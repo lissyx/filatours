@@ -19,6 +19,8 @@ webapp: $(TEMPDIR)
 	mkdir -p $(TEMPDIR)/shared
 	cp -a shared/style $(TEMPDIR)/shared/
 	cp -a shared/style_unstable $(TEMPDIR)/shared/
+	mkdir -p  $(TEMPDIR)/shared/js
+	cp -a shared/js/l10n.js shared/js/notification_helper.js $(TEMPDIR)/shared/js/
 
 purge:
 	cd $(TEMPDIR); \
