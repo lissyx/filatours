@@ -1,5 +1,8 @@
+VERSION ?= $(shell grep "version" manifest.webapp |cut -d':' -f2 |cut -d'"' -f2)
 TEMPDIR ?= ../tempdir/
-WEBAPP ?= filatours.zip
+WEBAPP ?= filatours-$(VERSION).zip
+
+$(info Producing $(WEBAPP))
 
 all: $(WEBAPP)
 
