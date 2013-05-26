@@ -646,6 +646,7 @@ var FilBleu = (function FilBleu() {
         data: {
           url: "mailto:?subject=" + subject + "&body=" + encodeURI(payload), // for emails,
           body: payload, // for SMS
+          number: "", // empty number for SMS
           type: [
             "websms/sms", "mail"
           ]
