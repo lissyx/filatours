@@ -37,8 +37,8 @@ public class BusJourney {
     private ArrayList<Journey> journeys;
 
     public BusJourney() {
-        this.urlraz = new URLs("id=1-1").getURLraz();
-        this.urlbase = new URLs("id=1-1&etape=1").getURL();
+        this.urlraz = new URLs("view=itineraire").getURLraz();
+        this.urlbase = new URLs("view=itineraire").getURL();
         this.journeys = new ArrayList<Journey>();
     }
 
@@ -63,13 +63,13 @@ public class BusJourney {
 
         Document reply = URLs.getConnection(this.urlbase)
             .cookies(this.cookies)
-            .data("Departure", dep)
-            .data("Arrival", arr)
-            .data("Sens", this.sens)
-            .data("Date", this.date)
-            .data("Hour", this.hour)
-            .data("Minute", this.minute)
-            .data("Criteria", this.criteria)
+            .data("iform[Departure]", dep)
+            .data("iform[Arrival]", arr)
+            .data("iform[Sens]", this.sens)
+            .data("iform[Date]", this.date)
+            .data("iform[Hour]", this.hour)
+            .data("iform[Minute]", this.minute)
+            .data("iform[Criteria]", this.criteria)
             .post();
         Log.e("BusTours:BusJourney", "Posted form:");
         Log.e("BusTours:BusJourney", "    Departure=" + dep);
@@ -84,6 +84,9 @@ public class BusJourney {
         if (!optgroups.isEmpty()) {
             Log.e("BusTours:BusJourney", "Need to select first optgroup");
 
+            String depJvmalin = reply.getElementById("DepJvmalin").attr("value");
+            String arrJvmalin = reply.getElementById("ArrJvmalin").attr("value");
+
             Iterator<Element> it = optgroups.iterator();
             while (it.hasNext()) {
                 Element current = it.next();
@@ -92,31 +95,40 @@ public class BusJourney {
                 Element firstChoice = current.child(0);
                 String newVal = firstChoice.attr("value");
 
-                if (parentElement.id().equals("Departure")) {
-                    dep = newVal;
+                if (parentElement.id().equals("DepJvmalin")) {
+                    depJvmalin = newVal;
                 }
 
-                if (parentElement.id().equals("Arrival")) {
-                    arr = newVal;
+                if (parentElement.id().equals("ArrJvmalin")) {
+                    arrJvmalin = newVal;
                 }
             }
 
-            Log.e("BusTours:BusJourney", "new dep='" + dep + "'");
-            Log.e("BusTours:BusJourney", "new arr='" + arr + "'");
+            Log.e("BusTours:BusJourney", "new dep='" + depJvmalin + "'");
+            Log.e("BusTours:BusJourney", "new arr='" + arrJvmalin + "'");
 
             reply = URLs.getConnection(this.urlbase)
                 .cookies(this.cookies)
-                .data("Departure", dep)
-                .data("Arrival", arr)
-                .data("Sens", this.sens)
-                .data("Date", this.date)
-                .data("Hour", this.hour)
-                .data("Minute", this.minute)
-                .data("Criteria", this.criteria)
+                .data("iform[Departure]", dep)
+                .data("iform[DepJvmalin]", depJvmalin)
+                .data("iform[Arrival]", arr)
+                .data("iform[ArrJvmalin]", arrJvmalin)
+                .data("iform[Sens]", this.sens)
+                .data("iform[Date]", this.date)
+                .data("iform[Hour]", this.hour)
+                .data("iform[Minute]", this.minute)
+                .data("iform[Criteria]", this.criteria)
                 .post();
+
             Log.e("BusTours:BusJourney", "Re-posted form: ");
             Log.e("BusTours:BusJourney", "    Departure=" + dep);
+            if (!dep.equals(depJvmalin)) {
+                Log.e("BusTours:BusJourney", "    DepJvmalin=" + depJvmalin);
+            }
             Log.e("BusTours:BusJourney", "    Arrival=" + arr);
+            if (!arr.equals(arrJvmalin)) {
+                Log.e("BusTours:BusJourney", "    ArrJvmalin=" + arrJvmalin);
+            }
             Log.e("BusTours:BusJourney", "    Sens=" + this.sens);
             Log.e("BusTours:BusJourney", "    Date=" + this.date);
             Log.e("BusTours:BusJourney", "    Hour=" + this.hour);
@@ -134,7 +146,7 @@ public class BusJourney {
             throw new ScrappingException(alerte.first().text());
         }
 
-        Elements navig = reply.getElementsByAttributeValue("class", "navig");
+        Elements navig = reply.getElementsByAttributeValue("id", "jvmalinList");
         Log.e("BusTours:BusJourney", "Retrieved elements: " + navig.size());
         if (navig.isEmpty()) {
             Log.e("BusTours:BusJourney", "NO Navig !!!");
@@ -147,27 +159,16 @@ public class BusJourney {
 
         parent.progress(50, R.string.jsoupGotNavig);
 
-        Elements table = reply.getElementsByAttributeValue("summary", "Propositions");
-        if (table.isEmpty()) {
-            Log.e("BusTours:BusJourney", "NO Table !!!");
-            Log.e("BusTours:BusJourney", "navig::" + navig.html());
-            throw new ScrappingException("Missing table");
-        }
-
-        parent.progress(55, R.string.jsoupGotPropositions);
-
-        Elements trips = table.first().getElementsByTag("tr");
+        Elements trips = navig.first().getElementsByTag("table");
         if (trips.isEmpty()) {
             Log.e("BusTours:BusJourney", "NO Trips !!!");
-            Log.e("BusTours:BusJourney", "table::" + table.html());
+            Log.e("BusTours:BusJourney", "table::" + navig.html());
             throw new ScrappingException("No journey");
         }
 
         parent.progress(60, R.string.jsoupGotJourneys);
 
         Iterator<Element> it = trips.iterator();
-        // bypass first element, table heading
-        it.next();
         int iProgress = 60;
         while (it.hasNext()) {
             parent.progress(iProgress, R.string.jsoupGotTrip);

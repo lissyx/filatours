@@ -24,33 +24,61 @@ public class JourneyDetails {
         private String direction;
         private String stop;
 
-        public Indication(Element html) {
+        public Indication(Element html, String typeAsked) {
             this.type = new String("");
             this.line = new String("");
             this.direction = new String("");
             this.stop = new String("");
 
-            Matcher take = Pattern.compile("^Prendre").matcher(html.text());
-            Matcher out = Pattern.compile("^Descendre").matcher(html.text());
-            Matcher walk = Pattern.compile("^De l'arr.t").matcher(html.text());
-            Elements bs = html.getElementsByTag("b");
+            Matcher take = Pattern.compile("Prendre").matcher(html.text());
+            Matcher walk = Pattern.compile("Rejoindre").matcher(html.text());
+            Elements ps = html.getElementsByTag("p");
 
             if (take.find()) {
-                this.type = "mount";
-                this.line = bs.get(0).text();
-                this.direction = bs.get(1).text();
-                this.stop = bs.get(2).text();
-            }
+                this.type = typeAsked;
 
-            if (out.find()) {
-                this.type = "umount";
-                this.stop = bs.get(0).text();
+                Matcher line =
+                    Pattern.compile("Ligne (.*) > (.*)")
+                    .matcher(ps.get(2).text());
+                if (line.find()) {
+                    this.line = line.group(1);
+                    this.direction = line.group(2);
+                }
+
+                Matcher stop = null;
+                Log.e("BusTours:JourneyDetails", "mount/unmount: " + ps.text());
+
+                if (typeAsked.equals("mount")) {
+                    Log.e("BusTours:JourneyDetails", "mount: " + ps.get(0).text());
+                    stop = Pattern.compile("De : (.*), .*").matcher(ps.get(0).text());
+                }
+
+                if (typeAsked.equals("umount")) {
+                    Log.e("BusTours:JourneyDetails", "umount: " + ps.get(1).text());
+                    stop = Pattern.compile(".* : (.*), .*").matcher(ps.get(1).text());
+                }
+
+                if (stop != null && stop.find()) {
+                    this.stop = stop.group(1);
+                }
             }
 
             if (walk.find()) {
                 this.type = "walk";
-                this.stop = bs.get(0).text();
-                this.direction = bs.get(1).text();
+
+                Matcher stop =
+                    Pattern.compile("Rejoindre .*: (.*), .*")
+                    .matcher(ps.get(1).text());
+                if (stop.find()) {
+                    this.stop = stop.group(1);
+                }
+
+                Matcher direction =
+                    Pattern.compile("De : (.*), .*")
+                    .matcher(ps.get(0).text());
+                if (direction.find()) {
+                    this.direction = direction.group(1);
+                }
             }
         }
 
@@ -126,60 +154,62 @@ public class JourneyDetails {
         this.parts = new ArrayList<JourneyPart>();
 
         Iterator<Element> it = details.iterator();
-        // bypass first element, table heading
-        it.next();
         while (it.hasNext()) {
-            String type = new String("");
-            String mode = new String("");
-            Indication indic = null;
-            String time = new String("");
-            String duration = new String("");
+            Element el = it.next();
+            String eClass = el.attr("class");
+            // Log.e("BusTours:JourneyDetails", "eClass==" + eClass);
 
-            Elements todo = it.next().getElementsByTag("td");
-            int nbElems = todo.size();
-            String elemClass;
+            if(eClass.equals("jvmalinDetail_item")) {
+                String type = new String("indication");
+                String mode = el.select("div[class=jvmalinDetail_item_left]").text();
+                String time = this.parseTime(
+                    el.select("div[class=jvmalinDetail_item_middle] p")
+                    .first()
+                );
+                String duration = this.parseDuration(
+                    el.select("div[class=jvmalinDetail_item_right")
+                    .last()
+                );
+                Element indicsStr = el.select("div[class=jvmalinDetail_item_right").first();
+                Indication indic = new Indication(indicsStr, "mount");
 
-            switch(nbElems) {
-                case 3: // connection
-                    elemClass = todo.get(0).attr("class");
+                // Log.e("BusTours:JourneyDetails", "indic:" + indic.toString());
 
-                    if (elemClass.equals("indication")) {
-                        type = "indication";
-                        indic = new Indication(todo.get(0));
-                        time = todo.get(1).html();
-                    }
+                this.parts.add(
+                    new JourneyPart(
+                        type,
+                        mode,
+                        indic,
+                        time,
+                        duration)
+                );
 
-                    if (elemClass.equals("correspondance")) {
-                        type = "connection";
-                        duration = todo.get(1).html();
-                    }
+                if (indic.type.equals("mount")) {
+                    Indication indicUmount = new Indication(indicsStr, "umount");
+                    duration = this.parseDuration(
+                        el.select("div[class=jvmalinDetail_item_right] p")
+                        .last()
+                    );
+                    time = this.parseTime(
+                        el.select("div[class=jvmalinDetail_item_middle] p")
+                        .last()
+                    );
+                    // Log.e("BusTours:JourneyDetails", "indicUmount:" + indicUmount.toString());
 
-                    break;
-
-                case 4: // get by foot
-                case 5: // journey part
-                    elemClass = todo.get(1).attr("class");
-
-                    mode = todo.first().getElementsByTag("img").first().attr("alt");
-                    if (elemClass.equals("indication")) {
-                        type = "indication";
-                        indic = new Indication(todo.get(1));
-                        if (nbElems == 4) {
-                            duration = todo.get(2).html();
-                        }
-                        if (nbElems == 5) {
-                            time = todo.get(2).html();
-                            duration = todo.get(3).html();
-                        }
-                    }
-
-                    break;
-                default:
-                    Log.e("BusTours:JourneyDetails", "Unexpected nbElems: " + String.valueOf(nbElems));
-                    break;
+                    this.parts.add(
+                        new JourneyPart(
+                            type,
+                            mode,
+                            indicUmount,
+                            time,
+                            duration)
+                    );
+                }
             }
 
-            this.parts.add(new JourneyPart(type, mode, indic, time, duration));
+            if(eClass.equals("correspondance")) {
+                this.parts.add(new JourneyPart("connection", "", null, "", this.parseDuration(el)));
+            }
         }
     }
 
@@ -194,5 +224,42 @@ public class JourneyDetails {
             res += it.next().toString();
         }
         return res;
+    }
+
+    private String parseTime(Element e) {
+        Pattern reTimeArrival = Pattern.compile("(\\d+)h(\\d+)");
+        // Log.e("BusTours:JourneyDetails", "time==" + e.html());
+        Matcher time = reTimeArrival.matcher(e.text());
+
+        if (!time.find()) {
+            Log.e("BusTours:JourneyDetails", "No time match :(");
+        }
+
+        return new String(time.group(1) + "h" + time.group(2));
+    }
+
+    private String parseDuration(Element e) {
+        String duration = new String("");
+        Pattern reDuration = Pattern.compile("(\\d+)\\s*h|(\\d+)\\s*min|(\\d+)\\s*s");
+        // Log.e("BusTours:JourneyDetails", "duration==" + e.html());
+        Matcher m = reDuration.matcher(e.text());
+
+        if (!m.find()) {
+            Log.e("BusTours:JourneyDetails", "No duration match :(");
+        }
+
+        if (m.group(1) != null) {
+            duration += m.group(1) + "h";
+        }
+
+        if (m.group(2) != null) {
+            duration += m.group(2) + "min";
+        }
+
+        if (m.group(3) != null) {
+            duration += m.group(3) + "s";
+        }
+
+        return duration;
     }
 }
