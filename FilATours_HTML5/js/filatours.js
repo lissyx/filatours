@@ -24,8 +24,8 @@ var FilBleu = (function FilBleu() {
   return {
     _baseurl: 'http://www.filbleu.fr/',
     _raz: '&raz',
-    _page: 'page.php',
-    _idJourney: 'id=1-1',
+    _page: 'horaires-et-trajets/votre-itineraire-sur-mesure',
+    _idJourney: 'view=itineraire',
     _etapeJourney: 'etape=1',
     _journeys: new Array(),
     _scrapping: 'scrapping',
@@ -90,7 +90,22 @@ var FilBleu = (function FilBleu() {
     },
 
     parseDuree: function(s) {
-      return s.replace(new RegExp('([0-9]+)h([0-9]+)min', 'g'), "$1h$2");
+      var h = s.match(new RegExp('([0-9]+)\\s*h'));
+      var m = s.match(new RegExp('([0-9]+)\\s*min'));
+      var r = "";
+      if (h) {
+        r = h[1] + "h";
+      }
+      if (m) {
+        r += m[1] + "min";
+      } else {
+        r += s.split('h')[1];
+      }
+      return r;
+    },
+
+    parseConn: function(s) {
+      return s.replace(new RegExp('correspondance\\(s\\)\\s+:\\s+([0-9]+)', 'g'), "$1");
     },
 
     pad: function(n) { return n < 10 ? '0' + n : n },
@@ -118,6 +133,7 @@ var FilBleu = (function FilBleu() {
 
     getJourney: function() {
       this.updateScrappingStatus(0, _('initializing'));
+      this._journeyDetailsInfo = {};
       var date = this.getDate(document.getElementById('date').value);
       var hour = this.getHour(document.getElementById('time').value);
       var min = this.getMin(document.getElementById('time').value);
@@ -133,13 +149,13 @@ var FilBleu = (function FilBleu() {
       // Got:
       // Departure=Ballan-Mir%E9+-+La+Taillerie&Arrival=Saint-Pierre-des-Corps+-+St+Pierre+Gare&Date=06%2F11%2F2012&Sens=1&Hour=8&Minute=0&Criteria=1&
       var params = {
-        Departure: d._city + ' - ' + d._name,
-        Arrival: a._city + ' - ' + a._name,
-        Date: date,
-        Sens: document.getElementById('sens').value,
-        Hour: hour,
-        Minute: min,
-        Criteria: document.getElementById('crit').value
+        "iform[Departure]": d._city + ' - ' + d._name,
+        "iform[Arrival]": a._city + ' - ' + a._name,
+        "iform[Date]": date,
+        "iform[Sens]": document.getElementById('sens').value,
+        "iform[Hour]": hour,
+        "iform[Minute]": min,
+        "iform[Criteria]": document.getElementById('crit').value
       }
 
       var targeturl = this._baseurl + this._page + '?' +
@@ -177,7 +193,7 @@ var FilBleu = (function FilBleu() {
 
     extractJourneysList: function(html) {
       var tree = this.html2dom(html);
-      var propositions = tree.querySelector('table[summary="Propositions"]');
+      var propositions = tree.querySelector('div[id="jvmalinList"]');
       console.debug(propositions);
       if (!propositions) {
         throw new JourneysListNotFoundException();
@@ -185,7 +201,7 @@ var FilBleu = (function FilBleu() {
       
       this.updateScrappingStatus(70, _('found-journeys'));
 
-      var journeys = propositions.getElementsByTagName('tr');
+      var journeys = propositions.getElementsByTagName('table');
       console.debug(journeys);
       if (!journeys) {
         throw new JourneysListNotFoundException();
@@ -194,8 +210,7 @@ var FilBleu = (function FilBleu() {
       this.updateScrappingStatus(80, _('extracting-journeys'));
 
       this._journeys = new Array();
-      // first one is header, skip it
-      for (var j = 1; j < journeys.length; j++) {
+      for (var j = 0; j < journeys.length; j++) {
         try {
           var journey = this.extractJourney(journeys[j]);
           console.debug(JSON.stringify(journey));
@@ -209,27 +224,29 @@ var FilBleu = (function FilBleu() {
       this.showJourneysList();
     },
 
-    extractJourney: function(trnode) {
-      var parts = trnode.getElementsByTagName('td');
+    extractJourney: function(tablenode) {
+      var parts = tablenode.getElementsByTagName('td');
       if (parts.length < 1) {
         throw new InvalidJourneyException();
         return {};
       }
       var dates = parts[0];
-      return {
-        dep: this.parseTime(this.htmlpurify(dates.firstChild.textContent)),
-        arr: this.parseTime(this.htmlpurify(dates.lastChild.textContent)),
-        link: this.htmlpurify(parts[1].getElementsByTagName('a')[0].attributes["href"].textContent),
-        duree: this.parseDuree(this.htmlpurify(parts[2].textContent)),
-        conn: this.htmlpurify(parts[3].textContent)
+      var res = {
+        dep: this.parseTime(this.htmlpurify(dates.childNodes[1].textContent)),
+        arr: this.parseTime(this.htmlpurify(dates.childNodes[3].textContent)),
+        link: this.htmlpurify(parts[2].getElementsByTagName('a')[0].attributes["href"].textContent),
+        duree: this.parseDuree(this.htmlpurify(parts[1].childNodes[3].textContent)),
+        conn: this.parseConn(this.htmlpurify(parts[3].getElementsByTagName('p')[0].textContent))
       };
+      return res;
     },
 
     showJourneysList: function() {
       this.ensureClean('journeys-list-container');
       document.getElementById('close-journeys-list')
-        .addEventListener('click',
-            function(ev) { document.location.hash = 'schedule'; });
+        .addEventListener('click', function(ev) {
+          document.location.hash = 'schedule';
+        });
       document.location.hash = this._journeysList;
       var c = document.getElementById('journeys-list-container');
       if (!c) {
@@ -304,7 +321,7 @@ var FilBleu = (function FilBleu() {
 
     extractJourneyDetails: function(html, link) {
       var tree = this.html2dom(html);
-      var itineraire = tree.querySelector('fieldset[class="itineraire"]');
+      var itineraire = tree.querySelector('div[id="jvmalinDetail"]');
       console.debug(itineraire);
       if (!itineraire) {
         throw new JourneyDetailsNotFoundException();
@@ -312,13 +329,9 @@ var FilBleu = (function FilBleu() {
       
       this.updateScrappingStatus(30, _('found-journey-details'));
 
-      var list = itineraire.querySelector('table');
-      console.debug(list);
-      if (!list) {
-        throw new JourneyDetailsNotFoundException();
-      }
-
-      var journey = itineraire.getElementsByTagName('tr');
+      var journey = itineraire.querySelectorAll(
+        'div[class="jvmalinDetail_item"], p[class="correspondance"]'
+      );
       console.debug(journey);
       if (!journey) {
         throw new JourneyDetailsNotFoundException();
@@ -326,11 +339,13 @@ var FilBleu = (function FilBleu() {
 
       this.updateScrappingStatus(40, _('extracting-journey-details'));
 
-      // first one is header, skip it
-      for (var j = 1; j < journey.length; j++) {
-        var step = this.extractJourneyStepDetails(journey[j]);
-        console.debug(JSON.stringify(step));
-        this._journeyDetailsInfo[link].push(step);
+      for (var j = 0; j < journey.length; j++) {
+        var steps = this.extractJourneyStepDetails(journey[j]);
+        for (var k = 0; k < steps.length; k++) {
+          var step = steps[k];
+          console.debug(JSON.stringify(step));
+          this._journeyDetailsInfo[link].push(step);
+        }
       }
 
       this.updateScrappingStatus(100, _('displaying-journey-details'));
@@ -338,103 +353,78 @@ var FilBleu = (function FilBleu() {
     },
 
     extractJourneyStepDetails: function(trnode) {
-      var tds = trnode.querySelectorAll('td');
-      if (!tds) {
-        throw new JourneyDetailsNotFoundException();
+      var ret = [];
+
+      if (trnode.className == "jvmalinDetail_item") {
+        var type = 'indication';
+        var indics = this.extractIndication(trnode.querySelector('div[class="jvmalinDetail_item_right"]'));
+        var mode = trnode.querySelector('div[class="jvmalinDetail_item_left"]').textContent;
+
+        if (indics.length == 2) {
+          ret.push({
+            mode: mode,
+            type: type,
+            time: this.parseTime(trnode.querySelector('div[class="jvmalinDetail_item_middle"]').firstChild.textContent),
+            duration: this.parseDuree(trnode.querySelector('div[class="jvmalinDetail_item_right"]').lastChild.textContent),
+            indic: indics[1]
+          });
+        }
+
+        ret.push({
+          mode: mode,
+          type: type,
+          time: this.parseTime(trnode.querySelector('div[class="jvmalinDetail_item_middle"]').lastChild.textContent),
+          duration: undefined,
+          indic: indics[0]
+        });
       }
 
-      var mode = undefined;
-      var indic = undefined;
-      var type = undefined;
-      var time = undefined;
-      var duration = undefined;
-
-      var nbs = tds.length;
-      switch(nbs) {
-        case 3: // connection
-          var cls = tds[0].className;
-          if (cls == 'indication') {
-            type = 'indication';
-            indic = this.extractIndication(tds[0]);
-            time = this.parseTime(tds[1].textContent);
-          }
-
-          if (cls == 'correspondance') {
-            type = 'connection';
-            duration = this.parseTime(tds[1].textContent);
-          }
-
-          break;
-
-        case 4: // by foot
-        case 5: // journey part
-          var cls = tds[1].className;
-          mode = tds[0].getElementsByTagName('img')[0].attributes['alt'].textContent;
-          if (cls == 'indication') {
-            type = 'indication';
-            indic = this.extractIndication(tds[1]);
-
-            if (nbs == 4) {
-              duration = this.parseTime(tds[2].textContent);
-            }
-
-            if (nbs == 5) {
-              time = this.parseTime(tds[2].textContent);
-              duration = this.parseTime(tds[3].textContent);
-            }
-          }
-          break;
-
-        default:
-          throw new JourneyDetailsUnexpectedElementsException();
-          break;
+      if (trnode.className == "correspondance") {
+        ret.push({
+          mode: undefined,
+          type: 'connection',
+          time: undefined,
+          duration: this.parseDuree(trnode.textContent),
+          indic: undefined
+        });
       }
 
-      return {
-        mode: mode,
-        type: type,
-        time: time,
-        duration: duration,
-        indic: indic
-      };
+      return ret;
     },
 
     extractIndication: function(node) {
-      var type = undefined;
-      var line = undefined;
-      var direction = undefined;
-      var stop = undefined;
+      var ret = [];
 
-      var take = node.textContent.match(/^Prendre/g);
-      var out = node.textContent.match(/^Descendre/g);
-      var walk = node.textContent.match(/^De l'arrêt/g);
+      var take = node.textContent.match(/Prendre/g);
+      var walk = node.textContent.match(/Rejoindre/g);
 
-      var Bs = node.querySelectorAll('b');
+      var Ps = node.querySelectorAll('p');
 
       if (take) {
-        type = 'mount';
-        line = Bs[0].textContent;
-        direction = Bs[1].textContent;
-        stop = Bs[2].textContent;
-      }
-
-      if (out) {
-        type = 'umount';
-        stop = Bs[0].textContent;
+        ret.push({
+          type: 'umount',
+          line: Ps[2].textContent.match(/Ligne (.*) >/)[1],
+          direction: Ps[2].textContent.match(/Ligne .* > (.*)/)[1],
+          stop: Ps[1].textContent.match(/.* : (.*), .*/)[1]
+        });
+        ret.push({
+          type: 'mount',
+          line: Ps[2].textContent.match(/Ligne (.*) >/)[1],
+          direction: Ps[2].textContent.match(/Ligne .* > (.*)/)[1],
+          stop: Ps[0].textContent.match(/De : (.*), .*/)[1]
+        });
       }
 
       if (walk) {
-        type = 'walk';
-        stop = Bs[0].textContent;
-        direction = Bs[1].textContent;
+        ret.push({
+          type: 'walk',
+          line: undefined,
+          direction: Ps[1].textContent.match(/Rejoindre .*: (.*), .*/)[1],
+          stop: Ps[0].textContent.match(/De : (.*), .*/)[1]
+        });
       }
 
-      return {
-        type: type,
-        line: line,
-        direction: direction,
-        stop: stop
-      };
+      return ret;
     },
 
     showJourneyDetails: function(id) {
