@@ -76,4 +76,5 @@
     <string name="stop_search_msg">Enter the name of a stop to search for:</string>
     <string name="no_search_result">No result found!</string>
     <string name="stop_info_msg_lines">The following lines stops here:</string>
+    <string name="btnSwitchDepArr">Swap dep and arr</string>
 </resources>

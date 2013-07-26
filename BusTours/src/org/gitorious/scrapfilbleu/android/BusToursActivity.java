@@ -74,6 +74,7 @@ public class BusToursActivity extends Activity
     private RadioButton targetDeparture;
     private RadioButton targetArrival;
     private Button btnShowStops;
+    private Button btnSwitchDepArr;
 
     private Dialog journeyList;
     private Dialog journeyDetails;
@@ -117,6 +118,7 @@ public class BusToursActivity extends Activity
         this.btnGetClosestStopArrival = (ImageButton)findViewById(R.id.btnGetClosestStopArrival);
         this.btnGetJourney      = (Button)findViewById(R.id.btnGetJourney);
         this.btnShowStops       = (Button)findViewById(R.id.btnShowStops);
+        this.btnSwitchDepArr    = (Button)findViewById(R.id.btnSwitchDepArr);
 
         this.journeyCriteriaValues  = getResources().getStringArray(R.array.journeyCriteriaValues);
         this.sensValues             = getResources().getStringArray(R.array.sensValues);
@@ -220,6 +222,7 @@ public class BusToursActivity extends Activity
         this.btnGetClosestStopArrival.setOnClickListener(new View.OnClickListener() { public void onClick(View arg0) { onClick_btnGetClosestStopArrival(); } });
         this.btnGetJourney.setOnClickListener(new View.OnClickListener() { public void onClick(View arg0) { onClick_btnGetJourney(); } });
         this.btnShowStops.setOnClickListener(new View.OnClickListener() { public void onClick(View arg0) { onClick_btnShowStops(); } });
+        this.btnSwitchDepArr.setOnClickListener(new View.OnClickListener() { public void onClick(View arg0) { onClick_btnSwitchDepArr(); } });
     }
 
     public int getJourneyCriteriaValue()
@@ -279,6 +282,13 @@ public class BusToursActivity extends Activity
         j.setCriteria(String.valueOf(this.getJourneyCriteriaValue()));
 
         new ProcessScrapping().execute(j);
+    }
+
+    public void onClick_btnSwitchDepArr() {
+        String dep = this.getDepartureStopName();
+        String arr = this.getArrivalStopName();
+        this.setDepartureStopName(arr);
+        this.setArrivalStopName(dep);
     }
 
     public void onClick_btnShowStops() {
