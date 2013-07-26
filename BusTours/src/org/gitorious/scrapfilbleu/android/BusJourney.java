@@ -84,8 +84,13 @@ public class BusJourney {
         if (!optgroups.isEmpty()) {
             Log.e("BusTours:BusJourney", "Need to select first optgroup");
 
+            dep = reply.getElementById("Departure").attr("value");
+            arr = reply.getElementById("Arrival").attr("value");
             String depJvmalin = reply.getElementById("DepJvmalin").attr("value");
             String arrJvmalin = reply.getElementById("ArrJvmalin").attr("value");
+
+            Log.e("BusTours:BusJourney", "Reusing dep='" + dep + "'");
+            Log.e("BusTours:BusJourney", "Reusing arr='" + arr + "'");
 
             Iterator<Element> it = optgroups.iterator();
             while (it.hasNext()) {
@@ -93,19 +98,24 @@ public class BusJourney {
                 Element parentElement = current.parent();
                 Log.e("BusTours:BusJourney", "Parent: " + parentElement.tagName() + ":" + parentElement.id());
                 Element firstChoice = current.child(0);
-                String newVal = firstChoice.attr("value");
+                String newValJvmalin = firstChoice.attr("value");
+                String newValue = firstChoice.text();
 
                 if (parentElement.id().equals("DepJvmalin")) {
-                    depJvmalin = newVal;
+                    dep = newValue;
+                    depJvmalin = newValJvmalin;
+                    Log.e("BusTours:BusJourney", "new depJvmalin='" + depJvmalin + "'; dep='" + dep + "'");
                 }
 
                 if (parentElement.id().equals("ArrJvmalin")) {
-                    arrJvmalin = newVal;
+                    arr = newValue;
+                    arrJvmalin = newValJvmalin;
+                    Log.e("BusTours:BusJourney", "new arrJvmalin='" + arrJvmalin + "'; arr='" + arr + "'");
                 }
             }
 
-            Log.e("BusTours:BusJourney", "new dep='" + depJvmalin + "'");
-            Log.e("BusTours:BusJourney", "new arr='" + arrJvmalin + "'");
+            this.cookies = res.cookies();
+            Log.e("BusTours:BusJourney", "new cookies: '" + this.cookies + "'");
 
             reply = URLs.getConnection(this.urlbase)
                 .cookies(this.cookies)
@@ -122,13 +132,9 @@ public class BusJourney {
 
             Log.e("BusTours:BusJourney", "Re-posted form: ");
             Log.e("BusTours:BusJourney", "    Departure=" + dep);
-            if (!dep.equals(depJvmalin)) {
-                Log.e("BusTours:BusJourney", "    DepJvmalin=" + depJvmalin);
-            }
+            Log.e("BusTours:BusJourney", "    DepJvmalin=" + depJvmalin);
             Log.e("BusTours:BusJourney", "    Arrival=" + arr);
-            if (!arr.equals(arrJvmalin)) {
-                Log.e("BusTours:BusJourney", "    ArrJvmalin=" + arrJvmalin);
-            }
+            Log.e("BusTours:BusJourney", "    ArrJvmalin=" + arrJvmalin);
             Log.e("BusTours:BusJourney", "    Sens=" + this.sens);
             Log.e("BusTours:BusJourney", "    Date=" + this.date);
             Log.e("BusTours:BusJourney", "    Hour=" + this.hour);
