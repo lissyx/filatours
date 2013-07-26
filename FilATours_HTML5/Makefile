@@ -15,7 +15,7 @@ $(TEMPDIR):
 
 webapp: $(TEMPDIR)
 	cp -a * $(TEMPDIR)
-	rm $(TEMPDIR)/shared
+	rm -rf $(TEMPDIR)/shared
 	mkdir -p $(TEMPDIR)/shared
 	cp -a shared/style $(TEMPDIR)/shared/
 	cp -a shared/style_unstable $(TEMPDIR)/shared/
@@ -25,6 +25,9 @@ webapp: $(TEMPDIR)
 purge:
 	cd $(TEMPDIR); \
 	rm -f ext/OpenLayers/*.debug.js; \
+	rm -f ext/OpenLayers/OpenLayers.light.js; \
+	rm -f ext/OpenLayers/OpenLayers.mobile.js; \
+	rm -f ext/OpenLayers/lib/deprecated.js; \
 	rm -rf ext/OpenLayers/lib/Firebug/; \
 	rm -rf test/; \
 	find shared/style/ -type f -name "*.html" -exec rm {} \; ; \
