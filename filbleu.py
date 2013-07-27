@@ -596,9 +596,13 @@ class Indication:
 			self.stop = bs[0].text
 
 class BusStop:
-	def __init__(self, name, linkbase):
+	def __init__(self, id, name, city):
+		self.id = id
 		self.name = name
-		self.linkbase = linkbase
+		self.stop_name = name
+		self.city = city
+		self.linkbase = ""
+		self.stopArea = self.id + "|" + self.stop_name.decode('utf-8') + "|" + self.city.decode('utf-8')
 
 	def parse_stopArea(self):
 		search = re.compile(r"(.*)\|(.*)\|(.*)").search(self.stopArea)
@@ -640,10 +644,11 @@ class FilBleu:
 		self.browser.set_handle_robots(False)
 
 		self.base    = "http://www.filbleu.fr/"
-		self.baseurl = self.base + "page.php"
+		self.baseurl = self.base + "horaires-et-trajets/"
+		self.dirs    = "index.php?option=com_infosvoyageurs&view=horairesarret&format=raw&task=horairesarret.getdirs"
+		self.arrets  = "index.php?option=com_infosvoyageurs&view=horairesarret&format=raw&task=horairesarret.getarrets"
 		self.url_raz = "&raz"
 		self.periode = "&periode="
-		self.current_id = ""
 		self.etape = ""
 		self.pdfs_dir = "pdfs"
 
@@ -867,15 +872,14 @@ class FilBleu:
 		return res
 
 	def page_lines(self):
-		self.current_id = "1-2"
+		self.baseurl += "horaires-par-arret/horaires-par-arret-bus-tram-sept-2013"
 		self.etape = ""
 
 	def page_stops(self):
-		self.current_id = "1-2"
-		self.etape = "2"
+		pass
 
 	def page_journey(self):
-		self.current_id = "1-1"
+		self.baseurl += "votre-itineraire-sur-mesure"
 		self.etape = ""
 
 	def list_stops(self):
@@ -919,8 +923,7 @@ class FilBleu:
 		for found in self.founds:
 			ff = self.founds[found]
 			for e in ff['ends']:
-				line = "Stop: %(stop_name)s (%(stop_city)s) => %(stop_area)s [%(lineid)s]\n" % { 'lineid': e, 'stop_name': ff['stop'].stop_name, 'stop_city': ff['stop'].city, 'stop_area': ff['stop'].stopArea }
-				line = line.encode('utf-8')
+				line = "Stop: %(stop_name)s (%(stop_city)s) => %(stop_area)s [%(lineid)s]\n" % { 'lineid': e, 'stop_name': ff['stop'].stop_name, 'stop_city': ff['stop'].city, 'stop_area': ff['stop'].stopArea.encode('utf-8') }
 				sys.stdout.write(line)
 
 	def list_stops_complex(self):
@@ -1017,45 +1020,26 @@ class FilBleu:
 				line = line.encode('utf-8')
 				sys.stdout.write(line)
 
-	def get_stops_sens(self, sens):
+	def get_stops_sens(self, sens, lineid):
 		self.page_stops()
-		self.raz()
-		self.browser.select_form(name="form1")
-		self.browser["Sens"] = [ str(sens) ]
-		self.browser.submit()
-		return BeautifulSoup.BeautifulSoup(self.browser.response().read())
+		self.browser.open(self.baseurl + self.arrets + "&id_ligne=" + str(lineid) + "&direction=" + str(sens))
+		return BeautifulSoup.BeautifulSoup(self.browser.response().read(), convertEntities=BeautifulSoup.BeautifulSoup.HTML_ENTITIES)
 
 	def get_stops(self):
-		self.current_id = "1-2"
 		self.raz()
 		self.stops = {}
 		linkBase = ""
-		soups = [ self.get_stops_sens(1), self.get_stops_sens(-1) ]
-		for soup in soups:
-			sensInput = soup.find("input", attrs = {'name': 'Sens'})
-			searchLinkBase = re.compile(r"grille-horaires.*\.php").search(soup.text)
-			if searchLinkBase:
-				linkBase = searchLinkBase.group(0) + "?Sens=" + sensInput["value"] + "&"
+		lineid = self.args.list_stops
+		soups = [ self.get_stops_sens(1, lineid), self.get_stops_sens(2, lineid) ]
+		if not lineid in self.stops.keys():
+			self.stops[lineid] = {}
 
-			sens = soup.find("form")
-			stops = sens.findAll("option")
-			for fs in sens.findAll("fieldset"):
-				fs.clear()
-			for t in sens.findAll("table"):
-				t.clear()
-			lineid = self.args.list_stops
-			multi = self.html_br_strip(sens.getText())
-			if multi.count(" |") == 1:
-				search = re.compile(r"(.*) \|(.*)").search(multi)
-				if search:
-					lineid = self.args.list_stops + "" + search.group(1)
-			if not lineid in self.stops.keys():
-				self.stops[lineid] = {}
-			for stop in stops:
-				if not stop["value"] == "":
-					s = BusStop(stop.text, linkBase)
-					s.set_stopArea(stop["value"])
-					self.stops[lineid][s.id+':'+sensInput["value"]] = s
+		for soup in soups:
+			for line in soup.find('select', attrs = { 'id': 'selectarrets' }).findAll('option'):
+				if line["value"] == "0":
+					continue
+				s = BusStop(line["value"], line.text.encode('utf-8'), line.parent["label"].encode('utf-8'))
+				self.stops[lineid][s.id] = s
 
 	def get_stops_offline(self, lineid):
 		self.args.list_stops = lineid
@@ -1079,53 +1063,29 @@ class FilBleu:
 		for line in self.lines:
 			line = self.lines[line]
 			out = "Line(id=%(line_id)s): " % { 'line_id': line.id }
-			# circular lines
+
 			if len(line.ends) == 1:
-				out += "number=%(line_number)s; name='%(ends)s'" % { 'line_number': line.number, 'ends': line.ends[0] }
-			else:
-				# classic, one end on both 
-				if type(line.ends[0]) == unicode and type(line.ends[1]) == unicode:
-					if line.ends[0].startswith("A |") or line.ends[0].startswith("B |") or line.ends[1].startswith("A |") or line.ends[1].startswith("B |"):
-						AorB_end_one = line.ends[0].split("|")[0].strip()
-						AorB_end_two = line.ends[1].split("|")[0].strip()
-						out += "number=%(line_number)s; name={'%(end_one)s'}" % { 'line_number': line.number + AorB_end_one, 'end_one': line.ends[0].split("|")[1].strip() }
-						out += " | number=%(line_number)s; name={'%(end_two)s'}" % { 'line_number': line.number + AorB_end_two, 'end_two': line.ends[1].split("|")[1].strip() }
-					else:
-						out += "number=%(line_number)s; name={'%(end_one)s','%(end_two)s'}" % { 'line_number': line.number, 'end_one': line.ends[0], 'end_two': line.ends[1] }
-				else:
-					# one side is good
-					if type(line.ends[0]) == unicode:
-						AorB_end_one = line.ends[1][0].split("|")[0].strip()
-						AorB_end_two = line.ends[1][1].split("|")[0].strip()
-						out += "number=%(line_number)s; name={'%(end_one)s','%(end_two)s'}" % { 'line_number': line.number + AorB_end_one, 'end_one': line.ends[0], 'end_two': line.ends[1][0].split("|")[1].strip() }
-						out += " | number=%(line_number)s; name={'%(end_one)s','%(end_two)s'}" % { 'line_number': line.number + AorB_end_two, 'end_one': line.ends[0], 'end_two': line.ends[1][1].split("|")[1].strip() }
-					if type(line.ends[1]) == unicode:
-						AorB_end_one = line.ends[0][0].split("|")[0].strip()
-						AorB_end_two = line.ends[0][1].split("|")[0].strip()
-						out += "number=%(line_number)s; name={'%(end_one)s','%(end_two)s'}" % { 'line_number': line.number + AorB_end_one, 'end_one': line.ends[0], 'end_two': line.ends[0][0].split("|")[1].strip() }
-						out += " | number=%(line_number)s; name={'%(end_one)s','%(end_two)s'}" % { 'line_number': line.number + AorB_end_two, 'end_one': line.ends[0], 'end_two': line.ends[0][1].split("|")[1].strip() }
+				end = line.ends[0].strip().decode('utf-8')
+				out += "number=%(line_number)s; name={'%(end)s'}" % { 'line_number': line.number, 'end': end}
 
-					if type(line.ends[0]) == list and type(line.ends[1]) == list:
-						end_one_first = ""
-						end_one_second = ""
-						end_two_first = ""
-						end_two_second = ""
-						AorB_end_one_first = line.ends[0][0].split("|")[0].strip()
-						AorB_end_two_first = line.ends[0][1].split("|")[0].strip()
-						AorB_end_one_second = line.ends[1][0].split("|")[0].strip()
-						AorB_end_two_second = line.ends[1][1].split("|")[0].strip()
-
-						if AorB_end_one_first == 'A' and AorB_end_one_second == 'A':
-							end_one_first = line.ends[0][0].split("|")[1].strip()
-							end_two_first = line.ends[1][0].split("|")[1].strip()
-
-						if AorB_end_two_first == 'B' and AorB_end_two_second == 'B':
-							end_one_second = line.ends[0][1].split("|")[1].strip()
-							end_two_second = line.ends[1][1].split("|")[1].strip()
-
-						out += "number=%(line_number)s; name={'%(end_one)s','%(end_two)s'}" % { 'line_number': line.number + 'A', 'end_one': end_one_first, 'end_two': end_two_first }
-						out += " | number=%(line_number)s; name={'%(end_one)s','%(end_two)s'}" % { 'line_number': line.number + 'B', 'end_one': end_one_second, 'end_two': end_two_second }
-
+			# classic, one end on both
+			if len(line.ends) == 2:
+				if type(line.ends[0]) == str and type(line.ends[1]) == str:
+					end_one = line.ends[0].strip().decode('utf-8')
+					end_two = line.ends[1].strip().decode('utf-8')
+					out += "number=%(line_number)s; name={'%(end_one)s','%(end_two)s'}" % { 'line_number': line.number, 'end_one': end_one, 'end_two': end_two}
+				if len(line.ends[0]) == 2 and type(line.ends[1]) == str:
+					Aend_one = line.ends[0][0].strip().decode('utf-8')
+					Bend_one = line.ends[0][1].strip().decode('utf-8')
+					end_two = line.ends[1].strip().decode('utf-8')
+					out += "number=%(line_number)s; name={'%(end_one)s','%(end_two)s'}" % { 'line_number': line.number + 'A', 'end_one': Aend_one, 'end_two': end_two}
+					out += " | number=%(line_number)s; name={'%(end_one)s','%(end_two)s'}" % { 'line_number': line.number + 'B', 'end_one': Bend_one, 'end_two': end_two}
+				if type(line.ends[0]) == str and len(line.ends[1]) == 2:
+					end_one = line.ends[0].strip().decode('utf-8')
+					Aend_two = line.ends[1][0].strip().decode('utf-8')
+					Bend_two = line.ends[1][1].strip().decode('utf-8')
+					out += "number=%(line_number)s; name={'%(end_one)s','%(end_two)s'}" % { 'line_number': line.number + 'A', 'end_one': end_one, 'end_two': Aend_two}
+					out += " | number=%(line_number)s; name={'%(end_one)s','%(end_two)s'}" % { 'line_number': line.number + 'B', 'end_one': end_one, 'end_two': Bend_two}
 			out += "\n"
 			out = out.encode('utf-8')
 			sys.stdout.write(out)
@@ -1134,55 +1094,61 @@ class FilBleu:
 		self.page_lines()
 		self.raz()
 		self.lines = {}
-		soup = BeautifulSoup.BeautifulSoup(self.browser.response().read())
-		for line in soup.findAll('a', attrs = { 'style': 'text-decoration:none' }):
-			search = re.compile(r"Line=(.*)\|(.*)").search(line['href'])
-			if search:
-				lineid = search.group(1)
-				linenb = search.group(2)
+		soup = BeautifulSoup.BeautifulSoup(self.browser.response().read(), convertEntities=BeautifulSoup.BeautifulSoup.HTML_ENTITIES)
+		for line in soup.find('select', attrs = { 'id': 'selectlignes' }).findAll('option'):
+			lineid = line['value']
+			linenb = line.text.split(' - ')[0]
 
-				if not self.lines.has_key(lineid):
-					self.lines[lineid] = BusLine(id=lineid, num=linenb)
+			if lineid == '0':
+				continue
 
-				divs = line.findAll('div')
-				if divs:
-					stops = []
-					for div in divs:
-						stop = self.html_br_strip(div.text)
-						if len(divs) > 1:
-							stops.append(stop)
-						else:
-							stops = stop
-					self.lines[lineid].add_end(stops)
+			if not self.lines.has_key(lineid):
+				self.lines[lineid] = BusLine(id=lineid, num=linenb)
+
+			dirs = self.baseurl + self.dirs + "&id_ligne=" + lineid
+			self.browser.open(dirs)
+			soup = BeautifulSoup.BeautifulSoup(self.browser.response().read(), convertEntities=BeautifulSoup.BeautifulSoup.HTML_ENTITIES)
+			for opt in soup.findAll('option'):
+				if opt['value'] == '0':
+					continue
+				if opt.text.find(' - ') == -1:
+					self.lines[lineid].add_end(opt.text.encode('utf-8'))
 				else:
-					stop = self.html_br_strip(line.text)
-					if len(stop) > 0:
-						self.lines[lineid].add_end(stop)
+					stops = []
+					for s in opt.text.split(' - '):
+						stops.append(s.encode('utf-8'))
+					self.lines[lineid].add_end(stops)
+
 
 	def get_stop_coords(self):
 		self.journeys = []
 		self.page_journey()
 		self.raz()
-		self.browser.select_form(name="formulaire")
-		self.browser["Departure"] = self.strip_accents(unicode(self.args.get_stop_coords, "UTF-8"))
-		self.browser["Arrival"] = "Unknwonstop"
-		self.browser["Sens"] = [ "1" ]
-		self.browser["Date"] = "42/42/2042"
-		self.browser["Hour"] = [ "13" ]
-		self.browser["Minute"] = [ "35" ]
-		self.browser["Criteria"] = [ "1" ]
+		self.browser.select_form(nr=0)
+		self.browser["iform[Departure]"] = self.strip_accents(unicode(self.args.get_stop_coords, "UTF-8"))
+		self.browser["iform[Arrival]"] = "Unknwonstop"
+		self.browser["iform[Sens]"] = [ "1" ]
+		self.browser["iform[Date]"] = "02/09/2013"
+		self.browser["iform[Hour]"] = [ "13" ]
+		self.browser["iform[Minute]"] = [ "35" ]
+		self.browser["iform[Criteria]"] = [ "1" ]
 		self.browser.submit()
 		soup = BeautifulSoup.BeautifulSoup(self.browser.response().read())
-		form = soup.find('form', attrs = {'name': 'formulaire'})
+		form = soup.find('form')
 		if form:
-			stopArea = self.extract_stopArea(form, 'Departure', self.strip_accents(unicode(self.args.get_stop_coords, "UTF-8")))
+			stopArea = self.extract_stopArea(form, 'DepJvmalin', self.strip_accents(unicode(self.args.get_stop_coords, "UTF-8")))
+			type = stopArea.split('|')[0]
+			if type != 'StopArea':
+				print "Cannot find a match stopArea for: %(stop_name)s" % {'stop_name': self.args.get_stop_coords}
+				return
+
 			values = stopArea.replace(",", ".").split("|")
 			east = float(values[6])
 			north = float(values[7])
 
 			(degrees_e, degrees_n) = self.lambert2c_to_deg(east, north)
 
-			l = "Found a stop matching stopArea: [%(stop_area)s]; Lambert2+: {E:%(lb2p_e)f, N:%(lb2p_n)f}; Degrees: {E:%(degrees_e)f, N:%(degrees_n)f}\n" % {'stop_area': stopArea, 'lb2p_e': east, 'lb2p_n': north, 'degrees_e': degrees_e, 'degrees_n': degrees_n}
+			l = "Found a stop matching stopArea: [%(stop_area)s]; Lambert2+: {E:%(lb2p_e)f, N:%(lb2p_n)f}; Degrees: {E:%(degrees_e)f, N:%(degrees_n)f} -- OSM: http://www.openstreetmap.org/?mlat=%(degrees_e)f&mlon=%(degrees_n)f&zoom=18&layers=M\n" % {'stop_area': stopArea, 'lb2p_e': east, 'lb2p_n': north, 'degrees_e': degrees_e, 'degrees_n': degrees_n}
 			l = l.encode('utf-8')
 			sys.stdout.write(l)
 		else:
@@ -1387,27 +1353,25 @@ class FilBleu:
 				current += 1
 
 	def raz(self):
-		if not self.current_id == "":
-			url = self.baseurl + "?id=" + self.current_id
-			if not self.etape == "":
-				url += "&etape=" + self.etape
-				if self.args.list_stops:
-					linespecs = self.lines_to_lineSpec(self.args.list_stops)
-					line = ""
-					for lspec in linespecs:
-						line = lspec['number'].replace("A", "").replace("B", "")
-					url += "&Line=" + self.args.list_stops + "|" + line
-			else:
-				url += self.url_raz
-				today = datetime.date.today()
-				start_ete = datetime.date(today.year, 7, 2)
-				stop_ete = datetime.date(today.year, 9, 1)
-				p = "1"
-				if today >= start_ete and today <= stop_ete:
-					p = "2"
-				url += self.periode + p
+		url = self.baseurl
+		if not self.etape == "":
+			url += "&etape=" + self.etape
+			if self.args.list_stops:
+				linespecs = self.lines_to_lineSpec(self.args.list_stops)
+				line = ""
+				for lspec in linespecs:
+					line = lspec['number'].replace("A", "").replace("B", "")
+				url += "&Line=" + self.args.list_stops + "|" + line
+#		else:
+#			today = datetime.date.today()
+#			start_ete = datetime.date(today.year, 7, 2)
+#			stop_ete = datetime.date(today.year, 9, 1)
+#			p = "1"
+#			if today >= start_ete and today <= stop_ete:
+#				p = "2"
+#			url += self.periode + p
 
-			self.browser.open(url)
+		self.browser.open(url)
 	
 	def distance(self, p1, p2):
 		R = 6378000.0
