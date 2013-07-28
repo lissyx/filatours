@@ -19,11 +19,10 @@ public class SeasonPicker {
 		return date.after(SeasonPicker.getTramProd()) && season.equals("tram");
 	}
 
-	public static String pick() {
+	public static String pickFromDate(Calendar date) {
 		String seasonPicked;
-		Calendar today = Calendar.getInstance();
 
-		if (today.after(SeasonPicker.getTramProd())) {
+		if (date.after(SeasonPicker.getTramProd())) {
 			seasonPicked = "tram";
 		} else {
 			seasonPicked = "classic";
@@ -32,5 +31,9 @@ public class SeasonPicker {
 	        Log.e("BusTours:SeasonPicker", "Picked " + seasonPicked);
 
 		return seasonPicked;
+	}
+
+	public static String pick() {
+		return Calendar.getInstance();
 	}
 }
