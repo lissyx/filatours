@@ -1148,7 +1148,7 @@ class FilBleu:
 
 			(degrees_e, degrees_n) = self.lambert2c_to_deg(east, north)
 
-			l = "Found a stop matching stopArea: [%(stop_area)s]; Lambert2+: {E:%(lb2p_e)f, N:%(lb2p_n)f}; Degrees: {E:%(degrees_e)f, N:%(degrees_n)f} -- OSM: http://www.openstreetmap.org/?mlat=%(degrees_e)f&mlon=%(degrees_n)f&zoom=18&layers=M\n" % {'stop_area': stopArea, 'lb2p_e': east, 'lb2p_n': north, 'degrees_e': degrees_e, 'degrees_n': degrees_n}
+			l = "Found a stop matching stopArea: [%(stop_area)s]; Lambert2+: {E:%(lb2p_e)f, N:%(lb2p_n)f}; Degrees: {E:%(degrees_e)f, N:%(degrees_n)f}\n" % {'stop_area': stopArea, 'lb2p_e': east, 'lb2p_n': north, 'degrees_e': degrees_e, 'degrees_n': degrees_n}
 			l = l.encode('utf-8')
 			sys.stdout.write(l)
 		else:
