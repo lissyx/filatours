@@ -16,7 +16,16 @@ public class SeasonPicker {
         Calendar date = Calendar.getInstance();
         date.set(year, month, day);
 
-        return date.after(SeasonPicker.getTramProd()) && season.equals("tram");
+        if (season.equals("tram")) {
+            return date.after(SeasonPicker.getTramProd());
+        }
+
+        if (season.equals("classic")) {
+            return date.before(SeasonPicker.getTramProd());
+        }
+
+        // should not be reached
+        return false;
     }
 
     public static String pickFromDate(Calendar date) {
