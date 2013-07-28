@@ -34,6 +34,6 @@ public class SeasonPicker {
     }
 
     public static String pick() {
-        return Calendar.getInstance();
+        return SeasonPicker.pickFromDate(Calendar.getInstance());
     }
 }
