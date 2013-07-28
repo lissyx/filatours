@@ -77,4 +77,5 @@
     <string name="no_search_result">No result found!</string>
     <string name="stop_info_msg_lines">The following lines stops here:</string>
     <string name="btnSwitchDepArr">Swap dep and arr</string>
+    <string name="askingEnlargement">Asking for enlargement</string>
 </resources>

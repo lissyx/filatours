@@ -77,4 +77,5 @@
     <string name="no_search_result">Aucun résultat trouvé !</string>
     <string name="stop_info_msg_lines">Cet arrêt est desservi par les lignes :</string>
     <string name="btnSwitchDepArr">Échanger dep. et arr.</string>
+    <string name="askingEnlargement">Élargissement de la zone</string>
 </resources>

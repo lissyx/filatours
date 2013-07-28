@@ -144,12 +144,26 @@ public class BusJourney {
 
         parent.progress(40, R.string.jsoupPostedForm);
 
-        Elements alerte = reply.getElementsByAttributeValue("class", "alerte");
+        Elements alerte = reply.getElementsByClass("alert");
         if (alerte.isEmpty()) {
             Log.e("BusTours:BusJourney", "No alerte, cool.");
         } else {
             Log.e("BusTours:BusJourney", "Got alerte:" + alerte.first().text());
-            throw new ScrappingException(alerte.first().text());
+            String exceptionText = alerte.first().text();
+            if (alerte.first().html().contains("itineraire.enlarge")) {
+                Elements alerteA = alerte.first().getElementsByClass("submit_bt");
+                if (!alerteA.isEmpty()) {
+                    String enlargeUrl = URLs.siteBase + alerteA.first().attr("href");
+                    Log.e("BusTours:BusJourney", "Got an enlarge:" + alerteA.first().html());
+                    Log.e("BusTours:BusJourney", "Got an enlarge URL:" + enlargeUrl);
+                    parent.progress(45, R.string.askingEnlargement);
+                    reply = URLs.getConnection(enlargeUrl)
+                        .cookies(this.cookies)
+                        .get();
+                }
+            } else {
+                throw new ScrappingException(exceptionText);
+            }
         }
 
         Elements navig = reply.getElementsByAttributeValue("id", "jvmalinList");

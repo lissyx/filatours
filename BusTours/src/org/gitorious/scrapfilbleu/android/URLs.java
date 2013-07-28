@@ -8,6 +8,7 @@ import org.jsoup.Connection;
 public class URLs {
     private String param;
     static final String raz = "raz";
+    static final String siteBase = "http://www.filbleu.fr/";
     static final String urlBase = "http://www.filbleu.fr/horaires-et-trajets/votre-itineraire-sur-mesure";
     static final int timeout = 10000;
 
