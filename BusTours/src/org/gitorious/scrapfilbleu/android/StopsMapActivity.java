@@ -48,6 +48,7 @@ public class StopsMapActivity extends MapViewActivity
 {
 	private static Context context;
     private String[] stopsNames;
+    private String mSeason;
     private double[] latitudes;
     private double[] longitudes;
     private boolean dep;
@@ -89,11 +90,10 @@ public class StopsMapActivity extends MapViewActivity
         this.saveBBOX = true;
         this.showStopsOverlay = false;
 
-        this.lines = new BusLines();
-
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             this.stopsNames = extras.getStringArray("stopsNames");
+            this.mSeason = extras.getString("mSeason");
             this.latitudes = extras.getDoubleArray("latitudes");
             this.longitudes = extras.getDoubleArray("longitudes");
             this.whereAmI = (Location)extras.get("location");
@@ -111,6 +111,8 @@ public class StopsMapActivity extends MapViewActivity
                 }
             }
         }
+
+        this.lines = new BusLines(this.mSeason);
 
         if (this.stopsNames != null && this.latitudes != null && this.longitudes != null) {
             if (this.stopsNames.length == this.latitudes.length && this.latitudes.length == this.longitudes.length && this.longitudes.length > 0) {
@@ -276,7 +278,7 @@ public class StopsMapActivity extends MapViewActivity
 
     public void enterStopSearch()
     {
-        this.stops = new BusStops();
+        this.stops = new BusStops(this.mSeason);
         ArrayAdapter<String> stopAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, this.stops.getStops());
         final AutoCompleteTextView inputStop = new AutoCompleteTextView(this);
         inputStop.setThreshold(1);
@@ -352,8 +354,14 @@ public class StopsMapActivity extends MapViewActivity
 
     public void displayStopInfos(OverlayItem item)
     {
+        String msg;
         List<String> lines = this.lines.getLine(item.mTitle);
-        String msg = getString(R.string.stop_info_msg_lines) + " " + TextUtils.join(", ", lines);
+
+        if (lines.size() > 0) {
+            msg = getString(R.string.stop_info_msg_lines) + " " + TextUtils.join(", ", lines);
+        } else {
+            msg = getString(R.string.stop_info_msg_nolines);
+        }
 
         AlertDialog.Builder dialog = new AlertDialog.Builder(StopsMapActivity.this);
         dialog.setTitle(item.mTitle);

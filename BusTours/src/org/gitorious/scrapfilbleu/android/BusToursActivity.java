@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.text.DecimalFormat;
+import java.util.Calendar;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -95,6 +96,11 @@ public class BusToursActivity extends Activity
     private String geoLocTarget;
     private ProgressDialog geoLocDialog;
     private static final long maxLocationAge = 15 * 1000 * 60;
+    private String mSeason;
+
+    static int oldYear = -1;
+    static int oldMonth = -1;
+    static int oldDay = -1;
 
     /** Called when the activity is first created. */
     @Override
@@ -123,7 +129,8 @@ public class BusToursActivity extends Activity
         this.journeyCriteriaValues  = getResources().getStringArray(R.array.journeyCriteriaValues);
         this.sensValues             = getResources().getStringArray(R.array.sensValues);
 
-        this.stops = new BusStops();
+        this.stops = new BusStops("");
+        this.mSeason = SeasonPicker.pick();
 
         this.mLocManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
         Criteria crit = new Criteria();
@@ -168,6 +175,13 @@ public class BusToursActivity extends Activity
         }
     }
 
+    public void resetStopsAdapter() {
+        // fill stop autocomplete
+        ArrayAdapter<String> stopAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, this.stops.getStops());
+        this.txtStopDeparture.setAdapter(stopAdapter);
+        this.txtStopArrival.setAdapter(stopAdapter);
+    }
+
     public void fill(Bundle state)
     {
         // fill journey criteria
@@ -181,11 +195,7 @@ public class BusToursActivity extends Activity
         sensAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         this.sens.setAdapter(sensAdapter);
         */
-
-        // fill stop autocomplete
-        ArrayAdapter<String> stopAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, this.stops.getStops());
-        this.txtStopDeparture.setAdapter(stopAdapter);
-        this.txtStopArrival.setAdapter(stopAdapter);
+        this.resetStopsAdapter();
 
         if (state != null) {
             Log.e("BusTours:Bundle", "Restoring values ...");
@@ -217,6 +227,16 @@ public class BusToursActivity extends Activity
     {
         this.txtStopDeparture.setThreshold(2);
         this.txtStopArrival.setThreshold(2);
+        Calendar cal = Calendar.getInstance();
+        this.date.init(
+            cal.get(Calendar.YEAR),
+            cal.get(Calendar.MONTH),
+            cal.get(Calendar.DAY_OF_MONTH),
+            new DatePicker.OnDateChangedListener() {
+                public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                    onDateChanged_date(year, monthOfYear, dayOfMonth);
+                };
+        });
         this.time.setIs24HourView(true);
         this.btnGetClosestStopDeparture.setOnClickListener(new View.OnClickListener() { public void onClick(View arg0) { onClick_btnGetClosestStopDeparture(); } });
         this.btnGetClosestStopArrival.setOnClickListener(new View.OnClickListener() { public void onClick(View arg0) { onClick_btnGetClosestStopArrival(); } });
@@ -377,6 +397,30 @@ public class BusToursActivity extends Activity
 
     public void onClick_btnGetClosestStopArrival() {
         this.updateLocation("arr");
+    }
+
+    public void onDateChanged_date(int year, int month, int day) {
+        if (this.oldYear == year && this.oldMonth == month && this.oldDay == day) {
+            Log.e("BusTours:DateChanged", "Same date ...");
+            return;
+        }
+
+        this.oldYear = year;
+        this.oldMonth = month;
+        this.oldDay = day;
+
+        Log.e("BusTours:DateChanged", "Set to " + year + "/" + (month+1) + "/" + day);
+        if (!SeasonPicker.checkDate(this.mSeason, year, month, day)) {
+            this.alertInfoBox(getString(R.string.invalidDate), getString(R.string.descInvalidDate));
+            Calendar date = Calendar.getInstance();
+            date.set(year, month, day);
+            this.mSeason = SeasonPicker.pickFromDate(date);
+            Log.e("BusTours:DateChanged", "Reloading with " + this.mSeason);
+            this.stops = new BusStops(this.mSeason);
+            this.resetStopsAdapter();
+            this.setDepartureStopName("");
+            this.setArrivalStopName("");
+        }
     }
 
     public String getGeoLocTarget() {
@@ -807,6 +851,7 @@ public class BusToursActivity extends Activity
         Intent intentStopsView = new Intent(this, StopsMapActivity.class);
 
         intentStopsView.putExtra("stopsNames", stopsNames);
+        intentStopsView.putExtra("mSeason", this.mSeason);
         intentStopsView.putExtra("latitudes", latitudes);
         intentStopsView.putExtra("longitudes", longitudes);
         intentStopsView.putExtra("location", this.getLastLocation());
