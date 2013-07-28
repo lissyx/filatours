@@ -76,6 +76,14 @@
     <string name="stop_search_msg">Enter the name of a stop to search for:</string>
     <string name="no_search_result">No result found!</string>
     <string name="stop_info_msg_lines">The following lines stops here:</string>
+    <string name="stop_info_msg_nolines">No line stops here! That looks like a bug :(</string>
     <string name="btnSwitchDepArr">Swap dep and arr</string>
     <string name="askingEnlargement">Asking for enlargement</string>
+    <string name="invalidDate">Invalid date</string>
+    <string name="descInvalidDate">This date is not compatible with the selected set of stops and lines. Your departure and arrival stops will be cleared and the correct set of data will be loaded.</string>
+    <string name="msgTitleWelcome">Welcome!</string>
+    <string name="msgDescWelcome">This application is not endorsed to FilBleu. It makes uses of the website to allow you easier access from your mobile device. Do not hesitate to report any bugs.</string>
+    <string name="msgTitleWelcomeUp">Welcome to new version!</string>
+    <string name="msgDescMajornews">We have to tell you about some new features.</string>
+    <string name="msgDescWelcomeUp">Tram stops and lines will be loaded automatically depending on its availability (expected after August 31st, 2013), whether regarding current date or the date you picked.</string>
 </resources>

@@ -76,6 +76,14 @@
     <string name="stop_search_msg">Entrez le nom d\'un arrêt à chercher :</string>
     <string name="no_search_result">Aucun résultat trouvé !</string>
     <string name="stop_info_msg_lines">Cet arrêt est desservi par les lignes :</string>
+    <string name="stop_info_msg_nolines">Cet arrêt n\'est pas desservi ! Ça ressemble à un bug :(</string>
     <string name="btnSwitchDepArr">Échanger dep. et arr.</string>
     <string name="askingEnlargement">Élargissement de la zone</string>
+    <string name="invalidDate">Date invalide</string>
+    <string name="descInvalidDate">Cette date n\'est pas cohérente avec le jeu d\'arrêts et de lignes actuellement chargés. Vos arrêts de départ et d\'arrivée vont être effacés et le jeu de données adapté sera chargé.</string>
+    <string name="msgTitleWelcome">Bienvenue !</string>
+    <string name="msgDescWelcome">Cette application est sans lien avec FilBleu. Elle utilise le site web pour vous permettre un accès plus facile depuis votre périphérique mobile. N\'hésitez-pas à rapporter tout bug.</string>
+    <string name="msgTitleWelcomeUp">Bienvenue !</string>
+    <string name="msgDescMajornews">Nous devons vous parler de certaines nouvelles fonctionnalités.</string>
+    <string name="msgDescWelcomeUp">Les arrêts et lignes du tram seront chargés automatiquement si le tram est disponible (attendu pour le 31 août 2013) soit suivant la date du jour, ou bien suivant la date que vous sélectionnez.</string>
 </resources>

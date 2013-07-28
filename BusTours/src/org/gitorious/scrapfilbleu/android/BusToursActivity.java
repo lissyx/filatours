@@ -21,6 +21,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
+import android.content.ComponentName;
+import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager.NameNotFoundException;
 
 import android.location.Criteria;
 import android.location.Location;
@@ -32,6 +36,8 @@ import android.util.Log;
 import android.os.Bundle;
 import android.os.AsyncTask;
 import android.os.Looper;
+
+import android.preference.PreferenceManager;
 
 import android.net.Uri;
 
@@ -102,6 +108,13 @@ public class BusToursActivity extends Activity
     static int oldMonth = -1;
     static int oldDay = -1;
 
+    private int storedVersionCode;
+    private int versionCode;
+    private String versionName;
+    private AlertDialog updateDialog;
+    private AlertDialog firstRunDialog;
+    private SharedPreferences prefs;
+
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -139,6 +152,7 @@ public class BusToursActivity extends Activity
 
         this.fill(savedInstanceState);
         this.bindWidgets();
+        this.checkFirstRun();
     }
 
     @Override
@@ -173,6 +187,61 @@ public class BusToursActivity extends Activity
             this.setFromIntent(data.getExtras());
             closestStops.dismiss();
         }
+    }
+
+    public static String getVersionName(Context context, Class cls) {
+        try {
+            ComponentName comp = new ComponentName(context, cls);
+            PackageInfo pinfo = context.getPackageManager().getPackageInfo(comp.getPackageName(), 0);
+            return pinfo.versionName;
+        } catch (NameNotFoundException e) {
+            return "";
+        }
+    }
+
+    public static int getVersionCode(Context context, Class cls) {
+        try {
+            ComponentName comp = new ComponentName(context, cls);
+            PackageInfo pinfo = context.getPackageManager().getPackageInfo(comp.getPackageName(), 0);
+            return pinfo.versionCode;
+        } catch (NameNotFoundException e) {
+            return -1;
+        }
+    }
+
+    public void checkFirstRun() {
+        AlertDialog d = null;
+        this.versionName = BusToursActivity.getVersionName(this, BusToursActivity.class);
+        this.versionCode = BusToursActivity.getVersionCode(this, BusToursActivity.class);
+        this.prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        this.storedVersionCode = this.prefs.getInt("versionCode", -1);
+
+        Log.e("BusTours:checkFirstRun",
+              "Current version=" + this.versionCode +
+              " -- stored version=" + this.storedVersionCode +
+              " -- version name=" + this.versionName);
+
+        if (this.storedVersionCode < 0){
+            d = alertBox(
+                    getString(R.string.msgTitleWelcome),
+                    getString(R.string.msgDescWelcome) + " " + getString(R.string.msgDescWelcomeUp)
+                );
+        } else if (this.storedVersionCode < this.versionCode) {
+            d = alertBox(
+                    this.versionName + " : " + getString(R.string.msgTitleWelcomeUp),
+                    getString(R.string.msgDescMajornews) + " " + getString(R.string.msgDescWelcomeUp)
+                );
+        }
+
+        if (d == null) {
+            Log.e("BusTours:checkFirstRun", "No dialog built, bailing out ...");
+            return;
+        }
+
+		d.show();
+        this.prefs.edit()
+            .putInt("versionCode", this.versionCode)
+            .commit();
     }
 
     public void resetStopsAdapter() {
