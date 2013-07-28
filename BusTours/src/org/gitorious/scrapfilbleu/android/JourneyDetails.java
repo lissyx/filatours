@@ -66,18 +66,18 @@ public class JourneyDetails {
             if (walk.find()) {
                 this.type = "walk";
 
-                Matcher stop =
+                Matcher direction =
                     Pattern.compile("Rejoindre .*: (.*), .*")
                     .matcher(ps.get(1).text());
-                if (stop.find()) {
-                    this.stop = stop.group(1);
-                }
-
-                Matcher direction =
-                    Pattern.compile("De : (.*), .*")
-                    .matcher(ps.get(0).text());
                 if (direction.find()) {
                     this.direction = direction.group(1);
+                }
+
+                Matcher stop =
+                    Pattern.compile("De : (.*), .*")
+                    .matcher(ps.get(0).text());
+                if (stop.find()) {
+                    this.stop = stop.group(1);
                 }
             }
         }
