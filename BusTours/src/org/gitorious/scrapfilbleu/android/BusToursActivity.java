@@ -141,8 +141,6 @@ public class BusToursActivity extends Activity
 
         this.journeyCriteriaValues  = getResources().getStringArray(R.array.journeyCriteriaValues);
         this.sensValues             = getResources().getStringArray(R.array.sensValues);
-
-        this.stops = new BusStops("");
         this.mSeason = SeasonPicker.pick();
 
         this.mLocManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
@@ -161,6 +159,7 @@ public class BusToursActivity extends Activity
         Log.e("BusTours", "onSaveInstanceState");
         outState.putString("arrivalStopName", this.getArrivalStopName());
         outState.putString("departureStopName", this.getDepartureStopName());
+        outState.putString("mSeason", this.mSeason);
         super.onSaveInstanceState(outState);
     }
 
@@ -264,14 +263,16 @@ public class BusToursActivity extends Activity
         sensAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         this.sens.setAdapter(sensAdapter);
         */
-        this.resetStopsAdapter();
 
         if (state != null) {
             Log.e("BusTours:Bundle", "Restoring values ...");
             this.setDepartureStopName(state.getString("departureStopName"));
             this.setArrivalStopName(state.getString("arrivalStopName"));
+            this.mSeason = state.getString("mSeason");
         }
 
+        this.stops = new BusStops(this.mSeason);
+        this.resetStopsAdapter();
         this.setFromIntent(getIntent().getExtras());
     }
 
