@@ -1476,6 +1476,8 @@ class FilBleu:
 		urlbase = "http://www.jvmalin.fr/Horaires/Recherche?networkExternalCode=Filbleu"
 		urlbase += "&lineExternalCode=FILNav" + line_to_build
 		urlbase += "&hor-date=30%2F07%2F2013&method=lineComplete&method=lineComplete"
+
+		print "digraph {"
 		for sens in [-1, 1]:
 			url = urlbase + "&sens=" + str(sens)
 			self.browser.open(url)
@@ -1533,7 +1535,18 @@ class FilBleu:
 						del stopsByCol[col1]
 						continue
 
-			pprint.pprint(stopsByCol)
+			# print "Line:", line_to_build, "--","Sens:", sens
+			# pprint.pprint(stopsByCol)
+
+			for id in stopsByCol:
+				for stop in stopsByCol[id]:
+					cid = stopsByCol[id].index(stop);
+					if ((cid + 1) < len(stopsByCol[id])):
+						out = "\"%(deb)s\" -> \"%(fin)s\"" % {'deb': stopsByCol[id][cid], 'fin': stopsByCol[id][cid+1]}
+						print out.encode('utf-8')
+
+		print "}"
+
 
 	def build_line_old(self):
 		line_to_build = self.args.build_line
