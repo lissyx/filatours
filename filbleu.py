@@ -1473,6 +1473,70 @@ class FilBleu:
 
 	def build_line(self):
 		line_to_build = self.args.build_line
+		urlbase = "http://www.jvmalin.fr/Horaires/Recherche?networkExternalCode=Filbleu"
+		urlbase += "&lineExternalCode=FILNav" + line_to_build
+		urlbase += "&hor-date=30%2F07%2F2013&method=lineComplete&method=lineComplete"
+		for sens in [-1, 1]:
+			url = urlbase + "&sens=" + str(sens)
+			self.browser.open(url)
+			soup = BeautifulSoup.BeautifulSoup(self.browser.response().read(), convertEntities=BeautifulSoup.BeautifulSoup.HTML_ENTITIES)
+			if not soup:
+				print "No output :("
+				continue
+
+			table = soup.find('table')
+			if not table or table["id"] != "LineArray":
+				print "No valid table :("
+				continue
+
+			stopsByCol = {}
+			for row in table.findAll('tr'):
+				stopName = self.html_br_strip(row.find('a').text)
+				i = 0
+				for cell in row.findAll('td'):
+					date = self.html_br_strip(cell.text)
+					if not stopsByCol.has_key(i):
+						stopsByCol[i] = []
+					if not (date == "-"):
+						stopsByCol[i] += [ stopName ]
+					i += 1
+
+			# check that list1 is a subset of list2
+			def isStopsSubset(list1, list2):
+				smallest = list1
+				biggest = list2
+				if len(list1) >= len(list2):
+					smallest = list2
+					biggest = list1
+
+				try:
+					firstMatchAt = biggest.index(smallest[0])
+					return (smallest == biggest[firstMatchAt:])
+				except ValueError as e:
+					return False
+
+			col1S = col2S = stopsByCol.keys()
+			for col1 in col1S:
+				for col2 in col2S:
+					if col1 == col2:
+						continue
+					if not stopsByCol.has_key(col1) or not stopsByCol.has_key(col2):
+						continue
+
+					isSame = (stopsByCol[col1] == stopsByCol[col2])
+					if (isSame):
+						del stopsByCol[col2]
+						continue
+
+					isSubset = isStopsSubset(stopsByCol[col1], stopsByCol[col2])
+					if (isSubset):
+						del stopsByCol[col1]
+						continue
+
+			pprint.pprint(stopsByCol)
+
+	def build_line_old(self):
+		line_to_build = self.args.build_line
 		stopAreas = {}
 		lineStops = {}
 		lineStops["all"] = {}
