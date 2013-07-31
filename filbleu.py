@@ -1169,11 +1169,14 @@ class FilBleu:
 
 		stopArea = edtDepartureRappel["value"]
 		if len(stopArea) == 0:
-			DepartureStopArea = soup.find('input', attrs = {'id': 'Departure-StopArea0'}) or soup.find('input', attrs = {'id': 'Departure-best1'})
-			if not DepartureStopArea:
+			DepartureStopAreas = soup.findAll('input', attrs = {'type': 'radio', 'name': 'edtDeparture'})
+			if not DepartureStopAreas:
 				print "Unable to find a stop proposal"
 				return
-			stopArea = self.html_br_strip(DepartureStopArea["value"]).split('=>')[1]
+			for DepartureStopArea in DepartureStopAreas:
+				stopArea = self.html_br_strip(DepartureStopArea["value"]).split('=>')[1]
+				if stopArea.startswith('StopArea'):
+					break
 
 		type = stopArea.split('|')[0]
 		if type != 'StopArea':
