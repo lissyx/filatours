@@ -16,6 +16,7 @@ import time
 import datetime
 import locale
 import hashlib
+import urllib
 import os
 import pprint
 pp = pprint.PrettyPrinter(indent=1)
@@ -660,6 +661,7 @@ class FilBleu:
 		self.parser.add_argument("--build-line-from-schedules", help="Build given line, using schedules.*.txt (implies --offline)")
 		self.parser.add_argument("--build-line-gpx", action="store_true", default=True, required=False, help="Build given line, output as GPX")
 		self.parser.add_argument("--get-stop-coords", help="Get a stop GPS coordinates")
+		self.parser.add_argument("--get-stop-coords-jvmalin", help="Get a stop GPS coordinates from JVMalin.fr")
 		self.parser.add_argument("--httpdebug", action="store_true", help="Show HTTP debug")
 		journey = self.parser.add_argument_group("Journey")
 		journey.add_argument("--journey", action="store_true", help="Compute journey")
@@ -1153,6 +1155,33 @@ class FilBleu:
 			sys.stdout.write(l)
 		else:
 			print "No form result."
+
+	def get_stop_coords_jvmalin(self):
+		stopName = urllib.urlencode({'Departure': self.args.get_stop_coords_jvmalin})
+		stopDest = urllib.urlencode({'Destination': 'Jean Jaurès (Tours)'})
+		url = "http://www.jvmalin.fr/Itineraires/Precision?" + stopName + "&edtDeparture=&oldDeparture=&oldEdtDeparture=&" + stopDest + "s&edtDestination=&oldDestination=&oldEdtDestination=&sens=1&hour=10&minute=35&dateFull=31%2F07%2F2013&Mode[]=car%2Bbus&criteria=1&submitSearch=Rechercher"
+		self.browser.open(url)
+		soup = BeautifulSoup.BeautifulSoup(self.browser.response().read(), convertEntities=BeautifulSoup.BeautifulSoup.HTML_ENTITIES)
+		edtDepartureRappel = soup.find('input', attrs = {'id': 'edtDepartureRappel'})
+		if not edtDepartureRappel:
+			print "Unable to find a stop match"
+
+		stopArea = edtDepartureRappel["value"]
+
+		type = stopArea.split('|')[0]
+		if type != 'StopArea':
+			print "Cannot find a match stopArea for: %(stop_name)s" % {'stop_name': self.args.get_stop_coords}
+			return
+
+		values = stopArea.replace(",", ".").split("|")
+		east = float(values[6])
+		north = float(values[7])
+
+		(degrees_e, degrees_n) = self.lambert2c_to_deg(east, north)
+
+		l = "Found a stop matching stopArea: [%(stop_area)s]; Lambert2+: {E:%(lb2p_e)f, N:%(lb2p_n)f}; Degrees: {E:%(degrees_e)f, N:%(degrees_n)f}\n" % {'stop_area': stopArea, 'lb2p_e': east, 'lb2p_n': north, 'degrees_e': degrees_e, 'degrees_n': degrees_n}
+		l = l.encode('utf-8')
+		sys.stdout.write(l)
 
 	def get_journeys(self):
 		self.journeys = []
@@ -1698,6 +1727,8 @@ class FilBleu:
 			self.list_stops()
 		if self.args.get_stop_coords:
 			self.get_stop_coords()
+		if self.args.get_stop_coords_jvmalin:
+			self.get_stop_coords_jvmalin()
 		if self.args.journey:
 			self.list_journeys()
 		if self.args.bruteforce:
