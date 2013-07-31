@@ -1607,7 +1607,18 @@ class FilBleu:
 			return
 
 		def getKeyFromName(name):
-			return [k for k, v in stopAreas.iteritems() if name == (v['name'] + " (" + v['city'] + ")")][0]
+			bestSim = 0
+			for k, v in stopAreas.iteritems():
+				target = v['name'] + " (" + v['city'] + ")"
+				if name == target:
+					exact = k
+					break
+
+				sim = difflib.SequenceMatcher(a=name, b=target).ratio()
+				if (sim > bestSim):
+					bestSim = sim
+					exact = k
+			return exact
 
 		if self.args.build_line_gpx:
 			f = open('filbleu_route.' + line_to_build + '.gpx', 'w')
