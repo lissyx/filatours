@@ -658,6 +658,7 @@ class FilBleu:
 		self.parser.add_argument("--list-stops", help="List stops of a line (format: n|M)")
 		self.parser.add_argument("--list-stops-basic", action="store_true", help="When listing stops, just displaying without any filtering")
 		self.parser.add_argument("--build-line", help="Build given line, using lines.txt and stops_coords.txt")
+		self.parser.add_argument("--build-line-jvmalin", help="Build given line from JVMalin.fr")
 		self.parser.add_argument("--build-line-from-schedules", help="Build given line, using schedules.*.txt (implies --offline)")
 		self.parser.add_argument("--build-line-gpx", action="store_true", default=True, required=False, help="Build given line, output as GPX")
 		self.parser.add_argument("--get-stop-coords", help="Get a stop GPS coordinates")
@@ -1506,7 +1507,7 @@ class FilBleu:
 
 		pprint.pprint( relations )
 
-	def build_line(self):
+	def build_line_jvmalin(self):
 		line_to_build = self.args.build_line
 		urlbase = "http://www.jvmalin.fr/Horaires/Recherche?networkExternalCode=Filbleu"
 		urlbase += "&lineExternalCode=FILNav" + line_to_build
@@ -1583,7 +1584,7 @@ class FilBleu:
 		print "}"
 
 
-	def build_line_old(self):
+	def build_line(self):
 		line_to_build = self.args.build_line
 		stopAreas = {}
 		lineStops = {}
@@ -1741,6 +1742,8 @@ class FilBleu:
 			self.bruteforce_find_lines(self.args.stop_from, self.args.stop_to)
 		if self.args.build_line:
 			self.build_line()
+		if self.args.build_line_jvmalin:
+			self.build_line_jvmalin()
 		if self.args.build_line_from_schedules:
 			self.build_line_from_schedules()
 		if self.args.stop_schedule:
