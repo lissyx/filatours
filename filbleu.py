@@ -1510,8 +1510,23 @@ class FilBleu:
 
 		pprint.pprint( relations )
 
+	def parse_stopArea(self, file):
+		stopAreas = {}
+		stopArea = re.compile(r"Found a stop matching stopArea: \[StopArea\|(.*)\|(.*)\|(.*)\|\|\|.*\]; Lambert2\+: {E:.*, N:.*}; Degrees: {E:(.*), N:(.*)}")
+		for line in open(file,'r').readlines():
+			if line.startswith("Found"):
+				results = stopArea.search(line)
+				if results:
+					stopId   = results.group(1)
+					stopName = results.group(2)
+					cityName = results.group(3)
+					lat = float(results.group(4))
+					lon = float(results.group(5))
+					stopAreas[stopId] = {'name': stopName, 'city': cityName, 'lat': lat, 'lon': lon}
+		return stopAreas
+
 	def build_line_jvmalin(self):
-		line_to_build = self.args.build_line
+		line_to_build = self.args.build_line_jvmalin
 		urlbase = "http://www.jvmalin.fr/Horaires/Recherche?networkExternalCode=Filbleu"
 		urlbase += "&lineExternalCode=FILNav" + line_to_build
 		urlbase += "&hor-date=30%2F07%2F2013&method=lineComplete&method=lineComplete"
@@ -1586,28 +1601,36 @@ class FilBleu:
 
 		print "}"
 
+		stopAreas = self.parse_stopArea("stops_coords.jvmalin.txt")
+		if len(stopAreas) == 0:
+			print "No geoloc ready."
+			return
+
+		def getKeyFromName(name):
+			return [k for k, v in stopAreas.iteritems() if name == (v['name'] + " (" + v['city'] + ")")][0]
+
+		if self.args.build_line_gpx:
+			f = open('filbleu_route.' + line_to_build + '.gpx', 'w')
+			f.write('<?xml version="1.0" encoding="UTF-8" standalone="yes"?><gpx version="1.1" creator="FilBleu Scrapper"><metadata>Filbleu ligne ' + line_to_build + '</metadata><trk>')
+			for id in stopsByCol:
+				f.write('<trkseg>');
+				for stop in stopsByCol[id]:
+					key = getKeyFromName(stop.encode('utf-8'))
+					f.write('<trkpt lat="' + str(stopAreas[key]['lat']) + '" lon="' + str(stopAreas[key]['lon']) + '"><ele>0.0</ele><name>' + stop.encode('utf-8') + '</name><time>0</time></trkpt>')
+				f.write('</trkseg>');
+			f.write('</trk></gpx>')
+			f.close()
+
 
 	def build_line(self):
 		line_to_build = self.args.build_line
-		stopAreas = {}
 		lineStops = {}
 		lineStops["all"] = {}
 		lineStops["A"] = {}
 		lineStops["B"] = {}
 		lineSpecs = []
 
-		stopArea = re.compile(r"Found a stop matching stopArea: \[StopArea\|(.*)\|(.*)\|(.*)\|\|\|.*\|.*\|.*\]; Lambert2\+: {E:.*, N:.*}; Degrees: {E:(.*), N:(.*)}")
-		for line in open('stops_coords.txt','r').readlines():
-			if line.startswith("Found"):
-				results = stopArea.search(line)
-				if results:
-					stopId   = results.group(1)
-					stopName = results.group(2)
-					cityName = results.group(3)
-					lat = float(results.group(4))
-					lon = float(results.group(5))
-					stopAreas[stopId] = {'name': stopName, 'city': cityName, 'lat': lat, 'lon': lon}
-
+		stopAreas = self.parse_stopArea("stops_coords.txt")
 		lineStops = self.lines_to_lineStop(line_to_build)
 		lineSpecs = self.lines_to_lineSpec(line_to_build)
 
