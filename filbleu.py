@@ -1167,6 +1167,12 @@ class FilBleu:
 			print "Unable to find a stop match"
 
 		stopArea = edtDepartureRappel["value"]
+		if len(stopArea) == 0:
+			DepartureStopArea0 = soup.find('input', attrs = {'id': 'Departure-StopArea0'})
+			if not DepartureStopArea0:
+				print "Unable to find a stop proposal"
+				return
+			stopArea = self.html_br_strip(DepartureStopArea0["value"]).split('=>')[1]
 
 		type = stopArea.split('|')[0]
 		if type != 'StopArea':
