@@ -14,8 +14,6 @@ public class BusLinesGraph {
     private SortedMap<String, List<List<BusStop>>> linesGraph;
 
     public BusLinesGraph(String season) {
-        this.linesGraph = new TreeMap<String, List<List<BusStop>>>();
-
         // No season specified, loading according to current date
         if (season.equals("")) {
             season = SeasonPicker.pick();
@@ -44,6 +42,8 @@ public class BusLinesGraph {
     }
 
     public void LoadBusLinesGraphClassic() {
+        this.linesGraph = new TreeMap<String, List<List<BusStop>>>();
+
         this.LoadBusLinesGraphClassic_0();
         this.LoadBusLinesGraphClassic_1();
         this.LoadBusLinesGraphClassic_2();
