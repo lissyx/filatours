@@ -21,22 +21,6 @@ public class BusStops {
         }
     }
 
-    public class BusStop {
-        public String name;
-        public String city;
-        public Double lat;
-        public Double lon;
-        public Double dist;
-
-        public BusStop(String name, String city, Double lat, Double lon, Double dist) {
-            this.name = name;
-            this.city = city;
-            this.lat  = lat;
-            this.lon  = lon;
-            this.dist = dist;
-        }
-    }
-
     public BusStops(String season) {
         // No season specified, loading according to current date
         if (season.equals("")) {

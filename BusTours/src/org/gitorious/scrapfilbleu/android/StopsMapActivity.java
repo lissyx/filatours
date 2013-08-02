@@ -5,6 +5,7 @@ package org.gitorious.scrapfilbleu.android;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Iterator;
+import java.util.Set;
 
 import android.util.Log;
 
@@ -12,11 +13,14 @@ import android.os.Bundle;
 
 import android.location.Location;
 
+import android.widget.Button;
 import android.widget.Toast;
 import android.widget.EditText;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.ListView;
 
+import android.app.Dialog;
 import android.app.AlertDialog;
 
 import android.content.Context;
@@ -25,10 +29,12 @@ import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
 
 import android.graphics.drawable.Drawable;
+import android.graphics.Color;
 
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MenuInflater;
+import android.view.View;
 
 import android.text.TextUtils;
 
@@ -37,6 +43,7 @@ import org.osmdroid.util.BoundingBoxE6;
 import org.osmdroid.views.overlay.ItemizedIconOverlay;
 import org.osmdroid.views.overlay.ItemizedOverlay;
 import org.osmdroid.views.overlay.OverlayItem;
+import org.osmdroid.views.overlay.PathOverlay;
 import org.osmdroid.DefaultResourceProxyImpl;
 import org.osmdroid.ResourceProxy;
 
@@ -64,11 +71,14 @@ public class StopsMapActivity extends MapViewActivity
     private boolean showStopsOverlay;
     private BusStops stops;
     private BusLines lines;
+    private BusLinesGraph linesGraph;
+    private ColorGenerator colors;
 
     private ItemizedIconOverlay<OverlayItem> stopsOverlay;
     private ItemizedIconOverlay<OverlayItem> myLocationOverlay;
     private ItemizedIconOverlay<OverlayItem> searchOverlay;
     private ArrayList<OverlayItem> search;
+    private ArrayList<PathOverlay> linesPath;
     private ResourceProxy mResourceProxy;
 
     /** Called when the activity is first created. */
@@ -87,6 +97,8 @@ public class StopsMapActivity extends MapViewActivity
         ArrayList<OverlayItem> items = new ArrayList<OverlayItem>();
         ArrayList<OverlayItem> pos = new ArrayList<OverlayItem>();
         this.search = new ArrayList<OverlayItem>();
+        this.linesPath = new ArrayList<PathOverlay>();
+        this.colors = new ColorGenerator();
         this.saveBBOX = true;
         this.showStopsOverlay = false;
 
@@ -258,6 +270,9 @@ public class StopsMapActivity extends MapViewActivity
             case R.id.searchStop:
                 this.enterStopSearch();
                 return true;
+            case R.id.displayLine:
+                this.selectAndDisplayLine();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -313,7 +328,7 @@ public class StopsMapActivity extends MapViewActivity
 
     public void searchStop(String name)
     {
-        BusStops.BusStop foundStop = this.stops.findStop(name);
+        BusStop foundStop = this.stops.findStop(name);
         if (foundStop == null) {
             Toast.makeText(StopsMapActivity.this, getString(R.string.no_search_result), Toast.LENGTH_LONG).show();
             return;
@@ -417,5 +432,107 @@ public class StopsMapActivity extends MapViewActivity
             this.getOsmMap().getOverlays().remove(this.stopsOverlay);
         }
         this.getOsmMap().invalidate();
+    }
+
+    public PathOverlay lineToPathOverlay(List<BusStop> stops, int color) {
+        PathOverlay pathOverlay = new PathOverlay(color, this);
+        pathOverlay.getPaint().setStrokeWidth(4.0f);
+        pathOverlay.setAlpha(255);
+
+        Iterator its = stops.iterator();
+        while(its.hasNext()) {
+            BusStop stop = (BusStop)its.next();
+            pathOverlay.addPoint((int)(stop.lat*1e6), (int)(stop.lon*1e6));
+        }
+
+        return pathOverlay;
+    }
+
+    public void addLinesPathOverlay(ArrayList<BusLineId> list) {
+        Log.e("BusTours:StopsMap", "Adding PathOverlay for " + list.size() + " lines");
+        ArrayList<PathOverlay> newPath = new ArrayList<PathOverlay>();
+
+        Iterator it = list.iterator();
+        while(it.hasNext()) {
+            BusLineId l = (BusLineId)it.next();
+            List<List<BusStop>> listOfStops = this.linesGraph.getLine(l.getCode());
+            Iterator its = listOfStops.iterator();
+            while(its.hasNext()) {
+                List<BusStop> stops = (List<BusStop>)its.next();
+                Log.e("BusTours:StopsMap", "Handling a new set of stops");
+                PathOverlay newOverlay = this.lineToPathOverlay(stops, l.getColor());
+                newPath.add(newOverlay);
+            }
+        }
+
+        this.updatePathsOverlay(newPath);
+    }
+
+    public void addPathsOverlay(List<PathOverlay> list) {
+        Iterator it = list.iterator();
+        while(it.hasNext()) {
+            PathOverlay po = (PathOverlay)it.next();
+            this.getOsmMap().getOverlays().add(po);
+        }
+    }
+
+    public void removePathsOverlay(List<PathOverlay> list) {
+        Iterator it = list.iterator();
+        while(it.hasNext()) {
+            PathOverlay po = (PathOverlay)it.next();
+            this.getOsmMap().getOverlays().remove(po);
+        }
+    }
+
+    public void updatePathsOverlay(ArrayList<PathOverlay> newlist) {
+        this.removePathsOverlay(this.linesPath);
+        this.linesPath = newlist;
+        this.addPathsOverlay(this.linesPath);
+        this.getOsmMap().invalidate();
+    }
+
+    public void enterLinesSelection(List<BusLineId> elements) {
+        final Dialog linesSelection = new Dialog(StopsMapActivity.this);
+
+        linesSelection.setTitle(getString(R.string.stop_search));
+        linesSelection.setContentView(R.layout.lines_picker);
+
+        Button valid = (Button) linesSelection.findViewById(R.id.validLines);
+
+        ListView linesList = (ListView) linesSelection.findViewById(R.id.linesList);
+        final BusLineIdAdapter linesAdapter = new BusLineIdAdapter(this, R.layout.lines_infos, elements);
+        linesList.setAdapter(linesAdapter);
+
+        valid.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                ArrayList<BusLineId> selected = linesAdapter.getSelected();
+                Log.e("BusTours:StopsMap", "User selected " + selected.size() + " lines");
+                addLinesPathOverlay(selected);
+                linesSelection.dismiss();
+            }
+        });
+
+        linesSelection.show();
+    }
+
+    public void selectAndDisplayLine()
+    {
+        this.linesGraph = new BusLinesGraph(this.mSeason);
+        Set<String> availableLines = this.linesGraph.getLines();
+        ArrayList<BusLineId> lines = new ArrayList<BusLineId>();
+
+        if (availableLines.size() < 1) {
+            Toast.makeText(StopsMapActivity.this, getString(R.string.missing_lines), Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        Iterator it = availableLines.iterator();
+        while(it.hasNext()) {
+            String l = (String)it.next();
+            Log.e("BusTours:StopsMap", "Found a line: " + l);
+            lines.add(new BusLineId(l, "Ligne " + l, false, colors.pick()));
+        }
+
+        this.enterLinesSelection(lines);
     }
 }

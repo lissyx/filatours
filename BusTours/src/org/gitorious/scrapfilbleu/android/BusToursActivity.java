@@ -95,7 +95,7 @@ public class BusToursActivity extends Activity
 
     private URLs urls;
     private BusStops stops;
-    private List<BusStops.BusStop> nearests;
+    private List<BusStop> nearests;
     private LocationManager mLocManager;
     private LocationListener locationListener;
     private String mLocProvider;
@@ -382,7 +382,7 @@ public class BusToursActivity extends Activity
     }
 
     public void onClick_btnShowStops() {
-        List<BusStops.BusStop> stops = this.stops.getStopsList();
+        List<BusStop> stops = this.stops.getStopsList();
 
         String[] stopsNames = new String[stops.size()];
         double[] latitudes = new double[stops.size()];
@@ -391,7 +391,7 @@ public class BusToursActivity extends Activity
         Iterator it = stops.iterator();
         int pos = 0;
         while(it.hasNext()) {
-            BusStops.BusStop bs = (BusStops.BusStop)it.next();
+            BusStop bs = (BusStop)it.next();
             stopsNames[pos] = bs.name;
             latitudes[pos] = bs.lat;
             longitudes[pos] = bs.lon;
@@ -517,11 +517,11 @@ public class BusToursActivity extends Activity
         return this.txtStopArrival.getEditableText().toString();
     }
 
-    public List<BusStops.BusStop> getNearests() {
+    public List<BusStop> getNearests() {
         return this.nearests;
     }
 
-    public BusStops.BusStop getNearest(int pos) {
+    public BusStop getNearest(int pos) {
         return this.nearests.get(pos);
     }
 
@@ -559,7 +559,7 @@ public class BusToursActivity extends Activity
         if (type.equals("dep")) {
             list.setOnItemClickListener(new OnItemClickListener() {
                 public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                    BusStops.BusStop bs = getNearest(position);
+                    BusStop bs = getNearest(position);
                     if (bs != null) {
                         setDepartureStopName(bs.name);
                         closestStops.dismiss();
@@ -570,7 +570,7 @@ public class BusToursActivity extends Activity
         if (type.equals("arr")) {
             list.setOnItemClickListener(new OnItemClickListener() {
                 public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                    BusStops.BusStop bs = getNearest(position);
+                    BusStop bs = getNearest(position);
                     if (bs != null) {
                         setArrivalStopName(bs.name);
                         closestStops.dismiss();
@@ -592,7 +592,7 @@ public class BusToursActivity extends Activity
         if (this.nearests != null) {
             Iterator itMinDist = this.nearests.iterator();
             while(itMinDist.hasNext()) {
-                BusStops.BusStop bs = (BusStops.BusStop)itMinDist.next();
+                BusStop bs = (BusStop)itMinDist.next();
                 listClosest.add(new String(bs.name + " (" + df.format(bs.dist) + "m)"));
             }
         }
@@ -601,7 +601,7 @@ public class BusToursActivity extends Activity
     }
 
     public void getClosestStops() {
-        List<BusStops.BusStop> nearests = null;
+        List<BusStop> nearests = null;
         Log.e("BusTours", "Using provider: " + this.mLocProvider);
         Location lastLoc = this.getLastLocation();
         if (lastLoc == null) {
@@ -613,7 +613,7 @@ public class BusToursActivity extends Activity
             this.nearests = this.stops.getNearestStop(lastLoc.getLatitude(), lastLoc.getLongitude());
             Iterator itMinDist = this.nearests.iterator();
             while(itMinDist.hasNext()) {
-                BusStops.BusStop bs = (BusStops.BusStop)itMinDist.next();
+                BusStop bs = (BusStop)itMinDist.next();
                 Log.e("BusTours", "Closest bus stop at (lat;lon)=(" + String.valueOf(bs.lat) + ";" + String.valueOf(bs.lon) + ") :: " + bs.name + " is " + bs.dist + "m");
             }
         }
@@ -942,12 +942,12 @@ public class BusToursActivity extends Activity
         double[] longitudes = new double[10];
         String type = this.getGeoLocTarget();
 
-        List<BusStops.BusStop> stops = this.getNearests();
+        List<BusStop> stops = this.getNearests();
         if (stops != null) {
             Iterator it = stops.iterator();
             int pos = 0;
             while(it.hasNext()) {
-                BusStops.BusStop bs = (BusStops.BusStop)it.next();
+                BusStop bs = (BusStop)it.next();
                 stopsNames[pos] = bs.name;
                 latitudes[pos] = bs.lat;
                 longitudes[pos] = bs.lon;
