@@ -61,7 +61,7 @@
     <string name="descInvalidValuesArr">Please check your arrival stop\'s name</string>
     <string name="waitLoc">Waiting location ...</string>
     <string name="waitingForGeolocation">Please wait while we request a more up-to-date geolocation. You can still press \'back\' to use the last known location of the system, if you want.</string>
-    <string name="btnShowStops">Stops map</string>
+    <string name="btnShowStops">Lines and stops map</string>
     <string name="stop_info">Stop infos</string>
     <string name="stop_info_msg">Stop name:</string>
     <string name="select_stop">Stop selection</string>
@@ -86,4 +86,7 @@
     <string name="msgTitleWelcomeUp">Welcome to new version!</string>
     <string name="msgDescMajornews">We have to tell you about some new features.</string>
     <string name="msgDescWelcomeUp">Tram stops and lines will be loaded automatically depending on its availability (expected after August 31st, 2013), whether regarding current date or the date you picked.</string>
+    <string name="display_line">Display lines</string>
+    <string name="btnValidLines">Display selection</string>
+    <string name="missing_lines">There is not any graph of the lines for the period selected, so we cannot display them.</string>
 </resources>
