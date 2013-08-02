@@ -659,6 +659,8 @@ class FilBleu:
 		self.parser.add_argument("--list-stops-basic", action="store_true", help="When listing stops, just displaying without any filtering")
 		self.parser.add_argument("--build-line", help="Build given line, using lines.txt and stops_coords.txt")
 		self.parser.add_argument("--build-line-jvmalin", help="Build given line from JVMalin.fr")
+		self.parser.add_argument("--build-all-jvmalin-lines", help="Extract and build all lines from JVMalin.fr for a given network")
+		self.parser.add_argument("--export-java", help="Export as Java code")
 		self.parser.add_argument("--build-line-from-schedules", help="Build given line, using schedules.*.txt (implies --offline)")
 		self.parser.add_argument("--build-line-gpx", action="store_true", default=True, required=False, help="Build given line, output as GPX")
 		self.parser.add_argument("--get-stop-coords", help="Get a stop GPS coordinates")
@@ -1525,13 +1527,26 @@ class FilBleu:
 					stopAreas[stopId] = {'name': stopName, 'city': cityName, 'lat': lat, 'lon': lon}
 		return stopAreas
 
-	def build_line_jvmalin(self):
-		line_to_build = self.args.build_line_jvmalin
-		urlbase = "http://www.jvmalin.fr/Horaires/Recherche?networkExternalCode=Filbleu"
-		urlbase += "&lineExternalCode=FILNav" + line_to_build
-		urlbase += "&hor-date=30%2F07%2F2013&method=lineComplete&method=lineComplete"
+	def getKeyFromName(self, name, origin):
+		bestSim = 0
+		for k, v in origin.iteritems():
+			target = v['name'] + " (" + v['city'] + ")"
+			if name == target:
+				exact = k
+				break
 
-		print "digraph {"
+			sim = difflib.SequenceMatcher(a=name, b=target).ratio()
+			if (sim > bestSim):
+				bestSim = sim
+				exact = k
+		return exact
+
+	def extract_line_jvmalin(self, networkExternalCode, lineExternalCode):
+		urlbase = "http://www.jvmalin.fr/Horaires/Recherche?networkExternalCode=" + networkExternalCode
+		urlbase += "&lineExternalCode=" + lineExternalCode
+		urlbase += "&hor-date=30%2F07%2F2013&method=lineComplete&method=lineComplete"
+		linesBuilt = []
+
 		for sens in [-1, 1]:
 			url = urlbase + "&sens=" + str(sens)
 			self.browser.open(url)
@@ -1589,9 +1604,16 @@ class FilBleu:
 						del stopsByCol[col1]
 						continue
 
-			# print "Line:", line_to_build, "--","Sens:", sens
-			# pprint.pprint(stopsByCol)
+			linesBuilt += [ stopsByCol ]
+		return linesBuilt
 
+	def build_line_jvmalin(self):
+		line_to_build = self.args.build_line_jvmalin
+		lines = self.extract_line_jvmalin("Filbleu", "FILNav" + line_to_build)
+
+		print "digraph {"
+
+		for stopsByCol in lines:
 			for id in stopsByCol:
 				for stop in stopsByCol[id]:
 					cid = stopsByCol[id].index(stop);
@@ -1606,32 +1628,83 @@ class FilBleu:
 			print "No geoloc ready."
 			return
 
-		def getKeyFromName(name):
-			bestSim = 0
-			for k, v in stopAreas.iteritems():
-				target = v['name'] + " (" + v['city'] + ")"
-				if name == target:
-					exact = k
-					break
-
-				sim = difflib.SequenceMatcher(a=name, b=target).ratio()
-				if (sim > bestSim):
-					bestSim = sim
-					exact = k
-			return exact
-
 		if self.args.build_line_gpx:
 			f = open('filbleu_route.' + line_to_build + '.gpx', 'w')
 			f.write('<?xml version="1.0" encoding="UTF-8" standalone="yes"?><gpx version="1.1" creator="FilBleu Scrapper"><metadata>Filbleu ligne ' + line_to_build + '</metadata><trk>')
 			for id in stopsByCol:
 				f.write('<trkseg>');
 				for stop in stopsByCol[id]:
-					key = getKeyFromName(stop.encode('utf-8'))
+					key = self.getKeyFromName(stop.encode('utf-8'), stopAreas)
 					f.write('<trkpt lat="' + str(stopAreas[key]['lat']) + '" lon="' + str(stopAreas[key]['lon']) + '"><ele>0.0</ele><name>' + stop.encode('utf-8') + '</name><time>0</time></trkpt>')
 				f.write('</trkseg>');
 			f.write('</trk></gpx>')
 			f.close()
 
+	def collect_jvmalin_lines(self, networkExternalCode):
+		linesList = []
+		urlbase = "http://www.jvmalin.fr/route/vueHoraire?isAjaxCall=true&networkExternalCode=" + networkExternalCode
+		self.browser.open(urlbase)
+		soup = BeautifulSoup.BeautifulSoup(self.browser.response().read(), convertEntities=BeautifulSoup.BeautifulSoup.HTML_ENTITIES)
+		if not soup.find('select', attrs = {'id': 'line'}):
+			print "Cannot find list of lines"
+			return
+		options = soup.findAll('option')
+		for option in options:
+			if option["value"] == "":
+				continue
+			linesList += [ {
+				'id': option["value"],
+				'number': option.text.split(' - ')[0],
+				'name': option.text.split(' - ')[1]
+			} ]
+		return linesList
+
+	def build_all_jvmalin_lines(self):
+		networkExternalCode = self.args.build_all_jvmalin_lines
+		if not networkExternalCode:
+			print "No network name, quitting."
+			return
+
+		stopAreas = self.parse_stopArea("stops_coords.jvmalin.txt")
+		if len(stopAreas) == 0:
+			print "No geoloc ready."
+			return
+
+		lines = self.collect_jvmalin_lines(networkExternalCode)
+		methodId = 0
+		for line in lines:
+			listOfStops = self.extract_line_jvmalin(networkExternalCode, line['id'])
+			trackId = 0
+			if self.args.export_java:
+				print "\tpublic void LoadBusLinesGraphClassic_" + str(methodId) + "() {"
+				print "\t\tList<BusStop> stopsList;"
+				print "\t\tList<List<BusStop>> lineList = new ArrayList<List<BusStop>>();"
+			for stopsByCol in listOfStops:
+				for id in stopsByCol:
+					if self.args.export_java:
+						print "\t\tstopsList = new ArrayList<BusStop>();"
+					for stop in stopsByCol[id]:
+						key = self.getKeyFromName(stop.encode('utf-8'), stopAreas)
+						if self.args.export_java:
+							print	"\t\t\tstopsList.add(new BusStop(\"" + stopAreas[key]['name'] + \
+								"\", \"" + stopAreas[key]['city'] + \
+								"\", " + str(stopAreas[key]['lat']) + \
+								", " + str(stopAreas[key]['lon']) + \
+								", 0.0));"
+						else:
+							print line['number'] + "." + str(trackId), stop.encode('utf-8'), stopAreas[key]['lat'], stopAreas[key]['lon']
+					if self.args.export_java:
+						print "\t\tlineList.add(stopsList);"
+					trackId += 1
+			if self.args.export_java:
+				print "\t\tthis.linesGraph.put(\"" + line['number'] + "\", lineList);"
+				print "\t}"
+				print ""
+			methodId += 1
+
+		if self.args.export_java:
+			for i in range(methodId):
+				print "\t\tthis.LoadBusLinesGraphClassic_" + str(i) + "();"
 
 	def build_line(self):
 		line_to_build = self.args.build_line
@@ -1781,6 +1854,8 @@ class FilBleu:
 			self.build_line()
 		if self.args.build_line_jvmalin:
 			self.build_line_jvmalin()
+		if self.args.build_all_jvmalin_lines:
+			self.build_all_jvmalin_lines()
 		if self.args.build_line_from_schedules:
 			self.build_line_from_schedules()
 		if self.args.stop_schedule:
