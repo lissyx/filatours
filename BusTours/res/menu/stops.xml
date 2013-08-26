@@ -9,8 +9,10 @@
         android:id="@+id/searchStop"
         android:title="@string/search_stop"
         />
+<!--
     <item
         android:id="@+id/displayLine"
         android:title="@string/display_line"
         />
+-->
 </menu>

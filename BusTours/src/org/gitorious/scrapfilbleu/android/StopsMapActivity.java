@@ -270,9 +270,11 @@ public class StopsMapActivity extends MapViewActivity
             case R.id.searchStop:
                 this.enterStopSearch();
                 return true;
+/*
             case R.id.displayLine:
                 this.selectAndDisplayLine();
                 return true;
+*/
             default:
                 return super.onOptionsItemSelected(item);
         }
