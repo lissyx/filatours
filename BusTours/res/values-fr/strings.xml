@@ -22,6 +22,7 @@
     <string name="journey_list">Liste de trajets</string>
     <string name="jsoupAskRaz">Demande de mise à zéro</string>
     <string name="jsoupGotRaz">Mise à zéro reçue, décollage</string>
+    <string name="jsoupGotEtapePeriode">Obtention étape et période</string>
     <string name="jsoupPostedForm">Formulaire envoyé</string>
     <string name="jsoupGotNavig">Réponse avec navigation</string>
     <string name="jsoupGotPropositions">Propositions trouvées</string>

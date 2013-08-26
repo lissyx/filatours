@@ -29,6 +29,8 @@ public class BusJourney {
     private String minute;
     private String sens;
     private String criteria;
+    private String etape;
+    private String nperiode;
 
     private String urlbase;
     private String urlraz;
@@ -57,7 +59,26 @@ public class BusJourney {
         Response res = URLs.getConnection(this.urlraz).method(Method.GET).execute();
         Log.e("BusTours:BusJourney", "Got RAZ.");
 
-        parent.progress(30, R.string.jsoupGotRaz);
+        parent.progress(15, R.string.jsoupGotRaz);
+
+        Document prepare = URLs.getConnection(this.urlbase).get();
+
+        Elements etape = prepare.getElementsByAttributeValue("name", "iform[etape]");
+        if (etape.isEmpty()) {
+            throw new ScrappingException("No way to get 'etape'");
+        }
+        this.etape = etape.first().attr("value");
+
+        Elements nperiode = prepare.getElementsByAttributeValue("name", "iform[nperiode]");
+        if (nperiode.isEmpty()) {
+            throw new ScrappingException("No way to get 'nperiode'");
+        }
+        this.nperiode = nperiode.first().attr("value");
+
+        Log.e("BusTours:BusJourney", "Read iform[etape]=" + this.etape);
+        Log.e("BusTours:BusJourney", "Read iform[nperiode]=" + this.nperiode);
+
+        parent.progress(30, R.string.jsoupGotEtapePeriode);
 
         this.cookies = res.cookies();
 
@@ -70,6 +91,8 @@ public class BusJourney {
             .data("iform[Hour]", this.hour)
             .data("iform[Minute]", this.minute)
             .data("iform[Criteria]", this.criteria)
+            .data("iform[etape]", this.etape)
+            .data("iform[nperiode]", this.nperiode)
             .post();
         Log.e("BusTours:BusJourney", "Posted form:");
         Log.e("BusTours:BusJourney", "    Departure=" + dep);
@@ -79,6 +102,8 @@ public class BusJourney {
         Log.e("BusTours:BusJourney", "    Hour=" + this.hour);
         Log.e("BusTours:BusJourney", "    Minute=" + this.minute);
         Log.e("BusTours:BusJourney", "    Criteria=" + this.criteria);
+        Log.e("BusTours:BusJourney", "    etape=" + this.etape);
+        Log.e("BusTours:BusJourney", "    nperiode=" + this.nperiode);
 
         Elements optgroups = reply.getElementsByAttributeValue("label", "Arrêts");
         if (!optgroups.isEmpty()) {
@@ -114,6 +139,21 @@ public class BusJourney {
                 }
             }
 
+            etape = reply.getElementsByAttributeValue("name", "iform[etape]");
+            if (etape.isEmpty()) {
+                throw new ScrappingException("No way to get 'etape'");
+            }
+            this.etape = etape.first().attr("value");
+
+            nperiode = reply.getElementsByAttributeValue("name", "iform[nperiode]");
+            if (nperiode.isEmpty()) {
+                throw new ScrappingException("No way to get 'nperiode'");
+            }
+            this.nperiode = nperiode.first().attr("value");
+
+            Log.e("BusTours:BusJourney", "Read new iform[etape]=" + this.etape);
+            Log.e("BusTours:BusJourney", "Read new iform[nperiode]=" + this.nperiode);
+
             this.cookies = res.cookies();
             Log.e("BusTours:BusJourney", "new cookies: '" + this.cookies + "'");
 
@@ -128,6 +168,8 @@ public class BusJourney {
                 .data("iform[Hour]", this.hour)
                 .data("iform[Minute]", this.minute)
                 .data("iform[Criteria]", this.criteria)
+                .data("iform[etape]", this.etape)
+                .data("iform[nperiode]", this.nperiode)
                 .post();
 
             Log.e("BusTours:BusJourney", "Re-posted form: ");
@@ -140,6 +182,8 @@ public class BusJourney {
             Log.e("BusTours:BusJourney", "    Hour=" + this.hour);
             Log.e("BusTours:BusJourney", "    Minute=" + this.minute);
             Log.e("BusTours:BusJourney", "    Criteria=" + this.criteria);
+            Log.e("BusTours:BusJourney", "    etape=" + this.etape);
+            Log.e("BusTours:BusJourney", "    nperiode=" + this.nperiode);
         }
 
         parent.progress(40, R.string.jsoupPostedForm);
