@@ -127,13 +127,13 @@ public class BusJourney {
                 String newValue = firstChoice.text();
 
                 if (parentElement.id().equals("DepJvmalin")) {
-                    dep = newValue;
+                    // dep = newValue;
                     depJvmalin = newValJvmalin;
                     Log.e("BusTours:BusJourney", "new depJvmalin='" + depJvmalin + "'; dep='" + dep + "'");
                 }
 
                 if (parentElement.id().equals("ArrJvmalin")) {
-                    arr = newValue;
+                    // arr = newValue;
                     arrJvmalin = newValJvmalin;
                     Log.e("BusTours:BusJourney", "new arrJvmalin='" + arrJvmalin + "'; arr='" + arr + "'");
                 }
