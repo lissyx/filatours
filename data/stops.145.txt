@@ -1,0 +1,8 @@
+Stop: Grands Mortiers (Saint-Pierre-des-Corps) => GRMOB-2|Grands Mortiers|Saint-Pierre-des-Corps [145]
+Stop: Atlantes (Saint-Pierre-des-Corps) => ATLOB-2B|Atlantes|Saint-Pierre-des-Corps [145]
+Stop: Atlantes (Saint-Pierre-des-Corps) => ATLEB-1B|Atlantes|Saint-Pierre-des-Corps [145]
+Stop: Parc Expo (Saint-Pierre-des-Corps) => PADEB-2|Parc Expo|Saint-Pierre-des-Corps [145]
+Stop: Parc Expo (Saint-Pierre-des-Corps) => PADEB-1|Parc Expo|Saint-Pierre-des-Corps [145]
+Stop: Monteil (Saint-Pierre-des-Corps) => MOTEB-2|Monteil|Saint-Pierre-des-Corps [145]
+Stop: Monteil (Saint-Pierre-des-Corps) => MOTEB-1|Monteil|Saint-Pierre-des-Corps [145]
+Stop: St Pierre Gare (Saint-Pierre-des-Corps) => STPGB-1A|St Pierre Gare|Saint-Pierre-des-Corps [145]

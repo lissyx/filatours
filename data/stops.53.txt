@@ -1,0 +1,8 @@
+Stop: Farges (Saint-Pierre-des-Corps) => FARGB-1|Farges|Saint-Pierre-des-Corps [53]
+Stop: Farges (Saint-Pierre-des-Corps) => FARGB-2|Farges|Saint-Pierre-des-Corps [53]
+Stop: Grands Mortiers (Saint-Pierre-des-Corps) => GRMOB-2|Grands Mortiers|Saint-Pierre-des-Corps [53]
+Stop: Grands Mortiers (Saint-Pierre-des-Corps) => GRMOB-1|Grands Mortiers|Saint-Pierre-des-Corps [53]
+Stop: Atlantes (Saint-Pierre-des-Corps) => ATLOB-2B|Atlantes|Saint-Pierre-des-Corps [53]
+Stop: Bois de Plante (La Ville-aux-Dames) => BODPB-1|Bois de Plante|La Ville-aux-Dames [53]
+Stop: Monteil (Saint-Pierre-des-Corps) => MOTEB-1|Monteil|Saint-Pierre-des-Corps [53]
+Stop: Monteil (Saint-Pierre-des-Corps) => MOTEB-2|Monteil|Saint-Pierre-des-Corps [53]

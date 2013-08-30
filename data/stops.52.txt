@@ -1,0 +1,4 @@
+Stop: Glycines (Luynes) => GLYCB-1|Glycines|Luynes [52]
+Stop: Muguet (Luynes) => MUGUB-2|Muguet|Luynes [52]
+Stop: Mareuil (Fondettes) => MAREB-1A|Mareuil|Fondettes [52]
+Stop: Hôpital Pagés (Luynes) => HOPPB-1|Hôpital Pagés|Luynes [52]
