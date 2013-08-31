@@ -86,7 +86,7 @@
     <string name="msgDescWelcome">Cette application est sans lien avec FilBleu. Elle utilise le site web pour vous permettre un accès plus facile depuis votre périphérique mobile. N\'hésitez-pas à rapporter tout bug.</string>
     <string name="msgTitleWelcomeUp">Bienvenue !</string>
     <string name="msgDescMajornews">Nous devons vous parler de certaines nouvelles fonctionnalités.</string>
-    <string name="msgDescWelcomeUp">Les arrêts et lignes du tram seront chargés automatiquement si le tram est disponible (attendu pour le 31 août 2013) soit suivant la date du jour, ou bien suivant la date que vous sélectionnez.</string>
+    <string name="msgDescWelcomeUp">Le tram est en service ! Le site de Fil Bleu peut encore présenter des soucis, et certains arrêts manquent encore.</string>
     <string name="display_line">Afficher des lignes</string>
     <string name="btnValidLines">Afficher la sélection</string>
     <string name="missing_lines">Impossible d\'afficher les lignes : nous n\'avons pas (encore) de graphe des lignes pour la période sélectionnée.</string>

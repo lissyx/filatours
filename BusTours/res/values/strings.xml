@@ -86,7 +86,7 @@
     <string name="msgDescWelcome">This application is not endorsed to FilBleu. It makes uses of the website to allow you easier access from your mobile device. Do not hesitate to report any bugs.</string>
     <string name="msgTitleWelcomeUp">Welcome to new version!</string>
     <string name="msgDescMajornews">We have to tell you about some new features.</string>
-    <string name="msgDescWelcomeUp">Tram stops and lines will be loaded automatically depending on its availability (expected after August 31st, 2013), whether regarding current date or the date you picked.</string>
+    <string name="msgDescWelcomeUp">The tram is now running! Fil Bleu website might still present some issue, and some stops are still missing.</string>
     <string name="display_line">Display lines</string>
     <string name="btnValidLines">Display selection</string>
     <string name="missing_lines">There is not any graph of the lines for the period selected, so we cannot display them.</string>
