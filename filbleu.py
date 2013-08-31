@@ -877,7 +877,7 @@ class FilBleu:
 		return res
 
 	def page_lines(self):
-		self.baseurl += "horaires-par-arret/horaires-par-arret-bus-tram-sept-2013"
+		self.baseurl += "horaires-par-arret"
 		self.etape = ""
 
 	def page_stops(self):
