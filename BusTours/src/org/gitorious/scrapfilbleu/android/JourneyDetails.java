@@ -240,12 +240,13 @@ public class JourneyDetails {
 
     private String parseDuration(Element e) {
         String duration = new String("");
-        Pattern reDuration = Pattern.compile("(\\d+)\\s*h|(\\d+)\\s*min|(\\d+)\\s*s");
-        // Log.e("BusTours:JourneyDetails", "duration==" + e.html());
+        Pattern reDuration = Pattern.compile("Durée : (\\d+)\\s*h|(\\d+)\\s*min|(\\d+)\\s*s");
+        Log.e("BusTours:JourneyDetails", "duration==" + e.html());
         Matcher m = reDuration.matcher(e.text());
 
         if (!m.find()) {
             Log.e("BusTours:JourneyDetails", "No duration match :(");
+            return new String("< 1 min");
         }
 
         if (m.group(1) != null) {

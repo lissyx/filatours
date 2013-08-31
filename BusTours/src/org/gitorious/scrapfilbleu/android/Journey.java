@@ -82,6 +82,8 @@ public class Journey {
 
         if (!m.find()) {
             Log.e("BusTours:Journey", "No duration match :(");
+            this.duration = "0h00";
+            return;
         }
 
         if (m.group(1) == null) {
