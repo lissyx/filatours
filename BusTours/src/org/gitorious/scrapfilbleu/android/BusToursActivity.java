@@ -308,8 +308,10 @@ public class BusToursActivity extends Activity
                 };
         });
         this.time.setIs24HourView(true);
+        Log.e("BusTours:Widgets", "Setting hour to: " + cal.get(Calendar.HOUR_OF_DAY));
+        Log.e("BusTours:Widgets", "Setting minute to: " + cal.get(Calendar.MINUTE));
         this.time.setCurrentHour(cal.get(Calendar.HOUR_OF_DAY));
-        this.time.setCurrentHour(cal.get(Calendar.MINUTE));
+        this.time.setCurrentMinute(cal.get(Calendar.MINUTE));
         this.btnGetClosestStopDeparture.setOnClickListener(new View.OnClickListener() { public void onClick(View arg0) { onClick_btnGetClosestStopDeparture(); } });
         this.btnGetClosestStopArrival.setOnClickListener(new View.OnClickListener() { public void onClick(View arg0) { onClick_btnGetClosestStopArrival(); } });
         this.btnGetJourney.setOnClickListener(new View.OnClickListener() { public void onClick(View arg0) { onClick_btnGetJourney(); } });
