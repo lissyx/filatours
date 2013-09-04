@@ -665,7 +665,7 @@ Found a stop matching stopArea: [StopArea|154|Joué Centre|Joué-lès-Tours|||47
 Trying "Joué-Lès-Tours - Joué Gare"
 Found a stop matching stopArea: [StopArea|155|Joué Gare|Joué-lès-Tours|||473888,00|2262952,00|301!0!14]; Lambert2+: {E:473888.000000, N:2262952.000000}; Degrees: {E:47.354203, N:0.667078}
 Trying "Joué-Lès-Tours - Joué Hôtel de Ville"
-Cannot find a match stopArea for: Joué-Lès-Tours - Joué Hôtel de Ville
+Found a stop matching stopArea: [StopArea|157|Joué H. de Ville|Joué-lès-Tours|||473573,00|2262661,50|307!0!14;306!0!14;305!0!14]; Lambert2+: {E:473573.000000, N:2262661.500000}; Degrees: {E:47.351531, N:0.662991}
 Trying "Chambray-Lès-Tours - Joule"
 Found a stop matching stopArea: [StopArea|65|Joule|Chambray-lès-Tours|||476808,00|2261137,00|124!0!14]; Lambert2+: {E:476808.000000, N:2261137.000000}; Degrees: {E:47.338432, N:0.706219}
 Trying "Saint-Avertin - Jules Romains"

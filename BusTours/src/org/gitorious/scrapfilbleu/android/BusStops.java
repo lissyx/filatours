@@ -698,6 +698,8 @@ public class BusStops {
         this.stops.put("Joué Centre", v);
         v = new HashMap<String, String>(); v.put("city", "Joué-lès-Tours"); v.put("lat", "47.354203"); v.put("lon", "0.667078");
         this.stops.put("Joué Gare", v);
+        v = new HashMap<String, String>(); v.put("city", "Joué-lès-Tours"); v.put("lat", "47.351531"); v.put("lon", "0.662991");
+        this.stops.put("Joué H. de Ville", v);
         v = new HashMap<String, String>(); v.put("city", "Chambray-lès-Tours"); v.put("lat", "47.338432"); v.put("lon", "0.706219");
         this.stops.put("Joule", v);
         v = new HashMap<String, String>(); v.put("city", "Saint-Avertin"); v.put("lat", "47.354450"); v.put("lon", "0.721155");

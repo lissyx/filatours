@@ -361,6 +361,7 @@ public class BusLines {
         l = new ArrayList<String>(); l.add("15"); this.lines.put("Jonquilles", l);
         l = new ArrayList<String>(); l.add("107"); l.add("15"); l.add("16"); l.add("30"); l.add("31"); this.lines.put("Joué Centre", l);
         l = new ArrayList<String>(); l.add("15"); l.add("30"); this.lines.put("Joué Gare", l);
+        l = new ArrayList<String>(); l.add("107"); l.add("15"); l.add("30"); l.add("31"); l.add("A"); this.lines.put("Joué H. de Ville", l);
         l = new ArrayList<String>(); l.add("14"); l.add("3A"); l.add("3B"); this.lines.put("Joule", l);
         l = new ArrayList<String>(); l.add("104"); l.add("3A"); l.add("3B"); this.lines.put("Jules Romains", l);
         l = new ArrayList<String>(); l.add("107"); l.add("16"); this.lines.put("Jumeaux", l);
