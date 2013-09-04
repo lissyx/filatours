@@ -11,7 +11,7 @@ Found a stop matching stopArea: [StopArea|118|Aimée|Joué-lès-Tours|||476127,0
 Trying "Vernou-sur-Brenne - Aitre Gauthiers"
 Found a stop matching stopArea: [StopArea|684|Aitre Gauthiers|Vernou-sur-Brenne|||487095,50|2269191,00|1415!0!14;1414!0!14]; Lambert2+: {E:487095.500000, N:2269191.000000}; Degrees: {E:47.412706, N:0.840299}
 Trying "Ballan-Miré - Ajoncs"
-Cannot find a match stopArea for: Ballan-Miré - Ajoncs
+Found a stop matching stopArea: [StopArea|119|Ajoncs|Joué-lès-Tours|||471300,00|2262875,50|233!0!14;232!0!14]; Lambert2+: {E:471300.000000, N:2262875.500000}; Degrees: {E:47.353016, N:0.632851}
 Trying "La Ville-aux-Dames - Aliénor"
 Found a stop matching stopArea: [StopArea|695|Aliénor|La Ville-aux-Dames|||482685,50|2266708,00|1432!0!14;1431!0!14]; Lambert2+: {E:482685.500000, N:2266708.000000}; Degrees: {E:47.389605, N:0.782523}
 Trying "Saint-Cyr-sur-Loire - Allende"
@@ -835,7 +835,7 @@ Found a stop matching stopArea: [StopArea|19|Le Verger|Ballan-Miré|||470947,50|
 Trying "Notre-Dame-d'Oé - L'Hôpitau"
 Found a stop matching stopArea: [StopArea|231|L'Hopitau|Notre-Dame-d'Oé|||477384,00|2273725,50|441!0!14;442!0!14]; Lambert2+: {E:477384.000000, N:2273725.500000}; Degrees: {E:47.451751, N:0.710393}
 Trying "Tours - L'Hôpitau"
-Cannot find a match stopArea for: Tours - L'Hôpitau
+Found a stop matching stopArea: [StopArea|231|L'Hopitau|Notre-Dame-d'Oé|||477384,00|2273725,50|441!0!14;442!0!14]; Lambert2+: {E:477384.000000, N:2273725.500000}; Degrees: {E:47.451751, N:0.710393}
 Trying "Tours - Liberté"
 Found a stop matching stopArea: [StopArea|566|Liberté|Tours|||475966,67|2265777,83|1137!0!14;1138!0!14;1139!0!14;1140!0!14;1135!0!14;1136!0!14]; Lambert2+: {E:475966.670000, N:2265777.830000}; Degrees: {E:47.380011, N:0.693805}
 Trying "La Riche - Ligner"
@@ -1101,7 +1101,7 @@ Found a stop matching stopArea: [StopArea|623|Pont du Milieu|Tours|||476958,00|2
 Trying "Tours - Pont Napoléon"
 Found a stop matching stopArea: [StopArea|624|Pont Napoléon|Tours|||474484,00|2267938,50|1264!0!14;1263!0!14]; Lambert2+: {E:474484.000000, N:2267938.500000}; Degrees: {E:47.399162, N:0.673569}
 Trying "Joué-Lès-Tours - Pont Volant"
-Cannot find a match stopArea for: Joué-Lès-Tours - Pont Volant
+Found a stop matching stopArea: [StopArea|625|Pont Volant|Tours|||474425,50|2263908,00|1265!0!14;1266!0!14]; Lambert2+: {E:474425.500000, N:2263908.000000}; Degrees: {E:47.362903, N:0.673923}
 Trying "Joué-Lès-Tours - Poré"
 Found a stop matching stopArea: [StopArea|177|Poré|Joué-lès-Tours|||473617,50|2261680,00|342!0!14;343!0!14]; Lambert2+: {E:473617.500000, N:2261680.000000}; Degrees: {E:47.342712, N:0.663856}
 Trying "Saint-Cyr-sur-Loire - Portail d'Ormeau"
