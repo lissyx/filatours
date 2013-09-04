@@ -39,6 +39,7 @@ public class BusLines {
         l = new ArrayList<String>(); l.add("2"); this.lines.put("Aérogare", l);
         l = new ArrayList<String>(); l.add("15"); this.lines.put("Aimée", l);
         l = new ArrayList<String>(); l.add("111"); l.add("116"); l.add("54"); this.lines.put("Aitre Gauthiers", l);
+        l = new ArrayList<String>(); l.add("107"); l.add("31"); this.lines.put("Ajoncs", l);
         l = new ArrayList<String>(); l.add("50"); this.lines.put("Aliénor", l);
         l = new ArrayList<String>(); l.add("18A"); l.add("18B"); this.lines.put("Allende", l);
         l = new ArrayList<String>(); l.add("15"); l.add("32"); this.lines.put("Alouette", l);
@@ -444,6 +445,7 @@ public class BusLines {
         l = new ArrayList<String>(); l.add("104"); l.add("3A"); l.add("3B"); this.lines.put("L'Essart", l);
         l = new ArrayList<String>(); l.add("107"); l.add("31"); this.lines.put("Le Verger", l);
         l = new ArrayList<String>(); this.lines.put("L'Hopitau", l);
+        l = new ArrayList<String>(); this.lines.put("L'Hopitau", l);
         l = new ArrayList<String>(); l.add("10"); l.add("2"); l.add("4"); l.add("A"); this.lines.put("Liberté", l);
         l = new ArrayList<String>(); l.add("15"); this.lines.put("Ligner", l);
         l = new ArrayList<String>(); l.add("109"); l.add("50"); this.lines.put("Lilas", l);
@@ -576,6 +578,7 @@ public class BusLines {
         l = new ArrayList<String>(); l.add("109"); l.add("11"); l.add("50"); l.add("57"); this.lines.put("Pont de la Motte", l);
         l = new ArrayList<String>(); l.add("10"); l.add("4"); this.lines.put("Pont du Milieu", l);
         l = new ArrayList<String>(); l.add("109"); l.add("11"); this.lines.put("Pont Napoléon", l);
+        l = new ArrayList<String>(); l.add("A"); this.lines.put("Pont Volant", l);
         l = new ArrayList<String>(); l.add("31"); this.lines.put("Poré", l);
         l = new ArrayList<String>(); l.add("113"); l.add("12"); this.lines.put("Portail d'Ormeau", l);
         l = new ArrayList<String>(); l.add("5"); this.lines.put("Portalis", l);

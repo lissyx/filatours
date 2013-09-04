@@ -10,6 +10,8 @@
         this.stops.put("Aimée", v);
         v = new HashMap<String, String>(); v.put("city", "Vernou-sur-Brenne"); v.put("lat", "47.412706"); v.put("lon", "0.840299");
         this.stops.put("Aitre Gauthiers", v);
+        v = new HashMap<String, String>(); v.put("city", "Joué-lès-Tours"); v.put("lat", "47.353016"); v.put("lon", "0.632851");
+        this.stops.put("Ajoncs", v);
         v = new HashMap<String, String>(); v.put("city", "La Ville-aux-Dames"); v.put("lat", "47.389605"); v.put("lon", "0.782523");
         this.stops.put("Aliénor", v);
         v = new HashMap<String, String>(); v.put("city", "Saint-Cyr-sur-Loire"); v.put("lat", "47.408407"); v.put("lon", "0.650021");
@@ -820,6 +822,8 @@
         this.stops.put("Le Verger", v);
         v = new HashMap<String, String>(); v.put("city", "Notre-Dame-d'Oé"); v.put("lat", "47.451751"); v.put("lon", "0.710393");
         this.stops.put("L'Hopitau", v);
+        v = new HashMap<String, String>(); v.put("city", "Notre-Dame-d'Oé"); v.put("lat", "47.451751"); v.put("lon", "0.710393");
+        this.stops.put("L'Hopitau", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.380011"); v.put("lon", "0.693805");
         this.stops.put("Liberté", v);
         v = new HashMap<String, String>(); v.put("city", "La Riche"); v.put("lat", "47.383473"); v.put("lon", "0.664089");
@@ -1084,6 +1088,8 @@
         this.stops.put("Pont du Milieu", v);
         v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.399162"); v.put("lon", "0.673569");
         this.stops.put("Pont Napoléon", v);
+        v = new HashMap<String, String>(); v.put("city", "Tours"); v.put("lat", "47.362903"); v.put("lon", "0.673923");
+        this.stops.put("Pont Volant", v);
         v = new HashMap<String, String>(); v.put("city", "Joué-lès-Tours"); v.put("lat", "47.342712"); v.put("lon", "0.663856");
         this.stops.put("Poré", v);
         v = new HashMap<String, String>(); v.put("city", "Saint-Cyr-sur-Loire"); v.put("lat", "47.410675"); v.put("lon", "0.677424");
