@@ -90,4 +90,5 @@
     <string name="display_line">Afficher des lignes</string>
     <string name="btnValidLines">Afficher la sélection</string>
     <string name="missing_lines">Impossible d\'afficher les lignes : nous n\'avons pas (encore) de graphe des lignes pour la période sélectionnée.</string>
+    <string name="displayLineBeta">L\'affichage des trajets des lignes est encore expérimental : certains arrêts peuvent manquer ou être mal placés.</string>
 </resources>

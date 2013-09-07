@@ -90,4 +90,5 @@
     <string name="display_line">Display lines</string>
     <string name="btnValidLines">Display selection</string>
     <string name="missing_lines">There is not any graph of the lines for the period selected, so we cannot display them.</string>
+    <string name="displayLineBeta">Lines displaying is still experimental: some stops might be missing or misplaced.</string>
 </resources>

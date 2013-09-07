@@ -271,6 +271,7 @@ public class StopsMapActivity extends MapViewActivity
                 this.enterStopSearch();
                 return true;
             case R.id.displayLine:
+                Toast.makeText(StopsMapActivity.this, getString(R.string.displayLineBeta), Toast.LENGTH_LONG).show();
                 this.selectAndDisplayLine();
                 return true;
             default:
