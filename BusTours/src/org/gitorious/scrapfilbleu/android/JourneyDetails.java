@@ -38,7 +38,7 @@ public class JourneyDetails {
                 this.type = typeAsked;
 
                 Matcher line =
-                    Pattern.compile("Ligne (.*) > (.*)")
+                    Pattern.compile("Ligne (.*) en direction de (.*)")
                     .matcher(ps.get(2).text());
                 if (line.find()) {
                     this.line = line.group(1);
