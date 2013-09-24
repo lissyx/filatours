@@ -1,0 +1,1380 @@
+Trying "Abbaye Gatines (Tours)"
+Found a stop matching stopArea: [StopArea|4047|Abbaye Gatines|Tours|||475538|2271621]; Lambert2+: {E:475538.000000, N:2271621.000000}; Degrees: {E:47.432479, N:0.686505}
+Trying "Acacias (Ballan-Miré)"
+Found a stop matching stopArea: [StopArea|3113|Acacias|Ballan-Miré|||470053|2261719]; Lambert2+: {E:470053.000000, N:2261719.000000}; Degrees: {E:47.342371, N:0.616684}
+Trying "Aérogare (Tours)"
+Found a stop matching stopArea: [StopArea|4054|Aérogare|Tours|||476956|2271089]; Lambert2+: {E:476956.000000, N:2271089.000000}; Degrees: {E:47.427961, N:0.705444}
+Trying "Aimée (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3409|Aimée|Joué-lès-Tours|||476127|2263530]; Lambert2+: {E:476127.000000, N:2263530.000000}; Degrees: {E:47.359826, N:0.696549}
+Trying "Aitre Gauthiers (Vernou-sur-Brenne)"
+Found a stop matching stopArea: [StopArea|4363|Aitre Gauthiers|Vernou-sur-Brenne|||487096|2269191]; Lambert2+: {E:487096.000000, N:2269191.000000}; Degrees: {E:47.412706, N:0.840306}
+Trying "Ajoncs (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3410|Ajoncs|Joué-lès-Tours|||471300|2262876]; Lambert2+: {E:471300.000000, N:2262876.000000}; Degrees: {E:47.353020, N:0.632851}
+Trying "Aliénor (La Ville-aux-Dames)"
+Found a stop matching stopArea: [StopArea|4381|Aliénor|La Ville-aux-Dames|||482686|2266708]; Lambert2+: {E:482686.000000, N:2266708.000000}; Degrees: {E:47.389606, N:0.782529}
+Trying "Alouette (Tours)"
+Found a stop matching stopArea: [StopArea|4048|Alouette|Tours|||476274|2263505]; Lambert2+: {E:476274.000000, N:2263505.000000}; Degrees: {E:47.359628, N:0.698502}
+Trying "Alsace (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3782|Alsace|Saint-Avertin|||479103|2263988]; Lambert2+: {E:479103.000000, N:2263988.000000}; Degrees: {E:47.364497, N:0.735814}
+Trying "Amandiers (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3411|Amandiers|Joué-lès-Tours|||473653|2260763]; Lambert2+: {E:473653.000000, N:2260763.000000}; Degrees: {E:47.334472, N:0.664584}
+Trying "Ampere (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3840|Ampere|Saint-Cyr-sur-Loire|||474143|2270615]; Lambert2+: {E:474143.000000, N:2270615.000000}; Degrees: {E:47.423167, N:0.668299}
+Trying "Anatole France (Tours)"
+Found a stop matching stopArea: [StopArea|4049|Anatole France|Tours|||475410|2267615]; Lambert2+: {E:475410.000000, N:2267615.000000}; Degrees: {E:47.396428, N:0.685924}
+Trying "Anne de Bretagne (La Ville-aux-Dames)"
+Found a stop matching stopArea: [StopArea|4382|Anne de Bretagne|La Ville-aux-Dames|||481646|2266395]; Lambert2+: {E:481646.000000, N:2266395.000000}; Degrees: {E:47.386605, N:0.768839}
+Trying "Anne de France (La Ville-aux-Dames)"
+Found a stop matching stopArea: [StopArea|4383|Anne de France|La Ville-aux-Dames|||482306|2267643]; Lambert2+: {E:482306.000000, N:2267643.000000}; Degrees: {E:47.397947, N:0.777251}
+Trying "Apollinaire (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3783|Apollinaire|Saint-Avertin|||479392|2263327]; Lambert2+: {E:479392.000000, N:2263327.000000}; Degrees: {E:47.358605, N:0.739817}
+Trying "Aragon (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3784|Aragon|Saint-Avertin|||479564|2263628]; Lambert2+: {E:479564.000000, N:2263628.000000}; Degrees: {E:47.361343, N:0.742013}
+Trying "Arago (Tours)"
+Found a stop matching stopArea: [StopArea|4050|Arago|Tours|||474672|2266664]; Lambert2+: {E:474672.000000, N:2266664.000000}; Degrees: {E:47.387736, N:0.676415}
+Trying "Arche du Lude (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3412|Arche du Lude|Joué-lès-Tours|||472782|2262211]; Lambert2+: {E:472782.000000, N:2262211.000000}; Degrees: {E:47.347327, N:0.652651}
+Trying "Arsonval (Tours)"
+Found a stop matching stopArea: [StopArea|4051|Arsonval|Tours|||476474|2263069]; Lambert2+: {E:476474.000000, N:2263069.000000}; Degrees: {E:47.355745, N:0.701269}
+Trying "Artisans (Mettray)"
+Found a stop matching stopArea: [StopArea|3583|Artisans|Mettray|||473433|2273360]; Lambert2+: {E:473433.000000, N:2273360.000000}; Degrees: {E:47.447717, N:0.658114}
+Trying "Assas (Tours)"
+Found a stop matching stopArea: [StopArea|4052|Assas|Tours|||475131|2265560]; Lambert2+: {E:475131.000000, N:2265560.000000}; Degrees: {E:47.377894, N:0.682801}
+Trying "Ateliers (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3955|Ateliers|Saint-Pierre-des-Corps|||477750|2266652]; Lambert2+: {E:477750.000000, N:2266652.000000}; Degrees: {E:47.388205, N:0.717178}
+Trying "Atlantes (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3956|Atlantes|Saint-Pierre-des-Corps|||477839|2265678]; Lambert2+: {E:477839.000000, N:2265678.000000}; Degrees: {E:47.379462, N:0.718623}
+Trying "Aubepines (Ballan-Miré)"
+Found a stop matching stopArea: [StopArea|3114|Aubepines|Ballan-Miré|||471433|2263210]; Lambert2+: {E:471433.000000, N:2263210.000000}; Degrees: {E:47.356050, N:0.634515}
+Trying "Aubrière (La Membrolle-sur-Choisille)"
+Found a stop matching stopArea: [StopArea|3569|Aubrière|La Membrolle-sur-Choisille|||471441|2272405]; Lambert2+: {E:471441.000000, N:2272405.000000}; Degrees: {E:47.438743, N:0.631981}
+Trying "Augereau (Tours)"
+Found a stop matching stopArea: [StopArea|4053|Augereau|Tours|||474586|2270693]; Lambert2+: {E:474586.000000, N:2270693.000000}; Degrees: {E:47.423953, N:0.674148}
+Trying "Aviron (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3958|Aviron|Saint-Pierre-des-Corps|||478350|2265115]; Lambert2+: {E:478350.000000, N:2265115.000000}; Degrees: {E:47.374494, N:0.725541}
+Trying "Azay le Rideau (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3413|Azay le Rideau|Joué-lès-Tours|||474858|2262071]; Lambert2+: {E:474858.000000, N:2262071.000000}; Degrees: {E:47.346465, N:0.680160}
+Trying "Bad Camberg (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3198|Bad Camberg|Chambray-lès-Tours|||477002|2261195]; Lambert2+: {E:477002.000000, N:2261195.000000}; Degrees: {E:47.338990, N:0.708770}
+Trying "Bagatelle (Mettray)"
+Found a stop matching stopArea: [StopArea|3584|Bagatelle|Mettray|||473670|2273155]; Lambert2+: {E:473670.000000, N:2273155.000000}; Degrees: {E:47.445919, N:0.661314}
+Trying "Ballardière (Berthenay)"
+Found a stop matching stopArea: [StopArea|3147|Ballardière|Berthenay|||465467|2264782]; Lambert2+: {E:465467.000000, N:2264782.000000}; Degrees: {E:47.368998, N:0.555090}
+Trying "Barberonne (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3841|Barberonne|Saint-Cyr-sur-Loire|||472767|2267436]; Lambert2+: {E:472767.000000, N:2267436.000000}; Degrees: {E:47.394314, N:0.650970}
+Trying "Barbinière (Luynes)"
+Found a stop matching stopArea: [StopArea|3540|Barbinière|Luynes|||464656|2267150]; Lambert2+: {E:464656.000000, N:2267150.000000}; Degrees: {E:47.390127, N:0.543639}
+Trying "Basses Rivières (Rochecorbon)"
+Found a stop matching stopArea: [StopArea|3757|Basses Rivières|Rochecorbon|||480304|2268780]; Lambert2+: {E:480304.000000, N:2268780.000000}; Degrees: {E:47.407812, N:0.750431}
+Trying "Baugé (Luynes)"
+Found a stop matching stopArea: [StopArea|3541|Baugé|Luynes|||465458|2266389]; Lambert2+: {E:465458.000000, N:2266389.000000}; Degrees: {E:47.383447, N:0.554488}
+Trying "Bd de Chinon (Tours)"
+Found a stop matching stopArea: [StopArea|4055|Bd de Chinon|Tours|||476190|2263018]; Lambert2+: {E:476190.000000, N:2263018.000000}; Degrees: {E:47.355233, N:0.697524}
+Trying "Beaujardin (Tours)"
+Found a stop matching stopArea: [StopArea|4056|Beaujardin|Tours|||477017|2265362]; Lambert2+: {E:477017.000000, N:2265362.000000}; Degrees: {E:47.376468, N:0.707826}
+Trying "Beaulieu (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3414|Beaulieu|Joué-lès-Tours|||473466|2263391]; Lambert2+: {E:473466.000000, N:2263391.000000}; Degrees: {E:47.358071, N:0.661369}
+Trying "Beauregard (Rochecorbon)"
+Found a stop matching stopArea: [StopArea|3758|Beauregard|Rochecorbon|||478554|2268396]; Lambert2+: {E:478554.000000, N:2268396.000000}; Degrees: {E:47.404038, N:0.727352}
+Trying "Beauverger (Tours)"
+Found a stop matching stopArea: [StopArea|4057|Beauverger|Tours|||475600|2269641]; Lambert2+: {E:475600.000000, N:2269641.000000}; Degrees: {E:47.414684, N:0.687877}
+Trying "Béchellerie (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3845|Béchellerie|Saint-Cyr-sur-Loire|||473332|2269690]; Lambert2+: {E:473332.000000, N:2269690.000000}; Degrees: {E:47.414693, N:0.657815}
+Trying "Becquerel (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3959|Becquerel|Saint-Pierre-des-Corps|||478869|2265399]; Lambert2+: {E:478869.000000, N:2265399.000000}; Degrees: {E:47.377143, N:0.732336}
+Trying "Beethoven (Tours)"
+Found a stop matching stopArea: [StopArea|4058|Beethoven|Tours|||476529|2263962]; Lambert2+: {E:476529.000000, N:2263962.000000}; Degrees: {E:47.363786, N:0.701751}
+Trying "Beffroi (Tours)"
+Found a stop matching stopArea: [StopArea|4059|Beffroi|Tours|||475260|2270483]; Lambert2+: {E:475260.000000, N:2270483.000000}; Degrees: {E:47.422192, N:0.683138}
+Trying "Béguine (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3421|Béguine|Joué-lès-Tours|||474217|2262857]; Lambert2+: {E:474217.000000, N:2262857.000000}; Degrees: {E:47.353412, N:0.671458}
+Trying "Béjauderie (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3422|Béjauderie|Joué-lès-Tours|||475748|2263180]; Lambert2+: {E:475748.000000, N:2263180.000000}; Degrees: {E:47.356607, N:0.691630}
+Trying "Bel Air (La Membrolle-sur-Choisille)"
+Found a stop matching stopArea: [StopArea|3570|Bel Air|La Membrolle-sur-Choisille|||472483|2272273]; Lambert2+: {E:472483.000000, N:2272273.000000}; Degrees: {E:47.437758, N:0.645830}
+Trying "Belle Isle (Tours)"
+Found a stop matching stopArea: [StopArea|4060|Belle Isle|Tours|||477102|2268982]; Lambert2+: {E:477102.000000, N:2268982.000000}; Degrees: {E:47.409039, N:0.707958}
+Trying "Béranger (Tours)"
+Found a stop matching stopArea: [StopArea|4069|Béranger|Tours|||475225|2266850]; Lambert2+: {E:475225.000000, N:2266850.000000}; Degrees: {E:47.389513, N:0.683686}
+Trying "Berchottière (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3199|Berchottière|Chambray-lès-Tours|||476910|2260652]; Lambert2+: {E:476910.000000, N:2260652.000000}; Degrees: {E:47.334089, N:0.707702}
+Trying "Bergeonnerie (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3415|Bergeonnerie|Joué-lès-Tours|||475989|2263768]; Lambert2+: {E:475989.000000, N:2263768.000000}; Degrees: {E:47.361940, N:0.694657}
+Trying "Bergson (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3842|Bergson|Saint-Cyr-sur-Loire|||474039|2269440]; Lambert2+: {E:474039.000000, N:2269440.000000}; Degrees: {E:47.412580, N:0.667252}
+Trying "Bernard (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3416|Bernard|Joué-lès-Tours|||475128|2261993]; Lambert2+: {E:475128.000000, N:2261993.000000}; Degrees: {E:47.345815, N:0.683755}
+Trying "Berthelot (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3417|Berthelot|Joué-lès-Tours|||473333|2262308]; Lambert2+: {E:473333.000000, N:2262308.000000}; Degrees: {E:47.348305, N:0.659915}
+Trying "Berthenay Mairie (Berthenay)"
+Found a stop matching stopArea: [StopArea|3148|Berthenay Mairie|Berthenay|||463261|2264225]; Lambert2+: {E:463261.000000, N:2264225.000000}; Degrees: {E:47.363535, N:0.526059}
+Trying "Bialy (La Riche)"
+Found a stop matching stopArea: [StopArea|3727|Bialy|La Riche|||472912|2266019]; Lambert2+: {E:472912.000000, N:2266019.000000}; Degrees: {E:47.381598, N:0.653292}
+Trying "Billonnière (La Membrolle-sur-Choisille)"
+Found a stop matching stopArea: [StopArea|3571|Billonnière|La Membrolle-sur-Choisille|||471259|2271969]; Lambert2+: {E:471259.000000, N:2271969.000000}; Degrees: {E:47.434786, N:0.629694}
+Trying "Blanqui (Tours)"
+Found a stop matching stopArea: [StopArea|4061|Blanqui|Tours|||476399|2267656]; Lambert2+: {E:476399.000000, N:2267656.000000}; Degrees: {E:47.396983, N:0.699011}
+Trying "Blotterie (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3418|Blotterie|Joué-lès-Tours|||472256|2261156]; Lambert2+: {E:472256.000000, N:2261156.000000}; Degrees: {E:47.337738, N:0.645992}
+Trying "Bocage (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3844|Bocage|Saint-Cyr-sur-Loire|||474777|2268969]; Lambert2+: {E:474777.000000, N:2268969.000000}; Degrees: {E:47.408485, N:0.677161}
+Trying "Boileau (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3960|Boileau|Saint-Pierre-des-Corps|||477623|2267416]; Lambert2+: {E:477623.000000, N:2267416.000000}; Degrees: {E:47.395053, N:0.715288}
+Trying "Bois Aubry (Tours)"
+Found a stop matching stopArea: [StopArea|4062|Bois Aubry|Tours|||474956|2271506]; Lambert2+: {E:474956.000000, N:2271506.000000}; Degrees: {E:47.431334, N:0.678823}
+Trying "Bois Cormier (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3200|Bois Cormier|Chambray-lès-Tours|||477673|2261630]; Lambert2+: {E:477673.000000, N:2261630.000000}; Degrees: {E:47.343026, N:0.717529}
+Trying "Bois de Chambray (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3201|Bois de Chambray|Chambray-lès-Tours|||477721|2261218]; Lambert2+: {E:477721.000000, N:2261218.000000}; Degrees: {E:47.339330, N:0.718276}
+Trying "Boisdenier (Tours)"
+Found a stop matching stopArea: [StopArea|4063|Boisdenier|Tours|||475794|2266222]; Lambert2+: {E:475794.000000, N:2266222.000000}; Degrees: {E:47.383973, N:0.691396}
+Trying "Bois de Plante (La Ville-aux-Dames)"
+Found a stop matching stopArea: [StopArea|4384|Bois de Plante|La Ville-aux-Dames|||481102|2266095]; Lambert2+: {E:481102.000000, N:2266095.000000}; Degrees: {E:47.383809, N:0.761715}
+Trying "Bois des Hâtes (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3202|Bois des Hâtes|Chambray-lès-Tours|||479953|2260333]; Lambert2+: {E:479953.000000, N:2260333.000000}; Degrees: {E:47.331780, N:0.748043}
+Trying "Bois Gibert (Ballan-Miré)"
+Found a stop matching stopArea: [StopArea|3115|Bois Gibert|Ballan-Miré|||469974|2260073]; Lambert2+: {E:469974.000000, N:2260073.000000}; Degrees: {E:47.327552, N:0.616115}
+Trying "Bonamy (Tours)"
+Found a stop matching stopArea: [StopArea|4064|Bonamy|Tours|||476682|2262824]; Lambert2+: {E:476682.000000, N:2262824.000000}; Degrees: {E:47.353580, N:0.704089}
+Trying "Botanique (La Riche)"
+Found a stop matching stopArea: [StopArea|3728|Botanique|La Riche|||473871|2266073]; Lambert2+: {E:473871.000000, N:2266073.000000}; Degrees: {E:47.382268, N:0.665975}
+Trying "Bouleaux (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3961|Bouleaux|Saint-Pierre-des-Corps|||477914|2267047]; Lambert2+: {E:477914.000000, N:2267047.000000}; Degrees: {E:47.391788, N:0.719243}
+Trying "Bourg de Mettray (Mettray)"
+Found a stop matching stopArea: [StopArea|3585|Bourg de Mettray|Mettray|||472808|2273959]; Lambert2+: {E:472808.000000, N:2273959.000000}; Degrees: {E:47.452983, N:0.649658}
+Trying "Bourgeois (La Riche)"
+Found a stop matching stopArea: [StopArea|3729|Bourgeois|La Riche|||472875|2266586]; Lambert2+: {E:472875.000000, N:2266586.000000}; Degrees: {E:47.386690, N:0.652641}
+Trying "Boutteville (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3785|Boutteville|Saint-Avertin|||477010|2263677]; Lambert2+: {E:477010.000000, N:2263677.000000}; Degrees: {E:47.361313, N:0.708196}
+Trying "Boyer (Tours)"
+Found a stop matching stopArea: [StopArea|4065|Boyer|Tours|||474401|2267335]; Lambert2+: {E:474401.000000, N:2267335.000000}; Degrees: {E:47.393719, N:0.672639}
+Trying "Boylesve (Tours)"
+Found a stop matching stopArea: [StopArea|4066|Boylesve|Tours|||475060|2265963]; Lambert2+: {E:475060.000000, N:2265963.000000}; Degrees: {E:47.381505, N:0.681749}
+Trying "Branchoire (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3203|Branchoire|Chambray-lès-Tours|||478387|2262113]; Lambert2+: {E:478387.000000, N:2262113.000000}; Degrees: {E:47.347502, N:0.726845}
+Trying "Brassens (Tours)"
+Found a stop matching stopArea: [StopArea|4067|Brassens|Tours|||476591|2271735]; Lambert2+: {E:476591.000000, N:2271735.000000}; Degrees: {E:47.433702, N:0.700429}
+Trying "Bretonneau (Tours)"
+Found a stop matching stopArea: [StopArea|4068|Bretonneau|Tours|||474037|2266578]; Lambert2+: {E:474037.000000, N:2266578.000000}; Degrees: {E:47.386841, N:0.668031}
+Trying "Briand (Vernou-sur-Brenne)"
+Found a stop matching stopArea: [StopArea|4364|Briand|Vernou-sur-Brenne|||487300|2270190]; Lambert2+: {E:487300.000000, N:2270190.000000}; Degrees: {E:47.421726, N:0.842757}
+Trying "Briaudière (Ballan-Miré)"
+Found a stop matching stopArea: [StopArea|3116|Briaudière|Ballan-Miré|||468100|2259772]; Lambert2+: {E:468100.000000, N:2259772.000000}; Degrees: {E:47.324474, N:0.591416}
+Trying "Bruère (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3419|Bruère|Joué-lès-Tours|||474738|2262558]; Lambert2+: {E:474738.000000, N:2262558.000000}; Degrees: {E:47.350822, N:0.678437}
+Trying "Bugeaud (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3420|Bugeaud|Joué-lès-Tours|||474081|2262614]; Lambert2+: {E:474081.000000, N:2262614.000000}; Degrees: {E:47.351201, N:0.669727}
+Trying "Buisson (La Riche)"
+Found a stop matching stopArea: [StopArea|3730|Buisson|La Riche|||473064|2266630]; Lambert2+: {E:473064.000000, N:2266630.000000}; Degrees: {E:47.387122, N:0.655132}
+Trying "Cachin (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3962|Cachin|Saint-Pierre-des-Corps|||479962|2267636]; Lambert2+: {E:479962.000000, N:2267636.000000}; Degrees: {E:47.397461, N:0.746207}
+Trying "Calder (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3204|Calder|Chambray-lès-Tours|||476143|2262623]; Lambert2+: {E:476143.000000, N:2262623.000000}; Degrees: {E:47.351672, N:0.697011}
+Trying "Calmette (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3846|Calmette|Saint-Cyr-sur-Loire|||474736|2268883]; Lambert2+: {E:474736.000000, N:2268883.000000}; Degrees: {E:47.407704, N:0.676642}
+Trying "Camélias (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3424|Camélias|Joué-lès-Tours|||475728|2263517]; Lambert2+: {E:475728.000000, N:2263517.000000}; Degrees: {E:47.359634, N:0.691272}
+Trying "Camusière (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3786|Camusière|Saint-Avertin|||479148|2263251]; Lambert2+: {E:479148.000000, N:2263251.000000}; Degrees: {E:47.357877, N:0.736608}
+Trying "Camus (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3423|Camus|Joué-lès-Tours|||475898|2263454]; Lambert2+: {E:475898.000000, N:2263454.000000}; Degrees: {E:47.359099, N:0.693539}
+Trying "Canal (Tours)"
+Found a stop matching stopArea: [StopArea|4070|Canal|Tours|||476652|2266854]; Lambert2+: {E:476652.000000, N:2266854.000000}; Degrees: {E:47.389818, N:0.702583}
+Trying "Cap Soleil (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3425|Cap Soleil|Joué-lès-Tours|||472418|2261437]; Lambert2+: {E:472418.000000, N:2261437.000000}; Degrees: {E:47.340296, N:0.648055}
+Trying "Capucins (Tours)"
+Found a stop matching stopArea: [StopArea|4071|Capucins|Tours|||475676|2268201]; Lambert2+: {E:475676.000000, N:2268201.000000}; Degrees: {E:47.401748, N:0.689284}
+Trying "Carcassonne (Tours)"
+Found a stop matching stopArea: [StopArea|4072|Carcassonne|Tours|||477191|2269672]; Lambert2+: {E:477191.000000, N:2269672.000000}; Degrees: {E:47.415261, N:0.708948}
+Trying "Carlotti (Tours)"
+Found a stop matching stopArea: [StopArea|4073|Carlotti|Tours|||476909|2263470]; Lambert2+: {E:476909.000000, N:2263470.000000}; Degrees: {E:47.359432, N:0.706916}
+Trying "Carnot (Tours)"
+Found a stop matching stopArea: [StopArea|4074|Carnot|Tours|||475544|2265838]; Lambert2+: {E:475544.000000, N:2265838.000000}; Degrees: {E:47.380472, N:0.688192}
+Trying "Cassantin (Parçay-Meslay)"
+Found a stop matching stopArea: [StopArea|3689|Cassantin|Parçay-Meslay|||479789|2275399]; Lambert2+: {E:479789.000000, N:2275399.000000}; Degrees: {E:47.467244, N:0.741829}
+Trying "Cassin (Ballan-Miré)"
+Found a stop matching stopArea: [StopArea|3117|Cassin|Ballan-Miré|||469893|2261923]; Lambert2+: {E:469893.000000, N:2261923.000000}; Degrees: {E:47.344174, N:0.614508}
+Trying "Castel (La Membrolle-sur-Choisille)"
+Found a stop matching stopArea: [StopArea|3572|Castel|La Membrolle-sur-Choisille|||471516|2272071]; Lambert2+: {E:471516.000000, N:2272071.000000}; Degrees: {E:47.435754, N:0.633071}
+Trying "Cathédrale (Tours)"
+Found a stop matching stopArea: [StopArea|4075|Cathédrale|Tours|||476003|2267452]; Lambert2+: {E:476003.000000, N:2267452.000000}; Degrees: {E:47.395074, N:0.693823}
+Trying "Cèdres (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3856|Cèdres|Saint-Cyr-sur-Loire|||474756|2268365]; Lambert2+: {E:474756.000000, N:2268365.000000}; Degrees: {E:47.403049, N:0.677052}
+Trying "Cercelé (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3426|Cercelé|Joué-lès-Tours|||472845|2260669]; Lambert2+: {E:472845.000000, N:2260669.000000}; Degrees: {E:47.333472, N:0.653922}
+Trying "CFA Aforproba (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3963|CFA Aforproba|Saint-Pierre-des-Corps|||479255|2267564]; Lambert2+: {E:479255.000000, N:2267564.000000}; Degrees: {E:47.396685, N:0.736863}
+Trying "Chagall (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3787|Chagall|Saint-Avertin|||479763|2262533]; Lambert2+: {E:479763.000000, N:2262533.000000}; Degrees: {E:47.351532, N:0.744940}
+Trying "Chambray 2 (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3205|Chambray 2|Chambray-lès-Tours|||476485|2261070]; Lambert2+: {E:476485.000000, N:2261070.000000}; Degrees: {E:47.337769, N:0.701965}
+Trying "Chambray Centre (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3206|Chambray Centre|Chambray-lès-Tours|||477478|2261078]; Lambert2+: {E:477478.000000, N:2261078.000000}; Degrees: {E:47.338026, N:0.715100}
+Trying "Chambray Mairie (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3216|Chambray Mairie|Chambray-lès-Tours|||477280|2261115]; Lambert2+: {E:477280.000000, N:2261115.000000}; Degrees: {E:47.338322, N:0.712470}
+Trying "Chambrerie (Tours)"
+Found a stop matching stopArea: [StopArea|4076|Chambrerie|Tours|||477013|2270080]; Lambert2+: {E:477013.000000, N:2270080.000000}; Degrees: {E:47.418897, N:0.706477}
+Trying "Champ Chardon (Tours)"
+Found a stop matching stopArea: [StopArea|4077|Champ Chardon|Tours|||476101|2269849]; Lambert2+: {E:476101.000000, N:2269849.000000}; Degrees: {E:47.416649, N:0.694457}
+Trying "Champ de Course (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3217|Champ de Course|Chambray-lès-Tours|||476941|2260235]; Lambert2+: {E:476941.000000, N:2260235.000000}; Degrees: {E:47.330345, N:0.708226}
+Trying "Champeigne (Parçay-Meslay)"
+Found a stop matching stopArea: [StopArea|3690|Champeigne|Parçay-Meslay|||477332|2272282]; Lambert2+: {E:477332.000000, N:2272282.000000}; Degrees: {E:47.438760, N:0.710100}
+Trying "Champ Girault (Tours)"
+Found a stop matching stopArea: [StopArea|4078|Champ Girault|Tours|||476234|2266644]; Lambert2+: {E:476234.000000, N:2266644.000000}; Degrees: {E:47.387851, N:0.697105}
+Trying "Champ Joli (Tours)"
+Found a stop matching stopArea: [StopArea|4079|Champ Joli|Tours|||477088|2265741]; Lambert2+: {E:477088.000000, N:2265741.000000}; Degrees: {E:47.379890, N:0.708662}
+Trying "Chanceaux Centre (Chanceaux-sur-Choisille)"
+Found a stop matching stopArea: [StopArea|3250|Chanceaux Centre|Chanceaux-sur-Choisille|||476762|2276046]; Lambert2+: {E:476762.000000, N:2276046.000000}; Degrees: {E:47.472503, N:0.701506}
+Trying "Change (Tours)"
+Found a stop matching stopArea: [StopArea|4080|Change|Tours|||475109|2267284]; Lambert2+: {E:475109.000000, N:2267284.000000}; Degrees: {E:47.393394, N:0.682029}
+Trying "Chantelouze (Fondettes)"
+Found a stop matching stopArea: [StopArea|3355|Chantelouze|Fondettes|||468511|2267824]; Lambert2+: {E:468511.000000, N:2267824.000000}; Degrees: {E:47.396968, N:0.594491}
+Trying "Chantemerle (Fondettes)"
+Found a stop matching stopArea: [StopArea|3356|Chantemerle|Fondettes|||468362|2267484]; Lambert2+: {E:468362.000000, N:2267484.000000}; Degrees: {E:47.393881, N:0.592618}
+Trying "Chantepie (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3428|Chantepie|Joué-lès-Tours|||473450|2263116]; Lambert2+: {E:473450.000000, N:2263116.000000}; Degrees: {E:47.355594, N:0.661235}
+Trying "Chappe (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3218|Chappe|Chambray-lès-Tours|||476199|2261815]; Lambert2+: {E:476199.000000, N:2261815.000000}; Degrees: {E:47.344415, N:0.697975}
+Trying "Charantais (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3848|Charantais|Saint-Cyr-sur-Loire|||473829|2270258]; Lambert2+: {E:473829.000000, N:2270258.000000}; Degrees: {E:47.419896, N:0.664239}
+Trying "Charcot (Tours)"
+Found a stop matching stopArea: [StopArea|4081|Charcot|Tours|||475993|2265438]; Lambert2+: {E:475993.000000, N:2265438.000000}; Degrees: {E:47.376960, N:0.694248}
+Trying "Charleroi (Tours)"
+Found a stop matching stopArea: [StopArea|4082|Charleroi|Tours|||475264|2270844]; Lambert2+: {E:475264.000000, N:2270844.000000}; Degrees: {E:47.425439, N:0.683090}
+Trying "Château d'Eau (Tours)"
+Found a stop matching stopArea: [StopArea|4088|Château d'Eau|Tours|||476832|2265152]; Lambert2+: {E:476832.000000, N:2265152.000000}; Degrees: {E:47.374545, N:0.705434}
+Trying "Château de Cangé (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3788|Château de Cangé|Saint-Avertin|||480383|2264094]; Lambert2+: {E:480383.000000, N:2264094.000000}; Degrees: {E:47.365683, N:0.752729}
+Trying "Château de Tours (Tours)"
+Found a stop matching stopArea: [StopArea|4089|Château de Tours|Tours|||475938|2267724]; Lambert2+: {E:475938.000000, N:2267724.000000}; Degrees: {E:47.397508, N:0.692886}
+Trying "Château Fraisier (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3789|Château Fraisier|Saint-Avertin|||478997|2263779]; Lambert2+: {E:478997.000000, N:2263779.000000}; Degrees: {E:47.362597, N:0.734468}
+Trying "Château Gaillard (Saint-Genouph)"
+Found a stop matching stopArea: [StopArea|3911|Château Gaillard|Saint-Genouph|||467628|2265086]; Lambert2+: {E:467628.000000, N:2265086.000000}; Degrees: {E:47.372169, N:0.583606}
+Trying "Château Luynes (Luynes)"
+Found a stop matching stopArea: [StopArea|3542|Château Luynes|Luynes|||465137|2267194]; Lambert2+: {E:465137.000000, N:2267194.000000}; Degrees: {E:47.390621, N:0.549996}
+Trying "Château (Villandry)"
+Found a stop matching stopArea: [StopArea|4377|Château|Villandry|||462260|2261772]; Lambert2+: {E:462260.000000, N:2261772.000000}; Degrees: {E:47.341267, N:0.513563}
+Trying "Chatigny (Fondettes)"
+Found a stop matching stopArea: [StopArea|3357|Chatigny|Fondettes|||468098|2267003]; Lambert2+: {E:468098.000000, N:2267003.000000}; Degrees: {E:47.389502, N:0.589263}
+Trying "Chaudron (Tours)"
+Found a stop matching stopArea: [StopArea|4083|Chaudron|Tours|||476915|2268732]; Lambert2+: {E:476915.000000, N:2268732.000000}; Degrees: {E:47.406756, N:0.705549}
+Trying "Chaumette (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3429|Chaumette|Joué-lès-Tours|||472480|2263385]; Lambert2+: {E:472480.000000, N:2263385.000000}; Degrees: {E:47.357827, N:0.648322}
+Trying "Chemin vert (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3430|Chemin vert|Joué-lès-Tours|||476073|2263526]; Lambert2+: {E:476073.000000, N:2263526.000000}; Degrees: {E:47.359779, N:0.695835}
+Trying "Chêne Vert (Luynes)"
+Found a stop matching stopArea: [StopArea|3543|Chêne Vert|Luynes|||466637|2266810]; Lambert2+: {E:466637.000000, N:2266810.000000}; Degrees: {E:47.387473, N:0.569974}
+Trying "Chenonceau (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3431|Chenonceau|Joué-lès-Tours|||474699|2262393]; Lambert2+: {E:474699.000000, N:2262393.000000}; Degrees: {E:47.349331, N:0.677967}
+Trying "Chevalette (Fondettes)"
+Found a stop matching stopArea: [StopArea|3358|Chevalette|Fondettes|||468697|2266967]; Lambert2+: {E:468697.000000, N:2266967.000000}; Degrees: {E:47.389298, N:0.597206}
+Trying "Chevalier (Tours)"
+Found a stop matching stopArea: [StopArea|4084|Chevalier|Tours|||474819|2265183]; Lambert2+: {E:474819.000000, N:2265183.000000}; Degrees: {E:47.374445, N:0.678776}
+Trying "Chevallerie (Ballan-Miré)"
+Found a stop matching stopArea: [StopArea|3118|Chevallerie|Ballan-Miré|||467868|2260067]; Lambert2+: {E:467868.000000, N:2260067.000000}; Degrees: {E:47.327080, N:0.588261}
+Trying "Choisille (La Membrolle-sur-Choisille)"
+Found a stop matching stopArea: [StopArea|3573|Choisille|La Membrolle-sur-Choisille|||471874|2272194]; Lambert2+: {E:471874.000000, N:2272194.000000}; Degrees: {E:47.436930, N:0.637781}
+Trying "Chopin (Tours)"
+Found a stop matching stopArea: [StopArea|4085|Chopin|Tours|||476713|2269364]; Lambert2+: {E:476713.000000, N:2269364.000000}; Degrees: {E:47.412402, N:0.702699}
+Trying "Christ Roi (Tours)"
+Found a stop matching stopArea: [StopArea|4086|Christ Roi|Tours|||475382|2269376]; Lambert2+: {E:475382.000000, N:2269376.000000}; Degrees: {E:47.412260, N:0.685062}
+Trying "Churchill (Tours)"
+Found a stop matching stopArea: [StopArea|4087|Churchill|Tours|||475372|2265063]; Lambert2+: {E:475372.000000, N:2265063.000000}; Degrees: {E:47.373470, N:0.686130}
+Trying "CHU Trousseau (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3219|CHU Trousseau|Chambray-lès-Tours|||477323|2262218]; Lambert2+: {E:477323.000000, N:2262218.000000}; Degrees: {E:47.348250, N:0.712737}
+Trying "Cimetiere (Tours)"
+Found a stop matching stopArea: [StopArea|4090|Cimetiere|Tours|||476474|2269202]; Lambert2+: {E:476474.000000, N:2269202.000000}; Degrees: {E:47.410900, N:0.699578}
+Trying "Clarté (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3850|Clarté|Saint-Cyr-sur-Loire|||473636|2269429]; Lambert2+: {E:473636.000000, N:2269429.000000}; Degrees: {E:47.412404, N:0.661916}
+Trying "Clinique Velpeau (Tours)"
+Found a stop matching stopArea: [StopArea|4091|Clinique Velpeau|Tours|||475652|2268759]; Lambert2+: {E:475652.000000, N:2268759.000000}; Degrees: {E:47.406762, N:0.688811}
+Trying "Clocheville (Tours)"
+Found a stop matching stopArea: [StopArea|4092|Clocheville|Tours|||475058|2266818]; Lambert2+: {E:475058.000000, N:2266818.000000}; Degrees: {E:47.389194, N:0.681484}
+Trying "Clos de Vernou (Vernou-sur-Brenne)"
+Found a stop matching stopArea: [StopArea|4365|Clos de Vernou|Vernou-sur-Brenne|||487778|2269595]; Lambert2+: {E:487778.000000, N:2269595.000000}; Degrees: {E:47.416456, N:0.849240}
+Trying "Clos Lucé (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3432|Clos Lucé|Joué-lès-Tours|||474682|2262141]; Lambert2+: {E:474682.000000, N:2262141.000000}; Degrees: {E:47.347061, N:0.677812}
+Trying "Clos Neuf (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3433|Clos Neuf|Joué-lès-Tours|||473187|2263352]; Lambert2+: {E:473187.000000, N:2263352.000000}; Degrees: {E:47.357666, N:0.657688}
+Trying "Clos Robert (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3434|Clos Robert|Joué-lès-Tours|||475361|2262108]; Lambert2+: {E:475361.000000, N:2262108.000000}; Degrees: {E:47.346893, N:0.686806}
+Trying "Clos Vaumont (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3790|Clos Vaumont|Saint-Avertin|||477927|2263741]; Lambert2+: {E:477927.000000, N:2263741.000000}; Degrees: {E:47.362059, N:0.720315}
+Trying "Colette (La Ville-aux-Dames)"
+Found a stop matching stopArea: [StopArea|4385|Colette|La Ville-aux-Dames|||481814|2267614]; Lambert2+: {E:481814.000000, N:2267614.000000}; Degrees: {E:47.397598, N:0.770742}
+Trying "Collège Montaigne (Tours)"
+Found a stop matching stopArea: [StopArea|4093|Collège Montaigne|Tours|||475057|2271314]; Lambert2+: {E:475057.000000, N:2271314.000000}; Degrees: {E:47.429627, N:0.680216}
+Trying "Collège Ronsard (Tours)"
+Found a stop matching stopArea: [StopArea|4094|Collège Ronsard|Tours|||476799|2270084]; Lambert2+: {E:476799.000000, N:2270084.000000}; Degrees: {E:47.418893, N:0.703640}
+Trying "Colombier (Tours)"
+Found a stop matching stopArea: [StopArea|4095|Colombier|Tours|||476686|2269768]; Lambert2+: {E:476686.000000, N:2269768.000000}; Degrees: {E:47.416030, N:0.702230}
+Trying "Compagnon (Tours)"
+Found a stop matching stopArea: [StopArea|4096|Compagnon|Tours|||474972|2271234]; Lambert2+: {E:474972.000000, N:2271234.000000}; Degrees: {E:47.428891, N:0.679111}
+Trying "Condorcet (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3852|Condorcet|Saint-Cyr-sur-Loire|||473995|2270623]; Lambert2+: {E:473995.000000, N:2270623.000000}; Degrees: {E:47.423210, N:0.666336}
+Trying "Coppée (Tours)"
+Found a stop matching stopArea: [StopArea|4097|Coppée|Tours|||475861|2270627]; Lambert2+: {E:475861.000000, N:2270627.000000}; Degrees: {E:47.423601, N:0.691061}
+Trying "Coquinière (Notre-Dame-d'Oé)"
+Found a stop matching stopArea: [StopArea|3667|Coquinière|Notre-Dame-d'Oé|||477552|2273722]; Lambert2+: {E:477552.000000, N:2273722.000000}; Degrees: {E:47.451751, N:0.712621}
+Trying "Cosson (Vernou-sur-Brenne)"
+Found a stop matching stopArea: [StopArea|4366|Cosson|Vernou-sur-Brenne|||487265|2269536]; Lambert2+: {E:487265.000000, N:2269536.000000}; Degrees: {E:47.415838, N:0.842458}
+Trying "Côteaux (Luynes)"
+Found a stop matching stopArea: [StopArea|3544|Côteaux|Luynes|||466138|2266673]; Lambert2+: {E:466138.000000, N:2266673.000000}; Degrees: {E:47.386140, N:0.563407}
+Trying "Coty (Tours)"
+Found a stop matching stopArea: [StopArea|4098|Coty|Tours|||475297|2269093]; Lambert2+: {E:475297.000000, N:2269093.000000}; Degrees: {E:47.409699, N:0.684015}
+Trying "Couleuvrou (Notre-Dame-d'Oé)"
+Found a stop matching stopArea: [StopArea|3668|Couleuvrou|Notre-Dame-d'Oé|||477655|2273865]; Lambert2+: {E:477655.000000, N:2273865.000000}; Degrees: {E:47.453056, N:0.713948}
+Trying "Courbet (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3792|Courbet|Saint-Avertin|||479748|2262728]; Lambert2+: {E:479748.000000, N:2262728.000000}; Degrees: {E:47.353283, N:0.744690}
+Trying "Cousinerie (Tours)"
+Found a stop matching stopArea: [StopArea|4099|Cousinerie|Tours|||475779|2271833]; Lambert2+: {E:475779.000000, N:2271833.000000}; Degrees: {E:47.434431, N:0.689640}
+Trying "Cousseau (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3853|Cousseau|Saint-Cyr-sur-Loire|||474035|2269122]; Lambert2+: {E:474035.000000, N:2269122.000000}; Degrees: {E:47.409719, N:0.667289}
+Trying "Croix de Pierre (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3855|Croix de Pierre|Saint-Cyr-sur-Loire|||472875|2270918]; Lambert2+: {E:472875.000000, N:2270918.000000}; Degrees: {E:47.425648, N:0.651411}
+Trying "Croix Julia (La Membrolle-sur-Choisille)"
+Found a stop matching stopArea: [StopArea|3574|Croix Julia|La Membrolle-sur-Choisille|||472003|2272869]; Lambert2+: {E:472003.000000, N:2272869.000000}; Degrees: {E:47.443025, N:0.639297}
+Trying "Croix Pasquier (Tours)"
+Found a stop matching stopArea: [StopArea|4100|Croix Pasquier|Tours|||475677|2269063]; Lambert2+: {E:475677.000000, N:2269063.000000}; Degrees: {E:47.409501, N:0.689058}
+Trying "Croix Perray (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3793|Croix Perray|Saint-Avertin|||478500|2263096]; Lambert2+: {E:478500.000000, N:2263096.000000}; Degrees: {E:47.356364, N:0.728074}
+Trying "Crouzillère (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3435|Crouzillère|Joué-lès-Tours|||472655|2263426]; Lambert2+: {E:472655.000000, N:2263426.000000}; Degrees: {E:47.358229, N:0.650626}
+Trying "Crucifix (Fondettes)"
+Found a stop matching stopArea: [StopArea|3359|Crucifix|Fondettes|||471208|2268360]; Lambert2+: {E:471208.000000, N:2268360.000000}; Degrees: {E:47.402321, N:0.630057}
+Trying "Daguerre (Tours)"
+Found a stop matching stopArea: [StopArea|4103|Daguerre|Tours|||476039|2270180]; Lambert2+: {E:476039.000000, N:2270180.000000}; Degrees: {E:47.419614, N:0.693544}
+Trying "D'Alembert (Tours)"
+Found a stop matching stopArea: [StopArea|4101|D'Alembert|Tours|||476342|2271397]; Lambert2+: {E:476342.000000, N:2271397.000000}; Degrees: {E:47.430616, N:0.697222}
+Trying "Dames Blanches (Tours)"
+Found a stop matching stopArea: [StopArea|4104|Dames Blanches|Tours|||474601|2267471]; Lambert2+: {E:474601.000000, N:2267471.000000}; Degrees: {E:47.394980, N:0.675249}
+Trying "Danemark (Tours)"
+Found a stop matching stopArea: [StopArea|4105|Danemark|Tours|||476387|2271643]; Lambert2+: {E:476387.000000, N:2271643.000000}; Degrees: {E:47.432836, N:0.697751}
+Trying "Dassault (Tours)"
+Found a stop matching stopArea: [StopArea|4106|Dassault|Tours|||475499|2263981]; Lambert2+: {E:475499.000000, N:2263981.000000}; Degrees: {E:47.363763, N:0.688112}
+Trying "Debré (Vernou-sur-Brenne)"
+Found a stop matching stopArea: [StopArea|4367|Debré|Vernou-sur-Brenne|||487703|2269489]; Lambert2+: {E:487703.000000, N:2269489.000000}; Degrees: {E:47.415490, N:0.848273}
+Trying "De Clerambault (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3794|De Clerambault|Saint-Avertin|||477346|2262544]; Lambert2+: {E:477346.000000, N:2262544.000000}; Degrees: {E:47.351186, N:0.712953}
+Trying "De Gaulle (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3795|De Gaulle|Saint-Avertin|||478230|2263010]; Lambert2+: {E:478230.000000, N:2263010.000000}; Degrees: {E:47.355540, N:0.724524}
+Trying "De la Fontaine (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3436|De la Fontaine|Joué-lès-Tours|||473365|2262972]; Lambert2+: {E:473365.000000, N:2262972.000000}; Degrees: {E:47.354283, N:0.660151}
+Trying "Delaroche (Tours)"
+Found a stop matching stopArea: [StopArea|4107|Delaroche|Tours|||475064|2270296]; Lambert2+: {E:475064.000000, N:2270296.000000}; Degrees: {E:47.420473, N:0.680593}
+Trying "Delprat (La Ville-aux-Dames)"
+Found a stop matching stopArea: [StopArea|4387|Delprat|La Ville-aux-Dames|||481310|2267461]; Lambert2+: {E:481310.000000, N:2267461.000000}; Degrees: {E:47.396131, N:0.764108}
+Trying "Déportés (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3964|Déportés|Saint-Pierre-des-Corps|||479007|2267033]; Lambert2+: {E:479007.000000, N:2267033.000000}; Degrees: {E:47.391864, N:0.733721}
+Trying "Deslandes (Tours)"
+Found a stop matching stopArea: [StopArea|4108|Deslandes|Tours|||476703|2266403]; Lambert2+: {E:476703.000000, N:2266403.000000}; Degrees: {E:47.385771, N:0.703382}
+Trying "Desmoulins (Tours)"
+Found a stop matching stopArea: [StopArea|4109|Desmoulins|Tours|||474018|2266908]; Lambert2+: {E:474018.000000, N:2266908.000000}; Degrees: {E:47.389805, N:0.667686}
+Trying "Deux Croix (Fondettes)"
+Found a stop matching stopArea: [StopArea|3360|Deux Croix|Fondettes|||470654|2268541]; Lambert2+: {E:470654.000000, N:2268541.000000}; Degrees: {E:47.403840, N:0.622667}
+Trying "Devildé (Tours)"
+Found a stop matching stopArea: [StopArea|4110|Devildé|Tours|||475959|2269271]; Lambert2+: {E:475959.000000, N:2269271.000000}; Degrees: {E:47.411424, N:0.692736}
+Trying "Devinière (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3220|Devinière|Chambray-lès-Tours|||479128|2260946]; Lambert2+: {E:479128.000000, N:2260946.000000}; Degrees: {E:47.337143, N:0.736965}
+Trying "Dewoitine (Parçay-Meslay)"
+Found a stop matching stopArea: [StopArea|3691|Dewoitine|Parçay-Meslay|||477596|2272540]; Lambert2+: {E:477596.000000, N:2272540.000000}; Degrees: {E:47.441129, N:0.713529}
+Trying "D'Indy (Tours)"
+Found a stop matching stopArea: [StopArea|4102|D'Indy|Tours|||477025|2264399]; Lambert2+: {E:477025.000000, N:2264399.000000}; Degrees: {E:47.367809, N:0.708196}
+Trying "Docteur Chaumier (Tours)"
+Found a stop matching stopArea: [StopArea|4111|Docteur Chaumier|Tours|||474056|2267126]; Lambert2+: {E:474056.000000, N:2267126.000000}; Degrees: {E:47.391773, N:0.668128}
+Trying "Docteur Fournier (Tours)"
+Found a stop matching stopArea: [StopArea|4112|Docteur Fournier|Tours|||476449|2266351]; Lambert2+: {E:476449.000000, N:2266351.000000}; Degrees: {E:47.385256, N:0.700033}
+Trying "Docteur Lebled (Rochecorbon)"
+Found a stop matching stopArea: [StopArea|3759|Docteur Lebled|Rochecorbon|||480670|2269531]; Lambert2+: {E:480670.000000, N:2269531.000000}; Degrees: {E:47.414632, N:0.755079}
+Trying "Dolmen (Mettray)"
+Found a stop matching stopArea: [StopArea|3586|Dolmen|Mettray|||472602|2274109]; Lambert2+: {E:472602.000000, N:2274109.000000}; Degrees: {E:47.454292, N:0.646884}
+Trying "Dorgeles (Tours)"
+Found a stop matching stopArea: [StopArea|4113|Dorgeles|Tours|||476970|2268971]; Lambert2+: {E:476970.000000, N:2268971.000000}; Degrees: {E:47.408916, N:0.706212}
+Trying "Douzillère (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3437|Douzillère|Joué-lès-Tours|||473091|2262132]; Lambert2+: {E:473091.000000, N:2262132.000000}; Degrees: {E:47.346676, N:0.656762}
+Trying "Duclos Atlantes (Tours)"
+Found a stop matching stopArea: [StopArea|4114|Duclos Atlantes|Tours|||477677|2265482]; Lambert2+: {E:477677.000000, N:2265482.000000}; Degrees: {E:47.377670, N:0.716531}
+Trying "Dujardin (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3221|Dujardin|Chambray-lès-Tours|||477129|2261961]; Lambert2+: {E:477129.000000, N:2261961.000000}; Degrees: {E:47.345902, N:0.710241}
+Trying "Dunant (Ballan-Miré)"
+Found a stop matching stopArea: [StopArea|3119|Dunant|Ballan-Miré|||470155|2261509]; Lambert2+: {E:470155.000000, N:2261509.000000}; Degrees: {E:47.340502, N:0.618094}
+Trying "Duperré (Ballan-Miré)"
+Found a stop matching stopArea: [StopArea|3120|Duperré|Ballan-Miré|||470896|2262693]; Lambert2+: {E:470896.000000, N:2262693.000000}; Degrees: {E:47.351296, N:0.627557}
+Trying "Duplessis (Tours)"
+Found a stop matching stopArea: [StopArea|4115|Duplessis|Tours|||475287|2265917]; Lambert2+: {E:475287.000000, N:2265917.000000}; Degrees: {E:47.381134, N:0.684767}
+Trying "Dupuy (Fondettes)"
+Found a stop matching stopArea: [StopArea|3361|Dupuy|Fondettes|||468874|2268980]; Lambert2+: {E:468874.000000, N:2268980.000000}; Degrees: {E:47.407436, N:0.598961}
+Trying "Duquesne (Tours)"
+Found a stop matching stopArea: [StopArea|4116|Duquesne|Tours|||476855|2263309]; Lambert2+: {E:476855.000000, N:2263309.000000}; Degrees: {E:47.357974, N:0.706245}
+Trying "Ec. Infirmières (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3222|Ec. Infirmières|Chambray-lès-Tours|||477569|2262041]; Lambert2+: {E:477569.000000, N:2262041.000000}; Degrees: {E:47.346704, N:0.716041}
+Trying "Ecole Commerce (Tours)"
+Found a stop matching stopArea: [StopArea|4117|Ecole Commerce|Tours|||476808|2264015]; Lambert2+: {E:476808.000000, N:2264015.000000}; Degrees: {E:47.364315, N:0.705429}
+Trying "Egalité (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3965|Egalité|Saint-Pierre-des-Corps|||477563|2266560]; Lambert2+: {E:477563.000000, N:2266560.000000}; Degrees: {E:47.387343, N:0.714727}
+Trying "Engerand (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3857|Engerand|Saint-Cyr-sur-Loire|||474593|2269361]; Lambert2+: {E:474593.000000, N:2269361.000000}; Degrees: {E:47.411975, N:0.674614}
+Trying "Erables (Tours)"
+Found a stop matching stopArea: [StopArea|4118|Erables|Tours|||474884|2265517]; Lambert2+: {E:474884.000000, N:2265517.000000}; Degrees: {E:47.377461, N:0.679543}
+Trying "Ermitage (Tours)"
+Found a stop matching stopArea: [StopArea|4119|Ermitage|Tours|||476737|2268584]; Lambert2+: {E:476737.000000, N:2268584.000000}; Degrees: {E:47.405392, N:0.703232}
+Trying "ESAT les Vallées (Luynes)"
+Found a stop matching stopArea: [StopArea|3545|ESAT les Vallées|Luynes|||464189|2267223]; Lambert2+: {E:464189.000000, N:2267223.000000}; Degrees: {E:47.390687, N:0.537433}
+Trying "Espace Malraux (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3438|Espace Malraux|Joué-lès-Tours|||472084|2262083]; Lambert2+: {E:472084.000000, N:2262083.000000}; Degrees: {E:47.346041, N:0.643452}
+Trying "Estienne d'Orves (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3966|Estienne d'Orves|Saint-Pierre-des-Corps|||477888|2266666]; Lambert2+: {E:477888.000000, N:2266666.000000}; Degrees: {E:47.388357, N:0.719002}
+Trying "Eugénie Grandet (La Ville-aux-Dames)"
+Found a stop matching stopArea: [StopArea|4388|Eugénie Grandet|La Ville-aux-Dames|||480756|2267407]; Lambert2+: {E:480756.000000, N:2267407.000000}; Degrees: {E:47.395546, N:0.756785}
+Trying "Europarc (Tours)"
+Found a stop matching stopArea: [StopArea|4120|Europarc|Tours|||476878|2271659]; Lambert2+: {E:476878.000000, N:2271659.000000}; Degrees: {E:47.433072, N:0.704254}
+Trying "Europe (Tours)"
+Found a stop matching stopArea: [StopArea|4121|Europe|Tours|||475062|2270498]; Lambert2+: {E:475062.000000, N:2270498.000000}; Degrees: {E:47.422289, N:0.680510}
+Trying "Eve Lavallière (Chanceaux-sur-Choisille)"
+Found a stop matching stopArea: [StopArea|3252|Eve Lavallière|Chanceaux-sur-Choisille|||477026|2275962]; Lambert2+: {E:477026.000000, N:2275962.000000}; Degrees: {E:47.471797, N:0.705031}
+Trying "Fac 2 Lions (Tours)"
+Found a stop matching stopArea: [StopArea|4123|Fac 2 Lions|Tours|||475217|2264359]; Lambert2+: {E:475217.000000, N:2264359.000000}; Degrees: {E:47.367110, N:0.684274}
+Trying "Fac Grandmont (Tours)"
+Found a stop matching stopArea: [StopArea|4124|Fac Grandmont|Tours|||476569|2263194]; Lambert2+: {E:476569.000000, N:2263194.000000}; Degrees: {E:47.356887, N:0.702492}
+Trying "Fac Tanneurs (Tours)"
+Found a stop matching stopArea: [StopArea|4125|Fac Tanneurs|Tours|||475005|2267563]; Lambert2+: {E:475005.000000, N:2267563.000000}; Degrees: {E:47.395884, N:0.680574}
+Trying "Faidherbe (Tours)"
+Found a stop matching stopArea: [StopArea|4126|Faidherbe|Tours|||475175|2265979]; Lambert2+: {E:475175.000000, N:2265979.000000}; Degrees: {E:47.381671, N:0.683267}
+Trying "Faraday (Tours)"
+Found a stop matching stopArea: [StopArea|4127|Faraday|Tours|||475745|2270073]; Lambert2+: {E:475745.000000, N:2270073.000000}; Degrees: {E:47.418597, N:0.689678}
+Trying "Farges (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3967|Farges|Saint-Pierre-des-Corps|||479351|2266263]; Lambert2+: {E:479351.000000, N:2266263.000000}; Degrees: {E:47.385002, N:0.738484}
+Trying "Fauvettes (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3439|Fauvettes|Joué-lès-Tours|||472621|2261706]; Lambert2+: {E:472621.000000, N:2261706.000000}; Degrees: {E:47.342754, N:0.650664}
+Trying "Febvotte (Tours)"
+Found a stop matching stopArea: [StopArea|4128|Febvotte|Tours|||475366|2265327]; Lambert2+: {E:475366.000000, N:2265327.000000}; Degrees: {E:47.375843, N:0.685977}
+Trying "Félix (La Riche)"
+Found a stop matching stopArea: [StopArea|3731|Félix|La Riche|||473529|2266876]; Lambert2+: {E:473529.000000, N:2266876.000000}; Degrees: {E:47.389424, N:0.661220}
+Trying "Ferranderie (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3223|Ferranderie|Chambray-lès-Tours|||476065|2261681]; Lambert2+: {E:476065.000000, N:2261681.000000}; Degrees: {E:47.343185, N:0.696239}
+Trying "Florence (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3968|Florence|Saint-Pierre-des-Corps|||479594|2265568]; Lambert2+: {E:479594.000000, N:2265568.000000}; Degrees: {E:47.378796, N:0.741889}
+Trying "Florian (Tours)"
+Found a stop matching stopArea: [StopArea|4129|Florian|Tours|||476742|2266204]; Lambert2+: {E:476742.000000, N:2266204.000000}; Degrees: {E:47.383989, N:0.703953}
+Trying "Fondettes Centre (Fondettes)"
+Found a stop matching stopArea: [StopArea|3363|Fondettes Centre|Fondettes|||468630|2268453]; Lambert2+: {E:468630.000000, N:2268453.000000}; Degrees: {E:47.402648, N:0.595883}
+Trying "Fondettes Gare (Fondettes)"
+Found a stop matching stopArea: [StopArea|3364|Fondettes Gare|Fondettes|||472366|2267888]; Lambert2+: {E:472366.000000, N:2267888.000000}; Degrees: {E:47.398301, N:0.645530}
+Trying "Fontaine Blanche (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3224|Fontaine Blanche|Chambray-lès-Tours|||475573|2261532]; Lambert2+: {E:475573.000000, N:2261532.000000}; Degrees: {E:47.341753, N:0.689771}
+Trying "Fontaine de Mie (Mettray)"
+Found a stop matching stopArea: [StopArea|3587|Fontaine de Mie|Mettray|||474578|2271676]; Lambert2+: {E:474578.000000, N:2271676.000000}; Degrees: {E:47.432791, N:0.673766}
+Trying "Fontaines (Tours)"
+Found a stop matching stopArea: [StopArea|4130|Fontaines|Tours|||477416|2264353]; Lambert2+: {E:477416.000000, N:2264353.000000}; Degrees: {E:47.367468, N:0.713384}
+Trying "Fontenelles (Rochecorbon)"
+Found a stop matching stopArea: [StopArea|3760|Fontenelles|Rochecorbon|||480746|2269773]; Lambert2+: {E:480746.000000, N:2269773.000000}; Degrees: {E:47.416822, N:0.756022}
+Trying "Fosse Neuve (Parçay-Meslay)"
+Found a stop matching stopArea: [StopArea|3692|Fosse Neuve|Parçay-Meslay|||480037|2273269]; Lambert2+: {E:480037.000000, N:2273269.000000}; Degrees: {E:47.448134, N:0.745690}
+Trying "Fosse Poitevine (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3796|Fosse Poitevine|Saint-Avertin|||480054|2263956]; Lambert2+: {E:480054.000000, N:2263956.000000}; Degrees: {E:47.364382, N:0.748411}
+Trying "Fossés Blancs (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3225|Fossés Blancs|Chambray-lès-Tours|||475787|2261743]; Lambert2+: {E:475787.000000, N:2261743.000000}; Degrees: {E:47.343691, N:0.692544}
+Trying "Fosses Boissées (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3859|Fosses Boissées|Saint-Cyr-sur-Loire|||474260|2268879]; Lambert2+: {E:474260.000000, N:2268879.000000}; Degrees: {E:47.407577, N:0.670338}
+Trying "Fourbisserie (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3226|Fourbisserie|Chambray-lès-Tours|||476278|2262866]; Lambert2+: {E:476278.000000, N:2262866.000000}; Degrees: {E:47.353882, N:0.698731}
+Trying "Fourneau (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3797|Fourneau|Saint-Avertin|||479368|2262389]; Lambert2+: {E:479368.000000, N:2262389.000000}; Degrees: {E:47.350164, N:0.739752}
+Trying "Frasne (Parçay-Meslay)"
+Found a stop matching stopArea: [StopArea|3693|Frasne|Parçay-Meslay|||480402|2272168]; Lambert2+: {E:480402.000000, N:2272168.000000}; Degrees: {E:47.438299, N:0.750823}
+Trying "Fresnel (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3227|Fresnel|Chambray-lès-Tours|||478536|2261891]; Lambert2+: {E:478536.000000, N:2261891.000000}; Degrees: {E:47.345533, N:0.728877}
+Trying "Frumeaud (Tours)"
+Found a stop matching stopArea: [StopArea|4131|Frumeaud|Tours|||474571|2266834]; Lambert2+: {E:474571.000000, N:2266834.000000}; Degrees: {E:47.389245, N:0.675030}
+Trying "F. Sicard (Tours)"
+Found a stop matching stopArea: [StopArea|4122|F. Sicard|Tours|||475903|2267385]; Lambert2+: {E:475903.000000, N:2267385.000000}; Degrees: {E:47.394453, N:0.692517}
+Trying "Fusaparc (Tours)"
+Found a stop matching stopArea: [StopArea|4132|Fusaparc|Tours|||476890|2270862]; Lambert2+: {E:476890.000000, N:2270862.000000}; Degrees: {E:47.425907, N:0.704632}
+Trying "Gagnerie (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3860|Gagnerie|Saint-Cyr-sur-Loire|||472548|2270789]; Lambert2+: {E:472548.000000, N:2270789.000000}; Degrees: {E:47.424425, N:0.647115}
+Trying "Galbrunes (Ballan-Miré)"
+Found a stop matching stopArea: [StopArea|3121|Galbrunes|Ballan-Miré|||469512|2261837]; Lambert2+: {E:469512.000000, N:2261837.000000}; Degrees: {E:47.343325, N:0.609492}
+Trying "Galbrunes (Tours)"
+Found a stop matching stopArea: [StopArea|3121|Galbrunes|Ballan-Miré|||469512|2261837]; Lambert2+: {E:469512.000000, N:2261837.000000}; Degrees: {E:47.343325, N:0.609492}
+Trying "Gamard (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3440|Gamard|Joué-lès-Tours|||473654|2262370]; Lambert2+: {E:473654.000000, N:2262370.000000}; Degrees: {E:47.348925, N:0.664145}
+Trying "Gannay (Fondettes)"
+Found a stop matching stopArea: [StopArea|3365|Gannay|Fondettes|||467251|2266901]; Lambert2+: {E:467251.000000, N:2266901.000000}; Degrees: {E:47.388415, N:0.578077}
+Trying "gare de Ballan (Ballan-Miré)"
+Found a stop matching stopArea: [StopArea|3122|gare de Ballan|Ballan-Miré|||470145|2261093]; Lambert2+: {E:470145.000000, N:2261093.000000}; Degrees: {E:47.336759, N:0.618082}
+Trying "gare de Joué-lès-Tours (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3441|gare de Joué-lès-Tours|Joué-lès-Tours|||473889|2262957]; Lambert2+: {E:473889.000000, N:2262957.000000}; Degrees: {E:47.354249, N:0.667090}
+Trying "gare de Tours (Tours)"
+Found a stop matching stopArea: [StopArea|4133|gare de Tours|Tours|||475967|2266869]; Lambert2+: {E:475967.000000, N:2266869.000000}; Degrees: {E:47.389824, N:0.693507}
+Trying "Gare ND d'Oé (Notre-Dame-d'Oé)"
+Found a stop matching stopArea: [StopArea|3670|Gare ND d'Oé|Notre-Dame-d'Oé|||477071|2274512]; Lambert2+: {E:477071.000000, N:2274512.000000}; Degrees: {E:47.458766, N:0.706027}
+Trying "Gare Vinci (Tours)"
+Found a stop matching stopArea: [StopArea|4134|Gare Vinci|Tours|||475917|2266978]; Lambert2+: {E:475917.000000, N:2266978.000000}; Degrees: {E:47.390795, N:0.692815}
+Trying "Gatinière (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3861|Gatinière|Saint-Cyr-sur-Loire|||474483|2272580]; Lambert2+: {E:474483.000000, N:2272580.000000}; Degrees: {E:47.440903, N:0.672253}
+Trying "G. d'Estrées (La Ville-aux-Dames)"
+Found a stop matching stopArea: [StopArea|4389|G. d'Estrées|La Ville-aux-Dames|||482508|2267221]; Lambert2+: {E:482508.000000, N:2267221.000000}; Degrees: {E:47.394188, N:0.780038}
+Trying "Général Estienne (Tours)"
+Found a stop matching stopArea: [StopArea|4141|Général Estienne|Tours|||475985|2269505]; Lambert2+: {E:475985.000000, N:2269505.000000}; Degrees: {E:47.413534, N:0.693015}
+Trying "Général Mocquery (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3800|Général Mocquery|Saint-Avertin|||479092|2261669]; Lambert2+: {E:479092.000000, N:2261669.000000}; Degrees: {E:47.343639, N:0.736294}
+Trying "Général Renault (Tours)"
+Found a stop matching stopArea: [StopArea|4142|Général Renault|Tours|||474690|2265802]; Lambert2+: {E:474690.000000, N:2265802.000000}; Degrees: {E:47.379987, N:0.676895}
+Trying "Giraudeau (Tours)"
+Found a stop matching stopArea: [StopArea|4135|Giraudeau|Tours|||474708|2266070]; Lambert2+: {E:474708.000000, N:2266070.000000}; Degrees: {E:47.382401, N:0.677058}
+Trying "Giraudoux (Tours)"
+Found a stop matching stopArea: [StopArea|4136|Giraudoux|Tours|||477368|2269741]; Lambert2+: {E:477368.000000, N:2269741.000000}; Degrees: {E:47.415915, N:0.711274}
+Trying "Gitonnière (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3443|Gitonnière|Joué-lès-Tours|||473525|2261216]; Lambert2+: {E:473525.000000, N:2261216.000000}; Degrees: {E:47.338522, N:0.662763}
+Trying "Glycines (Luynes)"
+Found a stop matching stopArea: [StopArea|3546|Glycines|Luynes|||465585|2267928]; Lambert2+: {E:465585.000000, N:2267928.000000}; Degrees: {E:47.397313, N:0.555708}
+Trying "Golf (Tours)"
+Found a stop matching stopArea: [StopArea|4137|Golf|Tours|||476662|2268349]; Lambert2+: {E:476662.000000, N:2268349.000000}; Degrees: {E:47.403264, N:0.702303}
+Trying "Grand Carroi (La Riche)"
+Found a stop matching stopArea: [StopArea|3732|Grand Carroi|La Riche|||472544|2266468]; Lambert2+: {E:472544.000000, N:2266468.000000}; Degrees: {E:47.385565, N:0.648292}
+Trying "Grand Mail (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3971|Grand Mail|Saint-Pierre-des-Corps|||478390|2267240]; Lambert2+: {E:478390.000000, N:2267240.000000}; Degrees: {E:47.393612, N:0.725494}
+Trying "Grand Marché (Tours)"
+Found a stop matching stopArea: [StopArea|4138|Grand Marché|Tours|||474911|2267197]; Lambert2+: {E:474911.000000, N:2267197.000000}; Degrees: {E:47.392574, N:0.679431}
+Trying "Grand Moulin (Ballan-Miré)"
+Found a stop matching stopArea: [StopArea|3123|Grand Moulin|Ballan-Miré|||469395|2263603]; Lambert2+: {E:469395.000000, N:2263603.000000}; Degrees: {E:47.359184, N:0.607429}
+Trying "Grand Ormeau (Fondettes)"
+Found a stop matching stopArea: [StopArea|3366|Grand Ormeau|Fondettes|||469866|2268656]; Lambert2+: {E:469866.000000, N:2268656.000000}; Degrees: {E:47.404719, N:0.612196}
+Trying "Grands Champs (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3798|Grands Champs|Saint-Avertin|||477604|2262721]; Lambert2+: {E:477604.000000, N:2262721.000000}; Degrees: {E:47.352826, N:0.716318}
+Trying "Grands Mortiers (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3972|Grands Mortiers|Saint-Pierre-des-Corps|||478432|2265938]; Lambert2+: {E:478432.000000, N:2265938.000000}; Degrees: {E:47.381910, N:0.726404}
+Trying "Grand Sud (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3228|Grand Sud|Chambray-lès-Tours|||476682|2260118]; Lambert2+: {E:476682.000000, N:2260118.000000}; Degrees: {E:47.329244, N:0.704832}
+Trying "Grand Théâtre (Tours)"
+Found a stop matching stopArea: [StopArea|4139|Grand Théâtre|Tours|||475670|2267423]; Lambert2+: {E:475670.000000, N:2267423.000000}; Degrees: {E:47.394750, N:0.689420}
+Trying "Grand Village (La Ville-aux-Dames)"
+Found a stop matching stopArea: [StopArea|4390|Grand Village|La Ville-aux-Dames|||481970|2266491]; Lambert2+: {E:481970.000000, N:2266491.000000}; Degrees: {E:47.387526, N:0.773105}
+Trying "Grange de Meslay (Parçay-Meslay)"
+Found a stop matching stopArea: [StopArea|3694|Grange de Meslay|Parçay-Meslay|||479774|2272989]; Lambert2+: {E:479774.000000, N:2272989.000000}; Degrees: {E:47.445568, N:0.742279}
+Trying "Granges Galand (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3799|Granges Galand|Saint-Avertin|||477867|2264481]; Lambert2+: {E:477867.000000, N:2264481.000000}; Degrees: {E:47.368703, N:0.719320}
+Trying "Grenouillère (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3229|Grenouillère|Chambray-lès-Tours|||477213|2260629]; Lambert2+: {E:477213.000000, N:2260629.000000}; Degrees: {E:47.333939, N:0.711717}
+Trying "Gros Chêne (La Ville-aux-Dames)"
+Found a stop matching stopArea: [StopArea|4391|Gros Chêne|La Ville-aux-Dames|||480964|2267622]; Lambert2+: {E:480964.000000, N:2267622.000000}; Degrees: {E:47.397517, N:0.759482}
+Trying "Grottes (Savonnières)"
+Found a stop matching stopArea: [StopArea|4007|Grottes|Savonnières|||463604|2262252]; Lambert2+: {E:463604.000000, N:2262252.000000}; Degrees: {E:47.345863, N:0.531199}
+Trying "Gué Andreau (Mettray)"
+Found a stop matching stopArea: [StopArea|3588|Gué Andreau|Mettray|||472412|2273489]; Lambert2+: {E:472412.000000, N:2273489.000000}; Degrees: {E:47.448680, N:0.644542}
+Trying "Guesde (Tours)"
+Found a stop matching stopArea: [StopArea|4140|Guesde|Tours|||476740|2265712]; Lambert2+: {E:476740.000000, N:2265712.000000}; Degrees: {E:47.379564, N:0.704062}
+Trying "Guesne (Fondettes)"
+Found a stop matching stopArea: [StopArea|3367|Guesne|Fondettes|||468590|2267990]; Lambert2+: {E:468590.000000, N:2267990.000000}; Degrees: {E:47.398477, N:0.595489}
+Trying "Guignière (Fondettes)"
+Found a stop matching stopArea: [StopArea|3368|Guignière|Fondettes|||472019|2267167]; Lambert2+: {E:472019.000000, N:2267167.000000}; Degrees: {E:47.391750, N:0.641140}
+Trying "Guillaume Louis (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3230|Guillaume Louis|Chambray-lès-Tours|||475666|2261216]; Lambert2+: {E:475666.000000, N:2261216.000000}; Degrees: {E:47.338928, N:0.691089}
+Trying "Guillon (La Riche)"
+Found a stop matching stopArea: [StopArea|3733|Guillon|La Riche|||472975|2265584]; Lambert2+: {E:472975.000000, N:2265584.000000}; Degrees: {E:47.377698, N:0.654250}
+Trying "Gutenberg (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3444|Gutenberg|Joué-lès-Tours|||472437|2262153]; Lambert2+: {E:472437.000000, N:2262153.000000}; Degrees: {E:47.346739, N:0.648103}
+Trying "Guynemer (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3862|Guynemer|Saint-Cyr-sur-Loire|||474138|2269769]; Lambert2+: {E:474138.000000, N:2269769.000000}; Degrees: {E:47.415558, N:0.668471}
+Trying "Halles (Tours)"
+Found a stop matching stopArea: [StopArea|4143|Halles|Tours|||475047|2267094]; Lambert2+: {E:475047.000000, N:2267094.000000}; Degrees: {E:47.391674, N:0.681261}
+Trying "Hardouin (Tours)"
+Found a stop matching stopArea: [StopArea|4144|Hardouin|Tours|||475834|2269928]; Lambert2+: {E:475834.000000, N:2269928.000000}; Degrees: {E:47.417309, N:0.690898}
+Trying "Haute Limougère (Fondettes)"
+Found a stop matching stopArea: [StopArea|3369|Haute Limougère|Fondettes|||470429|2268611]; Lambert2+: {E:470429.000000, N:2268611.000000}; Degrees: {E:47.404425, N:0.619666}
+Trying "Hautes Roches (Rochecorbon)"
+Found a stop matching stopArea: [StopArea|3761|Hautes Roches|Rochecorbon|||481659|2269014]; Lambert2+: {E:481659.000000, N:2269014.000000}; Degrees: {E:47.410161, N:0.768319}
+Trying "Henry (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3445|Henry|Joué-lès-Tours|||473177|2258613]; Lambert2+: {E:473177.000000, N:2258613.000000}; Degrees: {E:47.315045, N:0.658895}
+Trying "Héraults (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3801|Héraults|Saint-Avertin|||479752|2263977]; Lambert2+: {E:479752.000000, N:2263977.000000}; Degrees: {E:47.364516, N:0.744408}
+Trying "Hérissières (Ballan-Miré)"
+Found a stop matching stopArea: [StopArea|3125|Hérissières|Ballan-Miré|||469758|2261179]; Lambert2+: {E:469758.000000, N:2261179.000000}; Degrees: {E:47.337456, N:0.612937}
+Trying "Heure Tranquille (Tours)"
+Found a stop matching stopArea: [StopArea|4145|Heure Tranquille|Tours|||474767|2264370]; Lambert2+: {E:474767.000000, N:2264370.000000}; Degrees: {E:47.367123, N:0.678314}
+Trying "Heurteloup (Tours)"
+Found a stop matching stopArea: [StopArea|4146|Heurteloup|Tours|||476234|2267033]; Lambert2+: {E:476234.000000, N:2267033.000000}; Degrees: {E:47.391349, N:0.696998}
+Trying "Holnon (Vouvray)"
+Found a stop matching stopArea: [StopArea|4420|Holnon|Vouvray|||484180|2269096]; Lambert2+: {E:484180.000000, N:2269096.000000}; Degrees: {E:47.411346, N:0.801697}
+Trying "Hopital Pages (Luynes)"
+Found a stop matching stopArea: [StopArea|3547|Hopital Pages|Luynes|||465507|2267530]; Lambert2+: {E:465507.000000, N:2267530.000000}; Degrees: {E:47.393718, N:0.554795}
+Trying "Horizon Vert (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3231|Horizon Vert|Chambray-lès-Tours|||477790|2261891]; Lambert2+: {E:477790.000000, N:2261891.000000}; Degrees: {E:47.345395, N:0.719006}
+Trying "Hospitalité (Ballan-Miré)"
+Found a stop matching stopArea: [StopArea|3124|Hospitalité|Ballan-Miré|||469277|2261482]; Lambert2+: {E:469277.000000, N:2261482.000000}; Degrees: {E:47.340086, N:0.606486}
+Trying "Huygens (Tours)"
+Found a stop matching stopArea: [StopArea|4147|Huygens|Tours|||476681|2272097]; Lambert2+: {E:476681.000000, N:2272097.000000}; Degrees: {E:47.436974, N:0.701522}
+Trying "Ile Aucard (Tours)"
+Found a stop matching stopArea: [StopArea|4148|Ile Aucard|Tours|||476283|2268307]; Lambert2+: {E:476283.000000, N:2268307.000000}; Degrees: {E:47.402816, N:0.697295}
+Trying "IME (Luynes)"
+Found a stop matching stopArea: [StopArea|3548|IME|Luynes|||464518|2266972]; Lambert2+: {E:464518.000000, N:2266972.000000}; Degrees: {E:47.388498, N:0.541866}
+Trying "IUT (Tours)"
+Found a stop matching stopArea: [StopArea|4149|IUT|Tours|||476760|2268973]; Lambert2+: {E:476760.000000, N:2268973.000000}; Degrees: {E:47.408895, N:0.703430}
+Trying "Jacques Decour (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3973|Jacques Decour|Saint-Pierre-des-Corps|||478286|2267394]; Lambert2+: {E:478286.000000, N:2267394.000000}; Degrees: {E:47.394978, N:0.724075}
+Trying "Jacques Monod (Tours)"
+Found a stop matching stopArea: [StopArea|4150|Jacques Monod|Tours|||474726|2264699]; Lambert2+: {E:474726.000000, N:2264699.000000}; Degrees: {E:47.370074, N:0.677680}
+Trying "Jaunay (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3866|Jaunay|Saint-Cyr-sur-Loire|||474069|2268267]; Lambert2+: {E:474069.000000, N:2268267.000000}; Degrees: {E:47.402037, N:0.667980}
+Trying "Jean Bart (Ballan-Miré)"
+Found a stop matching stopArea: [StopArea|3126|Jean Bart|Ballan-Miré|||469033|2260091]; Lambert2+: {E:469033.000000, N:2260091.000000}; Degrees: {E:47.327528, N:0.603663}
+Trying "Jean Bonnin (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3974|Jean Bonnin|Saint-Pierre-des-Corps|||477458|2267439]; Lambert2+: {E:477458.000000, N:2267439.000000}; Degrees: {E:47.395229, N:0.713096}
+Trying "Jean Jaurès (Tours)"
+Found a stop matching stopArea: [StopArea|4151|Jean Jaurès|Tours|||475600|2266850]; Lambert2+: {E:475600.000000, N:2266850.000000}; Degrees: {E:47.389584, N:0.688652}
+Trying "Jean Moulin (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3975|Jean Moulin|Saint-Pierre-des-Corps|||478429|2266853]; Lambert2+: {E:478429.000000, N:2266853.000000}; Degrees: {E:47.390139, N:0.726116}
+Trying "Jeanne d'Arc (La Ville-aux-Dames)"
+Found a stop matching stopArea: [StopArea|4392|Jeanne d'Arc|La Ville-aux-Dames|||481645|2267380]; Lambert2+: {E:481645.000000, N:2267380.000000}; Degrees: {E:47.395463, N:0.768566}
+Trying "Jeanne de France (Tours)"
+Found a stop matching stopArea: [StopArea|4152|Jeanne de France|Tours|||473961|2265709]; Lambert2+: {E:473961.000000, N:2265709.000000}; Degrees: {E:47.379012, N:0.667269}
+Trying "Jéricho (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3977|Jéricho|Saint-Pierre-des-Corps|||477224|2267501]; Lambert2+: {E:477224.000000, N:2267501.000000}; Degrees: {E:47.395743, N:0.709980}
+Trying "Jerusalem (Tours)"
+Found a stop matching stopArea: [StopArea|4153|Jerusalem|Tours|||475417|2267279]; Lambert2+: {E:475417.000000, N:2267279.000000}; Degrees: {E:47.393408, N:0.686110}
+Trying "Joliot Curie (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3802|Joliot Curie|Saint-Avertin|||479001|2262004]; Lambert2+: {E:479001.000000, N:2262004.000000}; Degrees: {E:47.346635, N:0.734999}
+Trying "Jolivet (Tours)"
+Found a stop matching stopArea: [StopArea|4154|Jolivet|Tours|||476912|2265962]; Lambert2+: {E:476912.000000, N:2265962.000000}; Degrees: {E:47.381844, N:0.706271}
+Trying "Jonquilles (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3446|Jonquilles|Joué-lès-Tours|||475316|2262372]; Lambert2+: {E:475316.000000, N:2262372.000000}; Degrees: {E:47.349259, N:0.686137}
+Trying "Joué Centre (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3455|Joué Centre|Joué-lès-Tours|||473591|2262610]; Lambert2+: {E:473591.000000, N:2262610.000000}; Degrees: {E:47.351071, N:0.663244}
+Trying "Joué H. de Ville (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3457|Joué H. de Ville|Joué-lès-Tours|||473573|2262662]; Lambert2+: {E:473573.000000, N:2262662.000000}; Degrees: {E:47.351535, N:0.662991}
+Trying "Joule (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3232|Joule|Chambray-lès-Tours|||476808|2261137]; Lambert2+: {E:476808.000000, N:2261137.000000}; Degrees: {E:47.338432, N:0.706219}
+Trying "Jules Romains (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3803|Jules Romains|Saint-Avertin|||477973|2262894]; Lambert2+: {E:477973.000000, N:2262894.000000}; Degrees: {E:47.354450, N:0.721155}
+Trying "Jumeaux (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3459|Jumeaux|Joué-lès-Tours|||475757|2262840]; Lambert2+: {E:475757.000000, N:2262840.000000}; Degrees: {E:47.353551, N:0.691843}
+Trying "Justices (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3976|Justices|Saint-Pierre-des-Corps|||479512|2267592]; Lambert2+: {E:479512.000000, N:2267592.000000}; Degrees: {E:47.396983, N:0.740259}
+Trying "Katrineholm (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3867|Katrineholm|Saint-Cyr-sur-Loire|||473088|2270983]; Lambert2+: {E:473088.000000, N:2270983.000000}; Degrees: {E:47.426274, N:0.654215}
+Trying "Kruse (Chanceaux-sur-Choisille)"
+Found a stop matching stopArea: [StopArea|3253|Kruse|Chanceaux-sur-Choisille|||476834|2275655]; Lambert2+: {E:476834.000000, N:2275655.000000}; Degrees: {E:47.469000, N:0.702569}
+Trying "La Bonde (Fondettes)"
+Found a stop matching stopArea: [StopArea|3370|La Bonde|Fondettes|||471361|2267024]; Lambert2+: {E:471361.000000, N:2267024.000000}; Degrees: {E:47.390336, N:0.632468}
+Trying "La Bonnetière (Ballan-Miré)"
+Found a stop matching stopArea: [StopArea|3128|La Bonnetière|Ballan-Miré|||470414|2261976]; Lambert2+: {E:470414.000000, N:2261976.000000}; Degrees: {E:47.344753, N:0.621386}
+Trying "La Borde (Tours)"
+Found a stop matching stopArea: [StopArea|4155|La Borde|Tours|||477625|2268838]; Lambert2+: {E:477625.000000, N:2268838.000000}; Degrees: {E:47.407842, N:0.714926}
+Trying "La Chappe (Saint-Etienne-de-Chigny)"
+Found a stop matching stopArea: [StopArea|3904|La Chappe|Saint-Etienne-de-Chigny|||463383|2265402]; Lambert2+: {E:463383.000000, N:2265402.000000}; Degrees: {E:47.374145, N:0.527315}
+Trying "Lachenal (Tours)"
+Found a stop matching stopArea: [StopArea|4160|Lachenal|Tours|||475377|2262789]; Lambert2+: {E:475377.000000, N:2262789.000000}; Degrees: {E:47.353020, N:0.686828}
+Trying "La Coudrière (Parçay-Meslay)"
+Found a stop matching stopArea: [StopArea|3695|La Coudrière|Parçay-Meslay|||478719|2273318]; Lambert2+: {E:478719.000000, N:2273318.000000}; Degrees: {E:47.448333, N:0.728203}
+Trying "La Croix Buissée (Vouvray)"
+Found a stop matching stopArea: [StopArea|4422|La Croix Buissée|Vouvray|||484609|2269158]; Lambert2+: {E:484609.000000, N:2269158.000000}; Degrees: {E:47.411979, N:0.807364}
+Trying "Lac (Tours)"
+Found a stop matching stopArea: [StopArea|4159|Lac|Tours|||476265|2264362]; Lambert2+: {E:476265.000000, N:2264362.000000}; Degrees: {E:47.367334, N:0.698146}
+Trying "La Cure (Berthenay)"
+Found a stop matching stopArea: [StopArea|3149|La Cure|Berthenay|||464080|2264192]; Lambert2+: {E:464080.000000, N:2264192.000000}; Degrees: {E:47.363408, N:0.536909}
+Trying "La Forge (Fondettes)"
+Found a stop matching stopArea: [StopArea|3371|La Forge|Fondettes|||470177|2268639]; Lambert2+: {E:470177.000000, N:2268639.000000}; Degrees: {E:47.404627, N:0.616320}
+Trying "La Fuye (Tours)"
+Found a stop matching stopArea: [StopArea|4156|La Fuye|Tours|||476718|2266382]; Lambert2+: {E:476718.000000, N:2266382.000000}; Degrees: {E:47.385585, N:0.703587}
+Trying "La Grande Pièce (Berthenay)"
+Found a stop matching stopArea: [StopArea|3150|La Grande Pièce|Berthenay|||462281|2263348]; Lambert2+: {E:462281.000000, N:2263348.000000}; Degrees: {E:47.355445, N:0.513357}
+Trying "L'aigrefin (Ballan-Miré)"
+Found a stop matching stopArea: [StopArea|3127|L'aigrefin|Ballan-Miré|||468100|2259772]; Lambert2+: {E:468100.000000, N:2259772.000000}; Degrees: {E:47.324474, N:0.591416}
+Trying "La Madeleine (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3978|La Madeleine|Saint-Pierre-des-Corps|||477874|2267383]; Lambert2+: {E:477874.000000, N:2267383.000000}; Degrees: {E:47.394803, N:0.718621}
+Trying "Lamartine (Tours)"
+Found a stop matching stopArea: [StopArea|4161|Lamartine|Tours|||474400|2267191]; Lambert2+: {E:474400.000000, N:2267191.000000}; Degrees: {E:47.392423, N:0.672666}
+Trying "La Mérille (Berthenay)"
+Found a stop matching stopArea: [StopArea|3151|La Mérille|Berthenay|||462073|2263510]; Lambert2+: {E:462073.000000, N:2263510.000000}; Degrees: {E:47.356858, N:0.510555}
+Trying "Lande (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3869|Lande|Saint-Cyr-sur-Loire|||473840|2270112]; Lambert2+: {E:473840.000000, N:2270112.000000}; Degrees: {E:47.418585, N:0.664426}
+Trying "Langennerie (Chanceaux-sur-Choisille)"
+Found a stop matching stopArea: [StopArea|3254|Langennerie|Chanceaux-sur-Choisille|||476513|2278101]; Lambert2+: {E:476513.000000, N:2278101.000000}; Degrees: {E:47.490937, N:0.697635}
+Trying "Langevin (Tours)"
+Found a stop matching stopArea: [StopArea|4162|Langevin|Tours|||476718|2265170]; Lambert2+: {E:476718.000000, N:2265170.000000}; Degrees: {E:47.374685, N:0.703920}
+Trying "La Pasqueraie (Ballan-Miré)"
+Found a stop matching stopArea: [StopArea|3129|La Pasqueraie|Ballan-Miré|||470636|2262264]; Lambert2+: {E:470636.000000, N:2262264.000000}; Degrees: {E:47.347387, N:0.624240}
+Trying "La Pérouse (Tours)"
+Found a stop matching stopArea: [StopArea|4157|La Pérouse|Tours|||476695|2262722]; Lambert2+: {E:476695.000000, N:2262722.000000}; Degrees: {E:47.352665, N:0.704289}
+Trying "La Plaine (Fondettes)"
+Found a stop matching stopArea: [StopArea|3372|La Plaine|Fondettes|||471903|2268119]; Lambert2+: {E:471903.000000, N:2268119.000000}; Degrees: {E:47.400289, N:0.639332}
+Trying "La Planche (Rochecorbon)"
+Found a stop matching stopArea: [StopArea|3762|La Planche|Rochecorbon|||480707|2270958]; Lambert2+: {E:480707.000000, N:2270958.000000}; Degrees: {E:47.427472, N:0.755189}
+Trying "La Pléiade (La Riche)"
+Found a stop matching stopArea: [StopArea|3734|La Pléiade|La Riche|||472940|2266511]; Lambert2+: {E:472940.000000, N:2266511.000000}; Degrees: {E:47.386028, N:0.653523}
+Trying "La Prévauderie (Notre-Dame-d'Oé)"
+Found a stop matching stopArea: [StopArea|3673|La Prévauderie|Notre-Dame-d'Oé|||476780|2273595]; Lambert2+: {E:476780.000000, N:2273595.000000}; Degrees: {E:47.450465, N:0.702421}
+Trying "La Rabinière (Saint-Genouph)"
+Found a stop matching stopArea: [StopArea|3913|La Rabinière|Saint-Genouph|||469409|2265562]; Lambert2+: {E:469409.000000, N:2265562.000000}; Degrees: {E:47.376804, N:0.607044}
+Trying "L'Arche d'Oé (Notre-Dame-d'Oé)"
+Found a stop matching stopArea: [StopArea|3671|L'Arche d'Oé|Notre-Dame-d'Oé|||476514|2272312]; Lambert2+: {E:476514.000000, N:2272312.000000}; Degrees: {E:47.438877, N:0.699249}
+Trying "La Riche Centre (La Riche)"
+Found a stop matching stopArea: [StopArea|3740|La Riche Centre|La Riche|||473332|2266743]; Lambert2+: {E:473332.000000, N:2266743.000000}; Degrees: {E:47.388190, N:0.658649}
+Trying "La Riche Soleil (La Riche)"
+Found a stop matching stopArea: [StopArea|3741|La Riche Soleil|La Riche|||473189|2265469]; Lambert2+: {E:473189.000000, N:2265469.000000}; Degrees: {E:47.376705, N:0.657115}
+Trying "La Taillerie (Ballan-Miré)"
+Found a stop matching stopArea: [StopArea|3130|La Taillerie|Ballan-Miré|||469954|2262220]; Lambert2+: {E:469954.000000, N:2262220.000000}; Degrees: {E:47.346857, N:0.615229}
+Trying "La Tesserie (Rochecorbon)"
+Found a stop matching stopArea: [StopArea|3763|La Tesserie|Rochecorbon|||479910|2268690]; Lambert2+: {E:479910.000000, N:2268690.000000}; Degrees: {E:47.406931, N:0.745236}
+Trying "L'Atrium (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3804|L'Atrium|Saint-Avertin|||478518|2264392]; Lambert2+: {E:478518.000000, N:2264392.000000}; Degrees: {E:47.368022, N:0.727961}
+Trying "La Vallée (Parçay-Meslay)"
+Found a stop matching stopArea: [StopArea|3696|La Vallée|Parçay-Meslay|||480192|2272060]; Lambert2+: {E:480192.000000, N:2272060.000000}; Degrees: {E:47.437289, N:0.748069}
+Trying "Lavoisier (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3461|Lavoisier|Joué-lès-Tours|||473343|2262150]; Lambert2+: {E:473343.000000, N:2262150.000000}; Degrees: {E:47.346886, N:0.660092}
+Trying "Lebrun (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3871|Lebrun|Saint-Cyr-sur-Loire|||474873|2268129]; Lambert2+: {E:474873.000000, N:2268129.000000}; Degrees: {E:47.400949, N:0.678668}
+Trying "Leccia (Tours)"
+Found a stop matching stopArea: [StopArea|4163|Leccia|Tours|||477384|2265458]; Lambert2+: {E:477384.000000, N:2265458.000000}; Degrees: {E:47.377400, N:0.712659}
+Trying "Le Chaussé (Fondettes)"
+Found a stop matching stopArea: [StopArea|3373|Le Chaussé|Fondettes|||471500|2268117]; Lambert2+: {E:471500.000000, N:2268117.000000}; Degrees: {E:47.400192, N:0.633995}
+Trying "Le Clos (Vernou-sur-Brenne)"
+Found a stop matching stopArea: [StopArea|4368|Le Clos|Vernou-sur-Brenne|||487859|2269328]; Lambert2+: {E:487859.000000, N:2269328.000000}; Degrees: {E:47.414069, N:0.850380}
+Trying "Le Coq (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3870|Le Coq|Saint-Cyr-sur-Loire|||473425|2267640]; Lambert2+: {E:473425.000000, N:2267640.000000}; Degrees: {E:47.396275, N:0.659627}
+Trying "Lecotte (Tours)"
+Found a stop matching stopArea: [StopArea|4164|Lecotte|Tours|||475246|2272067]; Lambert2+: {E:475246.000000, N:2272067.000000}; Degrees: {E:47.436434, N:0.682510}
+Trying "Lecouvreur (La Ville-aux-Dames)"
+Found a stop matching stopArea: [StopArea|4395|Lecouvreur|La Ville-aux-Dames|||482216|2266556]; Lambert2+: {E:482216.000000, N:2266556.000000}; Degrees: {E:47.388155, N:0.776345}
+Trying "Le Lavoir (La Membrolle-sur-Choisille)"
+Found a stop matching stopArea: [StopArea|3577|Le Lavoir|La Membrolle-sur-Choisille|||471929|2272464]; Lambert2+: {E:471929.000000, N:2272464.000000}; Degrees: {E:47.439368, N:0.638433}
+Trying "Le Marais (Notre-Dame-d'Oé)"
+Found a stop matching stopArea: [StopArea|3674|Le Marais|Notre-Dame-d'Oé|||476550|2272899]; Lambert2+: {E:476550.000000, N:2272899.000000}; Degrees: {E:47.444162, N:0.699564}
+Trying "Lénine (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3980|Lénine|Saint-Pierre-des-Corps|||479361|2267224]; Lambert2+: {E:479361.000000, N:2267224.000000}; Degrees: {E:47.393646, N:0.738358}
+Trying "L'Epend (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3460|L'Epend|Joué-lès-Tours|||472085|2263310]; Lambert2+: {E:472085.000000, N:2263310.000000}; Degrees: {E:47.357076, N:0.643115}
+Trying "Le Pluvier (Parçay-Meslay)"
+Found a stop matching stopArea: [StopArea|3697|Le Pluvier|Parçay-Meslay|||479403|2273219]; Lambert2+: {E:479403.000000, N:2273219.000000}; Degrees: {E:47.447569, N:0.737298}
+Trying "Les Aubuis (Fondettes)"
+Found a stop matching stopArea: [StopArea|3374|Les Aubuis|Fondettes|||470945|2268464]; Lambert2+: {E:470945.000000, N:2268464.000000}; Degrees: {E:47.403204, N:0.626544}
+Trying "Le Saugé (Saint-Genouph)"
+Found a stop matching stopArea: [StopArea|3914|Le Saugé|Saint-Genouph|||471508|2266244]; Lambert2+: {E:471508.000000, N:2266244.000000}; Degrees: {E:47.383350, N:0.634638}
+Trying "Les Bas Chemins (Berthenay)"
+Found a stop matching stopArea: [StopArea|3152|Les Bas Chemins|Berthenay|||463331|2263760]; Lambert2+: {E:463331.000000, N:2263760.000000}; Degrees: {E:47.359368, N:0.527127}
+Trying "Les Batonneries (Rochecorbon)"
+Found a stop matching stopArea: [StopArea|3764|Les Batonneries|Rochecorbon|||481868|2269005]; Lambert2+: {E:481868.000000, N:2269005.000000}; Degrees: {E:47.410117, N:0.771091}
+Trying "Les Bergeons (Berthenay)"
+Found a stop matching stopArea: [StopArea|3153|Les Bergeons|Berthenay|||464480|2264387]; Lambert2+: {E:464480.000000, N:2264387.000000}; Degrees: {E:47.365243, N:0.542144}
+Trying "Les Bévénières (Notre-Dame-d'Oé)"
+Found a stop matching stopArea: [StopArea|3675|Les Bévénières|Notre-Dame-d'Oé|||477043|2274718]; Lambert2+: {E:477043.000000, N:2274718.000000}; Degrees: {E:47.460613, N:0.705599}
+Trying "Les Bidaudières (Vouvray)"
+Found a stop matching stopArea: [StopArea|4423|Les Bidaudières|Vouvray|||486340|2269117]; Lambert2+: {E:486340.000000, N:2269117.000000}; Degrees: {E:47.411911, N:0.830308}
+Trying "L'Escale (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3868|L'Escale|Saint-Cyr-sur-Loire|||473148|2270387]; Lambert2+: {E:473148.000000, N:2270387.000000}; Degrees: {E:47.420926, N:0.655179}
+Trying "Les Charmes (Chanceaux-sur-Choisille)"
+Found a stop matching stopArea: [StopArea|3255|Les Charmes|Chanceaux-sur-Choisille|||476736|2278353]; Lambert2+: {E:476736.000000, N:2278353.000000}; Degrees: {E:47.493245, N:0.700524}
+Trying "Les Chazard (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3462|Les Chazard|Joué-lès-Tours|||473471|2259274]; Lambert2+: {E:473471.000000, N:2259274.000000}; Degrees: {E:47.321046, N:0.662596}
+Trying "Les Claies (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3806|Les Claies|Saint-Avertin|||478914|2262396]; Lambert2+: {E:478914.000000, N:2262396.000000}; Degrees: {E:47.350144, N:0.733742}
+Trying "Les Clouet (Rochecorbon)"
+Found a stop matching stopArea: [StopArea|3765|Les Clouet|Rochecorbon|||480988|2269044]; Lambert2+: {E:480988.000000, N:2269044.000000}; Degrees: {E:47.410310, N:0.759422}
+Trying "Les Douets (Tours)"
+Found a stop matching stopArea: [StopArea|4165|Les Douets|Tours|||475340|2272098]; Lambert2+: {E:475340.000000, N:2272098.000000}; Degrees: {E:47.436731, N:0.683747}
+Trying "Les Ecoles (Saint-Genouph)"
+Found a stop matching stopArea: [StopArea|3915|Les Ecoles|Saint-Genouph|||468896|2265525]; Lambert2+: {E:468896.000000, N:2265525.000000}; Degrees: {E:47.376370, N:0.600263}
+Trying "Les Emmonières (Berthenay)"
+Found a stop matching stopArea: [StopArea|3154|Les Emmonières|Berthenay|||463505|2264006]; Lambert2+: {E:463505.000000, N:2264006.000000}; Degrees: {E:47.361616, N:0.529355}
+Trying "Les Fougerolles (La Ville-aux-Dames)"
+Found a stop matching stopArea: [StopArea|4396|Les Fougerolles|La Ville-aux-Dames|||482973|2267162]; Lambert2+: {E:482973.000000, N:2267162.000000}; Degrees: {E:47.393740, N:0.786212}
+Trying "Les Gatinières (Rochecorbon)"
+Found a stop matching stopArea: [StopArea|3766|Les Gatinières|Rochecorbon|||480887|2269350]; Lambert2+: {E:480887.000000, N:2269350.000000}; Degrees: {E:47.413044, N:0.758003}
+Trying "Les Granges (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3807|Les Granges|Saint-Avertin|||479211|2261434]; Lambert2+: {E:479211.000000, N:2261434.000000}; Degrees: {E:47.341547, N:0.737932}
+Trying "Les Guessières (Chanceaux-sur-Choisille)"
+Found a stop matching stopArea: [StopArea|3256|Les Guessières|Chanceaux-sur-Choisille|||476820|2275420]; Lambert2+: {E:476820.000000, N:2275420.000000}; Degrees: {E:47.466884, N:0.702448}
+Trying "Les Locquets (Parçay-Meslay)"
+Found a stop matching stopArea: [StopArea|3698|Les Locquets|Parçay-Meslay|||480461|2272507]; Lambert2+: {E:480461.000000, N:2272507.000000}; Degrees: {E:47.441358, N:0.751515}
+Trying "Les Montils (Saint-Genouph)"
+Found a stop matching stopArea: [StopArea|3916|Les Montils|Saint-Genouph|||467069|2264655]; Lambert2+: {E:467069.000000, N:2264655.000000}; Degrees: {E:47.368180, N:0.576334}
+Trying "Les Muses (Fondettes)"
+Found a stop matching stopArea: [StopArea|3375|Les Muses|Fondettes|||467740|2266977]; Lambert2+: {E:467740.000000, N:2266977.000000}; Degrees: {E:47.389197, N:0.584530}
+Trying "Les Nouies (Saint-Genouph)"
+Found a stop matching stopArea: [StopArea|3917|Les Nouies|Saint-Genouph|||466448|2264492]; Lambert2+: {E:466448.000000, N:2264492.000000}; Degrees: {E:47.366589, N:0.568162}
+Trying "Les Patis (Vouvray)"
+Found a stop matching stopArea: [StopArea|4424|Les Patis|Vouvray|||482636|2269021]; Lambert2+: {E:482636.000000, N:2269021.000000}; Degrees: {E:47.410398, N:0.781261}
+Trying "Les Pavillons (Saint-Genouph)"
+Found a stop matching stopArea: [StopArea|3918|Les Pavillons|Saint-Genouph|||470239|2265863]; Lambert2+: {E:470239.000000, N:2265863.000000}; Degrees: {E:47.379675, N:0.617946}
+Trying "L'Esperance (Saint-Etienne-de-Chigny)"
+Found a stop matching stopArea: [StopArea|3903|L'Esperance|Saint-Etienne-de-Chigny|||461350|2266296]; Lambert2+: {E:461350.000000, N:2266296.000000}; Degrees: {E:47.381760, N:0.500125}
+Trying "Les Perrets (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3872|Les Perrets|Saint-Cyr-sur-Loire|||473516|2270482]; Lambert2+: {E:473516.000000, N:2270482.000000}; Degrees: {E:47.421851, N:0.660029}
+Trying "Les Pins (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3463|Les Pins|Joué-lès-Tours|||473648|2263495]; Lambert2+: {E:473648.000000, N:2263495.000000}; Degrees: {E:47.359041, N:0.663749}
+Trying "Les Rochettes (Tours)"
+Found a stop matching stopArea: [StopArea|4166|Les Rochettes|Tours|||478091|2268237]; Lambert2+: {E:478091.000000, N:2268237.000000}; Degrees: {E:47.402523, N:0.721263}
+Trying "Les Roncières (Fondettes)"
+Found a stop matching stopArea: [StopArea|3376|Les Roncières|Fondettes|||469455|2268705]; Lambert2+: {E:469455.000000, N:2268705.000000}; Degrees: {E:47.405078, N:0.606737}
+Trying "L'Essart (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3805|L'Essart|Saint-Avertin|||477810|2264610]; Lambert2+: {E:477810.000000, N:2264610.000000}; Degrees: {E:47.369852, N:0.718530}
+Trying "Le Verger (Ballan-Miré)"
+Found a stop matching stopArea: [StopArea|3131|Le Verger|Ballan-Miré|||470948|2261861]; Lambert2+: {E:470948.000000, N:2261861.000000}; Degrees: {E:47.343823, N:0.628484}
+Trying "L'Hopitau (Notre-Dame-d'Oé)"
+Found a stop matching stopArea: [StopArea|3672|L'Hopitau|Notre-Dame-d'Oé|||477384|2273726]; Lambert2+: {E:477384.000000, N:2273726.000000}; Degrees: {E:47.451755, N:0.710393}
+Trying "Liberté (Tours)"
+Found a stop matching stopArea: [StopArea|4167|Liberté|Tours|||475967|2265778]; Lambert2+: {E:475967.000000, N:2265778.000000}; Degrees: {E:47.380012, N:0.693809}
+Trying "Ligner (La Riche)"
+Found a stop matching stopArea: [StopArea|3742|Ligner|La Riche|||473732|2266210]; Lambert2+: {E:473732.000000, N:2266210.000000}; Degrees: {E:47.383473, N:0.664096}
+Trying "Lilas (Luynes)"
+Found a stop matching stopArea: [StopArea|3549|Lilas|Luynes|||465260|2266810]; Lambert2+: {E:465260.000000, N:2266810.000000}; Degrees: {E:47.387193, N:0.551740}
+Trying "Liodière (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3464|Liodière|Joué-lès-Tours|||473357|2259013]; Lambert2+: {E:473357.000000, N:2259013.000000}; Degrees: {E:47.318677, N:0.661162}
+Trying "Loing (Tours)"
+Found a stop matching stopArea: [StopArea|4168|Loing|Tours|||475440|2270932]; Lambert2+: {E:475440.000000, N:2270932.000000}; Degrees: {E:47.426264, N:0.685398}
+Trying "L'ouche du Mont (Vouvray)"
+Found a stop matching stopArea: [StopArea|4421|L'ouche du Mont|Vouvray|||485078|2269143]; Lambert2+: {E:485078.000000, N:2269143.000000}; Degrees: {E:47.411926, N:0.813582}
+Trying "Louise Michel (La Ville-aux-Dames)"
+Found a stop matching stopArea: [StopArea|4397|Louise Michel|La Ville-aux-Dames|||482439|2266648]; Lambert2+: {E:482439.000000, N:2266648.000000}; Degrees: {E:47.389022, N:0.779274}
+Trying "LP Agricole (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3233|LP Agricole|Chambray-lès-Tours|||478467|2261181]; Lambert2+: {E:478467.000000, N:2261181.000000}; Degrees: {E:47.339135, N:0.728156}
+Trying "LP Clouet (Tours)"
+Found a stop matching stopArea: [StopArea|4169|LP Clouet|Tours|||475841|2271040]; Lambert2+: {E:475841.000000, N:2271040.000000}; Degrees: {E:47.427311, N:0.690682}
+Trying "LP Eiffel (Tours)"
+Found a stop matching stopArea: [StopArea|4170|LP Eiffel|Tours|||474713|2270522]; Lambert2+: {E:474713.000000, N:2270522.000000}; Degrees: {E:47.422439, N:0.675879}
+Trying "LP Nadaud (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3979|LP Nadaud|Saint-Pierre-des-Corps|||479629|2267365]; Lambert2+: {E:479629.000000, N:2267365.000000}; Degrees: {E:47.394963, N:0.741869}
+Trying "Lurçat (Tours)"
+Found a stop matching stopArea: [StopArea|4171|Lurçat|Tours|||477005|2269135]; Lambert2+: {E:477005.000000, N:2269135.000000}; Degrees: {E:47.410397, N:0.706631}
+Trying "Luxembourg (Tours)"
+Found a stop matching stopArea: [StopArea|4172|Luxembourg|Tours|||476332|2270746]; Lambert2+: {E:476332.000000, N:2270746.000000}; Degrees: {E:47.424759, N:0.697270}
+Trying "Luynes Centre (Luynes)"
+Found a stop matching stopArea: [StopArea|3550|Luynes Centre|Luynes|||465393|2266635]; Lambert2+: {E:465393.000000, N:2266635.000000}; Degrees: {E:47.385646, N:0.553554}
+Trying "Lycee Bayet (Tours)"
+Found a stop matching stopArea: [StopArea|4173|Lycee Bayet|Tours|||474324|2267365]; Lambert2+: {E:474324.000000, N:2267365.000000}; Degrees: {E:47.393974, N:0.671610}
+Trying "Lycée Choiseul (Tours)"
+Found a stop matching stopArea: [StopArea|4174|Lycée Choiseul|Tours|||475462|2271827]; Lambert2+: {E:475462.000000, N:2271827.000000}; Degrees: {E:47.434317, N:0.685440}
+Trying "Lycée Courier (Tours)"
+Found a stop matching stopArea: [StopArea|4175|Lycée Courier|Tours|||476129|2267515]; Lambert2+: {E:476129.000000, N:2267515.000000}; Degrees: {E:47.395664, N:0.695474}
+Trying "Lycée Grandmont (Tours)"
+Found a stop matching stopArea: [StopArea|4176|Lycée Grandmont|Tours|||476524|2263605]; Lambert2+: {E:476524.000000, N:2263605.000000}; Degrees: {E:47.360574, N:0.701783}
+Trying "Lycée J. Monnet (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3465|Lycée J. Monnet|Joué-lès-Tours|||473178|2261145]; Lambert2+: {E:473178.000000, N:2261145.000000}; Degrees: {E:47.337816, N:0.658193}
+Trying "Lycée Vaucanson (Tours)"
+Found a stop matching stopArea: [StopArea|4177|Lycée Vaucanson|Tours|||476992|2270504]; Lambert2+: {E:476992.000000, N:2270504.000000}; Degrees: {E:47.422706, N:0.706082}
+Trying "Mailloux (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3874|Mailloux|Saint-Cyr-sur-Loire|||474616|2268907]; Lambert2+: {E:474616.000000, N:2268907.000000}; Degrees: {E:47.407897, N:0.675046}
+Trying "Maine (Tours)"
+Found a stop matching stopArea: [StopArea|4179|Maine|Tours|||475189|2270898]; Lambert2+: {E:475189.000000, N:2270898.000000}; Degrees: {E:47.425911, N:0.682081}
+Trying "Maison d'Ardoise (Fondettes)"
+Found a stop matching stopArea: [StopArea|3377|Maison d'Ardoise|Fondettes|||468658|2268884]; Lambert2+: {E:468658.000000, N:2268884.000000}; Degrees: {E:47.406530, N:0.596127}
+Trying "Maison de Beaune (Ballan-Miré)"
+Found a stop matching stopArea: [StopArea|3132|Maison de Beaune|Ballan-Miré|||469675|2261339]; Lambert2+: {E:469675.000000, N:2261339.000000}; Degrees: {E:47.338879, N:0.611793}
+Trying "Maison Neuve (La Membrolle-sur-Choisille)"
+Found a stop matching stopArea: [StopArea|3578|Maison Neuve|La Membrolle-sur-Choisille|||471501|2272582]; Lambert2+: {E:471501.000000, N:2272582.000000}; Degrees: {E:47.440346, N:0.632726}
+Trying "Maisons Blanches (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3875|Maisons Blanches|Saint-Cyr-sur-Loire|||473143|2267540]; Lambert2+: {E:473143.000000, N:2267540.000000}; Degrees: {E:47.395321, N:0.655920}
+Trying "Maisons Rouges (Fondettes)"
+Found a stop matching stopArea: [StopArea|3378|Maisons Rouges|Fondettes|||469053|2268684]; Lambert2+: {E:469053.000000, N:2268684.000000}; Degrees: {E:47.404810, N:0.601418}
+Trying "Mallarmé (Ballan-Miré)"
+Found a stop matching stopArea: [StopArea|3133|Mallarmé|Ballan-Miré|||471691|2262132]; Lambert2+: {E:471691.000000, N:2262132.000000}; Degrees: {E:47.346405, N:0.638238}
+Trying "Mambrolle Gare (La Membrolle-sur-Choisille)"
+Found a stop matching stopArea: [StopArea|3579|Mambrolle Gare|La Membrolle-sur-Choisille|||472147|2271726]; Lambert2+: {E:472147.000000, N:2271726.000000}; Degrees: {E:47.432774, N:0.641533}
+Trying "Manardière (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3876|Manardière|Saint-Cyr-sur-Loire|||474544|2270123]; Lambert2+: {E:474544.000000, N:2270123.000000}; Degrees: {E:47.418819, N:0.673751}
+Trying "Manoir (Mettray)"
+Found a stop matching stopArea: [StopArea|3589|Manoir|Mettray|||472440|2273979]; Lambert2+: {E:472440.000000, N:2273979.000000}; Degrees: {E:47.453092, N:0.644773}
+Trying "Marbellière (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3466|Marbellière|Joué-lès-Tours|||473640|2263307]; Lambert2+: {E:473640.000000, N:2263307.000000}; Degrees: {E:47.357349, N:0.663696}
+Trying "Marceau (Tours)"
+Found a stop matching stopArea: [StopArea|4180|Marceau|Tours|||475336|2267296]; Lambert2+: {E:475336.000000, N:2267296.000000}; Degrees: {E:47.393545, N:0.685032}
+Trying "Maréchal Juin (Tours)"
+Found a stop matching stopArea: [StopArea|4185|Maréchal Juin|Tours|||476851|2270024]; Lambert2+: {E:476851.000000, N:2270024.000000}; Degrees: {E:47.418363, N:0.704346}
+Trying "Mareuil (Fondettes)"
+Found a stop matching stopArea: [StopArea|3379|Mareuil|Fondettes|||468401|2267107]; Lambert2+: {E:468401.000000, N:2267107.000000}; Degrees: {E:47.390498, N:0.593245}
+Trying "Marmoutier (Tours)"
+Found a stop matching stopArea: [StopArea|4181|Marmoutier|Tours|||477787|2268161]; Lambert2+: {E:477787.000000, N:2268161.000000}; Degrees: {E:47.401783, N:0.717257}
+Trying "Marne (Tours)"
+Found a stop matching stopArea: [StopArea|4182|Marne|Tours|||476353|2270630]; Lambert2+: {E:476353.000000, N:2270630.000000}; Degrees: {E:47.423720, N:0.697580}
+Trying "Marteau (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3981|Marteau|Saint-Pierre-des-Corps|||478851|2267546]; Lambert2+: {E:478851.000000, N:2267546.000000}; Degrees: {E:47.396449, N:0.731517}
+Trying "Martigny (Fondettes)"
+Found a stop matching stopArea: [StopArea|3380|Martigny|Fondettes|||470573|2266870]; Lambert2+: {E:470573.000000, N:2266870.000000}; Degrees: {E:47.388797, N:0.622077}
+Trying "Martin (Tours)"
+Found a stop matching stopArea: [StopArea|4183|Martin|Tours|||475943|2265380]; Lambert2+: {E:475943.000000, N:2265380.000000}; Degrees: {E:47.376429, N:0.693602}
+Trying "Martyrs (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3467|Martyrs|Joué-lès-Tours|||473831|2262608]; Lambert2+: {E:473831.000000, N:2262608.000000}; Degrees: {E:47.351099, N:0.666420}
+Trying "Maryse Bastié (Tours)"
+Found a stop matching stopArea: [StopArea|4184|Maryse Bastié|Tours|||474245|2265775]; Lambert2+: {E:474245.000000, N:2265775.000000}; Degrees: {E:47.379659, N:0.671010}
+Trying "Maupas (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3234|Maupas|Chambray-lès-Tours|||476322|2261033]; Lambert2+: {E:476322.000000, N:2261033.000000}; Degrees: {E:47.337406, N:0.699818}
+Trying "Maurière (Saint-Etienne-de-Chigny)"
+Found a stop matching stopArea: [StopArea|3905|Maurière|Saint-Etienne-de-Chigny|||461828|2265038]; Lambert2+: {E:461828.000000, N:2265038.000000}; Degrees: {E:47.370548, N:0.506842}
+Trying "Mayer (Tours)"
+Found a stop matching stopArea: [StopArea|4186|Mayer|Tours|||476162|2270068]; Lambert2+: {E:476162.000000, N:2270068.000000}; Degrees: {E:47.418630, N:0.695205}
+Trying "M. Bedel (Tours)"
+Found a stop matching stopArea: [StopArea|4178|M. Bedel|Tours|||476278|2265578]; Lambert2+: {E:476278.000000, N:2265578.000000}; Degrees: {E:47.378272, N:0.697982}
+Trying "Méliès (Tours)"
+Found a stop matching stopArea: [StopArea|4199|Méliès|Tours|||477196|2270899]; Lambert2+: {E:477196.000000, N:2270899.000000}; Degrees: {E:47.426297, N:0.708677}
+Trying "Merluche (Saint-Etienne-de-Chigny)"
+Found a stop matching stopArea: [StopArea|3906|Merluche|Saint-Etienne-de-Chigny|||460406|2269460]; Lambert2+: {E:460406.000000, N:2269460.000000}; Degrees: {E:47.410014, N:0.486640}
+Trying "Mermoz (Tours)"
+Found a stop matching stopArea: [StopArea|4187|Mermoz|Tours|||476595|2265909]; Lambert2+: {E:476595.000000, N:2265909.000000}; Degrees: {E:47.381308, N:0.702088}
+Trying "Mésangerie (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3880|Mésangerie|Saint-Cyr-sur-Loire|||474700|2268690]; Lambert2+: {E:474700.000000, N:2268690.000000}; Degrees: {E:47.405961, N:0.676219}
+Trying "Mesliers (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3235|Mesliers|Chambray-lès-Tours|||476987|2260332]; Lambert2+: {E:476987.000000, N:2260332.000000}; Degrees: {E:47.331226, N:0.708808}
+Trying "MFR Rougemont (Tours)"
+Found a stop matching stopArea: [StopArea|4188|MFR Rougemont|Tours|||478010|2268672]; Lambert2+: {E:478010.000000, N:2268672.000000}; Degrees: {E:47.406420, N:0.720071}
+Trying "Michelin (Tours)"
+Found a stop matching stopArea: [StopArea|4190|Michelin|Tours|||475056|2264424]; Lambert2+: {E:475056.000000, N:2264424.000000}; Degrees: {E:47.367664, N:0.682125}
+Trying "Mi-Côte (Tours)"
+Found a stop matching stopArea: [StopArea|4189|Mi-Côte|Tours|||475189|2268612]; Lambert2+: {E:475189.000000, N:2268612.000000}; Degrees: {E:47.405352, N:0.682719}
+Trying "Milletière (Tours)"
+Found a stop matching stopArea: [StopArea|4191|Milletière|Tours|||476461|2272030]; Lambert2+: {E:476461.000000, N:2272030.000000}; Degrees: {E:47.436331, N:0.698624}
+Trying "Miquel (Tours)"
+Found a stop matching stopArea: [StopArea|4192|Miquel|Tours|||475674|2265579]; Lambert2+: {E:475674.000000, N:2265579.000000}; Degrees: {E:47.378168, N:0.689985}
+Trying "Mirabeau (Tours)"
+Found a stop matching stopArea: [StopArea|4193|Mirabeau|Tours|||476463|2267108]; Lambert2+: {E:476463.000000, N:2267108.000000}; Degrees: {E:47.392067, N:0.700010}
+Trying "Miré (Ballan-Miré)"
+Found a stop matching stopArea: [StopArea|3134|Miré|Ballan-Miré|||468041|2260305]; Lambert2+: {E:468041.000000, N:2260305.000000}; Degrees: {E:47.329255, N:0.590479}
+Trying "Monconseil (Tours)"
+Found a stop matching stopArea: [StopArea|4194|Monconseil|Tours|||476559|2270339]; Lambert2+: {E:476559.000000, N:2270339.000000}; Degrees: {E:47.421142, N:0.700390}
+Trying "Monsoudun (Tours)"
+Found a stop matching stopArea: [StopArea|4195|Monsoudun|Tours|||477328|2268929]; Lambert2+: {E:477328.000000, N:2268929.000000}; Degrees: {E:47.408605, N:0.710966}
+Trying "Montaigne (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3878|Montaigne|Saint-Cyr-sur-Loire|||473220|2270085]; Lambert2+: {E:473220.000000, N:2270085.000000}; Degrees: {E:47.418224, N:0.656219}
+Trying "Monteil (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3982|Monteil|Saint-Pierre-des-Corps|||478106|2265906]; Lambert2+: {E:478106.000000, N:2265906.000000}; Degrees: {E:47.381562, N:0.722096}
+Trying "Montjoie (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3879|Montjoie|Saint-Cyr-sur-Loire|||474207|2268583]; Lambert2+: {E:474207.000000, N:2268583.000000}; Degrees: {E:47.404905, N:0.669719}
+Trying "Montjoyeux (Tours)"
+Found a stop matching stopArea: [StopArea|4196|Montjoyeux|Tours|||476945|2263681]; Lambert2+: {E:476945.000000, N:2263681.000000}; Degrees: {E:47.361337, N:0.707334}
+Trying "Montreuil Bellay (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3468|Montreuil Bellay|Joué-lès-Tours|||474959|2262613]; Lambert2+: {E:474959.000000, N:2262613.000000}; Degrees: {E:47.351358, N:0.681346}
+Trying "Morier (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3469|Morier|Joué-lès-Tours|||474317|2262603]; Lambert2+: {E:474317.000000, N:2262603.000000}; Degrees: {E:47.351147, N:0.672853}
+Trying "Mouchotte (Tours)"
+Found a stop matching stopArea: [StopArea|4197|Mouchotte|Tours|||477207|2272170]; Lambert2+: {E:477207.000000, N:2272170.000000}; Degrees: {E:47.437729, N:0.708474}
+Trying "Mouettes (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3470|Mouettes|Joué-lès-Tours|||473614|2260310]; Lambert2+: {E:473614.000000, N:2260310.000000}; Degrees: {E:47.330391, N:0.664196}
+Trying "Moulin Maillet (Mettray)"
+Found a stop matching stopArea: [StopArea|3590|Moulin Maillet|Mettray|||472920|2273461]; Lambert2+: {E:472920.000000, N:2273461.000000}; Degrees: {E:47.448526, N:0.651285}
+Trying "Moulin Millon (La Membrolle-sur-Choisille)"
+Found a stop matching stopArea: [StopArea|3580|Moulin Millon|La Membrolle-sur-Choisille|||472176|2271972]; Lambert2+: {E:472176.000000, N:2271972.000000}; Degrees: {E:47.434992, N:0.641847}
+Trying "Moulin Ragot (Saint-Etienne-de-Chigny)"
+Found a stop matching stopArea: [StopArea|3907|Moulin Ragot|Saint-Etienne-de-Chigny|||462069|2264910]; Lambert2+: {E:462069.000000, N:2264910.000000}; Degrees: {E:47.369447, N:0.510071}
+Trying "Mozart (Tours)"
+Found a stop matching stopArea: [StopArea|4198|Mozart|Tours|||477044|2264201]; Lambert2+: {E:477044.000000, N:2264201.000000}; Degrees: {E:47.366032, N:0.708502}
+Trying "Muguet (Luynes)"
+Found a stop matching stopArea: [StopArea|3551|Muguet|Luynes|||465586|2267733]; Lambert2+: {E:465586.000000, N:2267733.000000}; Degrees: {E:47.395560, N:0.555780}
+Trying "Nationale (Tours)"
+Found a stop matching stopArea: [StopArea|4200|Nationale|Tours|||475511|2267287]; Lambert2+: {E:475511.000000, N:2267287.000000}; Degrees: {E:47.393497, N:0.687352}
+Trying "Naurod (Fondettes)"
+Found a stop matching stopArea: [StopArea|3381|Naurod|Fondettes|||468453|2268714]; Lambert2+: {E:468453.000000, N:2268714.000000}; Degrees: {E:47.404960, N:0.593462}
+Trying "ND d'Oé Centre (Notre-Dame-d'Oé)"
+Found a stop matching stopArea: [StopArea|3676|ND d'Oé Centre|Notre-Dame-d'Oé|||477225|2274310]; Lambert2+: {E:477225.000000, N:2274310.000000}; Degrees: {E:47.456978, N:0.708124}
+Trying "Nécropole Esvres (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3236|Nécropole Esvres|Chambray-lès-Tours|||481650|2259166]; Lambert2+: {E:481650.000000, N:2259166.000000}; Degrees: {E:47.321591, N:0.770800}
+Trying "Niepce (Tours)"
+Found a stop matching stopArea: [StopArea|4201|Niepce|Tours|||476266|2270459]; Lambert2+: {E:476266.000000, N:2270459.000000}; Degrees: {E:47.422166, N:0.696475}
+Trying "Ninon de Lenclos (La Ville-aux-Dames)"
+Found a stop matching stopArea: [StopArea|4398|Ninon de Lenclos|La Ville-aux-Dames|||482413|2267422]; Lambert2+: {E:482413.000000, N:2267422.000000}; Degrees: {E:47.395978, N:0.778727}
+Trying "Nobel (Tours)"
+Found a stop matching stopArea: [StopArea|4202|Nobel|Tours|||476600|2270869]; Lambert2+: {E:476600.000000, N:2270869.000000}; Degrees: {E:47.425916, N:0.700787}
+Trying "Nouveau Bois (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3808|Nouveau Bois|Saint-Avertin|||479149|2262463]; Lambert2+: {E:479149.000000, N:2262463.000000}; Degrees: {E:47.350790, N:0.736834}
+Trying "Oésia (Notre-Dame-d'Oé)"
+Found a stop matching stopArea: [StopArea|3677|Oésia|Notre-Dame-d'Oé|||476542|2273491]; Lambert2+: {E:476542.000000, N:2273491.000000}; Degrees: {E:47.449485, N:0.699295}
+Trying "Oiselet (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3809|Oiselet|Saint-Avertin|||479260|2263692]; Lambert2+: {E:479260.000000, N:2263692.000000}; Degrees: {E:47.361863, N:0.737972}
+Trying "Onze Arpents (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3810|Onze Arpents|Saint-Avertin|||480205|2263569]; Lambert2+: {E:480205.000000, N:2263569.000000}; Degrees: {E:47.360929, N:0.750513}
+Trying "Orangerie (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3811|Orangerie|Saint-Avertin|||480328|2263756]; Lambert2+: {E:480328.000000, N:2263756.000000}; Degrees: {E:47.362633, N:0.752091}
+Trying "Oratoire (Tours)"
+Found a stop matching stopArea: [StopArea|4203|Oratoire|Tours|||476252|2269471]; Lambert2+: {E:476252.000000, N:2269471.000000}; Degrees: {E:47.413278, N:0.696562}
+Trying "Ormes (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3471|Ormes|Joué-lès-Tours|||472986|2263502]; Lambert2+: {E:472986.000000, N:2263502.000000}; Degrees: {E:47.358977, N:0.654985}
+Trying "Pablo Neruda (La Ville-aux-Dames)"
+Found a stop matching stopArea: [StopArea|4399|Pablo Neruda|La Ville-aux-Dames|||480311|2267674]; Lambert2+: {E:480311.000000, N:2267674.000000}; Degrees: {E:47.397866, N:0.750819}
+Trying "Palais Sports (Tours)"
+Found a stop matching stopArea: [StopArea|4204|Palais Sports|Tours|||476116|2266210]; Lambert2+: {E:476116.000000, N:2266210.000000}; Degrees: {E:47.383926, N:0.695663}
+Trying "Papoterie (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3812|Papoterie|Saint-Avertin|||478972|2261180]; Lambert2+: {E:478972.000000, N:2261180.000000}; Degrees: {E:47.339219, N:0.734838}
+Trying "Parçay Centre (Parçay-Meslay)"
+Found a stop matching stopArea: [StopArea|3699|Parçay Centre|Parçay-Meslay|||479965|2272601]; Lambert2+: {E:479965.000000, N:2272601.000000}; Degrees: {E:47.442113, N:0.744915}
+Trying "Parc Expo (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3983|Parc Expo|Saint-Pierre-des-Corps|||477859|2265414]; Lambert2+: {E:477859.000000, N:2265414.000000}; Degrees: {E:47.377092, N:0.718959}
+Trying "Parc Grandmont (Tours)"
+Found a stop matching stopArea: [StopArea|4205|Parc Grandmont|Tours|||476617|2262518]; Lambert2+: {E:476617.000000, N:2262518.000000}; Degrees: {E:47.350816, N:0.703313}
+Trying "Parc Mirabeau (Tours)"
+Found a stop matching stopArea: [StopArea|4206|Parc Mirabeau|Tours|||476342|2267421]; Lambert2+: {E:476342.000000, N:2267421.000000}; Degrees: {E:47.394859, N:0.698321}
+Trying "Parc Nord (Tours)"
+Found a stop matching stopArea: [StopArea|4207|Parc Nord|Tours|||476391|2263933]; Lambert2+: {E:476391.000000, N:2263933.000000}; Degrees: {E:47.363499, N:0.699932}
+Trying "Parc Rabière (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3472|Parc Rabière|Joué-lès-Tours|||473761|2262077]; Lambert2+: {E:473761.000000, N:2262077.000000}; Degrees: {E:47.346310, N:0.665643}
+Trying "Parc Sud (Tours)"
+Found a stop matching stopArea: [StopArea|4208|Parc Sud|Tours|||476405|2262513]; Lambert2+: {E:476405.000000, N:2262513.000000}; Degrees: {E:47.350731, N:0.700509}
+Trying "Pas Notre Dame (Tours)"
+Found a stop matching stopArea: [StopArea|4209|Pas Notre Dame|Tours|||476441|2270084]; Lambert2+: {E:476441.000000, N:2270084.000000}; Degrees: {E:47.418826, N:0.698897}
+Trying "Passerelle (Tours)"
+Found a stop matching stopArea: [StopArea|4210|Passerelle|Tours|||476725|2268663]; Lambert2+: {E:476725.000000, N:2268663.000000}; Degrees: {E:47.406100, N:0.703051}
+Trying "Passe Temps (Berthenay)"
+Found a stop matching stopArea: [StopArea|3155|Passe Temps|Berthenay|||463889|2264201]; Lambert2+: {E:463889.000000, N:2264201.000000}; Degrees: {E:47.363449, N:0.534378}
+Trying "Pasteur (Luynes)"
+Found a stop matching stopArea: [StopArea|3552|Pasteur|Luynes|||464900|2267148]; Lambert2+: {E:464900.000000, N:2267148.000000}; Degrees: {E:47.390159, N:0.546871}
+Trying "Patalisse (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3473|Patalisse|Joué-lès-Tours|||475554|2263096]; Lambert2+: {E:475554.000000, N:2263096.000000}; Degrees: {E:47.355815, N:0.689086}
+Trying "Paul Bert (Tours)"
+Found a stop matching stopArea: [StopArea|4211|Paul Bert|Tours|||476023|2268246]; Lambert2+: {E:476023.000000, N:2268246.000000}; Degrees: {E:47.402218, N:0.693868}
+Trying "Paul Doumer (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3813|Paul Doumer|Saint-Avertin|||478732|2264415]; Lambert2+: {E:478732.000000, N:2264415.000000}; Degrees: {E:47.368269, N:0.730788}
+Trying "Paul Fort (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3474|Paul Fort|Joué-lès-Tours|||471518|2262494]; Lambert2+: {E:471518.000000, N:2262494.000000}; Degrees: {E:47.349627, N:0.635845}
+Trying "Pavillon Chinois (Fondettes)"
+Found a stop matching stopArea: [StopArea|3382|Pavillon Chinois|Fondettes|||470123|2266757]; Lambert2+: {E:470123.000000, N:2266757.000000}; Degrees: {E:47.387692, N:0.616151}
+Trying "Peguy (Tours)"
+Found a stop matching stopArea: [StopArea|4212|Peguy|Tours|||475762|2269276]; Lambert2+: {E:475762.000000, N:2269276.000000}; Degrees: {E:47.411432, N:0.690125}
+Trying "Perrières (Parçay-Meslay)"
+Found a stop matching stopArea: [StopArea|3700|Perrières|Parçay-Meslay|||480240|2271868]; Lambert2+: {E:480240.000000, N:2271868.000000}; Degrees: {E:47.435571, N:0.748757}
+Trying "Perriers (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3238|Perriers|Chambray-lès-Tours|||476152|2262350]; Lambert2+: {E:476152.000000, N:2262350.000000}; Degrees: {E:47.349218, N:0.697206}
+Trying "Perrin (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3239|Perrin|Chambray-lès-Tours|||478153|2261521]; Lambert2+: {E:478153.000000, N:2261521.000000}; Degrees: {E:47.342135, N:0.723910}
+Trying "Petite Arche (Tours)"
+Found a stop matching stopArea: [StopArea|4214|Petite Arche|Tours|||476336|2271054]; Lambert2+: {E:476336.000000, N:2271054.000000}; Degrees: {E:47.427530, N:0.697238}
+Trying "Petite Boucherie (Tours)"
+Found a stop matching stopArea: [StopArea|4215|Petite Boucherie|Tours|||476262|2267635]; Lambert2+: {E:476262.000000, N:2267635.000000}; Degrees: {E:47.396768, N:0.697202}
+Trying "Petite Gironde (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3881|Petite Gironde|Saint-Cyr-sur-Loire|||474524|2271479]; Lambert2+: {E:474524.000000, N:2271479.000000}; Degrees: {E:47.431009, N:0.673106}
+Trying "Petit Moront (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3475|Petit Moront|Joué-lès-Tours|||473211|2260345]; Lambert2+: {E:473211.000000, N:2260345.000000}; Degrees: {E:47.330628, N:0.658855}
+Trying "Petit Pré (Tours)"
+Found a stop matching stopArea: [StopArea|4213|Petit Pré|Tours|||476197|2267352]; Lambert2+: {E:476197.000000, N:2267352.000000}; Degrees: {E:47.394211, N:0.696420}
+Trying "Petit Versailles (Rochecorbon)"
+Found a stop matching stopArea: [StopArea|3767|Petit Versailles|Rochecorbon|||479361|2268604]; Lambert2+: {E:479361.000000, N:2268604.000000}; Degrees: {E:47.406057, N:0.737986}
+Trying "Peupleraie (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3984|Peupleraie|Saint-Pierre-des-Corps|||479180|2265329]; Lambert2+: {E:479180.000000, N:2265329.000000}; Degrees: {E:47.376571, N:0.736472}
+Trying "Peupliers (Tours)"
+Found a stop matching stopArea: [StopArea|4216|Peupliers|Tours|||476655|2266127]; Lambert2+: {E:476655.000000, N:2266127.000000}; Degrees: {E:47.383280, N:0.702823}
+Trying "Philippe le Bon (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3476|Philippe le Bon|Joué-lès-Tours|||471775|2262068]; Lambert2+: {E:471775.000000, N:2262068.000000}; Degrees: {E:47.345846, N:0.639368}
+Trying "Picardie (Tours)"
+Found a stop matching stopArea: [StopArea|4217|Picardie|Tours|||474991|2270934]; Lambert2+: {E:474991.000000, N:2270934.000000}; Degrees: {E:47.426197, N:0.679447}
+Trying "Pierre Couverte (Tours)"
+Found a stop matching stopArea: [StopArea|4218|Pierre Couverte|Tours|||475885|2269070]; Lambert2+: {E:475885.000000, N:2269070.000000}; Degrees: {E:47.409603, N:0.691811}
+Trying "Pierres Plates (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3814|Pierres Plates|Saint-Avertin|||478984|2263200]; Lambert2+: {E:478984.000000, N:2263200.000000}; Degrees: {E:47.357388, N:0.734452}
+Trying "Pinauderie (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3882|Pinauderie|Saint-Cyr-sur-Loire|||474469|2270879]; Lambert2+: {E:474469.000000, N:2270879.000000}; Degrees: {E:47.425603, N:0.672545}
+Trying "Pinterie (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3815|Pinterie|Saint-Avertin|||479448|2263837]; Lambert2+: {E:479448.000000, N:2263837.000000}; Degrees: {E:47.363202, N:0.740421}
+Trying "Place Choiseul (Tours)"
+Found a stop matching stopArea: [StopArea|4219|Place Choiseul|Tours|||475283|2268237]; Lambert2+: {E:475283.000000, N:2268237.000000}; Degrees: {E:47.401998, N:0.684068}
+Trying "Place Rousseau (Tours)"
+Found a stop matching stopArea: [StopArea|4220|Place Rousseau|Tours|||477307|2268401]; Lambert2+: {E:477307.000000, N:2268401.000000}; Degrees: {E:47.403852, N:0.710833}
+Trying "Plessis (La Riche)"
+Found a stop matching stopArea: [StopArea|3743|Plessis|La Riche|||473457|2266440]; Lambert2+: {E:473457.000000, N:2266440.000000}; Degrees: {E:47.385489, N:0.660389}
+Trying "Polytech (Tours)"
+Found a stop matching stopArea: [StopArea|4222|Polytech|Tours|||475171|2264099]; Lambert2+: {E:475171.000000, N:2264099.000000}; Degrees: {E:47.364763, N:0.683738}
+Trying "Pompiers (Tours)"
+Found a stop matching stopArea: [StopArea|4223|Pompiers|Tours|||476355|2265118]; Lambert2+: {E:476355.000000, N:2265118.000000}; Degrees: {E:47.374150, N:0.699129}
+Trying "Pont de Bresme (Saint-Etienne-de-Chigny)"
+Found a stop matching stopArea: [StopArea|3908|Pont de Bresme|Saint-Etienne-de-Chigny|||462604|2265029]; Lambert2+: {E:462604.000000, N:2265029.000000}; Degrees: {E:47.370629, N:0.517117}
+Trying "Pont de la Motte (Fondettes)"
+Found a stop matching stopArea: [StopArea|3383|Pont de la Motte|Fondettes|||472396|2267382]; Lambert2+: {E:472396.000000, N:2267382.000000}; Degrees: {E:47.393756, N:0.646072}
+Trying "Pont du Milieu (Tours)"
+Found a stop matching stopArea: [StopArea|4224|Pont du Milieu|Tours|||476958|2266483]; Lambert2+: {E:476958.000000, N:2266483.000000}; Degrees: {E:47.386538, N:0.706737}
+Trying "Pont Napoléon (Tours)"
+Found a stop matching stopArea: [StopArea|4225|Pont Napoléon|Tours|||474484|2267939]; Lambert2+: {E:474484.000000, N:2267939.000000}; Degrees: {E:47.399166, N:0.673568}
+Trying "Pont Volant (Tours)"
+Found a stop matching stopArea: [StopArea|4226|Pont Volant|Tours|||474426|2263908]; Lambert2+: {E:474426.000000, N:2263908.000000}; Degrees: {E:47.362904, N:0.673930}
+Trying "Poré (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3477|Poré|Joué-lès-Tours|||473618|2261680]; Lambert2+: {E:473618.000000, N:2261680.000000}; Degrees: {E:47.342712, N:0.663863}
+Trying "Portail d'Ormeau (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3883|Portail d'Ormeau|Saint-Cyr-sur-Loire|||474802|2269212]; Lambert2+: {E:474802.000000, N:2269212.000000}; Degrees: {E:47.410675, N:0.677424}
+Trying "Portalis (Tours)"
+Found a stop matching stopArea: [StopArea|4227|Portalis|Tours|||475186|2264055]; Lambert2+: {E:475186.000000, N:2264055.000000}; Degrees: {E:47.364370, N:0.683948}
+Trying "Portillon (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3884|Portillon|Saint-Cyr-sur-Loire|||474827|2268056]; Lambert2+: {E:474827.000000, N:2268056.000000}; Degrees: {E:47.400284, N:0.678079}
+Trying "Portoville (Berthenay)"
+Found a stop matching stopArea: [StopArea|3156|Portoville|Berthenay|||461956|2263878]; Lambert2+: {E:461956.000000, N:2263878.000000}; Degrees: {E:47.360143, N:0.508893}
+Trying "Port Vallières (Fondettes)"
+Found a stop matching stopArea: [StopArea|3384|Port Vallières|Fondettes|||469624|2266837]; Lambert2+: {E:469624.000000, N:2266837.000000}; Degrees: {E:47.388313, N:0.609520}
+Trying "Pot de Fer (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3885|Pot de Fer|Saint-Cyr-sur-Loire|||473274|2269869]; Lambert2+: {E:473274.000000, N:2269869.000000}; Degrees: {E:47.416291, N:0.656996}
+Trying "Pourtalès (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3816|Pourtalès|Saint-Avertin|||480228|2264157]; Lambert2+: {E:480228.000000, N:2264157.000000}; Degrees: {E:47.366222, N:0.750660}
+Trying "Prébendes (Tours)"
+Found a stop matching stopArea: [StopArea|4230|Prébendes|Tours|||475380|2266265]; Lambert2+: {E:475380.000000, N:2266265.000000}; Degrees: {E:47.384282, N:0.685902}
+Trying "Preney (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3886|Preney|Saint-Cyr-sur-Loire|||472755|2270502]; Lambert2+: {E:472755.000000, N:2270502.000000}; Degrees: {E:47.421884, N:0.649939}
+Trying "Prés de Ballan (Ballan-Miré)"
+Found a stop matching stopArea: [StopArea|3135|Prés de Ballan|Ballan-Miré|||469743|2262033]; Lambert2+: {E:469743.000000, N:2262033.000000}; Degrees: {E:47.345134, N:0.612491}
+Trying "Preuilly (Tours)"
+Found a stop matching stopArea: [StopArea|4228|Preuilly|Tours|||474206|2267223]; Lambert2+: {E:474206.000000, N:2267223.000000}; Degrees: {E:47.392674, N:0.670087}
+Trying "Priestley (Tours)"
+Found a stop matching stopArea: [StopArea|4229|Priestley|Tours|||476970|2272095]; Lambert2+: {E:476970.000000, N:2272095.000000}; Degrees: {E:47.437010, N:0.705353}
+Trying "Primevères (Chanceaux-sur-Choisille)"
+Found a stop matching stopArea: [StopArea|3257|Primevères|Chanceaux-sur-Choisille|||476650|2276030]; Lambert2+: {E:476650.000000, N:2276030.000000}; Degrees: {E:47.472338, N:0.700025}
+Trying "P+R Sagerie (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3237|P+R Sagerie|Chambray-lès-Tours|||476691|2262191]; Lambert2+: {E:476691.000000, N:2262191.000000}; Degrees: {E:47.347889, N:0.704382}
+Trying "Puits Tessier (Ballan-Miré)"
+Found a stop matching stopArea: [StopArea|3136|Puits Tessier|Ballan-Miré|||470295|2261502]; Lambert2+: {E:470295.000000, N:2261502.000000}; Degrees: {E:47.340467, N:0.619948}
+Trying "Quai de la Loire (Rochecorbon)"
+Found a stop matching stopArea: [StopArea|3768|Quai de la Loire|Rochecorbon|||480870|2268863]; Lambert2+: {E:480870.000000, N:2268863.000000}; Degrees: {E:47.408661, N:0.757907}
+Trying "Quai Malraux (Tours)"
+Found a stop matching stopArea: [StopArea|4231|Quai Malraux|Tours|||476308|2267723]; Lambert2+: {E:476308.000000, N:2267723.000000}; Degrees: {E:47.397568, N:0.697787}
+Trying "Quatre Bornes (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3478|Quatre Bornes|Joué-lès-Tours|||475336|2262648]; Lambert2+: {E:475336.000000, N:2262648.000000}; Degrees: {E:47.351745, N:0.686325}
+Trying "Quatre Chemins (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3817|Quatre Chemins|Saint-Avertin|||478901|2262689]; Lambert2+: {E:478901.000000, N:2262689.000000}; Degrees: {E:47.352777, N:0.733491}
+Trying "Rabelais (Tours)"
+Found a stop matching stopArea: [StopArea|4232|Rabelais|Tours|||474693|2266359]; Lambert2+: {E:474693.000000, N:2266359.000000}; Degrees: {E:47.384997, N:0.676779}
+Trying "Rabière (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3479|Rabière|Joué-lès-Tours|||473509|2261937]; Lambert2+: {E:473509.000000, N:2261937.000000}; Degrees: {E:47.345003, N:0.662348}
+Trying "Ragonnière (Mettray)"
+Found a stop matching stopArea: [StopArea|3591|Ragonnière|Mettray|||472452|2273825]; Lambert2+: {E:472452.000000, N:2273825.000000}; Degrees: {E:47.451709, N:0.644977}
+Trying "Raphaël (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3480|Raphaël|Joué-lès-Tours|||472910|2263663]; Lambert2+: {E:472910.000000, N:2263663.000000}; Degrees: {E:47.360410, N:0.653934}
+Trying "Raspail (Tours)"
+Found a stop matching stopArea: [StopArea|4233|Raspail|Tours|||477225|2265608]; Lambert2+: {E:477225.000000, N:2265608.000000}; Degrees: {E:47.378719, N:0.710512}
+Trying "Rempart (Tours)"
+Found a stop matching stopArea: [StopArea|4234|Rempart|Tours|||476572|2267079]; Lambert2+: {E:476572.000000, N:2267079.000000}; Degrees: {E:47.391826, N:0.701461}
+Trying "Renan (Tours)"
+Found a stop matching stopArea: [StopArea|4235|Renan|Tours|||476675|2267276]; Lambert2+: {E:476675.000000, N:2267276.000000}; Degrees: {E:47.393617, N:0.702771}
+Trying "Renoir (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3818|Renoir|Saint-Avertin|||479682|2263084]; Lambert2+: {E:479682.000000, N:2263084.000000}; Degrees: {E:47.356472, N:0.743721}
+Trying "République (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3482|République|Joué-lès-Tours|||473711|2263093]; Lambert2+: {E:473711.000000, N:2263093.000000}; Degrees: {E:47.355438, N:0.664696}
+Trying "Ribellerie (Mettray)"
+Found a stop matching stopArea: [StopArea|3592|Ribellerie|Mettray|||473927|2272909]; Lambert2+: {E:473927.000000, N:2272909.000000}; Degrees: {E:47.443756, N:0.664790}
+Trying "Richemont (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3819|Richemont|Saint-Avertin|||477986|2264274]; Lambert2+: {E:477986.000000, N:2264274.000000}; Degrees: {E:47.366863, N:0.720951}
+Trying "Rocailles (La Membrolle-sur-Choisille)"
+Found a stop matching stopArea: [StopArea|3581|Rocailles|La Membrolle-sur-Choisille|||471248|2272398]; Lambert2+: {E:471248.000000, N:2272398.000000}; Degrees: {E:47.438642, N:0.629425}
+Trying "Roche (Ballan-Miré)"
+Found a stop matching stopArea: [StopArea|3137|Roche|Ballan-Miré|||471398|2262698]; Lambert2+: {E:471398.000000, N:2262698.000000}; Degrees: {E:47.351439, N:0.634199}
+Trying "Rochebise (Fondettes)"
+Found a stop matching stopArea: [StopArea|3385|Rochebise|Fondettes|||468622|2268214]; Lambert2+: {E:468622.000000, N:2268214.000000}; Degrees: {E:47.400497, N:0.595847}
+Trying "Romarins (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3986|Romarins|Saint-Pierre-des-Corps|||478223|2267056]; Lambert2+: {E:478223.000000, N:2267056.000000}; Degrees: {E:47.391926, N:0.723332}
+Trying "Rotière (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3481|Rotière|Joué-lès-Tours|||473586|2262302]; Lambert2+: {E:473586.000000, N:2262302.000000}; Degrees: {E:47.348300, N:0.663264}
+Trying "Rotonde (Tours)"
+Found a stop matching stopArea: [StopArea|4236|Rotonde|Tours|||476815|2265949]; Lambert2+: {E:476815.000000, N:2265949.000000}; Degrees: {E:47.381709, N:0.704990}
+Trying "Rouget de l'Isle (Tours)"
+Found a stop matching stopArea: [StopArea|4237|Rouget de l'Isle|Tours|||474477|2267029]; Lambert2+: {E:474477.000000, N:2267029.000000}; Degrees: {E:47.390981, N:0.673731}
+Trying "Rousseau (Notre-Dame-d'Oé)"
+Found a stop matching stopArea: [StopArea|3678|Rousseau|Notre-Dame-d'Oé|||477522|2274185]; Lambert2+: {E:477522.000000, N:2274185.000000}; Degrees: {E:47.455909, N:0.712097}
+Trying "Route St Genouph (Saint-Genouph)"
+Found a stop matching stopArea: [StopArea|3919|Route St Genouph|Saint-Genouph|||472153|2266433]; Lambert2+: {E:472153.000000, N:2266433.000000}; Degrees: {E:47.385175, N:0.643124}
+Trying "Roux (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3889|Roux|Saint-Cyr-sur-Loire|||474375|2269516]; Lambert2+: {E:474375.000000, N:2269516.000000}; Degrees: {E:47.413328, N:0.671682}
+Trying "Rue Neuve (Vernou-sur-Brenne)"
+Found a stop matching stopArea: [StopArea|4370|Rue Neuve|Vernou-sur-Brenne|||487622|2269731]; Lambert2+: {E:487622.000000, N:2269731.000000}; Degrees: {E:47.417653, N:0.847139}
+Trying "Rue Noire (Berthenay)"
+Found a stop matching stopArea: [StopArea|3157|Rue Noire|Berthenay|||462885|2263507]; Lambert2+: {E:462885.000000, N:2263507.000000}; Degrees: {E:47.357000, N:0.521302}
+Trying "Sablonnière (Parçay-Meslay)"
+Found a stop matching stopArea: [StopArea|3701|Sablonnière|Parçay-Meslay|||480260|2272662]; Lambert2+: {E:480260.000000, N:2272662.000000}; Degrees: {E:47.442716, N:0.748809}
+Trying "Saboterie (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3820|Saboterie|Saint-Avertin|||479642|2263288]; Lambert2+: {E:479642.000000, N:2263288.000000}; Degrees: {E:47.358300, N:0.743137}
+Trying "Sagerie (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3821|Sagerie|Saint-Avertin|||477476|2263647]; Lambert2+: {E:477476.000000, N:2263647.000000}; Degrees: {E:47.361130, N:0.714372}
+Trying "Salengro (Tours)"
+Found a stop matching stopArea: [StopArea|4238|Salengro|Tours|||475724|2266494]; Lambert2+: {E:475724.000000, N:2266494.000000}; Degrees: {E:47.386406, N:0.690393}
+Trying "Sanitas (Tours)"
+Found a stop matching stopArea: [StopArea|4239|Sanitas|Tours|||476212|2265983]; Lambert2+: {E:476212.000000, N:2265983.000000}; Degrees: {E:47.381902, N:0.696997}
+Trying "Santé Alliance (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3893|Santé Alliance|Saint-Cyr-sur-Loire|||474054|2271597]; Lambert2+: {E:474054.000000, N:2271597.000000}; Degrees: {E:47.431981, N:0.666844}
+Trying "Santé Vinci (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3240|Santé Vinci|Chambray-lès-Tours|||475656|2260855]; Lambert2+: {E:475656.000000, N:2260855.000000}; Degrees: {E:47.335680, N:0.691057}
+Trying "Saulnier (Parçay-Meslay)"
+Found a stop matching stopArea: [StopArea|3702|Saulnier|Parçay-Meslay|||478163|2273394]; Lambert2+: {E:478163.000000, N:2273394.000000}; Degrees: {E:47.448914, N:0.720812}
+Trying "Savonnières (Savonnières)"
+Found a stop matching stopArea: [StopArea|4010|Savonnières|Savonnières|||464824|2262483]; Lambert2+: {E:464824.000000, N:2262483.000000}; Degrees: {E:47.348191, N:0.547271}
+Trying "Semard (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3990|Semard|Saint-Pierre-des-Corps|||477252|2266568]; Lambert2+: {E:477252.000000, N:2266568.000000}; Degrees: {E:47.387358, N:0.710607}
+Trying "Séverine (Tours)"
+Found a stop matching stopArea: [StopArea|4261|Séverine|Tours|||476857|2265276]; Lambert2+: {E:476857.000000, N:2265276.000000}; Degrees: {E:47.375665, N:0.705731}
+Trying "Sévigné (La Ville-aux-Dames)"
+Found a stop matching stopArea: [StopArea|4401|Sévigné|La Ville-aux-Dames|||482064|2267639]; Lambert2+: {E:482064.000000, N:2267639.000000}; Degrees: {E:47.397868, N:0.774047}
+Trying "Sibotière (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3894|Sibotière|Saint-Cyr-sur-Loire|||473431|2269428]; Lambert2+: {E:473431.000000, N:2269428.000000}; Degrees: {E:47.412356, N:0.659201}
+Trying "Simone Signoret (La Ville-aux-Dames)"
+Found a stop matching stopArea: [StopArea|4400|Simone Signoret|La Ville-aux-Dames|||481305|2266374]; Lambert2+: {E:481305.000000, N:2266374.000000}; Degrees: {E:47.386355, N:0.764329}
+Trying "Sorbiers (Ballan-Miré)"
+Found a stop matching stopArea: [StopArea|3138|Sorbiers|Ballan-Miré|||471606|2263393]; Lambert2+: {E:471606.000000, N:2263393.000000}; Degrees: {E:47.357729, N:0.636752}
+Trying "Stade Jean Bouin (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3485|Stade Jean Bouin|Joué-lès-Tours|||473339|2261641]; Lambert2+: {E:473339.000000, N:2261641.000000}; Degrees: {E:47.342308, N:0.660183}
+Trying "Stade (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3993|Stade|Saint-Pierre-des-Corps|||479305|2267079]; Lambert2+: {E:479305.000000, N:2267079.000000}; Degrees: {E:47.392332, N:0.737655}
+Trying "Stade Varenne (Luynes)"
+Found a stop matching stopArea: [StopArea|3554|Stade Varenne|Luynes|||465875|2266589]; Lambert2+: {E:465875.000000, N:2266589.000000}; Degrees: {E:47.385331, N:0.559950}
+Trying "Stalingrad (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3994|Stalingrad|Saint-Pierre-des-Corps|||477987|2266611]; Lambert2+: {E:477987.000000, N:2266611.000000}; Degrees: {E:47.387881, N:0.720328}
+Trying "St Augustin (Tours)"
+Found a stop matching stopArea: [StopArea|4242|St Augustin|Tours|||476433|2267515]; Lambert2+: {E:476433.000000, N:2267515.000000}; Degrees: {E:47.395721, N:0.699500}
+Trying "St Barthélemy (Tours)"
+Found a stop matching stopArea: [StopArea|4243|St Barthélemy|Tours|||476517|2269356]; Lambert2+: {E:476517.000000, N:2269356.000000}; Degrees: {E:47.412293, N:0.700105}
+Trying "St Cyr Eglise (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3895|St Cyr Eglise|Saint-Cyr-sur-Loire|||473967|2267758]; Lambert2+: {E:473967.000000, N:2267758.000000}; Degrees: {E:47.397440, N:0.666772}
+Trying "St Cyr Equatop (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3896|St Cyr Equatop|Saint-Cyr-sur-Loire|||473249|2270925]; Lambert2+: {E:473249.000000, N:2270925.000000}; Degrees: {E:47.425783, N:0.656365}
+Trying "St Cyr Mairie (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3897|St Cyr Mairie|Saint-Cyr-sur-Loire|||473972|2268054]; Lambert2+: {E:473972.000000, N:2268054.000000}; Degrees: {E:47.400103, N:0.666755}
+Trying "Ste Agathe (Chanceaux-sur-Choisille)"
+Found a stop matching stopArea: [StopArea|3258|Ste Agathe|Chanceaux-sur-Choisille|||476296|2275910]; Lambert2+: {E:476296.000000, N:2275910.000000}; Degrees: {E:47.471193, N:0.695363}
+Trying "Ste Anne (La Riche)"
+Found a stop matching stopArea: [StopArea|3744|Ste Anne|La Riche|||473838|2266996]; Lambert2+: {E:473838.000000, N:2266996.000000}; Degrees: {E:47.390562, N:0.665278}
+Trying "St Eloi (Tours)"
+Found a stop matching stopArea: [StopArea|4244|St Eloi|Tours|||474685|2266749]; Lambert2+: {E:474685.000000, N:2266749.000000}; Degrees: {E:47.388503, N:0.676564}
+Trying "Stendhal (Tours)"
+Found a stop matching stopArea: [StopArea|4257|Stendhal|Tours|||477247|2264497]; Lambert2+: {E:477247.000000, N:2264497.000000}; Degrees: {E:47.368731, N:0.711108}
+Trying "Ste Radegonde (Tours)"
+Found a stop matching stopArea: [StopArea|4255|Ste Radegonde|Tours|||477344|2268257]; Lambert2+: {E:477344.000000, N:2268257.000000}; Degrees: {E:47.402564, N:0.711362}
+Trying "Ste Ursule (Tours)"
+Found a stop matching stopArea: [StopArea|4256|Ste Ursule|Tours|||475756|2267312]; Lambert2+: {E:475756.000000, N:2267312.000000}; Degrees: {E:47.393768, N:0.690590}
+Trying "St Exupéry (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3898|St Exupéry|Saint-Cyr-sur-Loire|||473960|2268782]; Lambert2+: {E:473960.000000, N:2268782.000000}; Degrees: {E:47.406648, N:0.666391}
+Trying "St François (Tours)"
+Found a stop matching stopArea: [StopArea|4245|St François|Tours|||474059|2265978]; Lambert2+: {E:474059.000000, N:2265978.000000}; Degrees: {E:47.381450, N:0.668491}
+Trying "St Gatien (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3483|St Gatien|Joué-lès-Tours|||472701|2260855]; Lambert2+: {E:472701.000000, N:2260855.000000}; Degrees: {E:47.335117, N:0.651964}
+Trying "St Georges (Rochecorbon)"
+Found a stop matching stopArea: [StopArea|3770|St Georges|Rochecorbon|||479032|2268508]; Lambert2+: {E:479032.000000, N:2268508.000000}; Degrees: {E:47.405133, N:0.733654}
+Trying "St Jean (Tours)"
+Found a stop matching stopArea: [StopArea|4246|St Jean|Tours|||476686|2263630]; Lambert2+: {E:476686.000000, N:2263630.000000}; Degrees: {E:47.360830, N:0.703920}
+Trying "St Joseph (Tours)"
+Found a stop matching stopArea: [StopArea|4247|St Joseph|Tours|||476869|2268320]; Lambert2+: {E:476869.000000, N:2268320.000000}; Degrees: {E:47.403042, N:0.705053}
+Trying "St Lazare (Tours)"
+Found a stop matching stopArea: [StopArea|4248|St Lazare|Tours|||476092|2265554]; Lambert2+: {E:476092.000000, N:2265554.000000}; Degrees: {E:47.378021, N:0.695526}
+Trying "St Léger (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3484|St Léger|Joué-lès-Tours|||472785|2261971]; Lambert2+: {E:472785.000000, N:2261971.000000}; Degrees: {E:47.345169, N:0.652759}
+Trying "St Libert (Tours)"
+Found a stop matching stopArea: [StopArea|4249|St Libert|Tours|||477506|2269027]; Lambert2+: {E:477506.000000, N:2269027.000000}; Degrees: {E:47.409519, N:0.713298}
+Trying "St Martin (Tours)"
+Found a stop matching stopArea: [StopArea|4250|St Martin|Tours|||475199|2267273]; Lambert2+: {E:475199.000000, N:2267273.000000}; Degrees: {E:47.393312, N:0.683224}
+Trying "St Michel (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3826|St Michel|Saint-Avertin|||479299|2264212]; Lambert2+: {E:479299.000000, N:2264212.000000}; Degrees: {E:47.366547, N:0.738348}
+Trying "St Paul (Tours)"
+Found a stop matching stopArea: [StopArea|4251|St Paul|Tours|||476427|2265628]; Lambert2+: {E:476427.000000, N:2265628.000000}; Degrees: {E:47.378750, N:0.699941}
+Trying "St Pierre Centre (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3991|St Pierre Centre|Saint-Pierre-des-Corps|||477921|2266921]; Lambert2+: {E:477921.000000, N:2266921.000000}; Degrees: {E:47.390656, N:0.719370}
+Trying "St Pierre Gare (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3992|St Pierre Gare|Saint-Pierre-des-Corps|||478166|2266465]; Lambert2+: {E:478166.000000, N:2266465.000000}; Degrees: {E:47.386601, N:0.722738}
+Trying "Strasbourg (Tours)"
+Found a stop matching stopArea: [StopArea|4258|Strasbourg|Tours|||474939|2265748]; Lambert2+: {E:474939.000000, N:2265748.000000}; Degrees: {E:47.379549, N:0.680207}
+Trying "St Roch (Rochecorbon)"
+Found a stop matching stopArea: [StopArea|3771|St Roch|Rochecorbon|||481245|2268916]; Lambert2+: {E:481245.000000, N:2268916.000000}; Degrees: {E:47.409205, N:0.762861}
+Trying "St Sauveur (Tours)"
+Found a stop matching stopArea: [StopArea|4253|St Sauveur|Tours|||474883|2265099]; Lambert2+: {E:474883.000000, N:2265099.000000}; Degrees: {E:47.373701, N:0.679646}
+Trying "St Symphorien (Tours)"
+Found a stop matching stopArea: [StopArea|4254|St Symphorien|Tours|||476370|2268933]; Lambert2+: {E:476370.000000, N:2268933.000000}; Degrees: {E:47.408462, N:0.698274}
+Trying "St Venant (Luynes)"
+Found a stop matching stopArea: [StopArea|3553|St Venant|Luynes|||465518|2266525]; Lambert2+: {E:465518.000000, N:2266525.000000}; Degrees: {E:47.384683, N:0.555242}
+Trying "St Vincent (Vouvray)"
+Found a stop matching stopArea: [StopArea|4425|St Vincent|Vouvray|||483860|2269005]; Lambert2+: {E:483860.000000, N:2269005.000000}; Degrees: {E:47.410471, N:0.797481}
+Trying "Sublainerie (Ballan-Miré)"
+Found a stop matching stopArea: [StopArea|3139|Sublainerie|Ballan-Miré|||468694|2260019]; Lambert2+: {E:468694.000000, N:2260019.000000}; Degrees: {E:47.326814, N:0.599201}
+Trying "Suède (Tours)"
+Found a stop matching stopArea: [StopArea|4260|Suède|Tours|||475958|2271915]; Lambert2+: {E:475958.000000, N:2271915.000000}; Degrees: {E:47.435202, N:0.691989}
+Trying "Suzanne Valadon (Tours)"
+Found a stop matching stopArea: [StopArea|4259|Suzanne Valadon|Tours|||475590|2264994]; Lambert2+: {E:475590.000000, N:2264994.000000}; Degrees: {E:47.372891, N:0.689035}
+Trying "Tamaris (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3241|Tamaris|Chambray-lès-Tours|||477359|2260881]; Lambert2+: {E:477359.000000, N:2260881.000000}; Degrees: {E:47.336232, N:0.713579}
+Trying "Tartifume (Fondettes)"
+Found a stop matching stopArea: [StopArea|3386|Tartifume|Fondettes|||470874|2266952]; Lambert2+: {E:470874.000000, N:2266952.000000}; Degrees: {E:47.389593, N:0.626039}
+Trying "Tastes (Tours)"
+Found a stop matching stopArea: [StopArea|4262|Tastes|Tours|||477117|2269326]; Lambert2+: {E:477117.000000, N:2269326.000000}; Degrees: {E:47.412136, N:0.708062}
+Trying "Tavant (Tours)"
+Found a stop matching stopArea: [StopArea|4263|Tavant|Tours|||475021|2271908]; Lambert2+: {E:475021.000000, N:2271908.000000}; Degrees: {E:47.434962, N:0.679572}
+Trying "Terres Fortes (Saint-Genouph)"
+Found a stop matching stopArea: [StopArea|3925|Terres Fortes|Saint-Genouph|||468421|2265427]; Lambert2+: {E:468421.000000, N:2265427.000000}; Degrees: {E:47.375394, N:0.594003}
+Trying "Terres Rouges (Saint-Etienne-de-Chigny)"
+Found a stop matching stopArea: [StopArea|3909|Terres Rouges|Saint-Etienne-de-Chigny|||462254|2265068]; Lambert2+: {E:462254.000000, N:2265068.000000}; Degrees: {E:47.370907, N:0.512472}
+Trying "Thalès (Tours)"
+Found a stop matching stopArea: [StopArea|4264|Thalès|Tours|||475834|2271310]; Lambert2+: {E:475834.000000, N:2271310.000000}; Degrees: {E:47.429738, N:0.690514}
+Trying "Thibaudière (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3242|Thibaudière|Chambray-lès-Tours|||475885|2260958]; Lambert2+: {E:475885.000000, N:2260958.000000}; Degrees: {E:47.336649, N:0.694058}
+Trying "Tilleuls (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3243|Tilleuls|Chambray-lès-Tours|||478050|2261387]; Lambert2+: {E:478050.000000, N:2261387.000000}; Degrees: {E:47.340911, N:0.722583}
+Trying "Tonnellé (Tours)"
+Found a stop matching stopArea: [StopArea|4265|Tonnellé|Tours|||474017|2266291]; Lambert2+: {E:474017.000000, N:2266291.000000}; Degrees: {E:47.384256, N:0.667847}
+Trying "Torricelli (Tours)"
+Found a stop matching stopArea: [StopArea|4266|Torricelli|Tours|||476607|2271138]; Lambert2+: {E:476607.000000, N:2271138.000000}; Degrees: {E:47.428336, N:0.700806}
+Trying "Tourettes (Tours)"
+Found a stop matching stopArea: [StopArea|4268|Tourettes|Tours|||476168|2269206]; Lambert2+: {E:476168.000000, N:2269206.000000}; Degrees: {E:47.410879, N:0.695523}
+Trying "Touvoie (Rochecorbon)"
+Found a stop matching stopArea: [StopArea|3772|Touvoie|Rochecorbon|||480577|2270076]; Lambert2+: {E:480577.000000, N:2270076.000000}; Degrees: {E:47.419517, N:0.753702}
+Trying "Tranchée (Tours)"
+Found a stop matching stopArea: [StopArea|4317|Tranchée|Tours|||475048|2269012]; Lambert2+: {E:475048.000000, N:2269012.000000}; Degrees: {E:47.408923, N:0.680739}
+Trying "Tremblay (Tours)"
+Found a stop matching stopArea: [StopArea|4318|Tremblay|Tours|||476270|2269825]; Lambert2+: {E:476270.000000, N:2269825.000000}; Degrees: {E:47.416465, N:0.696703}
+Trying "Trianon (Tours)"
+Found a stop matching stopArea: [StopArea|4319|Trianon|Tours|||475831|2268741]; Lambert2+: {E:475831.000000, N:2268741.000000}; Degrees: {E:47.406634, N:0.691187}
+Trying "Trobriand (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3486|Trobriand|Joué-lès-Tours|||475612|2263639]; Lambert2+: {E:475612.000000, N:2263639.000000}; Degrees: {E:47.360709, N:0.689703}
+Trying "Troènes (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3827|Troènes|Saint-Avertin|||477548|2263426]; Lambert2+: {E:477548.000000, N:2263426.000000}; Degrees: {E:47.359155, N:0.715385}
+Trying "Trois Rivières (Tours)"
+Found a stop matching stopArea: [StopArea|4320|Trois Rivières|Tours|||475288|2269829]; Lambert2+: {E:475288.000000, N:2269829.000000}; Degrees: {E:47.416316, N:0.683691}
+Trying "Tulipes (Ballan-Miré)"
+Found a stop matching stopArea: [StopArea|3140|Tulipes|Ballan-Miré|||469366|2261645]; Lambert2+: {E:469366.000000, N:2261645.000000}; Degrees: {E:47.341570, N:0.607616}
+Trying "Ursulines (Tours)"
+Found a stop matching stopArea: [StopArea|4321|Ursulines|Tours|||476452|2267489]; Lambert2+: {E:476452.000000, N:2267489.000000}; Degrees: {E:47.395491, N:0.699759}
+Trying "Val Choisille (La Membrolle-sur-Choisille)"
+Found a stop matching stopArea: [StopArea|3582|Val Choisille|La Membrolle-sur-Choisille|||472053|2272066]; Lambert2+: {E:472053.000000, N:2272066.000000}; Degrees: {E:47.435813, N:0.640190}
+Trying "Val Fleuri (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3996|Val Fleuri|Saint-Pierre-des-Corps|||478084|2267388]; Lambert2+: {E:478084.000000, N:2267388.000000}; Degrees: {E:47.394886, N:0.721401}
+Trying "Vallée Chartier (Vouvray)"
+Found a stop matching stopArea: [StopArea|4426|Vallée Chartier|Vouvray|||485726|2269123]; Lambert2+: {E:485726.000000, N:2269123.000000}; Degrees: {E:47.411859, N:0.822172}
+Trying "Vallée Violette (Joué-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3487|Vallée Violette|Joué-lès-Tours|||474587|2261761]; Lambert2+: {E:474587.000000, N:2261761.000000}; Degrees: {E:47.343626, N:0.676661}
+Trying "Vallières (Fondettes)"
+Found a stop matching stopArea: [StopArea|3387|Vallières|Fondettes|||469435|2266938]; Lambert2+: {E:469435.000000, N:2266938.000000}; Degrees: {E:47.389184, N:0.606987}
+Trying "Vanneaux (Chambray-lès-Tours)"
+Found a stop matching stopArea: [StopArea|3244|Vanneaux|Chambray-lès-Tours|||478044|2262183]; Lambert2+: {E:478044.000000, N:2262183.000000}; Degrees: {E:47.348069, N:0.722288}
+Trying "Vaucanson (Tours)"
+Found a stop matching stopArea: [StopArea|4322|Vaucanson|Tours|||477294|2270612]; Lambert2+: {E:477294.000000, N:2270612.000000}; Degrees: {E:47.423734, N:0.710054}
+Trying "Vaudasnière (Rochecorbon)"
+Found a stop matching stopArea: [StopArea|3773|Vaudasnière|Rochecorbon|||480538|2271253]; Lambert2+: {E:480538.000000, N:2271253.000000}; Degrees: {E:47.430095, N:0.752871}
+Trying "Vaugareau (Luynes)"
+Found a stop matching stopArea: [StopArea|3555|Vaugareau|Luynes|||464260|2267400]; Lambert2+: {E:464260.000000, N:2267400.000000}; Degrees: {E:47.392294, N:0.538320}
+Trying "Vauvert (Rochecorbon)"
+Found a stop matching stopArea: [StopArea|3774|Vauvert|Rochecorbon|||481522|2268957]; Lambert2+: {E:481522.000000, N:2268957.000000}; Degrees: {E:47.409624, N:0.766520}
+Trying "Velpeau (Tours)"
+Found a stop matching stopArea: [StopArea|4323|Velpeau|Tours|||476690|2266566]; Lambert2+: {E:476690.000000, N:2266566.000000}; Degrees: {E:47.387235, N:0.703165}
+Trying "Vençay (Saint-Avertin)"
+Found a stop matching stopArea: [StopArea|3828|Vençay|Saint-Avertin|||479775|2263444]; Lambert2+: {E:479775.000000, N:2263444.000000}; Degrees: {E:47.359727, N:0.744855}
+Trying "Vénien (Tours)"
+Found a stop matching stopArea: [StopArea|4328|Vénien|Tours|||476340|2265846]; Lambert2+: {E:476340.000000, N:2265846.000000}; Degrees: {E:47.380694, N:0.698729}
+Trying "Verdun (Tours)"
+Found a stop matching stopArea: [StopArea|4324|Verdun|Tours|||476073|2265070]; Lambert2+: {E:476073.000000, N:2265070.000000}; Degrees: {E:47.373665, N:0.695409}
+Trying "Vernou Centre (Vernou-sur-Brenne)"
+Found a stop matching stopArea: [StopArea|4374|Vernou Centre|Vernou-sur-Brenne|||487507|2270098]; Lambert2+: {E:487507.000000, N:2270098.000000}; Degrees: {E:47.420934, N:0.845523}
+Trying "Viala (Saint-Pierre-des-Corps)"
+Found a stop matching stopArea: [StopArea|3997|Viala|Saint-Pierre-des-Corps|||478684|2266936]; Lambert2+: {E:478684.000000, N:2266936.000000}; Degrees: {E:47.390932, N:0.729470}
+Trying "Victoire (Tours)"
+Found a stop matching stopArea: [StopArea|4325|Victoire|Tours|||474802|2267390]; Lambert2+: {E:474802.000000, N:2267390.000000}; Degrees: {E:47.394289, N:0.677934}
+Trying "Victor Hogo (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3900|Victor Hogo|Saint-Cyr-sur-Loire|||474080|2268535]; Lambert2+: {E:474080.000000, N:2268535.000000}; Degrees: {E:47.404449, N:0.668050}
+Trying "Vieux Bourg (Notre-Dame-d'Oé)"
+Found a stop matching stopArea: [StopArea|3679|Vieux Bourg|Notre-Dame-d'Oé|||477040|2273814]; Lambert2+: {E:477040.000000, N:2273814.000000}; Degrees: {E:47.452483, N:0.705808}
+Trying "Vieux Calvaire (Mettray)"
+Found a stop matching stopArea: [StopArea|3593|Vieux Calvaire|Mettray|||472964|2273871]; Lambert2+: {E:472964.000000, N:2273871.000000}; Degrees: {E:47.452222, N:0.651752}
+Trying "Vieux Noyer (Tours)"
+Found a stop matching stopArea: [StopArea|4326|Vieux Noyer|Tours|||477412|2270040]; Lambert2+: {E:477412.000000, N:2270040.000000}; Degrees: {E:47.418612, N:0.711775}
+Trying "Villandry Centre (Villandry)"
+Found a stop matching stopArea: [StopArea|4380|Villandry Centre|Villandry|||462070|2261715]; Lambert2+: {E:462070.000000, N:2261715.000000}; Degrees: {E:47.340715, N:0.511067}
+Trying "Voisin (Saint-Cyr-sur-Loire)"
+Found a stop matching stopArea: [StopArea|3901|Voisin|Saint-Cyr-sur-Loire|||473802|2271312]; Lambert2+: {E:473802.000000, N:2271312.000000}; Degrees: {E:47.429370, N:0.663584}
+Trying "Voltaire (Tours)"
+Found a stop matching stopArea: [StopArea|4327|Voltaire|Tours|||475669|2267707]; Lambert2+: {E:475669.000000, N:2267707.000000}; Degrees: {E:47.397304, N:0.689328}
+Trying "Vouvray Centre (Vouvray)"
+Found a stop matching stopArea: [StopArea|4432|Vouvray Centre|Vouvray|||484057|2269042]; Lambert2+: {E:484057.000000, N:2269042.000000}; Degrees: {E:47.410839, N:0.800081}
+Trying "Wagner (Tours)"
+Found a stop matching stopArea: [StopArea|4329|Wagner|Tours|||477223|2265312]; Lambert2+: {E:477223.000000, N:2265312.000000}; Degrees: {E:47.376057, N:0.710567}
+Trying "Wedells (Tours)"
+Found a stop matching stopArea: [StopArea|4331|Wedells|Tours|||477412|2268655]; Lambert2+: {E:477412.000000, N:2268655.000000}; Degrees: {E:47.406156, N:0.712154}
+Trying "Willy Brandt (Notre-Dame-d'Oé)"
+Found a stop matching stopArea: [StopArea|3680|Willy Brandt|Notre-Dame-d'Oé|||476152|2272450]; Lambert2+: {E:476152.000000, N:2272450.000000}; Degrees: {E:47.440050, N:0.694413}
+Trying "ZA d'Oé (La Membrolle-sur-Choisille)"
+Cannot find a match stopArea for: None
+Trying "Za Papillon (Parçay-Meslay)"
+Found a stop matching stopArea: [StopArea|3703|Za Papillon|Parçay-Meslay|||477855|2272896]; Lambert2+: {E:477855.000000, N:2272896.000000}; Degrees: {E:47.444379, N:0.716864}
+Trying "Zola (Tours)"
+Found a stop matching stopArea: [StopArea|4332|Zola|Tours|||475643|2267267]; Lambert2+: {E:475643.000000, N:2267267.000000}; Degrees: {E:47.393342, N:0.689106}
