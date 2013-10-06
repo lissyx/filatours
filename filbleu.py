@@ -21,6 +21,10 @@ import os
 import pprint
 pp = pprint.PrettyPrinter(indent=1)
 
+from pygraph.classes.graph import graph
+from pygraph.readwrite.dot import write
+from pygraph.classes.exceptions import AdditionError
+
 from pdfminer.pdfparser import PDFParser, PDFDocument
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.pdfdevice import PDFDevice
@@ -1542,86 +1546,107 @@ class FilBleu:
 		return exact
 
 	def extract_line_jvmalin(self, networkExternalCode, lineExternalCode):
+		curdate = time
 		urlbase = "http://www.jvmalin.fr/Horaires/Recherche?networkExternalCode=" + networkExternalCode
 		urlbase += "&lineExternalCode=" + lineExternalCode
-		urlbase += "&hor-date=30%2F07%2F2013&method=lineComplete&method=lineComplete"
+		urlbase += "&method=lineComplete&method=lineComplete"
 		linesBuilt = []
 
-		for sens in [-1, 1]:
-			url = urlbase + "&sens=" + str(sens)
-			self.browser.open(url)
-			soup = BeautifulSoup.BeautifulSoup(self.browser.response().read(), convertEntities=BeautifulSoup.BeautifulSoup.HTML_ENTITIES)
-			if not soup:
-				print "No output :("
-				continue
+		base = datetime.datetime.today()
+		dateList = [ base - datetime.timedelta(days=x) for x in range(0, 7) ]
 
-			table = soup.find('table')
-			if not table or table["id"] != "LineArray":
-				print "No valid table :("
-				continue
+		for dateQuery in dateList:
+			for sens in [-1, 1]:
+				url = urlbase + "&sens=" + str(sens) + "&hor-date=" + dateQuery.strftime('%d/%m/%Y')
+				self.browser.open(url)
+				soup = BeautifulSoup.BeautifulSoup(self.browser.response().read(), convertEntities=BeautifulSoup.BeautifulSoup.HTML_ENTITIES)
+				if not soup:
+					print "No output :("
+					continue
 
-			stopsByCol = {}
-			for row in table.findAll('tr'):
-				stopName = self.html_br_strip(row.find('a').text)
-				i = 0
-				for cell in row.findAll('td'):
-					date = self.html_br_strip(cell.text)
-					if not stopsByCol.has_key(i):
-						stopsByCol[i] = []
-					if not (date == "-"):
-						stopsByCol[i] += [ stopName ]
-					i += 1
+				table = soup.find('table')
+				if not table or table["id"] != "LineArray":
+					continue
 
-			# check that list1 is a subset of list2
-			def isStopsSubset(list1, list2):
-				smallest = list1
-				biggest = list2
-				if len(list1) >= len(list2):
-					smallest = list2
-					biggest = list1
+				stopsByCol = {}
+				for row in table.findAll('tr'):
+					stopName = self.html_br_strip(row.find('a').text)
+					i = 0
+					for cell in row.findAll('td'):
+						date = self.html_br_strip(cell.text)
+						if not stopsByCol.has_key(i):
+							stopsByCol[i] = []
+						if not (date == "-"):
+							stopsByCol[i] += [ stopName ]
+						i += 1
 
-				try:
-					firstMatchAt = biggest.index(smallest[0])
-					return (smallest == biggest[firstMatchAt:])
-				except ValueError as e:
-					return False
+				# check that list1 is a subset of list2
+				def isStopsSubset(list1, list2):
+					smallest = list1
+					biggest = list2
+					if len(list1) >= len(list2):
+						smallest = list2
+						biggest = list1
 
-			col1S = col2S = stopsByCol.keys()
-			for col1 in col1S:
-				for col2 in col2S:
-					if col1 == col2:
-						continue
-					if not stopsByCol.has_key(col1) or not stopsByCol.has_key(col2):
-						continue
+					try:
+						firstMatchAt = biggest.index(smallest[0])
+						return (smallest == biggest[firstMatchAt:])
+					except ValueError as e:
+						return False
 
-					isSame = (stopsByCol[col1] == stopsByCol[col2])
-					if (isSame):
-						del stopsByCol[col2]
-						continue
+				col1S = col2S = stopsByCol.keys()
+				for col1 in col1S:
+					for col2 in col2S:
+						if col1 == col2:
+							continue
+						if not stopsByCol.has_key(col1) or not stopsByCol.has_key(col2):
+							continue
 
-					isSubset = isStopsSubset(stopsByCol[col1], stopsByCol[col2])
-					if (isSubset):
-						del stopsByCol[col1]
-						continue
+						isSame = (stopsByCol[col1] == stopsByCol[col2])
+						if (isSame):
+							del stopsByCol[col2]
+							continue
 
-			linesBuilt += [ stopsByCol ]
+						isSubset = isStopsSubset(stopsByCol[col1], stopsByCol[col2])
+						if (isSubset):
+							del stopsByCol[col1]
+							continue
+
+				if not (stopsByCol in linesBuilt):
+					linesBuilt += [ stopsByCol ]
+
+		if len(linesBuilt) == 0:
+			print "Unable to find anything for this request :("
+
 		return linesBuilt
 
-	def build_line_jvmalin(self):
-		line_to_build = self.args.build_line_jvmalin
-		lines = self.extract_line_jvmalin("Filbleu", "FILNav" + line_to_build)
-
-		print "digraph {"
-
+	def reduce_lines_to_graph(self, lines):
+		gr = graph()
 		for stopsByCol in lines:
 			for id in stopsByCol:
 				for stop in stopsByCol[id]:
 					cid = stopsByCol[id].index(stop);
 					if ((cid + 1) < len(stopsByCol[id])):
-						out = "\"%(deb)s\" -> \"%(fin)s\"" % {'deb': stopsByCol[id][cid], 'fin': stopsByCol[id][cid+1]}
-						print out.encode('utf-8')
+						deb = '"' + stopsByCol[id][cid].encode('utf-8') + '"'
+						fin = '"' + stopsByCol[id][cid+1].encode('utf-8') + '"'
+						try:
+							gr.add_node(fin)
+							gr.add_node(deb)
+						except AdditionError as e:
+							pass
 
-		print "}"
+						try:
+							gr.add_edge((deb, fin))
+						except AdditionError as e:
+							pass
+		return gr
+
+	def build_line_jvmalin(self):
+		line_to_build = self.args.build_line_jvmalin
+		lines = self.extract_line_jvmalin("Filbleu", line_to_build)
+		graph = self.reduce_lines_to_graph(lines)
+		dot = write(graph)
+		print dot
 
 		stopAreas = self.parse_stopArea("stops_coords.jvmalin.txt")
 		if len(stopAreas) == 0:
@@ -1629,16 +1654,17 @@ class FilBleu:
 			return
 
 		if self.args.build_line_gpx:
-			f = open('filbleu_route.' + line_to_build + '.gpx', 'w')
-			f.write('<?xml version="1.0" encoding="UTF-8" standalone="yes"?><gpx version="1.1" creator="FilBleu Scrapper"><metadata>Filbleu ligne ' + line_to_build + '</metadata><trk>')
-			for id in stopsByCol:
-				f.write('<trkseg>');
-				for stop in stopsByCol[id]:
-					key = self.getKeyFromName(stop.encode('utf-8'), stopAreas)
-					f.write('<trkpt lat="' + str(stopAreas[key]['lat']) + '" lon="' + str(stopAreas[key]['lon']) + '"><ele>0.0</ele><name>' + stop.encode('utf-8') + '</name><time>0</time></trkpt>')
-				f.write('</trkseg>');
-			f.write('</trk></gpx>')
-			f.close()
+			for stopsByCol in lines:
+				f = open('filbleu_route.' + line_to_build + '.gpx', 'w')
+				f.write('<?xml version="1.0" encoding="UTF-8" standalone="yes"?><gpx version="1.1" creator="FilBleu Scrapper"><metadata>Filbleu ligne ' + line_to_build + '</metadata><trk>')
+				for id in stopsByCol:
+					f.write('<trkseg>');
+					for stop in stopsByCol[id]:
+						key = self.getKeyFromName(stop.encode('utf-8'), stopAreas)
+						f.write('<trkpt lat="' + str(stopAreas[key]['lat']) + '" lon="' + str(stopAreas[key]['lon']) + '"><ele>0.0</ele><name>' + stop.encode('utf-8') + '</name><time>0</time></trkpt>')
+					f.write('</trkseg>');
+				f.write('</trk></gpx>')
+				f.close()
 
 	def collect_jvmalin_lines(self, networkExternalCode):
 		linesList = []
@@ -1676,7 +1702,7 @@ class FilBleu:
 			listOfStops = self.extract_line_jvmalin(networkExternalCode, line['id'])
 			trackId = 0
 			if self.args.export_java:
-				print "\tpublic void LoadBusLinesGraphClassic_" + str(methodId) + "() {"
+				print "\tpublic void LoadBusLinesGraphTram_" + str(methodId) + "() {"
 				print "\t\tList<BusStop> stopsList;"
 				print "\t\tList<List<BusStop>> lineList = new ArrayList<List<BusStop>>();"
 			for stopsByCol in listOfStops:
@@ -1704,7 +1730,7 @@ class FilBleu:
 
 		if self.args.export_java:
 			for i in range(methodId):
-				print "\t\tthis.LoadBusLinesGraphClassic_" + str(i) + "();"
+				print "\t\tthis.LoadBusLinesGraphTram_" + str(i) + "();"
 
 	def build_line(self):
 		line_to_build = self.args.build_line
