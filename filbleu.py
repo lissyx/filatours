@@ -900,10 +900,10 @@ class FilBleu:
 			olineid = lineid
 			lineid = lineid.replace("A", "").replace("B", "").encode('utf-8')
 			linespecs = self.lines_to_lineSpec(lineid)
-			for lspec in linespecs:
-				line = lspec['number'].replace("A", "").replace("B", "")
-				if lspec['spec'] != "all":
-					ends += lspec['spec']
+			# for lspec in linespecs:
+			#	line = lspec['number'].replace("A", "").replace("B", "")
+			#	if lspec['spec'] != "all":
+			#		ends += lspec['spec']
 			if len(ends) > 0:
 				current = 0
 				total = len(self.stops[olineid])
