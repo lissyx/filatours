@@ -7,6 +7,7 @@ import java.util.TreeMap;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
+import java.util.Comparator;
 
 import android.util.Log;
 
@@ -38,7 +39,8 @@ public class BusLinesGraph {
     }
 
     public void LoadBusLinesGraphTram() {
-        this.linesGraph = new TreeMap<String, List<List<BusStop>>>();
+        Comparator compareLines = new AlphanumComparator();
+        this.linesGraph = new TreeMap<String, List<List<BusStop>>>(compareLines);
 
 		this.LoadBusLinesGraphTram_0();
 		this.LoadBusLinesGraphTram_1();
