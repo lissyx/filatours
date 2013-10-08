@@ -1654,17 +1654,20 @@ class FilBleu:
 			return
 
 		if self.args.build_line_gpx:
+			f = open('filbleu_route.' + line_to_build + '.gpx', 'w')
+			f.write('<?xml version="1.0" encoding="UTF-8" standalone="yes"?><gpx version="1.1" creator="FilBleu Scrapper"><metadata>Filbleu ligne ' + line_to_build + '</metadata>')
 			for stopsByCol in lines:
-				f = open('filbleu_route.' + line_to_build + '.gpx', 'w')
-				f.write('<?xml version="1.0" encoding="UTF-8" standalone="yes"?><gpx version="1.1" creator="FilBleu Scrapper"><metadata>Filbleu ligne ' + line_to_build + '</metadata><trk>')
+				f.write('<trk>')
 				for id in stopsByCol:
 					f.write('<trkseg>');
 					for stop in stopsByCol[id]:
+					        print "Stop:", stop.encode('utf-8')
 						key = self.getKeyFromName(stop.encode('utf-8'), stopAreas)
 						f.write('<trkpt lat="' + str(stopAreas[key]['lat']) + '" lon="' + str(stopAreas[key]['lon']) + '"><ele>0.0</ele><name>' + stop.encode('utf-8') + '</name><time>0</time></trkpt>')
 					f.write('</trkseg>');
-				f.write('</trk></gpx>')
-				f.close()
+				f.write('</trk>')
+			f.write('</gpx>')
+			f.close()
 
 	def collect_jvmalin_lines(self, networkExternalCode):
 		linesList = []
