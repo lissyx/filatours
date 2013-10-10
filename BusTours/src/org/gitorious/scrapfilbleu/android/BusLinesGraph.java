@@ -2633,8 +2633,8 @@ public class BusLinesGraph {
 		List<List<BusStop>> lineList = new ArrayList<List<BusStop>>();
 		stopsList = new ArrayList<BusStop>();
 			stopsList.add(new BusStop("Bois Gibert", "Ballan-Miré", 47.327552, 0.616115, 0.0));
-			stopsList.add(new BusStop("Briaudière", "Ballan-Miré", 29.263686, 1.046331, 0.0));
-			stopsList.add(new BusStop("Jean Bart", "Ballan-Miré", 47.327528, 0.603663, 0.0));
+			stopsList.add(new BusStop("Briaudière", "Ballan-Miré", 47.327528, 0.603663, 0.0));
+			stopsList.add(new BusStop("Jean Bart", "Ballan-Miré", 47.32891, 0.60141, 0.0));
 			stopsList.add(new BusStop("Sublainerie", "Ballan-Miré", 47.326814, 0.599201, 0.0));
 			stopsList.add(new BusStop("L'aigrefin", "Ballan-Miré", 47.324474, 0.591416, 0.0));
 			stopsList.add(new BusStop("Chevallerie", "Ballan-Miré", 47.32708, 0.588261, 0.0));
@@ -2679,8 +2679,8 @@ public class BusLinesGraph {
 			stopsList.add(new BusStop("Dunant", "Ballan-Miré", 47.340502, 0.618094, 0.0));
 			stopsList.add(new BusStop("gare de Ballan", "Ballan-Miré", 47.336759, 0.618082, 0.0));
 			stopsList.add(new BusStop("Bois Gibert", "Ballan-Miré", 47.327552, 0.616115, 0.0));
-			stopsList.add(new BusStop("Briaudière", "Ballan-Miré", 29.263686, 1.046331, 0.0));
-			stopsList.add(new BusStop("Jean Bart", "Ballan-Miré", 47.327528, 0.603663, 0.0));
+			stopsList.add(new BusStop("Briaudière", "Ballan-Miré", 47.327528, 0.603663, 0.0));
+			stopsList.add(new BusStop("Jean Bart", "Ballan-Miré", 47.32891, 0.60141, 0.0));
 			stopsList.add(new BusStop("Sublainerie", "Ballan-Miré", 47.326814, 0.599201, 0.0));
 			stopsList.add(new BusStop("L'aigrefin", "Ballan-Miré", 47.324474, 0.591416, 0.0));
 			stopsList.add(new BusStop("Chevallerie", "Ballan-Miré", 47.32708, 0.588261, 0.0));
