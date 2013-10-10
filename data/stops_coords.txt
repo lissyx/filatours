@@ -173,7 +173,7 @@ Found a stop matching stopArea: [StopArea|467|Bretonneau|Tours|||474037,25|22665
 Trying "Vernou-sur-Brenne - Briand"
 Found a stop matching stopArea: [StopArea|685|Briand|Vernou-sur-Brenne|||487300,00|2270189,50|1417!0!14;1416!0!14]; Lambert2+: {E:487300.000000, N:2270189.500000}; Degrees: {E:47.421721, N:0.842757}
 Trying "Ballan-Miré - Briaudière"
-Found a stop matching stopArea: [StopArea|6|Briaudière|Ballan-Miré|||469030,00|226091,00|11!0!14]; Lambert2+: {E:469030.000000, N:226091.000000}; Degrees: {E:29.263686, N:1.046331}
+Found a stop matching stopArea: [StopArea|6|Briaudière|Ballan-Miré|||469030,00|226091,00|11!0!14]; Lambert2+: {E:469030.000000, N:226091.000000}; Degrees: {E:47.327528, N:0.603663}
 Trying "Joué-Lès-Tours - Bruère"
 Found a stop matching stopArea: [StopArea|127|Bruère|Joué-lès-Tours|||474738,00|2262558,00|246!0!14;245!0!14]; Lambert2+: {E:474738.000000, N:2262558.000000}; Degrees: {E:47.350822, N:0.678437}
 Trying "Joué-Lès-Tours - Bugeaud"
@@ -653,7 +653,7 @@ Found a stop matching stopArea: [StopArea|549|Jacques Monod|Tours|||474726,00|22
 Trying "Saint-Cyr-sur-Loire - Jaunay"
 Found a stop matching stopArea: [StopArea|355|Jaunay|Saint-Cyr-sur-Loire|||474068,50|2268266,50|684!0!14;683!0!14]; Lambert2+: {E:474068.500000, N:2268266.500000}; Degrees: {E:47.402032, N:0.667973}
 Trying "Ballan-Miré - Jean Bart"
-Found a stop matching stopArea: [StopArea|15|Jean Bart|Ballan-Miré|||469033,00|2260091,00|27!0!14]; Lambert2+: {E:469033.000000, N:2260091.000000}; Degrees: {E:47.327528, N:0.603663}
+Found a stop matching stopArea: [StopArea|15|Jean Bart|Ballan-Miré|||469033,00|2260091,00|27!0!14]; Lambert2+: {E:469033.000000, N:2260091.000000}; Degrees: {E:47.32891, N:0.60141}
 Trying "Saint-Pierre-des-Corps - Jean Bonnin"
 Found a stop matching stopArea: [StopArea|423|Jean Bonnin|Saint-Pierre-des-Corps|||477458,00|2267438,50|817!0!14;816!0!14]; Lambert2+: {E:477458.000000, N:2267438.500000}; Degrees: {E:47.395225, N:0.713096}
 Trying "Tours - Jean Jaurès"
