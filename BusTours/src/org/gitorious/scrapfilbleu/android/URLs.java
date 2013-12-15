@@ -24,6 +24,20 @@ public class URLs {
         return this.urlBase + "?" + this.param;
     }
 
+    public String buildURL(String resource) {
+        String newUrl = "";
+
+        if (!resource.startsWith("http://") &&
+            !resource.startsWith("https://") &&
+            !resource.startsWith("://")) {
+            newUrl = this.siteBase + resource;
+        } else {
+            newUrl = resource;
+        }
+
+        return newUrl;
+    }
+
     public static Connection getConnection(String url) {
         return Jsoup.connect(url).timeout(URLs.timeout);
     }

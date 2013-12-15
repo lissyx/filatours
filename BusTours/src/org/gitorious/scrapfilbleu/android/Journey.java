@@ -150,10 +150,10 @@ public class Journey {
     }
 
     public void getDetails(BusToursActivity.ProcessScrapping parent) throws java.io.IOException, java.net.SocketTimeoutException, ScrappingException {
-        String link = new URLs("").getURL() + this.getUrl().replace("page.php?", "");
+        String link = new URLs("").buildURL(this.getUrl());
 
         parent.progress(20, R.string.jsoupStartGetDetails);
-        Log.e("BusTours:BusJourney", "Asking details at " + link);
+        Log.e("BusTours:BusJourney", "Asking details at " + link + " from " + this.getUrl());
 
         Document reply = URLs.getConnection(link)
             .cookies(this.cookies)
