@@ -22,7 +22,7 @@ function JourneyDetailsUnexpectedElementsException() {
 
 var FilBleu = (function FilBleu() {
   return {
-    _baseurl: 'http://www.filbleu.fr/',
+    _baseurl: 'https://www.filbleu.fr/',
     _raz: '&raz',
     _page: 'horaires-et-trajets/votre-itineraire-sur-mesure',
     _idJourney: 'view=itineraire',
@@ -75,7 +75,8 @@ var FilBleu = (function FilBleu() {
 
     htmlescape: function(s) {
       var ns = new String(s);
-      return escape(ns.latinize())
+      // return escape(ns.latinize())
+      return ns
         .replace(new RegExp('%20', 'g'), '+')
         .replace(new RegExp('\/', 'g'), '%2F');
     },
@@ -403,14 +404,14 @@ var FilBleu = (function FilBleu() {
       if (take) {
         ret.push({
           type: 'umount',
-          line: Ps[2].textContent.match(/Ligne (.*) >/)[1],
-          direction: Ps[2].textContent.match(/Ligne .* > (.*)/)[1],
+          line: Ps[2].textContent.match(/Ligne (.*) en direction de/)[1],
+          direction: Ps[2].textContent.match(/Ligne .* en direction de (.*)/)[1],
           stop: Ps[1].textContent.match(/.* : (.*), .*/)[1]
         });
         ret.push({
           type: 'mount',
-          line: Ps[2].textContent.match(/Ligne (.*) >/)[1],
-          direction: Ps[2].textContent.match(/Ligne .* > (.*)/)[1],
+          line: Ps[2].textContent.match(/Ligne (.*) en direction de/)[1],
+          direction: Ps[2].textContent.match(/Ligne .* en direction de (.*)/)[1],
           stop: Ps[0].textContent.match(/De : (.*), .*/)[1]
         });
       }
