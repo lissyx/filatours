@@ -22,9 +22,9 @@ function JourneyDetailsUnexpectedElementsException() {
 
 var FilBleu = (function FilBleu() {
   return {
-    _baseurl: 'https://www.filbleu.fr/',
+    _baseurl: 'https://www.filbleu.fr',
     _raz: '&raz',
-    _page: 'horaires-et-trajets/votre-itineraire-sur-mesure',
+    _page: '/horaires-et-trajets/votre-itineraire-sur-mesure',
     _idJourney: 'view=itineraire',
     _etapeJourney: 'etape=1',
     _journeys: new Array(),
@@ -176,10 +176,48 @@ var FilBleu = (function FilBleu() {
           }
           console.debug(e.status);
           self.updateScrappingStatus(60, _('got-reply'));
+          var tree = self.html2dom(e.responseText);
           try {
-            self.extractJourneysList(e.responseText);
+            self.extractJourneysList(tree);
           } catch (e) {
-            self.handleException(e);
+            if (e instanceof JourneysListNotFoundException) {
+              var options = tree.querySelectorAll('[label="Arrêts"]');
+              if (options.length > 0) {
+
+                var depJvmalin = tree.querySelector('[id="DepJvmalin"]');
+                if (depJvmalin) {
+                  params['iform[DepJvmalin]'] = depJvmalin.getAttribute("value");
+                }
+
+                var arrJvmalin = tree.querySelector('[id="ArrJvmalin"]');
+                if (arrJvmalin) {
+                  params['iform[ArrJvmalin]'] = arrJvmalin.getAttribute("value");
+                }
+
+                for (var i = 0; i < options.length; i++) {
+                  var current = options[i];
+                  console.debug('Option: ', current);
+                  var parentElement = current.parentNode;
+                  console.debug("Parent: " + parentElement.tagName + ":" + parentElement.id);
+                  var firstChoice = current.firstChild;
+                  var newValJvmalin = firstChoice.getAttribute("value");
+                  var newValue = firstChoice.textContent;
+                  params[parentElement.name] = newValJvmalin;
+                }
+
+                console.debug(JSON.stringify(params));
+                self.XHR(targeturl, 'POST', params, function(e) {
+                  if (e.status != 200) {
+                    return;
+                  }
+                  console.debug(e.status);
+                  var tree = self.html2dom(e.responseText);
+                  self.extractJourneysList(tree);
+                });
+              }
+            } else {
+              self.handleException(e);
+            }
           }
         });
       });
@@ -192,8 +230,7 @@ var FilBleu = (function FilBleu() {
       return doc;
     },
 
-    extractJourneysList: function(html) {
-      var tree = this.html2dom(html);
+    extractJourneysList: function(tree) {
       var propositions = tree.querySelector('div[id="jvmalinList"]');
       console.debug(propositions);
       if (!propositions) {
@@ -239,6 +276,7 @@ var FilBleu = (function FilBleu() {
         duree: this.parseDuree(this.htmlpurify(parts[1].childNodes[3].textContent)),
         conn: this.parseConn(this.htmlpurify(parts[3].getElementsByTagName('p')[0].textContent))
       };
+      console.debug(res);
       return res;
     },
 
