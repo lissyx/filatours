@@ -33,7 +33,7 @@ public class MapViewActivity extends Activity
         this.geoPointTours = new GeoPoint((int)(47.3883*1e6), (int)(0.7276*1e6));
 
         osmMap = (MapView)findViewById(R.id.map);
-        osmMap.setTileSource(TileSourceFactory.MAPNIK);
+        osmMap.setTileSource(TileSourceFactory.MAPQUESTOSM);
         osmMap.setBuiltInZoomControls(true);
         osmMap.setMultiTouchControls(true);
         osmMap.getController().setZoom(13);
