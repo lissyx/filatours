@@ -22,7 +22,6 @@ import pprint
 pp = pprint.PrettyPrinter(indent=1)
 
 from pygraph.classes.graph import graph
-from pygraph.readwrite.dot import write
 from pygraph.classes.exceptions import AdditionError
 
 from pdfminer.pdfparser import PDFParser, PDFDocument
@@ -1629,19 +1628,18 @@ class FilBleu:
 					if ((cid + 1) < len(stopsByCol[id])):
 						deb = '"' + stopsByCol[id][cid].encode('utf-8') + '"'
 						fin = '"' + stopsByCol[id][cid+1].encode('utf-8') + '"'
+
 						try:
 							gr.add_node(fin)
 							gr.add_node(deb)
-						except AdditionError as e:
-							pass
-
-						try:
 							gr.add_edge((deb, fin))
 						except AdditionError as e:
-							pass
+							print "AdditionError: ", e
+
 		return gr
 
 	def build_line_jvmalin(self):
+		from pygraph.readwrite.dot import write
 		line_to_build = self.args.build_line_jvmalin
 		lines = self.extract_line_jvmalin("Filbleu", line_to_build)
 		graph = self.reduce_lines_to_graph(lines)
