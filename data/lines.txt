@@ -1,51 +1,39 @@
-Line(id=48): number=F55; name={'Vaucanson','Saulnier'}
-Line(id=50): number=R1; name={'Ermitage','Santé Alliance'}
-Line(id=53): number=R3; name={'Bois de Plante','Atlantes'}
-Line(id=52): number=R2; name={'Hôpital Pagès','Mareuil'}
-Line(id=24): number=15; name={'La Riche Soleil','Joué Gare'}
-Line(id=25): number=16; name={'Blotterie','Atlantes'}
-Line(id=26): number=17; name={'Santé Alliance','Gare Vinci'}
-Line(id=27): number=18A; name={'Croix Chidaine','Jean Jaurès'} | number=18B; name={'St Cyr Mairie','Jean Jaurès'}
-Line(id=20): number=117; name={'Gare Vinci','Villandry Château'}
-Line(id=21): number=12; name={'Tranchée','Anatole France'}
-Line(id=22): number=13; name={'CHU Trousseau','Parc Grandmont'}
-Line(id=23): number=14; name={'Grand Sud','Santé Alliance'}
-Line(id=44): number=C1; name={'Botanique','Beaujardin'}
-Line(id=45): number=C2; name={'St Augustin'}
-Line(id=42): number=57; name={'L'Espérance','Gare Vinci'}
-Line(id=29): number=3A; name={'La Pléïade','Onze Arpents'} | number=3B; name={'La Pléïade','Santé Vinci'}
-Line(id=40): number=54; name={'Anatole France','Clos de Vernou'}
-Line(id=41): number=56; name={'Vaucanson','Les Charmes'}
-Line(id=1): number=10; name={'Justices','Paul Doumer'}
-Line(id=3): number=101; name={'Becquerel','St Pierre Centre'}
-Line(id=2): number=100; name={'Becquerel','Gare Vinci'}
-Line(id=5): number=103; name={'Becquerel','Jean Jaures'}
-Line(id=4): number=102; name={'Becquerel','Verdun'}
-Line(id=7): number=105; name={'Vaucanson','Val Choisille'}
-Line(id=6): number=104; name={'Becquerel','Grands Champs'}
-Line(id=9): number=107; name={'Ballan Gare','Lycée Grandmont'}
-Line(id=8): number=106; name={'Val Choisille','Clouet-Choiseul'}
-Line(id=147): number=2; name={'Les Douets','CHU Trousseau'}
-Line(id=144): 
-Line(id=145): number=200; name={'Atlantes','St Pierre Gare'}
-Line(id=13): number=110; name={'Marmoutier','Gare Vinci'}
-Line(id=148): number=A; name={'Vaucanson','Lycée J. Monnet'}
-Line(id=38): number=52; name={'Vieux Calvaire','Beffroi'}
-Line(id=11): number=109; name={'Vaugareau','Lycée Vaucanson'}
-Line(id=10): number=108; name={'Mi-Côte','Ermitage'}
-Line(id=39): number=53; name={'Anatole France','Vaucanson'}
-Line(id=12): number=11; name={'Mareuil','Gare de Tours'}
-Line(id=15): number=112; name={'Gare Vinci','MFR Rougemont'}
-Line(id=14): number=111; name={'Clos de Vernou','Lycée Vaucanson'}
-Line(id=17): number=114; name={'Gare de Tours','Nécropole Esvres'}
-Line(id=16): number=113; name={'ANAIS Mettray','Jean Jaurès'}
-Line(id=33): number=34; name={'Les Bergeons','Gare Vinci'}
-Line(id=32): number=32; name={'Lycée Grandmont','Villandry Centre'}
-Line(id=31): number=31; name={'Ballan Gare','Lycée J. Monnet'}
-Line(id=30): number=30; name={'Ballan Gare','Joué Gare'}
-Line(id=37): number=51; name={'Croix Julia','Beffroi'}
-Line(id=36): number=50; name={'Vaugareau','Bois de Plante'}
-Line(id=35): number=5; name={'St Pierre Gare','Parc Grandmont'}
-Line(id=34): number=4; name={'Vénien','St Paul'}
-Line(id=19): number=116; name={'ADAPEI Vernou','Jean Jaures'}
-Line(id=18): number=115; name={'Vaucanson','CAT d'Oé'}
+Couldn't import dot_parser, loading of dot files will not be possible.
+Line(id=393): number=34; name={'Les Bergeons','Gare Vinci'}
+Line(id=392): number=32; name={'Lycée Grandmont','Villandry Centre'}
+Line(id=391): number=31; name={'Ballan Gare','Lycée J. Monnet'}
+Line(id=390): number=30; name={'Joué Gare','Ballan Gare'}
+Line(id=397): number=51; name={'Croix Julia','Beffroi'}
+Line(id=396): number=50; name={'Bois de Plante','Vaugareau'}
+Line(id=395): number=5; name={'St Pierre Gare','Parc Grandmont'}
+Line(id=394): number=4; name={'Vénien','St Paul'}
+Line(id=399): number=53; name={'Anatole France','Vaucanson'}
+Line(id=398): number=52; name={'Beffroi','Vieux Calvaire'}
+Line(id=407): number=R1; name={'Santé Alliance','Ermitage'}
+Line(id=406): number=F55; name={'ZA Tours Nord','Vaucanson'}
+Line(id=405): number=C2; name={'St Augustin'}
+Line(id=404): number=C1; name={'Botanique','Beaujardin'}
+Line(id=403): number=A; name={'Vaucanson','Lycée Jean Monnet'}
+Line(id=402): number=57; name={'Gare Vinci','L'Espérance'}
+Line(id=401): number=56; name={'Les Charmes','Vaucanson'}
+Line(id=400): number=54; name={'Anatole France','Clos de Vernou'}
+Line(id=409): number=R3; name={'St Pierre Gare','Bois de Plante'}
+Line(id=408): number=R2; name={'Mareuil','Hôpital Pagès'}
+Line(id=380): number=12; name={'Anatole France','Tranchée'}
+Line(id=381): number=13; name={'Parc Grandmont/CHU Trousseau','CHU Trousseau'}
+Line(id=382): number=14; name={'Grand Sud','Santé Alliance'}
+Line(id=383): number=15; name={'La Riche Soleil','Joué Gare'}
+Line(id=384): number=16; name={'Blotterie','St Pierre Gare'}
+Line(id=385): number=17; name={'gare de Tours (réseau SNCF)','Santé Alliance'}
+Line(id=386): number=18; name={'Jean Jaurès','St Cyr Mairie <> Croix Chidaine'}
+Line(id=387): number=19; name={'gare de Tours (réseau SNCF)','Vençay'}
+Line(id=388): number=2; name={'Les Douets','CHU Trousseau'}
+Line(id=389): number=3; name={'La Pléiade','Onze Arpents <> Santé Vinci'}
+Line(id=379): number=117; name={'Gare Vinci','Villandry Centre'}
+Line(id=378): number=115; name={'CAT d'Oé','Vaucanson'}
+Line(id=410): number=R4; name={'La Riche Soleil','Les Bergeons'}
+Line(id=373): number=10; name={'Paul Doumer','Justices'}
+Line(id=375): number=112; name={'MFR Rougemont','gare de Tours (réseau SNCF)'}
+Line(id=374): number=11; name={'Mareuil','gare de Tours (réseau SNCF)'}
+Line(id=377): number=114; name={'Nécropole Esvres','gare de Tours (réseau SNCF)'}
+Line(id=376): number=113; name={'ANAIS Mettray','Jean Jaurès'}
