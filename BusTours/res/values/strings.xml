@@ -86,9 +86,10 @@
     <string name="msgDescWelcome">This application is not endorsed to FilBleu. It makes uses of the website to allow you easier access from your mobile device. Do not hesitate to report any bugs.</string>
     <string name="msgTitleWelcomeUp">Welcome to new version!</string>
     <string name="msgDescMajornews">We have to tell you about some new features.</string>
-    <string name="msgDescWelcomeUp">The tram is now running! Fil Bleu website might still present some issue, and some stops are still missing.</string>
+    <string name="msgDescWelcomeUp">Lines and stops data have been regenerated, however some inconsistencies may still be present.</string>
     <string name="display_line">Display lines</string>
     <string name="btnValidLines">Display selection</string>
     <string name="missing_lines">There is not any graph of the lines for the period selected, so we cannot display them.</string>
     <string name="displayLineBeta">Lines displaying is still experimental: some stops might be missing or misplaced.</string>
+    <string name="btnShare">Partager</string>
 </resources>

@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="org.gitorious.scrapfilbleu.android"
       android:versionCode="20"
-      android:versionName="1.6">
+      android:versionName="1.6.0">
     <uses-sdk android:minSdkVersion="3" />
         <uses-permission android:name="android.permission.INTERNET" />
         <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
