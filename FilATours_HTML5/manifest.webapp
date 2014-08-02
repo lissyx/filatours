@@ -9,10 +9,18 @@
     "url": "https://gitorious.org/scrapfilbleu"
   },
   "permissions": {
-    "systemXHR":{"description": "Needed to perform scrapping."},
-    "geolocation":{"description": "Needed to find your location and closest bus stops."},
-    "alarms":{"description": "Needed to be able to set an alarm."},
-    "desktop-notification": {"description": "Needed to be able to send alarm notifications."}
+    "systemXHR": {
+      "description": "Needed to perform scrapping."
+    },
+    "geolocation": {
+      "description": "Needed to find your location and closest bus stops."
+    },
+    "alarms": {
+      "description": "Needed to be able to set an alarm."
+    },
+    "desktop-notification": {
+      "description": "Needed to be able to send alarm notifications."
+    }
   },
   "activities": {
     "select-stop": {
@@ -22,7 +30,9 @@
     }
   },
   "messages": [
-    {"alarm": "/index.html"}
+    {
+      "alarm": "/index.html"
+    }
   ],
   "icons": {
     "128": "/style/icons/filatours.png"
