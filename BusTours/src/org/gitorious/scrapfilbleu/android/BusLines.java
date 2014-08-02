@@ -22,10 +22,6 @@ public class BusLines {
             this.LoadBusLinesTram();
         }
 
-        if (season.equals("classic")) {
-            this.LoadBusLinesClassic();
-        }
-
         Log.e("BusTours:BusLines", "Registered " + this.lines.size() + " stops lines");
     }
 

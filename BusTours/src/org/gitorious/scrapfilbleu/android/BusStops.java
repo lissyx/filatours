@@ -31,10 +31,6 @@ public class BusStops {
             this.LoadBusStopsTram();
         }
 
-        if (season.equals("classic")) {
-            this.LoadBusStopsClassic();
-        }
-
         Log.e("BusTours:BusStops", "Registered " + this.stops.size() + " stops");
     }
 
