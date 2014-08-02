@@ -192,7 +192,7 @@ public class StopsMapActivity extends MapViewActivity
                         final OverlayItem item) {
                     Toast.makeText(
                             StopsMapActivity.this,
-                            item.mTitle, Toast.LENGTH_LONG).show();
+                            item.getTitle(), Toast.LENGTH_LONG).show();
                     return true; // We 'handled' this event.
                 }
                 @Override
@@ -200,7 +200,7 @@ public class StopsMapActivity extends MapViewActivity
                         final OverlayItem item) {
                     Toast.makeText(
                             StopsMapActivity.this,
-                            item.mTitle ,Toast.LENGTH_LONG).show();
+                            item.getTitle() ,Toast.LENGTH_LONG).show();
                     return false;
                 }
             }, mResourceProxy);
@@ -287,7 +287,7 @@ public class StopsMapActivity extends MapViewActivity
             Log.e("BusTours:StopsMap", "Got focus, zooming to " + this.bbox);
             Log.e("BusTours:StopsMap", "Targeting &lat=" + (this.bbox.getCenter().getLatitudeE6()/1E6) + "&lon=" + (this.bbox.getCenter().getLongitudeE6()/1E6) + "&zoom=15");
             this.getOsmMap().getController().setCenter(this.bbox.getCenter());
-            this.getOsmMap().getController().zoomToSpan(this.bbox);
+            this.getOsmMap().getController().zoomToSpan(this.bbox.getLatitudeSpanE6(), this.bbox.getLongitudeSpanE6());
             this.saveBBOX = true;
         }
     }
@@ -363,7 +363,7 @@ public class StopsMapActivity extends MapViewActivity
         this.bbox = new BoundingBoxE6(minNorth, minEast, maxSouth, maxWest);
         Log.e("BusTours:StopsMap", "Found bounding box: " + this.bbox);
         this.getOsmMap().getController().setCenter(target);
-        this.getOsmMap().getController().zoomToSpan(this.bbox);
+        this.getOsmMap().getController().zoomToSpan(this.bbox.getLatitudeSpanE6(), this.bbox.getLongitudeSpanE6());
         this.searchOverlay.addItem(new OverlayItem(foundStop.name, foundStop.name, target));
         this.saveBBOX = true;
     }
@@ -371,7 +371,7 @@ public class StopsMapActivity extends MapViewActivity
     public void displayStopInfos(OverlayItem item)
     {
         String msg;
-        List<String> lines = this.lines.getLine(item.mTitle);
+        List<String> lines = this.lines.getLine(item.getTitle());
 
         if (lines.size() > 0) {
             msg = getString(R.string.stop_info_msg_lines) + " " + TextUtils.join(", ", lines);
@@ -380,7 +380,7 @@ public class StopsMapActivity extends MapViewActivity
         }
 
         AlertDialog.Builder dialog = new AlertDialog.Builder(StopsMapActivity.this);
-        dialog.setTitle(item.mTitle);
+        dialog.setTitle(item.getTitle());
         dialog.setMessage(msg);
         dialog.setPositiveButton(
             getString(R.string.okay),
@@ -397,9 +397,9 @@ public class StopsMapActivity extends MapViewActivity
 
     public void selectStop(OverlayItem item)
     {
-        this.selectedStop = item.mTitle;
+        this.selectedStop = item.getTitle();
         AlertDialog.Builder dialog = new AlertDialog.Builder(StopsMapActivity.this);
-        dialog.setTitle(item.mTitle);
+        dialog.setTitle(item.getTitle());
         // dialog.setMessage(getString(R.string.select_stop_msg) + " " + item.mTitle);
         dialog.setSingleChoiceItems(
             selectStopsItems, -1,
