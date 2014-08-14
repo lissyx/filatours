@@ -369,7 +369,7 @@ var FilBleu = (function FilBleu() {
       var journeyDetailsClose = document.getElementById('journey-details-close');
       if (journeyDetailsClose) {
         journeyDetailsClose.addEventListener('click', function(e) {
-          document.location.hash='root';
+          document.location.hash='schedule';
         });
       }
 
