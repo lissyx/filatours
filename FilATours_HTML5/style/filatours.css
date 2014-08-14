@@ -46,6 +46,14 @@ button[data-geoloc] {
   background: url(icons/ic_menu_mylocation.png) no-repeat center center;
 }
 
+#journey-details-steps {
+  /* 9rem comes from:
+   *  - 5rem for 'top: 5rem' of the div
+   *  - 4rem for 'height: 4rem' of the toolbar
+   */
+  height: calc(100% - 9rem);
+}
+
 a.journey,
 li.journey,
 li.journey li span {
