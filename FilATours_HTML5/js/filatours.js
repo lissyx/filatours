@@ -22,7 +22,7 @@ function JourneyDetailsUnexpectedElementsException() {
 
 var FilBleu = (function FilBleu() {
   return {
-    _api: "http://127.0.0.1:5000",
+    _api: "http://api.filatours.fr",
     _cookie: undefined,
     _journeys: new Array(),
     _scrapping: 'scrapping',
