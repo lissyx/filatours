@@ -262,36 +262,58 @@ var FilBleu = (function FilBleu() {
       }).bind(this));
     },
 
+    addOneStep: function(step, indic, title, detailsText) {
+      var c = document.getElementById('journey-details-container');
+
+      var li = document.createElement('li');
+      li.className = 'journeypart journey' + step.type;
+
+      var a = document.createElement('a');
+      a.className = 'journeypart journey' + step.type;
+
+      if (indic && step.type === 'indication') {
+        li.className += ' journey' + indic.type;
+        a.className += ' journey' + indic.type;
+      }
+
+      var cont = document.createElement('p');
+      cont.style.display = 'none';
+      var details = document.createElement('span');
+
+      a.textContent = title;
+      details.innerHTML = detailsText;
+
+      a.addEventListener('click', function(ev) {
+        var pnode = ev.target.parentNode;
+        var snode = ev.target.nextSibling;
+        if (snode.style.display == 'none') {
+          snode.style.display = 'block';
+        } else {
+          snode.style.display = 'none';
+        }
+      });
+
+      cont.appendChild(details);
+
+      li.appendChild(a);
+      li.appendChild(cont);
+      c.appendChild(li);
+    },
+
     showJourneyDetails: function(id) {
       this._currentJourneyDetailsId = id;
       this.ensureClean('journey-details-container');
       document.location.hash = this._journeyDetails;
-      var c = document.getElementById('journey-details-container');
-      if (!c) {
-        return;
-      }
 
       for (var si in this._journeyDetailsInfo[id]) {
         var step = this._journeyDetailsInfo[id][si];
         console.debug("Step:", step);
+        var detailsText, title;
 
-        for (var indId in step.indic) {
-          var stepInd = step.indic[indId];
-          console.debug("Indication:", stepInd);
-
-          var li = document.createElement('li');
-          li.className = 'journeypart journey' + step.type;
-          var a = document.createElement('a');
-          a.className = 'journeypart journey' + step.type;
-
-          var cont = document.createElement('p');
-          cont.style.display = 'none';
-          var details = document.createElement('span');
-          var detailsText, title;
-
-          if (step.type == 'indication') {
-            li.className += ' journey' + stepInd.type;
-            a.className += ' journey' + stepInd.type;
+        if (step.type === 'indication') {
+          for (var indId in step.indic) {
+            var stepInd = step.indic[indId];
+            console.debug("Indication:", stepInd);
 
             if (step.time && step.time.start) {
               title = this.formatTime(step.time.start) + ': ' + stepInd.stop;
@@ -311,34 +333,19 @@ var FilBleu = (function FilBleu() {
               detailsText = _('from-stop') + ' <strong>' + stepInd.stop +
                 '</strong> ' + _('walk-to') + ' <strong>' + stepInd.direction + '</strong>';
             }
+
+            this.addOneStep(step, stepInd, title, detailsText);
           }
-
-          if (step.type == 'connection') {
-            title = _('connection');
-            detailsText = _('waiting-time') + ': <strong>' +
-              this.formatDuration(step.duration) + '</strong>';
-          }
-
-          a.textContent = title;
-          details.innerHTML = detailsText;
-
-          a.addEventListener('click', function(ev) {
-            var pnode = ev.target.parentNode;
-            var snode = ev.target.nextSibling;
-            if (snode.style.display == 'none') {
-              snode.style.display = 'block';
-            } else {
-              snode.style.display = 'none';
-            }
-          });
-
-          cont.appendChild(details);
-
-          li.appendChild(a);
-          li.appendChild(cont);
-          c.appendChild(li);
-          console.debug(step);
         }
+
+        if (step.type === 'connection') {
+          title = _('connection');
+          detailsText = _('waiting-time') + ': <strong>' +
+            this.formatDuration(step.duration) + '</strong>';
+          this.addOneStep(step, null, title, detailsText);
+        }
+
+        console.debug(step);
       }
     },
 
