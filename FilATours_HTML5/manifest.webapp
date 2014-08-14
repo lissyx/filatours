@@ -1,17 +1,13 @@
 {
   "name": "Fil@Tours",
   "description": "Mobile Application for Fil Bleu",
-  "type": "privileged",
-  "version": "1.4.2",
+  "version": "1.5.0",
   "launch_path": "/index.html",
   "developer": {
     "name": "lissyx",
     "url": "https://gitorious.org/scrapfilbleu"
   },
   "permissions": {
-    "systemXHR": {
-      "description": "Needed to perform scrapping."
-    },
     "geolocation": {
       "description": "Needed to find your location and closest bus stops."
     },
