@@ -36,8 +36,20 @@ var FilBleu = (function FilBleu() {
     _journeyDetails: 'journey-details',
     _journeyDetailsInfo: {},
     _currentJourneyDetailsId: undefined,
+    _statuses: {
+      'starting':           [10,  'initializing'],
+      'start-get-cookie':   [20,  'search-get-cookie'],
+      'end-get-cookie':     [40,  'search-got-cookie'],
+      'start-get-journeys': [60,  'search-get-journeys'],
+      'end-get-journeys':   [100, 'search-got-journeys'],
+      'start-get-details':  [50,  'details-get-journey'],
+      'end-get-details':    [100, 'details-got-journey'],
+      'checking-cache':     [15,  'checking-cache'],
+      'cache-hit':          [100, 'cache-hit'],
+      'cache-miss':         [35,  'cache-miss']
+    },
 
-    XHR: function(entry, method, payload, callback) {
+    XHR: function(entry, method, query, payload, callback) {
       var xhr = new XMLHttpRequest();
       var url = [ this._api, entry ].join('/');
 
@@ -46,10 +58,10 @@ var FilBleu = (function FilBleu() {
              + '&cookie_value=' + this._cookie.value;
       }
 
-      if (method === 'GET' || method === 'POST') {
-        if (typeof payload === 'object') {
-          for (var o in payload) {
-            url += '&' + o + '=' + payload[o];
+      if (method === 'GET') {
+        if (typeof query === 'object') {
+          for (var o in query) {
+            url += '&' + o + '=' + query[o];
           }
         }
       }
@@ -110,9 +122,11 @@ var FilBleu = (function FilBleu() {
         if (xhr.response.cookie) {
           this._cookie = xhr.response.cookie;
         }
+        this.updateStatus('end-get-cookie');
         callback();
       }).bind(this);
-      this.XHR('cookie', 'GET', null, handler);
+      this.XHR('cookie', 'GET', null, null, handler);
+      this.updateStatus('start-get-cookie');
     },
 
     postSearch: function(callback) {
@@ -140,17 +154,21 @@ var FilBleu = (function FilBleu() {
 
       var handler = (function(xhr) {
         console.debug('XHR:', xhr);
+        this.updateStatus('end-get-journeys');
         callback(xhr.response.journeys);
       }).bind(this);
-      this.XHR('search', 'POST', search, handler);
+      this.XHR('search', 'POST', null, search, handler);
+      this.updateStatus('start-get-journeys');
     },
 
     postDetails: function(id, callback) {
       var handler = (function(xhr) {
         console.debug('XHR:', xhr);
+        this.updateStatus('end-get-details');
         callback(xhr.response.journeysteps);
       }).bind(this);
-      this.XHR('details', 'GET', {'journey': id}, handler);
+      this.XHR('details', 'GET', {'journey': id}, null, handler);
+      this.updateStatus('start-get-details');
     },
 
     pad: function(n) { return n < 10 ? '0' + n : n },
@@ -215,10 +233,8 @@ var FilBleu = (function FilBleu() {
     },
 
     getJourney: function() {
-      this.updateStatus(0, _('initializing'));
+      this.updateStatus('starting');
       this._journeyDetailsInfo = {};
-
-      this.updateStatus(10, _('asked-for-clearing'));
       this.getCookie((function() {
         this.postSearch((function(journeys) {
           console.debug("Got list:", journeys);
@@ -282,15 +298,17 @@ var FilBleu = (function FilBleu() {
     },
 
     getJourneyDetails: function(link) {
-      this.updateStatus(0, _('checking-cache'));
+      this.updateStatus('starting');
+      this.updateStatus('checking-cache');
       var cache = this._journeyDetailsInfo[link];
       console.debug(cache);
       if (cache != undefined) {
+        this.updateStatus('cache-hit');
         this.showJourneyDetails(link);
         return;
       }
 
-      this.updateStatus(10, _('cache-miss'));
+      this.updateStatus('cache-miss');
       this._journeyDetailsInfo[link] = new Array();
       this.postDetails(link, (function(steps) {
         console.debug("Got steps:", steps);
@@ -386,11 +404,22 @@ var FilBleu = (function FilBleu() {
       }
     },
 
-    updateStatus: function(progress, message) {
+    updateStatus: function(step) {
+      if (!step) {
+        console.error("updateStatus called with no step");
+        return;
+      }
+
+      var v = this._statuses[step];
+      if (!v) {
+        console.error("updateStatus called with invalid step: " + step);
+        return;
+      }
+
       var p = document.getElementById('scrapping-progress');
       var m = document.getElementById('scrapping-status');
-      p.value = progress / 100.0;
-      m.textContent = message;
+      p.value = v[0] / 100.0;
+      m.textContent = _(v[1]);
       document.location.hash = this._scrapping;
     },
 
