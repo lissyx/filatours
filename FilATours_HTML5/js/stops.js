@@ -156,6 +156,7 @@ function onFeatureSelect(event) {
     null);
   map.addPopup(popup, false);
   var bDep = popup.contentDiv.querySelector('button[name="departure"]');
+  console.debug("Adding bDep:", bDep);
   if (bDep) {
     bDep.addEventListener('click', function(e) {
       console.debug("Got event: " + JSON.stringify(e));
@@ -163,6 +164,7 @@ function onFeatureSelect(event) {
     });
   }
   var bArr = popup.contentDiv.querySelector('button[name="arrival"]');
+  console.debug("Adding bArr:", bArr);
   if (bArr) {
     bArr.addEventListener('click', function(e) {
       console.debug("Got event: " + JSON.stringify(e));
@@ -262,19 +264,6 @@ function showNominatimResults(feats) {
   map.zoomToExtent(ex);
 }
 
-window.addEventListener('DOMContentLoaded', function() {
-  showmap();
-  all = BusStops.getAllStops();
-  var address = document.getElementById('address');
-  if (address) {
-    address.addEventListener('keydown', function(ev) {
-      if (ev.keyCode == 13) {
-        handleNominatim(address);
-      }
-    });
-  }
-});
-
 function handleSelectEvent(button) {
   var resp = {
     type: button.name,
@@ -313,17 +302,32 @@ function endSelect() {
   selectActivity = null;
 }
 
-window.onload = function() {
+
+window.addEventListener('load', function() {
+  showmap();
+  all = BusStops.getAllStops();
+  var address = document.getElementById('address');
+  if (address) {
+    address.addEventListener('keydown', function(ev) {
+      if (ev.keyCode == 13) {
+        handleNominatim(address);
+      }
+    });
+  }
+
   if (!navigator.mozSetMessageHandler) {
     return;
   }
 
   navigator.mozSetMessageHandler('activity', function handler(activityRequest) {
     var activityName = activityRequest.source.name;
-    if (activityName !== 'select-stop')
+    if (activityName !== 'select-stop') {
       return;
+    }
+
     startSelect(activityRequest);
     document.location.hash = 'stops-map';
+
     var mapback = document.getElementById('map-back');
     if (mapback) {
       mapback.setAttribute('href', '');
@@ -333,4 +337,4 @@ window.onload = function() {
       });
     }
   });
-};
+});
