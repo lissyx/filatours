@@ -16,12 +16,6 @@ function XHRTimeoutException() {
 function XHRErrorException() {
 }
 
-function JourneyNotFoundException() {
-}
-
-function InvalidJourneyException() {
-}
-
 function JourneysListNotFoundException() {
 }
 
@@ -34,6 +28,7 @@ function JourneyDetailsUnexpectedElementsException() {
 var FilBleu = (function FilBleu() {
   return {
     _api: "http://api.filatours.fr",
+    _entry: undefined,
     _cookie: undefined,
     _journeys: new Array(),
     _scrapping: 'scrapping',
@@ -42,8 +37,9 @@ var FilBleu = (function FilBleu() {
     _journeyDetailsInfo: {},
     _currentJourneyDetailsId: undefined,
 
-    XHR: function(url, method, payload, callback) {
+    XHR: function(entry, method, payload, callback) {
       var xhr = new XMLHttpRequest();
+      var url = [ this._api, entry ].join('/');
 
       if (this._cookie) {
         url += '?cookie_name=' + this._cookie.name
@@ -63,10 +59,8 @@ var FilBleu = (function FilBleu() {
           if (xhr.status === 200) {
             callback(xhr);
           } else {
-            var status = xhr.status;
-            var text = xhr.response.error.message || xhr.statusText;
-            var ex = new XHRHttpErrorException(status, text);
-            this.handleException(ex);
+            this._entry = entry;
+            this.handleNotFound();
           }
         }
       }).bind(this);
@@ -93,6 +87,23 @@ var FilBleu = (function FilBleu() {
       xhr.send(payload);
     },
 
+    handleNotFound: function(xhr) {
+      var ex;
+      switch (this._entry) {
+        case "search":
+          ex = new JourneysListNotFoundException();
+          break;
+        case "details":
+          ex = new JourneyDetailsNotFoundException();
+          break;
+        default:
+          var status = xhr.status;
+          var text = xhr.response.error.message || xhr.statusText;
+          ex = new XHRHttpErrorException(status, text);
+      }
+      this.handleException(ex);
+    },
+
     getCookie: function(callback) {
       var handler = (function(xhr) {
         console.debug('XHR:', xhr);
@@ -101,7 +112,7 @@ var FilBleu = (function FilBleu() {
         }
         callback();
       }).bind(this);
-      this.XHR([ this._api, 'cookie' ].join('/'), 'GET', null, handler);
+      this.XHR('cookie', 'GET', null, handler);
     },
 
     postSearch: function(callback) {
@@ -131,7 +142,7 @@ var FilBleu = (function FilBleu() {
         console.debug('XHR:', xhr);
         callback(xhr.response.journeys);
       }).bind(this);
-      this.XHR([ this._api, 'search' ].join('/'), 'POST', search, handler);
+      this.XHR('search', 'POST', search, handler);
     },
 
     postDetails: function(id, callback) {
@@ -139,7 +150,7 @@ var FilBleu = (function FilBleu() {
         console.debug('XHR:', xhr);
         callback(xhr.response.journeysteps);
       }).bind(this);
-      this.XHR([ this._api, 'details' ].join('/'), 'GET', {'journey': id}, handler);
+      this.XHR('details', 'GET', {'journey': id}, handler);
     },
 
     pad: function(n) { return n < 10 ? '0' + n : n },
@@ -600,16 +611,8 @@ var FilBleu = (function FilBleu() {
         msgvalue = _('error-no-result');
       }
 
-      if (ex instanceof InvalidJourneyException) {
-        msgvalue = _('error-invalid-journey');
-      }
-
       if (ex instanceof JourneyDetailsNotFoundException) {
         msgvalue = _('error-no-details');
-      }
-
-      if (ex instanceof JourneyDetailsUnexpectedElementsException) {
-        msgvalue = _('error-unexpected-details');
       }
 
       if (ex instanceof XHRHttpErrorException) {
