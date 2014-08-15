@@ -5,6 +5,17 @@
 
 var _ = window.navigator.mozL10n.get;
 
+function XHRHttpErrorException(code, body) {
+  this.statusCode = code;
+  this.httpBody = body;
+}
+
+function XHRTimeoutException() {
+}
+
+function XHRErrorException() {
+}
+
 function JourneyNotFoundException() {
 }
 
@@ -47,6 +58,28 @@ var FilBleu = (function FilBleu() {
         }
       }
 
+      xhr.onreadystatechange = (function() {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+          if (xhr.status === 200) {
+            callback(xhr);
+          } else {
+            var status = xhr.status;
+            var text = xhr.response.error.message || xhr.statusText;
+            var ex = new XHRHttpErrorException(status, text);
+            this.handleException(ex);
+          }
+        }
+      }).bind(this);
+
+      xhr.timeout = 30*1000; // 30 secs
+      xhr.ontimeout = (function() {
+        this.handleException(new XHRTimeoutException());
+      }).bind(this);
+
+      xhr.onabort = xhr.onerror = (function() {
+        this.handleException(new XHRErrorException());
+      }).bind(this);
+
       xhr.open(method, url, true);
       xhr.responseType = 'json';
 
@@ -57,13 +90,6 @@ var FilBleu = (function FilBleu() {
         }
       }
 
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState == XMLHttpRequest.DONE) {
-          if (xhr.status === 200) {
-            callback(xhr);
-          }
-        }
-      };
       xhr.send(payload);
     },
 
@@ -584,6 +610,22 @@ var FilBleu = (function FilBleu() {
 
       if (ex instanceof JourneyDetailsUnexpectedElementsException) {
         msgvalue = _('error-unexpected-details');
+      }
+
+      if (ex instanceof XHRHttpErrorException) {
+        if (ex.statusCode === 404) {
+          msgvalue = ex.httpBody;
+        } else {
+          msgvalue = _('error-http-error', {code: ex.statusCode, body: ex.httpBody});
+        }
+      }
+
+      if (ex instanceof XHRTimeoutException) {
+        msgvalue = _('error-network-timeout');
+      }
+
+      if (ex instanceof XHRErrorException) {
+        msgvalue = _('error-network-error');
       }
 
       errmsg.innerHTML = msgvalue;
