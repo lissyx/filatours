@@ -221,8 +221,7 @@ function handleNominatim(obj) {
   console.log(fullURL);
   progress.style.visibility = "visible";
 
-    var self = this;
-    var xhr = new XMLHttpRequest({mozSystem: true});
+    var xhr = new XMLHttpRequest();
     xhr.open("GET", fullURL, true);
     xhr.onreadystatechange = function() {
       if (xhr.readyState == XMLHttpRequest.DONE) {
