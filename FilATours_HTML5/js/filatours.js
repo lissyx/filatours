@@ -109,8 +109,8 @@ var FilBleu = (function FilBleu() {
           ex = new JourneyDetailsNotFoundException();
           break;
         default:
-          var status = xhr.status;
-          var text = xhr.response.error.message || xhr.statusText;
+          var status = xhr.status || -1;
+          var text = xhr.response.error.message || xhr.statusText || 'Invalid XHR';
           ex = new XHRHttpErrorException(status, text);
       }
       this.handleException(ex);
@@ -676,7 +676,7 @@ function addGeolocButton(id) {
   }
 }
 
-window.addEventListener('load', function() {
+window.addEventListener('localized', function() {
   document.location.hash = 'root';
 
   var stopsList = document.getElementById('stops-list');

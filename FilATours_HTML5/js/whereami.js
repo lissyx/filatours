@@ -65,6 +65,6 @@ WhereAmI.prototype = {
 };
 
 var w = new WhereAmI();
-window.addEventListener('load', function() {
+window.addEventListener('localized', function() {
   w.init();
 });

@@ -5,7 +5,7 @@
 
 var m = new FilAToursMap();
 
-window.addEventListener('load', function() {
+window.addEventListener('localized', function() {
   m.init();
 
   if (!navigator.mozSetMessageHandler) {
@@ -19,7 +19,7 @@ window.addEventListener('load', function() {
     }
 
     m.startSelect(activityRequest);
-    document.location.hash = 'stops-map';
+    document.location = 'index.html#stops-map';
 
     var mapback = document.getElementById('map-back');
     if (mapback) {
