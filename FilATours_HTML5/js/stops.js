@@ -6,10 +6,8 @@
 var _ = window.navigator.mozL10n.get;
 
 var map;
-var select;
 var selectActivity = null;
 
-var selectNominatim;
 var nominatimResults;
 var nominatimResultsIcon;
 
