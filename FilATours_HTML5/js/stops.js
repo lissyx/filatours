@@ -25,10 +25,25 @@ function showmap() {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
 
+  var busStopIcon = L.AwesomeMarkers.icon({
+    icon: 'car',
+    markerColor: 'green',
+    prefix: 'fa'
+  });
+
+  nominatimResultsIcon = L.AwesomeMarkers.icon({
+    icon: 'star',
+    markerColor: 'orange',
+    prefix: 'fa'
+  });
+
   var stops = L.markerClusterGroup();
   BusStops.getAllStops().forEach(function(stop) {
     var title = stop._name + " (" + stop._city + ")";
-    var stopMark = L.marker(new L.LatLng(stop._latitude, stop._longitude), { title: title });
+    var stopMark = L.marker(
+      [ stop._latitude, stop._longitude ],
+      { title: title, icon: busStopIcon }
+    );
     stopMark._stop = stop;
     stopMark.addEventListener('click', onMarkerClick);
     stopMark.bindPopup(title);
@@ -38,7 +53,6 @@ function showmap() {
 
   // Use featureGroup to benefit from getBounds()
   nominatimResults = L.featureGroup().addTo(map);
-  nominatimResultsIcon = new L.Icon.Default();
 
   toursBounds = map.getBounds();
 }
