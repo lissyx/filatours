@@ -19,7 +19,9 @@ window.addEventListener('localized', function() {
     }
 
     m.startSelect(activityRequest);
-    document.location = 'index.html#stops-map';
+    if (document.location) {
+      document.location.hash = 'stops-map';
+    }
 
     var mapback = document.getElementById('map-back');
     if (mapback) {
