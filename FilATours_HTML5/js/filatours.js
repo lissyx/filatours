@@ -489,12 +489,12 @@ var FilBleu = (function FilBleu() {
     },
 
     addJourneyAlarm: function() {
-      var cjd = this._journeyDetailsInfo[this._currentJourneyDetailsId][0];
+      var cjd = this._journeyDetailsInfo[this._currentJourneyDetailsId];
       console.log("Journeys: " + JSON.stringify(this._journeys));
       console.log("Journey: " + JSON.stringify(this._currentJourneyDetailsId));
       console.log("Will add an alarm for" + JSON.stringify(cjd));
 
-      var dep = cjd.time.start;
+      var dep = cjd[0].time.start;
       // set to 15 min before actual departure
       var date = new Date(new Date(dep).getTime() - 15*60*1000);
       console.log("addJourneyAlarm: startTime=" + date);
