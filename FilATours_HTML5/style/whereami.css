@@ -6,3 +6,7 @@
 #status-section {
   visibility: hidden;
 }
+
+div.leaflet-control-locate {
+  visibility: hidden;
+}
