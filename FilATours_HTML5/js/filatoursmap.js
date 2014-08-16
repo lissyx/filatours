@@ -5,7 +5,7 @@
 
 var _ = window.navigator.mozL10n.get;
 
-function Map() {
+function FilAToursMap() {
   this.map = null;
   this.selectActivity = null;
 
@@ -16,7 +16,7 @@ function Map() {
   this.toursBounds = null;
 }
 
-Map.prototype = {
+FilAToursMap.prototype = {
   init: function() {
     this.map = L.map('map', {
       center: this.tours,

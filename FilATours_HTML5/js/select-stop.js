@@ -3,7 +3,7 @@
 
 'use strict';
 
-var m = new Map();
+var m = new FilAToursMap();
 
 window.addEventListener('load', function() {
   m.init();
