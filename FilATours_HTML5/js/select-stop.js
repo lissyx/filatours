@@ -13,22 +13,19 @@ window.addEventListener('localized', function() {
   }
 
   navigator.mozSetMessageHandler('activity', function handler(activityRequest) {
+    console.debug('Activity:', activityRequest);
     var activityName = activityRequest.source.name;
     if (activityName !== 'select-stop') {
       return;
     }
 
     m.startSelect(activityRequest);
-    if (document.location) {
-      document.location.hash = 'stops-map';
-    }
 
     var mapback = document.getElementById('map-back');
     if (mapback) {
-      mapback.setAttribute('href', '');
-      mapback.addEventListener('click', function(e) {
+      mapback.removeAttribute('href');
+      mapback.addEventListener('click', function(evt) {
         m.cancelSelectActivity();
-        document.location = 'index.html#schedule';
       });
     }
   });

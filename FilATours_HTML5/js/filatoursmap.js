@@ -175,22 +175,28 @@ FilAToursMap.prototype = {
     return {
       type: type || '',
       stop: {
-        name: stop._name || '',
-        city: stop._city || ''
+        name: stop ? stop._name : '',
+        city: stop ? stop._city : ''
       }
     };
   },
 
   handleSelectEvent: function(type, stop) {
+    console.debug("Sending activity reply");
     if (this.selectActivity) {
-      this.selectActivity.postResult(this.getActivityReply(type, stop));
+      var reply = this.getActivityReply(type, stop);
+      console.debug("postResult:", reply);
+      this.selectActivity.postResult(reply);
       this.endSelect();
     }
   },
 
   cancelSelectActivity: function() {
+    console.debug("Sending activity error");
     if (this.selectActivity) {
-      this.selectActivity.postResult(this.getActivityReply(null, null));
+      var reply = this.getActivityReply();
+      console.debug("postError:", reply);
+      this.selectActivity.postError(reply);
       this.endSelect();
     }
   },
