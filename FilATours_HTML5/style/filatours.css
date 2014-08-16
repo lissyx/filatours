@@ -99,6 +99,13 @@ li.journeypart {
   list-style-type: none;
 }
 
+a.journeypart {
+  /* This will make too long stop names to be replaces by an ellipsis */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 li.journeymount {
   background-image: url(icons/stationin.png), url(icons/line.png);
   background-repeat: no-repeat, repeat-y;
