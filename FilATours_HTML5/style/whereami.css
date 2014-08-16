@@ -1,5 +1,8 @@
-#zoom-needed {
-  font-size: 200%;
-  margin-bottom: -1em;
-  padding-top: 1em;
+#map {
+  top: 5rem;
+  height: calc(100% - 5rem);
+}
+
+#status-section {
+  visibility: hidden;
 }

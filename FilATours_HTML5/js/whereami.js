@@ -5,92 +5,66 @@
 
 var _ = window.navigator.mozL10n.get;
 
-var wid;
-var prev = undefined;
-
-var markers;
-var curPosMarker;
-var curPosIcon;
-
-function whereami() {
-  markers = new OpenLayers.Layer.Markers( "Markers" );
-  map.addLayer(markers);
-
-  var size = new OpenLayers.Size(21,25);
-  var offset = new OpenLayers.Pixel(-(size.w/2), -size.h);
-  curPosIcon = new OpenLayers.Icon('ext/OpenLayers/img/marker-gold.png', size, offset);
-  curPosMarker = new OpenLayers.Marker(new OpenLayers.LonLat(0, 0), curPosIcon)
-  markers.addMarker(curPosMarker);
+function WhereAmI() {
+  this.filatoursmap = null;
+  this.locate = null;
+  this.userStatus = null;
+  this.goodAccuracy = 50;
 }
 
-function error(msg) {
-  console.log("Geolocation error:" + msg);
-}
+WhereAmI.prototype = {
+  init: function() {
+    this.userStatus = document.getElementById('status');
+    this.filatoursmap = new FilAToursMap();
+    this.filatoursmap.init();
+    this.locate = L.control.locate({
+      showPopup: false,
+      follow: true,
+      enableHighAccuracy: true,
+      onLocationError: this.locationError.bind(this)
+    });
+    this.locate.addTo(this.filatoursmap.map);
+    this.showUserStatus(_('waiting-location'));
+    this.locate.locate();
+    this.filatoursmap.map.on('locationfound', this.locationFound.bind(this));
+  },
 
-function updateCurPosMarker(newPos) {
-  markers.removeMarker(curPosMarker);
-  curPosMarker = new OpenLayers.Marker(newPos, curPosIcon);
-  markers.addMarker(curPosMarker);
-}
+  locationError: function(err) {
+    console.debug("Location error:", err);
+    this.showUserStatus(_('error-location'));
+  },
 
-function showPosition(ev) {
-  updateStatus(_('updating-location'));
-  var olc = new OpenLayers.LonLat(
-        ev.coords.longitude,
-        ev.coords.latitude)
-      .transform(
-        map.options.displayProjection,
-        map.options.projection);
-  map.setCenter(olc, 15);
-  updateCurPosMarker(olc);
-
-  if (prev) {
-    var dist = distance(prev, ev.coords);
-    console.debug("distance: " + dist);
-    console.debug("accuracy: " + ev.coords.accuracy);
-    if (dist <= ev.coords.accuracy && ev.coords.accuracy <= 100) {
-      navigator.geolocation.clearWatch(wid);
-      updateStatus(_('final-location'));
-      window.setTimeout(function() {
-        var s = document.getElementById('status-section');
-        s.style.display = 'none';
-      }, 10000);
+  locationFound: function(location) {
+    if (location.accuracy <= this.goodAccuracy) {
+      this.hideUserStatus();
+      this.locate.stopFollowing();
     } else {
-      updateStatus(_('waiting-better-location'));
+      this.showUserStatus(_('waiting-better-location'));
     }
+  },
+
+  setElementVisible: function(element, visible) {
+    var newVal = visible ? 'visible' : 'hidden';
+    if (newVal !== element.style.visibility) {
+      element.style.visibility = newVal;
+      console.debug('Setting', element, newVal);
+    }
+  },
+
+  showUserStatus: function(msg) {
+    this.setElementVisible(document.querySelector('div.leaflet-control-attribution', false));
+    this.userStatus.textContent = msg;
+    this.setElementVisible(document.querySelector('#status-section'), true);
+  },
+
+  hideUserStatus: function() {
+    this.setElementVisible(document.querySelector('div.leaflet-control-attribution', true));
+    this.userStatus.textContent = '';
+    this.setElementVisible(document.querySelector('#status-section'), false);
   }
+};
 
-  prev = ev.coords;
-}
-
-function distance(coords1, coords2) {
-  var R = 6378000.0;
-
-  // to rad
-  var sourcelatitude = (Math.PI * coords2.latitude) / 180.0;
-  var sourcelongitude = (Math.PI * coords2.longitude) / 180.0;
-
-  var latitude = (Math.PI * coords1.latitude) / 180.0;
-  var longitude = (Math.PI * coords1.longitude) / 180.0;
-
-  // Distance en metre
-  // http://www.zeguigui.com/weblog/archives/2006/05/calcul-de-la-di.php
-  return (R * (Math.PI/2 - Math.asin( Math.sin(latitude) * Math.sin(sourcelatitude) + Math.cos(longitude - sourcelongitude) * Math.cos(latitude) * Math.cos(sourcelatitude))));
-}
-
-function findme() {
-  wid = navigator.geolocation.watchPosition(showPosition, error);
-}
-
-function updateStatus(msg) {
-  var s = document.getElementById('status');
-  if (s) {
-    s.innerHTML = msg;
-  }
-}
-
-window.addEventListener('DOMContentLoaded', function() {
-  updateStatus(_('waiting-location'));
-  whereami();
-  findme();
+var w = new WhereAmI();
+window.addEventListener('load', function() {
+  w.init();
 });

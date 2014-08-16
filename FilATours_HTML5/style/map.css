@@ -1,8 +1,6 @@
 #map {
   width: 100%;
   position: absolute;
-  top: 8rem;
-  bottom: 0;
   font-size: 1.3rem;
 }
 
@@ -11,11 +9,4 @@
   float: right;
   top: -3rem;
   visibility: hidden;
-}
-
-.olControlZoom a {
-  font-size: 3rem !important;
-  height: 3rem !important;
-  width: 3rem !important;
-  line-height: 2.5rem !important;
 }

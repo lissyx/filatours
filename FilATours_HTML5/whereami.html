@@ -10,8 +10,11 @@
     <script type="application/javascript" src="js/buslines.js"></script>
     <script type="application/javascript" src="js/busstop.js"></script>
     <script type="application/javascript" src="js/busstops.js"></script>
-    <script type="application/javascript" src="ext/OpenLayers/OpenLayers.js"></script>
-    <script type="application/javascript" src="js/stops.js"></script>
+    <script type="application/javascript" src="ext/leaflet/leaflet.js"></script>
+    <script type="application/javascript" src="ext/leaflet.markercluster/leaflet.markercluster.js"></script>
+    <script type="application/javascript" src="ext/leaflet.awesome-markers/leaflet.awesome-markers.min.js"></script>
+    <script type="application/javascript" src="js/filatoursmap.js"></script>
+    <script type="application/javascript" src="ext/leaflet.locatecontrol/L.Control.Locate.js"></script>
     <script type="application/javascript" src="js/whereami.js"></script>
     <link rel="stylesheet" type="text/css" href="shared/style/headers.css" />
     <link rel="stylesheet" type="text/css" href="shared/style/status.css" />
@@ -19,6 +22,12 @@
     <link rel="stylesheet" type="text/css" href="style/map.css" />
     <link rel="stylesheet" type="text/css" href="style/whereami.css" />
     <link rel="stylesheet" type="text/css" href="shared/style/responsive.css" />
+    <link rel="stylesheet" type="text/css" href="ext/leaflet/leaflet.css" />
+    <link rel="stylesheet" type="text/css" href="ext/leaflet.markercluster/MarkerCluster.css" />
+    <link rel="stylesheet" type="text/css" href="ext/leaflet.markercluster/MarkerCluster.Default.css" />
+    <link rel="stylesheet" type="text/css" href="ext/leaflet.awesome-markers/leaflet.awesome-markers.css" />
+    <link rel="stylesheet" type="text/css" href="ext/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="ext/leaflet.locatecontrol/L.Control.Locate.css" />
     <link rel="resource" type="application/l10n" href="locales/locales.ini" />
   </head>
   <body role="application">
@@ -31,7 +40,6 @@
         <div id="map"></div>
       </div>
       <section role="status" id="status-section">
-        <span id="zoom-needed" data-l10n-id="zoom-needed">You need to zoom more to see stops.</span>
         <p id="status"></p>
       </section>
     </section>
