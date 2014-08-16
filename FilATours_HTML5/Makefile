@@ -25,6 +25,8 @@ webapp: $(TEMPDIR)
 purge:
 	cd $(TEMPDIR); \
 	rm -rf test/; \
+	rm -rf ext/font-awesome/less/ ext/font-awesome/scss/; \
+	rm -rf ext/leaflet.locatecontrol/font/ ext/leaflet.locatecontrol/css/; \
 	find shared/style/ -type f -name "*.html" -exec rm {} \; ; \
 	find . -type f -name ".*.swp" -exec rm {} \; ;
 
