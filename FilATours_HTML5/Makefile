@@ -24,11 +24,6 @@ webapp: $(TEMPDIR)
 
 purge:
 	cd $(TEMPDIR); \
-	rm -f ext/OpenLayers/*.debug.js; \
-	rm -f ext/OpenLayers/OpenLayers.light.js; \
-	rm -f ext/OpenLayers/OpenLayers.mobile.js; \
-	rm -f ext/OpenLayers/lib/deprecated.js; \
-	rm -rf ext/OpenLayers/lib/Firebug/; \
 	rm -rf test/; \
 	find shared/style/ -type f -name "*.html" -exec rm {} \; ; \
 	find . -type f -name ".*.swp" -exec rm {} \; ;
