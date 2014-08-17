@@ -203,8 +203,8 @@ var FilBleu = (function FilBleu() {
 
     formatTime: function(datetime) {
       var retval = "";
-      var hours = 0;
-      var minutes = 0;
+      var hours = -1;
+      var minutes = -1;
       switch(typeof datetime) {
         case "number":
           hours = parseInt(datetime / 3600);
@@ -221,8 +221,8 @@ var FilBleu = (function FilBleu() {
           break;
       }
 
-      if (hours > 0) {
-        retval += hours + "h";
+      if (hours > -1) {
+        retval += this.pad(hours) + "h";
       }
 
       return (retval + this.pad(minutes));
