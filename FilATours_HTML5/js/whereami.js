@@ -37,7 +37,7 @@ WhereAmI.prototype = {
   locationFound: function(location) {
     if (location.accuracy <= this.goodAccuracy) {
       this.hideUserStatus();
-      this.locate.stopFollowing();
+      this.locate.stopLocate();
     } else {
       this.showUserStatus(_('waiting-better-location'));
     }
