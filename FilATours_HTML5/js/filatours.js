@@ -482,15 +482,15 @@ var FilBleu = (function FilBleu() {
       var journeyDetailsBack = document.getElementById('journey-details-back');
       journeyDetailsBack.style.visibility = "hidden";
 
-      var journeyDetailsTb = document.getElementById('journey-details-toolbar');
-      journeyDetailsTb.style.visibility = "hidden";
+      var journeyAddAlarm = document.getElementById('add-journey-alarm');
+      journeyAddAlarm.style.visibility = "hidden";
 
       var journeyDetailsClose = document.getElementById('journey-details-close');
       if (journeyDetailsClose) {
         journeyDetailsClose.addEventListener('click', function(e) {
           document.location.hash='root';
           journeyDetailsBack.style.visibility = "visible";
-          journeyDetailsTb.style.visibility = "visible";
+          journeyAddAlarm.style.visibility = "visible";
         });
       }
     },
