@@ -201,7 +201,7 @@ var FilBleu = (function FilBleu() {
       return date + 'T' + hour + ':' + min + ':00';
     },
 
-    formatTime: function(datetime) {
+    formatTime: function(datetime, hideZeroHour) {
       var retval = "";
       var hours = -1;
       var minutes = -1;
@@ -221,7 +221,7 @@ var FilBleu = (function FilBleu() {
           break;
       }
 
-      if (hours > -1) {
+      if (hideZeroHour !== true && hours > -1) {
         retval += this.pad(hours) + "h";
       }
 
@@ -229,7 +229,7 @@ var FilBleu = (function FilBleu() {
     },
 
     formatDuration: function(duration) {
-      return this.formatTime(duration) + "min";
+      return this.formatTime(duration, true) + "min";
     },
 
     getJourney: function() {
@@ -363,31 +363,27 @@ var FilBleu = (function FilBleu() {
       for (var si in this._journeyDetailsInfo[id]) {
         var step = this._journeyDetailsInfo[id][si];
         console.debug("Step:", step);
-        var detailsText, title;
 
         switch(step.type) {
           case 'indication':
             for (var indId in step.indic) {
               var stepInd = step.indic[indId];
-              console.debug("Indication:", stepInd);
-
-              if (step.time && step.time.start) {
-                title = this.formatTime(step.time.start) + ': ' + stepInd.stop;
-              } else {
-                title = stepInd.stop;
-              }
+              var detailsText, title;
 
               switch(stepInd.type) {
                 case 'mount':
+                  title = this.formatTime(step.time.start) + ': ' + stepInd.stop;
                   detailsText = '<strong>' + _('line') + '</strong>: ' +
                                 stepInd.line + '<br />' +
                                 '<strong>' + _('direction') + '</strong>: ' +
                                 stepInd.direction;
                   break;
                 case 'umount':
+                  title = this.formatTime(step.time.end) + ': ' + stepInd.stop;
                   detailsText = _('get-off');
                   break;
                 case 'walk':
+                  title = this.formatTime(step.time.start) + ': ' + stepInd.stop;
                   detailsText = _('from-stop') +
                                 ' <strong>' + stepInd.stop + '</strong> ' +
                                 _('walk-to') +
@@ -396,12 +392,13 @@ var FilBleu = (function FilBleu() {
 
               }
 
+              console.debug("Indication:", stepInd, title);
               this.addOneStep(step, stepInd, title, detailsText);
             }
             break;
 
           case 'connection':
-            detailsText = _('waiting-time') + ': <strong>' +
+            var detailsText = _('waiting-time') + ': <strong>' +
               this.formatDuration(step.duration) + '</strong>';
             this.addOneStep(step, null, _('connection'), detailsText);
             break;
@@ -557,27 +554,30 @@ var FilBleu = (function FilBleu() {
               var indic = step.indic[ii];
               console.debug("Indic:", indic);
 
+              var str, time;
+              switch(indic.type) {
+                case 'mount':
+                  time = step.time.start;
+                  str = 'steps-mount';
+                  break;
+                case 'umount':
+                  time = step.time.end;
+                  str = 'steps-umount';
+                  break;
+                case 'walk':
+                  time = step.time.start;
+                  str = 'steps-walk';
+                  break;
+              }
+
               var params = {
-                time: this.formatTime(step.time.start),
+                time: this.formatTime(time),
                 duration: stepDuration,
                 line: indic.line,
                 stop: indic.stop,
                 to: indic.direction,
                 direction: indic.direction
               };
-
-              var str;
-              switch(indic.type) {
-                case 'mount':
-                  str = 'steps-mount'
-                  break;
-                case 'umount':
-                  str = 'steps-umount';
-                  break;
-                case 'walk':
-                  str = 'steps-walk';
-                  break;
-              }
 
               humanJourney.push(_(str, params));
             }
