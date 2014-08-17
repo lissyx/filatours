@@ -9,6 +9,9 @@ function FilAToursMap() {
   this.map = null;
   this.selectActivity = null;
 
+  this.stopsLayer = null;
+  this.busStopIcon = null
+
   this.nominatimResults = null;
   this.nominatimResultsIcon = null;
 
@@ -23,11 +26,13 @@ FilAToursMap.prototype = {
       closePopupOnClick: false
     });
 
+    this.map.on("load", this.loadBusStops.bind(this));
+
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(this.map);
 
-    var busStopIcon = L.AwesomeMarkers.icon({
+    this.busStopIcon = L.AwesomeMarkers.icon({
       icon: 'car',
       markerColor: 'green',
       prefix: 'fa'
@@ -39,28 +44,12 @@ FilAToursMap.prototype = {
       prefix: 'fa'
     });
 
-    var stops = L.markerClusterGroup({
-      disableClusteringAtZoom: 15,
-      maxClusterRadius: 40
-    });
-    BusStops.getAllStops().forEach((function(stop) {
-      var title = stop._name + " (" + stop._city + ")";
-      var stopMark = L.marker(
-        [ stop._latitude, stop._longitude ],
-        { title: title, icon: busStopIcon }
-      );
-      stopMark._stop = stop;
-      stopMark.addEventListener('click', this.onMarkerClick.bind(this));
-      stopMark.bindPopup(title);
-      stops.addLayer(stopMark);
-    }).bind(this));
-    this.map.addLayer(stops);
-
     // Use featureGroup to benefit from getBounds()
-    this.nominatimResults = L.featureGroup().addTo(this.map);
+    this.nominatimResults = L.featureGroup();
+    this.map.addLayer(this.nominatimResults);
 
     // Set the bounds to cover the whole Tours area
-    this.toursBounds = stops.getBounds();
+    this.toursBounds = BusStops.getBusBounds();
     this.map.fitBounds(this.toursBounds);
 
     var address = document.getElementById('address');
@@ -74,6 +63,33 @@ FilAToursMap.prototype = {
     }
 
     return;
+  },
+
+  loadBusStops: function() {
+    var stops = [];
+    var addAStop = (function(stop) {
+      var title = stop._name + " (" + stop._city + ")";
+      var stopMark = L.marker(
+        [ stop._latitude, stop._longitude ],
+        { title: title, icon: this.busStopIcon }
+      );
+      stopMark._stop = stop;
+      stopMark.addEventListener('click', this.onMarkerClick.bind(this));
+      stopMark.bindPopup(title);
+      stops.push(stopMark);
+    }).bind(this);
+
+    BusStops.getAllStops().forEach(addAStop);
+    this.stopsLayer = L.markerClusterGroup({
+      chunkedLoading: true,
+      disableClusteringAtZoom: 15,
+      maxClusterRadius: 60
+    });
+    this.stopsLayer.addLayers(stops);
+
+    setTimeout((function() {
+      this.map.addLayer(this.stopsLayer);
+    }).bind(this), 100);
   },
 
   createButton: function(name, stopValues) {

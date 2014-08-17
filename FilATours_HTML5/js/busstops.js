@@ -795,6 +795,15 @@ var BusStops = (function BusStops() {
     return match;
   }
 
+  function getBusBounds() {
+    var latLngs = [];
+    function add(val) {
+      latLngs.push([ val._latitude , val._longitude ]);
+    }
+    _stops.forEach(add);
+    return L.latLngBounds(latLngs);
+  }
+
   populate();
 
   return {
@@ -802,6 +811,7 @@ var BusStops = (function BusStops() {
     attach: attach,
     getNearestStop: getNearestStop,
     getAllStops: getAllStops,
-    getMatchingStop: getMatchingStop
+    getMatchingStop: getMatchingStop,
+    getBusBounds: getBusBounds
   };
 })();
