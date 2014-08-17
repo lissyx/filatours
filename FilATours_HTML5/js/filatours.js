@@ -541,41 +541,45 @@ var FilBleu = (function FilBleu() {
       for (var si in journey) {
         var step = journey[si];
         console.debug("Step:", step);
-        var text;
 
         var stepDuration = this.formatDuration(step.duration);
 
-        for (var ii in step.indic) {
-          var indic = step.indic[ii];
-          console.debug("Indic:", indic);
+        switch(step.type) {
+          case 'indication':
+            for (var ii in step.indic) {
+              var indic = step.indic[ii];
+              console.debug("Indic:", indic);
 
-          var params = {
-            time: this.formatTime(step.time.start),
-            duration: stepDuration,
-            line: indic.line,
-            stop: indic.stop,
-            to: indic.direction,
-            direction: indic.direction
-          };
+              var params = {
+                time: this.formatTime(step.time.start),
+                duration: stepDuration,
+                line: indic.line,
+                stop: indic.stop,
+                to: indic.direction,
+                direction: indic.direction
+              };
 
-          if (step.type == 'indication') {
-            if (indic.type == 'mount') {
-              text = _('steps-mount', params);
+              var str;
+              switch(indic.type) {
+                case 'mount':
+                  str = 'steps-mount'
+                  break;
+                case 'umount':
+                  str = 'steps-umount';
+                  break;
+                case 'walk':
+                  str = 'steps-walk';
+                  break;
+              }
+
+              humanJourney.push(_(str, params));
             }
-            if (indic.type == 'umount') {
-              text = _('steps-umount', params);
-            }
-            if (indic.type == 'walk') {
-              text = _('steps-walk', params);
-            }
-          }
+            break;
+
+          case 'connection':
+            humanJourney.push(_('steps-connection', {duration: stepDuration}));
+            break;
         }
-
-        if (step.type == 'connection') {
-          text = _('steps-connection', {duration: stepDuration});
-        }
-
-        humanJourney.push(text);
       }
 
       return humanJourney.join('\n');
