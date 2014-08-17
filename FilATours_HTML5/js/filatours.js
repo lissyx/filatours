@@ -365,39 +365,46 @@ var FilBleu = (function FilBleu() {
         console.debug("Step:", step);
         var detailsText, title;
 
-        if (step.type === 'indication') {
-          for (var indId in step.indic) {
-            var stepInd = step.indic[indId];
-            console.debug("Indication:", stepInd);
+        switch(step.type) {
+          case 'indication':
+            for (var indId in step.indic) {
+              var stepInd = step.indic[indId];
+              console.debug("Indication:", stepInd);
 
-            if (step.time && step.time.start) {
-              title = this.formatTime(step.time.start) + ': ' + stepInd.stop;
-            } else {
-              title = stepInd.stop;
-            }
+              if (step.time && step.time.start) {
+                title = this.formatTime(step.time.start) + ': ' + stepInd.stop;
+              } else {
+                title = stepInd.stop;
+              }
 
-            if (stepInd.type == 'mount') {
-              detailsText = '<strong>' + _('line') + '</strong>: ' +
-                stepInd.line + '<br />' +
-                '<strong>' + _('direction') + '</strong>: ' + stepInd.direction;
-            }
-            if (stepInd.type == 'umount') {
-              detailsText = _('get-off');
-            }
-            if (stepInd.type == 'walk') {
-              detailsText = _('from-stop') + ' <strong>' + stepInd.stop +
-                '</strong> ' + _('walk-to') + ' <strong>' + stepInd.direction + '</strong>';
-            }
+              switch(stepInd.type) {
+                case 'mount':
+                  detailsText = '<strong>' + _('line') + '</strong>: ' +
+                                stepInd.line + '<br />' +
+                                '<strong>' + _('direction') + '</strong>: ' +
+                                stepInd.direction;
+                  break;
+                case 'umount':
+                  detailsText = _('get-off');
+                  break;
+                case 'walk':
+                  detailsText = _('from-stop') +
+                                ' <strong>' + stepInd.stop + '</strong> ' +
+                                _('walk-to') +
+                                ' <strong>' + stepInd.direction + '</strong>';
+                  break;
 
-            this.addOneStep(step, stepInd, title, detailsText);
-          }
-        }
+              }
 
-        if (step.type === 'connection') {
-          title = _('connection');
-          detailsText = _('waiting-time') + ': <strong>' +
-            this.formatDuration(step.duration) + '</strong>';
-          this.addOneStep(step, null, title, detailsText);
+              this.addOneStep(step, stepInd, title, detailsText);
+            }
+            break;
+
+          case 'connection':
+            detailsText = _('waiting-time') + ': <strong>' +
+              this.formatDuration(step.duration) + '</strong>';
+            this.addOneStep(step, null, _('connection'), detailsText);
+            break;
         }
 
         console.debug(step);
