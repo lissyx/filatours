@@ -201,7 +201,7 @@ var FilBleu = (function FilBleu() {
       return date + 'T' + hour + ':' + min + ':00';
     },
 
-    formatTime: function(datetime, hideZeroHour) {
+    buildTime: function(datetime) {
       var retval = "";
       var hours = -1;
       var minutes = -1;
@@ -221,15 +221,25 @@ var FilBleu = (function FilBleu() {
           break;
       }
 
-      if (hideZeroHour !== true && hours > -1) {
-        retval += this.pad(hours) + "h";
-      }
+      return {h: hours, m: minutes};
+    },
 
-      return (retval + this.pad(minutes));
+    formatTime: function(time) {
+      var hm = this.buildTime(time);
+      var retval = "";
+      if (hm.h > -1) {
+        retval += this.pad(hm.h) + "h";
+      }
+      return retval + this.pad(hm.m);
     },
 
     formatDuration: function(duration) {
-      return this.formatTime(duration, true) + "min";
+      var hm = this.buildTime(duration);
+      var retval = "";
+      if (hm.h > 0) {
+        retval += this.pad(hm.h) + "h";
+      }
+      return retval + this.pad(hm.m) + "min";
     },
 
     getJourney: function() {
