@@ -6,27 +6,15 @@
 var m = new FilAToursMap();
 
 window.addEventListener('localized', function() {
-  m.init();
-
-  if (!navigator.mozSetMessageHandler) {
-    return;
+  var mapback = document.getElementById('map-back');
+  if (mapback) {
+    mapback.addEventListener('click', function(evt) {
+      window.history.back();
+    });
   }
 
-  navigator.mozSetMessageHandler('activity', function handler(activityRequest) {
-    console.debug('Activity:', activityRequest);
-    var activityName = activityRequest.source.name;
-    if (activityName !== 'select-stop') {
-      return;
-    }
-
-    m.startSelect(activityRequest);
-
-    var mapback = document.getElementById('map-back');
-    if (mapback) {
-      mapback.removeAttribute('href');
-      mapback.addEventListener('click', function(evt) {
-        m.cancelSelectActivity();
-      });
-    }
-  });
+  var pickStop = document.location.search.indexOf('pickStop');
+  // Query string includes the '?', so indexOf cannot be lower than 1
+  console.debug(pickStop);
+  m.init(pickStop >= 1);
 });

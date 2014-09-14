@@ -18,13 +18,6 @@
       "description": "Needed to be able to send alarm notifications."
     }
   },
-  "activities": {
-    "select-stop": {
-      "disposition": "inline",
-      "returnValue": true,
-      "href": "/stops.html"
-    }
-  },
   "messages": [
     {
       "alarm": "/index.html"

@@ -437,28 +437,27 @@ var FilBleu = (function FilBleu() {
       document.location.hash = this._scrapping;
     },
 
-    bindButtons: function() {
-      var button = document.getElementById('start');
-      if (button) {
-        button.addEventListener('click', this.getJourney.bind(this));
+    findAndBind: function(id, name, fun) {
+      var e = document.getElementById(id);
+      if (!e) {
+        console.error('Element "' + id + '" not found.');
+        return;
       }
-      var pick = document.getElementById('pick');
-      if (pick) {
-        pick.addEventListener('click', this.sendPick.bind(this));
-      }
+      e.addEventListener(name, fun);
+      console.debug('Added <' + name + '> handler for <' + id + '>');
+    },
 
-      var journeyDetailsBack = document.getElementById('journey-details-back');
-      if (journeyDetailsBack) {
-        journeyDetailsBack.addEventListener('click', function(e) {
-          document.location.hash='journeys-list';
-        });
-      }
-      var journeyDetailsClose = document.getElementById('journey-details-close');
-      if (journeyDetailsClose) {
-        journeyDetailsClose.addEventListener('click', function(e) {
-          document.location.hash='schedule';
-        });
-      }
+    bindButtons: function() {
+      this.findAndBind('start', 'click', this.getJourney.bind(this));
+      this.findAndBind('pick', 'click', this.sendPick.bind(this));
+      this.findAndBind('add-journey-alarm', 'click', this.addJourneyAlarm.bind(this));
+      this.findAndBind('share-journey', 'click', this.shareJourney.bind(this));
+      this.findAndBind('journey-details-back', 'click', function(e) {
+        document.location.hash = 'journeys-list'
+      });
+      this.findAndBind('journey-details-close', 'click', function(e) {
+        document.location.hash = 'schedule';
+      });
 
       var date = document.getElementById('date');
       var time = document.getElementById('time');
@@ -467,16 +466,6 @@ var FilBleu = (function FilBleu() {
         date.value = d.getFullYear() + '-' +
           this.pad(d.getMonth() + 1) + '-' + this.pad(d.getDate());
         time.value = this.pad(d.getHours()) + ':' + this.pad(d.getMinutes());
-      }
-
-      var alarm = document.getElementById('add-journey-alarm');
-      if (alarm) {
-        alarm.addEventListener('click', this.addJourneyAlarm.bind(this));
-      }
-
-      var share = document.getElementById('share-journey');
-      if (share) {
-        share.addEventListener('click', this.shareJourney.bind(this))
       }
     },
 
@@ -603,25 +592,33 @@ var FilBleu = (function FilBleu() {
     },
 
     sendPick: function() {
-      var a = new MozActivity({
-        name: 'select-stop'
+      console.debug("changing: " + document.location.href);
+      window.open('stops.html?pickStop#stops-map');
+    },
+
+    fillStops: function(source) {
+      var ar = source.split('&');
+      console.debug(ar);
+
+      var type, name, city;
+      ar.forEach(function(e) {
+        if (e.indexOf('type=') >= 0) {
+          type = e.split('=')[1];
+        }
+        if (e.indexOf('name=') >= 0) {
+          name = decodeURI(e.split('=')[1]);
+        }
+        if (e.indexOf('city=') >= 0) {
+          city = decodeURI(e.split('=')[1]);
+        }
       });
 
-      a.onerror = function(e) {
-        console.warn("select stop activity error:", a.error.name);
-      };
+      var input = document.getElementById(type);
+      if (!input) {
+        console.debug('Cannot find id:', type);
+      }
 
-      a.onsuccess = function(e) {
-        var type = a.result.type;
-        var stop = a.result.stop;
-        console.log("got stop: " + JSON.stringify(stop));
-        var target = document.getElementById(type);
-        if (!target) {
-          console.error('No target, cannot fill stop name');
-          return;
-        }
-        target.value = stop.name + ' (' + stop.city + ')';
-      };
+      input.value = name + ' (' + city + ')';
     },
 
     ensureClean: function(id) {
@@ -698,7 +695,9 @@ function addGeolocButton(id) {
 }
 
 window.addEventListener('localized', function() {
-  document.location.hash = 'root';
+  if (!document.location.hash) {
+    document.location.hash = 'root';
+  }
 
   var stopsList = document.getElementById('stops-list');
   if (stopsList) {
@@ -709,6 +708,8 @@ window.addEventListener('localized', function() {
 
   addGeolocButton('geoloc-dep');
   addGeolocButton('geoloc-arr');
+
+  window.FilBleu = FilBleu;
 
   if (!navigator.mozSetMessageHandler) {
     return;

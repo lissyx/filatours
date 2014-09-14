@@ -7,7 +7,7 @@ var _ = window.navigator.mozL10n.get;
 
 function FilAToursMap() {
   this.map = null;
-  this.selectActivity = null;
+  this.pickStop = null;
 
   this.stopsLayer = null;
   this.busStopIcon = null
@@ -20,7 +20,7 @@ function FilAToursMap() {
 }
 
 FilAToursMap.prototype = {
-  init: function() {
+  init: function(isPickStop) {
     this.map = L.map('map', {
       center: this.tours,
       closePopupOnClick: false
@@ -60,6 +60,10 @@ FilAToursMap.prototype = {
         }
       }).bind(this);
       address.addEventListener('keydown', checkKeyCode);
+    }
+
+    if (isPickStop) {
+      this.pickStop = true;
     }
 
     return;
@@ -116,7 +120,7 @@ FilAToursMap.prototype = {
     root.appendChild(title);
     root.appendChild(p);
 
-    if (this.selectActivity) {
+    if (this.pickStop) {
       var stopData = document.createElement('p');
 
       var btnDep = this.createButton('departure', o);
@@ -187,41 +191,17 @@ FilAToursMap.prototype = {
     this.map.fitBounds(this.nominatimResults.getBounds());
   },
 
-  getActivityReply: function(type, stop) {
-    return {
-      type: type || '',
-      stop: {
-        name: stop ? stop._name : '',
-        city: stop ? stop._city : ''
-      }
-    };
+  formatReply: function(type, stop) {
+    return 'type=' + type + '&name=' + stop._name + '&city=' + stop._city;
   },
 
   handleSelectEvent: function(type, stop) {
     console.debug("Sending activity reply");
-    if (this.selectActivity) {
-      var reply = this.getActivityReply(type, stop);
-      console.debug("postResult:", reply);
-      this.selectActivity.postResult(reply);
-      this.endSelect();
+    if (this.pickStop) {
+      var q = this.formatReply(type, stop);
+      console.debug("pickReply: " + q);
+      window.opener.FilBleu.fillStops(q);
+      window.close();
     }
-  },
-
-  cancelSelectActivity: function() {
-    console.debug("Sending activity error");
-    if (this.selectActivity) {
-      var reply = this.getActivityReply();
-      console.debug("postError:", reply);
-      this.selectActivity.postError(reply);
-      this.endSelect();
-    }
-  },
-
-  startSelect: function(request) {
-    this.selectActivity = request;
-  },
-
-  endSelect: function() {
-    this.selectActivity = null;
   }
 };
