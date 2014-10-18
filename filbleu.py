@@ -1532,17 +1532,20 @@ class FilBleu:
 		return stopAreas
 
 	def getKeyFromName(self, name, origin):
+		stop = name.split(" (")[0]
 		bestSim = 0
 		for k, v in origin.iteritems():
-			target = v['name'] + " (" + v['city'] + ")"
-			if name == target:
+			target = v['name']
+			if stop == target:
 				exact = k
 				break
 
+			target = v['name'].split(" (")[0] + " (" + v['city'] + ")"
 			sim = difflib.SequenceMatcher(a=name, b=target).ratio()
 			if (sim > bestSim):
 				bestSim = sim
 				exact = k
+
 		return exact
 
 	def list_lines_jvmalin(self):
@@ -1550,32 +1553,57 @@ class FilBleu:
 			print "%(id)s | %(number)s | %(name)s" % line
 
 	def extract_line_jvmalin(self, networkExternalCode, lineExternalCode):
-		curdate = time
-		urlbase = "http://www.jvmalin.fr/Horaires/Recherche?networkExternalCode=" + networkExternalCode
-		urlbase += "&lineExternalCode=" + lineExternalCode
-		urlbase += "&method=lineComplete&method=lineComplete"
-		# http://www.jvmalin.fr/fr/schedule/line/result/?lineSchedule%5Bnetwork%5D=network%3AFilbleu&lineSchedule%5Bline%5D=line%3ATTR%3ANav55&lineSchedule%5Broute%5D=route%3ATTR%3ANav143&lineSchedule%5Bfrom_datetime%5D=18%2F10%2F2014&lineSchedule%5Bline_daypart%5D=4-7
+		# lineExternalCode is expected to be TTR_NavN, converted to line:TTR:NavN
+		dayparts = ["4-7", "7-12", "12-18", "18-20", "20-3"]
+		date = datetime.datetime.strftime(datetime.datetime.now(), "%d/%m/%Y")
+		line = 'line:' + ":".join(lineExternalCode.split('_'))
+		args_noroute = {
+			'net': 'network:' + networkExternalCode,
+			'line': line,
+			'date': date,
+			'daypart': dayparts[1]
+		}
+		urlbase_noroute = "http://www.jvmalin.fr/fr/schedule/line/result/?lineSchedule[network]=%(net)s&lineSchedule[line]=%(line)s&lineSchedule[from_datetime]=%(date)s&lineSchedule[line_daypart]=%(daypart)s" % args_noroute
+
+		routes = self.get_routes_line_jvmalin(urlbase_noroute, line)
+		urlbase = urlbase_noroute + "&lineSchedule[route]=%(route)s"
+
 		linesBuilt = []
 
 		base = datetime.datetime.today()
 		dateList = [ base - datetime.timedelta(days=x) for x in range(0, 7) ]
 
 		for dateQuery in dateList:
-			for sens in [-1, 1]:
-				url = urlbase + "&sens=" + str(sens) + "&hor-date=" + dateQuery.strftime('%d/%m/%Y')
+			for sens in routes:
+			 	args = args_noroute
+				args['date'] = dateQuery.strftime('%d/%m/%Y') 
+				args['route'] = sens['id']
+				url = urlbase % args
 				self.browser.open(url)
 				soup = BeautifulSoup.BeautifulSoup(self.browser.response().read(), convertEntities=BeautifulSoup.BeautifulSoup.HTML_ENTITIES)
 				if not soup:
 					print "No output :("
 					continue
 
-				table = soup.find('table')
-				if not table or table["id"] != "LineArray":
+				schedule = soup.find('div', attrs = {'class': 'ctp-line-schedule'})
+				if not schedule:
+					print "No schedule :("
+					continue
+
+				table = schedule.find('table')
+				if not table:
+					print "No table"
 					continue
 
 				stopsByCol = {}
-				for row in table.findAll('tr'):
+				for row in table.find('tbody').findAll('tr'):
 					stopName = self.html_br_strip(row.find('a').text)
+
+					if stopName.find(", ") > 0:
+						stop = stopName.split(", ")[0]
+						city = stopName.split(", ")[1]
+						stopName = stop + " (" + city + ")"
+
 					i = 0
 					for cell in row.findAll('td'):
 						date = self.html_br_strip(cell.text)
@@ -1658,7 +1686,7 @@ class FilBleu:
 			return
 
 		if self.args.build_line_gpx:
-			f = open('filbleu_route.' + line_to_build + '.gpx', 'w')
+			f = open('filbleu_route.' + "".join(line_to_build.split("_")) + '.gpx', 'w')
 			f.write('<?xml version="1.0" encoding="UTF-8" standalone="yes"?><gpx version="1.1" creator="FilBleu Scrapper"><metadata>Filbleu ligne ' + line_to_build + '</metadata>')
 			for stopsByCol in lines:
 				f.write('<trk>')
@@ -1672,6 +1700,36 @@ class FilBleu:
 				f.write('</trk>')
 			f.write('</gpx>')
 			f.close()
+
+	def get_routes_line_jvmalin(self, urlbase, line):
+		routes = []
+		url = urlbase + "&lineSchedule[line]=" + line
+		self.browser.open(url)
+		soup = BeautifulSoup.BeautifulSoup(self.browser.response().read(), convertEntities=BeautifulSoup.BeautifulSoup.HTML_ENTITIES)
+		
+		if not soup:
+			print "No output :("
+
+		line = soup.find('select', attrs = {'id': 'lineSchedule_route'})
+		if not line:
+			print "Cannot find list of routes"
+			return
+
+		options = line.findAll('option')
+		if not options:
+			print "Cannot get all routes for line"
+			return
+
+		for option in options:
+			if option["value"] == "":
+				continue
+
+			routes += [ {
+				'id': option["value"],
+				'name': option.text
+			} ]
+
+		return routes
 
 	def collect_jvmalin_lines(self, networkExternalCode):
 		dayparts = ["4-7", "7-12", "12-18", "18-20", "20-3"]
@@ -1706,7 +1764,8 @@ class FilBleu:
 			linesList += [ {
 				'id': "_".join(option["value"].split(':')[1:]),
 				'number': text.split(' ')[1],
-				'name': " ".join(text.split(' ')[2:])
+				'name': " ".join(text.split(' ')[2:]),
+				'routes': self.get_routes_line_jvmalin(urlbase, option["value"])
 			} ]
 
 		return linesList
