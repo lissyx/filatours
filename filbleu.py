@@ -1604,18 +1604,12 @@ class FilBleu:
 						stopName = stop + " (" + city + ")"
 
 					i = 0
-					for cell in row.findAll('td'):
-						date = self.html_br_strip(cell.text)
+					for cell in row.findAll('th'):
 						if not stopsByCol.has_key(i):
 							stopsByCol[i] = []
-						if not (date == "-"):
+						if not (cell.text == ""):
 							stopsByCol[i] += [ stopName ]
 						i += 1
-
-					# Some line may have no info on JVMalin
-					# but we at least have the list of stops, so make use of it
-					if (i == 0):
-						stopsByCol[i] = [ stopName ]
 
 				# check that list1 is a subset of list2
 				def isStopsSubset(list1, list2):
