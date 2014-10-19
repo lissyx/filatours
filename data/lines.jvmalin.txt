@@ -1,0 +1,53 @@
+TTR_Nav55 | A | Vaucanson - Lycée J. Monnet
+TTR_Nav56 | 2 | Tempo Les Douets - CHU Trousseau
+TTR_Nav57 | 3a | La Pléiade - Onze Arpents
+TTR_Nav58 | 3b | La Pléiade - Santé Vinci
+TTR_Nav60 | 4 | St Paul - Vénien (Circulaire)
+TTR_Nav61 | 5 | Atlantes - Parc Grandmont
+TTR_Nav62 | 10 | Justices - Paul Doumer
+TTR_Nav63 | 11 | Mareuil - Gare de Tours
+TTR_Nav105 | 116 | Jean Jaurès - ADAPEI Vernou
+TTR_Nav64 | 12 | Tranchée - Anatole France
+TTR_Nav113 | 118 | Gare Vinci - Santé Vinci
+TTR_Nav65 | 13 | Parc Grandmont - CHU Trousseau
+TTR_Nav66 | 14 | Santé Alliance - Grand Sud
+TTR_Nav67 | 15 | La Riche Soleil - Joué Gare
+TTR_Nav68 | 16 | St Pierre Gare - Blotterie
+TTR_Nav69 | 17 | Santé Alliance - Gare Vinci
+TTR_Nav70 | 18 | Croix Chidaine / St Cyr Mairie - Jean Jaurès
+TTR_Nav111 | 19 | Vençay - Gare de Tours
+TTR_Nav71 | C1 | Botanique - Beaujardin
+TTR_Nav72 | C2 | St Augustin (Circulaire)
+TTR_Nav73 | 30 | Ballan Gare - Joué Gare
+TTR_Nav74 | 31 | Ballan Gare - Lycée Jean Monnet
+TTR_Nav75 | 32 | Villandry Centre - Lycée Grandmont
+TTR_Nav76 | 34 | Les Bergeons - Gare Vinci
+TTR_Nav77 | 50 | Vaugareau - Bois de Plante
+TTR_Nav78 | 51 | Croix Julia - Beffroi
+TTR_Nav79 | 52 | Vieux Calvaire - Beffroi
+TTR_Nav80 | 53 | Vaucanson - Anatole France
+TTR_Nav81 | 54 | Clos de Vernou - Anatole France
+TTR_Nav82 | 56 | Les Charmes - Vaucanson
+TTR_Nav83 | 57 | L'Espérance - Gare Vinci
+TTR_Nav87 | F55 | Tours Nord - Parçay-Meslay
+TTR_Nav84 | R1 | Santé Alliance - Ermitage
+TTR_Nav85 | R2 | Hôpital Pagès - Mareuil
+TTR_Nav88 | R3 | Bois de Plante - Atlantes
+TTR_Nav112 | R4 | Les Bergeons - La Riche Soleil
+TTR_Nav89 | 100 | Gare de Tours - Becquerel
+TTR_Nav90 | 101 | St Pierre Centre - Becquerel
+TTR_Nav91 | 102 | Verdun - Becquerel
+TTR_Nav92 | 103 | Jean Jaurès - Becquerel
+TTR_Nav93 | 104 | Grands Champs - Becquerel
+TTR_Nav94 | 105 | Val Choisille - Lycée Vaucanson
+TTR_Nav95 | 106 | Val Choisille - Clouet / Choiseul
+TTR_Nav96 | 107 | Ballan Gare - Lycée Grandmont
+TTR_Nav97 | 108 | Ermitage - Mi-Côte
+TTR_Nav98 | 109 | Vaugareau - Place Choiseul / Lycée Vaucanson
+TTR_Nav99 | 110 | Gare Vinci - Marmoutier
+TTR_Nav100 | 111 | Clos de Vernou - Lycée Vaucanson
+TTR_Nav101 | 112 | Gare Vinci - MFR Rougemont
+TTR_Nav102 | 113 | Jean Jaurès - ANAIS Mettray
+TTR_Nav103 | 114 | Gare de Tours - Nécropole Esvres
+TTR_Nav104 | 115 | Vaucanson - CAT d'Oé
+TTR_Nav106 | 117 | Gare Vinci - Villandry Centre
