@@ -1563,15 +1563,14 @@ class FilBleu:
 			'date': date,
 			'daypart': dayparts[1]
 		}
-		urlbase_noroute = "http://www.jvmalin.fr/fr/schedule/line/result/?lineSchedule[network]=%(net)s&lineSchedule[line]=%(line)s&lineSchedule[from_datetime]=%(date)s&lineSchedule[line_daypart]=%(daypart)s" % args_noroute
-
-		routes = self.get_routes_line_jvmalin(urlbase_noroute, line)
+		urlbase_noroute = "http://www.jvmalin.fr/fr/schedule/line/result/?lineSchedule[network]=%(net)s&lineSchedule[line]=%(line)s&lineSchedule[from_datetime]=%(date)s&lineSchedule[line_daypart]=%(daypart)s"
+		routes = self.get_routes_line_jvmalin(urlbase_noroute % args_noroute, line)
 		urlbase = urlbase_noroute + "&lineSchedule[route]=%(route)s"
 
 		linesBuilt = []
 
 		base = datetime.datetime.today()
-		dateList = [ base - datetime.timedelta(days=x) for x in range(0, 7) ]
+		dateList = [ base + datetime.timedelta(days=x) for x in range(0, 7) ]
 
 		for dateQuery in dateList:
 			for sens in routes:
