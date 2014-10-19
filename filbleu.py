@@ -1612,6 +1612,11 @@ class FilBleu:
 							stopsByCol[i] += [ stopName ]
 						i += 1
 
+					# Some line may have no info on JVMalin
+					# but we at least have the list of stops, so make use of it
+					if (i == 0):
+						stopsByCol[i] = [ stopName ]
+
 				# check that list1 is a subset of list2
 				def isStopsSubset(list1, list2):
 					smallest = list1
