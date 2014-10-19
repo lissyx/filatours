@@ -32,8 +32,8 @@ public class Journey {
     public Journey(Element trip, Map<String, String> cookies) {
         this.cookies = cookies;
         this.details = null;
-        this.reTimeDeparture    = Pattern.compile("<strong>D&eacute;part<\\/strong> : (\\d+)h(\\d+)");
-        this.reTimeArrival      = Pattern.compile("<strong>Arriv&eacute;e<\\/strong> : (\\d+)h(\\d+)");
+        this.reTimeDeparture    = Pattern.compile("<strong>D.part<\\/strong> : (\\d+)h(\\d+)");
+        this.reTimeArrival      = Pattern.compile("<strong>Arriv.e<\\/strong> : (\\d+)h(\\d+)");
         this.reDuration         = Pattern.compile("(\\d+)\\s*h|(\\d+)\\s*");
         this.reConnections      = Pattern.compile("<strong>correspondance\\(s\\)<\\/strong> : (\\d+)");
 
