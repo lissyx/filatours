@@ -9,7 +9,7 @@ public class URLs {
     private String param;
     static final String raz = "raz";
     static final String siteBase = "https://www.filbleu.fr/";
-    static final String urlBase = "https://www.filbleu.fr/horaires-et-trajets/votre-itineraire-sur-mesure";
+    static final String urlBase = "https://www.filbleu.fr/horaires-et-trajet/itineraire-sur-mesure";
     static final int timeout = 10000;
 
     public URLs(String param) {
